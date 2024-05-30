@@ -14,7 +14,10 @@
  * --------------------------------------------------------------------------
  * --------------------------------------------------------------------------
  */
+
 /////////////////////////////////////////////////////////////////////
+var parse;
+import("./parse.js").then(module => { parse = module; });
 /////////////////////////////////////////////////////////////////////
 var Targets_folder='';
 var Targets1_folder='';
@@ -1713,11 +1716,9 @@ function readTFile(file)
     reader.onload = function (evt) 
         {
             var textContents = evt.target.result;
-            textContents= textContents.replace(/\s/g,'');
+            // textContents = textContents.replace(/\s/g,'');
             //console.log(textContents);
-            loadedDataArray = textContents.split("&");
-            loaded1X = loadedDataArray[0].split(",");
-            loaded1Y = loadedDataArray[1].split(",");
+            [loaded1X, loaded1Y] = parse.parseFileContents(textContents);
             //Target_Name
             Target_Name=file.name;
             Target_Name_c=Target_Name.split(".")

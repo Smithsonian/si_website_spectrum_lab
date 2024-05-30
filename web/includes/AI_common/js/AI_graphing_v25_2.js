@@ -404,6 +404,64 @@ function readTextFile(file,plotNum,Targets_Full_descriptions)
     }
     rawFile.send(null);
 }
+
+function parseText(text) {
+  const loadedDataArray = text.split("&");
+  const x = loadedDataArray[0].split(",");
+  const y = loadedDataArray[1].split(",");
+  return [x, y];
+}
+
+function parseCSV(text) {
+  const x = [];
+  const y = [];
+  const rows = text.split("\n");
+  for (const row of rows)
+  {
+    const columns = row.split(/\s+/);
+    x.push(columns[0]);
+    y.push(columns[1]);
+  }
+  return [x, y];
+}
+
+function readDataFile(file, plotNum, Targets_Full_descriptions) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", file, false);
+  rawFile.onreadystatechange = function ()
+  {
+    if (rawFile.readyState === 4)
+    {
+      if (rawFile.status === 200 || rawFile.status === 0)
+      {
+        const allText = rawFile.responseText;
+        const ext = file.split(".").pop();
+        let x, y;
+        if (ext === "csv") {
+          [x, y] = parseCSV(allText);
+        } else {
+          [x, y] = parseText(allText);
+        }
+        
+        const targets2 = (plotNum == "Targets2");
+        const elementID = targets2 ? "Comparison_Name" : "Target_Name";
+        document.getElementById(elementID).innerHTML = Targets_Full_descriptions;
+        if (targets2)
+        {
+          loaded2X = x;
+          loaded2Y = y;
+        }
+        else 
+        {
+          loaded1X = x;
+          loaded1Y = y;
+        }
+      }
+    }
+  }
+  rawFile.send(null);
+}
+
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
