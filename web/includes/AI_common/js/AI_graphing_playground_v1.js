@@ -82,6 +82,9 @@ var NatureArr1 = ["Tree in Summer Reflection", "Aspen in Fall Reflection", "Red 
 var Fishtank_LightsArr0 = ["BlueHigh", "BlueMedium", "BlueLow", "GreenHigh", "GreenMedium", "GreenLow", "RedHigh", "RedMedium", "RedLow", "Orange_RedMediumGreenLow", "Teal_GreenHigh_BlueMedium"];
 var Fishtank_LightsArr1 = ["Blue Light (High)", "Blue Light (Medium)", "Blue Light (Low)", "Green Light (High)", "Green Light (Medium)", "Green Light (Low)", "Red Light (High)", "Red Light (Medium)", "Red Light (Low)", "Orange Light (Medium Red + Low Green)", "Teal Light (High Green + Medium Blue)"];
 /////////////////////////////////////////////////////////////////////
+var Museum_CurationArr0 = [];
+var Museum_CurationArr1 = [];
+/////////////////////////////////////////////////////////////////////
 var AtomsArr0 = ["Hydrogen_Emission", "Helium_Emission", "Neon_Emission", "Sodium_Absorption", "Sodium_Low_Pressure_Emission", "Potassium_Absorption", "Calcium_Emission", "Iron_Emission",  "Mercury_Emission", "Ammonia_Absorption", "Carbon_Dioxide_Absorption_Near_to_Mid_IR", "Carbon_Dioxide_Absorption_Mid_to_Far_IR", "Dry_Ice_Reflection", "Ice_Reflection", "Iron_Oxide_Rust_Reflection", "Methane_Visible_Absorption", "Methane_Near_IR_Absorption", "Oxygen_Molecules_Absorption", "Ozone_Absorption_in_UV", "Ozone_Absorption_in_IR", "Water_Vapor_Absorption"];
 
 var AtomsArr1 = ["Hydrogen Emission", "Helium Emission", "Neon Emission", "Sodium Absorption", "Sodium (low pressure) Emission", "Potassium Absorption", "Calcium Emission", "Iron Emission", "Mercury Emission", "Ammonia Absorption", "Carbon Dioxide Absorption (Near to Mid IR)", "Carbon Dioxide Absorption (Mid to Far IR)", "Dry Ice Reflection", "Ice (Water) Reflection", "Iron Oxide (Rust) Reflection", "Methane Visible Absorption", "Methane Near IR Absorption", "Oxygen (Molecular) Absorption", "Ozone Absorption (UV)", "Ozone Absorption (IR)", "Water Vapor Absorption"];
@@ -485,6 +488,25 @@ function SeacrhFor(val,obj)
                     $('#Cat2_folder').addClass('fas fa-fish');
                 }
 		}
+  else if (val=='Museum_Curation')
+    {
+          if(obj=='Category1')
+            {
+              Targets1_folder = 'Museum_Curation';
+              Targets_Titles1 = Museum_CurationArr0;
+              Targets_descriptions1 = Museum_CurationArr1;
+              $('#Cat1_folder').removeClass();
+              $('#Cat1_folder').addClass('fas fa-landmark');
+            }
+      if(obj=='Category2')
+            {
+              Targets2_folder = 'Museum_Curation';
+              Targets_Titles2 = Museum_CurationArr0;
+              Targets_descriptions2 = Museum_CurationArr1;
+              $('#Cat2_folder').removeClass();
+              $('#Cat2_folder').addClass('fas fa-landmark');
+            }
+    }
     else if (val=='Draw')
         {
             ResetCanvas();
