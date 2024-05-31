@@ -1738,9 +1738,10 @@ function readTFile(file)
     reader.onload = function (evt) 
         {
             var textContents = evt.target.result;
-            const [x, y] = utils.parseFileContents(textContents);
+            const parsed = utils.parseFileContents(textContents);
+            const [x, y] = parsed[0];
             loaded1X = x;
-            loaded1Y = utils.peakNormalize(y);
+            loaded1Y = utils.rangeNormalize(y);
             //Target_Name
             Target_Name=file.name;
             Target_Name_c=Target_Name.split(".")
@@ -1781,9 +1782,10 @@ function readCFile(file)
     reader.onload = function (evt) 
         {
             var textContents = evt.target.result;
-            const [x, y] = utils.parseFileContents(textContents);
+            const parsed = utils.parseFileContents(textContents);
+            const [x, y] = parsed[0];
             loaded2X = x;
-            loaded2Y = utils.peakNormalize(y);
+            loaded2Y = utils.rangeNormalize(y);
             //Comparison_Name
             Comparison_Name=file.name;
             Comparison_Name_c=Comparison_Name.split(".")
