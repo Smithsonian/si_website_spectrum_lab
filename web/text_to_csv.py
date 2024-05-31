@@ -18,4 +18,4 @@ if filepath:
 
     with open(modified_path, 'w') as f:
         for x, y, in zip(xs, ys):
-            f.write(f"{x}\t{y}\n")
+            f.write(f"{x},{y}\n")
