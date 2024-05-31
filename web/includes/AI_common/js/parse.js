@@ -8,13 +8,13 @@ export function parseText(text) {
   return [x, y];
 }
 
-export function parseCSV(text) {
+export function parseCSV(text, delimiter=",") {
   const x = [];
   const y = [];
   const rows = text.split("\n").filter(t => t.length > 0);
   for (const row of rows)
   {
-    const columns = row.split(/\s+/);
+    const columns = row.split(delimiter);
     if (columns.length !== 2) {
       return [null, null];
     }
