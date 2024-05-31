@@ -31,3 +31,9 @@ export function parseFileContents(text) {
   }
   return columns;
 }
+
+export function peakNormalize(data, peakTo=0.95) {
+  const max = Math.max.apply(null, data);
+  const factor = peakTo / max;
+  return data.map(v => factor * v);
+}

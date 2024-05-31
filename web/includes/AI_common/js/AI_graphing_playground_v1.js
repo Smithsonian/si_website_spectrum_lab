@@ -16,8 +16,8 @@
  */
 
 /////////////////////////////////////////////////////////////////////
-var parse;
-import("./parse.js").then(module => { parse = module; });
+var utils;
+import("./utils.js").then(module => { utils = module; });
 /////////////////////////////////////////////////////////////////////
 var Targets_folder='';
 var Targets1_folder='';
@@ -1716,9 +1716,9 @@ function readTFile(file)
     reader.onload = function (evt) 
         {
             var textContents = evt.target.result;
-            // textContents = textContents.replace(/\s/g,'');
-            //console.log(textContents);
-            [loaded1X, loaded1Y] = parse.parseFileContents(textContents);
+            const [x, y] = utils.parseFileContents(textContents);
+            loaded1X = x;
+            loaded1Y = utils.peakNormalize(y);
             //Target_Name
             Target_Name=file.name;
             Target_Name_c=Target_Name.split(".")
@@ -1759,11 +1759,9 @@ function readCFile(file)
     reader.onload = function (evt) 
         {
             var textContents = evt.target.result;
-            textContents= textContents.replace(/\s/g,'');
-            //console.log(textContents);
-            loadedDataArray = textContents.split("&");
-            loaded2X = loadedDataArray[0].split(",");
-            loaded2Y = loadedDataArray[1].split(",");
+            const [x, y] = utils.parseFileContents(textContents);
+            loaded2X = x;
+            loaded2Y = utils.peakNormalize(y);
             //Comparison_Name
             Comparison_Name=file.name;
             Comparison_Name_c=Comparison_Name.split(".")
