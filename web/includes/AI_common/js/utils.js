@@ -14,25 +14,25 @@ export function isHeaderRow(row, delimiter=",") {
 }
 
 export function parseCSV(text, delimiter=",") {
-  const x = [];
-  const y = [];
   const rows = text.split("\n").filter(t => t.length > 0);
   const hasHeader = isHeaderRow(rows[0]);
-  let colNames = [null, null];
+  let colNames;
   if (hasHeader) {
     const headerRow = rows.shift();
     colNames = headerRow.split(delimiter);
+  } 
+  const firstRow = rows.shift().split(delimiter);
+  const data = Array.from(firstRow, (element) => [element]);
+  if (!hasHeader) {
+    colNames = Array.from(data, () => null); 
   }
-  for (const row of rows)
-  {
+  for (const row of rows) {
     const columns = row.split(delimiter);
-    if (columns.length !== 2) {
-      return [[null, null], colNames];
-    }
-    x.push(columns[0]);
-    y.push(columns[1]);
+    columns.forEach((value, index) => {
+      data[index].push(value);
+    });
   }
-  return [[x, y], colNames];
+  return [data, colNames];
 }
 
 export function parseFileContents(text) {
