@@ -1,5 +1,5 @@
 export function parseText(text) {
-  const loadedDataArray = text.split("&");
+  const loadedDataArray = text.replace(/\s/g, '').split("&");
   if (loadedDataArray.length !== 2) {
     return [[null, null], [null, null]];
   }
@@ -27,7 +27,7 @@ export function parseCSV(text, delimiter=",") {
     colNames = Array.from(data, () => null); 
   }
   for (const row of rows) {
-    const columns = row.split(delimiter);
+    const columns = row.replace(/\s/g, '').split(delimiter);
     columns.forEach((value, index) => {
       data[index].push(value);
     });
