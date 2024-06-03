@@ -14,7 +14,7 @@ for name in wb.sheetnames:
     # and that we have a header
     columns = ws.columns
     wavelength_column = next(columns)
-    wavelengths = [str(cell.value) for cell in wavelength_column]
+    wavelengths = [str(cell.value) for cell in wavelength_column if cell.value is not None]
 
     for column in columns:
         values = [str(cell.value) for cell in column]
