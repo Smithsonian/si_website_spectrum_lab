@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fish Tank Spectrum Tool</title>
+<!--Based of 23_8  And 24_8-->
+<meta charset="utf-8">
+<meta name="author" content=" Science Education Department at the Harvard-Smithsonian Center for Astrophysics">
+<meta name="author" content="Alaalden Ibrahim">
+<meta content="DIY planet search,planet search,planets search,exoplanet, super earth, extrasolar planet, nasa, kepler, alien planet, another earth, new planet, planets outside our solar system, planetquest, hot jupiter, alien earth" http-equiv="keywords">
+<meta content="NASA's portal for planet hunters to search for new Planets and Earths, and more." name="description">
+<!--****************************************--> 
+<!--****************************************-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--****************************************--> 
+<!--****************************************-->
+<link rel="stylesheet" href="includes/AI_common/Bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="includes/AI_common/js/jquery/3.5.1/jquery.min.js"></script> 
+<script src="includes/AI_common/Bootstrap/4.5.0/js/popper.min.js"></script> 
+<script src="includes/AI_common/Bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+<!--****************************************-->
+<link type="text/css" rel="stylesheet" href="includes/AI_common/css/spectrum_styles_fishtank_21.css">
+<!--****************************************-->
+<link href="includes/AI_common/css/fontawesome/all.css" rel="stylesheet">
+<!--load all styles --> 
+<!--****************************************-->
+<!--****************************************-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N4BDY9ZWS8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N4BDY9ZWS8');
+</script>
+<!--****************************************--> 
+</head>
+<!--****************************************-->
+<body>
+<!--****************************************--> 
+<!--****************************************-->
+
+<div class="jumbotron text-center spectrum_banner" style="margin-bottom:0">
+  <h1>Spectrum Lab</h1>
+  <p>Exploring the world of color</p>
+</div>
+<nav class="site-header sticky-top py-1">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <!--<a class="py-2 d-none d-md-inline-block" href="#">Home</a>-->
+      <a class="py-2 d-none d-md-inline-block" href="session2.html">Session 2</a>
+      <a class="py-2 d-none d-md-inline-block" href="session3.html">Session 3</a>
+      <a class="py-2 d-none d-md-inline-block" href="session4.html">Session 4</a>
+      <a class="py-2 d-none d-md-inline-block active" href="fishtank.html">Fish Tank</a>
+      <a class="py-2 d-none d-md-inline-block" href="exoplanets.html">ExoPlanets</a>
+      <a class="py-2 d-none d-md-inline-block" href="playground.html">Playground</a> </div>
+</nav>
+<!--****************************************--> 
+<!--****************************************-->
+<div class="container-fluid position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" style="min-height: 850px;"> 
+  <!--****************************************--> 
+  <!--***********************************--> 
+  <!--***********************************-->
+  <div class="row mb-3"  style="display: none;">
+    <div class="col-md-4 themed-grid-col2_0"> </div>
+    <!--****************************************-->
+    <div class="col-md-8 themed-grid-col"> 
+      <!--****************************************-->
+      <div class="Select_wrapper">
+        <div  id="five">
+          <div class="col">
+            <input type="file" id="input-Tfile" class="" name="Tfilename" accept=".csv , .txt">
+          </div>
+        </div>
+        <!--***********************************-->
+        <div  id="six">
+          <button id="read-Tfile" class="btn btn-primary">Read File</button>
+        </div>
+      </div>
+      <!--****************************************--> 
+    </div>
+    <!--****************************************--> 
+  </div>
+  <!--***********************************--> 
+  <!--***********************************-->
+  <div class="row mb-3">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 themed-grid-col2_0">
+      <div class="row mb-3" style="margin-bottom: 0.1rem!important;" id="Challenges_btns">
+        <div class="col-md-2 themed-grid-col" style="font-size: 24px;margin-top: 10px;">
+          <!--****************************************-->
+          <!--****************************************--> 
+        </div>
+        <div class="col-md-9 themed-grid-col"><span>Page</span>
+          <button id="Challenge1_btn" class="btn btn-light btn-circle btn-circle-sm m-1 border border-dark active" onClick="ShowChallenge(1,0)">1</button>
+          <button id="Challenge2_btn" class="btn btn-light btn-circle btn-circle-sm m-1 border border-dark" onClick="ShowChallenge(2,1)">2</button>
+          <button id="Challenge3_btn" class="btn btn-light btn-circle btn-circle-sm m-1 border border-dark" onClick="ShowChallenge(3,1)">3</button>
+          <button id="Challenge4_btn" class="btn btn-light btn-circle btn-circle-sm m-1 border border-dark" onClick="ShowChallenge(4,1)">4</button>
+        </div>
+      </div>
+      <div class="Challenge_Text px-2">
+        <!--============================================-->
+        <div id="ChallengeIntro_Text">
+            <h5 class="challenge_h1">Create and light a saltwater reef aquarium that is healthy and looks great too.</h5>
+         
+          <p class="text-center"> <img src="includes/AI_common/images/fishtank_first_screen.jpg" class="rounded" alt="tree" style="width: 75%; height: 50%;"> </p>
+            <p>For this project, you’ll first explore how land plants reflect light. Then you’ll dive into the project by investigating  a variety of plants, fish and coral that live in saltwater aquaria. You’ll choose a few to live in your tank. Based on what you’ve learned in this unit, you’ll decide how to light the tank so all of its inhabitants thrive.</p>
+
+        </div>    
+        <!--============================================-->
+        <div id="Challenge1_Text">
+            <h5 class="challenge_h1">Background Part I:</h5>
+               <p><strong>Why are trees green in summer?</strong></p>
+            <p class="text-center">
+          <img src="includes/AI_common/images/session4_tree.png" class="rounded" alt="tree" style="width: 90%; height: 50%;">
+            </p>
+            <p>In this tree, some photons are reflected while others are absorbed.</p>
+            <p>This is a reflection spectrum of a tree in summer.</p>
+
+            <p>Use this spectrum to answer the questions in your <strong>Spectrum Notebook.</strong></p>
+
+        </div>    
+        <!--============================================-->
+        <div id="Challenge2_Text">
+            <div id="Challenge2_Text1">
+                <h5 class="challenge_h1">Background Part II</h5>
+               <p><strong>Interpreting reflection spectra</strong></p>
+
+<p>The top panel shows the reflection spectrum of the body a cactus.</p>
+
+<p>The bottom panel shows the reflection spectrum of a pansy (a type of flower).</p>
+
+<p>Based on the reflection spectra, what color do you think these plants appear under white light? under a different colored light?</p>
+
+<p>Write your answers in your <strong>Spectrum Notebook.</strong></p>
+
+
+            </div>    
+            <div id="Challenge2_Text2">
+                 <h5 class="challenge_h1">Background Part II</h5>
+               <p><strong>Interpreting reflection spectra</strong></p>
+
+<p>Here are images of the actual cactus and pansy. How did you do with your color predictions?</p>
+
+
+
+<p>Now that you’ve explored reflection in plants, you’re ready to think about reflection of sea plants (alage) and animals (coral and fish). Complete the activities in the notebook and come back here when the notebook instructs you to use the online tool.</p>
+
+            </div>    
+        </div>    
+        <!--============================================-->
+        <div id="Challenge3_Text">
+          <h5 class="challenge_h1">Light your tank</h5>
+            <p>The top dropdown menu lets you choose different amounts (High, Medium, or Low) of the colors Red, Green, and Blue. There are also 2 sample mixed colors (orange and teal) that are shown in your Spectrum Notebook. Notice the shape, location and height (intensity) of these spectra.</p>
+
+<p>With these reference graphs as guides, use the <strong>drawing tool</strong> in the bottom panel to create a  graph of the overall color of your empty tank. Take a screenshot and paste it in your notebook.</p>
+
+<p>Note: The reference graphs in your Notebook for the fish and plant reflection spectra are given in nanometers, so you can change your measurement unit to nm for this activity.</p>  
+
+            
+        </div>
+        <!--============================================-->
+        <div id="Challenge4_Text">
+            <h5 class="challenge_h1">BONUS: Mood Lighting</h5>
+            <p>The top dropdown menu lets you choose different amounts (High, Medium, or Low) of the colors Red, Green, and Blue. as well as Orange and Teal examples.</p>
+
+<p>With these reference graphs as guides, use the <strong>drawing tool</strong> in the bottom panel to create a  graph of the “mood lighting” or your empty tank. Take a screenshot and paste it in your notebook.</p>
+
+<p>Note: The reference graphs in your Notebook for the fish and plant reflection spectra are given in nanometers, so you can change your measurement unit to nm for this activity.</p>
+
+    
+        
+        </div>
+        <!--============================================-->
+        
+        <!--============================================-->
+        <div id="Challenge5_Text">
+            <h1 class="challenge_h1">Congratulations.</h1>
+<h4>You’re done!</h4>
+<p>You’ve finished Fish Tank of the Spectrum Lab.</p><br><br>
+<p>At this point you should rejoin the rest of your class for a closing discussion of the day’s content.</p>
+        </div>
+        <!--============================================-->
+        
+        <p class="text-right challenge_btn_p"> <a id="challenge_btn" class="btn btn-primary pull-right" href="javascript:void(0)" onClick="ShowChallenge(1,1)">GET STARTED</a> </p>
+      </div>
+      <!--****************************************--> 
+      <!--****************************************--> 
+    </div>
+    <!--*****************col-md-4 themed-grid-col******************-->
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 themed-grid-col"> 
+      <div id="All_Tools_And_Controls">
+      <!--****************************************--> 
+      <!--***** The Tools Code Starts Here    ****-->
+      <!--****************************************--> 
+      <div id="upperToolrow"> </div>
+      <div class="row"  id="UpperGraphRow">
+        <!--<div class="col-sm-6 col-md-12 col-lg-12 col-xl-4 themed-grid-col1_0"  id="upperToolright">-->
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 themed-grid-col1_0" >
+              <div style=" width: 230px;">
+          <h4 id="h4_target">Target Object</h4>
+            <img class="Harry_sun_spectrum w-75"  width="180" height="160" id="UpperImg" src="includes/AI_common/images/Harry_sun_spectrum.jpg" alt="Image Holder icon">
+          <!--***********************************-->
+          <!--***********************************-->
+            <div id="Category_box3"  style="position: absolute; overflow: hidden;">
+                <i class="fas fa-search" id="Cat1_search" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="search"></i>
+            </div>
+          <!--***********************************-->
+            <div id="two" style="position: absolute;top: 220px;left: 0px;z-index: 3; width: 30%;">
+              <select name="Targets1" id="Targets1Filters"  class="disabled custom-select" onchange="SelectTarget(this.value,'Targets1')" style=" width: 60%;">
+                <option value="">Select Sub Category</option>
+              </select>
+            </div></div>
+        <!--</div>
+        <div class="col-sm-6 col-md-12 col-lg-12 col-xl-8 themed-grid-col1_1" id="upperToolleft"> -->
+          <!--***********************************-->
+          <h5 class="Target_Name" id="Target_Name"></h5>
+          <!--***********************************-->
+          <div class="UpperCanvasDiv"> 
+            <!--***********************************-->
+            <div id="UpperRainbowActiveDiv" class="Tutorial_activeSection"></div>
+            <!--***********************************-->
+            <canvas class="UpperCanvasRainbow" id="UpperCanvasRainbow" style="position: absolute;top: 10px;left: 40px; z-index: 1; display: block;"  width="610" height="60"></canvas>
+            <!--***********************************-->
+            <canvas id="U_D_CRH" class="TopDrawCanvasRainbowHue" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: block;"  width="610" height="60"></canvas>
+            <!--***********************************-->
+            <canvas id="U_R_I" class="UpperRainbowrIndicator" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: block;"  width="610" height="20"></canvas>
+            <!--***********************************--> 
+            <!--***********************************-->
+            <canvas id="UpperIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 7;" onmousemove="updateLine(event,UIC_ctx)"></canvas>
+            <!--***********************************-->
+            <div id="UpperGraphActiveDiv" class="Tutorial_activeSection"></div>            
+            <!--***********************************-->
+            <canvas id="UpperCanvasGraph" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;"> </canvas>
+            <!--***********************************-->            
+            <canvas id="UpperCanvasXAxis" width="630" height="30"  style="position: absolute;top: 210px;left: 20px; z-index: 5;"> </canvas>
+            <!--***********************************-->
+            <canvas id="UpperCanvasYAxis" width="30" height="150"  style="position: absolute;top: 70px;left: 10px; z-index: 5;"> </canvas>
+            <!--***********************************-->
+            <p class="text-center" id="More_Light_Upper_Div"> More Light&nbsp;&nbsp;<i class="fas fa-arrow-right"></i> </p>
+            <p class="text-center" id="Wavelength_Upper_Div"> Wavelength (Microns) </p>
+            <!--***********************************--> 
+          </div>
+          <!--End of UpperCanvasDiv--> 
+          <!--****************************************-->
+          <!--****************************************-->
+          <div id="Tutorial_PopUp" class="Tutorial_PopUp">
+            <p id="Tutorial_arrow_up" class="Tutorial_arrow_up"> <i id="t_arrow_up" class="fas fa-play"></i></p>
+            <div id="boxpopup1" class="Spectrum_box"> <a onclick="closeInstructions('boxpopup1')" class="boxclose"></a>
+              <div id="content" class=" text-center">
+                <p id="Tutorial_text_p"  class="mb-0">This bar represents the <strong>spectrum image</strong>—what you see through a spectroscope when a light source is split by a diffraction grating into its component wavelengths (or colors, or energies).</p>
+                <div id="Tutorial_btns">
+                  <div id="Tutorial_backbtn" class="btn btn-primary2 my-4 text-center  mr-4" onclick="PrevSlide('tool','pick')">Back</div>
+                  <div id="Tutorial_nextbtn" class="btn btn-primary2 my-4 text-center" onclick="NextSlide('graph','pick')">Next</div>
+                </div>
+              </div>
+              <!--content--> 
+            </div>
+            <p id="Tutorial_arrow_dn" class="Tutorial_arrow_dn"> <i id="t_arrow_dn" class="fas fa-play"></i></p>
+          </div>
+          <!--****************************************-->
+          <!--****************************************--> 
+        </div>
+      </div>
+      <div class="row mb-3" style="margin-bottom: 0.2rem!important;">
+        <div id="Control_row_plot_units_type" class="col-md-2 themed-grid-col2_0"> plot type
+          <select class="custom-select mr-sm-2" id="SelectPreference" onChange="initSpectrum() ">
+            <option id="Line_Chart" value="Line">Line chart</option>
+            <option id="Scatter_Plot" value="Scatter">Scatter plot</option>
+          </select>
+        </div>
+        <div id="Control_row_measurement_units" class="col-md-3 themed-grid-col2_0"> measurement unit
+          <select class="custom-select mr-sm-2" id="SelectWavelength" onChange="initSpectrum()">
+              <option id="WL_Microns" value="Microns">Wavelength: Microns</option>
+              <option id="WL_Nanometers" value="Nanometers">Wavelength: Nanometers</option>
+              <option id="WL_Angstrom" value="Angstrom">Wavelength: Angstroms</option>
+              <option id="WL_ElectronVolt" value="Electronvolt">Energy: Electron volts</option>
+          </select>
+        </div>
+        <div class="col-md-7 themed-grid-col2_0"> 
+          <!--***********************************-->
+          <div class="slidecontainer" style="display: none; visibility: hidden;">
+            <input type="range" min="1" max="100" value="50" class="slider" id="XAxis_Range">
+          </div>
+          <!--***********************************--> 
+        </div>
+          
+          <!--****************************************-->
+          <div id="Tutorial_PopUp_Controls" class="Tutorial_PopUp_Controls">
+            <p id="Tutorial_arrow_up_Controls" class="Tutorial_arrow_up_Controls">
+                <i id="t_arrow_up" class="fas fa-play"></i>
+            </p>
+            <div id="boxpopup_Controls" class="Spectrum_box"> <a onclick="closeInstructions('boxpopup_Controls')" class="boxclose"></a>
+              <div id="content" class=" text-center">
+                <p id="Tutorial_text_p_Controls"  class="mb-0">This <strong>measuring tool dropdown menu</strong> lets you choose the units (in wavelength or energy) that are reported by the measuring tool.</p>
+                <div id="Tutorial_btns">
+                  <div id="Tutorial_backbtn_Controls" class="btn btn-primary2 my-4 text-center  mr-4" onclick="PrevSlide('Indicator','pick')">Back</div>
+                  <div id="Tutorial_nextbtn_Controls" class="btn btn-primary2 my-4 text-center" onclick="NextSlide('dropdown2','pick')">Next</div>
+                </div>
+              </div>
+              <!--content--> 
+            </div>
+            <p id="Tutorial_arrow_dn_Controls" class="Tutorial_arrow_dn_Controls"> 
+                <i id="t_arrow_dn" class="fas fa-play"></i>
+            </p>
+          </div>
+          <!--****************************************-->
+      </div>
+      <div class="row" id="LowerGraphRow">
+       <!-- <div class="col-md-4 themed-grid-col3_0" id="LowerToolright"> -->
+          <div class="col-md-12 themed-grid-col3_0"> 
+          <!--***********************************-->
+          <!--***********************************-->
+            <div style=" width: 230px;" id="LowerComparison_Object">
+              <h4>Comparison Object</h4>
+              <img class="Harry_sun_spectrum w-75"  width="180" height="160" id="LowerImg" src="includes/AI_common/images/Harry_sun_spectrum.jpg" alt="calendar icon"> 
+              
+              <!--***********************************-->
+              <div id="Category_box2" data-toggle="collapse" style="position: absolute; overflow: hidden; visibility: hidden; display: none;"> <i class="fab fa-medapps" id="Cat2_Lamps"  data-toggle="tooltip" data-placement="bottom" title="Lamps" onclick="SeacrhFor('Lamps','Category2')"></i> </div>
+              <!--***********************************-->
+              <div id="Category_box4"  style="position: absolute; overflow: hidden;"> <i class="fas fa-search" id="Cat4_search" data-toggle="tooltip" data-placement="bottom" title="search"></i> </div>
+              <!--***********************************--> 
+              <!--***********************************-->
+              <div id="four" style="position:absolute;top: 220px;top: 220px;left: 0px;z-index: 3; width: 30%;">
+                <select name="Targets2" id="Targets2Filters" class="custom-select" onchange="SelectTarget(this.value,'Targets2')" style=" width: 60%;">
+                  <option value="">Select Sub Category</option>
+                </select>
+              </div>
+            </div>
+          <!--***********************************-->
+              
+              <div style=" width: 230px;"  id="LowerDraw_Object">
+          
+          <h4>Draw a Spectrum</h4>
+          <p style="font-size: 100px; margin-top: 20px;"><i class="fas fa-pencil-alt drawIcon"></i></p>
+          <p class="text-center"> <a id="upper_resetbtn" class="btn btn-primary rounded" style="width: 100px;" href="javascript:SeacrhFor('Draw','CategoryDraw');">RESET</a> </p>
+              
+              </div>
+          <!--***********************************--> 
+        <!--</div>
+        <div class="col-md-8 themed-grid-col3_1" id="LowerToolleft">--> 
+          <!--***********************************-->
+          <h5 class="Comparison_Name" id="Comparison_Name"></h5>
+          <!--***********************************-->
+          <div class="LowerCanvasDiv"> 
+            <!--***********************************-->
+            <canvas class="LowerCanvasRainbow" id="LowerCanvasRainbow" style="position: absolute;top: 10px;left: 40px; z-index: 1; display: block;"  width="610" height="60"></canvas>
+            <!--***********************************-->
+            <canvas id="L_D_CRH" class="LowerCanvasRainbowHue" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: block;"  width="610" height="60"></canvas>
+            <!--***********************************-->
+            <canvas id="L_R_I" class="LowerRainbowrIndicator" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: none;"  width="610" height="20"></canvas>
+            <!--***********************************--> 
+            <!--***********************************-->
+            <canvas id="LowerIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 6;" onmousemove="updateLine(event,LIC_ctx)"></canvas>
+            <!--***********************************--> 
+            <!--***********************************-->
+            <canvas id="LowerCanvasGraph" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;"> </canvas>
+              
+            <!--***********************************-->
+            <canvas id="myDrawCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;" onmousedown="dragStart(event)" onmouseup="dragStop(event)" onmousemove="drawCurve(event)" onmouseout="leavingCanvas(event)"> </canvas>
+            <!--***********************************-->
+            <!--***********************************-->
+            <canvas id="LowerCanvasXAxis" width="610" height="30"  style="position: absolute;top: 210px;left: 20px; z-index: 5;"> </canvas>
+            <!--***********************************-->
+            <canvas id="LowerCanvasYAxis" width="30" height="150"  style="position: absolute;top: 70px;left: 10px; z-index: 5;"> </canvas>
+            <!--***********************************--> 
+            <!--***********************************--> 
+            <!--***********************************-->
+            <p class="text-center" id="More_Light_Lower_Div"> More Light&nbsp;&nbsp;<i class="fas fa-arrow-right"></i> </p>
+            <p class="text-center" id="Wavelength_Lower_Div"> Wavelength (Microns) </p>
+            <!--***********************************--> 
+          </div>
+          <!--End of LowerCanvasDiv--> 
+          <!--***********************************--> 
+          <!--***********************************--> 
+        </div>
+      </div>
+      </div>
+    
+      <!--****************************************--> 
+      <!--*****     The Tools Code Ends Here  ****-->
+      <!--****************************************--> 
+      <img src="includes/AI_common/images/Blue_and_Red_Stars.png" id="Challenge1_Image_session1" alt="Blue and Red Stars">
+    </div>
+    <!--*****************col-md-8 themed-grid-col******************--> 
+  </div>
+  <!--****************************************--> 
+  <!--******************row mb-3*****************--> 
+  <!--****************************************--> 
+  <div class="row mb-3" style="margin-bottom: 0.2rem!important; display: none;"> 
+    <!--******************************************-->
+    <div class="col-md-3 themed-grid-col2_0"> Spectrum Type 
+      <!--***********************************-->
+      <select class="custom-select mr-sm-2" id="SelectSpectrumType" onChange="initSpectrum() ">
+        <option id="continuous_line_spectrum" value="Continuous">Continuous Line Spectrum</option>
+        <option id="continuous_spectrum" value="Continuous">Continuous Spectrum</option>
+        <option id="line_spectrum" value="Line">Line Spectrum</option>
+      </select>
+      <!--***********************************--> 
+    </div>
+    
+    <!--***********************************-->
+    <div class="col-md-2 themed-grid-col2_0"> Alpha_Range_Val
+      <input type="range" min="1" max="100" value="97" class="slider" id="Alpha_Range">
+      <p>Alpha Slider: <span id="Alpha_Range_Val"></span> </p>
+    </div>
+    <!--***********************************--> 
+    <!--******************************************-->
+    <div class="col-md-2 themed-grid-col2_0"> 
+      <!--***********************************-->
+      <div class="YAxis_Slidecontainer">
+        <input type="range" min="1" max="100" value="1" class="YAxis_slider" id="YAxis_Range">
+      </div>
+      <div class="YAxis_Slide_Value"> <span id="Y_Axis_Slider"></span> </div>
+      <!--***********************************--> 
+    </div>
+    <!--******************************************--> 
+    
+  </div>
+  <!--***********************************--> 
+  <!--***********************************--> 
+  <!--***********************************-->
+  <div style="display: none;"> 
+    <!--***********************************-->
+    <div style="display: none;"> <img id="rainbow" alt="" src="includes/AI_common/images/Visible_Spectrum_1.png"> <img id="rainbow2" alt="" src="includes/AI_common/images/Visible_Spectrum_1.png"> <img id="Triangle" alt="" src="includes/AI_common/images/play-button_2.png"> </div>
+    <!--***********************************-->
+    <p> <span id="demo3"></span> </p>
+    <p> <span id="demo"></span> </p>
+    <!--***********************************-->
+    <div id="alphax"></div>
+    <br>
+    <div id="deltaX"></div>
+    <p>drawIndicatorMousePos: <span id="drawIndicatorMousePos"></span> </p>
+    <!--***********************************--> 
+    <!--***********************************--> 
+    <!--***********************************-->
+    <hr>
+    <!--***********************************-->
+    <hr>
+    <div id="MouseLocation"></div>
+    <br>
+    <p>X-Axis Slider: <span id="X_Axis_Slider_Val"></span> </p>
+    <p>Y-Axis Slider: <span id="Y_Axis_Slider_Val"></span> </p>
+    <!--***********************************--> 
+  </div>
+  
+  <!--***********************************-->
+  <div class="row mb-3" style="display: none;">
+    <div class="col-md-4 themed-grid-col2_0">.col-md-4 </div>
+    <!--*****************col-md-4 themed-grid-col******************-->
+    <div class="col-md-8 themed-grid-col"> 
+      
+      <!--***********************************-->
+      
+      <div class="row">
+        <div class="col-md-4 themed-grid-col">.col-md-4</div>
+        <div class="col-md-8 themed-grid-col">.col-md-8</div>
+      </div>
+      <div class="pb-3"> .col-md-8 </div>
+      <div class="row">
+        <div class="col-md-4 themed-grid-col">.col-md-4</div>
+        <div class="col-md-8 themed-grid-col">.col-md-8</div>
+      </div>
+      <!--******************row mb-3*****************--> 
+      
+    </div>
+    <!--*****************col-md-8 themed-grid-col******************--> 
+  </div>
+  <!--******************row mb-3*****************--> 
+  <!--***********************************-->
+  <div class="row mb-3" style="display: none;">
+    <div class="col-md-4 themed-grid-col2_0">.col-md-4</div>
+    <div class="col-md-8 themed-grid-col"> 
+      <!--***********************************-->
+      <div class="row mb-3" style="margin-bottom: 0.2rem!important;">
+        <div class="col-md-4 themed-grid-col1_0"> col-md-4 </div>
+        <div class="col-md-8 themed-grid-col1_1"> col-md-8 </div>
+      </div>
+      <!--***********************************--> 
+    </div>
+    <!--***********************************--> 
+  </div>
+  <!--***********************************--> 
+</div>
+<!--***********************************-->
+<!--************* Row  ****************--> 
+<!--***********************************-->
+<hr>
+<!--***********************************-->
+<footer class="container py-5"> 
+  <!--***********************************--> 
+  <img src="includes/AI_common/images/CfA_Logo_Vertical_CMYK_W400.png" alt="NASA logo" class="logo1"> 
+  <!--***********************************--> 
+  <!--  <hr>-->
+  <div class="row">
+    <div class="col-12 col-md"> <small class="d-block mb-3 text-muted">© 2020<br>
+      CENTER FOR ASTROPHYSICS  |  HARVARD &amp; SMITHSONIAN<br>
+      60 GARDEN STREET, CAMBRIDGE, MA 02138 </small> </div>
+  </div>
+</footer>
+<!--****************************************--> 
+<script src="includes/AI_common/js/AI_graphing_fishtank_21.js"></script> 
+<script src="includes/AI_common/js/AI_tutorial_fishtank_21.js"></script> 
+<!--****************************************--> 
+<script>
+/*************************************/
+/*************************************/
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+/*************************************/ 
+/*************************************/    
+$(document).ready(function(){    
+    $("#challenge_btn").css('visibility','visible');
+    /*$('#LowerGraphRow').css('visibility','hidden');
+    $('#All_Tools_And_Controls').css('visibility','hidden');
+    $('#All_Tools_And_Controls').css('display','none');*/
+    /*************************************/    
+});
+/*************************************/
+</script>
+</body>
+</html>
