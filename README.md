@@ -3,9 +3,11 @@ CfA Spectrum Lab at https://waps.cfa.harvard.edu/microobservatory/spectrum/
 
 ## Deploying locally
 
-1. Clone the repo somewhere besides your webroot
-2. Add a symlink to `spectrum/src` at your webroot under `microobservatory/spectrum`
-3. Navigate to http://localhost:8080/microobservatory/spectrum/ or wherever your local web server is
+```sh
+python3 -m http.server --directory web --bind 127.0.0.1 4000
+```
+
+You will find the site at http://localhost:4000/ .
 
 ## Deploying to WAPS
 
