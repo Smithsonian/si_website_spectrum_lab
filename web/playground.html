@@ -177,7 +177,7 @@
                   <div class="row">
                     <div class="col-12">
                       <!--***********************************-->
-                      <select name="Targets0" id="Targets0Filters"  class="disabled custom-select" onchange="SeacrhFor(this.value,'Category1')" style=" width: 70%;">
+                      <select name="Targets0" id="Targets0Filters"  class="disabled custom-select" onchange="S.SeacrhFor(this.value,'Category1')" style=" width: 70%;">
                         <option value="">Select Category</option>
                         <option value="Lamps">Lamps</option>
                         <option value="Stars">Stars</option>
@@ -195,7 +195,7 @@
                     </div>
                     <div class="col-12">
                       <!--***********************************-->
-                      <select name="Targets1" id="Targets1Filters"  class="disabled custom-select" onchange="SelectTarget(this.value,'Targets1')" style=" width: 70%;">
+                      <select name="Targets1" id="Targets1Filters"  class="disabled custom-select" onchange="S.SelectTarget(this.value,'Targets1')" style=" width: 70%;">
                         <option value="">Select Sub Category</option>
                       </select>
                     </div>
@@ -219,7 +219,7 @@
               <canvas id="U_R_I" class="UpperRainbowrIndicator" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: block;"  width="610" height="20"></canvas>
               <!--***********************************-->
               <!--***********************************-->
-              <canvas id="UpperIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 7;" onmousemove="updateLine(event,UIC_ctx)"></canvas>
+              <canvas id="UpperIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 7;" onmousemove="S.updateLine(event,S.UIC_ctx)"></canvas>
               <!--***********************************-->
               <div id="UpperGraphActiveDiv" class="Tutorial_activeSection"></div>
 
@@ -228,7 +228,7 @@
               <!--***********************************-->
 
               <!--***********************************-->
-              <canvas id="myDrawCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;" onmousedown="dragStart(event)" onmouseup="dragStop(event)" onmousemove="drawCurve(event)" onmouseout="leavingCanvas(event)"> </canvas>
+              <canvas id="myDrawCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;" onmousedown="S.dragStart(event)" onmouseup="S.dragStop(event)" onmousemove="S.drawCurve(event)" onmouseout="S.leavingCanvas(event)"> </canvas>
               <!--***********************************-->
               <canvas id="UpperCanvasXAxis" width="630" height="30"  style="position: absolute;top: 210px;left: 20px; z-index: 5;"> </canvas>
               <!--***********************************-->
@@ -252,13 +252,13 @@
         <!--****************************************-->
         <div class="row mb-3" style="margin-bottom: 0.2rem!important; max-width: 1300px;">
           <div id="Control_row_plot_units_type" class="col-md-2 themed-grid-col2_0"> plot type
-            <select class="custom-select mr-sm-2" id="SelectPreference" onChange="initSpectrum() ">
+            <select class="custom-select mr-sm-2" id="SelectPreference" onChange="S.initSpectrum() ">
               <option id="Line_Chart" value="Line">Line chart</option>
               <option id="Scatter_Plot" value="Scatter">Scatter plot</option>
             </select>
           </div>
           <div id="Control_row_measurement_units" class="col-md-2 themed-grid-col2_0"> measurement unit
-            <select class="custom-select mr-sm-2" id="SelectWavelength" onChange="initSpectrum()">
+            <select class="custom-select mr-sm-2" id="SelectWavelength" onChange="S.initSpectrum()">
               <option id="WL_Microns" value="Microns">Microns</option>
               <option id="WL_Nanometers" value="Nanometers">Nanometers</option>
               <option id="WL_Angstrom" value="Angstrom">Angstrom</option>
@@ -299,7 +299,7 @@
                 <div class="col-11">
                   <div class="row">
                     <div class="col-12">
-                      <select name="Targets3" id="Targets3Filters"  class="disabled custom-select" onchange="SeacrhFor(this.value,'Category2')" style=" width: 70%;">
+                      <select name="Targets3" id="Targets3Filters"  class="disabled custom-select" onchange="S.SeacrhFor(this.value,'Category2')" style=" width: 70%;">
                         <option value="">Select Category</option>
                         <option value="Lamps">Lamps</option>
                         <option value="Stars">Stars</option>
@@ -315,7 +315,7 @@
                       </select>
                     </div>
                     <div class="col-12">
-                      <select name="Targets2" id="Targets2Filters" class="custom-select" onchange="SelectTarget(this.value,'Targets2')" style=" width: 70%;">
+                      <select name="Targets2" id="Targets2Filters" class="custom-select" onchange="S.SelectTarget(this.value,'Targets2')" style=" width: 70%;">
                         <option value="">Select Sub Category</option>
                       </select>
                     </div>
@@ -338,7 +338,7 @@
               <canvas id="L_R_I" class="LowerRainbowrIndicator" style="position: absolute;top: 10px;left: 40px; z-index: 4; display: block;"  width="610" height="20"></canvas>
               <!--***********************************-->
               <!--***********************************-->
-              <canvas id="LowerIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 6;" onmousemove="updateLine(event,LIC_ctx)"></canvas>
+              <canvas id="LowerIndicatorCanvas" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 6;" onmousemove="S.updateLine(event,S.LIC_ctx)"></canvas>
               <!--***********************************-->
               <!--***********************************-->
               <canvas id="LowerCanvasGraph" width="610" height="150"  style="position: absolute;top: 70px;left: 40px; z-index: 5;"> </canvas>
@@ -406,7 +406,7 @@
     <!--******************************************-->
     <div class="col-md-3 themed-grid-col2_0"> Spectrum Type
       <!--***********************************-->
-      <select class="custom-select mr-sm-2" id="SelectSpectrumType" onChange="initSpectrum() ">
+      <select class="custom-select mr-sm-2" id="SelectSpectrumType" onChange="S.initSpectrum() ">
         <option id="continuous_line_spectrum" value="Continuous">Continuous Line Spectrum</option>
         <option id="continuous_spectrum" value="Continuous">Continuous Spectrum</option>
         <option id="line_spectrum" value="Line">Line Spectrum</option>
@@ -497,10 +497,13 @@
   </div>
 </footer>
 <!--****************************************-->
-<script src="includes/AI_common/js/AI_graphing_playground_v1.js"></script>
-<!--****************************************-->
 <script>
-  </script>
+  var S;
+  import("./includes/AI_common/js/AI_graphing_playground_v1.js").then(module => {
+    S = module;
+  })
+</script>
+<!--****************************************-->
 <script>
 /*************************************/
 /*************************************/

@@ -1,10 +1,8 @@
 // Copyright 2024 Smithsonian Astrophysical Observatory
 
 /////////////////////////////////////////////////////////////////////
-var utils;
-import('./utils.js').then((module) => {
-    utils = module;
-});
+import * as utils from './utils.js';
+
 /////////////////////////////////////////////////////////////////////
 var Targets_folder = '';
 var Targets1_folder = '';
@@ -36,6 +34,9 @@ var D_GraphPoints = [],
     D_loadedDY2 = [],
     pointsx = [],
     pointsy = [],
+    points1y = [],
+    loadedDX = [],
+    loadedDY = [],
     loaded_Full_X = [],
     loaded_Full_Y = [],
     G_points_Full_X = [],
@@ -486,12 +487,12 @@ var Drawing_ctx = DrawCanvas.getContext('2d');
 //          Indicator Canvases
 /////////////////////////////////////////////////////////////////////
 var UIC = document.getElementById('UpperIndicatorCanvas');
-UIC_ctx = UIC.getContext('2d');
-line1 = new Line1(UIC_ctx);
+const UIC_ctx = UIC.getContext('2d');
+var line1 = new Line1(UIC_ctx);
 
 var LIC = document.getElementById('LowerIndicatorCanvas');
-LIC_ctx = LIC.getContext('2d');
-line2 = new Line2(LIC_ctx);
+const LIC_ctx = LIC.getContext('2d');
+var line2 = new Line2(LIC_ctx);
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 var pxlsPerWv = UX_Axis.width / 750;
@@ -500,6 +501,7 @@ var eps = 0.5 * deltaT; // The middle of a bin
 var binSize = deltaT;
 var pxl_stretch;
 var newXStretch;
+var i; // Yes, this is used to communicate between functions. We'll need to fix this.
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 // DRAW INITIAL LINE FOR 'DRAW YOUR OWN CURVE' AND SHADE THE RAINBOW
@@ -578,6 +580,10 @@ function initialLineHdf(CanvasObj) {
     }
     ////////////////////////////////
 }
+
+var loaded1X, loaded1Y;
+var loaded2X, loaded2Y;
+
 /////////////////////////////////////////////////////////////////////
 function initSpectrum() {
     (pointsx = []),
@@ -604,6 +610,8 @@ function Category_Choice() {
     });
 }
 //***********************************************//
+var Targets1_folder, Targets_Titles1, Targets_descriptions1;
+var Targets2_folder, Targets_Titles2, Targets_descriptions2;
 /////////////////////////////////////////////////////////////////////
 function SeacrhFor(val, obj) {
     initialLineHdf(obj);
@@ -863,13 +871,6 @@ function SeacrhFor(val, obj) {
 //////////////       BEGINNING OF SELECTION SECTION     /////////////
 /////////////////////////////////////////////////////////////////////
 function SelectTarget(targetName, ListNum) {
-    (loadedDataArray = []),
-        (pointsx = []),
-        (pointsy = []),
-        (loaded_Full_Y = []),
-        (G_points_Full_X = []),
-        (G_points_Full_Y = []);
-
     var TT = Targets_Titles.indexOf(targetName);
     var Targets_Full_descriptions = Targets_descriptions[TT];
     // MAKE SURE THE TARGET IS REVEALED, SO WIPE AGAIN
@@ -1196,6 +1197,8 @@ function ResetCanvas() {
 ///////////////////////////////////////////////////
 function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
     var whichPlot = '';
+    var upperx, uppery;
+    var xNextPosition, yNextPosition;
     if (W_CTX == UCGctx && typeof loaded1X !== 'undefined') {
         W_CAN = UCG;
         var From_Top = 0;
@@ -1331,29 +1334,29 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
                 // add dots in between to create continuous spectrum
                 /////////////////////////////////////////////////////////////
                 //loaded_Full_X=[], loaded_Full_Y=[];
-                G_FirstPt = parseFloat(xPosition);
-                G_NextPt = parseFloat(xNextPosition);
-                G_NumPtBtw = G_NextPt - G_FirstPt;
+                const G_FirstPt = parseFloat(xPosition);
+                const G_NextPt = parseFloat(xNextPosition);
+                const G_NumPtBtw = G_NextPt - G_FirstPt;
                 if (G_NumPtBtw > 0.001) {
                     ////////////////////////////////////////
-                    G_LinePtsX =
+                    const G_LinePtsX =
                         parseFloat(upperx[i + 1]) - parseFloat(upperx[i]);
-                    G_LinePtDX = G_LinePtsX / G_NumPtBtw;
-                    G_LinePtsY =
+                    const G_LinePtDX = G_LinePtsX / G_NumPtBtw;
+                    const G_LinePtsY =
                         parseFloat(uppery[i + 1]) - parseFloat(uppery[i]);
-                    G_LinePtDY = G_LinePtsY / G_NumPtBtw;
+                    const G_LinePtDY = G_LinePtsY / G_NumPtBtw;
                     ////////////////////////////////////////
-                    G_LinePtsX1 =
+                    const G_LinePtsX1 =
                         parseFloat(xNextPosition) - parseFloat(xPosition);
-                    G_LinePtDX1 = G_LinePtsX1 / G_NumPtBtw;
-                    G_LinePtsY1 =
+                    const G_LinePtDX1 = G_LinePtsX1 / G_NumPtBtw;
+                    const G_LinePtsY1 =
                         parseFloat(yNextPosition) - parseFloat(yPosition);
-                    G_LinePtDY1 = G_LinePtsY1 / G_NumPtBtw;
+                    const G_LinePtDY1 = G_LinePtsY1 / G_NumPtBtw;
                     ////////////////////////////////////////
-                    G_PtOnX = parseFloat(upperx[i]);
-                    G_PtOnY = parseFloat(parseFloat(uppery[i]));
-                    G_PtOnX1 = parseFloat(xPosition);
-                    G_PtOnY1 = parseFloat(yPosition);
+                    let G_PtOnX = parseFloat(upperx[i]);
+                    let G_PtOnY = parseFloat(parseFloat(uppery[i]));
+                    let G_PtOnX1 = parseFloat(xPosition);
+                    let G_PtOnY1 = parseFloat(yPosition);
                     ////////////////////////////////////////
                     for (var npb = 0; npb < G_NumPtBtw; npb++) {
                         loaded_Full_X.push(G_PtOnX);
@@ -1552,8 +1555,10 @@ function drawPoints() {
     clearCanvas(Drawing_ctx, DrawCanvas, UCRctx, UCR_Huectx);
     document.getElementById('UpperIndicatorCanvas').style.zIndex = '-1';
     // DRAW THE LINES THAT CONNECT THE CIRCULAR DATA POINTS
-    (loadedDX = []), (loadedDY = []);
-    (D_pointsDx = []), (points1y = []);
+    loadedDX = [];
+    loadedDY = [];
+    D_pointsDx = [];
+    points1y = [];
     ///////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////
     //Shade all of Rainbow Canvas
@@ -1569,13 +1574,13 @@ function drawPoints() {
         Drawing_ctx.fill();
         /////////////////////////////////////////
         if (!isNaN(D_pointsx[i])) {
-            X_Cal = parseInt(D_pointsx[i]) / 810 + 0.2;
+            const X_Cal = parseInt(D_pointsx[i]) / 810 + 0.2;
             loadedDX.push(X_Cal);
             D_pointsDx.push(D_pointsx[i]);
         }
         /////////////////////////////////////////
         if (!isNaN(D_pointsy[i])) {
-            Y_Cal = 1 - D_pointsy[i] / 150;
+            const Y_Cal = 1 - D_pointsy[i] / 150;
             loadedDY.push(Y_Cal);
             D_pointsDy.push(D_pointsy[i]);
         }
@@ -1585,7 +1590,8 @@ function drawPoints() {
     //This loop to assign values to lines
     // in between points.
     (D_loadedDX2 = []), (D_loadedDY2 = []);
-    (D_pointsDx2 = []), (D_pointsDy2 = []);
+    const D_pointsDx2 = [];
+    const D_pointsDy2 = [];
     for (var b = 0; b < D_pointsDx.length; b++) {
         D_FirstPt = D_pointsDx[b];
         D_NextPt = D_pointsDx[b + 1];
@@ -1667,7 +1673,7 @@ function drawConnectingLines() {
         var SpaceBtw = 1;
         if (typeof D_pointsy[i + nextOne] === 'undefined') {
             // does not exist
-            for (FindNext = i + nextOne; FindNext < numOfBins; FindNext++) {
+            for (let FindNext = i + nextOne; FindNext < numOfBins; FindNext++) {
                 if (typeof D_pointsy[FindNext] === 'undefined') {
                     SpaceBtw = SpaceBtw + 1;
                 } else {
@@ -1768,7 +1774,7 @@ function drawCurve(event) {
     if (flag == 'doDraw') {
         // FIND NEAREST INDEX POINT
         nearestPointIndex(x);
-        index = i;
+        const index = i;
         // PUT THE Y VALUE INTO POINTSY AT THE INDEX POINT
         D_pointsx[index] = x;
         D_pointsy[index] = y;
@@ -2006,7 +2012,7 @@ function updateLine(e, WIC_ctx) {
     WIC_ctx.moveTo(posx, 400);
     WIC_ctx.lineTo(posx, 560);
     WIC_ctx.stroke();
-    indicatorx = posx; // keep track of the position of the indicator line, so readout changes when XAxis_slider moves.
+    const indicatorx = posx; // keep track of the position of the indicator line, so readout changes when XAxis_slider moves.
     document.getElementById('drawIndicatorMousePos').innerHTML = indicatorx;
     // now put up the wavelength readouts
     WIC_ctx.font = '14px Myriad Pro';
@@ -2073,7 +2079,7 @@ function updateLine(e, WIC_ctx) {
 }
 //////////////////////////////////////////////////|| wavelength: "+wavelength+"
 //////////////////////////////////////////////////
-Alpha_Stretch = Alpha_Range.value / 10;
+var Alpha_Stretch = Alpha_Range.value / 10;
 
 //////////////////////////////////////////////////
 Alpha_Range.oninput = function () {
@@ -2138,8 +2144,8 @@ function readTFile(file) {
         loaded1X = x;
         loaded1Y = utils.rangeNormalize(y);
         //Target_Name
-        Target_Name = file.name;
-        Target_Name_c = Target_Name.split('.');
+        const Target_Name = file.name;
+        const Target_Name_c = Target_Name.split('.');
         document.getElementById('Target_Name').innerHTML = Target_Name_c[0];
         if (typeof loaded1X !== 'undefined') {
             $('#UpperCanvasGraph').show();
@@ -2178,8 +2184,8 @@ function readCFile(file) {
         loaded2X = x;
         loaded2Y = utils.rangeNormalize(y);
         //Comparison_Name
-        Comparison_Name = file.name;
-        Comparison_Name_c = Comparison_Name.split('.');
+        const Comparison_Name = file.name;
+        const Comparison_Name_c = Comparison_Name.split('.');
         document.getElementById('Comparison_Name').innerHTML =
             Comparison_Name_c[0];
         if (typeof loaded2X !== 'undefined') {
@@ -2298,6 +2304,16 @@ function returnFileSize(number) {
 //////////////////////////////////////////////////
 initialLineHdf('Both');
 //////////////////////////////////////////////////
-//////////////////////////////////////////////////
-// END OF Script by Aladdin
-//////////////////////////////////////////////////
+
+export {
+    initSpectrum,
+    SeacrhFor,
+    SelectTarget,
+    updateLine,
+    dragStart,
+    dragStop,
+    drawCurve,
+    leavingCanvas,
+    UIC_ctx,
+    LIC_ctx,
+};
