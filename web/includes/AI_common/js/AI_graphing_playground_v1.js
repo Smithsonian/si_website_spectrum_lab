@@ -97,19 +97,21 @@ var Museum_PigmentsArr0 = [
     "Pigments_for_TWT_2024-09-17_Red_Lead",
     "Pigments_for_TWT_2024-09-17_Shell_White",
     "Pigments_for_TWT_2024-09-17_Vermilion",
+    "Spectral-Analysis-of-Genuine-Indian-Yellow-single-spectrum_Genuine_Indian_Yellow"
 ];
 var Museum_PigmentsArr1 = [
     "Azurite",
-    "Cobalt_Yellow",
+    "Cobalt Yellow",
     "Cochineal",
-    "Egyptian_Blue",
+    "Egyptian Blue",
     "Indigo",
-    "Lead_White",
+    "Lead White",
     "Orpiment",
-    "Prussian_Blue",
-    "Red_Lead",
-    "Shell_White",
+    "Prussian Blue",
+    "Red Lead",
+    "Shell White",
     "Vermilion",
+    "Genuine Indian Yellow"
 ];
 /////////////////////////////////////////////////////////////////////
 var AtomsArr0 = ["Hydrogen_Emission", "Helium_Emission", "Neon_Emission", "Sodium_Absorption", "Sodium_Low_Pressure_Emission", "Potassium_Absorption", "Calcium_Emission", "Iron_Emission",  "Mercury_Emission", "Ammonia_Absorption", "Carbon_Dioxide_Absorption_Near_to_Mid_IR", "Carbon_Dioxide_Absorption_Mid_to_Far_IR", "Dry_Ice_Reflection", "Ice_Reflection", "Iron_Oxide_Rust_Reflection", "Methane_Visible_Absorption", "Methane_Near_IR_Absorption", "Oxygen_Molecules_Absorption", "Ozone_Absorption_in_UV", "Ozone_Absorption_in_IR", "Water_Vapor_Absorption"];
