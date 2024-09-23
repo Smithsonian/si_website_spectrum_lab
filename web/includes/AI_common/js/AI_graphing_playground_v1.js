@@ -1,19 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////////////////////
-/*
- * 	Copyright (c) 2020, 2021 All Right Reserved, aibrahim@cfa.harvard.edu
- *	All other rights reserved.
- */
-//////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * Spectrum Lab
- * Version       24_6
- * Author     	 Alaalden Ibrahim <aibrahim AT cfa.harvard.edu>
- * Date          July 20 2020
- * DOCUMENTATION THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED
- * =============
- * --------------------------------------------------------------------------
- * --------------------------------------------------------------------------
- */
+// Copyright 2024 Smithsonian Astrophysical Observatory
 
 /////////////////////////////////////////////////////////////////////
 var utils;
