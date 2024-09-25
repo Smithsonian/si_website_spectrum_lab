@@ -1974,11 +1974,6 @@ readTFileBtn.addEventListener("click", function () {
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
-/*var input_Tfile = document.getElementById('input-Tfile');
-    input_Tfile.addEventListener('click', function () {
-    var inputTFile = document.getElementById('input-Tfile');
-    //readTFile(inputTFile.files[0]);
-    });		*/
 //////////////////////////////////////////////////
 //***********************************************//
 function readTFile(file) {
@@ -2013,12 +2008,6 @@ readCFileBtn.addEventListener("click", function () {
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
-/*var input_Cfile = document.getElementById('input-Cfile');
-    input_Cfile.addEventListener('click', function () {
-    var inputCFile = document.getElementById('input-Cfile');
-        console.log('Uploadig comp file (%s)',inputCFile.files[0]);
-    //readCFile(inputCFile.files[0]);
-    });				*/
 //////////////////////////////////////////////////
 //***********************************************//
 function readCFile(file) {
@@ -2132,21 +2121,6 @@ function returnFileSize(number) {
     return (number / 1048576).toFixed(1) + "MB";
   }
 }
-//***********************************************//
-//***********************************************//
-/*function readFile(file) {
-  var reader = new FileReader();
-  reader.onload = function (evt) {
-    var textContents = evt.target.result;
-    loadedDataArray = textContents.split("&");
-    loaded1X = loadedDataArray[0].split(",");
-    loaded1Y = loadedDataArray[1].split(",");
-     plotGraph(UCGctx,UCG,UCR_Huectx,UIC_ctx);
-  };
-  reader.readAsText(file);
-}*/
-//***********************************************//
-//***********************************************//
 //////////////////////////////////////////////////
 initialLineHdf("Both");
 //////////////////////////////////////////////////
