@@ -4,11 +4,8 @@
 import * as utils from "./utils.js";
 
 /////////////////////////////////////////////////////////////////////
-var Targets_folder = "";
 var Targets1_folder = "";
 var Targets2_folder = "";
-/////////////////////////////////////////////////////////////////////
-var x, y, rightmostDragX, leftmostDragY, startingX;
 /////////////////////////////////////////////////////////////////////
 var yAxisOffset = 0;
 var numOfBins = 100;
@@ -34,7 +31,6 @@ var D_GraphPoints = [],
   D_loadedDY2 = [],
   pointsx = [],
   pointsy = [],
-  points1y = [],
   loadedDX = [],
   loadedDY = [],
   loaded_Full_X = [],
@@ -47,8 +43,7 @@ var loaded1YBB = [];
 /////////////////////////////////////////////////////////////////////
 var Pxl_X_arr = [],
   Pxl_Y_arr = [],
-  Pt_X_arr = [],
-  Pt_Y_arr = [];
+  Pt_X_arr = [];
 /////////////////////////////////////////////////////////////////////
 var D_FirstPt, D_NextPt, D_NumPtBtw;
 /////////////////////////////////////////////////////////////////////
@@ -319,9 +314,6 @@ var AtomsArr1 = [
   "Water Vapor Absorption",
 ];
 /////////////////////////////////////////////////////////////////////
-var PlanetsArr0 = ["Earth", "Mars", "Saturn", "Jupiter"];
-var PlanetsArr1 = ["Earth", "Mars", "Saturn", "Jupiter"];
-/////////////////////////////////////////////////////////////////////
 
 var Solar_SystemArr0 = [
   "Earth_Reflection",
@@ -388,9 +380,6 @@ var ExoplanetsArr1 = [
   "WASP-12b",
   "K2-18b",
 ];
-/////////////////////////////////////////////////////////////////////
-var TestsArr0 = ["test1", "test2", "test3"];
-var TestsArr1 = ["test1", "test2", "test3"];
 /////////////////////////////////////////////////////////////////////
 var Thermal_SpectraArr0 = [
   "230K_blackbody",
@@ -601,17 +590,9 @@ function initSpectrum() {
   }
 }
 //***********************************************//
-/////////////////////////////////////////////////////////////////////
-function Category_Choice() {
-  $("#Cat_container").fadeIn("fast", function () {
-    $("#box").css("display", "none");
-    $("#box").animate({ left: "30%" }, 500);
-    // $('.btn-group').button('toggle')
-  });
-}
 //***********************************************//
-var Targets1_folder, Targets_Titles1, Targets_descriptions1;
-var Targets2_folder, Targets_Titles2, Targets_descriptions2;
+var Targets_Titles1, Targets_descriptions1;
+var Targets_Titles2, Targets_descriptions2;
 /////////////////////////////////////////////////////////////////////
 function SeacrhFor(val, obj) {
   initialLineHdf(obj);
@@ -843,8 +824,8 @@ function SeacrhFor(val, obj) {
           "</option>";
       }
     } else if (obj == "Category2") {
-      var T_num = Targets_Titles2.length;
-      for (var TF = 0; TF < T_num; TF++) {
+      T_num = Targets_Titles2.length;
+      for (TF = 0; TF < T_num; TF++) {
         TargetsFilters.innerHTML +=
           '<option id="' +
           Targets_Titles2[TF] +
@@ -874,9 +855,9 @@ function SelectTarget(targetName, ListNum) {
   var Targets_Full_descriptions = Targets_descriptions[TT];
   // MAKE SURE THE TARGET IS REVEALED, SO WIPE AGAIN
   if (ListNum == "Targets1") {
-    var TT = Targets_Titles1.indexOf(targetName);
+    TT = Targets_Titles1.indexOf(targetName);
     //Just Comment out for local//
-    var Targets_Full_descriptions = Targets_descriptions1[TT];
+    Targets_Full_descriptions = Targets_descriptions1[TT];
     //Just Comment out for local//
     readTextFile(
       Targets1_folder,
@@ -947,8 +928,8 @@ function SelectTarget(targetName, ListNum) {
         ".jpg";
     }
   } else if (ListNum == "Targets2") {
-    var TT = Targets_Titles2.indexOf(targetName);
-    var Targets_Full_descriptions = Targets_descriptions2[TT];
+    TT = Targets_Titles2.indexOf(targetName);
+    Targets_Full_descriptions = Targets_descriptions2[TT];
     readTextFile(
       Targets2_folder,
       targetName,
@@ -1080,74 +1061,7 @@ function readTextFile(
 }
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////
-// General Code for BB
-function readBBTextFile(
-  TheTargets_folder,
-  BBtargetName,
-  plotNum,
-  Targets_Full_descriptions,
-) {
-  var BBFileLoction =
-    "includes/SpecLab_Data_Files/" +
-    TheTargets_folder +
-    "/" +
-    BBtargetName +
-    "BB.txt";
-  var rawBBFile = new XMLHttpRequest();
-  rawBBFile.open("GET", BBFileLoction, false);
-  rawBBFile.onreadystatechange = function () {
-    if (rawBBFile.readyState === 4) {
-      if (rawBBFile.status === 200 || rawBBFile.status == 0) {
-        var allBBText = rawBBFile.responseText;
-        loadedBBDataArray = allBBText.split("&");
-        if (plotNum == "Targets1") {
-          loaded1XBB = loadedBBDataArray[0].split(",");
-          loaded1YBB = loadedBBDataArray[1].split(",");
-        } else if (plotNum == "Targets2") {
-          loaded1XBB = loadedBBDataArray[0].split(",");
-          loaded1YBB = loadedBBDataArray[1].split(",");
-        } else if (plotNum == "Targets3") {
-          loaded1XBB = loadedBBDataArray[0].split(",");
-          loaded1YBB = loadedBBDataArray[1].split(",");
-        }
-      }
-    }
-  };
-  rawBBFile.send(null);
-}
-///////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////
-///////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-function DrawOn() {
-  /////////////////////////////////////////////////////////////
-  //REDRAW RAINBOW BACKGROUND
-  UCRctx.fillStyle = "#DDDDDD";
-  UCRctx.fillRect(0, 0, UCR.width, rainbowHt); // the rainbow background
-  // DRAW RAINBOWS
-  var rainbowx = (400 - 200) * pxlsPerWv * xStretch;
-  var rainbowWidth = 250 * xStretch;
-  UCRctx.drawImage(img, rainbowx, 0, rainbowWidth, rainbowHt);
-  //Shade all of Rainbow Canvas
-  UCR_Huectx.clearRect(0, From_Top, 610, rainbowHt);
-  UCR_Huectx.beginPath();
-  UCR_Huectx.globalAlpha = 1;
-  UCR_Huectx.rect(0, From_Top, 610, rainbowHt);
-  UCR_Huectx.fillStyle = "black";
-  UCR_Huectx.fill();
-  /////////////////////////////////////////////////////////////
-  LCRctx.fillStyle = "#DDDDDD";
-  var rainbowx = (400 - 200) * pxlsPerWv * xStretch;
-  var rainbowWidth = 250 * xStretch;
-  LCRctx.fillRect(0, 0, UCR.width, rainbowHt); // the rainbow background
-  LCRctx.drawImage(img, rainbowx, 0, rainbowWidth, rainbowHt);
-  /////////////////////////////////////////////////////////////
-  $("#myDrawCanvas").show();
-  document.getElementById("myDrawCanvas").style.display = "block";
-  document.getElementById("UpperCanvasGraph").style.display = "none";
-  /////////////////////////////////////////////////////////////
-}
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 function clearCanvas(W_CTX, W_CAN, W_Rainbow, W_Hue) {
@@ -1172,6 +1086,7 @@ function clearCanvas(W_CTX, W_CAN, W_Rainbow, W_Hue) {
   W_Hue.fill();
   /////////////////////////////////////////////////////////////
 }
+
 //////////////////////////////////////////////////
 function ResetCanvas() {
   // CLEAR THE ARRAY OF POINTS
@@ -1191,11 +1106,11 @@ function ResetCanvas() {
   clearCanvas(UCGctx, UCG, UCRctx, UCR_Huectx);
   clearCanvas(Drawing_ctx, DrawCanvas, UCRctx, UCR_Huectx);
 }
+
 ///////////////////////////////////////////////////
 ///////////        Plot Graph         /////////////
 ///////////////////////////////////////////////////
 function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
-  var whichPlot = "";
   var upperx, uppery;
   var xNextPosition, yNextPosition;
   if (W_CTX == UCGctx && typeof loaded1X !== "undefined") {
@@ -1203,14 +1118,12 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
     var From_Top = 0;
     upperx = loaded1X;
     uppery = loaded1Y;
-    whichPlot = "Upper";
     document.getElementById("UpperIndicatorCanvas").style.zIndex = "6";
     clearCanvas(UCGctx, UCG, UCRctx, UCR_Huectx);
   } else if (W_CTX == LCGctx) {
     From_Top = 0;
     upperx = loaded2X;
     uppery = loaded2Y;
-    whichPlot = "Lower";
     //console.log('Plot the lower graph from these points');
     clearCanvas(LCGctx, LCG, LCRctx, LCR_Huectx);
   }
@@ -1238,8 +1151,8 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
       /////////////////////////////////////////////////////////////
       W_CTX.beginPath();
       /////////////////////////////////////////////////////////////
-      xPositionBB = (1000 * loaded1XBB[BB] - 200) * pxl_stretch;
-      yPositionBB = 200 * (1 - shrinky * loaded1YBB[BB]) + 5 - 65;
+      const xPositionBB = (1000 * loaded1XBB[BB] - 200) * pxl_stretch;
+      const yPositionBB = 200 * (1 - shrinky * loaded1YBB[BB]) + 5 - 65;
       //pointsxBB.push(xPositionBB);
       //pointsyBB.push(yPositionBB);
       /////////////////////////////////////////////////////////////
@@ -1374,16 +1287,17 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////
-    (Pxl_X_arr = []), (Pxl_Y_arr = []), (Pt_X_arr = []), (Pt_Y_arr = []);
+    Pxl_X_arr = [];
+    Pxl_Y_arr = [];
+    Pt_X_arr = [];
     var Pxl_Alpha_now, Pxl_Alpha_next, Pxl_Alpha_Add;
     var Pxl_X_now, Pxl_X_nowC;
-    var Pxl_X_next, Pxl_X_after, Pxl_Y_add;
+    var Pxl_X_next, Pxl_X_after;
     var Pxl_count = 0,
       Pt_count = 0;
     for (var pxl = 0; pxl < upperx.length; pxl++) {
       Pxl_Alpha_Add = 0;
       Pxl_Alpha_now = parseFloat(uppery[pxl]);
-      Pxl_Alpha_now = Pxl_Alpha_now;
       Pxl_Alpha_next = parseFloat(uppery[pxl + 1]);
       Pxl_X_now = (1000 * upperx[pxl] - 200) * pxl_stretch;
       Pxl_X_nowC = parseInt((1000 * upperx[pxl] - 200) * pxl_stretch);
@@ -1438,10 +1352,10 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
       for (var SR = 0; SR < Pxl_X_arr.length; SR++) {
         // THIS CODE SHADES THE RAINBOW, ACCORDING TO THE DATA POINTS
         /////////////////////////////////////////////////////////////
-        var alphax = Alpha_Stretch - parseFloat(Pxl_Y_arr[SR]);
-        var lastPt = parseInt(Pxl_X_arr[SR]);
-        var nextPt = parseInt(Pxl_X_arr[SR + 1]);
-        var deltaX = nextPt - lastPt;
+        alphax = Alpha_Stretch - parseFloat(Pxl_Y_arr[SR]);
+        lastPt = parseInt(Pxl_X_arr[SR]);
+        nextPt = parseInt(Pxl_X_arr[SR + 1]);
+        deltaX = nextPt - lastPt;
         ////////////////////////////////////////////////
         W_R.fillStyle = "#000000";
         W_R.globalAlpha = alphax;
@@ -1452,7 +1366,7 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
           }
         }
         if (SR == 0) {
-          var firstDataPt = lastPt;
+          firstDataPt = lastPt;
         }
         /////////////////////////////////////////////////////////////
         // END OF 'SHADING THE RAINBOW'
@@ -1476,13 +1390,13 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
       //Now we need a loop to Shade the Rainbow
       ////////////////////////////////////////////////////////////////
       ////////////////////////////////////////////////////////////////
-      for (var SR = 0; SR < loaded_Full_X.length; SR++) {
+      for (SR = 0; SR < loaded_Full_X.length; SR++) {
         // THIS CODE SHADES THE RAINBOW, ACCORDING TO THE DATA POINTS
         /////////////////////////////////////////////////////////////
-        var alphax = 1 - loaded_Full_Y[SR];
-        var lastPt = G_points_Full_X[SR];
-        var nextPt = G_points_Full_X[SR + 1];
-        var deltaX = nextPt - lastPt;
+        alphax = 1 - loaded_Full_Y[SR];
+        lastPt = G_points_Full_X[SR];
+        nextPt = G_points_Full_X[SR + 1];
+        deltaX = nextPt - lastPt;
         ////////////////////////////////////////////////
         W_R.fillStyle = "#000000";
         W_R.globalAlpha = alphax;
@@ -1496,7 +1410,7 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
           }
         }
         if (SR == 0) {
-          var firstDataPt = lastPt;
+          firstDataPt = lastPt;
         }
         /////////////////////////////////////////////////////////////
         // END OF 'SHADING THE RAINBOW'
@@ -1519,22 +1433,7 @@ function plotGraph(W_CTX, W_CAN, W_R, WIC_ctx) {
   ///////////////////////////////////////////////////////////
 } /////          End of Plot Graph         /////////////////
 ///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
-function isOdd(num) {
-  var lastone = +num.toString().split("").pop();
-  Odd_or_Even = lastone % 2;
-  if (num == 1) {
-    NewNum = 0.99;
-  } else if (Odd_or_Even == 1) {
-    NewNum = num;
-  } else {
-    NewNum = num + 0.01;
-  }
 
-  return NewNum;
-}
-///////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 function drawPoints() {
   clearCanvas(Drawing_ctx, DrawCanvas, UCRctx, UCR_Huectx);
@@ -1543,7 +1442,6 @@ function drawPoints() {
   loadedDX = [];
   loadedDY = [];
   D_pointsDx = [];
-  points1y = [];
   ///////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////
   //Shade all of Rainbow Canvas
@@ -1627,7 +1525,6 @@ function drawPoints() {
       var alphax = 1 - D_loadedDY2[p];
       var lastPt = 0 + D_pointsDx2[p];
       var nextPt = 0 + D_pointsDx2[p + 1];
-      var deltaX = nextPt - lastPt;
       ////////////////////////////////////////////////
       UCR_Huectx.fillStyle = "#000000";
       UCR_Huectx.globalAlpha = alphax;
@@ -1636,9 +1533,6 @@ function drawPoints() {
           UCR_Huectx.clearRect(lastPt, From_Top, 2, rainbowHt);
           UCR_Huectx.fillRect(lastPt, From_Top, 2, rainbowHt);
         }
-      }
-      if (p == 0) {
-        var firstDataPt = lastPt;
       }
       // END OF 'SHADING THE RAINBOW'
       /////////////////////////////////////////////////////////////
@@ -1681,17 +1575,7 @@ function drawConnectingLines() {
   }
 }
 //////////////////////////////////////////////////
-function drawConnectingLines2() {
-  // DRAW THE LINES THAT CONNECT THE CIRCULAR DATA POINTS
-  for (i = 0; i < D_GraphPoints.length; i++) {
-    Drawing_ctx.beginPath();
-    Drawing_ctx.moveTo(deltaT * i + 1, D_GraphPoints[i]);
-    Drawing_ctx.lineTo(deltaT * (i + 1) - 1, D_GraphPoints[i + 1]);
-    Drawing_ctx.lineWidth = 1;
-    Drawing_ctx.strokeStyle = "#43d5ff";
-    Drawing_ctx.stroke();
-  }
-}
+
 //////////////////////////////////////////////////
 function dragStart() {
   flag = "doDraw";
@@ -1700,7 +1584,6 @@ function dragStart() {
   var rect = DrawCanvas.getBoundingClientRect();
   var x = event.clientX - rect.left;
   var y = event.clientY - rect.top;
-  startingX = nearestPointIndex(x);
   var thisPoint;
   // determine the closest point -- i.e., the "i" -- to the clicked x
   var temp = Math.floor(x / binSize);
@@ -1713,9 +1596,6 @@ function dragStart() {
   // replace D_pointsy-i with the new y value.
   D_pointsx[thisPoint] = x;
   D_pointsy[thisPoint] = y;
-  // erase the slim rectangle that extends from prior point all the way to the next point.
-  var lastx = binSize * (thisPoint - 1);
-  var nextx = binSize * (thisPoint + 1);
 }
 //////////////////////////////////////////////////
 function nearestPointIndex(thisX) {
@@ -1742,7 +1622,6 @@ function drawCurve(event) {
   var rect = DrawCanvas.getBoundingClientRect();
   var x = event.clientX - rect.left;
   var y = event.clientY - rect.top;
-  var xLoc = legend_yAxisOffset + pxlsPerWv * xStretch * (100 * (x - 2));
   if (x < 1) {
     x = 1;
   }
@@ -1777,12 +1656,6 @@ function dragStop() {
   flag = "dontDraw";
   // DRAW THE LINES BETWEEN THE POINTS
   Drawing_ctx.closePath();
-  var check =
-    Math.floor(117 / 6) +
-    "  " +
-    Math.floor(119 / 6) +
-    "  " +
-    Math.floor(116 / 6);
   drawPoints();
   drawConnectingLines();
 }
@@ -1875,7 +1748,7 @@ function drawXAxis(W_CTX, W_CAN, xStretch) {
 }
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
-function drawYAxis(W_CTX, W_CAN, xStretch) {
+function drawYAxis() {
   ///////////////////////////////////////////////////////
   UY_Axisctx.fillStyle = "#1e4c7d";
   UY_Axisctx.fillRect(0, 0, UY_Axis.width, UY_Axis.height); // the graph area background
@@ -1902,8 +1775,7 @@ function drawYAxis(W_CTX, W_CAN, xStretch) {
   //Write the Y Axis
   LY_Axisctx.font = "9px Myriad Pro";
   LY_Axisctx.fillStyle = legendColor;
-  for (var y = 0; y <= 10; y++) {
-    var yLoc = y * 13 + 10;
+  for (y = 0; y <= 10; y++) {
     LY_Axisctx.fillText(String((10 - y) / 10), 10, yLoc);
     LY_Axisctx.strokeStyle = legendColor;
     LY_Axisctx.moveTo(25, yLoc);
@@ -1915,7 +1787,7 @@ function drawYAxis(W_CTX, W_CAN, xStretch) {
 }
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
-function updateIndicator(PosX, PosY) {
+function updateIndicator(PosX) {
   UCRIctx.clearRect(0, 0, UCRI.width, 20);
   LCRIctx.clearRect(0, 0, UCRI.width, 20);
   UCRIctx.drawImage(Triangle_img, PosX - 10, 0, 20, 20);
@@ -1965,9 +1837,9 @@ function updateLine(e, WIC_ctx) {
   line1.draw();
   ///////////////////////////////////////////////
   LIC_ctx.clearRect(0, 0, LIC.width, LIC.height);
-  var r = LIC.getBoundingClientRect(),
-    x = e.clientX - r.left,
-    y = e.clientY - r.top;
+  r = LIC.getBoundingClientRect();
+  x = e.clientX - r.left;
+  y = e.clientY - r.top;
   line2.x1 = x;
   line2.y1 = 0;
   line2.x2 = x;
@@ -2006,7 +1878,6 @@ function updateLine(e, WIC_ctx) {
   readout_angstrom = String(readout_angstrom.toFixed(0)) + "   " + "Angstrom";
 
   ///////////////////////////////////////////////
-  var WL_Microns = document.getElementById("WL_Microns").selected; //Added by Aladdin
   var WL_Nanometers = document.getElementById("WL_Nanometers").selected; //Added by Aladdin
   var WL_Angstrom = document.getElementById("WL_Angstrom").selected; //Added by Aladdin
   var WL_ElectronVolt = document.getElementById("WL_ElectronVolt").selected; //Added by Aladdin
