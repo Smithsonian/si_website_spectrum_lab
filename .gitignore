@@ -1,0 +1,8 @@
+# Python virtual env
+venv
+
+# macOS cruft
+.DS_Store
+
+# VS Code settings
+.vscode
