@@ -1,4 +1,10 @@
 {
-    "tabWidth": 4,
-    "singleQuote": true
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "requirePragma": true
+      }
+    }
+  ]
 }
