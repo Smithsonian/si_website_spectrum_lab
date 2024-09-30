@@ -5,28 +5,34 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build",
+    "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "build-only": "vite-ssg build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
     "bootstrap-vue-next": "^0.24.23",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@rushstack/eslint-patch": "^1.8.0",
+    "@eslint/js": "^8.57.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.5",
     "@unhead/vue": "^1.11.7",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^9.11.1",
+    "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "globals": "^15.9.0",
     "prettier": "3.3.3",
     "vite": "^5.3.1",
     "vite-ssg": "^0.23.8",
-    "vue-router": "^4.4.5"
+    "@vue/tsconfig": "^0.5.1",
+    "npm-run-all2": "^6.2.0",
+    "typescript": "~5.4.0",
+    "vue-tsc": "^2.0.21"
   }
 }
