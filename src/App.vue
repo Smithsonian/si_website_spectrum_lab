@@ -1,11 +1,7 @@
 <template>
-  <h1>Meppo!</h1>
+  <h1>Hi routing!</h1>
+  <p>Current path: {{ $route.fullPath }}</p>
+  <main>
+    <RouterView />
+  </main>
 </template>
-
-<script setup lang="ts">
-import { useHead } from "@unhead/vue";
-
-useHead({
-  title: "Hello world",
-});
-</script>

@@ -1,4 +1,7 @@
-import { ViteSSG } from "vite-ssg/single-page";
+import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
+import PlaygroundView from "./pages/PlaygroundView.vue";
 
-export const createApp = ViteSSG(App);
+const routes = [{ path: "/", component: PlaygroundView }];
+
+export const createApp = ViteSSG(App, { routes });

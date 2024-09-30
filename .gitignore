@@ -13,3 +13,4 @@ node_modules
 # Build output
 dist
 dist-ssr
+.vite-ssg-temp
