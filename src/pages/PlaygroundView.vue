@@ -1,5 +1,8 @@
 <template>
-  <h1>This is the playground!</h1>
+  <BRow>
+    <ChallengeCol />
+    <ToolCol />
+  </BRow>
 </template>
 
 <script setup lang="ts">

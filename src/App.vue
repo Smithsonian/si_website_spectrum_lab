@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { BContainer } from 'bootstrap-vue-next';
+</script>
+
 <template>
   <div class="top-banner">
     <h1>Spectrum Lab</h1>
@@ -27,9 +31,9 @@
       >Vue Session 2</BNavItem
     >
   </BNav>
-  <main>
+  <BContainer fluid tag="main" class="mt-3">
     <RouterView />
-  </main>
+  </BContainer>
 </template>
 
 <style>
