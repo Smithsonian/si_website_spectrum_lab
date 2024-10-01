@@ -4,12 +4,12 @@
     <p>Exploring the world of color</p>
   </div>
   <BNav>
-    <BNavItem href="/session2.html">Session 2</BNavItem>
-    <BNavItem href="/session3.html">Session 3</BNavItem>
-    <BNavItem href="/session4.html">Session 4</BNavItem>
-    <BNavItem href="/fishtank.html">Fish Tank</BNavItem>
-    <BNavItem href="/exoplanets.html">Exoplanets</BNavItem>
-    <BNavItem href="/playground.html">Playground</BNavItem>
+    <BNavItem href="session2.html">Session 2</BNavItem>
+    <BNavItem href="session3.html">Session 3</BNavItem>
+    <BNavItem href="session4.html">Session 4</BNavItem>
+    <BNavItem href="fishtank.html">Fish Tank</BNavItem>
+    <BNavItem href="exoplanets.html">Exoplanets</BNavItem>
+    <BNavItem href="playground.html">Playground</BNavItem>
     <BNavItem to="/">Vue Playground</BNavItem>
     <BNavItem to="/session2vue">Vue Session 2</BNavItem>
   </BNav>

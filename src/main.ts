@@ -15,7 +15,7 @@ const routes = [
 
 export const createApp = ViteSSG(
   App,
-  { routes },
+  { routes, base: import.meta.env.BASE_URL },
   ({ app, router, routes, isClient, initialState }) => {
     app.use(createBootstrap());
     app.use(
