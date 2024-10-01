@@ -6,8 +6,12 @@ import { createBootstrap } from "bootstrap-vue-next";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
 import VueGtag from "vue-gtag";
+import Session2View from "./pages/Session2View.vue";
 
-const routes = [{ path: "/", component: PlaygroundView }];
+const routes = [
+  { path: "/session2vue", component: Session2View },
+  { path: "/", component: PlaygroundView },
+];
 
 export const createApp = ViteSSG(
   App,
