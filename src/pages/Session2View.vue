@@ -3,9 +3,9 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
+import { useHead } from '@unhead/vue';
 
 useHead({
-  title: "Spectrum Lab | Session 2",
+  title: 'Spectrum Lab | Session 2',
 });
 </script>
