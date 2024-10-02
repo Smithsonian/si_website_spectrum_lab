@@ -23,17 +23,23 @@
             />
           </div>
         </BCol>
-        <BCol></BCol>
+        <BCol>
+          <pre>
+            {{ metadataStore.allMetadata[0] }}
+          </pre>
+        </BCol>
       </BRow>
     </div>
   </BCol>
 </template>
 
 <script setup lang="ts">
+import { useMetadataStore } from '@/metadataStore';
 import { ref } from 'vue';
 
 const file = ref<null | File>(null);
 const iconFilename = ref('Harry_sun_spectrum.jpg');
+const metadataStore = useMetadataStore();
 </script>
 
 <style>
@@ -60,7 +66,7 @@ input.spectrum-filepicker:hover:not(:disabled):not(
 }
 input.spectrum-filepicker:focus,
 input.spectrum-filepicker:hover {
-  background-color: rgb(255 255 255 / 30%);
+  background-color: rgb(255 255 255 / 10%);
   color: var(--bs-light);
 }
 .spectrum-icon-holder {

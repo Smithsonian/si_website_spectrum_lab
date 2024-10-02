@@ -8,6 +8,8 @@ import 'bootstrap-vue-next/dist/bootstrap-vue-next.css';
 import VueGtag from 'vue-gtag';
 import Session2View from './pages/Session2View.vue';
 import type { RouteRecordRaw } from 'vue-router';
+import { createPinia } from 'pinia';
+import { useMetadataStore } from './metadataStore';
 
 const routes: RouteRecordRaw[] = [
   { path: '/session2vue', component: Session2View },
@@ -19,6 +21,8 @@ const routes: RouteRecordRaw[] = [
     },
   },
 ];
+
+const pinia = createPinia();
 
 export const createApp = ViteSSG(
   App,
@@ -34,5 +38,18 @@ export const createApp = ViteSSG(
       },
       router,
     );
+    app.use(pinia);
+    if (import.meta.env.SSR) {
+      initialState.pinia = pinia.state.value;
+    } else {
+      pinia.state.value = initialState.pinia || {};
+    }
+
+    router.beforeEach((to, from) => {
+      const metadataStore = useMetadataStore(pinia);
+      if (metadataStore.allMetadata.length === 0) {
+        metadataStore.initialize();
+      }
+    });
   },
 );
