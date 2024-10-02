@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import metadataJson from './metadata.json' with { type: 'json' };
 
-const spectrumCategories = [
+export const PRELOADED_CATEGORIES = [
   'Lamps',
   'Stars',
   'Nature',
@@ -15,10 +15,10 @@ const spectrumCategories = [
   'Museum Pigments',
 ] as const;
 
-type SpectrumCategory = (typeof spectrumCategories)[number];
+export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
 
 interface SpectrumMetadata {
-  category: SpectrumCategory;
+  category: PreloadedCategory;
   filename: string;
   title: string;
   spectrumType: string;
@@ -34,14 +34,14 @@ type FoundMetadata = (typeof metadataJson)[number];
 
 type MaybeValidMetadata = SpectrumMetadata | FoundMetadata;
 
-const knownCategories: string[] = [...spectrumCategories];
+const knownCategories: string[] = [...PRELOADED_CATEGORIES];
 
 function isValidMetadata(sm: MaybeValidMetadata): sm is SpectrumMetadata {
   return knownCategories.includes(sm.category);
 }
 
 type MetadataByCategory = {
-  [index in SpectrumCategory]: SpectrumMetadata[];
+  [index in PreloadedCategory]: SpectrumMetadata[];
 };
 
 export const useMetadataStore = defineStore('metadata', {
@@ -67,10 +67,11 @@ export const useMetadataStore = defineStore('metadata', {
       for (const sm of metadataJson) {
         if (isValidMetadata(sm)) {
           this.byCategory[sm.category].push(sm);
+        } else {
+          console.warn(
+            `Unknown category ${sm.category}. Known categories are ${knownCategories}`,
+          );
         }
-        console.warn(
-          `Unknown category ${sm.category}. Known categories are ${knownCategories}`,
-        );
       }
     },
   },

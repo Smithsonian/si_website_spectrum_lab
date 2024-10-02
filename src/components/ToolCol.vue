@@ -14,22 +14,28 @@
         <BCol />
       </BRow>
       <BRow>
-        <BCol>
+        <BCol md="4" class="mb-3">
           <div class="h3">Spectrum 1</div>
-          <div class="spectrum-icon-holder rounded-4">
-            <img
-              class="spectrum-icon"
-              :src="`/includes/AI_common/images/${iconFilename}`"
-            />
-          </div>
+          <BRow>
+            <BCol cols="6" md="12">
+              <div class="spectrum-icon-holder rounded-4">
+                <img
+                  class="spectrum-icon"
+                  :src="`/includes/AI_common/images/${iconFilename}`"
+                />
+              </div>
+            </BCol>
+            <BCol>
+              <BFormSelect
+                v-model="selectedCategory"
+                :options="allCategoryOptions"
+              />
+              <div>Category: {{ selectedCategory }}</div>
+            </BCol>
+          </BRow>
         </BCol>
         <BCol>
-          <pre>
-            {{ metadataStore.allMetadata[0] }}
-          </pre>
-          <pre>
-            {{ metadataStore.byCategory['Thermal Spectra'] }}
-          </pre>
+          <div class="h3">Spectrum tool goes here</div>
         </BCol>
       </BRow>
     </div>
@@ -37,12 +43,31 @@
 </template>
 
 <script setup lang="ts">
-import { useMetadataStore } from '@/metadataStore';
+import {
+  PRELOADED_CATEGORIES,
+  useMetadataStore,
+  type PreloadedCategory,
+} from '@/metadataStore';
+import { BFormSelect } from 'bootstrap-vue-next';
 import { ref } from 'vue';
 
 const file = ref<null | File>(null);
 const iconFilename = ref('Harry_sun_spectrum.jpg');
 const metadataStore = useMetadataStore();
+
+type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
+
+const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
+  value: cat,
+  text: cat,
+}));
+const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
+  { value: '', text: 'Select category' },
+  ...preloadedOptions,
+  { value: 'draw', text: 'Draw' },
+  { value: 'file', text: 'Uploaded file' },
+];
+const selectedCategory = ref<SpectrumCategory>('');
 </script>
 
 <style>
