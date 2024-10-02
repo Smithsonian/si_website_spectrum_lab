@@ -27,6 +27,9 @@
           <pre>
             {{ metadataStore.allMetadata[0] }}
           </pre>
+          <pre>
+            {{ metadataStore.byCategory['Thermal Spectra'] }}
+          </pre>
         </BCol>
       </BRow>
     </div>
