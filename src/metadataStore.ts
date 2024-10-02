@@ -17,7 +17,7 @@ export const PRELOADED_CATEGORIES = [
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
 
-interface SpectrumMetadata {
+export interface SpectrumMetadata {
   category: PreloadedCategory;
   filename: string;
   title: string;
@@ -37,7 +37,7 @@ type MaybeValidMetadata = SpectrumMetadata | FoundMetadata;
 const knownCategories: string[] = [...PRELOADED_CATEGORIES];
 
 function isValidMetadata(sm: MaybeValidMetadata): sm is SpectrumMetadata {
-  return knownCategories.includes(sm.category);
+  return PRELOADED_CATEGORIES.some((cat) => cat === sm.category);
 }
 
 type MetadataByCategory = {

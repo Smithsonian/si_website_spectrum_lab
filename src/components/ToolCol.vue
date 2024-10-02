@@ -30,7 +30,14 @@
                 v-model="selectedCategory"
                 :options="allCategoryOptions"
               />
+              <template v-if="spectrumOptions.length > 0">
+                <BFormSelect
+                  v-model="selectedSpectrum"
+                  :options="spectrumOptions"
+                />
+              </template>
               <div>Category: {{ selectedCategory }}</div>
+              <div>Spectrum: {{ selectedSpectrum }}</div>
             </BCol>
           </BRow>
         </BCol>
@@ -47,16 +54,15 @@ import {
   PRELOADED_CATEGORIES,
   useMetadataStore,
   type PreloadedCategory,
+  type SpectrumMetadata,
 } from '@/metadataStore';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const file = ref<null | File>(null);
 const iconFilename = ref('Harry_sun_spectrum.jpg');
-const metadataStore = useMetadataStore();
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
-
 const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
   value: cat,
   text: cat,
@@ -68,6 +74,33 @@ const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
   { value: 'file', text: 'Uploaded file' },
 ];
 const selectedCategory = ref<SpectrumCategory>('');
+
+const metadataStore = useMetadataStore();
+function isPreloadedCategory(
+  category: SpectrumCategory,
+): category is PreloadedCategory {
+  return PRELOADED_CATEGORIES.some((preCat) => preCat === category);
+}
+interface MetadataByFilename {
+  [index: string]: SpectrumMetadata;
+}
+const categoryMetadataByFilename = computed((): MetadataByFilename => {
+  if (!isPreloadedCategory(selectedCategory.value)) {
+    return {};
+  }
+  const metadataArray = metadataStore.byCategory[selectedCategory.value];
+  const result: MetadataByFilename = {};
+  for (const m of metadataArray) {
+    result[m.filename] = m;
+  }
+  return result;
+});
+const spectrumOptions = computed((): { value: string; text: string }[] =>
+  Object.entries(categoryMetadataByFilename.value).map(
+    ([filename, metadata]) => ({ value: filename, text: metadata.title }),
+  ),
+);
+const selectedSpectrum = ref('');
 </script>
 
 <style>
