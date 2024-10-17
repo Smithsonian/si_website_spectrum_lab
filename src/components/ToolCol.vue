@@ -19,10 +19,7 @@
           <BRow>
             <BCol cols="6" md="12">
               <div class="spectrum-icon-holder rounded-4">
-                <img
-                  class="spectrum-icon"
-                  :src="`/includes/AI_common/images/${iconFilename}`"
-                />
+                <img class="spectrum-icon" :src="iconPath" />
               </div>
             </BCol>
             <BCol>
@@ -60,7 +57,6 @@ import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, ref, watch } from 'vue';
 
 const file = ref<null | File>(null);
-const iconFilename = ref('Harry_sun_spectrum.jpg');
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
 const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
@@ -95,11 +91,12 @@ const categoryMetadataByFilename = computed((): MetadataByFilename => {
   }
   return result;
 });
-const spectrumOptions = computed((): { value: string; text: string }[] =>
-  Object.entries(categoryMetadataByFilename.value).map(
+const spectrumOptions = computed((): { value: string; text: string }[] => [
+  { value: '', text: 'Select spectrum' },
+  ...Object.entries(categoryMetadataByFilename.value).map(
     ([filename, metadata]) => ({ value: filename, text: metadata.title }),
   ),
-);
+]);
 const selectedSpectrum = ref('');
 
 // Clear spectrum on category change
@@ -107,6 +104,26 @@ watch(selectedCategory, async () => {
   if (selectedSpectrum.value) {
     selectedSpectrum.value = '';
   }
+});
+
+// Get metadata
+const selectedMetadata = computed(
+  (): SpectrumMetadata | null =>
+    categoryMetadataByFilename.value[selectedSpectrum.value] || null,
+);
+
+// Icon
+const iconPath = computed((): string => {
+  const DEFAULT_ICON =
+    '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
+  if (!selectedMetadata.value) {
+    return DEFAULT_ICON;
+  }
+  const imageName = selectedMetadata.value.imageName;
+  if (!imageName) {
+    return DEFAULT_ICON;
+  }
+  return `/includes/SpecLab_Data_Files/${imageName}`;
 });
 </script>
 
@@ -141,8 +158,6 @@ input.spectrum-filepicker:hover {
   height: 160px;
   width: 180px;
   overflow: hidden;
-}
-.spectrum-icon {
-  margin-left: -30px;
+  background-color: #ffffff;
 }
 </style>
