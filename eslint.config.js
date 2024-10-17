@@ -13,10 +13,13 @@ export default [
         ...globals.browser,
         ...globals.jquery,
       },
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
     },
   },
   pluginJs.configs.recommended,
   ...pluginTs.configs.recommended,
-  ...pluginVue.configs['flat/vue2-recommended'],
+  ...pluginVue.configs['flat/recommended'],
   eslintConfigPrettier,
 ];
