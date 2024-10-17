@@ -6,6 +6,8 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   {
+    files: ['**/*.vue', '**/*.js', '**/*.ts'],
+    ignores: ['venv', 'dist', 'dist-ssr', '.vite-ssg-temp', 'components.d.ts'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -14,7 +16,7 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  pluginTs.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
+  ...pluginTs.configs.recommended,
+  ...pluginVue.configs['flat/vue2-recommended'],
   eslintConfigPrettier,
 ];
