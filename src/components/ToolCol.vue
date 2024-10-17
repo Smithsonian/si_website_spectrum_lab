@@ -39,7 +39,7 @@
           </BRow>
         </BCol>
         <BCol>
-          <div class="h3">Spectrum tool goes here</div>
+          <SpectrumCanvas />
         </BCol>
       </BRow>
     </div>
