@@ -57,7 +57,7 @@ import {
   type SpectrumMetadata,
 } from '@/metadataStore';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 const file = ref<null | File>(null);
 const iconFilename = ref('Harry_sun_spectrum.jpg');
@@ -101,6 +101,13 @@ const spectrumOptions = computed((): { value: string; text: string }[] =>
   ),
 );
 const selectedSpectrum = ref('');
+
+// Clear spectrum on category change
+watch(selectedCategory, async () => {
+  if (selectedSpectrum.value) {
+    selectedSpectrum.value = '';
+  }
+});
 </script>
 
 <style>
