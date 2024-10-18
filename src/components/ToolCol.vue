@@ -14,15 +14,15 @@
         <BCol />
       </BRow>
       <BRow>
-        <BCol md="4" class="mb-3">
+        <BCol cols="12" xl="4" class="mb-3">
           <div class="h3">Spectrum 1</div>
           <BRow>
-            <BCol cols="6" md="12">
+            <BCol cols="6" md="4" xl="12">
               <div class="spectrum-icon-holder rounded-4">
                 <img class="spectrum-icon" :src="iconPath" />
               </div>
             </BCol>
-            <BCol>
+            <BCol cols="6" lg="4" xl="12">
               <BFormSelect
                 v-model="selectedCategory"
                 :options="allCategoryOptions"

@@ -31,7 +31,7 @@ import { BContainer } from 'bootstrap-vue-next';
       >Vue Session 2</BNavItem
     >
   </BNav>
-  <BContainer fluid tag="main" class="mt-3">
+  <BContainer tag="main" class="mt-3">
     <RouterView />
   </BContainer>
 </template>
