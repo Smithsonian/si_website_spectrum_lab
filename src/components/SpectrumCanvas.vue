@@ -2,7 +2,10 @@
   <div class="spectrum-canvas">
     <div class="d-flex">
       <div class="left-axis">
-        <div class="left-axis-label">More Light</div>
+        <div class="left-axis-label">
+          More Light
+          <FontAwesomeIcon :icon="['fas', 'arrow-up']" transform="rotate-180" />
+        </div>
       </div>
       <canvas ref="chart" width="610" height="150"
         >Spectrum intensity vs wavelength chart</canvas
@@ -33,9 +36,9 @@ onMounted(() => {
 <style>
 .left-axis {
   writing-mode: vertical-rl;
+  text-align: center;
 }
 .left-axis-label {
-  text-align: center;
   transform: rotate(180deg);
 }
 .spectrum-canvas {

@@ -5,11 +5,16 @@ import 'bootstrap-vue-next/dist/bootstrap-vue-next.css';
 import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { createPinia } from 'pinia';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import Session2View from './pages/Session2View.vue';
 import { useMetadataStore } from './metadataStore';
+
+library.add(faArrowUp);
 
 const routes: RouteRecordRaw[] = [
   { path: '/session2vue', component: Session2View },
@@ -28,6 +33,7 @@ export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
   ({ app, router, initialState }) => {
+    app.component('FontAwesomeIcon', FontAwesomeIcon);
     app.use(createBootstrap());
     app.use(
       VueGtag,
