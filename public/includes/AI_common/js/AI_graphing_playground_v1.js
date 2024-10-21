@@ -575,12 +575,12 @@ var loaded2X, loaded2Y;
 
 /////////////////////////////////////////////////////////////////////
 function initSpectrum() {
-  (pointsx = []),
-    (pointsy = []),
-    (loaded_Full_X = []),
-    (loaded_Full_Y = []),
-    (G_points_Full_X = []),
-    (G_points_Full_Y = []);
+  pointsx = [];
+  pointsy = [];
+  loaded_Full_X = [];
+  loaded_Full_Y = [];
+  G_points_Full_X = [];
+  G_points_Full_Y = [];
 
   if (typeof loaded1X !== 'undefined') {
     plotGraph(UCGctx, UCG, UCR_Huectx, UIC_ctx);
@@ -1472,7 +1472,8 @@ function drawPoints() {
   /////////////////////////////////////////
   //This loop to assign values to lines
   // in between points.
-  (D_loadedDX2 = []), (D_loadedDY2 = []);
+  D_loadedDX2 = [];
+  D_loadedDY2 = [];
   const D_pointsDx2 = [];
   const D_pointsDy2 = [];
   for (var b = 0; b < D_pointsDx.length; b++) {
@@ -1776,6 +1777,7 @@ function drawYAxis() {
   LY_Axisctx.font = '9px Myriad Pro';
   LY_Axisctx.fillStyle = legendColor;
   for (y = 0; y <= 10; y++) {
+    yLoc = y * 13 + 10;
     LY_Axisctx.fillText(String((10 - y) / 10), 10, yLoc);
     LY_Axisctx.strokeStyle = legendColor;
     LY_Axisctx.moveTo(25, yLoc);
