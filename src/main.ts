@@ -27,7 +27,7 @@ const pinia = createPinia();
 export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
-  ({ app, router, routes, isClient, initialState }) => {
+  ({ app, router, initialState }) => {
     app.use(createBootstrap());
     app.use(
       VueGtag,
@@ -45,7 +45,7 @@ export const createApp = ViteSSG(
       pinia.state.value = initialState.pinia || {};
     }
 
-    router.beforeEach((to, from) => {
+    router.beforeEach(() => {
       const metadataStore = useMetadataStore(pinia);
       if (metadataStore.allMetadata.length === 0) {
         metadataStore.initialize();
