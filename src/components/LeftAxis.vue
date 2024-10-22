@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <canvas ref="canvas" width="20" height="150" class="ms-2"
-      >Left axis ticks</canvas
-    >
+  <div class="ms-2" style="height: 150px">
+    <canvas ref="canvas" width="20" height="150">Left axis ticks</canvas>
   </div>
 </template>
 

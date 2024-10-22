@@ -7,14 +7,16 @@
           <FontAwesomeIcon :icon="['fas', 'arrow-up']" transform="rotate-180"
         /></span>
       </div>
-      <LeftAxis />
       <div>
-        <canvas ref="chart" width="610" height="150"
-          >Spectrum intensity vs wavelength chart</canvas
-        >
-        <canvas ref="bottomAxis" width="610" height="30"
-          >Bottom axis ticks</canvas
-        >
+        <div class="d-flex">
+          <LeftAxis />
+          <div style="height: 150px">
+            <canvas ref="chart" width="610" height="150"
+              >Spectrum intensity vs wavelength chart</canvas
+            >
+          </div>
+        </div>
+        <BottomAxis />
         <div class="text-center">Wavelength (Microns)</div>
       </div>
     </div>
