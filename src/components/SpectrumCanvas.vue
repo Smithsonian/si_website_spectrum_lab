@@ -16,7 +16,7 @@
             >
           </div>
         </div>
-        <BottomAxis />
+        <BottomAxis :zoom="props.zoom" />
         <div class="text-center">Wavelength (Microns)</div>
       </div>
     </div>
@@ -25,6 +25,11 @@
 
 <script setup lang="ts">
 import { useTemplateRef, onMounted } from 'vue';
+
+const props = defineProps({
+  zoom: { type: Number, default: 1 },
+});
+
 const chartCanvas = useTemplateRef('chart');
 let chartCtx: CanvasRenderingContext2D | null = null;
 

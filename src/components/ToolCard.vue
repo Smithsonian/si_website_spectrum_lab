@@ -38,7 +38,7 @@
         </BRow>
       </BCol>
       <BCol>
-        <SpectrumCanvas />
+        <SpectrumCanvas :zoom="props.zoom" />
       </BCol>
     </BRow>
   </div>
@@ -53,6 +53,10 @@ import {
 } from '@/metadataStore';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, ref, watch } from 'vue';
+
+const props = defineProps({
+  zoom: { type: Number, default: 1 },
+});
 
 const file = ref<null | File>(null);
 
