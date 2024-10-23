@@ -25,6 +25,8 @@ const drawAxis = (stretch: number) => {
   if (!ctx) {
     return;
   }
+  // The chart math assumes 750 pixels. This allows us to change the chart
+  // size without breaking stuff.
   const pixelsPerWv = CHART_WIDTH / 750;
   const pixelStretch = Number((pixelsPerWv * stretch).toFixed(3));
 
@@ -35,6 +37,7 @@ const drawAxis = (stretch: number) => {
   for (let i = 0; i < 98; i++) {
     const xTickDistance = 100;
     const xTickPosition = xLeftSideRoom + i * xTickDistance * pixelStretch;
+    // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
     const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
     if (xTickPosSharp > CHART_WIDTH) {
       break;
@@ -43,6 +46,22 @@ const drawAxis = (stretch: number) => {
     ctx.moveTo(xTickPosSharp, 0);
     ctx.lineTo(xTickPosSharp, 4);
     ctx.stroke();
+  }
+
+  // Numbers
+  ctx.font = '11px Arial';
+  ctx.fillStyle = 'white';
+
+  // Numbers 0.2 to 0.9
+  let start = 2;
+  if (stretch > 0.5) {
+    for (let i = start; i <= 9; i++) {
+      const xSmallTickDistance = 100;
+      const xTickPosition =
+        xLeftSideRoom + (i - start) * xSmallTickDistance * pixelStretch;
+      const xTextOffset = 5;
+      ctx.fillText(`${i / 10}`, xTickPosition - xTextOffset, 18);
+    }
   }
 };
 
