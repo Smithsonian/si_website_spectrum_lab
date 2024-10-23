@@ -34,17 +34,46 @@ const drawAxis = (zoom: number) => {
   ctx.clearRect(0, 0, xCanvasWidth, 30);
 
   // Small ticks
-  for (let i = 0; i < 98; i++) {
-    const xTickDistance = 100;
-    const xTickPosition = xLeftSideRoom + i * xTickDistance * pixelZoom;
-    // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
-    const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
+  ctx.lineWidth = 1;
+  if (zoom >= 0.08) {
+    for (let i = 0; i < 98; i++) {
+      const xTickDistance = 100;
+      const xTickPosition = xLeftSideRoom + i * xTickDistance * pixelZoom;
+      // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
+      const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
+      if (xTickPosSharp > xCanvasWidth) {
+        break;
+      }
+      ctx.beginPath();
+      ctx.moveTo(xTickPosSharp, 0);
+      ctx.lineTo(xTickPosSharp, 4);
+      ctx.stroke();
+    }
+  } else {
+    // Draw zero-ish tick
+    const xTickPosSharp = xLeftSideRoom + 0.5;
+    ctx.beginPath();
+    ctx.moveTo(xTickPosSharp, 0);
+    ctx.lineTo(xTickPosSharp, 4);
+    ctx.stroke();
+  }
+
+  // Medium ticks
+  ctx.lineWidth = 2;
+  for (let i = 0; i < 60; i++) {
+    const xTickDistance = 1000;
+    // Since the tenths start at 0.2, we need to start at 800 not 1000
+    const xPreviousTicksOffset = 800;
+    const xTickPosition =
+      xLeftSideRoom + (xPreviousTicksOffset + i * xTickDistance) * pixelZoom;
+    // Canvas lines 2 pixels thick are only sharp when on the whole pixel grid
+    const xTickPosSharp = Math.floor(xTickPosition);
     if (xTickPosSharp > xCanvasWidth) {
       break;
     }
     ctx.beginPath();
     ctx.moveTo(xTickPosSharp, 0);
-    ctx.lineTo(xTickPosSharp, 4);
+    ctx.lineTo(xTickPosSharp, 6);
     ctx.stroke();
   }
 
@@ -65,6 +94,26 @@ const drawAxis = (zoom: number) => {
       const xTextOffset = 5;
       ctx.fillText(`${i / 10}`, xTickPosition - xTextOffset, 18);
     }
+  }
+
+  // Numbers 1 to 10
+  start = 1;
+  for (let i = start; i <= 10; i++) {
+    const xTickDistance = 1000;
+    // Since the tenths start at 0.2, we need to start at 800 not 1000
+    const xPreviousTicksOffset = 800;
+    const xTickPosition =
+      xLeftSideRoom +
+      (xPreviousTicksOffset + (i - start) * xTickDistance) * pixelZoom;
+    if (xTickPosition > xCanvasWidth) {
+      break;
+    }
+    const tickLabel = `${i}`;
+    let xTextOffset = 3;
+    if (tickLabel.length > 1) {
+      xTextOffset = 6;
+    }
+    ctx.fillText(tickLabel, xTickPosition - xTextOffset, 18);
   }
 };
 
