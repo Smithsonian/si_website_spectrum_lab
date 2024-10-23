@@ -1,7 +1,9 @@
 <template>
   <BRow>
     <ChallengeCol />
-    <ToolCol />
+    <BCol>
+      <ToolCard />
+    </BCol>
   </BRow>
 </template>
 
