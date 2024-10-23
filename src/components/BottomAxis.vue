@@ -33,9 +33,7 @@ const drawAxis = (zoom: number) => {
   // Clear
   ctx.clearRect(0, 0, xCanvasWidth, 30);
 
-  // Configure font
-  ctx.font = '11px Arial';
-  ctx.fillStyle = 'white';
+  const yTextBottom = 19;
 
   // 1/10 micron ticks
   ctx.lineWidth = 1;
@@ -59,7 +57,7 @@ const drawAxis = (zoom: number) => {
       const wavelength = i / 10;
       if (zoom > 0.4 && wavelength !== Math.floor(wavelength)) {
         const xTextOffset = 5;
-        ctx.fillText(`${wavelength}`, xTickPosition - xTextOffset, 18);
+        ctx.fillText(`${wavelength}`, xTickPosition - xTextOffset, yTextBottom);
       }
     }
   } else {
@@ -71,14 +69,16 @@ const drawAxis = (zoom: number) => {
     ctx.stroke();
   }
 
-  // Medium ticks
+  // 1 micron ticks
   ctx.lineWidth = 2;
-  for (let i = 0; i < 60; i++) {
+  let mediumStart = 1;
+  for (let i = 1; i <= 60; i++) {
     const xTickDistance = 1000;
     // Since the tenths start at 0.2, we need to start at 800 not 1000
     const xPreviousTicksOffset = 800;
     const xTickPosition =
-      xLeftSideRoom + (xPreviousTicksOffset + i * xTickDistance) * pixelZoom;
+      xLeftSideRoom +
+      (xPreviousTicksOffset + (i - mediumStart) * xTickDistance) * pixelZoom;
     // Canvas lines 2 pixels thick are only sharp when on the whole pixel grid
     const xTickPosSharp = Math.floor(xTickPosition);
     if (xTickPosSharp > xCanvasWidth) {
@@ -88,27 +88,41 @@ const drawAxis = (zoom: number) => {
     ctx.moveTo(xTickPosSharp, 0);
     ctx.lineTo(xTickPosSharp, 6);
     ctx.stroke();
+
+    // Skip tens of microns
+    if (zoom > 0.02 && i % 10) {
+      const tickLabel = `${i}`;
+      let xTextOffset = 3;
+      if (tickLabel.length > 1) {
+        xTextOffset = 6;
+      }
+      ctx.fillText(tickLabel, xTickPosition - xTextOffset, yTextBottom);
+    }
   }
 
-  // Numbers
-  // Numbers 1 to 10
-  let mediumStart = 1;
-  for (let i = mediumStart; i <= 10; i++) {
-    const xTickDistance = 1000;
-    // Since the tenths start at 0.2, we need to start at 800 not 1000
-    const xPreviousTicksOffset = 800;
+  // 10 micron ticks
+  ctx.lineWidth = 3;
+  let largeStart = 1;
+  for (let i = largeStart; i <= 3; i++) {
+    const xTickDistance = 10000;
+    // Since the tenths start at 0.2, we need to start at 9800 not 10000
+    const xPreviousTicksOffset = 9800;
     const xTickPosition =
       xLeftSideRoom +
-      (xPreviousTicksOffset + (i - mediumStart) * xTickDistance) * pixelZoom;
-    if (xTickPosition > xCanvasWidth) {
+      (xPreviousTicksOffset + (i - largeStart) * xTickDistance) * pixelZoom;
+    // Canvas lines 3 pixels thick are only sharp when 0.5 off the whole pixel grid
+    const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
+    if (xTickPosSharp > xCanvasWidth) {
       break;
     }
-    const tickLabel = `${i}`;
-    let xTextOffset = 3;
-    if (tickLabel.length > 1) {
-      xTextOffset = 6;
-    }
-    ctx.fillText(tickLabel, xTickPosition - xTextOffset, 18);
+    ctx.beginPath();
+    ctx.moveTo(xTickPosSharp, 0);
+    ctx.lineTo(xTickPosSharp, 8);
+    ctx.stroke();
+
+    const tickLabel = `${i * 10}`;
+    let xTextOffset = 7;
+    ctx.fillText(tickLabel, xTickPosition - xTextOffset, yTextBottom);
   }
 };
 
@@ -127,7 +141,7 @@ onMounted(() => {
   if (!ctx) {
     return;
   }
-  ctx.font = '9px Myriad Pro';
+  ctx.font = '11px Arial';
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
   drawAxis(props.zoom);
