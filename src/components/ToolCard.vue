@@ -46,13 +46,15 @@
 
 <script setup lang="ts">
 import {
+  CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
   useMetadataStore,
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
+import { dataFromText, type SpectrumDatum } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref, watch } from 'vue';
+import { computed, ref, toRaw, watch } from 'vue';
 
 const props = defineProps({
   zoom: { type: Number, default: 1 },
@@ -126,6 +128,34 @@ const iconPath = computed((): string => {
     return DEFAULT_ICON;
   }
   return `/includes/SpecLab_Data_Files/${imageName}`;
+});
+
+const fetchSpectrumData = async (
+  metadata: SpectrumMetadata | null,
+): Promise<SpectrumDatum[]> => {
+  if (!metadata) {
+    return [];
+  }
+  const directory = CATEGORY_DIRECTORIES[metadata.category];
+  const url = `includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      return [];
+    }
+    const text = await response.text();
+    return dataFromText(text);
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+};
+
+// Spectrum data
+const spectrumData = ref<SpectrumDatum[]>([]);
+watch(selectedMetadata, async (newMetadata) => {
+  spectrumData.value = await fetchSpectrumData(newMetadata);
+  console.log(toRaw(spectrumData.value));
 });
 </script>
 

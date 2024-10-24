@@ -15,6 +15,20 @@ export const PRELOADED_CATEGORIES = [
   'Museum Pigments',
 ] as const;
 
+export const CATEGORY_DIRECTORIES = {
+  Lamps: 'Lamps',
+  Stars: 'Stars',
+  Nature: 'Nature',
+  'Atoms and Molecules': 'Atoms_and_Molecules',
+  Planets: 'Planets',
+  Exoplanets: 'Exoplanets',
+  'Exoplanet Models': 'Exoplanet_Models',
+  'Thermal Spectra': 'Thermal_Spectra',
+  'Fish Tank': 'Fish_Tank',
+  'Museum Curation': 'Museum_Curation',
+  'Museum Pigments': 'Museum_Pigments',
+} as const;
+
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
 
 export interface SpectrumMetadata {
