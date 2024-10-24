@@ -38,7 +38,7 @@
         </BRow>
       </BCol>
       <BCol>
-        <SpectrumCanvas :zoom="props.zoom" />
+        <SpectrumCanvas :zoom="props.zoom" :data="spectrumData" />
       </BCol>
     </BRow>
   </div>
