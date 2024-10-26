@@ -44,13 +44,13 @@ jobs:
             dist
             .vite-ssg-temp
             components.d.ts
-          key: ${{ runner.os }}-vite-ssg-build-${{ hashFiles('dist') }}
+          key: ${{ runner.os }}-vite-ssg-build-${{ hashFiles('src') }}
           restore-keys: |
             ${{ runner.os }}-vite-ssg-build-
       - name: Install dependencies
         run: npm ci
       - name: Static HTML export with Vite SSG
-        run: npm run build -- --base=${{ steps.setup_pages.outputs.base_url }}
+        run: npm run build -- --base=${{ steps.setup_pages.outputs.base_path }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
