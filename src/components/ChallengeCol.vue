@@ -1,5 +1,5 @@
 <template>
-  <BCol cols="12" class="mb-3">
+  <BCol cols="12" xxl="3" class="mb-3">
     <div class="p-3 rounded-4 border border-dark">
       <h2>Welcome to the Playground</h2>
       <p>
