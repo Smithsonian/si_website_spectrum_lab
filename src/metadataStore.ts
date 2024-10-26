@@ -24,7 +24,7 @@ export const CATEGORY_DIRECTORIES = {
   Exoplanets: 'Exoplanets',
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
-  'Fish Tank': 'Fish_Tank',
+  'Fish Tank': 'Fishtank_Lights',
   'Museum Curation': 'Museum_Curation',
   'Museum Pigments': 'Museum_Pigments',
 } as const;

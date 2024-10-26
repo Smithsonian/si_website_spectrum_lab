@@ -62,7 +62,9 @@ const drawData = () => {
   clearChart();
 
   // Color setup
-  ctx.fillStyle = 'blue';
+  const dataColor = 'blue';
+  ctx.fillStyle = dataColor;
+  ctx.strokeStyle = dataColor;
 
   // The left side is always 0.2 microns. The right side, at zoom 1, is 0.95 microns.
   // The chart drawing math assumes the chart to be 750 pixels wide.
@@ -83,13 +85,27 @@ const drawData = () => {
   const yPixel0to1Range = 130;
   const yPixel0Level = 10.5;
 
+  let xPrevPosition: number | null = null;
+  let yPrevPosition: number | null = null;
+
   for (let [wavelength, intensity] of data) {
     const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom;
+    const yPosition =
+      CHART_HEIGHT - (intensity * yPixel0to1Range + yPixel0Level);
+    if (xPrevPosition && yPrevPosition) {
+      // Draw line to previous datum, even if the current one is off the right edge
+      ctx.beginPath();
+      ctx.moveTo(xPosition, yPosition);
+      ctx.lineTo(xPrevPosition, yPrevPosition);
+      ctx.stroke();
+    }
+    // Draw circle for the current datum unless it's off the edge
+    // And save its position so the next datum can draw a line back to it
     if (xPosition > CHART_WIDTH) {
       break;
     }
-    const yPosition =
-      CHART_HEIGHT - (intensity * yPixel0to1Range + yPixel0Level);
+    xPrevPosition = xPosition;
+    yPrevPosition = yPosition;
     ctx.beginPath();
     ctx.arc(xPosition, yPosition, 1.5, 0, 2 * Math.PI);
     ctx.fill();
