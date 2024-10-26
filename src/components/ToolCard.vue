@@ -17,7 +17,7 @@
         <div class="h3">Spectrum 1</div>
         <BRow>
           <BCol cols="6" md="4" xl="12">
-            <div class="spectrum-icon-holder rounded-4">
+            <div class="spectrum-icon-holder rounded-4 mb-1">
               <img class="spectrum-icon" :src="iconPath" />
             </div>
           </BCol>
@@ -32,8 +32,6 @@
                 :options="spectrumOptions"
               />
             </template>
-            <div>Category: {{ selectedCategory }}</div>
-            <div>Spectrum: {{ selectedSpectrum }}</div>
           </BCol>
         </BRow>
       </BCol>
@@ -190,6 +188,7 @@ input.spectrum-filepicker:hover {
   height: 160px;
   width: 180px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: black;
+  border: 2px solid black;
 }
 </style>
