@@ -1,20 +1,20 @@
 <template>
   <div class="tool-card text-white p-3 rounded-4">
-    <BRow class="mb-3">
-      <BCol cols="8" md="6" lg="8" xl="6">
-        <BFormGroup label="Use your own spectrum data (CSV)">
-          <BFormFile
-            v-model="file"
-            accept="text/csv"
-            class="spectrum-filepicker"
-          />
-        </BFormGroup>
-      </BCol>
-      <BCol />
-    </BRow>
-    <BRow>
-      <BCol cols="12" xl="4" xxl="3" class="mb-3">
-        <div class="h3">Spectrum 1</div>
+    <!-- Chart bottom means file picker top, and vice versa -->
+    <template v-if="chartPosition === 'bottom'">
+      <BRow class="mb-3">
+        <SpectrumFilepicker />
+        <BCol />
+      </BRow>
+    </template>
+    <!-- Chart sent to the bottom or top -->
+    <BRow
+      :class="
+        chartPosition === 'bottom' ? 'align-items-end' : 'align-items-start'
+      "
+    >
+      <BCol cols="12" xl="4" xxl="3">
+        <div class="h3">{{ title }}</div>
         <BRow>
           <BCol cols="6" md="4" xl="12">
             <div class="spectrum-icon-holder rounded-4 mb-1">
@@ -35,14 +35,27 @@
           </BCol>
         </BRow>
       </BCol>
-      <BCol>
+      <!-- Chart needs to be reordered before spectrum picker, when on top in smaller breakpoints -->
+      <BCol
+        :class="
+          chartPosition === 'bottom'
+            ? 'mt-3'
+            : 'mt-2 mb-3 order-first order-xl-last'
+        "
+      >
         <SpectrumCanvas
-          :zoom="zoom"
-          :show-lines="showLines"
+          :zoom="props.zoom"
+          :show-lines="props.showLines"
           :data="spectrumData"
         />
       </BCol>
     </BRow>
+    <template v-if="chartPosition === 'top'">
+      <BRow class="mt-3">
+        <SpectrumFilepicker />
+        <BCol />
+      </BRow>
+    </template>
   </div>
 </template>
 
@@ -56,14 +69,19 @@ import {
 } from '@/metadataStore';
 import { dataFromText, type SpectrumDatum } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref, toRaw, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 
-const { zoom, showLines } = defineProps<{
-  zoom: number;
-  showLines: boolean;
-}>();
+type ChartPosition = 'top' | 'bottom';
 
-const file = ref<null | File>(null);
+const props = withDefaults(
+  defineProps<{
+    zoom: number;
+    showLines: boolean;
+    title: string;
+    chartPosition?: ChartPosition;
+  }>(),
+  { chartPosition: 'bottom' },
+);
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
 const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
@@ -158,36 +176,12 @@ const fetchSpectrumData = async (
 const spectrumData = ref<SpectrumDatum[]>([]);
 watch(selectedMetadata, async (newMetadata) => {
   spectrumData.value = await fetchSpectrumData(newMetadata);
-  console.log(toRaw(spectrumData.value));
 });
 </script>
 
 <style>
 .tool-card {
   background-color: #1e4c7d;
-}
-input.spectrum-filepicker {
-  background-color: rgb(255 255 255 / 10%);
-  color: var(--bs-light);
-  border-color: var(--bs-gray);
-}
-input.spectrum-filepicker::file-selector-button {
-  color: var(--bs-light);
-  background-color: #7f9ccb;
-}
-input.spectrum-filepicker:focus:not(:disabled):not(
-    [readonly]
-  )::file-selector-button,
-input.spectrum-filepicker:hover:not(:disabled):not(
-    [readonly]
-  )::file-selector-button {
-  color: var(--bs-light);
-  background-color: #9bbff8;
-}
-input.spectrum-filepicker:focus,
-input.spectrum-filepicker:hover {
-  background-color: rgb(255 255 255 / 10%);
-  color: var(--bs-light);
 }
 .spectrum-icon-holder {
   height: 160px;

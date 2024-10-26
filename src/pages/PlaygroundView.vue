@@ -2,8 +2,8 @@
   <BRow>
     <ChallengeCol />
     <BCol>
-      <ToolCard :zoom="zoom" :show-lines="showLines" />
-      <BRow class="mt-2">
+      <ToolCard title="Spectrum 1" :zoom="zoom" :show-lines="showLines" />
+      <BRow class="mt-1 mb-2 px-3">
         <BCol cols="4">
           <BFormGroup label="Plot type">
             <BFormSelect v-model="plotType" :options="plotOptions" />
@@ -21,6 +21,14 @@
           </BFormGroup>
         </BCol>
       </BRow>
+      <div>
+        <ToolCard
+          title="Spectrum 2"
+          chart-position="top"
+          :zoom="zoom"
+          :show-lines="showLines"
+        />
+      </div>
     </BCol>
   </BRow>
 </template>
