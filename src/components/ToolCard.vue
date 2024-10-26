@@ -119,7 +119,7 @@ const selectedMetadata = computed(
 // Icon
 const iconPath = computed((): string => {
   const DEFAULT_ICON =
-    '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
+    'includes/AI_common/images/Harry_sun_spectrum_resized.png';
   if (!selectedMetadata.value) {
     return DEFAULT_ICON;
   }
@@ -127,7 +127,7 @@ const iconPath = computed((): string => {
   if (!imageName) {
     return DEFAULT_ICON;
   }
-  return `/includes/SpecLab_Data_Files/${imageName}`;
+  return `includes/SpecLab_Data_Files/${imageName}`;
 });
 
 const fetchSpectrumData = async (
