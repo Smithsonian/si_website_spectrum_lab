@@ -9,3 +9,11 @@ node_modules
 
 # VS Code settings
 .vscode
+
+# Build output
+dist
+dist-ssr
+.vite-ssg-temp
+
+# Generated type files
+components.d.ts
