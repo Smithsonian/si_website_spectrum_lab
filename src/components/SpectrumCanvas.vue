@@ -28,8 +28,9 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 import type { SpectrumDatum } from '@/utils';
 import { useTemplateRef, onMounted, watch } from 'vue';
 
-const { zoom, data } = defineProps<{
+const { zoom, showLines, data } = defineProps<{
   zoom: number;
+  showLines: boolean;
   data: SpectrumDatum[];
 }>();
 
@@ -92,7 +93,7 @@ const drawData = () => {
     const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom;
     const yPosition =
       CHART_HEIGHT - (intensity * yPixel0to1Range + yPixel0Level);
-    if (xPrevPosition && yPrevPosition) {
+    if (showLines && xPrevPosition && yPrevPosition) {
       // Draw line to previous datum, even if the current one is off the right edge
       ctx.beginPath();
       ctx.moveTo(xPosition, yPosition);
@@ -112,7 +113,7 @@ const drawData = () => {
   }
 };
 
-watch([() => zoom, () => data], async () => {
+watch([() => zoom, () => data, () => showLines], async () => {
   drawData();
 });
 </script>

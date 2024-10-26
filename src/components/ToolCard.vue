@@ -36,7 +36,11 @@
         </BRow>
       </BCol>
       <BCol>
-        <SpectrumCanvas :zoom="props.zoom" :data="spectrumData" />
+        <SpectrumCanvas
+          :zoom="zoom"
+          :show-lines="showLines"
+          :data="spectrumData"
+        />
       </BCol>
     </BRow>
   </div>
@@ -54,9 +58,10 @@ import { dataFromText, type SpectrumDatum } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, ref, toRaw, watch } from 'vue';
 
-const props = defineProps({
-  zoom: { type: Number, default: 1 },
-});
+const { zoom, showLines } = defineProps<{
+  zoom: number;
+  showLines: boolean;
+}>();
 
 const file = ref<null | File>(null);
 
