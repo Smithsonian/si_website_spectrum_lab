@@ -1,6 +1,6 @@
 <template>
   <div class="spectrum-canvas">
-    <div class="d-flex align-items-start">
+    <div class="d-flex">
       <div class="left-axis-label">
         More Light
         <span class="mt-1">
@@ -8,6 +8,7 @@
         /></span>
       </div>
       <div>
+        <SpectrumRainbow />
         <div class="d-flex">
           <LeftAxis />
           <div style="height: 150px">
@@ -120,6 +121,7 @@ watch([() => zoom, () => data, () => showLines], async () => {
 
 <style>
 .left-axis-label {
+  margin: 60px 0 0 0;
   writing-mode: vertical-rl;
   text-align: center;
   transform: rotate(180deg);
