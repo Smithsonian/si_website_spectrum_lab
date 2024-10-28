@@ -43,7 +43,7 @@
             : 'mt-2 mb-3 order-first order-xl-last'
         "
       >
-        <SpectrumCanvas
+        <SpectrumChart
           :zoom="props.zoom"
           :show-lines="props.showLines"
           :data="spectrumData"
