@@ -65,7 +65,7 @@ const drawBackground = () => {
   );
 };
 
-const clearOverlay = () => {
+const blackOutOverlay = () => {
   if (!overlay.value || !overlayCtx) {
     return;
   }
@@ -78,7 +78,7 @@ onMounted(() => {
     return;
   }
   overlayCtx = overlay.value.getContext('2d');
-  // clearOverlay();
+  blackOutOverlay();
   if (!background.value) {
     return;
   }
@@ -91,7 +91,8 @@ const drawOverlay = () => {
   if (!overlayCtx) {
     return;
   }
-  clearOverlay();
+  // Starting point to ensure spectrum areas we don't draw to stay full black
+  blackOutOverlay();
 
   // We need to take care to draw rectangles the same way whether the data is sparse or
   // dense, which is tough using alphas.
@@ -125,9 +126,14 @@ const drawOverlay = () => {
       (runningSum, intensity) => runningSum + intensity,
     );
     const intensityAverage = intensitySum / intensities.length;
-    const alphaPercent = (intensityAverage * 100).toFixed(2);
+    // Alpha is inverted intensity. More intensity = more transparent = smaller alpha
+    const alpha = 1 - intensityAverage;
+    const alphaPercent = (alpha * 100).toFixed(2);
     const xWidth = xPixel - xPreviousPixel;
-    overlayCtx.fillStyle = `rgb(255 255 255 / ${alphaPercent}%)`;
+    overlayCtx.fillStyle = `rgb(0 0 0 / ${alphaPercent}%)`;
+    // First, clear the existing blackout
+    overlayCtx.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+    // Then, draw the alpha overlay
     overlayCtx.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
     if (xPixel > CHART_WIDTH) {
       break;
@@ -139,9 +145,9 @@ const drawOverlay = () => {
 watch([() => zoom], async () => {
   drawBackground();
 });
-// watch([() => zoom, () => data], async () => {
-//   drawOverlay();
-// });
+watch([() => zoom, () => data], async () => {
+  drawOverlay();
+});
 </script>
 
 <style>
