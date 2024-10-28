@@ -116,28 +116,45 @@ const drawOverlay = () => {
 
   // Draw the rectangles, using average intensities
   let xPreviousPixel: number | null = null;
+  let previousAlpha: string | null = null;
   for (const [xPixel, intensities] of intensitiesByPixel.entries()) {
-    if (xPreviousPixel === null) {
-      // Skip first xPixel, use it for the second xPixel which draws the first rectangle
-      xPreviousPixel = xPixel;
-      continue;
-    }
     const intensitySum = intensities.reduce(
       (runningSum, intensity) => runningSum + intensity,
     );
     const intensityAverage = intensitySum / intensities.length;
     // Alpha is inverted intensity. More intensity = more transparent = smaller alpha
     const alpha = (1 - intensityAverage).toFixed(3);
+    // Don't draw anything for the first xPixel.
+    // Wait until the second xPixel to draw the first rectangle or gradient.
+    if (xPreviousPixel === null) {
+      xPreviousPixel = xPixel;
+      previousAlpha = alpha;
+      continue;
+    }
     const xWidth = xPixel - xPreviousPixel;
-    overlayCtx.fillStyle = `rgb(0 0 0 / ${alpha})`;
     // First, clear the existing blackout
     overlayCtx.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
-    // Then, draw the alpha overlay
+    if (xWidth === 1) {
+      // Fillstyle is a single alpha
+      overlayCtx.fillStyle = `rgb(0 0 0 / ${alpha})`;
+    } else {
+      // Fillstyle is an alpha gradient from left to right
+      const gradient = overlayCtx.createLinearGradient(
+        xPreviousPixel,
+        0,
+        xPixel,
+        0,
+      );
+      gradient.addColorStop(0, `rgb(0 0 0 / ${previousAlpha})`);
+      gradient.addColorStop(1, `rgb(0 0 0 / ${alpha})`);
+      overlayCtx.fillStyle = gradient;
+    }
     overlayCtx.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
     if (xPixel > CHART_WIDTH) {
       break;
     }
     xPreviousPixel = xPixel;
+    previousAlpha = alpha;
   }
 };
 
