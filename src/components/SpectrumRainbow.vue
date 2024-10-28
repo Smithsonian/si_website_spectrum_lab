@@ -117,7 +117,7 @@ const drawOverlay = () => {
   // Draw the rectangles, using average intensities
   let xPreviousPixel: number | null = null;
   for (const [xPixel, intensities] of intensitiesByPixel.entries()) {
-    if (!xPreviousPixel) {
+    if (xPreviousPixel === null) {
       // Skip first xPixel, use it for the second xPixel which draws the first rectangle
       xPreviousPixel = xPixel;
       continue;
