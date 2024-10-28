@@ -94,7 +94,13 @@ const drawData = () => {
     const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom;
     const yPosition =
       CHART_HEIGHT - (intensity * yPixel0to1Range + yPixel0Level);
-    if (showLines && xPrevPosition && yPrevPosition) {
+    if (xPosition < 0) {
+      // Off the left edge, set this as previous position and move on
+      xPrevPosition = xPosition;
+      yPrevPosition = yPosition;
+      continue;
+    }
+    if (showLines && xPrevPosition !== null && yPrevPosition !== null) {
       // Draw line to previous datum, even if the current one is off the right edge
       ctx.beginPath();
       ctx.moveTo(xPosition, yPosition);
