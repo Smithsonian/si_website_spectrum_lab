@@ -8,7 +8,7 @@
         /></span>
       </div>
       <div>
-        <SpectrumRainbow />
+        <SpectrumRainbow :zoom="zoom" :data="data" />
         <div class="d-flex">
           <LeftAxis />
           <div style="height: 150px">
