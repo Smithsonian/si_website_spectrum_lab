@@ -40,5 +40,11 @@ export function dataFromText(text: string): SpectrumDatum[] {
     }
     data.push([wavelengths[i], normalizedIntensities[i]]);
   }
+  // Some of the preset data isn't sorted
+  data.sort((a, b) => {
+    const [aWav] = a;
+    const [bWav] = b;
+    return aWav - bWav;
+  });
   return data;
 }
