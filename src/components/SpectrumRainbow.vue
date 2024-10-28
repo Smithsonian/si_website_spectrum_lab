@@ -103,10 +103,6 @@ const drawOverlay = () => {
     const [wavelength, intensity] = datum;
     const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom.value;
     const xPixel = Math.floor(xPosition);
-    // Skip pixels off the left edge
-    if (xPixel < 0) {
-      continue;
-    }
     if (!intensitiesByPixel.has(xPixel)) {
       intensitiesByPixel.set(xPixel, [intensity]);
     } else {
