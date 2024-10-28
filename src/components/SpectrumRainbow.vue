@@ -127,10 +127,9 @@ const drawOverlay = () => {
     );
     const intensityAverage = intensitySum / intensities.length;
     // Alpha is inverted intensity. More intensity = more transparent = smaller alpha
-    const alpha = 1 - intensityAverage;
-    const alphaPercent = (alpha * 100).toFixed(2);
+    const alpha = (1 - intensityAverage).toFixed(3);
     const xWidth = xPixel - xPreviousPixel;
-    overlayCtx.fillStyle = `rgb(0 0 0 / ${alphaPercent}%)`;
+    overlayCtx.fillStyle = `rgb(0 0 0 / ${alpha})`;
     // First, clear the existing blackout
     overlayCtx.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
     // Then, draw the alpha overlay
