@@ -32,6 +32,12 @@ export function dataFromText(text: string): SpectrumDatum[] {
     i < wavelengths.length && i < normalizedIntensities.length;
     i++
   ) {
+    const wavelength = wavelengths[i];
+    const intensity = normalizedIntensities[i];
+    // Filter out any NaNs
+    if (isNaN(wavelength) || isNaN(intensity)) {
+      continue;
+    }
     data.push([wavelengths[i], normalizedIntensities[i]]);
   }
   return data;
