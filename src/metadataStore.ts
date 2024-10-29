@@ -26,7 +26,7 @@ export const CATEGORY_DIRECTORIES = {
   'Thermal Spectra': 'Thermal_Spectra',
   'Fish Tank': 'Fishtank_Lights',
   'Museum Curation': 'Museum_Curation',
-  'Museum Pigments': 'Museum_Pigments',
+  'Museum Pigments': 'Museum_Curation',
 } as const;
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
