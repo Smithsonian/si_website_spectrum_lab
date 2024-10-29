@@ -15,7 +15,11 @@ function parseText(text: string): [number[], number[]] {
   return [wavelengths, intensities];
 }
 
-function rangeNormalize(data: number[], minTo = 0.05, maxTo = 0.95): number[] {
+export function rangeNormalize(
+  data: number[],
+  minTo = 0.05,
+  maxTo = 0.95,
+): number[] {
   const min = Math.min(...data);
   const max = Math.max(...data);
   const slope = (maxTo - minTo) / (max - min);
@@ -25,20 +29,15 @@ function rangeNormalize(data: number[], minTo = 0.05, maxTo = 0.95): number[] {
 
 export function dataFromText(text: string): SpectrumDatum[] {
   const [wavelengths, intensities] = parseText(text);
-  const normalizedIntensities = rangeNormalize(intensities);
   const data: SpectrumDatum[] = [];
-  for (
-    let i = 0;
-    i < wavelengths.length && i < normalizedIntensities.length;
-    i++
-  ) {
+  for (let i = 0; i < wavelengths.length && i < intensities.length; i++) {
     const wavelength = wavelengths[i];
-    const intensity = normalizedIntensities[i];
+    const intensity = intensities[i];
     // Filter out any NaNs
     if (isNaN(wavelength) || isNaN(intensity)) {
       continue;
     }
-    data.push([wavelengths[i], normalizedIntensities[i]]);
+    data.push([wavelengths[i], intensities[i]]);
   }
   // Some of the preset data isn't sorted
   data.sort((a, b) => {

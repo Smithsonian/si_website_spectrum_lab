@@ -12,7 +12,7 @@
         <div class="d-flex">
           <LeftAxis />
           <div style="height: 150px">
-            <canvas ref="chart" :width="CHART_WIDTH" height="150"
+            <canvas ref="chart" :width="CHART_WIDTH" height="150" class="chart"
               >Spectrum intensity vs wavelength chart</canvas
             >
           </div>
@@ -35,25 +35,26 @@ const { zoom, showLines, data } = defineProps<{
   data: SpectrumDatum[];
 }>();
 
-const chartCanvas = useTemplateRef('chart');
+const canvas = useTemplateRef('chart');
 let ctx: CanvasRenderingContext2D | null = null;
 
 const clearChart = () => {
-  if (!chartCanvas.value) {
+  if (!canvas.value) {
     return;
   }
   if (!ctx) {
     return;
   }
   ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, chartCanvas.value.width, chartCanvas.value.height);
+  ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
+  ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
 };
 
 onMounted(() => {
-  if (!chartCanvas.value) {
+  if (!canvas.value) {
     return;
   }
-  ctx = chartCanvas.value.getContext('2d');
+  ctx = canvas.value.getContext('2d');
   clearChart();
 });
 

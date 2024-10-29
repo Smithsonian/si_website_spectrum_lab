@@ -67,9 +67,9 @@ import {
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
-import { dataFromText, type SpectrumDatum } from '@/utils';
+import { dataFromText, rangeNormalize, type SpectrumDatum } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref, watch } from 'vue';
+import { computed, ref, watch, type Ref } from 'vue';
 
 type ChartPosition = 'top' | 'bottom';
 
@@ -78,9 +78,10 @@ const props = withDefaults(
     zoom: number;
     showLines: boolean;
     title: string;
+    normalize?: boolean;
     chartPosition?: ChartPosition;
   }>(),
-  { chartPosition: 'bottom' },
+  { normalize: true, chartPosition: 'bottom' },
 );
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
@@ -173,9 +174,27 @@ const fetchSpectrumData = async (
 };
 
 // Spectrum data
-const spectrumData = ref<SpectrumDatum[]>([]);
+const spectrumDataFromNetwork: Ref<SpectrumDatum[]> = ref([]);
 watch(selectedMetadata, async (newMetadata) => {
-  spectrumData.value = await fetchSpectrumData(newMetadata);
+  spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
+});
+const spectrumData = computed(() => {
+  if (!props.normalize) {
+    return spectrumDataFromNetwork.value;
+  }
+  const unNormalizedIntensities = spectrumDataFromNetwork.value.map(
+    ([_, intensity]) => {
+      return intensity;
+    },
+  );
+  const normalizedIntensities = rangeNormalize(unNormalizedIntensities);
+  const normalizedSpectrumData: SpectrumDatum[] = [];
+  for (let i = 0; i < normalizedIntensities.length; i++) {
+    const [wavelength, _] = spectrumDataFromNetwork.value[i];
+    const normalizedIntensity = normalizedIntensities[i];
+    normalizedSpectrumData.push([wavelength, normalizedIntensity]);
+  }
+  return normalizedSpectrumData;
 });
 </script>
 
