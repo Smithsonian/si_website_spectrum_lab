@@ -20,7 +20,7 @@ export const CATEGORY_DIRECTORIES = {
   Stars: 'Stars',
   Nature: 'Nature',
   'Atoms and Molecules': 'Atoms_and_Molecules',
-  Planets: 'Planets',
+  Planets: 'Solar_System',
   Exoplanets: 'Exoplanets',
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
