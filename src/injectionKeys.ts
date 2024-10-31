@@ -24,3 +24,12 @@ export const showLinesKey = Symbol() as InjectionKey<Ref<boolean>>;
 export const cursorMicronsKey = Symbol() as InjectionKey<
   RefWithUpdater<number | null>
 >;
+
+// Cursor label unit
+export type CursorUnit =
+  | 'Microns'
+  | 'Nanometers'
+  | 'Angstrom'
+  | 'Gigahertz'
+  | 'Electron volt';
+export const cursorUnitKey = Symbol() as InjectionKey<Ref<CursorUnit>>;

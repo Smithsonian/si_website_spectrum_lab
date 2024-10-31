@@ -22,7 +22,7 @@
         class="position-absolute cursor-label rounded-1 px-1"
         :style="`top: ${RAINBOW_HEIGHT + 3}px; left: 5px;`"
       >
-        {{ labelValue }}&nbsp;microns
+        {{ labelValue }}&nbsp;{{ labelUnit }}
       </div>
     </div>
     <!-- Target for pointer events. Above the cursor, so we always get the hits here. -->
@@ -46,7 +46,9 @@ import {
 import {
   createRefWithUpdater,
   cursorMicronsKey,
+  cursorUnitKey,
   zoomKey,
+  type CursorUnit,
 } from '@/injectionKeys';
 import { micronsFromXLoc, xLocFromMicrons } from '@/utils';
 import { computed, inject, ref } from 'vue';
@@ -109,11 +111,56 @@ const xRenderLocation = computed((): number | null => {
   return xCursorLocation.value + LEFT_AXIS_WIDTH;
 });
 
+const cursorUnit = inject(cursorUnitKey, ref<CursorUnit>('Microns'));
+
+const numberFormat = new Intl.NumberFormat(undefined, {
+  maximumSignificantDigits: 4,
+});
+
+const vacuumSpeedOfLight = 299792458;
+const frequencyFromWavelengthMicrons = (wavelengthMicrons: number): number => {
+  const wavelengthMeters = wavelengthMicrons / 1000000;
+  return vacuumSpeedOfLight / wavelengthMeters;
+};
+// https://physics.nist.gov/cgi-bin/cuu/Value?minvev|search_for=electron+volt
+const electronVoltMicronRelation = 1.239841984;
+const electronVoltsFromWavelengthMicrons = (
+  wavelengthMicrons: number,
+): number => electronVoltMicronRelation / wavelengthMicrons;
+
 const labelValue = computed((): string | null => {
   if (cursorMicrons.value === null) {
     return null;
   }
-  return cursorMicrons.value.toPrecision(3);
+  switch (cursorUnit.value) {
+    case 'Microns':
+      return numberFormat.format(cursorMicrons.value);
+    case 'Nanometers':
+      return numberFormat.format(Math.floor(cursorMicrons.value * 1000));
+    case 'Angstrom':
+      return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
+    case 'Gigahertz':
+      return numberFormat.format(
+        frequencyFromWavelengthMicrons(cursorMicrons.value) / 1000000000,
+      );
+    case 'Electron volt':
+      return numberFormat.format(
+        electronVoltsFromWavelengthMicrons(cursorMicrons.value),
+      );
+    default:
+      return null;
+  }
+});
+
+const labelUnit = computed((): string => {
+  const labelsFromUnit: { [Key in CursorUnit]: string } = {
+    Microns: 'µm',
+    Nanometers: 'nm',
+    Angstrom: 'Å',
+    Gigahertz: 'GHz',
+    'Electron volt': 'eV',
+  };
+  return labelsFromUnit[cursorUnit.value];
 });
 </script>
 
