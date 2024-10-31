@@ -43,11 +43,7 @@
             : 'mt-2 mb-3 order-first order-xl-last'
         "
       >
-        <SpectrumChart
-          :zoom="props.zoom"
-          :show-lines="props.showLines"
-          :data="spectrumData"
-        />
+        <SpectrumChart :data="spectrumData" />
       </BCol>
     </BRow>
     <template v-if="chartPosition === 'top'">
@@ -75,8 +71,6 @@ type ChartPosition = 'top' | 'bottom';
 
 const props = withDefaults(
   defineProps<{
-    zoom: number;
-    showLines: boolean;
     title: string;
     normalize?: boolean;
     chartPosition?: ChartPosition;

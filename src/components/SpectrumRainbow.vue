@@ -1,36 +1,56 @@
 <template>
-  <div class="rainbow-div position-relative overflow-hidden rounded-top-4">
-    <canvas ref="background" :width="CHART_WIDTH" :height="CHART_HEIGHT"
-      >Full-intensity spectrum background</canvas
-    >
-    <canvas
-      ref="overlay"
-      class="rainbow-overlay position-absolute"
-      :width="CHART_WIDTH"
-      :height="CHART_HEIGHT"
-      >Transparency increases or decreases based on chart intensity, hiding or
-      revealing the background</canvas
-    >
+  <div class="rainbow-offset">
+    <SpectrumCursorOverlay>
+      <div class="rainbow-div position-relative overflow-hidden rounded-top-4">
+        <canvas
+          ref="background"
+          :width="CHART_WIDTH"
+          :height="RAINBOW_HEIGHT"
+          class="d-block"
+          >Full-intensity spectrum background</canvas
+        >
+        <canvas
+          ref="overlay"
+          class="position-absolute"
+          style="top: 0px; left: 0px"
+          :width="CHART_WIDTH"
+          :height="RAINBOW_HEIGHT"
+          >Transparency increases or decreases based on chart intensity, hiding
+          or revealing the background</canvas
+        >
+      </div>
+    </SpectrumCursorOverlay>
   </div>
 </template>
 
 <script setup lang="ts">
-import { CHART_HEIGHT, CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
+import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
+import { zoomKey } from '@/injectionKeys';
 import type { SpectrumDatum } from '@/utils';
-import { computed, onMounted, useTemplateRef, watch } from 'vue';
+import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
-const { zoom, data } = defineProps<{
-  zoom: number;
+const { data } = defineProps<{
   data: SpectrumDatum[];
 }>();
+const zoom = inject(zoomKey, ref(1));
 
 const rainbowImage = new Image();
 rainbowImage.src = 'includes/AI_common/images/Visible_Spectrum_1.png';
 
 const background = useTemplateRef('background');
-let backgroundCtx: CanvasRenderingContext2D | null = null;
+const backgroundCtx = computed(() => {
+  if (!background.value) {
+    return null;
+  }
+  return background.value.getContext('2d');
+});
 const overlay = useTemplateRef('overlay');
-let overlayCtx: CanvasRenderingContext2D | null = null;
+const overlayCtx = computed(() => {
+  if (!overlay.value) {
+    return null;
+  }
+  return overlay.value.getContext('2d');
+});
 
 // The left side is always 0.2 microns. The right side, at zoom 1, is 0.95 microns.
 // The chart drawing math assumes the chart to be 750 pixels wide.
@@ -39,7 +59,7 @@ let overlayCtx: CanvasRenderingContext2D | null = null;
 // The "pixel zoom" adjusts the zoom to compensate for the ratio of the actual width vs 750.
 const pixelZoom = computed(() => {
   const pixelsPerZ1Nm = CHART_WIDTH / 750;
-  return Number((pixelsPerZ1Nm * zoom).toFixed(3));
+  return Number((pixelsPerZ1Nm * zoom.value).toFixed(3));
 });
 const minWavelength = 0.2;
 
@@ -48,15 +68,16 @@ const xPosFromWavelength = (wavelength: number): number =>
   (wavelength - minWavelength) * 1000 * pixelZoom.value;
 
 const drawBackground = () => {
-  if (!background.value || !backgroundCtx) {
+  const context = backgroundCtx.value;
+  if (!background.value || !context) {
     return;
   }
-  backgroundCtx.fillStyle = '#dddddd';
-  backgroundCtx.fillRect(0, 0, background.value.width, background.value.height);
+  context.fillStyle = '#dddddd';
+  context.fillRect(0, 0, background.value.width, background.value.height);
   const xRainbowStart = xPosFromWavelength(0.4);
   const xRainbowEnd = xPosFromWavelength(0.7);
   const xRainbowWidth = xRainbowEnd - xRainbowStart;
-  backgroundCtx.drawImage(
+  context.drawImage(
     rainbowImage,
     xRainbowStart,
     0,
@@ -66,29 +87,23 @@ const drawBackground = () => {
 };
 
 const blackOutOverlay = () => {
-  if (!overlay.value || !overlayCtx) {
+  const context = overlayCtx.value;
+  if (!overlay.value || !context) {
     return;
   }
-  overlayCtx.fillStyle = 'black';
-  overlayCtx.fillRect(0, 0, overlay.value.width, overlay.value.height);
+  context.fillStyle = 'black';
+  context.fillRect(0, 0, overlay.value.width, overlay.value.height);
 };
 
 onMounted(() => {
-  if (!overlay.value) {
-    return;
-  }
-  overlayCtx = overlay.value.getContext('2d');
-  blackOutOverlay();
-  if (!background.value) {
-    return;
-  }
-  backgroundCtx = background.value.getContext('2d');
+  drawOverlay();
   // wait to load the image before drawing the background
   rainbowImage.decode().then(drawBackground);
 });
 
 const drawOverlay = () => {
-  if (!overlayCtx) {
+  const context = overlayCtx.value;
+  if (!context) {
     return;
   }
   // Starting point to ensure spectrum areas we don't draw to stay full black
@@ -129,13 +144,13 @@ const drawOverlay = () => {
     }
     const xWidth = xPixel - xPreviousPixel;
     // First, clear the existing blackout
-    overlayCtx.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+    context.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
     if (xWidth === 1) {
       // Fillstyle is a single alpha
-      overlayCtx.fillStyle = `rgb(0 0 0 / ${alpha})`;
+      context.fillStyle = `rgb(0 0 0 / ${alpha})`;
     } else {
       // Fillstyle is an alpha gradient from left to right
-      const gradient = overlayCtx.createLinearGradient(
+      const gradient = context.createLinearGradient(
         xPreviousPixel,
         0,
         xPixel,
@@ -143,9 +158,9 @@ const drawOverlay = () => {
       );
       gradient.addColorStop(0, `rgb(0 0 0 / ${previousAlpha})`);
       gradient.addColorStop(1, `rgb(0 0 0 / ${alpha})`);
-      overlayCtx.fillStyle = gradient;
+      context.fillStyle = gradient;
     }
-    overlayCtx.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+    context.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
     if (xPixel > CHART_WIDTH) {
       break;
     }
@@ -154,21 +169,16 @@ const drawOverlay = () => {
   }
 };
 
-watch([() => zoom], async () => {
+watch([zoom, backgroundCtx], () => {
   drawBackground();
 });
-watch([() => zoom, () => data], async () => {
+watch([zoom, () => data, overlayCtx], () => {
   drawOverlay();
 });
 </script>
 
 <style>
-.rainbow-div {
-  height: 60px;
+.rainbow-offset {
   margin: 0 0 0 28px;
-}
-.rainbow-overlay {
-  top: 0;
-  left: 0;
 }
 </style>

@@ -8,16 +8,14 @@
 
 <script setup lang="ts">
 import { CHART_WIDTH } from '@/constants';
-import { onMounted, useTemplateRef, watch } from 'vue';
+import { zoomKey } from '@/injectionKeys';
+import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis
 const xLeftSideRoom = 20;
 const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
 
-const props = defineProps({
-  zoom: { type: Number, default: 1 },
-});
-
+const zoomRef = inject(zoomKey, ref(1));
 const canvas = useTemplateRef('canvas');
 let ctx: CanvasRenderingContext2D | null = null;
 
@@ -126,12 +124,9 @@ const drawAxis = (zoom: number) => {
   }
 };
 
-watch(
-  () => props.zoom,
-  async (newZoom) => {
-    drawAxis(newZoom);
-  },
-);
+watch(zoomRef, (newZoom) => {
+  drawAxis(newZoom);
+});
 
 onMounted(() => {
   if (!canvas.value) {
@@ -144,6 +139,6 @@ onMounted(() => {
   ctx.font = '11px Arial';
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
-  drawAxis(props.zoom);
+  drawAxis(zoomRef.value);
 });
 </script>

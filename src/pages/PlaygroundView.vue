@@ -2,12 +2,10 @@
   <BRow>
     <ChallengeCol />
     <BCol>
-      <ToolCard
-        title="Spectrum 1"
-        :zoom="zoom"
-        :show-lines="showLines"
-        :normalize="normalize"
-      />
+      <ToolCard title="Spectrum 1" :normalize="normalize" />
+      <div>
+        {{ xPointerLocationRefWithUpdater.ref.value }}
+      </div>
       <BRow class="mt-1 mb-2 px-3">
         <BCol cols="3">
           <BFormGroup label="Plot type" label-for="plot-type">
@@ -44,8 +42,6 @@
         <ToolCard
           title="Spectrum 2"
           chart-position="top"
-          :zoom="zoom"
-          :show-lines="showLines"
           :normalize="normalize"
         />
       </div>
@@ -54,9 +50,15 @@
 </template>
 
 <script setup lang="ts">
+import {
+  createRefWithUpdater,
+  showLinesKey,
+  xPointerLocationKey,
+  zoomKey,
+} from '@/injectionKeys';
 import { useHead } from '@unhead/vue';
 import { BFormInput, BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref } from 'vue';
+import { computed, provide, ref } from 'vue';
 
 useHead({
   title: 'Spectrum Lab | Playground',
@@ -64,6 +66,7 @@ useHead({
 
 const zoomPercent = ref(100);
 const zoom = computed(() => zoomPercent.value / 100);
+provide(zoomKey, zoom);
 type PlotType = 'line' | 'scatter';
 const plotType = ref<PlotType>('line');
 const plotOptions: { text: string; value: PlotType }[] = [
@@ -71,11 +74,14 @@ const plotOptions: { text: string; value: PlotType }[] = [
   { text: 'Scatter plot', value: 'scatter' },
 ];
 const showLines = computed(() => plotType.value === 'line');
+provide(showLinesKey, showLines);
 const normalize = ref(true);
 const normalizeOptions: { text: string; value: boolean }[] = [
   { text: 'Yes', value: true },
   { text: 'No', value: false },
 ];
+const xPointerLocationRefWithUpdater = createRefWithUpdater(1);
+provide(xPointerLocationKey, xPointerLocationRefWithUpdater);
 </script>
 
 <style>

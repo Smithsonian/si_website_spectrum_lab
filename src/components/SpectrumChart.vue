@@ -8,16 +8,20 @@
         /></span>
       </div>
       <div>
-        <SpectrumRainbow :zoom="zoom" :data="data" />
+        <SpectrumRainbow :data="data" />
         <div class="d-flex">
           <LeftAxis />
-          <div style="height: 150px">
-            <canvas ref="chart" :width="CHART_WIDTH" height="150" class="chart"
-              >Spectrum intensity vs wavelength chart</canvas
-            >
-          </div>
+          <canvas
+            ref="chart"
+            :width="CHART_WIDTH"
+            height="150"
+            class="chart"
+            @pointermove="handlePointerMove"
+            @pointerleave="handlePointerLeave"
+            >Spectrum intensity vs wavelength chart</canvas
+          >
         </div>
-        <BottomAxis :zoom="zoom" />
+        <BottomAxis />
         <div class="text-center">Wavelength (Microns)</div>
       </div>
     </div>
@@ -26,22 +30,57 @@
 
 <script setup lang="ts">
 import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
+import {
+  createRefWithUpdater,
+  showLinesKey,
+  xPointerLocationKey,
+  zoomKey,
+} from '@/injectionKeys';
 import type { SpectrumDatum } from '@/utils';
-import { useTemplateRef, onMounted, watch } from 'vue';
+import { useTemplateRef, onMounted, watch, computed, inject, ref } from 'vue';
 
-const { zoom, showLines, data } = defineProps<{
-  zoom: number;
-  showLines: boolean;
+const { data } = defineProps<{
   data: SpectrumDatum[];
 }>();
+const zoom = inject(zoomKey, ref(1));
+const showLines = inject(showLinesKey, ref(true));
 
 const canvas = useTemplateRef('chart');
-let ctx: CanvasRenderingContext2D | null = null;
+const context = computed(() => {
+  if (!canvas.value) {
+    return null;
+  }
+  return canvas.value.getContext('2d');
+});
+
+onMounted(() => {
+  drawData();
+});
+
+watch([zoom, () => data, showLines, context], () => {
+  drawData();
+});
+
+const { update: updateXPointerLocation } = inject(
+  xPointerLocationKey,
+  createRefWithUpdater(null),
+);
+
+const handlePointerMove = (e: PointerEvent) => {
+  e.preventDefault();
+  updateXPointerLocation(e.offsetX);
+};
+
+const handlePointerLeave = (e: PointerEvent) => {
+  e.preventDefault();
+  updateXPointerLocation(e.offsetX);
+};
 
 const clearChart = () => {
   if (!canvas.value) {
     return;
   }
+  const ctx = context.value;
   if (!ctx) {
     return;
   }
@@ -50,15 +89,8 @@ const clearChart = () => {
   ctx.fillRect(0, 0, canvas.value.width, canvas.value.height);
 };
 
-onMounted(() => {
-  if (!canvas.value) {
-    return;
-  }
-  ctx = canvas.value.getContext('2d');
-  clearChart();
-});
-
 const drawData = () => {
+  const ctx = context.value;
   if (!ctx) {
     return;
   }
@@ -75,7 +107,7 @@ const drawData = () => {
   // However, layout needs have moved the chart width away from 750.
   // The "pixel zoom" adjusts the zoom to compensate for the ratio of the actual width vs 750.
   const pixelsPerZ1Nm = CHART_WIDTH / 750;
-  const pixelZoom = Number((pixelsPerZ1Nm * zoom).toFixed(3));
+  const pixelZoom = Number((pixelsPerZ1Nm * zoom.value).toFixed(3));
   const minWavelength = 0.2;
 
   // The intensity axis is inverted due to canvas coordinates increasing top to bottom.
@@ -101,7 +133,7 @@ const drawData = () => {
       yPrevPosition = yPosition;
       continue;
     }
-    if (showLines && xPrevPosition !== null && yPrevPosition !== null) {
+    if (showLines.value && xPrevPosition !== null && yPrevPosition !== null) {
       // Draw line to previous datum, even if the current one is off the right edge
       ctx.beginPath();
       ctx.moveTo(xPosition, yPosition);
@@ -120,10 +152,6 @@ const drawData = () => {
     ctx.fill();
   }
 };
-
-watch([() => zoom, () => data, () => showLines], async () => {
-  drawData();
-});
 </script>
 
 <style>
