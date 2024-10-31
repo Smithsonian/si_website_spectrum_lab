@@ -7,37 +7,27 @@
           <FontAwesomeIcon :icon="['fas', 'arrow-up']" transform="rotate-180"
         /></span>
       </div>
-      <div>
+      <SpectrumCursorOverlay>
         <SpectrumRainbow :data="data" />
         <div class="d-flex">
           <LeftAxis />
-          <canvas
-            ref="chart"
-            :width="CHART_WIDTH"
-            height="150"
-            class="chart"
-            @pointermove="handlePointerMove"
-            @pointerleave="handlePointerLeave"
+          <canvas ref="chart" :width="CHART_WIDTH" height="150" class="chart"
             >Spectrum intensity vs wavelength chart</canvas
           >
         </div>
         <BottomAxis />
         <div class="text-center">Wavelength (Microns)</div>
-      </div>
+      </SpectrumCursorOverlay>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
-import {
-  createRefWithUpdater,
-  showLinesKey,
-  xPointerLocationKey,
-  zoomKey,
-} from '@/injectionKeys';
+import { showLinesKey, zoomKey } from '@/injectionKeys';
 import type { SpectrumDatum } from '@/utils';
 import { useTemplateRef, onMounted, watch, computed, inject, ref } from 'vue';
+import SpectrumCursorOverlay from './SpectrumCursorOverlay.vue';
 
 const { data } = defineProps<{
   data: SpectrumDatum[];
@@ -60,21 +50,6 @@ onMounted(() => {
 watch([zoom, () => data, showLines, context], () => {
   drawData();
 });
-
-const { update: updateXPointerLocation } = inject(
-  xPointerLocationKey,
-  createRefWithUpdater(null),
-);
-
-const handlePointerMove = (e: PointerEvent) => {
-  e.preventDefault();
-  updateXPointerLocation(e.offsetX);
-};
-
-const handlePointerLeave = (e: PointerEvent) => {
-  e.preventDefault();
-  updateXPointerLocation(e.offsetX);
-};
 
 const clearChart = () => {
   if (!canvas.value) {
