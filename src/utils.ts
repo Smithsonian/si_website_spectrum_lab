@@ -1,3 +1,5 @@
+import { CHART_WIDTH, MIN_WAVELENGTH } from './constants';
+
 export type SpectrumDatum = [
   // Wavelength in microns
   number,
@@ -47,3 +49,28 @@ export function dataFromText(text: string): SpectrumDatum[] {
   });
   return data;
 }
+
+export const pixelZoomFromZoom = (zoom: number): number => {
+  // The left side is always 0.2 microns. The right side, at zoom 1, is 0.95 microns.
+  // The chart drawing math assumes the chart to be 750 pixels wide.
+  // Therefore, each pixel is assumed to be 1 nanometer (at zoom 1).
+  // However, layout needs have moved the chart width away from 750.
+  // The "pixel zoom" adjusts the zoom to compensate for the ratio of the actual width vs 750.
+  const pixelsPerZ1Nm = CHART_WIDTH / 750;
+  const pixelZoom = pixelsPerZ1Nm * zoom;
+  return pixelZoom;
+};
+
+export const micronsFromXLoc = (xLoc: number, zoom: number): number => {
+  const pixelZoom = pixelZoomFromZoom(zoom);
+
+  const microns = xLoc * (1 / pixelZoom) * (1 / 1000) + MIN_WAVELENGTH;
+  return microns;
+};
+
+export const xLocFromMicrons = (microns: number, zoom: number): number => {
+  const pixelZoom = pixelZoomFromZoom(zoom);
+
+  const xLoc = (microns - MIN_WAVELENGTH) * pixelZoom * 1000;
+  return xLoc;
+};

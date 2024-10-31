@@ -3,9 +3,6 @@
     <ChallengeCol />
     <BCol>
       <ToolCard title="Spectrum 1" :normalize="normalize" />
-      <div>
-        {{ xPointerLocationRefWithUpdater.ref.value }}
-      </div>
       <BRow class="mt-1 mb-2 px-3">
         <BCol cols="3">
           <BFormGroup label="Plot type" label-for="plot-type">
@@ -52,8 +49,8 @@
 <script setup lang="ts">
 import {
   createRefWithUpdater,
+  cursorMicronsKey,
   showLinesKey,
-  xPointerLocationKey,
   zoomKey,
 } from '@/injectionKeys';
 import { useHead } from '@unhead/vue';
@@ -80,8 +77,8 @@ const normalizeOptions: { text: string; value: boolean }[] = [
   { text: 'Yes', value: true },
   { text: 'No', value: false },
 ];
-const xPointerLocationRefWithUpdater = createRefWithUpdater(1);
-provide(xPointerLocationKey, xPointerLocationRefWithUpdater);
+const cursorMicronsRefWithUpdater = createRefWithUpdater(null);
+provide(cursorMicronsKey, cursorMicronsRefWithUpdater);
 </script>
 
 <style>

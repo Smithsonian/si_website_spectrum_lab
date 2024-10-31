@@ -20,7 +20,7 @@ export function createRefWithUpdater<T>(defaultValue: T): RefWithUpdater<T> {
 export const zoomKey = Symbol() as InjectionKey<Ref<number>>;
 // Chart draws lines or only points
 export const showLinesKey = Symbol() as InjectionKey<Ref<boolean>>;
-// Chart pointer position, for cursor
-export const xPointerLocationKey = Symbol() as InjectionKey<
+// Cursor wavelength in microns
+export const cursorMicronsKey = Symbol() as InjectionKey<
   RefWithUpdater<number | null>
 >;
