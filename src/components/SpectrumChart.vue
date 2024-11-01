@@ -11,7 +11,8 @@
         <SpectrumRainbow />
         <div class="d-flex">
           <LeftAxis />
-          <SpectrumData />
+          <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
+          <SpectrumData v-else />
         </div>
         <BottomAxis />
         <div class="text-center">Wavelength (Microns)</div>
@@ -19,6 +20,19 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import {
+  type SpectrumDataSource,
+  spectrumDataSourceKey,
+} from '@/injectionKeys';
+import { inject, ref } from 'vue';
+
+const spectrumDataSource = inject(
+  spectrumDataSourceKey,
+  ref<SpectrumDataSource>('file'),
+);
+</script>
 
 <style>
 .left-axis-label {
