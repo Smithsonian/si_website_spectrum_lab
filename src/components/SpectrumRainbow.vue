@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
 import { spectrumDataKey, zoomKey } from '@/injectionKeys';
+import { xLocFromMicrons } from '@/utils';
 import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const data = inject(spectrumDataKey, ref([]));
@@ -47,21 +48,6 @@ const overlayCtx = computed(() => {
   return overlay.value.getContext('2d');
 });
 
-// The left side is always 0.2 microns. The right side, at zoom 1, is 0.95 microns.
-// The chart drawing math assumes the chart to be 750 pixels wide.
-// Therefore, each pixel is assumed to be 1 nanometer (at zoom 1).
-// However, layout needs have moved the chart width away from 750.
-// The "pixel zoom" adjusts the zoom to compensate for the ratio of the actual width vs 750.
-const pixelZoom = computed(() => {
-  const pixelsPerZ1Nm = CHART_WIDTH / 750;
-  return Number((pixelsPerZ1Nm * zoom.value).toFixed(3));
-});
-const minWavelength = 0.2;
-
-// Get x position corresponding to a wavelength in microns
-const xPosFromWavelength = (wavelength: number): number =>
-  (wavelength - minWavelength) * 1000 * pixelZoom.value;
-
 const drawBackground = () => {
   const context = backgroundCtx.value;
   if (!background.value || !context) {
@@ -69,8 +55,8 @@ const drawBackground = () => {
   }
   context.fillStyle = '#dddddd';
   context.fillRect(0, 0, background.value.width, background.value.height);
-  const xRainbowStart = xPosFromWavelength(0.4);
-  const xRainbowEnd = xPosFromWavelength(0.7);
+  const xRainbowStart = xLocFromMicrons(0.4, zoom.value);
+  const xRainbowEnd = xLocFromMicrons(0.7, zoom.value);
   const xRainbowWidth = xRainbowEnd - xRainbowStart;
   context.drawImage(
     rainbowImage,
@@ -111,7 +97,7 @@ const drawOverlay = () => {
   const intensitiesByPixel = new Map<number, number[]>();
   for (const datum of data.value) {
     const [wavelength, intensity] = datum;
-    const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom.value;
+    const xPosition = xLocFromMicrons(wavelength, zoom.value);
     const xPixel = Math.floor(xPosition);
     if (!intensitiesByPixel.has(xPixel)) {
       intensitiesByPixel.set(xPixel, [intensity]);

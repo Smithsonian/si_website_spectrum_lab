@@ -1,4 +1,10 @@
-import { CHART_WIDTH, MIN_WAVELENGTH } from './constants';
+import {
+  CHART_HEIGHT,
+  CHART_WIDTH,
+  MIN_WAVELENGTH,
+  Y_0_FROM_BOTTOM,
+  Y_RANGE,
+} from './constants';
 import type { SpectrumDatum } from './injectionKeys';
 
 function parseText(text: string): [number[], number[]] {
@@ -67,4 +73,11 @@ export const xLocFromMicrons = (microns: number, zoom: number): number => {
 
   const xLoc = (microns - MIN_WAVELENGTH) * pixelZoom * 1000;
   return xLoc;
+};
+
+// The intensity axis is inverted due to canvas coordinates increasing top to bottom.
+// That's normal for document order but backwards for graphs.
+export const yLocFromIntensity = (intensity: number): number => {
+  const yFromBottom = intensity * Y_RANGE + Y_0_FROM_BOTTOM;
+  return CHART_HEIGHT - yFromBottom;
 };

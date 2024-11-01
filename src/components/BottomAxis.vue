@@ -9,6 +9,7 @@
 <script setup lang="ts">
 import { CHART_WIDTH } from '@/constants';
 import { zoomKey } from '@/injectionKeys';
+import { pixelZoomFromZoom } from '@/utils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis
@@ -23,10 +24,7 @@ const drawAxis = (zoom: number) => {
   if (!ctx) {
     return;
   }
-  // The chart math assumes 750 pixels. This allows us to change the chart
-  // size without breaking stuff.
-  const pixelsPerWv = CHART_WIDTH / 750;
-  const pixelZoom = Number((pixelsPerWv * zoom).toFixed(3));
+  const pixelZoom = pixelZoomFromZoom(zoom);
 
   // Clear
   ctx.clearRect(0, 0, xCanvasWidth, 30);

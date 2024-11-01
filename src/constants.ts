@@ -1,6 +1,10 @@
 export const CHART_WIDTH = 610;
-export const CHART_HEIGHT = 150;
 export const RAINBOW_HEIGHT = 60;
 export const LEFT_AXIS_WIDTH = 28;
 export const MIN_WAVELENGTH = 0.2;
 export const DRAWING_BUCKETS = 100;
+export const Y_0_FROM_BOTTOM = 10.5;
+export const Y_TICK_DISTANCE = 13;
+export const Y_1_FROM_TOP = 9.5;
+export const Y_RANGE = Y_TICK_DISTANCE * 10;
+export const CHART_HEIGHT = Y_0_FROM_BOTTOM + Y_RANGE + Y_1_FROM_TOP;

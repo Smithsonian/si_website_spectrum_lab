@@ -1,10 +1,13 @@
 <template>
-  <div class="ms-2" style="height: 150px">
-    <canvas ref="canvas" width="20" height="150">Left axis ticks</canvas>
+  <div class="ms-2" :style="`height: ${CHART_HEIGHT}px`">
+    <canvas ref="canvas" width="20" :height="CHART_HEIGHT"
+      >Left axis ticks</canvas
+    >
   </div>
 </template>
 
 <script setup lang="ts">
+import { CHART_HEIGHT, Y_1_FROM_TOP, Y_TICK_DISTANCE } from '@/constants';
 import { onMounted, useTemplateRef } from 'vue';
 
 const canvas = useTemplateRef('canvas');
@@ -22,7 +25,7 @@ onMounted(() => {
   ctx.strokeStyle = 'white';
   for (let tick = 0; tick <= 10; tick++) {
     // * tick distance + offset
-    const yTick = tick * 13 + 9.5;
+    const yTick = tick * Y_TICK_DISTANCE + Y_1_FROM_TOP;
     // Start at 1 counting down by one tenth
     const tickValue = (10 - tick) / 10;
     const tickLabel = `${tickValue}`;
