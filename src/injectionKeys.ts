@@ -32,7 +32,9 @@ export type SpectrumDataSource = 'file' | 'drawing';
 // Spectrum data from file
 export const spectrumDataKey = Symbol() as InjectionKey<Ref<SpectrumDatum[]>>;
 // Drawn spectrum data, indexed in a sparse array from 0 to 99, intensity 0 to 1
-export const drawnSpectrumDataKey = Symbol() as InjectionKey<Ref<number[]>>;
+export const drawnSpectrumDataKey = Symbol() as InjectionKey<
+  RefWithUpdater<number[]>
+>;
 // Can the user draw on the chart, or not?
 export const spectrumDataSourceKey = Symbol() as InjectionKey<
   Ref<SpectrumDataSource>

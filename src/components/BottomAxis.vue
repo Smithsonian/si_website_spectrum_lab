@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { CHART_WIDTH } from '@/constants';
 import { zoomKey } from '@/injectionKeys';
-import { pixelZoomFromZoom } from '@/utils';
+import { pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis

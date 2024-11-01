@@ -55,7 +55,7 @@ import {
   type CursorUnit,
   type SpectrumDataSource,
 } from '@/injectionKeys';
-import { micronsFromXLoc, xLocFromMicrons } from '@/utils';
+import { micronsFromXLoc, xLocFromMicrons } from '@/utils/chartUtils';
 import { computed, inject, ref } from 'vue';
 
 const { ref: cursorMicrons, update: updateCursorMicrons } = inject(

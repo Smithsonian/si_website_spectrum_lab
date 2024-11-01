@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 import { showLinesKey, spectrumDataKey, zoomKey } from '@/injectionKeys';
-import { xLocFromMicrons, yLocFromIntensity } from '@/utils';
+import { xLocFromMicrons, yLocFromIntensity } from '@/utils/chartUtils';
 import { useTemplateRef, onMounted, watch, computed, inject, ref } from 'vue';
 
 const data = inject(spectrumDataKey, ref([]));
@@ -31,9 +31,6 @@ watch([zoom, data, showLines, context], () => {
 });
 
 const clearChart = () => {
-  if (!canvas.value) {
-    return;
-  }
   const ctx = context.value;
   if (!ctx) {
     return;

@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
 import { spectrumDataKey, zoomKey } from '@/injectionKeys';
-import { xLocFromMicrons } from '@/utils';
+import { xLocFromMicrons } from '@/utils/chartUtils';
 import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const data = inject(spectrumDataKey, ref([]));

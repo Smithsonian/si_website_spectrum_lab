@@ -64,6 +64,7 @@
 
 <script setup lang="ts">
 import {
+  createRefWithUpdater,
   drawnSpectrumDataKey,
   spectrumDataKey,
   spectrumDataSourceKey,
@@ -77,7 +78,7 @@ import {
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
-import { dataFromText, rangeNormalize } from '@/utils';
+import { dataFromText, rangeNormalize } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
 
@@ -111,10 +112,12 @@ const spectrumDataSource = computed((): SpectrumDataSource => {
   return 'file';
 });
 provide(spectrumDataSourceKey, spectrumDataSource);
-const drawnSpectrumData = ref<number[]>([]);
-provide(drawnSpectrumDataKey, drawnSpectrumData);
+const drawnSpectrumDataWithUpdater = createRefWithUpdater<number[]>([]);
+provide(drawnSpectrumDataKey, drawnSpectrumDataWithUpdater);
+const { ref: drawnSpectrumData, update: updateDrawnSpectrumData } =
+  drawnSpectrumDataWithUpdater;
 const handleResetDrawing = () => {
-  drawnSpectrumData.value = [];
+  updateDrawnSpectrumData([]);
 };
 
 const metadataStore = useMetadataStore();
