@@ -141,7 +141,7 @@ const labelValue = computed((): string | null => {
       return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
     case 'Gigahertz':
       return numberFormat.format(
-        frequencyFromWavelengthMicrons(cursorMicrons.value) / 1000000000,
+        frequencyFromWavelengthMicrons(cursorMicrons.value) / 1e9,
       );
     case 'Electron volt':
       return numberFormat.format(
