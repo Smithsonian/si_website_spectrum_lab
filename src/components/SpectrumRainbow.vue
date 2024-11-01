@@ -23,13 +23,10 @@
 
 <script setup lang="ts">
 import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
-import { zoomKey } from '@/injectionKeys';
-import type { SpectrumDatum } from '@/utils';
+import { spectrumDataKey, zoomKey } from '@/injectionKeys';
 import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
-const { data } = defineProps<{
-  data: SpectrumDatum[];
-}>();
+const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
 
 const rainbowImage = new Image();
@@ -112,7 +109,7 @@ const drawOverlay = () => {
   // Instead, group the data by pixel, then average the intensities of the data
   // that share a pixel
   const intensitiesByPixel = new Map<number, number[]>();
-  for (const datum of data) {
+  for (const datum of data.value) {
     const [wavelength, intensity] = datum;
     const xPosition = (wavelength - minWavelength) * 1000 * pixelZoom.value;
     const xPixel = Math.floor(xPosition);
@@ -170,7 +167,7 @@ const drawOverlay = () => {
 watch([zoom, backgroundCtx], () => {
   drawBackground();
 });
-watch([zoom, () => data, overlayCtx], () => {
+watch([zoom, data, overlayCtx], () => {
   drawOverlay();
 });
 </script>

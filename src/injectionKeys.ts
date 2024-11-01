@@ -1,4 +1,9 @@
 import { ref, type InjectionKey, type Ref, type UnwrapRef } from 'vue';
+import type { SpectrumDatum } from './utils';
+
+// Note: If this seems elaborate, remember we have multiple tools per page, and
+// want to reset state when the tools are rendered. So a global store like
+// Pinia would actually make things worse.
 
 export interface RefWithUpdater<T> {
   // This is more complicated than expected due to ref unwrapping,
@@ -16,6 +21,8 @@ export function createRefWithUpdater<T>(defaultValue: T): RefWithUpdater<T> {
   };
 }
 
+// Spectrum data from file
+export const spectrumDataKey = Symbol() as InjectionKey<Ref<SpectrumDatum[]>>;
 // Chart zoom
 export const zoomKey = Symbol() as InjectionKey<Ref<number>>;
 // Chart draws lines or only points

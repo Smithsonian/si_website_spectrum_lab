@@ -43,7 +43,7 @@
             : 'mt-2 mb-3 order-first order-xl-last'
         "
       >
-        <SpectrumChart :data="spectrumData" />
+        <SpectrumChart />
       </BCol>
     </BRow>
     <template v-if="chartPosition === 'top'">
@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import { spectrumDataKey } from '@/injectionKeys';
 import {
   CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
@@ -65,7 +66,7 @@ import {
 } from '@/metadataStore';
 import { dataFromText, rangeNormalize, type SpectrumDatum } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, ref, watch, type Ref } from 'vue';
+import { computed, provide, ref, watch, type Ref } from 'vue';
 
 type ChartPosition = 'top' | 'bottom';
 
@@ -190,6 +191,8 @@ const spectrumData = computed(() => {
   }
   return normalizedSpectrumData;
 });
+
+provide(spectrumDataKey, spectrumData);
 </script>
 
 <style>
