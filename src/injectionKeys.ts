@@ -1,5 +1,4 @@
 import { ref, type InjectionKey, type Ref, type UnwrapRef } from 'vue';
-import type { SpectrumDatum } from './utils';
 
 // Note: If this seems elaborate, remember we have multiple tools per page, and
 // want to reset state when the tools are rendered. So a global store like
@@ -21,8 +20,23 @@ export function createRefWithUpdater<T>(defaultValue: T): RefWithUpdater<T> {
   };
 }
 
+export type SpectrumDatum = [
+  // Wavelength in microns
+  number,
+  // Intensity 0.05 to 0.95
+  number,
+];
+
+export type SpectrumDataSource = 'file' | 'drawing';
+
 // Spectrum data from file
 export const spectrumDataKey = Symbol() as InjectionKey<Ref<SpectrumDatum[]>>;
+// Drawn spectrum data, indexed in a sparse array from 0 to 99, intensity 0 to 1
+export const drawnSpectrumDataKey = Symbol() as InjectionKey<Ref<number[]>>;
+// Can the user draw on the chart, or not?
+export const spectrumDataSourceKey = Symbol() as InjectionKey<
+  Ref<SpectrumDataSource>
+>;
 // Chart zoom
 export const zoomKey = Symbol() as InjectionKey<Ref<number>>;
 // Chart draws lines or only points

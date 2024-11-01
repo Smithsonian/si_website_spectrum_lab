@@ -1,11 +1,5 @@
 import { CHART_WIDTH, MIN_WAVELENGTH } from './constants';
-
-export type SpectrumDatum = [
-  // Wavelength in microns
-  number,
-  // Intensity 0.05 to 0.95
-  number,
-];
+import type { SpectrumDatum } from './injectionKeys';
 
 function parseText(text: string): [number[], number[]] {
   const loadedDataArray = text.replace(/\s/g, '').split('&');

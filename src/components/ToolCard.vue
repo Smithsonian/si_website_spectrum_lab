@@ -26,12 +26,19 @@
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
-            <template v-if="spectrumOptions.length > 0">
-              <BFormSelect
-                v-model="selectedSpectrum"
-                :options="spectrumOptions"
-              />
-            </template>
+            <BFormSelect
+              v-if="
+                spectrumDataSource !== 'drawing' && spectrumOptions.length > 0
+              "
+              v-model="selectedSpectrum"
+              :options="spectrumOptions"
+            />
+            <BButton
+              v-if="spectrumDataSource === 'drawing'"
+              variant="light"
+              @click="handleResetDrawing"
+              >Reset drawing</BButton
+            >
           </BCol>
         </BRow>
       </BCol>
@@ -56,7 +63,13 @@
 </template>
 
 <script setup lang="ts">
-import { spectrumDataKey } from '@/injectionKeys';
+import {
+  drawnSpectrumDataKey,
+  spectrumDataKey,
+  spectrumDataSourceKey,
+  type SpectrumDataSource,
+  type SpectrumDatum,
+} from '@/injectionKeys';
 import {
   CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
@@ -64,7 +77,7 @@ import {
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
-import { dataFromText, rangeNormalize, type SpectrumDatum } from '@/utils';
+import { dataFromText, rangeNormalize } from '@/utils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
 
@@ -91,6 +104,18 @@ const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
   { value: 'file', text: 'Uploaded file' },
 ];
 const selectedCategory = ref<SpectrumCategory>('');
+const spectrumDataSource = computed((): SpectrumDataSource => {
+  if (selectedCategory.value === 'draw') {
+    return 'drawing';
+  }
+  return 'file';
+});
+provide(spectrumDataSourceKey, spectrumDataSource);
+const drawnSpectrumData = ref<number[]>([]);
+provide(drawnSpectrumDataKey, drawnSpectrumData);
+const handleResetDrawing = () => {
+  drawnSpectrumData.value = [];
+};
 
 const metadataStore = useMetadataStore();
 function isPreloadedCategory(
@@ -124,6 +149,9 @@ const selectedSpectrum = ref('');
 watch(selectedCategory, async () => {
   if (selectedSpectrum.value) {
     selectedSpectrum.value = '';
+  }
+  if (drawnSpectrumData.value.length) {
+    drawnSpectrumData.value = [];
   }
 });
 
