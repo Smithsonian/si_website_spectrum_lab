@@ -5,6 +5,14 @@ import {
   Y_0_FROM_BOTTOM,
   Y_1_FROM_TOP,
 } from '@/constants';
+import {
+  inject,
+  provide,
+  readonly,
+  ref,
+  type InjectionKey,
+  type Ref,
+} from 'vue';
 
 export const bucketFromXLoc = (xLoc: number): number => {
   const bucket = Math.floor(xLoc / X_BUCKET_WIDTH);
@@ -20,6 +28,16 @@ export const bucketFromXLoc = (xLoc: number): number => {
   return bucket;
 };
 
+export interface BucketXLocs {
+  xLeftEdge: number;
+  xCenter: number;
+  xRightEdge: number;
+}
+export const xLocsFromBucket = (bucket: number): BucketXLocs => ({
+  xLeftEdge: bucket * X_BUCKET_WIDTH,
+  xCenter: (bucket + 0.5) * X_BUCKET_WIDTH,
+  xRightEdge: (bucket + 1) * X_BUCKET_WIDTH,
+});
 export const yInRangeFromY = (yLoc: number): number => {
   // y increases going down, in document order.
   // Intensity increases going up, like most charts.
@@ -32,4 +50,50 @@ export const yInRangeFromY = (yLoc: number): number => {
     return y0Loc;
   }
   return yLoc;
+};
+
+interface BucketDatum {
+  bucket: number;
+  yInRange: number;
+}
+export const bucketDatumFromLocs = (
+  xLoc: number,
+  yLoc: number,
+): BucketDatum => {
+  const bucket = bucketFromXLoc(xLoc);
+  const yInRange = yInRangeFromY(yLoc);
+  return { bucket, yInRange };
+};
+
+// Drawn spectrum data, indexed in a sparse array from 0 to 99, with Y value
+// Because we need to set and clear, a single updater won't work
+// Pinia also won't help because we need multiple, independent stores
+// that are linked to components
+export interface DrawnSpectrumYWithUpdaters {
+  drawnSpectrumY: Readonly<Ref<readonly number[]>>;
+  clearDrawnSpectrumY: () => void;
+  setBucket: (bucket: number, y: number) => void;
+}
+const drawnSpectrumYKey = Symbol() as InjectionKey<DrawnSpectrumYWithUpdaters>;
+const createDrawnSpectrumYWithUpdaters = (): DrawnSpectrumYWithUpdaters => {
+  const drawnSpectrumY = ref<number[]>([]);
+  const clearDrawnSpectrumY = () => {
+    drawnSpectrumY.value = [];
+  };
+  const setBucket = (bucket: number, y: number): void => {
+    drawnSpectrumY.value[bucket] = y;
+  };
+  return {
+    drawnSpectrumY: readonly(drawnSpectrumY),
+    clearDrawnSpectrumY,
+    setBucket,
+  };
+};
+export const useDrawnSpectrumY = (): DrawnSpectrumYWithUpdaters => {
+  let drawnSpectrumYWithUpdaters = inject(drawnSpectrumYKey, null);
+  if (!drawnSpectrumYWithUpdaters) {
+    drawnSpectrumYWithUpdaters = createDrawnSpectrumYWithUpdaters();
+    provide(drawnSpectrumYKey, drawnSpectrumYWithUpdaters);
+  }
+  return drawnSpectrumYWithUpdaters;
 };

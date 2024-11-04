@@ -36,7 +36,7 @@
             <BButton
               v-if="spectrumDataSource === 'drawing'"
               variant="light"
-              @click="handleResetDrawing"
+              @click="clearDrawnSpectrumY"
               >Reset drawing</BButton
             >
           </BCol>
@@ -64,8 +64,6 @@
 
 <script setup lang="ts">
 import {
-  createRefWithUpdater,
-  drawnSpectrumDataKey,
   spectrumDataKey,
   spectrumDataSourceKey,
   type SpectrumDataSource,
@@ -78,6 +76,7 @@ import {
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
+import { useDrawnSpectrumY } from '@/utils/drawingUtils';
 import { dataFromText, rangeNormalize } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
@@ -112,13 +111,7 @@ const spectrumDataSource = computed((): SpectrumDataSource => {
   return 'file';
 });
 provide(spectrumDataSourceKey, spectrumDataSource);
-const drawnSpectrumDataWithUpdater = createRefWithUpdater<number[]>([]);
-provide(drawnSpectrumDataKey, drawnSpectrumDataWithUpdater);
-const { ref: drawnSpectrumData, update: updateDrawnSpectrumData } =
-  drawnSpectrumDataWithUpdater;
-const handleResetDrawing = () => {
-  updateDrawnSpectrumData([]);
-};
+const { drawnSpectrumY, clearDrawnSpectrumY } = useDrawnSpectrumY();
 
 const metadataStore = useMetadataStore();
 function isPreloadedCategory(
@@ -153,8 +146,8 @@ watch(selectedCategory, async () => {
   if (selectedSpectrum.value) {
     selectedSpectrum.value = '';
   }
-  if (drawnSpectrumData.value.length) {
-    drawnSpectrumData.value = [];
+  if (drawnSpectrumY.value.length) {
+    clearDrawnSpectrumY();
   }
 });
 
