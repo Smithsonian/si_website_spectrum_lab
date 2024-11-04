@@ -23,8 +23,19 @@
 
 <script setup lang="ts">
 import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
-import { spectrumDataKey, zoomKey } from '@/injectionKeys';
+import {
+  spectrumDataKey,
+  spectrumDataSourceKey,
+  zoomKey,
+  type SpectrumDataSource,
+} from '@/injectionKeys';
 import { xLocFromMicrons } from '@/utils/chartUtils';
+import {
+  intensityFromYLoc,
+  useCurrentlyDrawing,
+  useDrawnSpectrumY,
+  xLocsFromBucket,
+} from '@/utils/drawingUtils';
 import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 const data = inject(spectrumDataKey, ref([]));
@@ -77,19 +88,28 @@ const blackOutOverlay = () => {
 };
 
 onMounted(() => {
-  drawOverlay();
+  redrawOverlay();
   // wait to load the image before drawing the background
   rainbowImage.decode().then(drawBackground);
 });
 
-const drawOverlay = () => {
-  const context = overlayCtx.value;
-  if (!context) {
-    return;
-  }
+const spectrumDataSource = inject(
+  spectrumDataSourceKey,
+  ref<SpectrumDataSource>('file'),
+);
+
+const redrawOverlay = (): void => {
   // Starting point to ensure spectrum areas we don't draw to stay full black
   blackOutOverlay();
 
+  if (spectrumDataSource.value === 'drawing') {
+    redrawDrawingData();
+  } else {
+    redrawFileData();
+  }
+};
+
+const redrawFileData = () => {
   // We need to take care to draw rectangles the same way whether the data is sparse or
   // dense, which is tough using alphas.
   // Instead, group the data by pixel, then average the intensities of the data
@@ -118,30 +138,12 @@ const drawOverlay = () => {
     const alpha = (1 - intensityAverage).toFixed(3);
     // Don't draw anything for the first xPixel.
     // Wait until the second xPixel to draw the first rectangle or gradient.
-    if (xPreviousPixel === null) {
+    if (xPreviousPixel === null || previousAlpha === null) {
       xPreviousPixel = xPixel;
       previousAlpha = alpha;
       continue;
     }
-    const xWidth = xPixel - xPreviousPixel;
-    // First, clear the existing blackout
-    context.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
-    if (xWidth === 1) {
-      // Fillstyle is a single alpha
-      context.fillStyle = `rgb(0 0 0 / ${alpha})`;
-    } else {
-      // Fillstyle is an alpha gradient from left to right
-      const gradient = context.createLinearGradient(
-        xPreviousPixel,
-        0,
-        xPixel,
-        0,
-      );
-      gradient.addColorStop(0, `rgb(0 0 0 / ${previousAlpha})`);
-      gradient.addColorStop(1, `rgb(0 0 0 / ${alpha})`);
-      context.fillStyle = gradient;
-    }
-    context.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+    drawRectangle(xPreviousPixel, previousAlpha, xPixel, alpha);
     if (xPixel > CHART_WIDTH) {
       break;
     }
@@ -150,11 +152,72 @@ const drawOverlay = () => {
   }
 };
 
+const drawRectangle = (
+  xPreviousPixel: number,
+  previousAlpha: string,
+  xPixel: number,
+  alpha: string,
+): void => {
+  const context = overlayCtx.value;
+  if (!context) {
+    return;
+  }
+  const xWidth = xPixel - xPreviousPixel;
+  // First, clear the existing blackout
+  context.clearRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+  if (xWidth === 1) {
+    // Fillstyle is a single alpha
+    context.fillStyle = `rgb(0 0 0 / ${alpha})`;
+  } else {
+    // Fillstyle is an alpha gradient from left to right
+    const gradient = context.createLinearGradient(xPreviousPixel, 0, xPixel, 0);
+    gradient.addColorStop(0, `rgb(0 0 0 / ${previousAlpha})`);
+    gradient.addColorStop(1, `rgb(0 0 0 / ${alpha})`);
+    context.fillStyle = gradient;
+  }
+  context.fillRect(xPreviousPixel, 0, xWidth, RAINBOW_HEIGHT);
+};
+
+const { drawnSpectrumY } = useDrawnSpectrumY();
+const { currentlyDrawing } = useCurrentlyDrawing();
+const redrawDrawingData = () => {
+  const ctx = overlayCtx.value;
+  if (!ctx) {
+    return;
+  }
+
+  // Every pixel is controlled by a single bucket, so the logic is simpler
+  let xPreviousPixel: number | null = null;
+  let previousAlpha: string | null = null;
+  drawnSpectrumY.value.forEach((y, bucket) => {
+    const { xCenter } = xLocsFromBucket(bucket);
+    const xPixel = Math.floor(xCenter);
+    const intensity = intensityFromYLoc(y);
+    // Alpha is inverted intensity. More intensity = more transparent = smaller alpha
+    const alpha = (1 - intensity).toFixed(3);
+    // Don't draw anything for the first xPixel.
+    // Wait until the second xPixel to draw the first rectangle or gradient.
+    if (xPreviousPixel === null || previousAlpha === null) {
+      xPreviousPixel = xPixel;
+      previousAlpha = alpha;
+      return;
+    }
+    drawRectangle(xPreviousPixel, previousAlpha, xPixel, alpha);
+    xPreviousPixel = xPixel;
+    previousAlpha = alpha;
+  });
+};
+
 watch([zoom, backgroundCtx], () => {
   drawBackground();
 });
-watch([zoom, data, overlayCtx], () => {
-  drawOverlay();
+watch([zoom, data, spectrumDataSource, overlayCtx], () => {
+  redrawOverlay();
+});
+watch(currentlyDrawing, (newCurrentlyDrawing) => {
+  if (!newCurrentlyDrawing) {
+    redrawOverlay();
+  }
 });
 </script>
 

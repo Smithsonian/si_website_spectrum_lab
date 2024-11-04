@@ -4,6 +4,7 @@ import {
   X_BUCKET_WIDTH,
   Y_0_FROM_BOTTOM,
   Y_1_FROM_TOP,
+  Y_RANGE,
 } from '@/constants';
 import {
   inject,
@@ -52,6 +53,15 @@ export const yInRangeFromY = (yLoc: number): number => {
     return y0Loc;
   }
   return yLoc;
+};
+
+// The intensity axis is inverted due to canvas coordinates increasing top to bottom.
+// That's normal for document order but backwards for graphs.
+export const intensityFromYLoc = (yLoc: number): number => {
+  const yAboveBottom = CHART_HEIGHT - yLoc;
+  const yAbove0 = yAboveBottom - Y_0_FROM_BOTTOM;
+  const intensity = yAbove0 / Y_RANGE;
+  return intensity;
 };
 
 interface BucketDatum {
