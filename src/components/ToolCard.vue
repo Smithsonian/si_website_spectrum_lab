@@ -76,7 +76,7 @@ import {
   type PreloadedCategory,
   type SpectrumMetadata,
 } from '@/metadataStore';
-import { useDrawnSpectrumY } from '@/utils/drawingUtils';
+import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
 import { dataFromText, rangeNormalize } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
@@ -112,6 +112,9 @@ const spectrumDataSource = computed((): SpectrumDataSource => {
 });
 provide(spectrumDataSourceKey, spectrumDataSource);
 const { drawnSpectrumY, clearDrawnSpectrumY } = useDrawnSpectrumY();
+// We don't actuallly need it in this component, but we want it at this level
+// so the drawing canvas and rainbow can share
+useCurrentlyDrawing();
 
 const metadataStore = useMetadataStore();
 function isPreloadedCategory(

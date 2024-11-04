@@ -7,6 +7,8 @@ import {
 } from '@/constants';
 import {
   inject,
+  onMounted,
+  onUnmounted,
   provide,
   readonly,
   ref,
@@ -69,7 +71,7 @@ export const bucketDatumFromLocs = (
 // Because we need to set and clear, a single updater won't work
 // Pinia also won't help because we need multiple, independent stores
 // that are linked to components
-export interface DrawnSpectrumYWithUpdaters {
+interface DrawnSpectrumYWithUpdaters {
   drawnSpectrumY: Readonly<Ref<readonly number[]>>;
   clearDrawnSpectrumY: () => void;
   setBucket: (bucket: number, y: number) => void;
@@ -96,4 +98,44 @@ export const useDrawnSpectrumY = (): DrawnSpectrumYWithUpdaters => {
     provide(drawnSpectrumYKey, drawnSpectrumYWithUpdaters);
   }
   return drawnSpectrumYWithUpdaters;
+};
+
+// Component-scoped "are we currently drawing" flag
+// Enables drawing off the edge of the canvas, and refreshing when drawing is done
+interface CurrentlyDrawingWithUpdater {
+  currentlyDrawing: Readonly<Ref<boolean>>;
+  setCurrentlyDrawing: (newDrawing: boolean) => void;
+}
+const currentlyDrawingKey =
+  Symbol() as InjectionKey<CurrentlyDrawingWithUpdater>;
+const createCurrentlyDrawingWithUpdater = (): CurrentlyDrawingWithUpdater => {
+  const currentlyDrawing = ref(false);
+  const setCurrentlyDrawing = (newDrawing: boolean): void => {
+    currentlyDrawing.value = newDrawing;
+  };
+  return {
+    currentlyDrawing: readonly(currentlyDrawing),
+    setCurrentlyDrawing,
+  };
+};
+export const useCurrentlyDrawing = (): CurrentlyDrawingWithUpdater => {
+  let currentlyDrawingWithUpdater = inject(currentlyDrawingKey, null);
+  if (!currentlyDrawingWithUpdater) {
+    currentlyDrawingWithUpdater = createCurrentlyDrawingWithUpdater();
+    provide(currentlyDrawingKey, currentlyDrawingWithUpdater);
+    const { currentlyDrawing, setCurrentlyDrawing } =
+      currentlyDrawingWithUpdater;
+    const stopDrawing = () => {
+      if (currentlyDrawing.value) {
+        setCurrentlyDrawing(false);
+      }
+    };
+    onMounted(() => {
+      window.addEventListener('pointerup', stopDrawing);
+    });
+    onUnmounted(() => {
+      window.removeEventListener('pointerup', stopDrawing);
+    });
+  }
+  return currentlyDrawingWithUpdater;
 };

@@ -7,7 +7,6 @@
       class="drawn-chart d-block"
       @pointerdown="handlePointerDown"
       @pointermove="handlePointerMove"
-      @pointerup="handlePointerUp"
       @pointerleave="handlePointerLeave"
       >Spectrum intensity vs wavelength chart, drawn by the user</canvas
     >
@@ -20,6 +19,7 @@ import { zoomKey } from '@/injectionKeys';
 import {
   bucketDatumFromLocs,
   bucketFromXLoc,
+  useCurrentlyDrawing,
   useDrawnSpectrumY,
   xLocsFromBucket,
 } from '@/utils/drawingUtils';
@@ -51,7 +51,7 @@ onMounted(() => {
 });
 
 const { drawnSpectrumY, clearDrawnSpectrumY, setBucket } = useDrawnSpectrumY();
-const currentlyDrawing = ref(false);
+const { currentlyDrawing, setCurrentlyDrawing } = useCurrentlyDrawing();
 const mostRecentBucket = ref<number | null>(null);
 watch(currentlyDrawing, (newCurrentlyDrawing) => {
   if (!newCurrentlyDrawing) {
@@ -169,7 +169,7 @@ const drawWholeChart = (): void => {
 const handlePointerDown = (e: PointerEvent) => {
   e.preventDefault();
   redrawCorrespondingBucketAndSave(e.offsetX, e.offsetY);
-  currentlyDrawing.value = true;
+  setCurrentlyDrawing(true);
 };
 const handlePointerMove = (e: PointerEvent) => {
   e.preventDefault();
@@ -177,15 +177,11 @@ const handlePointerMove = (e: PointerEvent) => {
     redrawDraggedBucketsAndSave(e.offsetX, e.offsetY);
   }
 };
-const handlePointerUp = (e: PointerEvent) => {
-  e.preventDefault();
-  currentlyDrawing.value = false;
-};
 const handlePointerLeave = (e: PointerEvent) => {
   e.preventDefault();
   if (currentlyDrawing.value) {
     redrawDraggedBucketsAndSave(e.offsetX, e.offsetY);
-    currentlyDrawing.value = false;
+    mostRecentBucket.value = null;
   }
 };
 
