@@ -1,15 +1,17 @@
 <template>
   <BCol cols="8" md="6" lg="8" xl="6">
-    <BFormGroup label="Use your own spectrum data (CSV)">
-      <BFormFile v-model="file" accept="text/csv" class="spectrum-filepicker" />
+    <BFormGroup label="Use your own spectrum data (txt)">
+      <BFormFile
+        v-model="file"
+        accept="text/plain"
+        class="spectrum-filepicker"
+      />
     </BFormGroup>
   </BCol>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
-const file = ref<File | null>(null);
+const file = defineModel<File | null>();
 </script>
 
 <style>

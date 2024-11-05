@@ -3,7 +3,7 @@
     <!-- Chart bottom means file picker top, and vice versa -->
     <template v-if="chartPosition === 'bottom'">
       <BRow class="mb-3">
-        <SpectrumFilepicker />
+        <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
       </BRow>
     </template>
@@ -55,7 +55,7 @@
     </BRow>
     <template v-if="chartPosition === 'top'">
       <BRow class="mt-3">
-        <SpectrumFilepicker />
+        <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
       </BRow>
     </template>
@@ -92,7 +92,7 @@ const props = withDefaults(
   { normalize: true, chartPosition: 'bottom' },
 );
 
-type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'file';
+type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
 const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
   value: cat,
   text: cat,
@@ -101,7 +101,7 @@ const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
   { value: '', text: 'Select category' },
   ...preloadedOptions,
   { value: 'draw', text: 'Draw' },
-  { value: 'file', text: 'Uploaded file' },
+  { value: 'pickedFile', text: 'Uploaded file' },
 ];
 const selectedCategory = ref<SpectrumCategory>('');
 const spectrumDataSource = computed((): SpectrumDataSource => {
@@ -112,9 +112,21 @@ const spectrumDataSource = computed((): SpectrumDataSource => {
 });
 provide(spectrumDataSourceKey, spectrumDataSource);
 const { drawnSpectrumY, clearDrawnSpectrumY } = useDrawnSpectrumY();
-// We don't actuallly need it in this component, but we want it at this level
+// We don't actually need it in this component, but we want it at this level
 // so the drawing canvas and rainbow can share
 useCurrentlyDrawing();
+
+const pickedFile = ref<File | null>(null);
+watch(selectedCategory, (newCategory) => {
+  if (newCategory !== 'pickedFile') {
+    pickedFile.value = null;
+  }
+});
+watch(pickedFile, (newFile) => {
+  if (newFile !== null) {
+    selectedCategory.value = 'pickedFile';
+  }
+});
 
 const metadataStore = useMetadataStore();
 function isPreloadedCategory(
