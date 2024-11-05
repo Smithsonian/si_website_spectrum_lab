@@ -36,7 +36,15 @@ import {
   useDrawnSpectrumY,
   xLocsFromBucket,
 } from '@/utils/drawingUtils';
-import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
+import {
+  computed,
+  inject,
+  onMounted,
+  ref,
+  useTemplateRef,
+  watch,
+  watchEffect,
+} from 'vue';
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
@@ -208,12 +216,8 @@ const redrawDrawingData = () => {
   });
 };
 
-watch([zoom, backgroundCtx], () => {
-  drawBackground();
-});
-watch([zoom, data, spectrumDataSource, overlayCtx], () => {
-  redrawOverlay();
-});
+watchEffect(drawBackground);
+watchEffect(redrawOverlay);
 watch(currentlyDrawing, (newCurrentlyDrawing) => {
   if (!newCurrentlyDrawing) {
     redrawOverlay();
