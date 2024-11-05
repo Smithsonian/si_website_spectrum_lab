@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { CHART_HEIGHT, CHART_WIDTH, X_BUCKET_WIDTH } from '@/constants';
+import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 import { zoomKey } from '@/injectionKeys';
 import {
   bucketDatumFromLocs,
@@ -23,7 +23,7 @@ import {
   useDrawnSpectrumY,
   xLocsFromBucket,
 } from '@/utils/drawingUtils';
-import { computed, inject, onMounted, ref, useTemplateRef, watch } from 'vue';
+import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
 const canvas = useTemplateRef('canvas');
 const context = computed(() => {
   if (!canvas.value) {
@@ -46,30 +46,20 @@ const clearChart = () => {
   ctx.clearRect(0, 0, CHART_WIDTH, CHART_HEIGHT);
 };
 
-onMounted(() => {
-  drawWholeChart();
-});
-
 const { drawnSpectrumY, clearDrawnSpectrumY, setBucket } = useDrawnSpectrumY();
 const { currentlyDrawing, setCurrentlyDrawing } = useCurrentlyDrawing();
 const mostRecentBucket = ref<number | null>(null);
 watch(currentlyDrawing, (newCurrentlyDrawing) => {
   if (!newCurrentlyDrawing) {
     mostRecentBucket.value = null;
-    drawWholeChart();
   }
 });
 
-const redrawBucket = (bucket: number): void => {
+const drawBucket = (bucket: number): void => {
   const ctx = context.value;
   if (!ctx) {
     return;
   }
-  // Clear this bucket's rectangle
-  const xBucketStart = bucket * X_BUCKET_WIDTH;
-  ctx.clearRect(xBucketStart, 0, X_BUCKET_WIDTH, CHART_HEIGHT);
-
-  // Draw
   const { xCenter } = xLocsFromBucket(bucket);
   const yCenter = drawnSpectrumY.value[bucket];
   drawPoint(xCenter, yCenter);
@@ -85,16 +75,15 @@ const drawPoint = (xLoc: number, yLoc: number): void => {
   ctx.fill();
 };
 
-const redrawCorrespondingBucketAndSave = (xLoc: number, yLoc: number): void => {
+const updateCorrespondingBucket = (xLoc: number, yLoc: number): void => {
   const { bucket, yInRange } = bucketDatumFromLocs(xLoc, yLoc);
   setBucket(bucket, yInRange);
-  redrawBucket(bucket);
   mostRecentBucket.value = bucket;
 };
 
-const redrawDraggedBucketsAndSave = (xLoc: number, yLoc: number): void => {
+const updateDraggedBuckets = (xLoc: number, yLoc: number): void => {
   if (mostRecentBucket.value === null) {
-    redrawCorrespondingBucketAndSave(xLoc, yLoc);
+    updateCorrespondingBucket(xLoc, yLoc);
     return;
   }
 
@@ -102,7 +91,7 @@ const redrawDraggedBucketsAndSave = (xLoc: number, yLoc: number): void => {
   const bucketDifference = currentBucket - mostRecentBucket.value;
   if (Math.abs(bucketDifference) <= 1) {
     // No intermediate buckets to draw
-    redrawCorrespondingBucketAndSave(xLoc, yLoc);
+    updateCorrespondingBucket(xLoc, yLoc);
     return;
   }
   // We do have intermediate buckets to draw
@@ -112,21 +101,21 @@ const redrawDraggedBucketsAndSave = (xLoc: number, yLoc: number): void => {
   const yDiff = yLoc - yRecent;
   const slope = yDiff / xDiff;
   const intercept = yLoc - slope * xLoc;
-  const redrawIntermediateBucket = (b: number): void => {
+  const updateIntermediateBucket = (b: number): void => {
     const { xCenter } = xLocsFromBucket(b);
     const yLine = xCenter * slope + intercept;
-    redrawCorrespondingBucketAndSave(xCenter, yLine);
+    updateCorrespondingBucket(xCenter, yLine);
   };
   // Handle both left and right drags
   if (mostRecentBucket.value < currentBucket) {
     // right drag
     for (let b = mostRecentBucket.value + 1; b <= currentBucket; b++) {
-      redrawIntermediateBucket(b);
+      updateIntermediateBucket(b);
     }
   } else {
     // left drag
     for (let b = mostRecentBucket.value - 1; b >= currentBucket; b--) {
-      redrawIntermediateBucket(b);
+      updateIntermediateBucket(b);
     }
   }
 };
@@ -151,7 +140,7 @@ const drawWholeChart = (): void => {
   clearChart();
   // Draw all points
   drawnSpectrumY.value.forEach((_, bucket) => {
-    redrawBucket(bucket);
+    drawBucket(bucket);
   });
 
   // Draw all lines
@@ -165,31 +154,27 @@ const drawWholeChart = (): void => {
     previousBucket = bucket;
   });
 };
+watchEffect(drawWholeChart);
 
 const handlePointerDown = (e: PointerEvent) => {
   e.preventDefault();
-  redrawCorrespondingBucketAndSave(e.offsetX, e.offsetY);
+  updateCorrespondingBucket(e.offsetX, e.offsetY);
   setCurrentlyDrawing(true);
 };
 const handlePointerMove = (e: PointerEvent) => {
   e.preventDefault();
   if (currentlyDrawing.value) {
-    redrawDraggedBucketsAndSave(e.offsetX, e.offsetY);
+    updateDraggedBuckets(e.offsetX, e.offsetY);
   }
 };
 const handlePointerLeave = (e: PointerEvent) => {
   e.preventDefault();
   if (currentlyDrawing.value) {
-    redrawDraggedBucketsAndSave(e.offsetX, e.offsetY);
+    updateDraggedBuckets(e.offsetX, e.offsetY);
     mostRecentBucket.value = null;
   }
 };
 
-watch(drawnSpectrumY, (newDrawnSpectrumData) => {
-  if (newDrawnSpectrumData.length === 0) {
-    clearChart();
-  }
-});
 const zoom = inject(zoomKey, ref(1));
 watch(zoom, () => {
   clearDrawnSpectrumY();
