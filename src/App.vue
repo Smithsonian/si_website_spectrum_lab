@@ -8,28 +8,8 @@ import { BContainer } from 'bootstrap-vue-next';
     <p class="m-0">Exploring the world of color</p>
   </div>
   <BNav class="bg-dark justify-content-center">
-    <BNavItem link-class="app-nav-link" href="session2.html"
-      >Session 2</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" href="session3.html"
-      >Session 3</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" href="session4.html"
-      >Session 4</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" href="fishtank.html"
-      >Fish Tank</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" href="exoplanets.html"
-      >Exoplanets</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" href="playground.html"
-      >Playground</BNavItem
-    >
-    <BNavItem link-class="app-nav-link" to="/">Vue Playground</BNavItem>
-    <BNavItem link-class="app-nav-link" to="/session2vue"
-      >Vue Session 2</BNavItem
-    >
+    <BNavItem link-class="app-nav-link" to="/session2vue">Session 2</BNavItem>
+    <BNavItem link-class="app-nav-link" to="/">Playground</BNavItem>
   </BNav>
   <BContainer tag="main" class="mt-3">
     <RouterView />
