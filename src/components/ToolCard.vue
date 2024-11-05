@@ -212,23 +212,38 @@ const spectrumDataFromNetwork: Ref<SpectrumDatum[]> = ref([]);
 watch(selectedMetadata, async (newMetadata) => {
   spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
 });
-const spectrumData = computed(() => {
-  if (!props.normalize) {
-    return spectrumDataFromNetwork.value;
+const spectrumDataFromPickedFile: Ref<SpectrumDatum[]> = ref([]);
+watch(pickedFile, async (newFile) => {
+  if (newFile === null) {
+    spectrumDataFromPickedFile.value = [];
+    return;
   }
-  const unNormalizedIntensities = spectrumDataFromNetwork.value.map(
-    ([_, intensity]) => {
-      return intensity;
-    },
-  );
+  const text = await newFile.text();
+  spectrumDataFromPickedFile.value = dataFromText(text);
+});
+
+const normalizeDataMaybe = (unNormalized: SpectrumDatum[]): SpectrumDatum[] => {
+  if (!props.normalize) {
+    return unNormalized;
+  }
+  const unNormalizedIntensities = unNormalized.map(([_, intensity]) => {
+    return intensity;
+  });
   const normalizedIntensities = rangeNormalize(unNormalizedIntensities);
   const normalizedSpectrumData: SpectrumDatum[] = [];
   for (let i = 0; i < normalizedIntensities.length; i++) {
-    const [wavelength, _] = spectrumDataFromNetwork.value[i];
+    const [wavelength, _] = unNormalized[i];
     const normalizedIntensity = normalizedIntensities[i];
     normalizedSpectrumData.push([wavelength, normalizedIntensity]);
   }
   return normalizedSpectrumData;
+};
+
+const spectrumData = computed(() => {
+  if (selectedCategory.value === 'pickedFile') {
+    return normalizeDataMaybe(spectrumDataFromPickedFile.value);
+  }
+  return normalizeDataMaybe(spectrumDataFromNetwork.value);
 });
 
 provide(spectrumDataKey, spectrumData);
