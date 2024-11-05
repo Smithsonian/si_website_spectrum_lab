@@ -37,7 +37,7 @@
               v-if="spectrumDataSource === 'drawing'"
               variant="light"
               @click="clearDrawnSpectrumY"
-              >Reset drawing</BButton
+              >Clear drawing</BButton
             >
           </BCol>
         </BRow>
