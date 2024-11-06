@@ -26,19 +26,18 @@
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
-            <BFormSelect
-              v-if="
-                spectrumDataSource !== 'drawing' && spectrumOptions.length > 0
-              "
-              v-model="selectedSpectrum"
-              :options="spectrumOptions"
-            />
             <BButton
               v-if="spectrumDataSource === 'drawing'"
               variant="light"
               @click="clearDrawnSpectrumY"
               >Clear drawing</BButton
             >
+            <BFormSelect
+              v-else
+              v-model="selectedSpectrum"
+              :options="spectrumOptions"
+              :class="spectrumOptions.length > 1 ? '' : 'invisible'"
+            />
           </BCol>
         </BRow>
       </BCol>
