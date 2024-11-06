@@ -1,9 +1,9 @@
 <template>
   <BCol cols="8" md="6" lg="8" xl="6">
-    <BFormGroup label="Use your own spectrum data (txt)">
+    <BFormGroup label="Use your own spectrum data (txt, csv)">
       <BFormFile
         v-model="file"
-        accept="text/plain"
+        accept="text/plain,text/csv"
         class="spectrum-filepicker"
       />
     </BFormGroup>

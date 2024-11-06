@@ -10,6 +10,27 @@ function parseText(text: string): [number[], number[]] {
   return [wavelengths, intensities];
 }
 
+function isHeaderRow(row: string): boolean {
+  const columns = row.split(',');
+  return columns.some((c) => isNaN(parseFloat(c)));
+}
+
+function parseCSV(text: string): [number[], number[]] {
+  const rows = text.split('\n').filter((t) => t.length > 0);
+  if (isHeaderRow(rows[0])) {
+    rows.shift();
+  }
+  const wavelengths: number[] = [];
+  const intensities: number[] = [];
+  for (const row of rows) {
+    const columns = row.replace(/\s/g, '').split(',');
+    const [wavelength, intensity] = columns;
+    wavelengths.push(parseFloat(wavelength));
+    intensities.push(parseFloat(intensity));
+  }
+  return [wavelengths, intensities];
+}
+
 export function rangeNormalize(
   data: number[],
   minTo = 0.05,
@@ -22,8 +43,10 @@ export function rangeNormalize(
   return data.map((v) => slope * v + intercept);
 }
 
-export function dataFromText(text: string): SpectrumDatum[] {
-  const [wavelengths, intensities] = parseText(text);
+function dataFromPairs(
+  wavelengths: number[],
+  intensities: number[],
+): SpectrumDatum[] {
   const data: SpectrumDatum[] = [];
   for (let i = 0; i < wavelengths.length && i < intensities.length; i++) {
     const wavelength = wavelengths[i];
@@ -41,4 +64,14 @@ export function dataFromText(text: string): SpectrumDatum[] {
     return aWav - bWav;
   });
   return data;
+}
+
+export function dataFromText(text: string): SpectrumDatum[] {
+  const [wavelengths, intensities] = parseText(text);
+  return dataFromPairs(wavelengths, intensities);
+}
+
+export function dataFromCSV(csv: string): SpectrumDatum[] {
+  const [wavelengths, intensities] = parseCSV(csv);
+  return dataFromPairs(wavelengths, intensities);
 }

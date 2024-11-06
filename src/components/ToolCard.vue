@@ -76,7 +76,7 @@ import {
   type SpectrumMetadata,
 } from '@/metadataStore';
 import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
-import { dataFromText, rangeNormalize } from '@/utils/importUtils';
+import { dataFromCSV, dataFromText, rangeNormalize } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
 
@@ -218,7 +218,16 @@ watch(pickedFile, async (newFile) => {
     return;
   }
   const text = await newFile.text();
-  spectrumDataFromPickedFile.value = dataFromText(text);
+  switch (newFile.type) {
+    case 'text/plain':
+      spectrumDataFromPickedFile.value = dataFromText(text);
+      return;
+    case 'text/csv':
+      spectrumDataFromPickedFile.value = dataFromCSV(text);
+      return;
+    default:
+      return;
+  }
 });
 
 const normalizeDataMaybe = (unNormalized: SpectrumDatum[]): SpectrumDatum[] => {
