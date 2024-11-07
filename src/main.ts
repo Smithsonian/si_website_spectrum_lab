@@ -13,14 +13,20 @@ import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import { useMetadataStore } from './metadataStore';
 import Session3Challenge1 from './pages/Session3/Session3Challenge1.vue';
+import Session3Intro from './pages/Session3/Session3Intro.vue';
+import Session3Tutorial from './pages/Session3/Session3Tutorial.vue';
 
 library.add(faArrowUp);
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/session3',
-    redirect: '/session3/challenge1',
-    children: [{ path: 'challenge1', component: Session3Challenge1 }],
+    redirect: '/session3/intro',
+    children: [
+      { path: 'intro', component: Session3Intro },
+      { path: 'tutorial', component: Session3Tutorial },
+      { path: 'challenge1', component: Session3Challenge1 },
+    ],
   },
   { path: '/playground', component: PlaygroundView },
   {
