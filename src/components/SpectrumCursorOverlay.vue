@@ -47,21 +47,20 @@ import {
   RAINBOW_HEIGHT,
 } from '@/constants';
 import {
-  createRefWithUpdater,
-  cursorMicronsKey,
   cursorUnitKey,
   spectrumDataSourceKey,
   zoomKey,
   type CursorUnit,
   type SpectrumDataSource,
 } from '@/injectionKeys';
-import { micronsFromXLoc, xLocFromMicrons } from '@/utils/chartUtils';
+import {
+  micronsFromXLoc,
+  useCursorMicrons,
+  xLocFromMicrons,
+} from '@/utils/chartUtils';
 import { computed, inject, ref } from 'vue';
 
-const { ref: cursorMicrons, update: updateCursorMicrons } = inject(
-  cursorMicronsKey,
-  createRefWithUpdater(null),
-);
+const { cursorMicrons, setCursorMicrons } = useCursorMicrons();
 
 const overlayHeight = CHART_HEIGHT + RAINBOW_HEIGHT;
 
@@ -79,7 +78,7 @@ const zoom = inject(zoomKey, ref(1));
 const handlePointerMove = (e: PointerEvent): void => {
   e.preventDefault();
   const microns = micronsFromXLoc(e.offsetX, zoom.value);
-  updateCursorMicrons(microns);
+  setCursorMicrons(microns);
 };
 const handlePointerLeave = (e: PointerEvent): void => {
   e.preventDefault();
@@ -89,12 +88,12 @@ const handlePointerLeave = (e: PointerEvent): void => {
     e.offsetY > keepCursorThreshold &&
     e.offsetY < overlayHeight - keepCursorThreshold
   ) {
-    updateCursorMicrons(null);
+    setCursorMicrons(null);
     return;
   }
   // Keep it if leaving off top or bottom
   const microns = micronsFromXLoc(e.offsetX, zoom.value);
-  updateCursorMicrons(microns);
+  setCursorMicrons(microns);
 };
 
 const xCursorLocation = computed((): number | null => {

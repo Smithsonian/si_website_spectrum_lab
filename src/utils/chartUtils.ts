@@ -1,4 +1,12 @@
 import {
+  inject,
+  provide,
+  readonly,
+  ref,
+  type InjectionKey,
+  type Ref,
+} from 'vue';
+import {
   CHART_HEIGHT,
   CHART_WIDTH,
   MIN_WAVELENGTH,
@@ -36,4 +44,30 @@ export const xLocFromMicrons = (microns: number, zoom: number): number => {
 export const yLocFromIntensity = (intensity: number): number => {
   const yFromBottom = intensity * Y_RANGE + Y_0_FROM_BOTTOM;
   return CHART_HEIGHT - yFromBottom;
+};
+
+// Page-scoped "where is the cursor"
+// Enables cursor positions linked between multiple charts
+interface CursorMicronsWithUpdater {
+  cursorMicrons: Readonly<Ref<number | null>>;
+  setCursorMicrons: (newCursorMicrons: number | null) => void;
+}
+const cursorMicronsKey = Symbol() as InjectionKey<CursorMicronsWithUpdater>;
+const createCursorMicronsWithUpdater = (): CursorMicronsWithUpdater => {
+  const cursorMicrons = ref<number | null>(null);
+  const setCursorMicrons = (newCursorMicrons: number | null): void => {
+    cursorMicrons.value = newCursorMicrons;
+  };
+  return {
+    cursorMicrons: readonly(cursorMicrons),
+    setCursorMicrons,
+  };
+};
+export const useCursorMicrons = (): CursorMicronsWithUpdater => {
+  let cursorMicronsWithUpdater = inject(cursorMicronsKey, null);
+  if (!cursorMicronsWithUpdater) {
+    cursorMicronsWithUpdater = createCursorMicronsWithUpdater();
+    provide(cursorMicronsKey, cursorMicronsWithUpdater);
+  }
+  return cursorMicronsWithUpdater;
 };

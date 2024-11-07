@@ -57,13 +57,12 @@
 
 <script setup lang="ts">
 import {
-  createRefWithUpdater,
-  cursorMicronsKey,
   cursorUnitKey,
   showLinesKey,
   zoomKey,
   type CursorUnit,
 } from '@/injectionKeys';
+import { useCursorMicrons } from '@/utils/chartUtils';
 import { useHead } from '@unhead/vue';
 import { BFormInput, BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref } from 'vue';
@@ -100,8 +99,8 @@ const cursorUnitOptions: { text: string; value: CursorUnit }[] = [
   { text: 'Electron volt', value: 'Electron volt' },
 ];
 provide(cursorUnitKey, cursorUnit);
-const cursorMicronsRefWithUpdater = createRefWithUpdater(null);
-provide(cursorMicronsKey, cursorMicronsRefWithUpdater);
+// Instantiate this at this level so both charts can share it
+useCursorMicrons();
 </script>
 
 <style>
