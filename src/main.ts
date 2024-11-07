@@ -11,20 +11,25 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
-import Session2View from './pages/Session2View.vue';
 import { useMetadataStore } from './metadataStore';
+import Session3Challenge1 from './pages/Session3/Session3Challenge1.vue';
 
 library.add(faArrowUp);
 
 const routes: RouteRecordRaw[] = [
-  { path: '/session2vue', component: Session2View },
-  { path: '/', component: PlaygroundView },
+  {
+    path: '/session3',
+    redirect: '/session3/challenge1',
+    children: [{ path: 'challenge1', component: Session3Challenge1 }],
+  },
+  { path: '/playground', component: PlaygroundView },
   {
     path: '/:fileName([^.]+).html',
     redirect: (to) => {
       return { path: `/${to.params.fileName}` };
     },
   },
+  { path: '/', redirect: '/playground' },
 ];
 
 const pinia = createPinia();
