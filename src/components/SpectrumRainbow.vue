@@ -45,12 +45,13 @@ import {
   watch,
   watchEffect,
 } from 'vue';
+import rainbowImageUrl from '/includes/AI_common/images/Visible_Spectrum_1.png';
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
 
 const rainbowImage = new Image();
-rainbowImage.src = 'includes/AI_common/images/Visible_Spectrum_1.png';
+rainbowImage.src = rainbowImageUrl;
 
 const background = useTemplateRef('background');
 const backgroundCtx = computed(() => {

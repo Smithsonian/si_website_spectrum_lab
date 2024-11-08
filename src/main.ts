@@ -15,6 +15,7 @@ import { useMetadataStore } from './metadataStore';
 import Session3Challenge1 from './pages/Session3/Session3Challenge1.vue';
 import Session3Intro from './pages/Session3/Session3Intro.vue';
 import Session3Tutorial from './pages/Session3/Session3Tutorial.vue';
+import { BASE_URL } from './constants';
 
 library.add(faArrowUp);
 
@@ -42,7 +43,7 @@ const pinia = createPinia();
 
 export const createApp = ViteSSG(
   App,
-  { routes, base: import.meta.env.BASE_URL },
+  { routes, base: BASE_URL },
   ({ app, router, initialState }) => {
     app.component('FontAwesomeIcon', FontAwesomeIcon);
     app.use(createBootstrap());

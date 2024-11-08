@@ -11,7 +11,7 @@ import { BContainer } from 'bootstrap-vue-next';
     <BNavItem link-class="app-nav-link" to="/session3">Session 3</BNavItem>
     <BNavItem link-class="app-nav-link" to="/playground">Playground</BNavItem>
   </BNav>
-  <BContainer tag="main" class="mt-3">
+  <BContainer tag="main">
     <RouterView />
   </BContainer>
 </template>

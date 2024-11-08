@@ -62,6 +62,7 @@
 </template>
 
 <script setup lang="ts">
+import { BASE_URL } from '@/constants';
 import {
   spectrumDataKey,
   spectrumDataSourceKey,
@@ -79,6 +80,7 @@ import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
 import { dataFromCSV, dataFromText, rangeNormalize } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
+import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
 
 type ChartPosition = 'top' | 'bottom';
 
@@ -173,16 +175,14 @@ const selectedMetadata = computed(
 
 // Icon
 const iconPath = computed((): string => {
-  const DEFAULT_ICON =
-    'includes/AI_common/images/Harry_sun_spectrum_resized.png';
   if (!selectedMetadata.value) {
-    return DEFAULT_ICON;
+    return defaultIconUrl;
   }
   const imageName = selectedMetadata.value.imageName;
   if (!imageName) {
-    return DEFAULT_ICON;
+    return defaultIconUrl;
   }
-  return `includes/SpecLab_Data_Files/${imageName}`;
+  return `${BASE_URL}includes/SpecLab_Data_Files/${imageName}`;
 });
 
 const fetchSpectrumData = async (
@@ -192,7 +192,7 @@ const fetchSpectrumData = async (
     return [];
   }
   const directory = CATEGORY_DIRECTORIES[metadata.category];
-  const url = `includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
+  const url = `${BASE_URL}includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

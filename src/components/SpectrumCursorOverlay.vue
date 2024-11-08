@@ -17,7 +17,7 @@
           :style="`height: ${overlayHeight}px; width: 2px; left: -1px`"
         ></div>
         <img
-          :src="'includes/AI_common/images/play-button_2.png'"
+          src="/includes/AI_common/images/play-button_2.png"
           class="cursor-triangle d-block position-absolute"
         />
         <div

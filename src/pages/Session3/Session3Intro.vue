@@ -1,6 +1,6 @@
 <template>
-  <ChallengeToolLayout>
-    <template #challenge-col>
+  <Session3Layout>
+    <template #challenge-tab>
       <ChallengeCard>
         <h2>What can spectra tell us about an object’s temperature?</h2>
         <img
@@ -14,11 +14,10 @@
         </p>
       </ChallengeCard>
     </template>
-  </ChallengeToolLayout>
+  </Session3Layout>
 </template>
 
 <script setup lang="ts">
-import ChallengeToolLayout from '@/layouts/ChallengeToolLayout.vue';
 import { useHead } from '@unhead/vue';
 
 useHead({
