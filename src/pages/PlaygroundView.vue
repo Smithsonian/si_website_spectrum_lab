@@ -1,7 +1,16 @@
 <template>
-  <BRow>
-    <ChallengeCol />
-    <BCol>
+  <ChallengeToolLayout>
+    <template #challenge-col>
+      <ChallengeCard>
+        <h2>Welcome to the Playground</h2>
+        <p>
+          This Spectrum Tool will help you connect the visual color display of a
+          light source's spectrum&mdash;like the color image you see in a
+          spectroscope&mdash;with a graph of the light's spectrum.
+        </p>
+      </ChallengeCard>
+    </template>
+    <template #tool-col>
       <ToolCard title="Spectrum 1" :normalize="normalize" />
       <BRow class="mt-1 mb-2 px-3">
         <BCol cols="3">
@@ -51,8 +60,8 @@
           :normalize="normalize"
         />
       </div>
-    </BCol>
-  </BRow>
+    </template>
+  </ChallengeToolLayout>
 </template>
 
 <script setup lang="ts">
@@ -62,6 +71,7 @@ import {
   zoomKey,
   type CursorUnit,
 } from '@/injectionKeys';
+import ChallengeToolLayout from '@/layouts/ChallengeToolLayout.vue';
 import { useCursorMicrons } from '@/utils/chartUtils';
 import { useHead } from '@unhead/vue';
 import { BFormInput, BFormSelect } from 'bootstrap-vue-next';
