@@ -73,6 +73,7 @@ import {
 } from '@/injectionKeys';
 import ChallengeToolLayout from '@/layouts/ChallengeToolLayout.vue';
 import { useCursorMicrons } from '@/utils/chartUtils';
+import type { NormalizeSetting } from '@/utils/importUtils';
 import { useHead } from '@unhead/vue';
 import { BFormInput, BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref } from 'vue';
@@ -94,10 +95,11 @@ const plotOptions: { text: string; value: PlotType }[] = [
 const showLines = computed(() => plotType.value === 'line');
 provide(showLinesKey, showLines);
 
-const normalize = ref(true);
-const normalizeOptions: { text: string; value: boolean }[] = [
-  { text: 'Yes', value: true },
-  { text: 'No', value: false },
+const normalize = ref<NormalizeSetting>('all');
+const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
+  { text: 'All', value: 'all' },
+  { text: 'Visible', value: 'visible' },
+  { text: 'None', value: null },
 ];
 
 const cursorUnit = ref<CursorUnit>('Microns');

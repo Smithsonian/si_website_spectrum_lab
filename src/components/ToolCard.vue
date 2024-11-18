@@ -89,7 +89,13 @@ import {
   type SpectrumMetadata,
 } from '@/metadataStore';
 import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
-import { dataFromCSV, dataFromText, rangeNormalize } from '@/utils/importUtils';
+import {
+  dataFromCSV,
+  dataFromText,
+  rangeNormalize,
+  visibleOnly,
+  type NormalizeSetting,
+} from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { computed, provide, ref, watch, type Ref } from 'vue';
 import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
@@ -99,10 +105,10 @@ type ChartPosition = 'top' | 'bottom';
 const props = withDefaults(
   defineProps<{
     title: string;
-    normalize?: boolean;
+    normalize?: NormalizeSetting;
     chartPosition?: ChartPosition;
   }>(),
-  { normalize: true, chartPosition: 'bottom' },
+  { normalize: 'all', chartPosition: 'bottom' },
 );
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
@@ -258,13 +264,17 @@ const normalizeDataMaybe = (unNormalized: SpectrumDatum[]): SpectrumDatum[] => {
   if (!props.normalize) {
     return unNormalized;
   }
-  const unNormalizedIntensities = unNormalized.map(([_, intensity]) => {
+  let inputData = unNormalized;
+  if (props.normalize === 'visible') {
+    inputData = visibleOnly(inputData);
+  }
+  const unNormalizedIntensities = inputData.map(([_, intensity]) => {
     return intensity;
   });
   const normalizedIntensities = rangeNormalize(unNormalizedIntensities);
   const normalizedSpectrumData: SpectrumDatum[] = [];
   for (let i = 0; i < normalizedIntensities.length; i++) {
-    const [wavelength, _] = unNormalized[i];
+    const [wavelength, _] = inputData[i];
     const normalizedIntensity = normalizedIntensities[i];
     normalizedSpectrumData.push([wavelength, normalizedIntensity]);
   }

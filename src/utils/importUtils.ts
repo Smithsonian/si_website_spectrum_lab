@@ -1,4 +1,5 @@
 import type { SpectrumDatum } from '@/injectionKeys';
+export type NormalizeSetting = 'all' | 'visible' | null;
 
 function parseText(text: string): [number[], number[]] {
   const loadedDataArray = text.replace(/\s/g, '').split('&');
@@ -41,6 +42,14 @@ export function rangeNormalize(
   const slope = (maxTo - minTo) / (max - min);
   const intercept = minTo - slope * min;
   return data.map((v) => slope * v + intercept);
+}
+
+export function visibleOnly(data: SpectrumDatum[]): SpectrumDatum[] {
+  const wvMin = 0.4;
+  const wvMax = 0.7;
+  return data.filter(
+    ([wavelength]) => wavelength >= wvMin && wavelength <= wvMax,
+  );
 }
 
 function dataFromPairs(
