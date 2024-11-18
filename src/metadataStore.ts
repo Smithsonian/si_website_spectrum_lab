@@ -11,8 +11,7 @@ export const PRELOADED_CATEGORIES = [
   'Exoplanet Models',
   'Thermal Spectra',
   'Fish Tank',
-  'Museum Curation',
-  'Museum Pigments',
+  'Museum Conservation',
 ] as const;
 
 export const CATEGORY_DIRECTORIES = {
@@ -25,8 +24,7 @@ export const CATEGORY_DIRECTORIES = {
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
   'Fish Tank': 'Fishtank_Lights',
-  'Museum Curation': 'Museum_Curation',
-  'Museum Pigments': 'Museum_Curation',
+  'Museum Conservation': 'Museum_Curation',
 } as const;
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
@@ -71,8 +69,7 @@ export const useMetadataStore = defineStore('metadata', {
       'Exoplanet Models': [],
       'Thermal Spectra': [],
       'Fish Tank': [],
-      'Museum Curation': [],
-      'Museum Pigments': [],
+      'Museum Conservation': [],
     } as MetadataByCategory,
   }),
   actions: {

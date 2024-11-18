@@ -20,6 +20,8 @@ with open(input_path, 'r') as i_file:
             "spectrumType",
             "imageName",
             "imageLink",
+            "bigImageName",
+            "bigImageLink",
             "creditName",
             "creditLink",
             "howTaken",
