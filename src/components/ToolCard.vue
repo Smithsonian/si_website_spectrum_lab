@@ -262,8 +262,8 @@ provide(spectrumDataKey, spectrumData);
   background-color: #1e4c7d;
 }
 .spectrum-icon-holder {
-  height: 160px;
-  width: 180px;
+  height: 164px;
+  width: 184px;
   overflow: hidden;
   background-color: black;
   border: 2px solid black;
