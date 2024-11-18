@@ -36,6 +36,7 @@ export interface SpectrumMetadata {
   spectrumType: string;
   imageName: string;
   imageLink: string;
+  bigImageName: string;
   creditName: string;
   creditLink: string;
   howTaken: string;

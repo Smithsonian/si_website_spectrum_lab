@@ -49,6 +49,9 @@
             : 'mt-2 mb-3 order-first order-xl-last'
         "
       >
+        <div v-if="previewPath" class="spectrum-preview-holder rounded-4 mb-3">
+          <img :src="previewPath" />
+        </div>
         <SpectrumChart />
       </BCol>
     </BRow>
@@ -185,6 +188,18 @@ const iconPath = computed((): string => {
   return `${BASE_URL}includes/SpecLab_Data_Files/${imageName}`;
 });
 
+// Preview
+const previewPath = computed((): string | null => {
+  if (!selectedMetadata.value) {
+    return null;
+  }
+  const bigImageName = selectedMetadata.value.bigImageName;
+  if (!bigImageName) {
+    return null;
+  }
+  return `${BASE_URL}includes/SpecLab_Data_Files/${bigImageName}`;
+});
+
 const fetchSpectrumData = async (
   metadata: SpectrumMetadata | null,
 ): Promise<SpectrumDatum[]> => {
@@ -267,5 +282,11 @@ provide(spectrumDataKey, spectrumData);
   overflow: hidden;
   background-color: black;
   border: 2px solid black;
+}
+
+.spectrum-preview-holder {
+  width: 670px;
+  overflow: hidden;
+  outline: 2px solid black;
 }
 </style>
