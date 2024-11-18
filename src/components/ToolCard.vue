@@ -49,10 +49,19 @@
             : 'mt-2 mb-3 order-first order-xl-last'
         "
       >
-        <div v-if="previewPath" class="spectrum-preview-holder rounded-4 mb-3">
+        <div
+          v-if="previewPath && chartPosition === 'bottom'"
+          class="spectrum-preview-holder rounded-4 mb-3"
+        >
           <img :src="previewPath" />
         </div>
         <SpectrumChart />
+        <div
+          v-if="previewPath && chartPosition === 'top'"
+          class="spectrum-preview-holder rounded-4 mt-3"
+        >
+          <img :src="previewPath" />
+        </div>
       </BCol>
     </BRow>
     <template v-if="chartPosition === 'top'">
