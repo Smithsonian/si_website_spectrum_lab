@@ -22,6 +22,25 @@
           >Challenge 1</RouterLink
         >
       </li>
+      <li class="nav-item"><a class="nav-link">Challenge 1: Discussion</a></li>
+      <li class="nav-item"><a class="nav-link">Challenge 2: Sun</a></li>
+      <li class="nav-item"><a class="nav-link">Challenge 2: M star</a></li>
+      <li class="nav-item"><a class="nav-link">Challenge 2: B star</a></li>
+      <li class="nav-item"><a class="nav-link">Challenge 2: Discussion</a></li>
+      <li class="nav-item">
+        <a class="nav-link">Challenge 2: Sun temperature</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Challenge 2: M star temperature</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Challenge 2: B star temperature</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Challenge 3: Incandescent</a>
+      </li>
+      <li class="nav-item"><a class="nav-link">Challenge 4: Earth</a></li>
+      <li class="nav-item"><a class="nav-link">Conclusion</a></li>
     </ul>
   </nav>
   <ChallengeToolLayout>
