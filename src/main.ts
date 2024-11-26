@@ -12,21 +12,21 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import { useMetadataStore } from './metadataStore';
-import Session3Challenge1 from './pages/Session3/Session3Challenge1.vue';
-import Session3Intro from './pages/Session3/Session3Intro.vue';
-import Session3Tutorial from './pages/Session3/Session3Tutorial.vue';
+import Module3Challenge1 from './pages/Module3/Module3Challenge1.vue';
+import Module3Intro from './pages/Module3/Module3Intro.vue';
+import Module3Tutorial from './pages/Module3/Module3Tutorial.vue';
 import { BASE_URL } from './constants';
 
 library.add(faArrowUp);
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/session3',
-    redirect: '/session3/intro',
+    path: '/module3',
+    redirect: '/module3/intro',
     children: [
-      { path: 'intro', component: Session3Intro },
-      { path: 'tutorial', component: Session3Tutorial },
-      { path: 'challenge1', component: Session3Challenge1 },
+      { path: 'intro', component: Module3Intro },
+      { path: 'tutorial', component: Module3Tutorial },
+      { path: 'challenge1', component: Module3Challenge1 },
     ],
   },
   { path: '/playground', component: PlaygroundView },

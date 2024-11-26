@@ -1,5 +1,5 @@
 <template>
-  <Session3Layout>
+  <Module3Layout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>What can spectra tell us about an object’s temperature?</h2>
@@ -14,7 +14,7 @@
         </p>
       </ChallengeCard>
     </template>
-  </Session3Layout>
+  </Module3Layout>
 </template>
 
 <script setup lang="ts">

@@ -2,7 +2,7 @@
   <nav>
     <ul class="nav nav-pills mt-3">
       <li class="nav-item">
-        <RouterLink class="nav-link" active-class="active" to="/session3/intro"
+        <RouterLink class="nav-link" active-class="active" to="/module3/intro"
           >Intro</RouterLink
         >
       </li>
@@ -10,7 +10,7 @@
         <RouterLink
           class="nav-link"
           active-class="active"
-          to="/session3/tutorial"
+          to="/module3/tutorial"
           >Tutorial</RouterLink
         >
       </li>
@@ -18,7 +18,7 @@
         <RouterLink
           class="nav-link"
           active-class="active"
-          to="/session3/challenge1"
+          to="/module3/challenge1"
           >Challenge 1</RouterLink
         >
       </li>
