@@ -3,7 +3,7 @@
     <ul class="nav nav-pills mt-3">
       <li class="nav-item">
         <RouterLink class="nav-link" active-class="active" to="/module3/intro"
-          >Intro</RouterLink
+          >1. Intro</RouterLink
         >
       </li>
       <li class="nav-item">
@@ -11,7 +11,7 @@
           class="nav-link"
           active-class="active"
           to="/module3/tutorial"
-          >Tutorial</RouterLink
+          >2. Tutorial</RouterLink
         >
       </li>
       <li class="nav-item">
@@ -19,28 +19,16 @@
           class="nav-link"
           active-class="active"
           to="/module3/challenge1"
-          >Challenge 1</RouterLink
+          >3. Color and temperature</RouterLink
         >
       </li>
-      <li class="nav-item"><a class="nav-link">Challenge 1: Discussion</a></li>
-      <li class="nav-item"><a class="nav-link">Challenge 2: Sun</a></li>
-      <li class="nav-item"><a class="nav-link">Challenge 2: M star</a></li>
-      <li class="nav-item"><a class="nav-link">Challenge 2: B star</a></li>
-      <li class="nav-item"><a class="nav-link">Challenge 2: Discussion</a></li>
       <li class="nav-item">
-        <a class="nav-link">Challenge 2: Sun temperature</a>
+        <a class="nav-link">4. Spectra and Temperature</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Challenge 2: M star temperature</a>
+        <a class="nav-link">5. Incandescent light bulb</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link">Challenge 2: B star temperature</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Challenge 3: Incandescent</a>
-      </li>
-      <li class="nav-item"><a class="nav-link">Challenge 4: Earth</a></li>
-      <li class="nav-item"><a class="nav-link">Conclusion</a></li>
+      <li class="nav-item"><a class="nav-link">6. Earth</a></li>
     </ul>
   </nav>
   <ChallengeToolLayout>
