@@ -1,0 +1,43 @@
+// Copying and pasting this from bootstrap-vue-next since otherwise there are weird import errors
+// when it tries to import Bootstrap scss
+@import "@bvn/src/components/BAvatar/avatar";
+@import "@bvn/src/components/BCard/card";
+@import "@bvn/src/components/BFormTags/form-tags";
+@import "@bvn/src/components/BInputGroup/input-group";
+@import "@bvn/src/components/BPagination/pagination";
+@import "@bvn/src/components/BTable/table";
+@import "@bvn/src/components/BFormInput/form-input";
+@import "@bvn/src/components/BFormFile/form-file";
+@import "@bvn/src/components/BFormSpinbutton/spinbutton";
+
+.container,
+.container-fluid {
+  display: block;
+}
+
+.input-group
+  > .form-floating:not(:first-child)
+  > :not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
+    .invalid-feedback
+  ) {
+  margin-left: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group:not(.has-validation)
+  > .form-floating:not(:last-child)
+  > :not(.dropdown-toggle):not(.dropdown-menu) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-toggle.dropdown-toggle-no-caret:before,
+.dropdown-toggle.dropdown-toggle-no-caret:after {
+  display: none !important;
+}
+
+// No focus outline helper (use sparingly)
+.bv-no-focus-ring:focus {
+  outline: none;
+}

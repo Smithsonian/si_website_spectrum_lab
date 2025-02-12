@@ -1,7 +1,6 @@
 import { ViteSSG } from 'vite-ssg';
 import { createBootstrap } from 'bootstrap-vue-next';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue-next/dist/bootstrap-vue-next.css';
+import './assets/speclab_theme.scss';
 import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { createPinia } from 'pinia';

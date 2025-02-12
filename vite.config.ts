@@ -17,6 +17,19 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@bvn': fileURLToPath(
+        new URL('./node_modules/bootstrap-vue-next', import.meta.url),
+      ),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // We only need this for Bootstrap so we're at their mercy
+        // in terms of how they use SASS
+        quietDeps: true,
+        silenceDeprecations: ['import'],
+      },
     },
   },
 });
