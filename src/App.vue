@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { BContainer } from 'bootstrap-vue-next';
+import SpeclabNavBar from './components/SpeclabNavBar.vue';
 </script>
 
 <template>
-  <div class="top-banner">
-    <h1>Spectrum Lab</h1>
-    <p class="m-0">Exploring the world of color</p>
-  </div>
+  <SpeclabNavBar />
   <BNav class="bg-dark justify-content-center">
     <BNavItem link-class="app-nav-link" to="/module3">Module 3</BNavItem>
     <BNavItem link-class="app-nav-link" to="/playground">Playground</BNavItem>

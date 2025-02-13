@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import {
+  BNavbar,
+  BNavbarBrand,
+  BNavbarNav,
+  BNavItem,
+} from 'bootstrap-vue-next';
+</script>
+
+<template>
+  <BNavbar v-b-color-mode="'dark'" variant="dark" container="xl">
+    <BNavbarBrand href="#">
+      <img src="/src/assets/DataLabsLogo@2x.png" height="44" width="196" />
+    </BNavbarBrand>
+    <BNavbarNav>
+      <BNavText>
+        <span class="vr bg-light text-light ms-5 me-3 h-100 align-top"></span>
+        <img
+          class="d-inline-block align-top"
+          src="/src/assets/SpecLabLogo@2x.png"
+          height="36"
+          width="230"
+        />
+      </BNavText>
+    </BNavbarNav>
+    <BNavbarNav class="ms-auto">
+      <BNavItem variant="light" opacity-hover="75" class="text-uppercase"
+        >Teacher Resources</BNavItem
+      >
+    </BNavbarNav>
+  </BNavbar>
+</template>
