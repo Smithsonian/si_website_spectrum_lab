@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { BContainer } from 'bootstrap-vue-next';
 import SpeclabNavBar from './components/SpeclabNavBar.vue';
+import SpeclabPageNav from './components/SpeclabPageNav.vue';
 </script>
 
 <template>
   <SpeclabNavBar />
-  <BNav class="bg-dark justify-content-center">
-    <BNavItem link-class="app-nav-link" to="/module3">Module 3</BNavItem>
-    <BNavItem link-class="app-nav-link" to="/playground">Playground</BNavItem>
-  </BNav>
+  <SpeclabPageNav />
   <BContainer tag="main">
     <RouterView />
   </BContainer>

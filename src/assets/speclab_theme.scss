@@ -31,7 +31,7 @@ $dl-yellow: #d8f354;
 // Speclab colors
 $sl-muted-blue: #3a678a;
 $sl-navy: #00456c;
-$sl-dark-purple: #00456c;
+$sl-dark-purple: #153353;
 $sl-light-blue: #3ad4ed;
 
 // Speclab resources
@@ -43,25 +43,25 @@ $slr-med-grey: #ccccd4;
 
 // CSS variable versions
 :root {
-  --gen-white: $gen-white;
-  --gen-black: $gen-black;
-  --gen-gold: $gen-gold;
-  --gen-grey: $gen-grey;
+  --gen-white: #{$gen-white};
+  --gen-black: #{$gen-black};
+  --gen-gold: #{$gen-gold};
+  --gen-grey: #{$gen-grey};
 
-  --dl-bright-purple: $dl-bright-purple;
-  --dl-dark-purple: $dl-dark-purple;
-  --dl-yellow: $dl-yellow;
+  --dl-bright-purple: #{$dl-bright-purple};
+  --dl-dark-purple: #{$dl-dark-purple};
+  --dl-yellow: #{$dl-yellow};
 
-  --sl-muted-blue: $sl-muted-blue;
-  --sl-navy: $sl-navy;
-  --sl-dark-purple: $sl-dark-purple;
-  --sl-light-blue: $sl-light-blue;
+  --sl-muted-blue: #{$sl-muted-blue};
+  --sl-navy: #{$sl-navy};
+  --sl-dark-purple: #{$sl-dark-purple};
+  --sl-light-blue: #{$sl-light-blue};
 
-  --slr-light-brown: $slr-light-brown;
-  --slr-dark-brown: $slr-dark-brown;
-  --slr-dark-grey: $slr-dark-grey;
-  --slr-light-grey: $slr-light-grey;
-  --slr-med-grey: $slr-med-grey;
+  --slr-light-brown: #{$slr-light-brown};
+  --slr-dark-brown: #{$slr-dark-brown};
+  --slr-dark-grey: #{$slr-dark-grey};
+  --slr-light-grey: #{$slr-light-grey};
+  --slr-med-grey: #{$slr-med-grey};
 }
 
 // SASS Bootstrap overrides
@@ -71,3 +71,11 @@ $dark: $gen-black;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
+
+.bg-sl-dark-purple {
+  background-color: var(--sl-dark-purple) !important;
+}
+
+.link-slr-light-grey {
+  color: var(--slr-light-grey) !important;
+}
