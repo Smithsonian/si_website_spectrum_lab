@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import {
-  BNavbar,
-  BNavbarBrand,
-  BNavbarNav,
-  BNavItem,
-} from 'bootstrap-vue-next';
-</script>
-
 <template>
   <BNavbar v-b-color-mode="'dark'" variant="dark" container="xl">
     <BNavbarBrand href="#">
