@@ -14,14 +14,7 @@ export default defineConfig({
       dirs: ['src/components', 'src/layouts'],
     }),
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@bvn': fileURLToPath(
-        new URL('./node_modules/bootstrap-vue-next', import.meta.url),
-      ),
-    },
-  },
+  resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   css: {
     preprocessorOptions: {
       scss: {
