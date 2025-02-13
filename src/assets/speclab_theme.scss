@@ -1,2 +1,73 @@
-@import "bootstrap/scss/bootstrap";
-@import "speclab-bootstrap-vue-next";
+// Speclab customizations before loading Bootstrap
+// Open Sans at the front with Bootstrap fallbacks behind
+$font-family-base:
+  'Open Sans',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+
+// SASS custom variables
+// Laura "general" colors
+$gen-white: #ffffff; // ffffff is also Smithsonian white
+$gen-black: #000000;
+$gen-gold: #ffcd00; // ffcd00 is also Smithsonian gold
+$gen-grey: #a8a8b4;
+
+// Data Labs colors
+$dl-bright-purple: #3a3b75;
+$dl-dark-purple: #291a56;
+$dl-yellow: #d8f354;
+
+// Speclab colors
+$sl-muted-blue: #3a678a;
+$sl-navy: #00456c;
+$sl-dark-purple: #00456c;
+$sl-light-blue: #3ad4ed;
+
+// Speclab resources
+$slr-light-brown: #774e2b;
+$slr-dark-brown: #422a16;
+$slr-dark-grey: #5c5c64;
+$slr-light-grey: #edecf2;
+$slr-med-grey: #ccccd4;
+
+// CSS variable versions
+:root {
+  --gen-white: $gen-white;
+  --gen-black: $gen-black;
+  --gen-gold: $gen-gold;
+  --gen-grey: $gen-grey;
+
+  --dl-bright-purple: $dl-bright-purple;
+  --dl-dark-purple: $dl-dark-purple;
+  --dl-yellow: $dl-yellow;
+
+  --sl-muted-blue: $sl-muted-blue;
+  --sl-navy: $sl-navy;
+  --sl-dark-purple: $sl-dark-purple;
+  --sl-light-blue: $sl-light-blue;
+
+  --slr-light-brown: $slr-light-brown;
+  --slr-dark-brown: $slr-dark-brown;
+  --slr-dark-grey: $slr-dark-grey;
+  --slr-light-grey: $slr-light-grey;
+  --slr-med-grey: $slr-med-grey;
+}
+
+// SASS Bootstrap overrides
+$primary: $sl-light-blue;
+$secondary: $sl-muted-blue;
+$dark: $gen-black;
+
+@import 'bootstrap/scss/bootstrap';
+@import 'speclab-bootstrap-vue-next';
