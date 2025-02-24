@@ -20,6 +20,7 @@ import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vu
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
 import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
+import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 
 library.add(faArrowUp);
 
@@ -50,6 +51,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'light-your-tank',
         component: FishTankLightYourTank,
+      },
+      {
+        path: 'mood-lighting',
+        component: FishTankMoodLighting,
       },
     ],
   },

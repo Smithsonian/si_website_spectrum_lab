@@ -39,7 +39,12 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link">6. BONUS: Mood lighting</a>
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/fishtank/mood-lighting"
+          >6. Bonus: Mood Lighting</RouterLink
+        >
       </li>
     </ul>
   </nav>
