@@ -11,7 +11,11 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard title="Spectrum 1" :normalize="normalize" />
+      <ToolCard
+        title="Spectrum 1"
+        :normalize="normalize"
+        :show-file-picker="true"
+      />
       <BRow class="mt-1 mb-2 px-3">
         <BCol cols="3">
           <BFormGroup label="Cursor units" label-for="cursor-unit">
@@ -58,6 +62,7 @@
           title="Spectrum 2"
           chart-position="top"
           :normalize="normalize"
+          :show-file-picker="true"
         />
       </div>
     </template>

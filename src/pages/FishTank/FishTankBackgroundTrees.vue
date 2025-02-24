@@ -14,6 +14,9 @@
         </p>
       </ChallengeCard>
     </template>
+    <template #tool-col>
+      <ToolCard title="Tree in Summer Reflection" :normalize="null" />
+    </template>
   </FishTankLayout>
 </template>
 

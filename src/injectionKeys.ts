@@ -14,16 +14,18 @@ export type SpectrumDatum = [
 export type SpectrumDataSource = 'file' | 'drawing';
 
 // Spectrum data from file
-export const spectrumDataKey = Symbol() as InjectionKey<Ref<SpectrumDatum[]>>;
+export const spectrumDataKey = Symbol('spectrumData') as InjectionKey<
+  Ref<SpectrumDatum[]>
+>;
 
 // Can the user draw on the chart, or not?
-export const spectrumDataSourceKey = Symbol() as InjectionKey<
-  Ref<SpectrumDataSource>
->;
+export const spectrumDataSourceKey = Symbol(
+  'spectrumDataSource',
+) as InjectionKey<Ref<SpectrumDataSource>>;
 // Chart zoom
-export const zoomKey = Symbol() as InjectionKey<Ref<number>>;
+export const zoomKey = Symbol('zoom') as InjectionKey<Ref<number>>;
 // Chart draws lines or only points
-export const showLinesKey = Symbol() as InjectionKey<Ref<boolean>>;
+export const showLinesKey = Symbol('showLines') as InjectionKey<Ref<boolean>>;
 
 // Cursor label unit
 export type CursorUnit =
@@ -32,4 +34,6 @@ export type CursorUnit =
   | 'Angstrom'
   | 'Gigahertz'
   | 'Electron volt';
-export const cursorUnitKey = Symbol() as InjectionKey<Ref<CursorUnit>>;
+export const cursorUnitKey = Symbol('cursorUnit') as InjectionKey<
+  Ref<CursorUnit>
+>;

@@ -86,7 +86,9 @@ interface DrawnSpectrumYWithUpdaters {
   clearDrawnSpectrumY: () => void;
   setBucket: (bucket: number, y: number) => void;
 }
-const drawnSpectrumYKey = Symbol() as InjectionKey<DrawnSpectrumYWithUpdaters>;
+const drawnSpectrumYKey = Symbol(
+  'drawnSpectrumY',
+) as InjectionKey<DrawnSpectrumYWithUpdaters>;
 const createDrawnSpectrumYWithUpdaters = (): DrawnSpectrumYWithUpdaters => {
   const drawnSpectrumY = ref<number[]>([]);
   const clearDrawnSpectrumY = () => {
@@ -116,8 +118,9 @@ interface CurrentlyDrawingWithUpdater {
   currentlyDrawing: Readonly<Ref<boolean>>;
   setCurrentlyDrawing: (newDrawing: boolean) => void;
 }
-const currentlyDrawingKey =
-  Symbol() as InjectionKey<CurrentlyDrawingWithUpdater>;
+const currentlyDrawingKey = Symbol(
+  'currentlyDrawing',
+) as InjectionKey<CurrentlyDrawingWithUpdater>;
 const createCurrentlyDrawingWithUpdater = (): CurrentlyDrawingWithUpdater => {
   const currentlyDrawing = ref(false);
   const setCurrentlyDrawing = (newDrawing: boolean): void => {

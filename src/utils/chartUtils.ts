@@ -52,7 +52,9 @@ interface CursorMicronsWithUpdater {
   cursorMicrons: Readonly<Ref<number | null>>;
   setCursorMicrons: (newCursorMicrons: number | null) => void;
 }
-const cursorMicronsKey = Symbol() as InjectionKey<CursorMicronsWithUpdater>;
+const cursorMicronsKey = Symbol(
+  'cursorMicrons',
+) as InjectionKey<CursorMicronsWithUpdater>;
 const createCursorMicronsWithUpdater = (): CursorMicronsWithUpdater => {
   const cursorMicrons = ref<number | null>(null);
   const setCursorMicrons = (newCursorMicrons: number | null): void => {

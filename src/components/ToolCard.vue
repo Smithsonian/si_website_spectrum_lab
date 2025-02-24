@@ -1,7 +1,7 @@
 <template>
   <div class="tool-card text-white p-3 rounded-4">
     <!-- Chart bottom means file picker top, and vice versa -->
-    <template v-if="chartPosition === 'bottom'">
+    <template v-if="showFilePicker && chartPosition === 'bottom'">
       <BRow class="mb-3">
         <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
@@ -64,7 +64,7 @@
         </div>
       </BCol>
     </BRow>
-    <template v-if="chartPosition === 'top'">
+    <template v-if="showFilePicker && chartPosition === 'top'">
       <BRow class="mt-3">
         <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
@@ -107,8 +107,9 @@ const props = withDefaults(
     title: string;
     normalize?: NormalizeSetting;
     chartPosition?: ChartPosition;
+    showFilePicker?: boolean;
   }>(),
-  { normalize: 'all', chartPosition: 'bottom' },
+  { normalize: 'all', chartPosition: 'bottom', showFilePicker: false },
 );
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
