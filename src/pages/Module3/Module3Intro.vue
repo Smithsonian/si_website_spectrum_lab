@@ -21,6 +21,6 @@
 import { useHead } from '@unhead/vue';
 
 useHead({
-  title: 'Spectrum Lab | Session 3 Intro',
+  title: 'Spectrum Lab | Module 3 Intro',
 });
 </script>

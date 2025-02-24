@@ -15,6 +15,7 @@ import Module3Challenge1 from './pages/Module3/Module3Challenge1.vue';
 import Module3Intro from './pages/Module3/Module3Intro.vue';
 import Module3Tutorial from './pages/Module3/Module3Tutorial.vue';
 import { BASE_URL } from './constants';
+import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 
 library.add(faArrowUp);
 
@@ -27,6 +28,11 @@ const routes: RouteRecordRaw[] = [
       { path: 'tutorial', component: Module3Tutorial },
       { path: 'challenge1', component: Module3Challenge1 },
     ],
+  },
+  {
+    path: '/fishtank',
+    redirect: '/fishtank/intro',
+    children: [{ path: 'intro', component: FishTankIntro }],
   },
   { path: '/playground', component: PlaygroundView },
   {

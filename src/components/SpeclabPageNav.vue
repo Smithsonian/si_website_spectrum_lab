@@ -2,11 +2,17 @@
   <div class="bg-sl-dark-purple">
     <BContainer>
       <BNav>
+        <BNavItem link-class="page-nav-link">1. Color</BNavItem>
+        <BNavItem link-class="page-nav-link">2. Spectra</BNavItem>
         <BNavItem link-class="page-nav-link" to="/module3"
-          >1. Module 3</BNavItem
+          >3. Temperature</BNavItem
+        >
+        <BNavItem link-class="page-nav-link">4. Composition</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/fishtank"
+          >Final Projects</BNavItem
         >
         <BNavItem link-class="page-nav-link" to="/playground"
-          >2. Playground</BNavItem
+          >Playground</BNavItem
         >
       </BNav>
     </BContainer>
