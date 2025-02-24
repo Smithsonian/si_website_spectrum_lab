@@ -7,10 +7,15 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link">2. Background: Trees</a>
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/fishtank/background-trees"
+          >2. Background Part I</RouterLink
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link">3. Background: Reflection</a>
+        <a class="nav-link">3. Background Part II</a>
       </li>
       <li class="nav-item">
         <a class="nav-link">4. Light your tank</a>
