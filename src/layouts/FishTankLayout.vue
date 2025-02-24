@@ -19,14 +19,22 @@
           class="nav-link"
           active-class="active"
           to="/fishtank/background-comparison"
-          >3. Background Part II</RouterLink
+          >3. Background Part IIa</RouterLink
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link">4. Light your tank</a>
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/fishtank/background-reveal"
+          >4. Background Part IIb</RouterLink
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link">5. BONUS: Mood lighting</a>
+        <a class="nav-link">5. Light your tank</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">6. BONUS: Mood lighting</a>
       </li>
     </ul>
   </nav>

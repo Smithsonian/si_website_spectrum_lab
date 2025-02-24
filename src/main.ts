@@ -18,6 +18,7 @@ import { BASE_URL } from './constants';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
+import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
 
 library.add(faArrowUp);
 
@@ -40,6 +41,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'background-comparison',
         component: FishTankBackgroundComparison,
+      },
+      {
+        path: 'background-reveal',
+        component: FishTankBackgroundReveal,
       },
     ],
   },

@@ -27,6 +27,6 @@
 import { useHead } from '@unhead/vue';
 
 useHead({
-  title: 'Spectrum Lab | Fishtank Background Part II',
+  title: 'Spectrum Lab | Fishtank Background Part IIa',
 });
 </script>
