@@ -31,7 +31,12 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link">5. Light your tank</a>
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/fishtank/light-your-tank"
+          >5. Light Your Tank</RouterLink
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link">6. BONUS: Mood lighting</a>

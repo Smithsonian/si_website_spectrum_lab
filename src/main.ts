@@ -19,6 +19,7 @@ import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
 import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
+import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 
 library.add(faArrowUp);
 
@@ -45,6 +46,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'background-reveal',
         component: FishTankBackgroundReveal,
+      },
+      {
+        path: 'light-your-tank',
+        component: FishTankLightYourTank,
       },
     ],
   },
