@@ -15,7 +15,12 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link">3. Background Part II</a>
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/fishtank/background-comparison"
+          >3. Background Part II</RouterLink
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link">4. Light your tank</a>

@@ -17,6 +17,7 @@ import Module3Tutorial from './pages/Module3/Module3Tutorial.vue';
 import { BASE_URL } from './constants';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
+import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
 
 library.add(faArrowUp);
 
@@ -36,6 +37,10 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'intro', component: FishTankIntro },
       { path: 'background-trees', component: FishTankBackgroundTrees },
+      {
+        path: 'background-comparison',
+        component: FishTankBackgroundComparison,
+      },
     ],
   },
   { path: '/playground', component: PlaygroundView },
