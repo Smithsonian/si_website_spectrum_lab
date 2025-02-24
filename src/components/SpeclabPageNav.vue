@@ -8,9 +8,7 @@
           >3. Temperature</BNavItem
         >
         <BNavItem link-class="page-nav-link">4. Composition</BNavItem>
-        <BNavItem link-class="page-nav-link" to="/fishtank"
-          >Final Projects</BNavItem
-        >
+        <BNavItem link-class="page-nav-link" to="/fishtank">Fishtank</BNavItem>
         <BNavItem link-class="page-nav-link" to="/playground"
           >Playground</BNavItem
         >
