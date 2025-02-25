@@ -84,10 +84,10 @@ import {
 import {
   CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
-  useMetadataStore,
+  useAllMetadata,
   type PreloadedCategory,
   type SpectrumMetadata,
-} from '@/metadataStore';
+} from '@/utils/metadataUtils';
 import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
 import {
   dataFromCSV,
@@ -148,7 +148,7 @@ watch(pickedFile, (newFile) => {
   }
 });
 
-const metadataStore = useMetadataStore();
+const allMetadata = useAllMetadata();
 function isPreloadedCategory(
   category: SpectrumCategory,
 ): category is PreloadedCategory {
@@ -161,7 +161,7 @@ const categoryMetadataByFilename = computed((): MetadataByFilename => {
   if (!isPreloadedCategory(selectedCategory.value)) {
     return {};
   }
-  const metadataArray = metadataStore.byCategory[selectedCategory.value];
+  const metadataArray = allMetadata[selectedCategory.value];
   const result: MetadataByFilename = {};
   for (const m of metadataArray) {
     result[m.filename] = m;
