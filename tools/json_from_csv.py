@@ -29,4 +29,5 @@ with open(input_path, 'r') as i_file:
         ]
         reader = csv.DictReader(i_file, fieldnames)
         output_list = [row for row in reader]
-        json.dump(output_list, o_file)
+        output_list_without_header = output_list[1:]
+        json.dump(output_list_without_header, o_file)
