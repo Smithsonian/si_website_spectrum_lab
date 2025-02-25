@@ -23,6 +23,7 @@
           </BCol>
           <BCol cols="6" lg="4" xl="12">
             <BFormSelect
+              v-if="customMetadataByFilename === null"
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
