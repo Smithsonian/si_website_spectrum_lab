@@ -15,15 +15,26 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard title="Tree in Summer Reflection" :normalize="null" />
+      <ToolCard
+        title="Tree in Summer Reflection"
+        :custom-metadata-by-filename="customMetadataByFilename"
+        :normalize="null"
+      />
     </template>
   </FishTankLayout>
 </template>
 
 <script setup lang="ts">
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Background Part I',
 });
+
+const allMetadata = useAllMetadata();
+const natureMetadata = allMetadata.Nature;
+const treeFilename = 'Tree_in_Summer_Reflection';
+const treeMetadata = natureMetadata.find((sm) => sm.filename === treeFilename);
+const customMetadataByFilename = { [treeFilename]: treeMetadata };
 </script>

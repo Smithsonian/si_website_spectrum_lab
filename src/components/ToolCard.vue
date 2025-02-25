@@ -36,7 +36,7 @@
               v-else
               v-model="selectedSpectrum"
               :options="spectrumOptions"
-              :class="spectrumOptions.length > 1 ? '' : 'invisible'"
+              :class="spectrumOptions.length > 0 ? '' : 'invisible'"
             />
           </BCol>
         </BRow>
@@ -101,6 +101,9 @@ import { computed, provide, ref, watch, type Ref } from 'vue';
 import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
 
 type ChartPosition = 'top' | 'bottom';
+interface MetadataByFilename {
+  [index: string]: SpectrumMetadata;
+}
 
 const props = withDefaults(
   defineProps<{
@@ -108,8 +111,14 @@ const props = withDefaults(
     normalize?: NormalizeSetting;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
+    customMetadataByFilename?: MetadataByFilename | null;
   }>(),
-  { normalize: 'all', chartPosition: 'bottom', showFilePicker: false },
+  {
+    normalize: 'all',
+    chartPosition: 'bottom',
+    showFilePicker: false,
+    customMetadataByFilename: null,
+  },
 );
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
@@ -154,10 +163,11 @@ function isPreloadedCategory(
 ): category is PreloadedCategory {
   return PRELOADED_CATEGORIES.some((preCat) => preCat === category);
 }
-interface MetadataByFilename {
-  [index: string]: SpectrumMetadata;
-}
-const categoryMetadataByFilename = computed((): MetadataByFilename => {
+const metadataByFilename = computed((): MetadataByFilename => {
+  if (props.customMetadataByFilename !== null) {
+    // Bypass most processing if we were passed in custom metadata
+    return props.customMetadataByFilename;
+  }
   if (!isPreloadedCategory(selectedCategory.value)) {
     return {};
   }
@@ -168,28 +178,46 @@ const categoryMetadataByFilename = computed((): MetadataByFilename => {
   }
   return result;
 });
-const spectrumOptions = computed((): { value: string; text: string }[] => [
-  { value: '', text: 'Select spectrum' },
-  ...Object.entries(categoryMetadataByFilename.value).map(
-    ([filename, metadata]) => ({ value: filename, text: metadata.title }),
-  ),
-]);
+const spectrumOptions = computed((): { value: string; text: string }[] => {
+  const entries = Object.entries(metadataByFilename.value);
+  if (entries.length === 0) {
+    return [];
+  }
+  const alwaysIncludedOptions = [];
+  if (props.customMetadataByFilename === null) {
+    // Only give a blank default when dealing with all metadata
+    alwaysIncludedOptions.push({ value: '', text: 'Select spectrum' });
+  }
+  return [
+    ...alwaysIncludedOptions,
+    ...entries.map(([filename, metadata]) => ({
+      value: filename,
+      text: metadata.title,
+    })),
+  ];
+});
 const selectedSpectrum = ref('');
 
-// Clear spectrum on category change
-watch(selectedCategory, async () => {
-  if (selectedSpectrum.value) {
-    selectedSpectrum.value = '';
-  }
-  if (drawnSpectrumY.value.length) {
-    clearDrawnSpectrumY();
-  }
-});
+// Set default spectrum and clear drawing when changing category, or metadata source
+watch(
+  [spectrumOptions, selectedCategory],
+  async ([newOptions]) => {
+    let defaultSpectrum = '';
+    if (newOptions.length > 0) {
+      defaultSpectrum = newOptions[0].value;
+    }
+    selectedSpectrum.value = defaultSpectrum;
+    if (drawnSpectrumY.value.length) {
+      clearDrawnSpectrumY();
+    }
+  },
+  { immediate: true },
+);
 
 // Get metadata
 const selectedMetadata = computed(
   (): SpectrumMetadata | null =>
-    categoryMetadataByFilename.value[selectedSpectrum.value] || null,
+    metadataByFilename.value[selectedSpectrum.value] || null,
 );
 
 // Icon
@@ -239,9 +267,13 @@ const fetchSpectrumData = async (
 
 // Spectrum data
 const spectrumDataFromNetwork: Ref<SpectrumDatum[]> = ref([]);
-watch(selectedMetadata, async (newMetadata) => {
-  spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
-});
+watch(
+  selectedMetadata,
+  async (newMetadata) => {
+    spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
+  },
+  { immediate: true },
+);
 const spectrumDataFromPickedFile: Ref<SpectrumDatum[]> = ref([]);
 watch(pickedFile, async (newFile) => {
   if (newFile === null) {
