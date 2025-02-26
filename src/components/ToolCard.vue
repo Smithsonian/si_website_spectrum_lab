@@ -23,7 +23,7 @@
           </BCol>
           <BCol cols="6" lg="4" xl="12">
             <BFormSelect
-              v-if="customMetadataByFilename === null"
+              v-if="!drawOnly && customMetadataByFilename === null"
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
@@ -115,11 +115,11 @@ const props = withDefaults(
     showFilePicker?: boolean;
     customMetadataByFilename?: MetadataByFilename | null;
     spectrumPickerPlaceholder?: string | null;
+    drawOnly?: boolean;
   }>(),
   {
     normalizeOverride: null,
     chartPosition: 'bottom',
-    showFilePicker: false,
     customMetadataByFilename: null,
     spectrumPickerPlaceholder: 'Select spectrum',
   },
@@ -137,6 +137,15 @@ const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
   { value: 'pickedFile', text: 'Uploaded file' },
 ];
 const selectedCategory = ref<SpectrumCategory>('');
+watch(
+  () => props.drawOnly,
+  () => {
+    if (props.drawOnly) {
+      selectedCategory.value = 'draw';
+    }
+  },
+  { immediate: true },
+);
 const spectrumDataSource = computed((): SpectrumDataSource => {
   if (selectedCategory.value === 'draw') {
     return 'drawing';

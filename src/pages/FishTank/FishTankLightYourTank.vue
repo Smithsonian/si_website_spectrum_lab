@@ -34,7 +34,7 @@
           />
         </template>
         <template #bottom-tool>
-          <ToolCard title="Draw a Spectrum" />
+          <ToolCard title="Draw a Spectrum" draw-only />
         </template>
       </ToolControlGroup>
     </template>
