@@ -9,7 +9,7 @@ useAllMetadata();
 </script>
 
 <template>
-  <div class="bg-white">
+  <div class="bg-white pb-3">
     <SpeclabNavBar />
     <SpeclabPageNav />
     <BContainer tag="main">

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark text-light pt-3 mt-3">
+  <div class="bg-dark text-light pt-3">
     <BContainer>
       <BRow>
         <BCol cols="8">

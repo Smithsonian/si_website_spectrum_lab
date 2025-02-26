@@ -15,13 +15,59 @@
         </p>
       </ChallengeCard>
     </template>
+    <template #tool-col>
+      <ToolControlGroup>
+        <template #top-tool>
+          <ToolCard
+            title="Spectrum 1"
+            :custom-metadata-by-filename="cactusMetadataByFilename"
+          />
+        </template>
+        <template #bottom-tool>
+          <ToolCard
+            title="Spectrum 2"
+            :custom-metadata-by-filename="pansyMetadataByFilename"
+          />
+        </template>
+      </ToolControlGroup>
+    </template>
   </FishTankLayout>
 </template>
 
 <script setup lang="ts">
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Background Part IIa',
 });
+
+const allMetadata = useAllMetadata();
+const natureMetadata = allMetadata.Nature;
+const cactusFilename = 'Cactus_Reflection';
+
+const cactusMetadata = natureMetadata.find(
+  (sm) => sm.filename === cactusFilename,
+);
+let cactusMetadataByFilename = null;
+if (cactusMetadata) {
+  cactusMetadataByFilename = { [cactusFilename]: cactusMetadata };
+} else {
+  console.warn(
+    `Custom metadata '${cactusFilename}' not found in metadata list. Defaulting to full list.`,
+  );
+}
+
+const pansyFilename = 'Pansy_Reflection';
+const pansyMetadata = natureMetadata.find(
+  (sm) => sm.filename === pansyFilename,
+);
+let pansyMetadataByFilename = null;
+if (pansyMetadata) {
+  pansyMetadataByFilename = { [pansyFilename]: pansyMetadata };
+} else {
+  console.warn(
+    `Custom metadata '${pansyFilename}' not found in metadata list. Defaulting to full list.`,
+  );
+}
 </script>
