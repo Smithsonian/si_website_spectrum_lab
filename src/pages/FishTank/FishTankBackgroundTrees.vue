@@ -19,7 +19,8 @@
         <template #top-tool>
           <ToolCard
             title="Tree in Summer Reflection"
-            :custom-metadata-by-filename="customMetadataByFilename"
+            :custom-metadata="treeMetadata"
+            :spectrum-picker-placeholder="null"
           />
         </template>
       </ToolControlGroup>
@@ -37,14 +38,7 @@ useHead({
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;
-const treeFilename = 'Tree_in_Summer_Reflection';
-const treeMetadata = natureMetadata.find((sm) => sm.filename === treeFilename);
-let customMetadataByFilename = null;
-if (treeMetadata) {
-  customMetadataByFilename = { [treeFilename]: treeMetadata };
-} else {
-  console.warn(
-    `Custom metadata '${treeFilename}' not found in metadata list. Defaulting to full list.`,
-  );
-}
+const treeMetadata = natureMetadata.filter(
+  (sm) => sm.filename === 'Tree_in_Summer_Reflection',
+);
 </script>

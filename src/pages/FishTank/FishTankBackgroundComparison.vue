@@ -25,13 +25,15 @@
         <template #top-tool>
           <ToolCard
             title="Spectrum 1"
-            :custom-metadata-by-filename="cactusMetadataByFilename"
+            :custom-metadata="cactusMetadataList"
+            :spectrum-picker-placeholder="null"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
             title="Spectrum 2"
-            :custom-metadata-by-filename="pansyMetadataByFilename"
+            :custom-metadata="pansyMetadataList"
+            :spectrum-picker-placeholder="null"
           />
         </template>
       </ToolControlGroup>
@@ -40,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAllMetadata } from '@/utils/metadataUtils';
+import { useAllMetadata, type SpectrumMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
@@ -49,36 +51,28 @@ useHead({
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;
-const cactusFilename = 'Cactus_Reflection';
-
-let cactusMetadata = natureMetadata.find(
-  (sm) => sm.filename === cactusFilename,
+const cactusMetadata = natureMetadata.find(
+  (sm) => sm.filename === 'Cactus_Reflection',
 );
-let cactusMetadataByFilename = null;
+const cactusMetadataList = [] as SpectrumMetadata[];
 if (cactusMetadata) {
-  cactusMetadata = {
+  cactusMetadataList.push({
     ...cactusMetadata,
     imageName: '',
-  };
-  cactusMetadataByFilename = { [cactusFilename]: cactusMetadata };
+  });
 } else {
-  console.warn(
-    `Custom metadata '${cactusFilename}' not found in metadata list. Defaulting to full list.`,
-  );
+  console.warn('Cactus metadata not found.');
 }
-
-const pansyFilename = 'Pansy_Reflection';
-let pansyMetadata = natureMetadata.find((sm) => sm.filename === pansyFilename);
-let pansyMetadataByFilename = null;
+const pansyMetadata = natureMetadata.find(
+  (sm) => sm.filename === 'Pansy_Reflection',
+);
+const pansyMetadataList = [] as SpectrumMetadata[];
 if (pansyMetadata) {
-  pansyMetadata = {
+  pansyMetadataList.push({
     ...pansyMetadata,
     imageName: '',
-  };
-  pansyMetadataByFilename = { [pansyFilename]: pansyMetadata };
+  });
 } else {
-  console.warn(
-    `Custom metadata '${pansyFilename}' not found in metadata list. Defaulting to full list.`,
-  );
+  console.warn('Pansy metadata not found.');
 }
 </script>

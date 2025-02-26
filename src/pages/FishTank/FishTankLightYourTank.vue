@@ -28,7 +28,7 @@
         <template #top-tool>
           <ToolCard
             title="Tank Lighting Choices"
-            :custom-metadata-by-filename="fishtankMetadata"
+            :custom-metadata="fishtankMetadata"
             normalize-override="none"
             spectrum-picker-placeholder="Select lighting"
           />

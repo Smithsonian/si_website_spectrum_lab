@@ -23,7 +23,7 @@
           </BCol>
           <BCol cols="6" lg="4" xl="12">
             <BFormSelect
-              v-if="!drawOnly && customMetadataByFilename === null"
+              v-if="!drawOnly && customMetadata === null"
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
@@ -113,14 +113,14 @@ const props = withDefaults(
     normalizeOverride?: NormalizeSetting | null;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
-    customMetadataByFilename?: MetadataByFilename | null;
+    customMetadata?: SpectrumMetadata[] | null;
     spectrumPickerPlaceholder?: string | null;
     drawOnly?: boolean;
   }>(),
   {
     normalizeOverride: null,
     chartPosition: 'bottom',
-    customMetadataByFilename: null,
+    customMetadata: null,
     spectrumPickerPlaceholder: 'Select spectrum',
   },
 );
@@ -177,14 +177,15 @@ function isPreloadedCategory(
   return PRELOADED_CATEGORIES.some((preCat) => preCat === category);
 }
 const metadataByFilename = computed((): MetadataByFilename => {
-  if (props.customMetadataByFilename !== null) {
-    // Bypass most processing if we were passed in custom metadata
-    return props.customMetadataByFilename;
+  let metadataArray = [];
+  if (props.customMetadata !== null) {
+    metadataArray = props.customMetadata;
+  } else {
+    if (!isPreloadedCategory(selectedCategory.value)) {
+      return {};
+    }
+    metadataArray = allMetadata[selectedCategory.value];
   }
-  if (!isPreloadedCategory(selectedCategory.value)) {
-    return {};
-  }
-  const metadataArray = allMetadata[selectedCategory.value];
   const result: MetadataByFilename = {};
   for (const m of metadataArray) {
     result[m.filename] = m;

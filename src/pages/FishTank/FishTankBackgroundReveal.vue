@@ -20,13 +20,15 @@
         <template #top-tool>
           <ToolCard
             title="Spectrum 1"
-            :custom-metadata-by-filename="cactusMetadataByFilename"
+            :custom-metadata="cactusMetadataList"
+            :spectrum-picker-placeholder="null"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
             title="Spectrum 2"
-            :custom-metadata-by-filename="pansyMetadataByFilename"
+            :custom-metadata="pansyMetadataList"
+            :spectrum-picker-placeholder="null"
           />
         </template>
       </ToolControlGroup>
@@ -44,30 +46,10 @@ useHead({
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;
-const cactusFilename = 'Cactus_Reflection';
-
-const cactusMetadata = natureMetadata.find(
-  (sm) => sm.filename === cactusFilename,
+const cactusMetadataList = natureMetadata.filter(
+  (sm) => sm.filename === 'Cactus_Reflection',
 );
-let cactusMetadataByFilename = null;
-if (cactusMetadata) {
-  cactusMetadataByFilename = { [cactusFilename]: cactusMetadata };
-} else {
-  console.warn(
-    `Custom metadata '${cactusFilename}' not found in metadata list. Defaulting to full list.`,
-  );
-}
-
-const pansyFilename = 'Pansy_Reflection';
-const pansyMetadata = natureMetadata.find(
-  (sm) => sm.filename === pansyFilename,
+const pansyMetadataList = natureMetadata.filter(
+  (sm) => sm.filename === 'Pansy_Reflection',
 );
-let pansyMetadataByFilename = null;
-if (pansyMetadata) {
-  pansyMetadataByFilename = { [pansyFilename]: pansyMetadata };
-} else {
-  console.warn(
-    `Custom metadata '${pansyFilename}' not found in metadata list. Defaulting to full list.`,
-  );
-}
 </script>
