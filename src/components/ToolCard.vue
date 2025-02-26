@@ -114,12 +114,14 @@ const props = withDefaults(
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
     customMetadataByFilename?: MetadataByFilename | null;
+    spectrumPickerPlaceholder?: string | null;
   }>(),
   {
     normalizeOverride: null,
     chartPosition: 'bottom',
     showFilePicker: false,
     customMetadataByFilename: null,
+    spectrumPickerPlaceholder: 'Select spectrum',
   },
 );
 
@@ -185,13 +187,16 @@ const spectrumOptions = computed((): { value: string; text: string }[] => {
   if (entries.length === 0) {
     return [];
   }
-  const alwaysIncludedOptions = [];
-  if (props.customMetadataByFilename === null) {
-    // Only give a blank default when dealing with all metadata
-    alwaysIncludedOptions.push({ value: '', text: 'Select spectrum' });
+  const placeholderOptionMaybe = [];
+  if (props.spectrumPickerPlaceholder !== null) {
+    // Sometimes we want to default to the first spectrum instead of a placeholder
+    placeholderOptionMaybe.push({
+      value: '',
+      text: props.spectrumPickerPlaceholder,
+    });
   }
   return [
-    ...alwaysIncludedOptions,
+    ...placeholderOptionMaybe,
     ...entries.map(([filename, metadata]) => ({
       value: filename,
       text: metadata.title,

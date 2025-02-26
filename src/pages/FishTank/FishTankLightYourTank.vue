@@ -23,13 +23,32 @@
         </p>
       </ChallengeCard>
     </template>
+    <template #tool-col>
+      <ToolControlGroup>
+        <template #top-tool>
+          <ToolCard
+            title="Tank Lighting Choices"
+            :custom-metadata-by-filename="fishtankMetadata"
+            normalize-override="none"
+            spectrum-picker-placeholder="Select lighting"
+          />
+        </template>
+        <template #bottom-tool>
+          <ToolCard title="Draw a Spectrum" />
+        </template>
+      </ToolControlGroup>
+    </template>
   </FishTankLayout>
 </template>
 
 <script setup lang="ts">
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Light Your Tank',
 });
+
+const allMetadata = useAllMetadata();
+const fishtankMetadata = allMetadata['Fish Tank'];
 </script>
