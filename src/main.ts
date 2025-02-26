@@ -21,6 +21,7 @@ import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundCom
 import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
+import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 
 library.add(faArrowUp);
 
@@ -56,6 +57,13 @@ const routes: RouteRecordRaw[] = [
         path: 'mood-lighting',
         component: FishTankMoodLighting,
       },
+    ],
+  },
+  {
+    path: '/museum',
+    redirect: '/museum/intro',
+    children: [
+      { path: 'intro', component: MuseumIntro },
     ],
   },
   { path: '/playground', component: PlaygroundView },
