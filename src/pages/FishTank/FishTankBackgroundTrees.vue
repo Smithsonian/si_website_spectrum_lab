@@ -15,11 +15,14 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard
-        title="Tree in Summer Reflection"
-        :custom-metadata-by-filename="customMetadataByFilename"
-        :normalize="null"
-      />
+      <ToolControlGroup>
+        <template #top-tool>
+          <ToolCard
+            title="Tree in Summer Reflection"
+            :custom-metadata-by-filename="customMetadataByFilename"
+          />
+        </template>
+      </ToolControlGroup>
     </template>
   </FishTankLayout>
 </template>

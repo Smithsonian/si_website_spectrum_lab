@@ -15,7 +15,7 @@
         <BFormSelect id="plot-type" v-model="plotType" :options="plotOptions" />
       </BFormGroup>
     </BCol>
-    <BCol cols="2">
+    <BCol v-if="showNormalizePicker" cols="2">
       <BFormGroup label="Normalize?" label-for="normalize">
         <BFormRadioGroup
           id="normalize"
@@ -24,7 +24,7 @@
         />
       </BFormGroup>
     </BCol>
-    <BCol cols="4">
+    <BCol v-if="showZoom" cols="4">
       <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
         <BFormInput
           id="zoom"
@@ -55,6 +55,10 @@ import {
 import { useCursorMicrons } from '@/utils/chartUtils';
 import { computed, provide, ref } from 'vue';
 
+const { showNormalizePicker = false, showZoom = false } = defineProps<{
+  showNormalizePicker?: boolean;
+  showZoom?: boolean;
+}>();
 const zoomPercent = ref(100);
 const zoom = computed(() => zoomPercent.value / 100);
 provide(zoomKey, zoom);

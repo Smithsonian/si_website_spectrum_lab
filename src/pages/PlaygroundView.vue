@@ -11,7 +11,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
           <ToolCard title="Spectrum 1" :show-file-picker="true" />
         </template>
