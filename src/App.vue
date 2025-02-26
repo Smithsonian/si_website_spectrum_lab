@@ -14,6 +14,7 @@ useAllMetadata();
   <BContainer tag="main">
     <RouterView />
   </BContainer>
+  <SpeclabFooter />
 </template>
 
 <style>
