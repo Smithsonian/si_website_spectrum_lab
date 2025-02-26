@@ -36,5 +36,12 @@ const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;
 const treeFilename = 'Tree_in_Summer_Reflection';
 const treeMetadata = natureMetadata.find((sm) => sm.filename === treeFilename);
-const customMetadataByFilename = { [treeFilename]: treeMetadata };
+let customMetadataByFilename = null;
+if (treeMetadata) {
+  customMetadataByFilename = { [treeFilename]: treeMetadata };
+} else {
+  console.warn(
+    `Custom metadata '${treeFilename}' not found in metadata list. Defaulting to full list.`,
+  );
+}
 </script>
