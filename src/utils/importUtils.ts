@@ -1,5 +1,4 @@
 import type { SpectrumDatum } from '@/injectionKeys';
-export type NormalizeSetting = 'all' | 'visible' | null;
 
 function parseText(text: string): [number[], number[]] {
   const loadedDataArray = text.replace(/\s/g, '').split('&');

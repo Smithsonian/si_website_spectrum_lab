@@ -77,8 +77,10 @@
 <script setup lang="ts">
 import { BASE_URL } from '@/constants';
 import {
+  normalizeKey,
   spectrumDataKey,
   spectrumDataSourceKey,
+  type NormalizeSetting,
   type SpectrumDataSource,
   type SpectrumDatum,
 } from '@/injectionKeys';
@@ -95,10 +97,9 @@ import {
   dataFromText,
   rangeNormalize,
   visibleOnly,
-  type NormalizeSetting,
 } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, provide, ref, watch, type Ref } from 'vue';
+import { computed, inject, provide, ref, watch, type Ref } from 'vue';
 import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
 
 type ChartPosition = 'top' | 'bottom';
@@ -109,13 +110,13 @@ interface MetadataByFilename {
 const props = withDefaults(
   defineProps<{
     title: string;
-    normalize?: NormalizeSetting;
+    normalizeOverride?: NormalizeSetting | null;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
     customMetadataByFilename?: MetadataByFilename | null;
   }>(),
   {
-    normalize: 'all',
+    normalizeOverride: null,
     chartPosition: 'bottom',
     showFilePicker: false,
     customMetadataByFilename: null,
@@ -294,12 +295,23 @@ watch(pickedFile, async (newFile) => {
   }
 });
 
+const controlGroupNormalize = inject(normalizeKey, null);
+const normalize = computed((): NormalizeSetting => {
+  if (props.normalizeOverride) {
+    return props.normalizeOverride;
+  }
+  if (controlGroupNormalize) {
+    return controlGroupNormalize.value;
+  }
+  return 'all';
+});
+
 const normalizeDataMaybe = (unNormalized: SpectrumDatum[]): SpectrumDatum[] => {
-  if (!props.normalize) {
+  if (normalize.value === 'none') {
     return unNormalized;
   }
   let inputData = unNormalized;
-  if (props.normalize === 'visible') {
+  if (normalize.value === 'visible') {
     inputData = visibleOnly(inputData);
   }
   const unNormalizedIntensities = inputData.map(([_, intensity]) => {
