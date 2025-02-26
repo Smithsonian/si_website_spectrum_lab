@@ -9,11 +9,13 @@ useAllMetadata();
 </script>
 
 <template>
-  <SpeclabNavBar />
-  <SpeclabPageNav />
-  <BContainer tag="main">
-    <RouterView />
-  </BContainer>
+  <div class="bg-white">
+    <SpeclabNavBar />
+    <SpeclabPageNav />
+    <BContainer tag="main">
+      <RouterView />
+    </BContainer>
+  </div>
   <SpeclabFooter />
 </template>
 
