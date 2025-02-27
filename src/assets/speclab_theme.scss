@@ -33,6 +33,7 @@ $sl-muted-blue: #3a678a;
 $sl-navy: #00456c;
 $sl-dark-purple: #153353;
 $sl-light-blue: #3ad4ed;
+$sl-lighter-blue: #8ce7ff;
 
 // Speclab resources
 $slr-light-brown: #774e2b;
@@ -56,6 +57,7 @@ $slr-med-grey: #ccccd4;
   --sl-navy: #{$sl-navy};
   --sl-dark-purple: #{$sl-dark-purple};
   --sl-light-blue: #{$sl-light-blue};
+  --sl-lighter-blue: #{$sl-lighter-blue};
 
   --slr-light-brown: #{$slr-light-brown};
   --slr-dark-brown: #{$slr-dark-brown};
@@ -77,6 +79,14 @@ $nav-pills-border-radius: 0;
   background-color: var(--sl-dark-purple) !important;
 }
 
+.bg-sl-navy {
+  background-color: var(--sl-navy);
+}
+
+.bg-sl-lighter-blue {
+  background-color: var(--sl-lighter-blue);
+}
+
 .link-slr-light-grey {
   color: var(--slr-light-grey) !important;
 }
@@ -87,7 +97,7 @@ $nav-pills-border-radius: 0;
 
 .nav-pills .section-nav-link.nav-link.router-link-active {
   color: var(--gen-white);
-  background-color: var(--sl-dark-purple);
+  background-color: var(--sl-navy);
 }
 
 .nav-pills .section-nav-link.nav-link.router-link-active:hover,

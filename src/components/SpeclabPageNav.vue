@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-sl-dark-purple">
+  <div class="bg-sl-navy">
     <BContainer>
       <BNav>
         <BNavItem link-class="page-nav-link">1. Color</BNavItem>
