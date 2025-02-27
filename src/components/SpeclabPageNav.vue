@@ -24,7 +24,7 @@
 
 .page-nav-link.nav-link.router-link-active {
   color: var(--sl-navy);
-  background-color: var(--sl-light-blue);
+  background-color: var(--sl-lighter-blue);
 }
 .page-nav-link.nav-link.router-link-active:hover,
 .page-nav-link.nav-link.router-link-active:focus {
