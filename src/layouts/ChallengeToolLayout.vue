@@ -1,5 +1,5 @@
 <template>
-  <BRow class="mt-3">
+  <BRow class="mt-5">
     <BCol cols="12" class="mb-3">
       <slot name="challenge-col"></slot>
     </BCol>

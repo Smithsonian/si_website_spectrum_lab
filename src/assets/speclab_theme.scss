@@ -68,6 +68,7 @@ $slr-med-grey: #ccccd4;
 $primary: $sl-light-blue;
 $secondary: $sl-muted-blue;
 $dark: $gen-black;
+$nav-pills-border-radius: 0;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';

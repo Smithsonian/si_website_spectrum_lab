@@ -13,7 +13,6 @@ import Module3Challenge1 from './pages/Module3/Module3Challenge1.vue';
 import Module3Intro from './pages/Module3/Module3Intro.vue';
 import Module3Tutorial from './pages/Module3/Module3Tutorial.vue';
 import { BASE_URL } from './constants';
-import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
 import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
@@ -34,9 +33,8 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/fishtank',
-    redirect: '/fishtank/intro',
+    redirect: '/fishtank/background-trees',
     children: [
-      { path: 'intro', component: FishTankIntro },
       { path: 'background-trees', component: FishTankBackgroundTrees },
       {
         path: 'background-comparison',
