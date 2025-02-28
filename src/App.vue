@@ -8,7 +8,7 @@ useAllMetadata();
 </script>
 
 <template>
-  <div class="bg-sl-lighter-blue pb-3">
+  <div class="bg-sl-navy text-light pb-3">
     <SpeclabNavBar />
     <SpeclabPageNav />
     <main>
