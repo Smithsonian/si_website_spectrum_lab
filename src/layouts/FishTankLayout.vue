@@ -46,7 +46,7 @@
         <BCol>
           <ChallengeIntro
             heading="Create and light a saltwater reef aquarium that is healthy and looks great too."
-            icon-path="/src/assets/SVG/temperature_icon.svg"
+            :icon-path="temperatureIconUrl"
             icon-alt="Temperature module icon"
           >
             For this project, you’ll first explore how land plants reflect
@@ -65,3 +65,7 @@
     </template>
   </ChallengeToolLayout>
 </template>
+
+<script setup lang="ts">
+import temperatureIconUrl from '@/assets/SVG/temperature_icon.svg';
+</script>
