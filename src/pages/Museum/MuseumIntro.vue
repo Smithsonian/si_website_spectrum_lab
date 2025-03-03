@@ -5,7 +5,7 @@
         <h2>
           (Art Conservation challenge goal)
         </h2>
-        <img src="/src/assets/fishtank_first_screen.jpg" class="mw-100 mb-2" />
+        <img src="/src/assets/SI_paint_samples_uv.png" class="mb-2 intro-image" />
         <p>
           For this project, you’ll ...
         </p>
