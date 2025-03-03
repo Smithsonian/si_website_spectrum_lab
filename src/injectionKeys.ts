@@ -26,6 +26,11 @@ export const spectrumDataSourceKey = Symbol(
 export const zoomKey = Symbol('zoom') as InjectionKey<Ref<number>>;
 // Chart draws lines or only points
 export const showLinesKey = Symbol('showLines') as InjectionKey<Ref<boolean>>;
+// Normalize 1. All points between 1 and 0 2. Visible points between 1 and 0 3. No normalization
+export type NormalizeSetting = 'all' | 'visible' | 'none';
+export const normalizeKey = Symbol('normalize') as InjectionKey<
+  Ref<NormalizeSetting>
+>;
 
 // Cursor label unit
 export type CursorUnit =

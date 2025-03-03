@@ -15,13 +15,41 @@
         </p>
       </ChallengeCard>
     </template>
+    <template #tool-col>
+      <ToolControlGroup>
+        <template #top-tool>
+          <ToolCard
+            title="Spectrum 1"
+            :custom-metadata="cactusMetadataList"
+            :spectrum-picker-placeholder="null"
+          />
+        </template>
+        <template #bottom-tool>
+          <ToolCard
+            title="Spectrum 2"
+            :custom-metadata="pansyMetadataList"
+            :spectrum-picker-placeholder="null"
+          />
+        </template>
+      </ToolControlGroup>
+    </template>
   </FishTankLayout>
 </template>
 
 <script setup lang="ts">
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Background Part IIa',
 });
+
+const allMetadata = useAllMetadata();
+const natureMetadata = allMetadata.Nature;
+const cactusMetadataList = natureMetadata.filter(
+  (sm) => sm.filename === 'Cactus_Reflection',
+);
+const pansyMetadataList = natureMetadata.filter(
+  (sm) => sm.filename === 'Pansy_Reflection',
+);
 </script>

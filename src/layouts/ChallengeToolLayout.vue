@@ -1,10 +1,12 @@
 <template>
-  <BRow class="mt-3">
-    <BCol cols="12" class="mb-3">
+  <div class="bg-sl-lighter-blue text-dark py-5">
+    <BContainer>
       <slot name="challenge-col"></slot>
-    </BCol>
-    <BCol>
+    </BContainer>
+  </div>
+  <div class="py-5">
+    <BContainer>
       <slot name="tool-col"></slot>
-    </BCol>
-  </BRow>
+    </BContainer>
+  </div>
 </template>

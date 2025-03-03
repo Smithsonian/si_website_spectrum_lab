@@ -1,0 +1,94 @@
+<template>
+  <slot name="top-tool"></slot>
+  <BRow class="mt-1 mb-2 px-3">
+    <BCol cols="3">
+      <BFormGroup label="Cursor units" label-for="cursor-unit">
+        <BFormSelect
+          id="cursor-unit"
+          v-model="cursorUnit"
+          :options="cursorUnitOptions"
+        />
+      </BFormGroup>
+    </BCol>
+    <BCol cols="3">
+      <BFormGroup label="Plot type" label-for="plot-type">
+        <BFormSelect id="plot-type" v-model="plotType" :options="plotOptions" />
+      </BFormGroup>
+    </BCol>
+    <BCol v-if="showNormalizePicker" cols="2">
+      <BFormGroup label="Normalize?" label-for="normalize">
+        <BFormRadioGroup
+          id="normalize"
+          v-model="normalize"
+          :options="normalizeOptions"
+        />
+      </BFormGroup>
+    </BCol>
+    <BCol v-if="showZoom" cols="4">
+      <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
+        <BFormInput
+          id="zoom"
+          v-model="zoomPercent"
+          type="range"
+          min="2"
+          max="200"
+          class="zoom-slider"
+        />
+      </BFormGroup>
+    </BCol>
+  </BRow>
+  <!-- Div needed to clear the row -->
+  <div>
+    <slot name="bottom-tool"></slot>
+  </div>
+</template>
+
+<script setup lang="ts">
+import {
+  cursorUnitKey,
+  normalizeKey,
+  showLinesKey,
+  zoomKey,
+  type CursorUnit,
+  type NormalizeSetting,
+} from '@/injectionKeys';
+import { useCursorMicrons } from '@/utils/chartUtils';
+import { computed, provide, ref } from 'vue';
+
+const { showNormalizePicker = false, showZoom = false } = defineProps<{
+  showNormalizePicker?: boolean;
+  showZoom?: boolean;
+}>();
+const zoomPercent = ref(100);
+const zoom = computed(() => zoomPercent.value / 100);
+provide(zoomKey, zoom);
+
+type PlotType = 'line' | 'scatter';
+const plotType = ref<PlotType>('line');
+const plotOptions: { text: string; value: PlotType }[] = [
+  { text: 'Line chart', value: 'line' },
+  { text: 'Scatter plot', value: 'scatter' },
+];
+const showLines = computed(() => plotType.value === 'line');
+provide(showLinesKey, showLines);
+
+const normalize = ref<NormalizeSetting>('all');
+const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
+  { text: 'All', value: 'all' },
+  { text: 'Visible', value: 'visible' },
+  { text: 'None', value: 'none' },
+];
+provide(normalizeKey, normalize);
+
+const cursorUnit = ref<CursorUnit>('Microns');
+const cursorUnitOptions: { text: string; value: CursorUnit }[] = [
+  { text: 'Microns', value: 'Microns' },
+  { text: 'Nanometers', value: 'Nanometers' },
+  { text: 'Angstrom', value: 'Angstrom' },
+  { text: 'Gigahertz', value: 'Gigahertz' },
+  { text: 'Electron volt', value: 'Electron volt' },
+];
+provide(cursorUnitKey, cursorUnit);
+// Instantiate this at this level so both charts can share it
+useCursorMicrons();
+</script>

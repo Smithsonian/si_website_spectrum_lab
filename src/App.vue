@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import { BContainer } from 'bootstrap-vue-next';
 import SpeclabNavBar from './components/SpeclabNavBar.vue';
 import SpeclabPageNav from './components/SpeclabPageNav.vue';
+import { useAllMetadata } from './utils/metadataUtils';
+
+// Initialize it here so everyone can use the saved one
+useAllMetadata();
 </script>
 
 <template>
-  <SpeclabNavBar />
-  <SpeclabPageNav />
-  <BContainer tag="main">
-    <RouterView />
-  </BContainer>
+  <div class="bg-sl-navy text-light pb-3">
+    <SpeclabNavBar />
+    <SpeclabPageNav />
+    <main>
+      <RouterView />
+    </main>
+  </div>
+  <SpeclabFooter />
 </template>
 
 <style>

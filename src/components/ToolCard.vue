@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-card text-white p-3 rounded-4">
+  <div class="tool-card bg-sl-dark-purple text-white p-3 rounded-4">
     <!-- Chart bottom means file picker top, and vice versa -->
     <template v-if="showFilePicker && chartPosition === 'bottom'">
       <BRow class="mb-3">
@@ -23,6 +23,7 @@
           </BCol>
           <BCol cols="6" lg="4" xl="12">
             <BFormSelect
+              v-if="!drawOnly && customMetadata === null"
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
@@ -36,7 +37,7 @@
               v-else
               v-model="selectedSpectrum"
               :options="spectrumOptions"
-              :class="spectrumOptions.length > 1 ? '' : 'invisible'"
+              :class="spectrumOptions.length > 0 ? '' : 'invisible'"
             />
           </BCol>
         </BRow>
@@ -76,40 +77,52 @@
 <script setup lang="ts">
 import { BASE_URL } from '@/constants';
 import {
+  normalizeKey,
   spectrumDataKey,
   spectrumDataSourceKey,
+  type NormalizeSetting,
   type SpectrumDataSource,
   type SpectrumDatum,
 } from '@/injectionKeys';
 import {
   CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
-  useMetadataStore,
+  useAllMetadata,
   type PreloadedCategory,
   type SpectrumMetadata,
-} from '@/metadataStore';
+} from '@/utils/metadataUtils';
 import { useCurrentlyDrawing, useDrawnSpectrumY } from '@/utils/drawingUtils';
 import {
   dataFromCSV,
   dataFromText,
   rangeNormalize,
   visibleOnly,
-  type NormalizeSetting,
 } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, provide, ref, watch, type Ref } from 'vue';
+import { computed, inject, provide, ref, watch, type Ref } from 'vue';
 import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
 
 type ChartPosition = 'top' | 'bottom';
+interface MetadataByFilename {
+  [index: string]: SpectrumMetadata;
+}
 
 const props = withDefaults(
   defineProps<{
     title: string;
-    normalize?: NormalizeSetting;
+    normalizeOverride?: NormalizeSetting | null;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
+    customMetadata?: SpectrumMetadata[] | null;
+    spectrumPickerPlaceholder?: string | null;
+    drawOnly?: boolean;
   }>(),
-  { normalize: 'all', chartPosition: 'bottom', showFilePicker: false },
+  {
+    normalizeOverride: null,
+    chartPosition: 'bottom',
+    customMetadata: null,
+    spectrumPickerPlaceholder: 'Select spectrum',
+  },
 );
 
 type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
@@ -124,6 +137,15 @@ const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
   { value: 'pickedFile', text: 'Uploaded file' },
 ];
 const selectedCategory = ref<SpectrumCategory>('');
+watch(
+  () => props.drawOnly,
+  () => {
+    if (props.drawOnly) {
+      selectedCategory.value = 'draw';
+    }
+  },
+  { immediate: true },
+);
 const spectrumDataSource = computed((): SpectrumDataSource => {
   if (selectedCategory.value === 'draw') {
     return 'drawing';
@@ -148,48 +170,71 @@ watch(pickedFile, (newFile) => {
   }
 });
 
-const metadataStore = useMetadataStore();
+const allMetadata = useAllMetadata();
 function isPreloadedCategory(
   category: SpectrumCategory,
 ): category is PreloadedCategory {
   return PRELOADED_CATEGORIES.some((preCat) => preCat === category);
 }
-interface MetadataByFilename {
-  [index: string]: SpectrumMetadata;
-}
-const categoryMetadataByFilename = computed((): MetadataByFilename => {
-  if (!isPreloadedCategory(selectedCategory.value)) {
-    return {};
+const metadataByFilename = computed((): MetadataByFilename => {
+  let metadataArray = [];
+  if (props.customMetadata !== null) {
+    metadataArray = props.customMetadata;
+  } else {
+    if (!isPreloadedCategory(selectedCategory.value)) {
+      return {};
+    }
+    metadataArray = allMetadata[selectedCategory.value];
   }
-  const metadataArray = metadataStore.byCategory[selectedCategory.value];
   const result: MetadataByFilename = {};
   for (const m of metadataArray) {
     result[m.filename] = m;
   }
   return result;
 });
-const spectrumOptions = computed((): { value: string; text: string }[] => [
-  { value: '', text: 'Select spectrum' },
-  ...Object.entries(categoryMetadataByFilename.value).map(
-    ([filename, metadata]) => ({ value: filename, text: metadata.title }),
-  ),
-]);
+const spectrumOptions = computed((): { value: string; text: string }[] => {
+  const entries = Object.entries(metadataByFilename.value);
+  if (entries.length === 0) {
+    return [];
+  }
+  const placeholderOptionMaybe = [];
+  if (props.spectrumPickerPlaceholder !== null) {
+    // Sometimes we want to default to the first spectrum instead of a placeholder
+    placeholderOptionMaybe.push({
+      value: '',
+      text: props.spectrumPickerPlaceholder,
+    });
+  }
+  return [
+    ...placeholderOptionMaybe,
+    ...entries.map(([filename, metadata]) => ({
+      value: filename,
+      text: metadata.title,
+    })),
+  ];
+});
 const selectedSpectrum = ref('');
 
-// Clear spectrum on category change
-watch(selectedCategory, async () => {
-  if (selectedSpectrum.value) {
-    selectedSpectrum.value = '';
-  }
-  if (drawnSpectrumY.value.length) {
-    clearDrawnSpectrumY();
-  }
-});
+// Set default spectrum and clear drawing when changing category, or metadata source
+watch(
+  [spectrumOptions, selectedCategory],
+  async ([newOptions]) => {
+    let defaultSpectrum = '';
+    if (newOptions.length > 0) {
+      defaultSpectrum = newOptions[0].value;
+    }
+    selectedSpectrum.value = defaultSpectrum;
+    if (drawnSpectrumY.value.length) {
+      clearDrawnSpectrumY();
+    }
+  },
+  { immediate: true },
+);
 
 // Get metadata
 const selectedMetadata = computed(
   (): SpectrumMetadata | null =>
-    categoryMetadataByFilename.value[selectedSpectrum.value] || null,
+    metadataByFilename.value[selectedSpectrum.value] || null,
 );
 
 // Icon
@@ -239,9 +284,13 @@ const fetchSpectrumData = async (
 
 // Spectrum data
 const spectrumDataFromNetwork: Ref<SpectrumDatum[]> = ref([]);
-watch(selectedMetadata, async (newMetadata) => {
-  spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
-});
+watch(
+  selectedMetadata,
+  async (newMetadata) => {
+    spectrumDataFromNetwork.value = await fetchSpectrumData(newMetadata);
+  },
+  { immediate: true },
+);
 const spectrumDataFromPickedFile: Ref<SpectrumDatum[]> = ref([]);
 watch(pickedFile, async (newFile) => {
   if (newFile === null) {
@@ -261,12 +310,23 @@ watch(pickedFile, async (newFile) => {
   }
 });
 
+const controlGroupNormalize = inject(normalizeKey, null);
+const normalize = computed((): NormalizeSetting => {
+  if (props.normalizeOverride) {
+    return props.normalizeOverride;
+  }
+  if (controlGroupNormalize) {
+    return controlGroupNormalize.value;
+  }
+  return 'all';
+});
+
 const normalizeDataMaybe = (unNormalized: SpectrumDatum[]): SpectrumDatum[] => {
-  if (!props.normalize) {
+  if (normalize.value === 'none') {
     return unNormalized;
   }
   let inputData = unNormalized;
-  if (props.normalize === 'visible') {
+  if (normalize.value === 'visible') {
     inputData = visibleOnly(inputData);
   }
   const unNormalizedIntensities = inputData.map(([_, intensity]) => {
@@ -294,8 +354,9 @@ provide(spectrumDataKey, spectrumData);
 
 <style>
 .tool-card {
-  background-color: #1e4c7d;
+  border: 1px solid var(--sl-light-blue);
 }
+
 .spectrum-icon-holder {
   height: 164px;
   width: 184px;

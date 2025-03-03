@@ -1,19 +1,5 @@
 [
   {
-    "category": "Category",
-    "filename": "Filename",
-    "title": "Title",
-    "spectrumType": "Spectrum type",
-    "imageName": "Image name",
-    "imageLink": "Image link",
-    "bigImageName": "Big image name",
-    "bigImageLink": "Big image link",
-    "creditName": "Credit name",
-    "creditLink": "Credit link",
-    "howTaken": "How taken?",
-    "notes": "Notes"
-  },
-  {
     "category": "Lamps",
     "filename": "Incandescent_Bulb",
     "title": "Incandescent Bulb",

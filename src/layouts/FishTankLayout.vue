@@ -1,59 +1,71 @@
 <template>
-  <nav>
-    <ul class="nav nav-pills mt-3">
-      <li class="nav-item">
-        <RouterLink class="nav-link" active-class="active" to="/fishtank/intro"
-          >1. Fishtank Intro</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link"
-          active-class="active"
-          to="/fishtank/background-trees"
-          >2. Background Part I</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link"
-          active-class="active"
-          to="/fishtank/background-comparison"
-          >3. Background Part IIa</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link"
-          active-class="active"
-          to="/fishtank/background-reveal"
-          >4. Background Part IIb</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link"
-          active-class="active"
-          to="/fishtank/light-your-tank"
-          >5. Light Your Tank</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link"
-          active-class="active"
-          to="/fishtank/mood-lighting"
-          >6. Bonus: Mood Lighting</RouterLink
-        >
-      </li>
-    </ul>
-  </nav>
   <ChallengeToolLayout>
     <template #challenge-col>
-      <slot name="challenge-tab"></slot>
+      <BRow>
+        <BCol cols="3">
+          <nav>
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/fishtank/background-trees"
+                  >Background Part I</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/fishtank/background-comparison"
+                  >Background Part IIa</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/fishtank/background-reveal"
+                  >Background Part IIb</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/fishtank/light-your-tank"
+                  >Light Your Tank</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/fishtank/mood-lighting"
+                  >Bonus: Mood Lighting</RouterLink
+                >
+              </li>
+            </ul>
+          </nav>
+        </BCol>
+        <BCol>
+          <ChallengeIntro
+            heading="Create and light a saltwater reef aquarium that is healthy and looks great too."
+            :icon-path="temperatureIconUrl"
+            icon-alt="Temperature module icon"
+          >
+            For this project, you’ll first explore how land plants reflect
+            light. Then you’ll dive into the project by investigating a variety
+            of plants, fish and coral that live in saltwater aquaria. You’ll
+            choose a few to live in your tank. Based on what you’ve learned in
+            this unit, you’ll decide how to light the tank so all of its
+            inhabitants thrive.
+          </ChallengeIntro>
+          <slot name="challenge-tab"></slot>
+        </BCol>
+      </BRow>
     </template>
     <template #tool-col>
       <slot name="tool-col"></slot>
     </template>
   </ChallengeToolLayout>
 </template>
+
+<script setup lang="ts">
+import temperatureIconUrl from '@/assets/SVG/temperature_icon.svg';
+</script>

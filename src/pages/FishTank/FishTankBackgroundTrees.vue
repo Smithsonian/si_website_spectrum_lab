@@ -15,15 +15,30 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard title="Tree in Summer Reflection" :normalize="null" />
+      <ToolControlGroup>
+        <template #top-tool>
+          <ToolCard
+            title="Tree in Summer Reflection"
+            :custom-metadata="treeMetadata"
+            :spectrum-picker-placeholder="null"
+          />
+        </template>
+      </ToolControlGroup>
     </template>
   </FishTankLayout>
 </template>
 
 <script setup lang="ts">
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Background Part I',
 });
+
+const allMetadata = useAllMetadata();
+const natureMetadata = allMetadata.Nature;
+const treeMetadata = natureMetadata.filter(
+  (sm) => sm.filename === 'Tree_in_Summer_Reflection',
+);
 </script>
