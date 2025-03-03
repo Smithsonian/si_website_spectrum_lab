@@ -4,7 +4,10 @@ import './assets/speclab_theme.scss';
 import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faArrowUp,
+  faPencil, 
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
@@ -19,8 +22,10 @@ import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
+import MuseumPaintColors from './pages/Museum/MuseumPaintColors.vue';
 
 library.add(faArrowUp);
+library.add(faPencil);
 
 const routes: RouteRecordRaw[] = [
   {
@@ -60,6 +65,10 @@ const routes: RouteRecordRaw[] = [
     redirect: '/museum/intro',
     children: [
       { path: 'intro', component: MuseumIntro },
+      {
+        path: 'paint-colors',
+        component: MuseumPaintColors,
+      },
     ],
   },
   { path: '/playground', component: PlaygroundView },
