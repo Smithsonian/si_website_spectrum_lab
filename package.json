@@ -10,7 +10,7 @@
     "build-only": "vite-ssg build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint --fix",
-    "test": "eslint",
+    "test": "lint-staged",
     "format": "prettier --write src/ eslint.config.js vite.config.ts index.html",
     "prepare": "husky"
   },
