@@ -13,7 +13,7 @@
     "lint-all": "prettier --check . && eslint",
     "eslint-fix": "eslint --fix",
     "format": "prettier --write .",
-    "fix-all": "run-s format lint-fix",
+    "fix-all": "run-s format eslint-fix",
     "prepare": "husky"
   },
   "dependencies": {

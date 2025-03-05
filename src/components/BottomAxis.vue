@@ -13,7 +13,8 @@ import { pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis
-const xLeftSideRoom = 20; const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
+const xLeftSideRoom = 20;
+const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
 
 const zoomRef = inject(zoomKey, ref(1));
 const canvas = useTemplateRef('canvas');
