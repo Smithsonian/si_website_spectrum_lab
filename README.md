@@ -2,7 +2,7 @@
 
 CfA Spectrum Lab at https://waps.cfa.harvard.edu/microobservatory/spectrum/
 
-This is the Vue branch, which is not yet in production. You can visit it at https://smithsonian.github.io/si_website_spectrum_lab . Don't forget to check out the vue branch when cloning.
+The development preview deployment is at https://smithsonian.github.io/si_website_spectrum_lab .
 
 ## Developing
 
@@ -17,7 +17,7 @@ If you need several Node versions to coexist on your machine, this project has a
 
 ### Install
 
-1. Clone the repo. Don't forget to check out the `vue` branch.
+1. Clone the repo.
 2. Inside the clone: `npm install`
 
 ### Running
@@ -31,10 +31,10 @@ The app is now running at http://localhost:5173/ by default. Code changes will t
 1. `npm run format` to apply code style. This is not necessary if your IDE formats with Prettier on save.
 2. `npm run build` to verify build success. TypeScript errors may appear here that do not appear in development mode.
     1. (Optional) `npm run preview` after building. This will serve the build output on 4173, so you can verify it looks right. This is overkill unless you're making changes to the build process.
-3. Commit to the `vue` branch.
-4. Push the `vue` branch. After a few minutes your changes will appear at https://smithsonian.github.io/si_website_spectrum_lab .
+3. Commit to the `develop` branch.
+4. Push the `develop` branch. After a few minutes your changes will appear at https://smithsonian.github.io/si_website_spectrum_lab .
 
 ## Deploying to WAPS
 
 1. Deploy to GitHub first.
-2. Ask Vanessa to use her `deploy_scripts` repo to pull and deploy the `vue` branch.
+2. Ask Vanessa to use her `deploy_scripts` repo to pull and deploy the `develop` branch.
