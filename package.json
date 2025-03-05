@@ -9,9 +9,10 @@
     "preview": "vite preview",
     "build-only": "vite-ssg build",
     "type-check": "vue-tsc --build --force",
-    "lint": "eslint --fix",
     "test": "lint-staged",
-    "format": "prettier --write src/ eslint.config.js vite.config.ts index.html",
+    "lint-fix": "eslint --fix",
+    "format": "prettier --write .",
+    "fix-all": "run-s format lint-fix",
     "prepare": "husky"
   },
   "dependencies": {
