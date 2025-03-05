@@ -33,7 +33,7 @@ const drawAxis = (zoom: number) => {
 
   // 1/10 micron ticks
   ctx.lineWidth = 1;
-  const smallStart = 2;
+  let smallStart = 2;
   if (zoom >= 0.08) {
     for (let i = smallStart; i < 100; i++) {
       const xTickDistance = 100;
