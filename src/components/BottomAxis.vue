@@ -13,8 +13,7 @@ import { pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis
-const xLeftSideRoom = 20;
-const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
+const xLeftSideRoom = 20; const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
 
 const zoomRef = inject(zoomKey, ref(1));
 const canvas = useTemplateRef('canvas');
@@ -33,7 +32,7 @@ const drawAxis = (zoom: number) => {
 
   // 1/10 micron ticks
   ctx.lineWidth = 1;
-  let smallStart = 2;
+  const smallStart = 2;
   if (zoom >= 0.08) {
     for (let i = smallStart; i < 100; i++) {
       const xTickDistance = 100;
