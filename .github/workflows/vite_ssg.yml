@@ -22,6 +22,9 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+env:
+  HUSKY: 0
+
 jobs:
   # Build job
   build:
