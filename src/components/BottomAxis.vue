@@ -33,7 +33,7 @@ const drawAxis = (zoom: number) => {
 
   // 1/10 micron ticks
   ctx.lineWidth = 1;
-  let smallStart = 2;
+  const smallStart = 2;
   if (zoom >= 0.08) {
     for (let i = smallStart; i < 100; i++) {
       const xTickDistance = 100;
@@ -67,7 +67,7 @@ const drawAxis = (zoom: number) => {
 
   // 1 micron ticks
   ctx.lineWidth = 2;
-  let mediumStart = 1;
+  const mediumStart = 1;
   for (let i = 1; i <= 60; i++) {
     const xTickDistance = 1000;
     // Since the tenths start at 0.2, we need to start at 800 not 1000
@@ -98,7 +98,7 @@ const drawAxis = (zoom: number) => {
 
   // 10 micron ticks
   ctx.lineWidth = 3;
-  let largeStart = 1;
+  const largeStart = 1;
   for (let i = largeStart; i <= 3; i++) {
     const xTickDistance = 10000;
     // Since the tenths start at 0.2, we need to start at 9800 not 10000
@@ -117,7 +117,7 @@ const drawAxis = (zoom: number) => {
     ctx.stroke();
 
     const tickLabel = `${i * 10}`;
-    let xTextOffset = 7;
+    const xTextOffset = 7;
     ctx.fillText(tickLabel, xTickPosition - xTextOffset, yTextBottom);
   }
 };

@@ -16,7 +16,7 @@ onMounted(() => {
   if (!canvas.value) {
     return;
   }
-  let ctx = canvas.value.getContext('2d');
+  const ctx = canvas.value.getContext('2d');
   if (!ctx) {
     return;
   }

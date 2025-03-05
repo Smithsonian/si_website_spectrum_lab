@@ -54,7 +54,7 @@ const drawData = () => {
   let xPrevPosition: number | null = null;
   let yPrevPosition: number | null = null;
 
-  for (let [wavelength, intensity] of data.value) {
+  for (const [wavelength, intensity] of data.value) {
     const xPosition = xLocFromMicrons(wavelength, zoom.value);
     const yPosition = yLocFromIntensity(intensity);
     if (xPosition < 0) {
