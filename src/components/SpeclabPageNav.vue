@@ -9,6 +9,7 @@
         >
         <BNavItem link-class="page-nav-link">4. Composition</BNavItem>
         <BNavItem link-class="page-nav-link" to="/fishtank">Fishtank</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/museum">Art Conservation</BNavItem>
         <BNavItem link-class="page-nav-link" to="/playground"
           >Playground</BNavItem
         >
