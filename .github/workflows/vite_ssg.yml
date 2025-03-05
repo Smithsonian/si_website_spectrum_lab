@@ -52,6 +52,8 @@ jobs:
             ${{ runner.os }}-vite-ssg-build-
       - name: Install dependencies
         run: npm ci
+      - name: Pre-build checks
+        run: npm run lint-all
       - name: Static HTML export with Vite SSG
         run: npm run build -- --base=${{ steps.setup_pages.outputs.base_path }}
       - name: Upload artifact
