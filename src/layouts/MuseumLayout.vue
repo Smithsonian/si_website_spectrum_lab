@@ -6,9 +6,7 @@
           <nav>
             <ul class="nav nav-pills flex-column">
               <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/museum/intro"
+                <RouterLink class="section-nav-link nav-link" to="/museum/intro"
                   >Science of Art Conservation</RouterLink
                 >
               </li>
@@ -28,7 +26,8 @@
             :icon-path="museumIconUrl"
             icon-alt="Museum module icon"
           >
-            For this project, you'll set up a museum display that conveys how spectra are used in art conservation.
+            For this project, you'll set up a museum display that conveys how
+            spectra are used in art conservation.
           </ChallengeIntro>
           <slot name="challenge-tab"></slot>
         </BCol>

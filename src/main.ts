@@ -4,10 +4,7 @@ import './assets/speclab_theme.scss';
 import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { 
-  faArrowUp,
-  faPencil, 
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';

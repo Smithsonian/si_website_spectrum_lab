@@ -6,7 +6,7 @@
     </BCol>
     <BCol cols="2">
       <div>
-        <img :src="iconPath" :alt="iconAlt" style="height: 80px"/>
+        <img :src="iconPath" :alt="iconAlt" style="height: 80px" />
       </div>
     </BCol>
   </BRow>
