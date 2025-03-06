@@ -9,9 +9,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
-import Module3Challenge1 from './pages/Module3/Module3Challenge1.vue';
-import Module3Intro from './pages/Module3/Module3Intro.vue';
-import Module3Tutorial from './pages/Module3/Module3Tutorial.vue';
+import TemperatureChallenge1 from './pages/Temperature/TemperatureChallenge1.vue';
+import TemperatureIntro from './pages/Temperature/TemperatureIntro.vue';
+import TemperatureTutorial from './pages/Temperature/TemperatureTutorial.vue';
 import { BASE_URL } from './constants';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
@@ -29,9 +29,9 @@ const routes: RouteRecordRaw[] = [
     path: '/module3',
     redirect: '/module3/intro',
     children: [
-      { path: 'intro', component: Module3Intro },
-      { path: 'tutorial', component: Module3Tutorial },
-      { path: 'challenge1', component: Module3Challenge1 },
+      { path: 'intro', component: TemperatureIntro },
+      { path: 'tutorial', component: TemperatureTutorial },
+      { path: 'challenge1', component: TemperatureChallenge1 },
     ],
   },
   {

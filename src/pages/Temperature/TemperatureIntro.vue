@@ -1,5 +1,5 @@
 <template>
-  <Module3Layout>
+  <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>What can spectra tell us about an object’s temperature?</h2>
@@ -14,7 +14,7 @@
         </p>
       </ChallengeCard>
     </template>
-  </Module3Layout>
+  </TemperatureLayout>
 </template>
 
 <script setup lang="ts">

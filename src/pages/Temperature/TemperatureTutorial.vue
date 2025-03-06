@@ -1,5 +1,5 @@
 <template>
-  <Module3Layout>
+  <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Tutorial here</h2>
@@ -8,7 +8,7 @@
     <template #tool-col>
       <ToolCard title="Spectrum title" />
     </template>
-  </Module3Layout>
+  </TemperatureLayout>
 </template>
 
 <script setup lang="ts">
