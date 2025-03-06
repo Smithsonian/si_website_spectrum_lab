@@ -29,7 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run linters
-        uses: Smithsonian/lint-action@v2025-03-05
+        uses: Smithsonian/lint-action@v2025-03-06
         with:
           eslint: true
           prettier: true
+          vue-tsc: true
