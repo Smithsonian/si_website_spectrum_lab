@@ -113,7 +113,7 @@ const props = withDefaults(
     normalizeOverride?: NormalizeSetting | null;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
-    customMetadata?: SpectrumMetadata[] | null;
+    customMetadata?: readonly Readonly<SpectrumMetadata>[] | null;
     spectrumPickerPlaceholder?: string | null;
     drawOnly?: boolean;
   }>(),
@@ -177,7 +177,7 @@ function isPreloadedCategory(
   return PRELOADED_CATEGORIES.some((preCat) => preCat === category);
 }
 const metadataByFilename = computed((): MetadataByFilename => {
-  let metadataArray = [];
+  let metadataArray = [] as readonly Readonly<SpectrumMetadata>[];
   if (props.customMetadata !== null) {
     metadataArray = props.customMetadata;
   } else {
