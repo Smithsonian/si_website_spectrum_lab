@@ -42,37 +42,19 @@
 </template>
 
 <script setup lang="ts">
-import { useAllMetadata, type SpectrumMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Fishtank Background Part IIa',
 });
 
-const allMetadata = useAllMetadata();
-const natureMetadata = allMetadata.Nature;
-const cactusMetadata = natureMetadata.find(
-  (sm) => sm.filename === 'Cactus_Reflection',
-);
-const cactusMetadataList = [] as SpectrumMetadata[];
-if (cactusMetadata) {
-  cactusMetadataList.push({
-    ...cactusMetadata,
-    imageName: '',
-  });
-} else {
-  console.warn('Cactus metadata not found.');
-}
-const pansyMetadata = natureMetadata.find(
-  (sm) => sm.filename === 'Pansy_Reflection',
-);
-const pansyMetadataList = [] as SpectrumMetadata[];
-if (pansyMetadata) {
-  pansyMetadataList.push({
-    ...pansyMetadata,
-    imageName: '',
-  });
-} else {
-  console.warn('Pansy metadata not found.');
-}
+const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
+  imageName: '',
+});
+const pansyMetadata = useCustomMetadata('Nature', 'Pansy_Reflection', {
+  imageName: '',
+});
+const cactusMetadataList = cactusMetadata ? [cactusMetadata] : [];
+const pansyMetadataList = pansyMetadata ? [pansyMetadata] : [];
 </script>

@@ -65,8 +65,12 @@ function isValidMetadata(sm: MaybeValidMetadata): sm is SpectrumMetadata {
   return true;
 }
 
-type MetadataByCategory = {
+type MutableMetadataByCategory = {
   [index in PreloadedCategory]: SpectrumMetadata[];
+};
+
+type MetadataByCategory = {
+  [index in PreloadedCategory]: readonly Readonly<SpectrumMetadata>[];
 };
 
 // This one is just for debugging, to inspect the metadataJson more easily
@@ -84,7 +88,7 @@ export const useAllMetadata = (): MetadataByCategory => {
   }
   let metadataByCategory = inject(metadataByCategoryKey, null);
   if (metadataByCategory === null) {
-    metadataByCategory = {
+    const mutable = {
       Lamps: [],
       Stars: [],
       Nature: [],
@@ -95,16 +99,41 @@ export const useAllMetadata = (): MetadataByCategory => {
       'Thermal Spectra': [],
       'Fish Tank': [],
       'Museum Conservation': [],
-    } as MetadataByCategory;
+    } as MutableMetadataByCategory;
     for (const sm of metadataJson) {
       if (isValidMetadata(sm)) {
-        metadataByCategory[sm.category].push(sm);
+        Object.freeze(sm);
+        mutable[sm.category].push(sm);
       } else {
         console.warn(
           `Unknown category ${sm.category}. Known categories are ${PRELOADED_CATEGORIES}`,
         );
       }
     }
+    metadataByCategory = mutable;
   }
   return metadataByCategory;
+};
+
+export const useCustomMetadata = (
+  category: PreloadedCategory,
+  filename: string,
+  dataToMerge: Partial<SpectrumMetadata>,
+): SpectrumMetadata | null => {
+  const metadataByCategory = useAllMetadata();
+  const categoryMetadata = metadataByCategory[category];
+  const originalMetadata = categoryMetadata.find(
+    (sm) => sm.filename === filename,
+  );
+  if (!originalMetadata) {
+    console.warn(
+      `Could not find metadata with category '${category}' and filename '${filename}'. Leaving blank.`,
+    );
+    return null;
+  }
+  const customMetadata = {
+    ...originalMetadata,
+    ...dataToMerge,
+  };
+  return customMetadata;
 };

@@ -39,7 +39,7 @@
         <template #top-tool>
           <ToolCard
             title="Paint Spectra"
-            :custom-metadata="museumMetadata"
+            :custom-metadata="customMetadata"
             spectrum-picker-placeholder="Select mystery pigment"
           />
         </template>
@@ -49,13 +49,49 @@
 </template>
 
 <script setup lang="ts">
-import { useAllMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Museum Paint Colors',
 });
 
-const allMetadata = useAllMetadata();
-const museumMetadata = allMetadata['Museum Conservation'];
+const chokhaR1 = useCustomMetadata(
+  'Museum Conservation',
+  'S2018-1-76_VNIR-SWIR_colors_Red_1',
+  {
+    title: 'Chokha Painting, Mystery Pigment 1',
+    imageName: '',
+    bigImageName: '',
+  },
+);
+const chokhaB2 = useCustomMetadata(
+  'Museum Conservation',
+  'S2018-1-76_VNIR-SWIR_colors_Blue_2',
+  {
+    title: 'Chokha Painting, Mystery Pigment 2',
+    imageName: '',
+    bigImageName: '',
+  },
+);
+const chokhaY1 = useCustomMetadata(
+  'Museum Conservation',
+  'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
+  {
+    title: 'Chokha Painting, Mystery Pigment 3',
+    imageName: '',
+    bigImageName: '',
+  },
+);
+const chokhaW1 = useCustomMetadata(
+  'Museum Conservation',
+  'S2018-1-76_VNIR-SWIR_colors_White_1',
+  {
+    title: 'Chokha Painting, Mystery Pigment 4',
+    imageName: '',
+    bigImageName: '',
+  },
+);
+const customMetadataMaybe = [chokhaR1, chokhaB2, chokhaY1, chokhaW1];
+const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 </script>
