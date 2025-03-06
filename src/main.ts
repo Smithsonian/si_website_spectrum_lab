@@ -9,8 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
-import TemperatureChallenge1 from './pages/Temperature/TemperatureChallenge1.vue';
-import TemperatureIntro from './pages/Temperature/TemperatureIntro.vue';
+import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
 import TemperatureTutorial from './pages/Temperature/TemperatureTutorial.vue';
 import { BASE_URL } from './constants';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
@@ -27,11 +26,10 @@ library.add(faPencil);
 const routes: RouteRecordRaw[] = [
   {
     path: '/temperature',
-    redirect: '/temperature/intro',
+    redirect: '/temperature/tutorial',
     children: [
-      { path: 'intro', component: TemperatureIntro },
       { path: 'tutorial', component: TemperatureTutorial },
-      { path: 'challenge1', component: TemperatureChallenge1 },
+      { path: 'predictions', component: TemperaturePredictions },
     ],
   },
   {
