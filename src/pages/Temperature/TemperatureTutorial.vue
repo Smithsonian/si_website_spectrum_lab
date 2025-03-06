@@ -15,6 +15,6 @@
 import { useHead } from '@unhead/vue';
 
 useHead({
-  title: 'Spectrum Lab | Session 3 Tutorial',
+  title: 'Spectrum Lab | Temperature: Tutorial',
 });
 </script>
