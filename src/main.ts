@@ -26,8 +26,8 @@ library.add(faPencil);
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/module3',
-    redirect: '/module3/intro',
+    path: '/temperature',
+    redirect: '/temperature/intro',
     children: [
       { path: 'intro', component: TemperatureIntro },
       { path: 'tutorial', component: TemperatureTutorial },

@@ -4,7 +4,7 @@
       <BNav>
         <BNavItem link-class="page-nav-link">1. Color</BNavItem>
         <BNavItem link-class="page-nav-link">2. Spectra</BNavItem>
-        <BNavItem link-class="page-nav-link" to="/module3"
+        <BNavItem link-class="page-nav-link" to="/temperature"
           >3. Temperature</BNavItem
         >
         <BNavItem link-class="page-nav-link">4. Composition</BNavItem>

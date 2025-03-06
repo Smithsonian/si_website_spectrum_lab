@@ -2,7 +2,10 @@
   <nav>
     <ul class="nav nav-pills mt-3">
       <li class="nav-item">
-        <RouterLink class="nav-link" active-class="active" to="/module3/intro"
+        <RouterLink
+          class="nav-link"
+          active-class="active"
+          to="/temperature/intro"
           >1. Intro</RouterLink
         >
       </li>
@@ -10,7 +13,7 @@
         <RouterLink
           class="nav-link"
           active-class="active"
-          to="/module3/tutorial"
+          to="/temperature/tutorial"
           >2. Tutorial</RouterLink
         >
       </li>
@@ -18,7 +21,7 @@
         <RouterLink
           class="nav-link"
           active-class="active"
-          to="/module3/challenge1"
+          to="/temperature/challenge1"
           >3. Color and temperature</RouterLink
         >
       </li>
