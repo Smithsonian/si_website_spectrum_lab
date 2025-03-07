@@ -47,15 +47,23 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard title="Spectrum title" />
+      <ToolCard
+        title="Spectrum 1:"
+        :custom-metadata="marsMetadataList"
+        :spectrum-picker-placeholder="null"
+      />
     </template>
   </TemperatureLayout>
 </template>
 
 <script setup lang="ts">
+import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Temperature: Tutorial',
 });
+
+const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
+const marsMetadataList = marsMetadata ? [marsMetadata] : [];
 </script>
