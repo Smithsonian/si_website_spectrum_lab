@@ -5,35 +5,35 @@
         <BCol cols="3">
           <nav>
             <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
+              <li class="nav-item section-nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
                   to="/temperature/tutorial"
                   >Tutorial</RouterLink
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item section-nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
                   to="/temperature/predictions"
                   >Temperature Predictions</RouterLink
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item section-nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
                   to="/temperature/stars"
                   >Stars</RouterLink
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item section-nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
                   to="/temperature/incandescentbulb"
                   >Incandescent Bulb</RouterLink
                 >
               </li>
-              <li class="nav-item">
+              <li class="nav-item section-nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
                   to="/temperature/earth"
