@@ -30,20 +30,23 @@ export const CATEGORY_DIRECTORIES = {
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
 
-const METADATA_STRING_KEYS = [
-  'filename',
-  'title',
-  'spectrumType',
-  'imageName',
-  'imageLink',
-  'bigImageName',
-  'creditName',
-  'creditLink',
-  'howTaken',
-  'notes',
-] as const;
+const METADATA_DEFAULTS = {
+  filename: '',
+  title: '',
+  spectrumType: '',
+  realOrCalculated: '',
+  imagePath: '',
+  bigImagePath: '',
+  how: '',
+  sourceText: '',
+  sourceUrl: '',
+  source2Text: '',
+  source2Url: '',
+  credit: '',
+  additionalInfo: '',
+} as const;
 
-type MetadataStringKey = (typeof METADATA_STRING_KEYS)[number];
+type MetadataStringKey = keyof typeof METADATA_DEFAULTS;
 
 export type SpectrumMetadata = {
   category: PreloadedCategory;
@@ -55,15 +58,29 @@ type FoundMetadata = (typeof metadataJson)[number];
 
 type MaybeValidMetadata = SpectrumMetadata | FoundMetadata;
 
-function isValidMetadata(sm: MaybeValidMetadata): sm is SpectrumMetadata {
-  if (!PRELOADED_CATEGORIES.some((cat) => cat === sm.category)) {
-    return false;
-  }
-  if (METADATA_STRING_KEYS.some((key) => typeof sm[key] !== 'string')) {
+const isValidCategory = (
+  maybeCategory: string,
+): maybeCategory is PreloadedCategory => {
+  if (!PRELOADED_CATEGORIES.some((cat) => cat === maybeCategory)) {
+    console.warn(
+      `Unknown category ${maybeCategory}. Known categories are ${PRELOADED_CATEGORIES}`,
+    );
     return false;
   }
   return true;
-}
+};
+
+const validateMetadata = (sm: MaybeValidMetadata): SpectrumMetadata | null => {
+  if (!isValidCategory(sm.category)) {
+    return null;
+  }
+  const metadataWithDefaults = {
+    ...METADATA_DEFAULTS,
+    ...sm,
+    category: sm.category,
+  };
+  return metadataWithDefaults;
+};
 
 type MutableMetadataByCategory = {
   [index in PreloadedCategory]: SpectrumMetadata[];
@@ -101,14 +118,13 @@ export const useAllMetadata = (): MetadataByCategory => {
       'Museum Conservation': [],
     } as MutableMetadataByCategory;
     for (const sm of metadataJson) {
-      if (isValidMetadata(sm)) {
-        Object.freeze(sm);
-        mutable[sm.category].push(sm);
-      } else {
-        console.warn(
-          `Unknown category ${sm.category}. Known categories are ${PRELOADED_CATEGORIES}`,
-        );
+      const validOrNullMetadata = validateMetadata(sm);
+      if (!validOrNullMetadata) {
+        continue;
       }
+      const valid = validOrNullMetadata;
+      Object.freeze(valid);
+      mutable[valid.category].push(valid);
     }
     metadataByCategory = mutable;
   }

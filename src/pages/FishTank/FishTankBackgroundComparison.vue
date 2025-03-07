@@ -50,10 +50,10 @@ useHead({
 });
 
 const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
-  imageName: '',
+  imagePath: '',
 });
 const pansyMetadata = useCustomMetadata('Nature', 'Pansy_Reflection', {
-  imageName: '',
+  imagePath: '',
 });
 const cactusMetadataList = cactusMetadata ? [cactusMetadata] : [];
 const pansyMetadataList = pansyMetadata ? [pansyMetadata] : [];

@@ -242,7 +242,7 @@ const iconPath = computed((): string => {
   if (!selectedMetadata.value) {
     return defaultIconUrl;
   }
-  const imageName = selectedMetadata.value.imageName;
+  const imageName = selectedMetadata.value.imagePath;
   if (!imageName) {
     return defaultIconUrl;
   }
@@ -254,7 +254,7 @@ const previewPath = computed((): string | null => {
   if (!selectedMetadata.value) {
     return null;
   }
-  const bigImageName = selectedMetadata.value.bigImageName;
+  const bigImageName = selectedMetadata.value.bigImagePath;
   if (!bigImageName) {
     return null;
   }
