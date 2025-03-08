@@ -61,8 +61,8 @@ const chokhaR1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
     title: 'Chokha Painting, Mystery Pigment 1',
-    imageName: '',
-    bigImageName: '',
+    imagePath: '',
+    bigImagePath: '',
   },
 );
 const chokhaB2 = useCustomMetadata(
@@ -70,8 +70,8 @@ const chokhaB2 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Blue_2',
   {
     title: 'Chokha Painting, Mystery Pigment 2',
-    imageName: '',
-    bigImageName: '',
+    imagePath: '',
+    bigImagePath: '',
   },
 );
 const chokhaY1 = useCustomMetadata(
@@ -79,8 +79,8 @@ const chokhaY1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
     title: 'Chokha Painting, Mystery Pigment 3',
-    imageName: '',
-    bigImageName: '',
+    imagePath: '',
+    bigImagePath: '',
   },
 );
 const chokhaW1 = useCustomMetadata(
@@ -88,8 +88,8 @@ const chokhaW1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
     title: 'Chokha Painting, Mystery Pigment 4',
-    imageName: '',
-    bigImageName: '',
+    imagePath: '',
+    bigImagePath: '',
   },
 );
 const customMetadataMaybe = [chokhaR1, chokhaB2, chokhaY1, chokhaW1];
