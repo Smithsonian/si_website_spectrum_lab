@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run linters
-        uses: Smithsonian/lint-action@418e3375a800bf8b1f2e8cae3cfe235f501e3a5e
+        uses: Smithsonian/lint-action@cee0b8de256b1e16e1398bdc22e29b0bfce559a3
         with:
           eslint: true
           prettier: true
