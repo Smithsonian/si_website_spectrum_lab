@@ -19,6 +19,7 @@ import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumPaintColors from './pages/Museum/MuseumPaintColors.vue';
+import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBlues.vue';
 
 library.add(faArrowUp);
 library.add(faPencil);
@@ -63,6 +64,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'paint-colors',
         component: MuseumPaintColors,
+      },
+      {
+        path: 'two-blues',
+        component: MuseumHokusaiBlues,
       },
     ],
   },

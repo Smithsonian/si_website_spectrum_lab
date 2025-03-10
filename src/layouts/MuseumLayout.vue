@@ -17,6 +17,13 @@
                   >Paint Colors & Spectra</RouterLink
                 >
               </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/museum/two-blues"
+                  >Two Blue Spectra</RouterLink
+                >
+              </li>
             </ul>
           </nav>
         </BCol>
