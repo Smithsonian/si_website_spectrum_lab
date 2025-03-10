@@ -25,7 +25,7 @@ export const CATEGORY_DIRECTORIES = {
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
   'Fish Tank': 'Fishtank_Lights',
-  'Museum Conservation': 'Museum_Curation',
+  'Museum Conservation': 'Museum_Conservation',
 } as const;
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
