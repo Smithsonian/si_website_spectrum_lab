@@ -192,7 +192,7 @@ var Fishtank_LightsArr1 = [
   'Teal Light (High Green + Medium Blue)',
 ];
 /////////////////////////////////////////////////////////////////////
-var Museum_CurationArr0 = [
+var Museum_ConservationArr0 = [
   'F1904-134_VNIR-SWIR_colors_Red_1',
   'F1904-134_VNIR-SWIR_colors_Red_2',
   'S2018-1-76_VNIR-SWIR_colors_Red_2',
@@ -214,7 +214,7 @@ var Museum_CurationArr0 = [
   'Painting_2_ROI-1_ROI-2_ROI_2',
   'S2018-1-76_VNIR-SWIR_colors_White_1',
 ];
-var Museum_CurationArr1 = [
+var Museum_ConservationArr1 = [
   'F1904-134_VNIR-SWIR_colors_Red_1',
   'F1904-134_VNIR-SWIR_colors_Red_2',
   'S2018-1-76_VNIR-SWIR_colors_Red_2',
@@ -749,31 +749,31 @@ function SeacrhFor(val, obj) {
       $('#Cat2_folder').removeClass();
       $('#Cat2_folder').addClass('fas fa-fish');
     }
-  } else if (val == 'Museum_Curation') {
+  } else if (val == 'Museum_Conservation') {
     if (obj == 'Category1') {
-      Targets1_folder = 'Museum_Curation';
-      Targets_Titles1 = Museum_CurationArr0;
-      Targets_descriptions1 = Museum_CurationArr1;
+      Targets1_folder = 'Museum_Conservation';
+      Targets_Titles1 = Museum_ConservationArr0;
+      Targets_descriptions1 = Museum_ConservationArr1;
       $('#Cat1_folder').removeClass();
       $('#Cat1_folder').addClass('fas fa-landmark');
     }
     if (obj == 'Category2') {
-      Targets2_folder = 'Museum_Curation';
-      Targets_Titles2 = Museum_CurationArr0;
-      Targets_descriptions2 = Museum_CurationArr1;
+      Targets2_folder = 'Museum_Conservation';
+      Targets_Titles2 = Museum_ConservationArr0;
+      Targets_descriptions2 = Museum_ConservationArr1;
       $('#Cat2_folder').removeClass();
       $('#Cat2_folder').addClass('fas fa-landmark');
     }
   } else if (val == 'Museum_Pigments') {
     if (obj == 'Category1') {
-      Targets1_folder = 'Museum_Curation';
+      Targets1_folder = 'Museum_Conservation';
       Targets_Titles1 = Museum_PigmentsArr0;
       Targets_descriptions1 = Museum_PigmentsArr1;
       $('#Cat1_folder').removeClass();
       $('#Cat1_folder').addClass('fas fa-landmark');
     }
     if (obj == 'Category2') {
-      Targets2_folder = 'Museum_Curation';
+      Targets2_folder = 'Museum_Conservation';
       Targets_Titles2 = Museum_PigmentsArr0;
       Targets_descriptions2 = Museum_PigmentsArr1;
       $('#Cat2_folder').removeClass();

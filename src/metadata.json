@@ -749,160 +749,160 @@
     "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_1",
     "title": "Chokha Painting, Region B1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_2",
     "title": "Chokha Painting, Region B2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_B2.png",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Green_1",
     "title": "Chokha Painting, Region G1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Green_2",
     "title": "Chokha Painting, Region G2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Red_1",
     "title": "Chokha Painting, Region R1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Red_2",
     "title": "Chokha Painting, Region R2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_White_1",
     "title": "Chokha Painting, Region W1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Yellow_1",
     "title": "Chokha Painting, Region Y1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "Painting_1_ROI-1_ROI-2_ROI_1",
     "title": "Chokha Painting, Region of Interest 1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "Painting_1_ROI-1_ROI-2_ROI_2",
     "title": "Chokha Painting, Region of Interest 2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Blue_1",
     "title": "Hokusai Painting, Region B1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Blue_2",
     "title": "Hokusai Painting, Region B2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Green_1",
     "title": "Hokusai Painting, Region G1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Green_2",
     "title": "Hokusai Painting, Region G2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Red_1",
     "title": "Hokusai Painting, Region R1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Red_2",
     "title": "Hokusai Painting, Region R2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_White_1",
     "title": "Hokusai Painting, Region W1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "F1904-134_VNIR-SWIR_colors_Yellow",
     "title": "Hokusai Painting, Region Y",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "Painting_2_ROI-1_ROI-2_ROI_1",
     "title": "Hokusai Painting, Region of Interest 1",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
     "filename": "Painting_2_ROI-1_ROI-2_ROI_2",
     "title": "Hokusai Painting, Region of Interest 2",
     "spectrumType": "Reflection",
-    "imagePath": "Museum_Curation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
-    "bigImagePath": "Museum_Curation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
+    "imagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
   },
   {
     "category": "Museum Conservation",
