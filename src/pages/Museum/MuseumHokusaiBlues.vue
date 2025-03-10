@@ -33,14 +33,14 @@
       <ToolControlGroup :show-normalize-picker="true">
         <template #top-tool>
           <ToolCard
-            title="ROI B1"
+            title="Blue Pigment 1"
             :custom-metadata="hokusaiB1Metadata"
             :spectrum-picker-placeholder="null"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="ROI B2"
+            title="Blue Pigment 2"
             :custom-metadata="hokusaiB2Metadata"
             :spectrum-picker-placeholder="null"
           />
