@@ -5,10 +5,11 @@
         <h2>Science of Art Conservation</h2>
         <BRow>
           <BCol cols="12" lg="7">
-            <img
-              src="/src/assets/SI_paint_samples_uv.png"
-              class="mb-2 challenge-image"
-            />
+            <video width="100%" controls>
+              <source
+                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+              />
+            </video>
           </BCol>
           <BCol cols="12" lg="5">
             <p>
