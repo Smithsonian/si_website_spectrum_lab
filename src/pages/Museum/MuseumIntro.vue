@@ -7,8 +7,18 @@
           <BCol cols="12" lg="7">
             <video width="100%" controls>
               <source
-                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/keats2pass.webm"
+                type="video/webm"
               />
+              <source
+                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+                type="video/mp4"
+              />
+              Download the
+              <a
+                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+                >video</a
+              >.
             </video>
           </BCol>
           <BCol cols="12" lg="5">
