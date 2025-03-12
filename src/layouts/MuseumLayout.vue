@@ -27,8 +27,29 @@
               <li class="nav-item">
                 <RouterLink
                   class="section-nav-link nav-link"
+                  to="/museum/identify-blues"
+                  >Identify Pigments</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
                   to="/museum/other-blues"
                   >Other Blues</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/museum/blue-filter"
+                  >Blue Filter</RouterLink
+                >
+              </li>
+              <li class="nav-item">
+                <RouterLink
+                  class="section-nav-link nav-link"
+                  to="/museum/infrared-filter"
+                  >Infrared Filter</RouterLink
                 >
               </li>
             </ul>
