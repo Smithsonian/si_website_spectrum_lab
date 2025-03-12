@@ -31,14 +31,14 @@
           <ToolCard
             title="Hokusai Blues"
             :custom-metadata="hokusaiBluesMetadata"
-            :spectrum-picker-placeholder="null"
+            spectrum-picker-placeholder="Select blue pigment"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
             title="Blue Comparison Pigments"
             :custom-metadata="bluesMetadata"
-            :spectrum-picker-placeholder="null"
+            spectrum-picker-placeholder="Select comparison pigment"
           />
         </template>
       </ToolControlGroup>
