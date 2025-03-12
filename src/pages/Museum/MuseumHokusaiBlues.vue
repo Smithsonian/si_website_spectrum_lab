@@ -30,7 +30,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup :show-normalize-picker="true">
+      <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
           <ToolCard
             title="Blue Pigment 1"
@@ -51,19 +51,38 @@
 </template>
 
 <script setup lang="ts">
-import { useAllMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Spectrum Lab | Two Blues',
 });
 
-const allMetadata = useAllMetadata();
-const museumMetadata = allMetadata['Museum Conservation'];
-const hokusaiB1Metadata = museumMetadata.filter(
+const hokusaiB1 = useCustomMetadata(
+  'Museum Conservation',
+  'F1904-134_VNIR-SWIR_colors_Blue_1',
+  {
+    imagePath: 'Museum_Conservation/Hokusai_B1_zoom.png',
+    bigImagePath: '',
+  },
+);
+
+const hokusaiB2 = useCustomMetadata(
+  'Museum Conservation',
+  'F1904-134_VNIR-SWIR_colors_Blue_2',
+  {
+    imagePath: 'Museum_Conservation/Hokusai_B2_zoom.png',
+    bigImagePath: '',
+  },
+);
+
+const customMetadataMaybe = [hokusaiB1, hokusaiB2];
+const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
+
+const hokusaiB1Metadata = customMetadata.filter(
   (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1',
 );
-const hokusaiB2Metadata = museumMetadata.filter(
+const hokusaiB2Metadata = customMetadata.filter(
   (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
 );
 </script>
