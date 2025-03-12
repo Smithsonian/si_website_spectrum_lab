@@ -5,10 +5,7 @@
         <h2>Paint Colors and Spectra</h2>
         <BRow>
           <BCol cols="12" lg="6">
-            <img
-              src="/includes/SpecLab_Data_Files/Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
-              class="mb-2 challenge-image"
-            />
+            <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
           </BCol>
           <BCol cols="12" lg="6">
             <p>
@@ -51,6 +48,8 @@
 <script setup lang="ts">
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
+import chokhaChallenge from '@/assets/spectrum_images/Museum_Conservation/chokha_910.webp';
+import chokhaBig from '@/assets/spectrum_images/Museum_Conservation/chokha_big.webp';
 
 useHead({
   title: 'Spectrum Lab | Museum Paint Colors',
