@@ -20,6 +20,10 @@ import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumPaintColors from './pages/Museum/MuseumPaintColors.vue';
 import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBlues.vue';
+import MuseumHokusaiIdentifyBlues from './pages/Museum/MuseumHokusaiIdentifyBlues.vue';
+import MuseumHokusaiOtherBlues from './pages/Museum/MuseumHokusaiOtherBlues.vue';
+import MuseumHokusaiBlueFilter from './pages/Museum/MuseumHokusaiBlueFilter.vue';
+import MuseumHokusaiInfraredFilter from './pages/Museum/MuseumHokusaiInfraredFilter.vue';
 
 library.add(faArrowUp);
 library.add(faPencil);
@@ -68,6 +72,22 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'two-blues',
         component: MuseumHokusaiBlues,
+      },
+      {
+        path: 'identify-blues',
+        component: MuseumHokusaiIdentifyBlues,
+      },
+      {
+        path: 'other-blues',
+        component: MuseumHokusaiOtherBlues,
+      },
+      {
+        path: 'blue-filter',
+        component: MuseumHokusaiBlueFilter,
+      },
+      {
+        path: 'infrared-filter',
+        component: MuseumHokusaiInfraredFilter,
       },
     ],
   },

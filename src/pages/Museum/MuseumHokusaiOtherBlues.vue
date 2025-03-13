@@ -2,7 +2,7 @@
   <MuseumLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Two Blue Spectra</h2>
+        <h2>Other Blue Regions</h2>
         <BRow>
           <BCol cols="12" lg="6">
             <img
@@ -11,15 +11,25 @@
             />
           </BCol>
           <BCol cols="12" lg="6">
-            <p>This is a painting by the artist Hokusai.</p>
             <p>
-              Art conservators have taken reflection spectra of 2 blue regions
-              of interest, marked by the white and black squares.
+              Now imagine you wanted to know the composition of other blue
+              regions of interest in the painting, but you don't have time to
+              take spectra everywhere.
             </p>
             <p>
-              Compare the spectra of the two blue pigments against each other
-              and note their similarities and differences in visible light and
-              in the infrared.
+              Conservators have the option of photographing the entire image
+              using different filters, for example, red, green, or blue, or even
+              infrared filters.
+            </p>
+            <p>
+              Based on the differences in the spectra of the two blue pigments
+              you observed, which filter would be most helpful for
+              distinguishing which of the two blue pigments were used in other
+              parts of the painting?
+            </p>
+            <p>
+              Placeholder info: notebook will have multiple choice - 440 (blue)
+              and 905 (IR)
             </p>
             <p>
               <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your

@@ -2,24 +2,25 @@
   <MuseumLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Two Blue Spectra</h2>
+        <h2>Image with IR Filter</h2>
         <BRow>
           <BCol cols="12" lg="6">
             <img
-              src="/includes/SpecLab_Data_Files/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+              src="/includes/SpecLab_Data_Files/Museum_Conservation/Hokusai_905nm.jpg"
               class="mb-2 challenge-image"
             />
           </BCol>
           <BCol cols="12" lg="6">
-            <p>This is a painting by the artist Hokusai.</p>
             <p>
-              Art conservators have taken reflection spectra of 2 blue regions
-              of interest, marked by the white and black squares.
+              Check out this image of the Hokusai painting taken with a filter
+              that has a wavelength of 905nm, which corresponds to infrared
+              light. Does it look how you would expect based on the similarities
+              and differences of the two blue pigments whose spectra you
+              explored?
             </p>
             <p>
-              Compare the spectra of the two blue pigments against each other
-              and note their similarities and differences in visible light and
-              in the infrared.
+              Can you predict with confidence which of the two pigments was used
+              to paint the region labeled B3?
             </p>
             <p>
               <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your

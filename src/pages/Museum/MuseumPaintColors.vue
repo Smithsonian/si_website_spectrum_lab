@@ -59,7 +59,7 @@ const chokhaR1 = useCustomMetadata(
   'Museum Conservation',
   'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
-    title: 'Chokha Painting, Mystery Pigment 1',
+    title: 'Mystery Pigment 1',
     imagePath: '',
     bigImagePath: '',
   },
@@ -68,7 +68,7 @@ const chokhaB2 = useCustomMetadata(
   'Museum Conservation',
   'S2018-1-76_VNIR-SWIR_colors_Blue_2',
   {
-    title: 'Chokha Painting, Mystery Pigment 2',
+    title: 'Mystery Pigment 2',
     imagePath: '',
     bigImagePath: '',
   },
@@ -77,7 +77,7 @@ const chokhaY1 = useCustomMetadata(
   'Museum Conservation',
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
-    title: 'Chokha Painting, Mystery Pigment 3',
+    title: 'Mystery Pigment 3',
     imagePath: '',
     bigImagePath: '',
   },
@@ -86,7 +86,7 @@ const chokhaW1 = useCustomMetadata(
   'Museum Conservation',
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
-    title: 'Chokha Painting, Mystery Pigment 4',
+    title: 'Mystery Pigment 4',
     imagePath: '',
     bigImagePath: '',
   },

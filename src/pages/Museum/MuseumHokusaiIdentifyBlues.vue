@@ -2,7 +2,7 @@
   <MuseumLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Two Blue Spectra</h2>
+        <h2>Identify the Pigments</h2>
         <BRow>
           <BCol cols="12" lg="6">
             <img
@@ -11,15 +11,11 @@
             />
           </BCol>
           <BCol cols="12" lg="6">
-            <p>This is a painting by the artist Hokusai.</p>
             <p>
-              Art conservators have taken reflection spectra of 2 blue regions
-              of interest, marked by the white and black squares.
-            </p>
-            <p>
-              Compare the spectra of the two blue pigments against each other
-              and note their similarities and differences in visible light and
-              in the infrared.
+              Now, compare the spectra from the two blue regions of interest
+              with a sample of blue paint pigments and see if you can identify
+              which pigments correspond to each blue region of interest in the
+              painting
             </p>
             <p>
               <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your
@@ -33,16 +29,16 @@
       <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
           <ToolCard
-            title="Blue Pigment 1"
-            :custom-metadata="hokusaiB1Metadata"
-            :spectrum-picker-placeholder="null"
+            title="Hokusai Blues"
+            :custom-metadata="hokusaiBluesMetadata"
+            spectrum-picker-placeholder="Select blue pigment"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="Blue Pigment 2"
-            :custom-metadata="hokusaiB2Metadata"
-            :spectrum-picker-placeholder="null"
+            title="Blue Comparison Pigments"
+            :custom-metadata="bluesMetadata"
+            spectrum-picker-placeholder="Select comparison pigment"
           />
         </template>
       </ToolControlGroup>
@@ -51,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCustomMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
@@ -79,10 +75,19 @@ const hokusaiB2 = useCustomMetadata(
 const customMetadataMaybe = [hokusaiB1, hokusaiB2];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 
-const hokusaiB1Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1',
+const hokusaiBluesMetadata = customMetadata.filter(
+  (sm) =>
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1' ||
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
 );
-const hokusaiB2Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
+
+const allMetadata = useAllMetadata();
+const museumMetadata = allMetadata['Museum Conservation'];
+const bluesMetadata = museumMetadata.filter(
+  (sm) =>
+    sm.title === 'Prussian Blue' ||
+    sm.title === 'Indigo' ||
+    sm.title === 'Azurite' ||
+    sm.title === 'Egyptian Blue',
 );
 </script>
