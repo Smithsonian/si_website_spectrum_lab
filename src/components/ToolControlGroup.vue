@@ -85,7 +85,6 @@ const cursorUnitOptions: { text: string; value: CursorUnit }[] = [
   { text: 'Microns', value: 'Microns' },
   { text: 'Nanometers', value: 'Nanometers' },
   { text: 'Angstrom', value: 'Angstrom' },
-  { text: 'Gigahertz', value: 'Gigahertz' },
   { text: 'Electron volt', value: 'Electron volt' },
 ];
 provide(cursorUnitKey, cursorUnit);

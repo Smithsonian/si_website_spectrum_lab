@@ -37,7 +37,6 @@ export type CursorUnit =
   | 'Microns'
   | 'Nanometers'
   | 'Angstrom'
-  | 'Gigahertz'
   | 'Electron volt';
 export const cursorUnitKey = Symbol('cursorUnit') as InjectionKey<
   Ref<CursorUnit>

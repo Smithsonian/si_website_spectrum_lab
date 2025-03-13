@@ -121,11 +121,6 @@ const numberFormat = new Intl.NumberFormat(undefined, {
   maximumSignificantDigits: 4,
 });
 
-const vacuumSpeedOfLight = 299792458;
-const frequencyFromWavelengthMicrons = (wavelengthMicrons: number): number => {
-  const wavelengthMeters = wavelengthMicrons / 1000000;
-  return vacuumSpeedOfLight / wavelengthMeters;
-};
 // https://physics.nist.gov/cgi-bin/cuu/Value?minvev|search_for=electron+volt
 const electronVoltMicronRelation = 1.239841984;
 const electronVoltsFromWavelengthMicrons = (
@@ -143,10 +138,6 @@ const labelValue = computed((): string | null => {
       return numberFormat.format(Math.floor(cursorMicrons.value * 1000));
     case 'Angstrom':
       return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
-    case 'Gigahertz':
-      return numberFormat.format(
-        frequencyFromWavelengthMicrons(cursorMicrons.value) / 1e9,
-      );
     case 'Electron volt':
       return numberFormat.format(
         electronVoltsFromWavelengthMicrons(cursorMicrons.value),
@@ -161,7 +152,6 @@ const labelUnit = computed((): string => {
     Microns: 'µm',
     Nanometers: 'nm',
     Angstrom: 'Å',
-    Gigahertz: 'GHz',
     'Electron volt': 'eV',
   };
   return labelsFromUnit[cursorUnit.value];
