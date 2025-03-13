@@ -5,8 +5,8 @@
       <BFormGroup label="Cursor units" label-for="cursor-unit">
         <BFormSelect
           id="cursor-unit"
-          v-model="cursorUnit"
-          :options="cursorUnitOptions"
+          v-model="wavelengthUnit"
+          :options="wavelengthUnitOptions"
         />
       </BFormGroup>
     </BCol>
@@ -45,11 +45,11 @@
 
 <script setup lang="ts">
 import {
-  cursorUnitKey,
+  wavelengthUnitKey,
   normalizeKey,
   showLinesKey,
   zoomKey,
-  type CursorUnit,
+  type WavelengthUnit,
   type NormalizeSetting,
 } from '@/injectionKeys';
 import { useCursorMicrons } from '@/utils/chartUtils';
@@ -80,14 +80,14 @@ const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
 ];
 provide(normalizeKey, normalize);
 
-const cursorUnit = ref<CursorUnit>('Microns');
-const cursorUnitOptions: { text: string; value: CursorUnit }[] = [
+const wavelengthUnit = ref<WavelengthUnit>('Microns');
+const wavelengthUnitOptions: { text: string; value: WavelengthUnit }[] = [
   { text: 'Microns', value: 'Microns' },
   { text: 'Nanometers', value: 'Nanometers' },
   { text: 'Angstrom', value: 'Angstrom' },
-  { text: 'Electron volt', value: 'Electron volt' },
+  { text: 'Electron volts', value: 'Electron volts' },
 ];
-provide(cursorUnitKey, cursorUnit);
+provide(wavelengthUnitKey, wavelengthUnit);
 // Instantiate this at this level so both charts can share it
 useCursorMicrons();
 </script>

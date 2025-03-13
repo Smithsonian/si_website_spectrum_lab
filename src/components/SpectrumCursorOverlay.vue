@@ -47,10 +47,10 @@ import {
   RAINBOW_HEIGHT,
 } from '@/constants';
 import {
-  cursorUnitKey,
+  wavelengthUnitKey,
   spectrumDataSourceKey,
   zoomKey,
-  type CursorUnit,
+  type WavelengthUnit,
   type SpectrumDataSource,
 } from '@/injectionKeys';
 import {
@@ -115,7 +115,10 @@ const xRenderLocation = computed((): number | null => {
   return xCursorLocation.value + LEFT_AXIS_WIDTH;
 });
 
-const cursorUnit = inject(cursorUnitKey, ref<CursorUnit>('Microns'));
+const wavelengthUnit = inject(
+  wavelengthUnitKey,
+  ref<WavelengthUnit>('Microns'),
+);
 
 const numberFormat = new Intl.NumberFormat(undefined, {
   maximumSignificantDigits: 4,
@@ -131,14 +134,14 @@ const labelValue = computed((): string | null => {
   if (cursorMicrons.value === null) {
     return null;
   }
-  switch (cursorUnit.value) {
+  switch (wavelengthUnit.value) {
     case 'Microns':
       return numberFormat.format(cursorMicrons.value);
     case 'Nanometers':
       return numberFormat.format(Math.floor(cursorMicrons.value * 1000));
     case 'Angstrom':
       return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
-    case 'Electron volt':
+    case 'Electron volts':
       return numberFormat.format(
         electronVoltsFromWavelengthMicrons(cursorMicrons.value),
       );
@@ -148,13 +151,13 @@ const labelValue = computed((): string | null => {
 });
 
 const labelUnit = computed((): string => {
-  const labelsFromUnit: { [Key in CursorUnit]: string } = {
+  const labelsFromUnit: { [Key in WavelengthUnit]: string } = {
     Microns: 'µm',
     Nanometers: 'nm',
     Angstrom: 'Å',
-    'Electron volt': 'eV',
+    'Electron volts': 'eV',
   };
-  return labelsFromUnit[cursorUnit.value];
+  return labelsFromUnit[wavelengthUnit.value];
 });
 </script>
 

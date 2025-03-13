@@ -32,12 +32,12 @@ export const normalizeKey = Symbol('normalize') as InjectionKey<
   Ref<NormalizeSetting>
 >;
 
-// Cursor label unit
-export type CursorUnit =
+// X axis unit
+export type WavelengthUnit =
   | 'Microns'
   | 'Nanometers'
   | 'Angstrom'
-  | 'Electron volt';
-export const cursorUnitKey = Symbol('cursorUnit') as InjectionKey<
-  Ref<CursorUnit>
+  | 'Electron volts';
+export const wavelengthUnitKey = Symbol('wavelengthUnit') as InjectionKey<
+  Ref<WavelengthUnit>
 >;

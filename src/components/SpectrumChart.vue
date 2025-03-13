@@ -15,7 +15,7 @@
           <SpectrumData v-else />
         </div>
         <BottomAxis />
-        <div class="text-center">Wavelength (Microns)</div>
+        <div class="text-center">Wavelength ({{ wavelengthUnit }})</div>
       </SpectrumCursorOverlay>
     </div>
   </div>
@@ -25,12 +25,19 @@
 import {
   type SpectrumDataSource,
   spectrumDataSourceKey,
+  type WavelengthUnit,
+  wavelengthUnitKey,
 } from '@/injectionKeys';
 import { inject, ref } from 'vue';
 
 const spectrumDataSource = inject(
   spectrumDataSourceKey,
   ref<SpectrumDataSource>('file'),
+);
+
+const wavelengthUnit = inject(
+  wavelengthUnitKey,
+  ref<WavelengthUnit>('Microns'),
 );
 </script>
 
