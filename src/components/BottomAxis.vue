@@ -95,7 +95,7 @@ function renderSmallTicks() {
     // Do we have enough room to render labels?
     let enoughRoom = true;
     const xZoomedTickDistance = xTickDistance * pixelZoom;
-    const biggestLabel = labelFromWavelength(2);
+    const biggestLabel = labelFromWavelength(1.9);
     const xBiggestWidth = ctx.measureText(biggestLabel).width;
     // More than 90% is too close to be legible
     if (xBiggestWidth > xZoomedTickDistance * 0.9) {
