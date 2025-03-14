@@ -2,9 +2,9 @@
   <slot name="top-tool"></slot>
   <BRow class="mt-1 mb-2 px-3">
     <BCol cols="3">
-      <BFormGroup label="Cursor units" label-for="cursor-unit">
+      <BFormGroup label="Wavelength units" label-for="wavelength-unit">
         <BFormSelect
-          id="cursor-unit"
+          id="wavelength-unit"
           v-model="wavelengthUnit"
           :options="wavelengthUnitOptions"
         />

@@ -8,7 +8,11 @@
 
 <script setup lang="ts">
 import { CHART_WIDTH } from '@/constants';
-import { zoomKey } from '@/injectionKeys';
+import {
+  wavelengthUnitKey,
+  zoomKey,
+  type WavelengthUnit,
+} from '@/injectionKeys';
 import { pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
@@ -20,23 +24,85 @@ const zoomRef = inject(zoomKey, ref(1));
 const canvas = useTemplateRef('canvas');
 let ctx: CanvasRenderingContext2D | null = null;
 
-const drawAxis = (zoom: number) => {
+const wavelengthUnit = inject(
+  wavelengthUnitKey,
+  ref<WavelengthUnit>('Microns'),
+);
+
+// https://physics.nist.gov/cgi-bin/cuu/Value?minvev|search_for=electron+volt
+const electronVoltMicronRelation = 1.239841984;
+const electronVoltsFromWavelengthMicrons = (
+  wavelengthMicrons: number,
+): number => electronVoltMicronRelation / wavelengthMicrons;
+
+const numberFormat = new Intl.NumberFormat(undefined, {
+  maximumSignificantDigits: 2,
+});
+
+const labelFromWavelength = (wavelengthMicrons: number): string => {
+  switch (wavelengthUnit.value) {
+    case 'Microns':
+      return numberFormat.format(wavelengthMicrons);
+    case 'Nanometers':
+      return numberFormat.format(wavelengthMicrons * 1000);
+    case 'Angstrom':
+      return numberFormat.format(wavelengthMicrons * 10000);
+    case 'Electron volts':
+      return numberFormat.format(
+        electronVoltsFromWavelengthMicrons(wavelengthMicrons),
+      );
+  }
+};
+
+const renderLabel = (
+  wavelengthMicrons: number,
+  xTickPosition: number,
+): void => {
   if (!ctx) {
     return;
   }
-  const pixelZoom = pixelZoomFromZoom(zoom);
+  const label = labelFromWavelength(wavelengthMicrons);
+  const xWidth = ctx.measureText(label).width;
+  ctx.fillText(label, xTickPosition - xWidth / 2, yTextBottom);
+};
 
+const yTextBottom = 19;
+
+const drawAxis = () => {
+  if (!ctx) {
+    return;
+  }
   // Clear
   ctx.clearRect(0, 0, xCanvasWidth, 30);
-
-  const yTextBottom = 19;
-
   // 1/10 micron ticks
+  renderSmallTicks();
+  // 1 micron ticks
+  renderMediumTicks();
+  // 10 micron ticks
+  renderLargeTicks();
+};
+
+function renderSmallTicks() {
+  if (!ctx) {
+    return;
+  }
+  const zoom = zoomRef.value;
+  const pixelZoom = pixelZoomFromZoom(zoom);
   ctx.lineWidth = 1;
   const smallStart = 2;
+  const xTickDistance = 100;
   if (zoom >= 0.08) {
+    // Do we have enough room to render labels?
+    let enoughRoom = true;
+    const xZoomedTickDistance = xTickDistance * pixelZoom;
+    const biggestLabel = labelFromWavelength(2);
+    const xBiggestWidth = ctx.measureText(biggestLabel).width;
+    // More than 90% is too close to be legible
+    if (xBiggestWidth > xZoomedTickDistance * 0.9) {
+      enoughRoom = false;
+    }
+
     for (let i = smallStart; i < 100; i++) {
-      const xTickDistance = 100;
       const xTickPosition =
         xLeftSideRoom + (i - smallStart) * xTickDistance * pixelZoom;
       // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
@@ -51,9 +117,8 @@ const drawAxis = (zoom: number) => {
 
       // 1/10 micron labels. Skip whole numbers
       const wavelength = i / 10;
-      if (zoom > 0.4 && wavelength !== Math.floor(wavelength)) {
-        const xTextOffset = 5;
-        ctx.fillText(`${wavelength}`, xTickPosition - xTextOffset, yTextBottom);
+      if (enoughRoom && wavelength !== Math.floor(wavelength)) {
+        renderLabel(wavelength, xTickPosition);
       }
     }
   } else {
@@ -64,14 +129,31 @@ const drawAxis = (zoom: number) => {
     ctx.lineTo(xTickPosSharp, 4);
     ctx.stroke();
   }
+}
 
-  // 1 micron ticks
+function renderMediumTicks() {
+  if (!ctx) {
+    return;
+  }
+  const zoom = zoomRef.value;
+  const pixelZoom = pixelZoomFromZoom(zoom);
+  const xTickDistance = 1000;
+
+  // Do we have enough room to render labels?
+  let enoughRoom = true;
+  const xZoomedTickDistance = xTickDistance * pixelZoom;
+  const biggestLabel = labelFromWavelength(60);
+  const xBiggestWidth = ctx.measureText(biggestLabel).width;
+  // More than 95% is too close to be legible
+  if (xBiggestWidth > xZoomedTickDistance * 0.9) {
+    enoughRoom = false;
+  }
+
+  const xPreviousTicksOffset = 800;
   ctx.lineWidth = 2;
   const mediumStart = 1;
   for (let i = 1; i <= 60; i++) {
-    const xTickDistance = 1000;
     // Since the tenths start at 0.2, we need to start at 800 not 1000
-    const xPreviousTicksOffset = 800;
     const xTickPosition =
       xLeftSideRoom +
       (xPreviousTicksOffset + (i - mediumStart) * xTickDistance) * pixelZoom;
@@ -86,17 +168,18 @@ const drawAxis = (zoom: number) => {
     ctx.stroke();
 
     // Skip tens of microns
-    if (zoom > 0.02 && i % 10) {
-      const tickLabel = `${i}`;
-      let xTextOffset = 3;
-      if (tickLabel.length > 1) {
-        xTextOffset = 6;
-      }
-      ctx.fillText(tickLabel, xTickPosition - xTextOffset, yTextBottom);
+    if (enoughRoom && i % 10) {
+      renderLabel(i, xTickPosition);
     }
   }
+}
 
-  // 10 micron ticks
+function renderLargeTicks() {
+  if (!ctx) {
+    return;
+  }
+  const zoom = zoomRef.value;
+  const pixelZoom = pixelZoomFromZoom(zoom);
   ctx.lineWidth = 3;
   const largeStart = 1;
   for (let i = largeStart; i <= 3; i++) {
@@ -116,14 +199,12 @@ const drawAxis = (zoom: number) => {
     ctx.lineTo(xTickPosSharp, 8);
     ctx.stroke();
 
-    const tickLabel = `${i * 10}`;
-    const xTextOffset = 7;
-    ctx.fillText(tickLabel, xTickPosition - xTextOffset, yTextBottom);
+    renderLabel(i * 10, xTickPosition);
   }
-};
+}
 
-watch(zoomRef, (newZoom) => {
-  drawAxis(newZoom);
+watch([zoomRef, wavelengthUnit], () => {
+  drawAxis();
 });
 
 onMounted(() => {
@@ -137,6 +218,6 @@ onMounted(() => {
   ctx.font = '11px Arial';
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
-  drawAxis(zoomRef.value);
+  drawAxis();
 });
 </script>
