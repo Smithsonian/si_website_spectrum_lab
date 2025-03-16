@@ -12,6 +12,10 @@
               }"
             >
               <source
+                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_video.webm"
+                type="video/webm"
+              />
+              <source
                 src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_video.mp4"
                 type="video/mp4"
               />
