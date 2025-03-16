@@ -5,21 +5,17 @@
         <h2>Science of Art Conservation</h2>
         <BRow>
           <BCol cols="12" lg="7">
-            <video width="100%" controls>
+            <VideoJSPlayer
+              :other-options="{
+                poster:
+                  'https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_poster.jpg',
+              }"
+            >
               <source
-                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/keats2pass.webm"
-                type="video/webm"
-              />
-              <source
-                src="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_video.mp4"
                 type="video/mp4"
               />
-              Download the
-              <a
-                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/includes/Videos/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
-                >video</a
-              >.
-            </video>
+            </VideoJSPlayer>
           </BCol>
           <BCol cols="12" lg="5">
             <p>
@@ -42,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useHead } from '@unhead/vue';
 
 useHead({
