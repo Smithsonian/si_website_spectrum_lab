@@ -116,7 +116,7 @@ const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
   return urlString;
 };
 
-const imageUrlFromPath = (path: string): string => {
+export const imageUrlFromPath = (path: string): string => {
   // Vite is only able to handle these when each substitution is one path component.
   const [directory, filename] = path.split('/');
   const url = new URL(

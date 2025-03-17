@@ -47,7 +47,11 @@
 </template>
 
 <script setup lang="ts">
-import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
+import {
+  useCustomMetadata,
+  useAllMetadata,
+  imageUrlFromPath,
+} from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
@@ -58,8 +62,8 @@ const hokusaiB1 = useCustomMetadata(
   'Museum Conservation',
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
-    imagePath: 'Museum_Conservation/Hokusai_B1_zoom.png',
-    bigImagePath: '',
+    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
+    bigImageUrl: '',
   },
 );
 
@@ -67,8 +71,8 @@ const hokusaiB2 = useCustomMetadata(
   'Museum Conservation',
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
-    imagePath: 'Museum_Conservation/Hokusai_B2_zoom.png',
-    bigImagePath: '',
+    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),
+    bigImageUrl: '',
   },
 );
 
