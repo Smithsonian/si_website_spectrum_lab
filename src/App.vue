@@ -1,18 +1,13 @@
-<script setup lang="ts">
-import SpeclabNavBar from './components/SpeclabNavBar.vue';
-import SpeclabPageNav from './components/SpeclabPageNav.vue';
-import { useAllMetadata } from './utils/metadataUtils';
-
-// Initialize it here so everyone can use the saved one
-useAllMetadata();
-</script>
-
 <template>
   <div class="bg-sl-navy text-light pb-3">
     <SpeclabNavBar />
     <SpeclabPageNav />
     <main>
-      <RouterView />
+      <ErrorBoundary>
+        <MetadataProvider>
+          <RouterView />
+        </MetadataProvider>
+      </ErrorBoundary>
     </main>
   </div>
   <SpeclabFooter />

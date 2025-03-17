@@ -102,11 +102,18 @@ const metadataByCategoryKey = Symbol(
 
 const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
   const directory = CATEGORY_DIRECTORIES[metadata.category];
+  const filename = `${metadata.filename}.txt`;
   const url = new URL(
-    `../assets/spectrum_data/${directory}/${metadata.filename}.txt`,
+    `../assets/spectrum_data/${directory}/${filename}`,
     import.meta.url,
   );
-  return url.toString();
+  const urlString = url.toString();
+  if (urlString.includes('undefined')) {
+    throw new Error(
+      `Spectrum data file '${filename}' not found in category directory '${directory}'. Please verify the metadata spreadsheet filename matches the actual location of the data file.`,
+    );
+  }
+  return urlString;
 };
 
 export const useAllMetadata = (): MetadataByCategory => {
