@@ -85,7 +85,6 @@ import {
   type SpectrumDatum,
 } from '@/injectionKeys';
 import {
-  CATEGORY_DIRECTORIES,
   PRELOADED_CATEGORIES,
   useAllMetadata,
   type PreloadedCategory,
@@ -267,10 +266,10 @@ const fetchSpectrumData = async (
   if (!metadata) {
     return [];
   }
-  const directory = CATEGORY_DIRECTORIES[metadata.category];
-  const url = `${BASE_URL}includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
+  // const directory = CATEGORY_DIRECTORIES[metadata.category];
+  // const url = `${BASE_URL}includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
   try {
-    const response = await fetch(url);
+    const response = await fetch(metadata.fileUrl);
     if (!response.ok) {
       return [];
     }

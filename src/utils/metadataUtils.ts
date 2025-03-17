@@ -32,11 +32,14 @@ export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
 
 const METADATA_DEFAULTS = {
   filename: '',
+  fileUrl: '',
   title: '',
   spectrumType: '',
   realOrCalculated: '',
   imagePath: '',
+  imageUrl: '',
   bigImagePath: '',
+  bigImageUrl: '',
   how: '',
   sourceText: '',
   sourceUrl: '',
@@ -97,6 +100,15 @@ const metadataByCategoryKey = Symbol(
   'metadataByCategory',
 ) as InjectionKey<MetadataByCategory>;
 
+const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
+  const directory = CATEGORY_DIRECTORIES[metadata.category];
+  const url = new URL(
+    `../assets/spectrum_data/${directory}/${metadata.filename}.txt`,
+    import.meta.url,
+  );
+  return url.toString();
+};
+
 export const useAllMetadata = (): MetadataByCategory => {
   let rawMetadata = inject(rawMetadataKey, null);
   if (rawMetadata === null) {
@@ -123,6 +135,7 @@ export const useAllMetadata = (): MetadataByCategory => {
         continue;
       }
       const valid = validOrNullMetadata;
+      valid.fileUrl = fileUrlFromMetadata(valid);
       Object.freeze(valid);
       mutable[valid.category].push(valid);
     }
