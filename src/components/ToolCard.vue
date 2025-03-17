@@ -75,7 +75,6 @@
 </template>
 
 <script setup lang="ts">
-import { BASE_URL } from '@/constants';
 import {
   normalizeKey,
   spectrumDataKey,
@@ -241,11 +240,11 @@ const iconPath = computed((): string => {
   if (!selectedMetadata.value) {
     return defaultIconUrl;
   }
-  const imageName = selectedMetadata.value.imagePath;
-  if (!imageName) {
+  const imageUrl = selectedMetadata.value.imageUrl;
+  if (!imageUrl) {
     return defaultIconUrl;
   }
-  return `${BASE_URL}includes/SpecLab_Data_Files/${imageName}`;
+  return imageUrl;
 });
 
 // Preview
@@ -253,11 +252,11 @@ const previewPath = computed((): string | null => {
   if (!selectedMetadata.value) {
     return null;
   }
-  const bigImageName = selectedMetadata.value.bigImagePath;
-  if (!bigImageName) {
+  const bigImageUrl = selectedMetadata.value.bigImageUrl;
+  if (!bigImageUrl) {
     return null;
   }
-  return `${BASE_URL}includes/SpecLab_Data_Files/${bigImageName}`;
+  return bigImageUrl;
 });
 
 const fetchSpectrumData = async (
@@ -266,8 +265,6 @@ const fetchSpectrumData = async (
   if (!metadata) {
     return [];
   }
-  // const directory = CATEGORY_DIRECTORIES[metadata.category];
-  // const url = `${BASE_URL}includes/SpecLab_Data_Files/${directory}/${metadata.filename}.txt`;
   try {
     const response = await fetch(metadata.fileUrl);
     if (!response.ok) {

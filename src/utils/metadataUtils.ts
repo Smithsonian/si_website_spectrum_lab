@@ -116,6 +116,22 @@ const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
   return urlString;
 };
 
+const imageUrlFromPath = (path: string): string => {
+  // Vite is only able to handle these when each substitution is one path component.
+  const [directory, filename] = path.split('/');
+  const url = new URL(
+    `../assets/spectrum_data/${directory}/${filename}`,
+    import.meta.url,
+  );
+  const urlString = url.toString();
+  if (urlString.includes('undefined')) {
+    throw new Error(
+      `Spectrum image '${path}' not found. Please verify the metadata spreadsheet image matches the actual location of the image.`,
+    );
+  }
+  return urlString;
+};
+
 export const useAllMetadata = (): MetadataByCategory => {
   let rawMetadata = inject(rawMetadataKey, null);
   if (rawMetadata === null) {
@@ -143,6 +159,12 @@ export const useAllMetadata = (): MetadataByCategory => {
       }
       const valid = validOrNullMetadata;
       valid.fileUrl = fileUrlFromMetadata(valid);
+      if (valid.imagePath) {
+        valid.imageUrl = imageUrlFromPath(valid.imagePath);
+      }
+      if (valid.bigImagePath) {
+        valid.bigImageUrl = imageUrlFromPath(valid.bigImagePath);
+      }
       Object.freeze(valid);
       mutable[valid.category].push(valid);
     }
