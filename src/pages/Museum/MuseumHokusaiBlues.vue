@@ -6,7 +6,7 @@
         <BRow>
           <BCol cols="12" lg="6">
             <img
-              src="/includes/SpecLab_Data_Files/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+              src="/src/assets/spectrum_data/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
               class="mb-2 challenge-image"
             />
           </BCol>

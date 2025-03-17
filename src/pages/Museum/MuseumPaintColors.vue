@@ -48,8 +48,8 @@
 <script setup lang="ts">
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
-import chokhaChallenge from '@/assets/spectrum_images/Museum_Conservation/chokha_910.webp';
-import chokhaBig from '@/assets/spectrum_images/Museum_Conservation/chokha_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_big.webp';
 
 useHead({
   title: 'Spectrum Lab | Museum Paint Colors',
