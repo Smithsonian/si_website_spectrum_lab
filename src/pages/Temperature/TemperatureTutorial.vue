@@ -2,7 +2,7 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <BRow>
+        <BRow class="my-3">
           <BCol cols="1"></BCol>
           <BCol><h2 class="h4">Tutorial</h2></BCol>
         </BRow>
