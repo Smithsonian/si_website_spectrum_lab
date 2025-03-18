@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-sl-navy text-light pb-3">
+  <div class="bg-sl-navy text-light">
     <SpeclabNavBar />
     <SpeclabPageNav />
     <main>

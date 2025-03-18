@@ -4,7 +4,7 @@
       <slot name="challenge-col"></slot>
     </BContainer>
   </div>
-  <div class="py-5">
+  <div v-if="$slots['tool-col']" class="py-5">
     <BContainer>
       <slot name="tool-col"></slot>
     </BContainer>

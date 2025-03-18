@@ -57,7 +57,7 @@
         </BCol>
       </BRow>
     </template>
-    <template #tool-col>
+    <template v-if="$slots['tool-col']" #tool-col>
       <slot name="tool-col"></slot>
     </template>
   </ChallengeToolLayout>
