@@ -5,18 +5,13 @@
         <h2>Science of Art Conservation</h2>
         <BRow>
           <BCol cols="12" lg="7">
-            <VideoJSPlayer
-              :other-options="{
-                poster:
-                  'https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_poster.jpg',
-              }"
-            >
+            <VideoJSPlayer>
               <source
-                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_video.webm"
+                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/Conservation_Science-Keats_Materials_Identification_20250131.webm"
                 type="video/webm"
               />
               <source
-                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science_matt_video.mp4"
+                src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
                 type="video/mp4"
               />
             </VideoJSPlayer>
