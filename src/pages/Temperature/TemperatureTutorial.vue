@@ -47,11 +47,15 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard
-        title="Spectrum 1:"
-        :custom-metadata="marsMetadataList"
-        :spectrum-picker-placeholder="null"
-      />
+      <ToolControlGroup show-zoom>
+        <template #top-tool>
+          <ToolCard
+            title="Spectrum 1:"
+            :custom-metadata="marsMetadataList"
+            :spectrum-picker-placeholder="null"
+          />
+        </template>
+      </ToolControlGroup>
     </template>
   </TemperatureLayout>
 </template>

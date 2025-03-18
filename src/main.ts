@@ -25,6 +25,7 @@ import MuseumHokusaiIdentifyBlues from './pages/Museum/MuseumHokusaiIdentifyBlue
 import MuseumHokusaiOtherBlues from './pages/Museum/MuseumHokusaiOtherBlues.vue';
 import MuseumHokusaiBlueFilter from './pages/Museum/MuseumHokusaiBlueFilter.vue';
 import MuseumHokusaiInfraredFilter from './pages/Museum/MuseumHokusaiInfraredFilter.vue';
+import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra.vue';
 
 library.add(faArrowUp);
 library.add(faPencil);
@@ -36,6 +37,11 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'tutorial', component: TemperatureTutorial },
       { path: 'predictions', component: TemperaturePredictions },
+      {
+        path: 'stars',
+        redirect: '/temperature/stars/spectra',
+        children: [{ path: 'spectra', component: TemperatureStarsSpectra }],
+      },
     ],
   },
   {

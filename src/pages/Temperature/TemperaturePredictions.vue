@@ -7,7 +7,7 @@
             <BCol cols="1"></BCol>
             <BCol><h2 class="h4">Temperature and Colors from Spectra</h2></BCol>
           </BRow>
-          <BRow class="px-3">
+          <BRow>
             <BCol cols="1">
               <InstructionIcon name="Notebook" />
             </BCol>
