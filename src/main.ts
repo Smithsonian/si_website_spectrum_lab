@@ -33,6 +33,7 @@ import MuseumHokusaiInfraredFilter from './pages/Museum/MuseumHokusaiInfraredFil
 import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra.vue';
 import TemperatureStarsMeasuring from './pages/Temperature/TemperatureStarsMeasuring.vue';
 import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandescentBulb.vue';
+import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft);
 
@@ -52,6 +53,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       { path: 'incandescentbulb', component: TemperatureIncandescentBulb },
+      { path: 'earth', component: TemperatureEarth },
     ],
   },
   {

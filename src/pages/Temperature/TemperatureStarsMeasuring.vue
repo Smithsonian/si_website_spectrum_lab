@@ -68,7 +68,7 @@
           <NextPrevButton to="spectra" direction="prev">part 1</NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="../incandescent" direction="next"
+          <NextPrevButton to="../incandescentbulb" direction="next"
             >next section</NextPrevButton
           >
         </template>
