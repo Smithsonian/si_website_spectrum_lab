@@ -56,7 +56,7 @@
           />
         </template>
       </ToolControlGroup>
-      <LeftRightGroup>
+      <LeftRightGroup class="mt-5">
         <template #right>
           <NextPrevButton direction="next" to="predictions">
             next section

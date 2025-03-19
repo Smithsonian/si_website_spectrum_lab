@@ -41,7 +41,7 @@
           />
         </div>
       </ChallengeCard>
-      <LeftRightGroup>
+      <LeftRightGroup class="mt-5">
         <template #right>
           <NextPrevButton direction="next" to="stars" light>
             next section

@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-between mt-5">
+  <div class="d-flex justify-content-between">
     <div>
       <slot name="left"></slot>
     </div>

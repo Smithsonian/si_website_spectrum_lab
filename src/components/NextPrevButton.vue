@@ -16,7 +16,7 @@ import { computed } from 'vue';
 type Direction = 'next' | 'prev';
 
 const props = defineProps<{
-  to: string;
+  to?: string;
   direction: Direction;
   light?: boolean;
 }>();

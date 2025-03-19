@@ -4,18 +4,19 @@
       <ChallengeCard>
         <BRow class="my-3">
           <BCol cols="1"></BCol>
-          <BCol><h2 class="h4">Part 1: Spectra of Stars</h2></BCol>
+          <BCol><h2 class="h4">Part 2: Measuring Temperatures</h2></BCol>
         </BRow>
         <BRow class="mb-3">
           <BCol cols="1">
             <InstructionIcon name="Tool" />
           </BCol>
           <BCol>
-            <p class="mb-2">
+            <p>
               <strong>Spectrum Tool.</strong> Using the
               <em>Target Object</em> menu, compare the spectrum of each star:
-              Sun, M star, and B star. Adjust the wavelength slider so you can
-              see their whole spectrum.
+              Sun, M star, and B star. Using the
+              <em>Comparison Object</em> menu, examine thermal spectra models
+              for different temperatures (in Kelvin).
             </p>
           </BCol>
         </BRow>
@@ -25,25 +26,22 @@
           </BCol>
           <BCol>
             <p class="mb-2">
-              <strong>Spectrum Notebook.</strong> Answer the following questions
-              in the <em>Spectra of Stars</em> section:
+              <strong>Spectrum Notebook.</strong> Answer this question in the
+              table of the <em>Spectra of Stars</em> section:
             </p>
             <ol class="fw-light">
               <li class="mb-2">
-                At what wavelength does the Sun emit the most light? Hint: Where
-                is the y-value roughly the highest?
-              </li>
-              <li class="mb-2">
-                What is the energy associated with that wavelength? Use the
-                measuring tool, first changing the wavelength unit to electron
-                volts!
-              </li>
-              <li class="mb-2">
-                Based on the brightness of light across the visible part of the
-                spectrum, what color would you expect this type of star to
-                appear?
+                Comparing the spectrum of the star with the model spectra, what
+                temperature thermal (blackbody) spectrum best matches the stars
+                spectrum?
               </li>
             </ol>
+            <p class="fw-light">
+              Note: The y-values of these model spectra are not plotted on the
+              same scale—they have been modified so they can all be plotted in
+              the range of the tool. The key is to compare the overall shape of
+              the curves, and most importantly, where the peaks are.
+            </p>
           </BCol>
         </BRow>
       </ChallengeCard>
@@ -57,12 +55,22 @@
             spectrum-picker-placeholder="select star"
           />
         </template>
+        <template #bottom-tool>
+          <ToolCard
+            title="Spectrum 2:"
+            :custom-metadata="blackbodyList"
+            spectrum-picker-placeholder="select blackbody"
+          />
+        </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton to="spectra" direction="prev">part 1</NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton to="measuring" direction="next">
-            part 2
-          </NextPrevButton>
+          <NextPrevButton to="../incandescent" direction="next"
+            >next section</NextPrevButton
+          >
         </template>
       </LeftRightGroup>
     </template>
@@ -70,11 +78,11 @@
 </template>
 
 <script setup lang="ts">
-import { useCustomMetadata } from '@/utils/metadataUtils';
+import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
 import { useHead } from '@unhead/vue';
 
 useHead({
-  title: 'Spectrum Lab | Temperature: Stars Part 1',
+  title: 'Spectrum Lab | Temperature: Stars Part 2',
 });
 
 const sunMetadata = useCustomMetadata('Stars', 'sun_ref_colina96', {});
@@ -82,4 +90,7 @@ const mStarMetadata = useCustomMetadata('Stars', 'M_Star', {});
 const bStarMetadata = useCustomMetadata('Stars', 'B_Star', {});
 const starMetadataListMaybe = [sunMetadata, mStarMetadata, bStarMetadata];
 const starMetadataList = starMetadataListMaybe.filter((md) => !!md);
+
+const allMetadata = useAllMetadata();
+const blackbodyList = allMetadata['Thermal Spectra'];
 </script>
