@@ -5,7 +5,12 @@ import 'video.js/dist/video-js.css';
 import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowUp, faPencil } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowUp,
+  faChevronLeft,
+  faChevronRight,
+  faPencil,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import App from './App.vue';
@@ -27,8 +32,7 @@ import MuseumHokusaiBlueFilter from './pages/Museum/MuseumHokusaiBlueFilter.vue'
 import MuseumHokusaiInfraredFilter from './pages/Museum/MuseumHokusaiInfraredFilter.vue';
 import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra.vue';
 
-library.add(faArrowUp);
-library.add(faPencil);
+library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft);
 
 const routes: RouteRecordRaw[] = [
   {

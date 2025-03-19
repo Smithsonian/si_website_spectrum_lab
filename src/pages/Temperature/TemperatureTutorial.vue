@@ -56,6 +56,13 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup>
+        <template #right>
+          <NextPrevButton direction="next" to="predictions">
+            next section
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </TemperatureLayout>
 </template>

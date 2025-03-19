@@ -41,6 +41,13 @@
           />
         </div>
       </ChallengeCard>
+      <LeftRightGroup>
+        <template #right>
+          <NextPrevButton direction="next" to="stars" light>
+            next section
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </TemperatureLayout>
 </template>
