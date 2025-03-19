@@ -47,13 +47,11 @@
 
 <script setup lang="ts">
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_910.webp';
 import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_big.webp';
+import { useSpecLabHead } from '@/utils/locationUtils';
 
-useHead({
-  title: 'Spectrum Lab | Museum Paint Colors',
-});
+useSpecLabHead('Paint Colors', 'Museum');
 
 const chokhaR1 = useCustomMetadata(
   'Museum Conservation',

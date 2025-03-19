@@ -52,12 +52,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { imageUrlFromPath, useCustomMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Two Blues',
-});
+useSpecLabHead('Infrared filter', 'Museum');
 
 const hokusaiB1 = useCustomMetadata(
   'Museum Conservation',

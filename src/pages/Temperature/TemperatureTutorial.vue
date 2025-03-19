@@ -68,12 +68,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Temperature: Tutorial',
-});
+useSpecLabHead('Tutorial', 'Temperature');
 
 const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];

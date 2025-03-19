@@ -53,9 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue';
+import { useSpecLabHead } from '@/utils/locationUtils';
 
-useHead({
-  title: 'Spectrum Lab | Temperature: Predictions',
-});
+useSpecLabHead('Predictions', 'Temperature');
 </script>

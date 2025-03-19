@@ -47,16 +47,14 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import {
   useCustomMetadata,
   useAllMetadata,
   imageUrlFromPath,
 } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Two Blues',
-});
+useSpecLabHead('Identify pigments', 'Museum');
 
 const hokusaiB1 = useCustomMetadata(
   'Museum Conservation',

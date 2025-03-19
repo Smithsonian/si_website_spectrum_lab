@@ -38,9 +38,7 @@
 
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
-import { useHead } from '@unhead/vue';
+import { useSpecLabHead } from '@/utils/locationUtils';
 
-useHead({
-  title: 'Spectrum Lab | Museum Intro',
-});
+useSpecLabHead('Intro', 'Museum');
 </script>

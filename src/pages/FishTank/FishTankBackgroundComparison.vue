@@ -42,12 +42,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Fishtank Background Part IIa',
-});
+useSpecLabHead('Background Part IIa', 'Fishtank');
 
 const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
   imageUrl: '',

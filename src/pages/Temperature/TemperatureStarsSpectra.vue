@@ -70,12 +70,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Temperature: Stars Part 1',
-});
+useSpecLabHead('Stars Part 1', 'Temperature');
 
 const sunMetadata = useCustomMetadata('Stars', 'sun_ref_colina96', {});
 const mStarMetadata = useCustomMetadata('Stars', 'M_Star', {});

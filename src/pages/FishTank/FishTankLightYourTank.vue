@@ -42,12 +42,10 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
-import { useHead } from '@unhead/vue';
 
-useHead({
-  title: 'Spectrum Lab | Fishtank Light Your Tank',
-});
+useSpecLabHead('Light Your Tank', 'Fishtank');
 
 const allMetadata = useAllMetadata();
 const fishtankMetadata = allMetadata['Fish Tank'];

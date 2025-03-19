@@ -28,11 +28,9 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@unhead/vue';
+import { useSpecLabHead } from '@/utils/locationUtils';
 
-useHead({
-  title: 'Spectrum Lab | Playground',
-});
+useSpecLabHead('Playground');
 </script>
 
 <style>
