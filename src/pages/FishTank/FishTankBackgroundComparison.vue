@@ -37,6 +37,11 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #right>
+          <NextPrevButton direction="next" to="page-2">page 2</NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </FishTankLayout>
 </template>

@@ -37,6 +37,13 @@
           <ToolCard title="Draw a Spectrum" draw-only />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #right>
+          <NextPrevButton direction="next" to="mood-lighting"
+            >next section</NextPrevButton
+          >
+        </template>
+      </LeftRightGroup>
     </template>
   </FishTankLayout>
 </template>

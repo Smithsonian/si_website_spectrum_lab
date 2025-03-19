@@ -3,45 +3,20 @@
     <template #challenge-col>
       <BRow>
         <BCol cols="3">
-          <nav>
-            <ul class="nav nav-pills flex-column">
-              <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/fishtank/background-trees"
-                  >Background Part I</RouterLink
-                >
-              </li>
-              <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/fishtank/background-comparison"
-                  >Background Part IIa</RouterLink
-                >
-              </li>
-              <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/fishtank/background-reveal"
-                  >Background Part IIb</RouterLink
-                >
-              </li>
-              <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/fishtank/light-your-tank"
-                  >Light Your Tank</RouterLink
-                >
-              </li>
-              <li class="nav-item">
-                <RouterLink
-                  class="section-nav-link nav-link"
-                  to="/fishtank/mood-lighting"
-                  >Bonus: Mood Lighting</RouterLink
-                >
-              </li>
-            </ul>
-          </nav>
+          <SectionNav>
+            <SectionNavItem to="/fishtank/background-1">
+              Background Part I
+            </SectionNavItem>
+            <SectionNavItem to="/fishtank/background-2">
+              Background Part II
+            </SectionNavItem>
+            <SectionNavItem to="/fishtank/light-your-tank">
+              Light Your Tank
+            </SectionNavItem>
+            <SectionNavItem to="/fishtank/mood-lighting">
+              Bonus: Mood Lighting
+            </SectionNavItem>
+          </SectionNav>
         </BCol>
         <BCol>
           <ChallengeIntro

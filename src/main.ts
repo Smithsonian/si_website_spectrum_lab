@@ -58,16 +58,16 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/fishtank',
-    redirect: '/fishtank/background-trees',
+    redirect: '/fishtank/background-1',
     children: [
-      { path: 'background-trees', component: FishTankBackgroundTrees },
+      { path: 'background-1', component: FishTankBackgroundTrees },
       {
-        path: 'background-comparison',
-        component: FishTankBackgroundComparison,
-      },
-      {
-        path: 'background-reveal',
-        component: FishTankBackgroundReveal,
+        path: 'background-2',
+        redirect: '/fishtank/background-2/page-1',
+        children: [
+          { path: 'page-1', component: FishTankBackgroundComparison },
+          { path: 'page-2', component: FishTankBackgroundReveal },
+        ],
       },
       {
         path: 'light-your-tank',

@@ -32,6 +32,16 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton direction="prev" to="page-1">page 1</NextPrevButton>
+        </template>
+        <template #right>
+          <NextPrevButton direction="next" to="../light-your-tank"
+            >next section</NextPrevButton
+          >
+        </template>
+      </LeftRightGroup>
     </template>
   </FishTankLayout>
 </template>
