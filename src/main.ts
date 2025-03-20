@@ -10,6 +10,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faPencil,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -35,7 +36,7 @@ import TemperatureStarsMeasuring from './pages/Temperature/TemperatureStarsMeasu
 import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandescentBulb.vue';
 import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
 
-library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft);
+library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
 const routes: RouteRecordRaw[] = [
   {

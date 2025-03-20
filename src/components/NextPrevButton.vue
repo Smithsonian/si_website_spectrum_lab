@@ -7,13 +7,16 @@
     <span v-if="direction === 'next'">
       {{ ' ' }}<FontAwesomeIcon :icon="['fas', 'chevron-right']" />
     </span>
+    <span v-if="direction === 'close'">
+      {{ ' ' }}<FontAwesomeIcon :icon="['fas', 'xmark']" size="lg" />
+    </span>
   </BButton>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 
-type Direction = 'next' | 'prev';
+type Direction = 'next' | 'prev' | 'close';
 
 const props = defineProps<{
   to?: string;
@@ -22,7 +25,16 @@ const props = defineProps<{
 }>();
 
 const directionDisplay = computed((): string => {
-  return props.direction === 'prev' ? 'back' : 'next';
+  switch (props.direction) {
+    case 'next':
+      return 'next';
+    case 'prev':
+      return 'back';
+    case 'close':
+      return 'close';
+    default:
+      return '';
+  }
 });
 </script>
 
