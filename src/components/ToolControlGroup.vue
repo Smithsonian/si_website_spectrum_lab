@@ -25,16 +25,19 @@
       </BFormGroup>
     </BCol>
     <BCol v-if="showZoom" cols="4">
-      <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
-        <BFormInput
-          id="zoom"
-          v-model="zoomPercent"
-          type="range"
-          min="2"
-          max="200"
-          class="zoom-slider"
-        />
-      </BFormGroup>
+      <div class="position-relative">
+        <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
+          <BFormInput
+            id="zoom"
+            v-model="zoomPercent"
+            type="range"
+            min="2"
+            max="200"
+            class="zoom-slider"
+          />
+        </BFormGroup>
+        <TempTutPopupSlider />
+      </div>
     </BCol>
   </BRow>
   <!-- Div needed to clear the row -->

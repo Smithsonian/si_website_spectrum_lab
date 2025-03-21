@@ -21,6 +21,7 @@ defineProps<{ width: string }>();
 .tutorial-origin {
   width: 13px;
   height: 13px;
+  z-index: 100;
 }
 .tutorial-arrow {
   width: 0;

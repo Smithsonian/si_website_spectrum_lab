@@ -58,7 +58,11 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="predictions">
+          <NextPrevButton
+            v-if="tutorialState === 'nextSection'"
+            direction="next"
+            to="predictions"
+          >
             next section
           </NextPrevButton>
         </template>
@@ -70,9 +74,14 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
+import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
 
 useSpecLabHead('Tutorial', 'Temperature');
 
 const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];
+
+// Initialize the tutorial state and start the first popup
+const { tutorialState, goToNext } = useTempTutorialStateMachine();
+goToNext();
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <TutorialPopup width="500px">
+  <TutorialPopup v-if="tutorialState === 'spectrumImage'" width="500px">
     <p>
       This bar represents the <strong>spectrum image</strong>—what you see
       through a spectroscope when a light source is split by a diffraction
@@ -7,8 +7,14 @@
     </p>
     <LeftRightGroup>
       <template #right>
-        <NextPrevButton direction="next" light />
+        <NextPrevButton direction="next" light @click="goToNext" />
       </template>
     </LeftRightGroup>
   </TutorialPopup>
 </template>
+
+<script setup lang="ts">
+import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+
+const { tutorialState, goToNext } = useTempTutorialStateMachine();
+</script>

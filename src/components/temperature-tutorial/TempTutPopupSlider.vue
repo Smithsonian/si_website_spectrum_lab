@@ -1,5 +1,5 @@
 <template>
-  <TutorialPopup width="600px">
+  <TutorialPopup v-if="tutorialState === 'slider'" width="600px">
     <p>
       This <strong>slider</strong> lets you change the range of wavelengths that
       is plotted on the x-axis.
@@ -17,11 +17,17 @@
     </p>
     <LeftRightGroup>
       <template #left>
-        <NextPrevButton direction="prev" light />
+        <NextPrevButton direction="prev" light @click="goToPrev" />
       </template>
       <template #right>
-        <NextPrevButton direction="close" light />
+        <NextPrevButton direction="close" light @click="goToNext" />
       </template>
     </LeftRightGroup>
   </TutorialPopup>
 </template>
+
+<script setup lang="ts">
+import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+
+const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
+</script>

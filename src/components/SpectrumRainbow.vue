@@ -1,22 +1,25 @@
 <template>
   <div class="rainbow-offset">
-    <div class="rainbow-div position-relative overflow-hidden rounded-top-4">
-      <canvas
-        ref="background"
-        :width="CHART_WIDTH"
-        :height="RAINBOW_HEIGHT"
-        class="d-block"
-        >Full-intensity spectrum background</canvas
-      >
-      <canvas
-        ref="overlay"
-        class="position-absolute"
-        style="top: 0px; left: 0px"
-        :width="CHART_WIDTH"
-        :height="RAINBOW_HEIGHT"
-        >Transparency increases or decreases based on chart intensity, hiding or
-        revealing the background</canvas
-      >
+    <div class="position-relative">
+      <div class="rainbow-div position-relative overflow-hidden rounded-top-4">
+        <canvas
+          ref="background"
+          :width="CHART_WIDTH"
+          :height="RAINBOW_HEIGHT"
+          class="d-block"
+          >Full-intensity spectrum background</canvas
+        >
+        <canvas
+          ref="overlay"
+          class="position-absolute"
+          style="top: 0px; left: 0px"
+          :width="CHART_WIDTH"
+          :height="RAINBOW_HEIGHT"
+          >Transparency increases or decreases based on chart intensity, hiding
+          or revealing the background</canvas
+        >
+      </div>
+      <TempTutPopupSpectrumImage />
     </div>
   </div>
 </template>

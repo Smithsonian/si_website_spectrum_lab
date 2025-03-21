@@ -1,5 +1,5 @@
 <template>
-  <TutorialPopup width="500px">
+  <TutorialPopup v-if="tutorialState === 'spectrumGraph'" width="500px">
     <p>
       This is the <strong>spectrum graph</strong>, which is a plot of the
       spectrum. It shows how much light the source emits or reflects at a given
@@ -8,11 +8,17 @@
     </p>
     <LeftRightGroup>
       <template #left>
-        <NextPrevButton direction="prev" light />
+        <NextPrevButton direction="prev" light @click="goToPrev" />
       </template>
       <template #right>
-        <NextPrevButton direction="next" light />
+        <NextPrevButton direction="next" light @click="goToNext" />
       </template>
     </LeftRightGroup>
   </TutorialPopup>
 </template>
+
+<script setup lang="ts">
+import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+
+const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
+</script>

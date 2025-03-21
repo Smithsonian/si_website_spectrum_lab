@@ -1,7 +1,14 @@
 <template>
-  <canvas ref="chart" :width="CHART_WIDTH" :height="CHART_HEIGHT" class="chart"
-    >Spectrum intensity vs wavelength chart</canvas
-  >
+  <div class="position-relative">
+    <canvas
+      ref="chart"
+      :width="CHART_WIDTH"
+      :height="CHART_HEIGHT"
+      class="d-block"
+      >Spectrum intensity vs wavelength chart</canvas
+    >
+    <TempTutPopupSpectrumGraph />
+  </div>
 </template>
 
 <script setup lang="ts">

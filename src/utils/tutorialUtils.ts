@@ -2,6 +2,7 @@ import { inject, provide, ref, type InjectionKey, type Ref } from 'vue';
 
 // Temperature tutorial state machine
 const TEMP_TUTORIAL_STATE_ORDER = [
+  'hide',
   'spectrumImage',
   'spectrumGraph',
   'slider',
@@ -11,7 +12,7 @@ const TEMP_TUTORIAL_STATE_ORDER = [
 type TempTutorialState = (typeof TEMP_TUTORIAL_STATE_ORDER)[number];
 
 interface TempTutorialStateMachine {
-  state: Readonly<Ref<TempTutorialState>>;
+  tutorialState: Readonly<Ref<TempTutorialState>>;
   goToNext: () => void;
   goToPrev: () => void;
 }
@@ -21,7 +22,7 @@ const tempTutorialKey = Symbol(
 ) as InjectionKey<TempTutorialStateMachine>;
 
 const createTempTutorialStateMachine = (): TempTutorialStateMachine => {
-  const state = ref<TempTutorialState>('spectrumImage');
+  const state = ref<TempTutorialState>('hide');
 
   const goToNext = () => {
     const index = TEMP_TUTORIAL_STATE_ORDER.indexOf(state.value);
@@ -44,7 +45,7 @@ const createTempTutorialStateMachine = (): TempTutorialStateMachine => {
   };
 
   return {
-    state,
+    tutorialState: state,
     goToNext,
     goToPrev,
   };
