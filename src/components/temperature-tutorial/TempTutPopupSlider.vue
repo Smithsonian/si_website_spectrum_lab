@@ -15,6 +15,12 @@
       below) includes types of light—gamma ray, x-ray, microwave, and radio—that
       are not shown in our tool.
     </p>
+    <div class="mb-3">
+      <img
+        src="/src/assets/SVG/em_spectrum_diagram.svg"
+        alt="Electromagnetic spectrum diagram"
+      />
+    </div>
     <LeftRightGroup>
       <template #left>
         <NextPrevButton direction="prev" light @click="goToPrev" />

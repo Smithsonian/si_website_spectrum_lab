@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 513.88 91.31">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: OpenSans-Italic, 'Open Sans';
+        font-style: italic;
+      }
+
+      .cls-1, .cls-2 {
+        font-size: 12px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #00456c;
+        font-family: OpenSans-Regular, 'Open Sans';
+      }
+
+      .cls-3 {
+        font-size: 14px;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+        opacity: .7;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #3a678a;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-6 {
+        fill: #3a678a;
+      }
+
+      .cls-7 {
+        letter-spacing: -.06em;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="248.35" y1="33.13" x2="255.89" y2="33.13" gradientUnits="userSpaceOnUse">
+      <stop offset=".04" stop-color="#a630ff"/>
+      <stop offset=".04" stop-color="#a12eff"/>
+      <stop offset=".07" stop-color="#681eff"/>
+      <stop offset=".1" stop-color="#3b11ff"/>
+      <stop offset=".13" stop-color="#1a07ff"/>
+      <stop offset=".16" stop-color="#0702ff"/>
+      <stop offset=".17" stop-color="blue"/>
+      <stop offset=".19" stop-color="#0309ff"/>
+      <stop offset=".21" stop-color="#0c23ff"/>
+      <stop offset=".24" stop-color="#1a4dff"/>
+      <stop offset=".28" stop-color="#2e87ff"/>
+      <stop offset=".32" stop-color="#47d1ff"/>
+      <stop offset=".33" stop-color="#52efff"/>
+      <stop offset=".35" stop-color="#4ce9d3"/>
+      <stop offset=".36" stop-color="#46e2a2"/>
+      <stop offset=".38" stop-color="#41dd79"/>
+      <stop offset=".4" stop-color="#3dd959"/>
+      <stop offset=".42" stop-color="#3ad642"/>
+      <stop offset=".43" stop-color="#38d434"/>
+      <stop offset=".45" stop-color="#38d430"/>
+      <stop offset=".46" stop-color="#49d72b"/>
+      <stop offset=".5" stop-color="#77e120"/>
+      <stop offset=".55" stop-color="#c0f10f"/>
+      <stop offset=".58" stop-color="#ff0"/>
+      <stop offset=".6" stop-color="#ffeb00"/>
+      <stop offset=".7" stop-color="#ff7b00"/>
+      <stop offset=".72" stop-color="#ff5d00"/>
+      <stop offset=".76" stop-color="#ff3c00"/>
+      <stop offset=".8" stop-color="#ff2100"/>
+      <stop offset=".84" stop-color="#ff0e00"/>
+      <stop offset=".89" stop-color="#ff0300"/>
+      <stop offset=".93" stop-color="red"/>
+    </linearGradient>
+  </defs>
+  <g id="datalabs">
+    <g>
+      <g>
+        <text class="cls-3" transform="translate(11.35 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(26.52 65.15) scale(.58)"><tspan x="0" y="0">-8</tspan></text>
+        <text class="cls-3" transform="translate(70.34 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(85.51 65.15) scale(.58)"><tspan x="0" y="0">-6</tspan></text>
+        <text class="cls-3" transform="translate(129.34 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(144.51 65.15) scale(.58)"><tspan x="0" y="0">-4</tspan></text>
+        <text class="cls-3" transform="translate(188.34 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(203.51 65.15) scale(.58)"><tspan x="0" y="0">-2</tspan></text>
+        <text class="cls-3" transform="translate(306.33 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(321.5 65.15) scale(.58)"><tspan x="0" y="0">2</tspan></text>
+        <text class="cls-3" transform="translate(365.32 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(380.49 65.15) scale(.58)"><tspan x="0" y="0">4</tspan></text>
+        <text class="cls-3" transform="translate(424.32 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(439.49 65.15) scale(.58)"><tspan x="0" y="0">6</tspan></text>
+        <text class="cls-3" transform="translate(247.33 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(262.5 65.15) scale(.58)"><tspan x="0" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(483.31 69.81)"><tspan class="cls-7" x="0" y="0">1</tspan><tspan x="7.17" y="0">0</tspan></text>
+        <text class="cls-3" transform="translate(498.48 65.15) scale(.58)"><tspan x="0" y="0">8</tspan></text>
+      </g>
+      <rect class="cls-4" x="248.39" y="21.24" width="7.54" height="23.78"/>
+      <g>
+        <line class="cls-5" x1="2.17" y1="45.49" x2="511.71" y2="45.49"/>
+        <polygon class="cls-6" points="8.8 53.67 10.16 52.21 2.94 45.49 10.16 38.78 8.8 37.31 0 45.49 8.8 53.67"/>
+        <polygon class="cls-6" points="505.08 53.67 503.72 52.21 510.94 45.49 503.72 38.78 505.08 37.31 513.88 45.49 505.08 53.67"/>
+      </g>
+      <g>
+        <text class="cls-2" transform="translate(20.59 33.13)"><tspan x="0" y="0">gamma ray</tspan></text>
+        <text class="cls-2" transform="translate(125.34 33.13)"><tspan x="0" y="0">X-ray</tspan></text>
+        <text class="cls-2" transform="translate(179.5 33.15)"><tspan x="0" y="0">ultraviolet</tspan></text>
+        <text class="cls-2" transform="translate(279.44 33.15)"><tspan x="0" y="0">infrared</tspan></text>
+        <text class="cls-2" transform="translate(345.85 33.15)"><tspan x="0" y="0">microwave</tspan></text>
+        <text class="cls-2" transform="translate(449.15 33.15)"><tspan x="0" y="0">radio</tspan></text>
+        <text class="cls-2" transform="translate(234.63 14.73)"><tspan x="0" y="0">visible</tspan></text>
+      </g>
+      <text class="cls-1" transform="translate(.57 86.56)"><tspan x="0" y="0">wavelength in microns</tspan></text>
+      <text class="cls-1" transform="translate(.57 10.28)"><tspan x="0" y="0">types of light</tspan></text>
+    </g>
+  </g>
+</svg>
