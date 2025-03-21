@@ -1,5 +1,10 @@
 <template>
-  <TutorialPopup v-if="tutorialState === 'slider'" width="600px">
+  <TutorialPopup
+    v-if="tutorialState === 'slider'"
+    width="600px"
+    bottom="10px"
+    left="200px"
+  >
     <p>
       This <strong>slider</strong> lets you change the range of wavelengths that
       is plotted on the x-axis.

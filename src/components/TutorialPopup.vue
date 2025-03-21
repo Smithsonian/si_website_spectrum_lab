@@ -1,7 +1,7 @@
 <template>
   <div
     class="tutorial-origin position-absolute"
-    style="width: 13px; height: 13px"
+    :style="{ bottom: bottom, left: left }"
   >
     <div class="tutorial-arrow position-absolute"></div>
     <div
@@ -14,13 +14,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ width: string }>();
+defineProps<{ width: string; bottom: string; left: string }>();
 </script>
 
 <style>
 .tutorial-origin {
-  width: 13px;
-  height: 13px;
   z-index: 100;
 }
 .tutorial-arrow {

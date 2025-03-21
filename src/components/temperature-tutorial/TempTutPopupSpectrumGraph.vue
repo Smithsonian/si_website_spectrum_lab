@@ -1,5 +1,10 @@
 <template>
-  <TutorialPopup v-if="tutorialState === 'spectrumGraph'" width="500px">
+  <TutorialPopup
+    v-if="tutorialState === 'spectrumGraph'"
+    width="500px"
+    bottom="25px"
+    left="200px"
+  >
     <p>
       This is the <strong>spectrum graph</strong>, which is a plot of the
       spectrum. It shows how much light the source emits or reflects at a given

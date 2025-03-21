@@ -1,5 +1,10 @@
 <template>
-  <TutorialPopup v-if="tutorialState === 'spectrumImage'" width="500px">
+  <TutorialPopup
+    v-if="tutorialState === 'spectrumImage'"
+    width="500px"
+    bottom="13px"
+    left="100px"
+  >
     <p>
       This bar represents the <strong>spectrum image</strong>—what you see
       through a spectroscope when a light source is split by a diffraction
