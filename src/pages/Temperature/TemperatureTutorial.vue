@@ -8,7 +8,7 @@
         </BRow>
         <BRow>
           <BCol cols="1">
-            <InstructionIcon name="Tutorial" />
+            <InstructionIcon rowType="Tutorial" />
           </BCol>
           <BCol>
             <p>
@@ -20,7 +20,7 @@
         </BRow>
         <BRow>
           <BCol cols="1">
-            <InstructionIcon name="Notebook" />
+            <InstructionIcon rowType="Notebook" />
           </BCol>
           <BCol>
             <p class="mb-2">

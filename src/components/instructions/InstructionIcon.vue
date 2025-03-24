@@ -12,11 +12,11 @@ import { computed } from 'vue';
 import tutorialIcon from '@/assets/SVG/tutorial_instruction.svg';
 import notebookIcon from '@/assets/SVG/notebook_instruction.svg';
 import toolIcon from '@/assets/SVG/tool_instruction.svg';
+import type { InstructionRowType } from '@/constants';
 
-type InstructionIconName = 'Tutorial' | 'Notebook' | 'Tool';
-const props = defineProps<{ name: InstructionIconName }>();
+const props = defineProps<{ rowType: InstructionRowType }>();
 const iconPath = computed(() => {
-  switch (props.name) {
+  switch (props.rowType) {
     case 'Tutorial':
       return tutorialIcon;
     case 'Notebook':
@@ -29,7 +29,7 @@ const iconPath = computed(() => {
 });
 // Help line up the different icons
 const extraPadding = computed(() => {
-  if (props.name === 'Notebook') {
+  if (props.rowType === 'Notebook') {
     return '2px';
   }
   return '0';
