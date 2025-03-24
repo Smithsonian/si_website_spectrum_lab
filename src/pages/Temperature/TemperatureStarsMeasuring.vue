@@ -2,48 +2,30 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <BRow class="my-3">
-          <BCol cols="1"></BCol>
-          <BCol><h2 class="h4">Part 2: Measuring Temperatures</h2></BCol>
-        </BRow>
-        <BRow class="mb-3">
-          <BCol cols="1">
-            <InstructionIcon rowType="Tool" />
-          </BCol>
-          <BCol>
-            <p>
-              <strong>Spectrum Tool.</strong> Using the
-              <em>Target Object</em> menu, compare the spectrum of each star:
-              Sun, M star, and B star. Using the
-              <em>Comparison Object</em> menu, examine thermal spectra models
-              for different temperatures (in Kelvin).
-            </p>
-          </BCol>
-        </BRow>
-        <BRow>
-          <BCol cols="1">
-            <InstructionIcon rowType="Notebook" />
-          </BCol>
-          <BCol>
-            <p class="mb-2">
-              <strong>Spectrum Notebook.</strong> Answer this question in the
-              table of the <em>Spectra of Stars</em> section:
-            </p>
-            <ol class="fw-light">
-              <li class="mb-2">
-                Comparing the spectrum of the star with the model spectra, what
-                temperature thermal (blackbody) spectrum best matches the stars
-                spectrum?
-              </li>
-            </ol>
-            <p class="fw-light">
-              Note: The y-values of these model spectra are not plotted on the
-              same scale—they have been modified so they can all be plotted in
-              the range of the tool. The key is to compare the overall shape of
-              the curves, and most importantly, where the peaks are.
-            </p>
-          </BCol>
-        </BRow>
+        <InstructionHeader>Part 2: Measuring Temperatures</InstructionHeader>
+        <InstructionRow rowType="Tool">
+          Using the <em>Target Object</em> menu, compare the spectrum of each
+          star: Sun, M star, and B star. Using the
+          <em>Comparison Object</em> menu, examine thermal spectra models for
+          different temperatures (in Kelvin).
+        </InstructionRow>
+        <InstructionRow rowType="Notebook">
+          Answer this question in the table of the
+          <em>Spectra of Stars</em> section:
+          <template #questions>
+            <InstructionQuestion>
+              Comparing the spectrum of the star with the model spectra, what
+              temperature thermal (blackbody) spectrum best matches the stars
+              spectrum?
+            </InstructionQuestion>
+          </template>
+          <template #note>
+            The y-values of these model spectra are not plotted on the same
+            scale—they have been modified so they can all be plotted in the
+            range of the tool. The key is to compare the overall shape of the
+            curves, and most importantly, where the peaks are.
+          </template>
+        </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>

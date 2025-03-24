@@ -2,48 +2,28 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <BRow class="my-3">
-          <BCol cols="1"></BCol>
-          <BCol><h2 class="h4">Tutorial</h2></BCol>
-        </BRow>
-        <BRow>
-          <BCol cols="1">
-            <InstructionIcon rowType="Tutorial" />
-          </BCol>
-          <BCol>
-            <p>
-              <strong>Spectrum Tool Introduction.</strong> Follow the tutorial
-              (below) to learn how to use the spectrum tool and review key
-              concepts.
-            </p>
-          </BCol>
-        </BRow>
-        <BRow>
-          <BCol cols="1">
-            <InstructionIcon rowType="Notebook" />
-          </BCol>
-          <BCol>
-            <p class="mb-2">
-              <strong>Spectrum Notebook.</strong> In the
-              <em>Temperature, Tutorial</em>
-              section, answer these questions:
-            </p>
-            <ol class="fw-light">
-              <li class="mb-2">
-                What is the relationship between the wavelength and energy of
-                light?
-              </li>
-              <li class="mb-2">
-                Why might it be useful to display a spectrum graph as a scatter
-                plot instead of a line chart?
-              </li>
-              <li>
-                What parts of the electromagnetic spectrum are not displayed on
-                the Spectrum Tool?
-              </li>
-            </ol>
-          </BCol>
-        </BRow>
+        <InstructionHeader>Tutorial</InstructionHeader>
+        <InstructionRow rowType="Tutorial">
+          Follow the tutorial (below) to learn how to use the spectrum tool and
+          review key concepts.
+        </InstructionRow>
+        <InstructionRow rowType="Notebook">
+          In the <em>Temperature, Tutorial</em> section, answer these questions:
+          <template #questions>
+            <InstructionQuestion>
+              What is the relationship between the wavelength and energy of
+              light?
+            </InstructionQuestion>
+            <InstructionQuestion>
+              Why might it be useful to display a spectrum graph as a scatter
+              plot instead of a line chart?
+            </InstructionQuestion>
+            <InstructionQuestion>
+              What parts of the electromagnetic spectrum are not displayed on
+              the Spectrum Tool?
+            </InstructionQuestion>
+          </template>
+        </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>
