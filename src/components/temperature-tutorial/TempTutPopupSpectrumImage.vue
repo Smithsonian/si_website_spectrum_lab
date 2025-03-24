@@ -2,7 +2,7 @@
   <TutorialPopup
     v-if="tutorialState === 'spectrumImage'"
     width="500px"
-    bottom="13px"
+    bottom="20px"
     left="100px"
   >
     <p>
