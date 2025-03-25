@@ -25,6 +25,7 @@ import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
+import MuseumChokha from './pages/Museum/MuseumChokha.vue';
 import MuseumPaintColors from './pages/Museum/MuseumPaintColors.vue';
 import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBlues.vue';
 import MuseumHokusaiIdentifyBlues from './pages/Museum/MuseumHokusaiIdentifyBlues.vue';
@@ -85,6 +86,14 @@ const routes: RouteRecordRaw[] = [
     redirect: '/museum/intro',
     children: [
       { path: 'intro', component: MuseumIntro },
+      {
+        path: 'paint-colors',
+        redirect: '/museum/paint-colors/chokha',
+        children: [
+          { path: 'chokha', component: MuseumChokha },
+          { path: 'paint-colors', component: MuseumPaintColors },
+        ],
+      },
       {
         path: 'paint-colors',
         component: MuseumPaintColors,
