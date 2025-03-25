@@ -35,10 +35,16 @@ import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra
 import TemperatureStarsMeasuring from './pages/Temperature/TemperatureStarsMeasuring.vue';
 import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandescentBulb.vue';
 import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
+import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
 const routes: RouteRecordRaw[] = [
+  {
+    path: '/spectra',
+    redirect: '/spectra/tutorial',
+    children: [{ path: 'tutorial', component: SpectraTutorial }],
+  },
   {
     path: '/temperature',
     redirect: '/temperature/tutorial',
