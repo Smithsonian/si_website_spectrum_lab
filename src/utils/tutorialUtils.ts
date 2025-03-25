@@ -40,6 +40,19 @@ function createMachine<S>(stateOrder: readonly S[]): TutorialStateMachine<S> {
   };
 }
 
+function useTutorialStateMachine<S>(
+  key: InjectionKey<TutorialStateMachine<S>>,
+  stateOrder: readonly S[],
+): TutorialStateMachine<S> {
+  const providedMachine = inject(key, null);
+  if (providedMachine) {
+    return providedMachine;
+  }
+  const newMachine = createMachine(stateOrder);
+  provide(key, newMachine);
+  return newMachine;
+}
+
 // Temperature tutorial state machine
 const TEMP_TUTORIAL_STATE_ORDER = [
   'hide',
@@ -57,11 +70,5 @@ const tempTutorialKey = Symbol('tempTutorial') as InjectionKey<
 
 export const useTempTutorialStateMachine =
   (): TutorialStateMachine<TempTutorialState> => {
-    const providedStateMachine = inject(tempTutorialKey, null);
-    if (providedStateMachine) {
-      return providedStateMachine;
-    }
-    const newStateMachine = createMachine(TEMP_TUTORIAL_STATE_ORDER);
-    provide(tempTutorialKey, newStateMachine);
-    return newStateMachine;
+    return useTutorialStateMachine(tempTutorialKey, TEMP_TUTORIAL_STATE_ORDER);
   };
