@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard remove-padding>
         <div class="py-3 px-3">
-          <InstructionHeader> Paint Colors and Spectra </InstructionHeader>
+          <InstructionHeader>Part 1: Chokha Painting </InstructionHeader>
           <InstructionRow rowType="Art">
             This painting by the artist Chokha is displayed at the Smithsonian's
             National Museum of Asian Art.
@@ -27,7 +27,7 @@
       </ChallengeCard>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton to="paint-colors" direction="next">
+          <NextPrevButton to="mystery" direction="next">
             Part 2
           </NextPrevButton>
         </template>

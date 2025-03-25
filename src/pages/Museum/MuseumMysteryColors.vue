@@ -3,7 +3,9 @@
     <template #challenge-tab>
       <ChallengeCard remove-padding>
         <div class="pt-3 px-3">
-          <InstructionHeader> Paint Colors and Spectra </InstructionHeader>
+          <InstructionHeader>
+            Part 2: Paint Colors and Spectra
+          </InstructionHeader>
           <InstructionRow rowType="Tool">
             Your task is to identify which "mystery pigment" spectrum
             corresponds to the labeled regions of interest.
@@ -52,7 +54,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="two-blues" direction="next" light>
+          <NextPrevButton to="../two-blues" direction="next" light>
             next
           </NextPrevButton>
         </template>
