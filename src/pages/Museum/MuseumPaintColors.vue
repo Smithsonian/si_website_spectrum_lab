@@ -1,34 +1,48 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard>
-        <h2>Paint Colors and Spectra</h2>
-        <BRow>
-          <BCol cols="12" lg="6">
-            <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
-          </BCol>
-          <BCol cols="12" lg="6">
-            <p>
-              This painting by the artist Chokha is displayed at the
-              Smithsonian's National Museum of Asian Art.
-            </p>
+      <ChallengeCard remove-padding>
+        <div class="pt-3 px-3">
+          <InstructionHeader> Paint Colors and Spectra </InstructionHeader>
+          <InstructionRow rowType="Art">
+            This painting by the artist Chokha is displayed at the Smithsonian's
+            National Museum of Asian Art.
             <p>
               Art conservators have taken reflection spectra of different
               regions of interest, marked by the white and black squares. The
               wavelengths of light that are reflected by the paint in the
               visible part of the spectrum determines what color our eyes see.
             </p>
-            <p>
-              Focus on the visible part of the spectrum for these four "mystery"
-              spectra and see if you can identify which regions of the painting
-              they were taken from.
-            </p>
-            <p>
-              <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your
-              answers in your <strong>Spectrum Notebook</strong>.
-            </p>
-          </BCol>
-        </BRow>
+          </InstructionRow>
+          <InstructionRow rowType="Tool">
+            Your task is to identify which "mystery pigment" spectrum
+            corresponds to the labeled regions of interest.
+            <ol>
+              <li class="mb-2">
+                Under <em>Paint Spectra</em>, use the
+                <em>Select mystery pigment</em> menu to view each spectrum.
+              </li>
+              <li class="mb-2">
+                Under <span style="font-weight: 600">Normalize?</span>, click
+                <span style="font-weight: 600">Visible</span>.
+              </li>
+              <li>
+                Use what you learned about how light colors mix (Module 2) to
+                identify what color corresponds to each spectrum.
+              </li>
+            </ol>
+          </InstructionRow>
+          <InstructionRow rowType="Notebook">
+            In the <em>Paint Colors</em> section, draw a line from each spectrum
+            to the corresponding region of interest on the painting.
+          </InstructionRow>
+        </div>
+        <div
+          class="rounded-bottom-4"
+          style="background-color: var(--gen-black)"
+        >
+          <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
+        </div>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -41,14 +55,21 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #right>
+          <NextPrevButton to="two-blues" direction="next" light>
+            next
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </MuseumLayout>
 </template>
 
 <script setup lang="ts">
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
 useSpecLabHead('Paint Colors', 'Museum');
