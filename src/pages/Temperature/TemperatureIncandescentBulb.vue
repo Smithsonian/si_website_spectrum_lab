@@ -16,11 +16,11 @@
           In the
           <em>Measuring the Temperature of an Incandescent Light Bulb</em>
           section, answer this question:
-          <template #questions>
-            <InstructionQuestion>
+          <template #steps>
+            <InstructionStep>
               What temperature thermal spectrum best matches the incandescent
               light bulb?
-            </InstructionQuestion>
+            </InstructionStep>
           </template>
           <template #note>
             The y-values of these model spectra are not plotted on the same

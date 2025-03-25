@@ -12,12 +12,12 @@
         <InstructionRow rowType="Notebook">
           Answer this question in the table of the
           <em>Spectra of Stars</em> section:
-          <template #questions>
-            <InstructionQuestion>
+          <template #steps>
+            <InstructionStep>
               Comparing the spectrum of the star with the model spectra, what
               temperature thermal (blackbody) spectrum best matches the stars
               spectrum?
-            </InstructionQuestion>
+            </InstructionStep>
           </template>
           <template #note>
             The y-values of these model spectra are not plotted on the same

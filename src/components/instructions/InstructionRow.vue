@@ -8,8 +8,8 @@
         <strong>{{ title }}</strong>
         <slot></slot>
       </p>
-      <ol v-if="$slots.questions" class="fw-light">
-        <slot name="questions"></slot>
+      <ol v-if="$slots.steps" class="fw-light">
+        <slot name="steps"></slot>
       </ol>
       <p v-if="$slots.note" class="fw-light">
         Note:

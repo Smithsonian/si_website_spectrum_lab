@@ -12,21 +12,21 @@
         <InstructionRow rowType="Notebook">
           In the <em>Measuring Earth’s Temperature</em> section, respond to
           these questions:
-          <template #questions>
-            <InstructionQuestion>
+          <template #steps>
+            <InstructionStep>
               Which model thermal spectrum best matches Earth’s emission
               spectrum?
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               Convert the temperature you identified in question 1 from Kelvin
               to Celsius. What type of light does Earth emit?
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               Given that Earth does not emit its own visible light, how are we
               able to see Earth from space? Hint: Recall from
               <em>1.&nbsp;Color</em> that light can be emitted, reflected,
               absorbed, and transmitted.
-            </InstructionQuestion>
+            </InstructionStep>
           </template>
         </InstructionRow>
       </ChallengeCard>
