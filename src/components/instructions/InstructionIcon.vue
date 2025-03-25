@@ -11,7 +11,8 @@
 import { computed } from 'vue';
 import tutorialIcon from '@/assets/SVG/tutorial_instruction.svg';
 import notebookIcon from '@/assets/SVG/notebook_instruction.svg';
-import toolIcon from '@/assets/SVG/tool_instruction.svg';
+import toolIcon from '@/assets/SVG/chart-bell-curve-cumulative.svg';
+import artIcon from '@/assets/SVG/palette-outline.svg';
 import type { InstructionRowType } from '@/constants';
 
 const props = defineProps<{ rowType: InstructionRowType }>();
@@ -23,6 +24,8 @@ const iconPath = computed(() => {
       return notebookIcon;
     case 'Tool':
       return toolIcon;
+    case 'Art':
+      return artIcon;
     default:
       return '';
   }

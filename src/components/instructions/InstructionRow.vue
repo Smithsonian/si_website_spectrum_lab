@@ -33,6 +33,8 @@ const title = computed(() => {
       return 'Spectrum Notebook.';
     case 'Tool':
       return 'Spectrum Tool.';
+    case 'Art':
+      return 'Artwork.';
     default:
       return '';
   }
