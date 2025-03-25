@@ -11,20 +11,20 @@
         <InstructionRow rowType="Notebook">
           Answer the following questions in the
           <em>Spectra of Stars</em> section:
-          <template #questions>
-            <InstructionQuestion>
+          <template #steps>
+            <InstructionStep>
               At what wavelength does the Sun emit the most light? Hint: Where
               is the y-value roughly the highest?
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               What is the energy associated with that wavelength? Use the
               measuring tool, first changing the wavelength unit to electron
               volts!
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               Based on the brightness of light across the visible part of the
               spectrum, what color would you expect this type of star to appear?
-            </InstructionQuestion>
+            </InstructionStep>
           </template>
         </InstructionRow>
       </ChallengeCard>

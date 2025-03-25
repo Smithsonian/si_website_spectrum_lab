@@ -9,15 +9,15 @@
           <InstructionRow rowType="Notebook">
             In the <em>Temperature and Colors from Spectra</em>
             section, answer these questions:
-            <template #questions>
-              <InstructionQuestion>
+            <template #steps>
+              <InstructionStep>
                 You see a red star and a blue star in the sky. Which do you
                 think has the higher temperature?
-              </InstructionQuestion>
-              <InstructionQuestion>
+              </InstructionStep>
+              <InstructionStep>
                 Explain why you chose the answer you did. It’s okay if you have
                 no idea! We will explain the answer in the next section.
-              </InstructionQuestion>
+              </InstructionStep>
             </template>
           </InstructionRow>
         </div>

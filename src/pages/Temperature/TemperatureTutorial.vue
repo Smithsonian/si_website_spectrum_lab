@@ -9,19 +9,19 @@
         </InstructionRow>
         <InstructionRow rowType="Notebook">
           In the <em>Temperature, Tutorial</em> section, answer these questions:
-          <template #questions>
-            <InstructionQuestion>
+          <template #steps>
+            <InstructionStep>
               What is the relationship between the wavelength and energy of
               light?
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               Why might it be useful to display a spectrum graph as a scatter
               plot instead of a line chart?
-            </InstructionQuestion>
-            <InstructionQuestion>
+            </InstructionStep>
+            <InstructionStep>
               What parts of the electromagnetic spectrum are not displayed on
               the Spectrum Tool?
-            </InstructionQuestion>
+            </InstructionStep>
           </template>
         </InstructionRow>
       </ChallengeCard>

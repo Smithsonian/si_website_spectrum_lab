@@ -1,5 +1,45 @@
 import { inject, provide, ref, type InjectionKey, type Ref } from 'vue';
 
+interface TutorialStateMachine<S> {
+  tutorialState: Readonly<Ref<S>>;
+  goToNext: () => void;
+  goToPrev: () => void;
+}
+
+function createMachine<S>(stateOrder: readonly S[]): TutorialStateMachine<S> {
+  const initialState = stateOrder[0];
+  if (!initialState) {
+    throw new Error('Need at least one state');
+  }
+  const state = ref<S>(initialState) as Ref<S>;
+
+  const goToNext = () => {
+    const index = stateOrder.indexOf(state.value);
+    if (index >= stateOrder.length) {
+      // At the end, do nothing
+      return;
+    }
+    const nextState = stateOrder[index + 1];
+    state.value = nextState;
+  };
+
+  const goToPrev = () => {
+    const index = stateOrder.indexOf(state.value);
+    if (index === 0) {
+      // At the beginning, do nothing
+      return;
+    }
+    const prevState = stateOrder[index - 1];
+    state.value = prevState;
+  };
+
+  return {
+    tutorialState: state,
+    goToNext,
+    goToPrev,
+  };
+}
+
 // Temperature tutorial state machine
 const TEMP_TUTORIAL_STATE_ORDER = [
   'hide',
@@ -11,52 +51,17 @@ const TEMP_TUTORIAL_STATE_ORDER = [
 
 type TempTutorialState = (typeof TEMP_TUTORIAL_STATE_ORDER)[number];
 
-interface TempTutorialStateMachine {
-  tutorialState: Readonly<Ref<TempTutorialState>>;
-  goToNext: () => void;
-  goToPrev: () => void;
-}
+const tempTutorialKey = Symbol('tempTutorial') as InjectionKey<
+  TutorialStateMachine<TempTutorialState>
+>;
 
-const tempTutorialKey = Symbol(
-  'tempTutorial',
-) as InjectionKey<TempTutorialStateMachine>;
-
-const createTempTutorialStateMachine = (): TempTutorialStateMachine => {
-  const state = ref<TempTutorialState>('hide');
-
-  const goToNext = () => {
-    const index = TEMP_TUTORIAL_STATE_ORDER.indexOf(state.value);
-    if (index >= TEMP_TUTORIAL_STATE_ORDER.length) {
-      // At the end, do nothing
-      return;
+export const useTempTutorialStateMachine =
+  (): TutorialStateMachine<TempTutorialState> => {
+    const providedStateMachine = inject(tempTutorialKey, null);
+    if (providedStateMachine) {
+      return providedStateMachine;
     }
-    const nextState = TEMP_TUTORIAL_STATE_ORDER[index + 1];
-    state.value = nextState;
+    const newStateMachine = createMachine(TEMP_TUTORIAL_STATE_ORDER);
+    provide(tempTutorialKey, newStateMachine);
+    return newStateMachine;
   };
-
-  const goToPrev = () => {
-    const index = TEMP_TUTORIAL_STATE_ORDER.indexOf(state.value);
-    if (index === 0) {
-      // At the beginning, do nothing
-      return;
-    }
-    const prevState = TEMP_TUTORIAL_STATE_ORDER[index - 1];
-    state.value = prevState;
-  };
-
-  return {
-    tutorialState: state,
-    goToNext,
-    goToPrev,
-  };
-};
-
-export const useTempTutorialStateMachine = (): TempTutorialStateMachine => {
-  const providedStateMachine = inject(tempTutorialKey, null);
-  if (providedStateMachine) {
-    return providedStateMachine;
-  }
-  const newStateMachine = createTempTutorialStateMachine();
-  provide(tempTutorialKey, newStateMachine);
-  return newStateMachine;
-};
