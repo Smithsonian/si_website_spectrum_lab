@@ -5,11 +5,9 @@
         <BCol cols="8">
           <p>
             <small>
-              Data Labs are part of NASA’s Universe of Learning, supported by
-              NASA Award #NNX16AC65A to the Space Telescope Science Institute,
-              working in partnership with Caltech/IPAC, Jet Propulsion
-              Laboratory, Smithsonian Astrophysical Observatory, and Sonoma
-              State University. © 2025. All Rights Reserved.
+              Smithsonian DataLabs is supported by the Smithsonian Institution’s
+              Together We Thrive initiative and funded in part by the Jeff Bezos
+              gift to the National Air and Space Museum.
             </small>
           </p>
         </BCol>
