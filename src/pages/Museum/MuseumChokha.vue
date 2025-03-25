@@ -41,5 +41,5 @@ import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_m
 import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Paint Colors', 'Museum');
+useSpecLabHead('Chokha Painting', 'Museum');
 </script>

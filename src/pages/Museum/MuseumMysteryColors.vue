@@ -9,20 +9,20 @@
           <InstructionRow rowType="Tool">
             Your task is to identify which "mystery pigment" spectrum
             corresponds to the labeled regions of interest.
-            <ol>
-              <li class="mb-2">
+            <template #steps>
+              <InstructionStep>
                 Under <em>Paint Spectra</em>, use the
                 <em>Select mystery pigment</em> menu to view each spectrum.
-              </li>
-              <li class="mb-2">
+              </InstructionStep>
+              <InstructionStep>
                 Under <span style="font-weight: 600">Normalize?</span>, click
                 <span style="font-weight: 600">Visible</span>.
-              </li>
-              <li>
+              </InstructionStep>
+              <InstructionStep>
                 Use what you learned about how light colors mix (Module 2) to
                 identify what color corresponds to each spectrum.
-              </li>
-            </ol>
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
             In the <em>Paint Colors</em> section, draw a line from each spectrum
@@ -69,7 +69,7 @@ import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_m
 import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Paint Colors', 'Museum');
+useSpecLabHead('Mystery Paints', 'Museum');
 
 const chokhaR1 = useCustomMetadata(
   'Museum Conservation',
