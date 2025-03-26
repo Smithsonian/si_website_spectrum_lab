@@ -131,7 +131,6 @@ const routes: RouteRecordRaw[] = [
       return { path: `/${to.params.fileName}` };
     },
   },
-  { path: '/', redirect: '/playground' },
 ];
 
 export const createApp = ViteSSG(
