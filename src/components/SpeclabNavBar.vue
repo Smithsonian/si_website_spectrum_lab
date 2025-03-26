@@ -6,12 +6,14 @@
     <BNavbarNav>
       <BNavText>
         <span class="vr bg-light text-light ms-5 me-3 h-100 align-top"></span>
-        <img
-          class="d-inline-block align-top"
-          src="/src/assets/SpecLabLogo@2x.png"
-          height="36"
-          width="230"
-        />
+        <RouterLink to="/">
+          <img
+            class="d-inline-block align-top"
+            src="/src/assets/SpecLabLogo@2x.png"
+            height="36"
+            width="230"
+          />
+        </RouterLink>
       </BNavText>
     </BNavbarNav>
     <BNavbarNav class="ms-auto">
