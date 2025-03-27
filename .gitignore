@@ -14,6 +14,7 @@ node_modules
 dist
 dist-ssr
 .vite-ssg-temp
+.temp
 
 # Generated type files
 components.d.ts

@@ -19,22 +19,12 @@
   <div class="bg-sl-muted-blue py-4">
     <BContainer class="px-4" style="margin-bottom: 150px">
       <BRow class="gx-5 mb-4">
-        <ModuleTile
-          :icon-path="colorIcon"
-          icon-alt="Color module icon"
-          title="1. Color"
-          to="/"
-        >
+        <ModuleTile :icon-source="colorIcon" title="1. Color" to="/">
           How does the interaction of light and matter affect the colors we see?
           Explore light emission, reflection, absorption, and transmission using
           hands-on materials and interactive simulations.
         </ModuleTile>
-        <ModuleTile
-          :icon-path="spectraIcon"
-          icon-alt="Spectra module icon"
-          title="2. Spectra"
-          to="/spectra"
-        >
+        <ModuleTile :icon-source="spectraIcon" title="2. Spectra" to="/spectra">
           How can a spectrum tell us more than our eyes can perceive? Build a
           spectroscope to observe different sources of light, then use the
           Spectrum Lab Data Tool to explore a spectrum graph.
@@ -42,8 +32,7 @@
       </BRow>
       <BRow class="gx-5 mb-4">
         <ModuleTile
-          :icon-path="tempIcon"
-          icon-alt="Temperature module icon"
+          :icon-source="tempIcon"
           title="3. Temperature"
           to="/temperature"
         >
@@ -51,12 +40,7 @@
           Spectrum Data Tool to explore how an object’s thermal emission relates
           to color and temperature.
         </ModuleTile>
-        <ModuleTile
-          :icon-path="compIcon"
-          icon-alt="Composition module icon"
-          title="4. Composition"
-          to="/"
-        >
+        <ModuleTile :icon-source="compIcon" title="4. Composition" to="/">
           What can spectra tell us about an object’s composition? Explore how
           scientists identify chemical elements and compounds through their
           spectral signatures.
@@ -65,8 +49,7 @@
       <hr class="mb-4" />
       <BRow class="gx-5">
         <ModuleTile
-          :icon-path="finalIcon"
-          icon-alt="Final projects icon"
+          :icon-source="finalIcon"
           title="Final Projects"
           lighter
           to="/fishtank"
@@ -76,8 +59,7 @@
           Artworks as a Museum Conservator.
         </ModuleTile>
         <ModuleTile
-          :icon-path="playgroundIcon"
-          icon-alt="Playground icon"
+          :icon-source="playgroundIcon"
           title="Playground"
           lighter
           to="/playground"
@@ -92,12 +74,12 @@
 </template>
 
 <script setup lang="ts">
-import colorIcon from '@/assets/SVG/color_icon.svg';
-import spectraIcon from '@/assets/SVG/spectra_icon.svg';
-import tempIcon from '@/assets/SVG/temperature_icon.svg';
-import compIcon from '@/assets/SVG/composition_icon.svg';
-import finalIcon from '@/assets/SVG/final_projects_icon.svg';
-import playgroundIcon from '@/assets/SVG/playground_icon.svg';
+import colorIcon from '@/assets/SVG/color_icon.svg?source&set-current-color';
+import spectraIcon from '@/assets/SVG/spectra_icon.svg?source&set-current-color';
+import tempIcon from '@/assets/SVG/temperature_icon.svg?source&set-current-color';
+import compIcon from '@/assets/SVG/composition_icon.svg?source&set-current-color';
+import finalIcon from '@/assets/SVG/final_projects_icon.svg?source&set-current-color';
+import playgroundIcon from '@/assets/SVG/playground_icon.svg?source&set-current-color';
 </script>
 
 <style>

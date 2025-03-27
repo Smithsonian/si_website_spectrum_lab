@@ -9,7 +9,11 @@
         }"
       >
         <BCol cols="2">
-          <img :src="iconPath" :alt="iconAlt" class="module-tile-icon" />
+          <SvgImage
+            v-if="iconSource"
+            :src="iconSource"
+            class="module-tile-icon"
+          />
         </BCol>
         <BCol>
           <div class="text-uppercase fs-5 fw-bold color-sl-light-blue">
@@ -25,9 +29,10 @@
 </template>
 
 <script setup lang="ts">
+import { SvgImage } from 'vite-awesome-svg-loader/vue-integration';
+
 defineProps<{
-  iconPath: string;
-  iconAlt: string;
+  iconSource?: string;
   title: string;
   to: string;
   lighter?: boolean;
@@ -37,6 +42,7 @@ defineProps<{
 <style>
 .module-tile-icon {
   height: 80px;
+  color: var(--gen-grey);
 }
 
 path.cls-1 {
