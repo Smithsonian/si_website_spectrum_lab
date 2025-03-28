@@ -11,7 +11,7 @@
         >
         <!-- Make overlay fully transparent to reveal the rainbow at this tutorial step -->
         <canvas
-          v-show="spectraTutorialState !== 'image'"
+          v-show="!hideOverlay"
           ref="overlay"
           class="position-absolute"
           style="top: 0px; left: 0px"
@@ -35,6 +35,7 @@
       </div>
       <TempTutPopupSpectrumImage :anchor-elem="tempImageTutAnchor" />
       <SpecTutPopupImage :anchor-elem="spectraImageTutAnchor" />
+      <SpecTutPopupRainbow :anchor-elem="spectraImageTutAnchor" />
     </div>
   </div>
 </template>
@@ -70,6 +71,15 @@ const tempImageTutAnchor = useTemplateRef('tempImageTutAnchor');
 const spectraImageTutAnchor = useTemplateRef('spectraImageTutAnchor');
 const { tutorialState: spectraTutorialState } =
   useSpectraTutorialStateMachine();
+const hideOverlay = computed(() => {
+  switch (spectraTutorialState.value) {
+    case 'image':
+    case 'rainbow':
+      return true;
+    default:
+      return false;
+  }
+});
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
