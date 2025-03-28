@@ -9,7 +9,21 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard title="Draw a Spectrum" draw-only />
+      <div class="position-relative">
+        <ToolCard ref="topToolRef" title="Draw a Spectrum" draw-only />
+        <SpecTutPopupTool :anchor-elem="topToolRef" />
+      </div>
     </template>
   </SpectraLayout>
 </template>
+
+<script setup lang="ts">
+import { useSpectraTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useTemplateRef, type ComponentPublicInstance } from 'vue';
+
+const topToolRef = useTemplateRef<ComponentPublicInstance>('topToolRef');
+
+// Initialize here for children
+const { goToNext } = useSpectraTutorialStateMachine();
+goToNext();
+</script>

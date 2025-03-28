@@ -23,10 +23,14 @@ import {
 } from '@floating-ui/vue';
 import { computed, useTemplateRef, type ComponentPublicInstance } from 'vue';
 
-const props = defineProps<{
-  width: number;
-  anchorElem: HTMLElement | ComponentPublicInstance | null;
-}>();
+const props = withDefaults(
+  defineProps<{
+    width: number;
+    anchorElem: HTMLElement | ComponentPublicInstance | null;
+    extraOffset?: number;
+  }>(),
+  { extraOffset: 0 },
+);
 
 const popupRef = useTemplateRef('popupRef');
 const arrowRef = useTemplateRef('arrowRef');
@@ -38,7 +42,7 @@ const crossOffset = props.width / 2 - 100;
 const { floatingStyles, middlewareData } = useFloating(anchorRef, popupRef, {
   placement: 'bottom',
   middleware: [
-    offset({ crossAxis: crossOffset }),
+    offset({ crossAxis: crossOffset, mainAxis: props.extraOffset }),
     shift({ padding: 10 }),
     arrow({ element: arrowRef }),
   ],
@@ -57,11 +61,13 @@ const arrowStyles = computed(() => {
 <style>
 .tutorial-arrow {
   background-color: var(--sl-lighter-blue);
+  /* Move the center to the top, with an extra pixel for overlap */
   top: -11px;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   transform: rotate(45deg);
-  clip-path: polygon(-100% -100%, 200% -100%, -100% 200%);
+  /* Cut off the bottom half of the triangle, plus the overlapping portion */
+  clip-path: polygon(-100% -100%, 195% -100%, -100% 195%);
   border: 2px solid var(--sl-muted-blue);
   box-shadow: 0px 0px 7px 2px var(--sl-muted-blue);
 }

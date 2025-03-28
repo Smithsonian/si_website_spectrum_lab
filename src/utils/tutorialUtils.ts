@@ -72,3 +72,30 @@ export const useTempTutorialStateMachine =
   (): TutorialStateMachine<TempTutorialState> => {
     return useTutorialStateMachine(tempTutorialKey, TEMP_TUTORIAL_STATE_ORDER);
   };
+
+// Spectra tutorial state machine
+const SPECTRA_TUTORIAL_STATE_ORDER = [
+  'hide',
+  'tool',
+  'image',
+  'rainbow',
+  'graph',
+  'reset',
+  'secondTool',
+  'dropdown',
+  'nextSection',
+] as const;
+
+type SpectraTutorialState = (typeof SPECTRA_TUTORIAL_STATE_ORDER)[number];
+
+const spectraTutorialKey = Symbol('spectraTutorial') as InjectionKey<
+  TutorialStateMachine<SpectraTutorialState>
+>;
+
+export const useSpectraTutorialStateMachine =
+  (): TutorialStateMachine<SpectraTutorialState> => {
+    return useTutorialStateMachine(
+      spectraTutorialKey,
+      SPECTRA_TUTORIAL_STATE_ORDER,
+    );
+  };

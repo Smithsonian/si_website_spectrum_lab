@@ -3,6 +3,7 @@
     v-if="tutorialState === 'slider'"
     :width="600"
     :anchor-elem="anchorElem"
+    :extra-offset="10"
   >
     <p>
       This <strong>slider</strong> lets you change the range of wavelengths that
