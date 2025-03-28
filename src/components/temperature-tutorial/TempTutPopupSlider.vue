@@ -1,9 +1,8 @@
 <template>
   <TutorialPopup
     v-if="tutorialState === 'slider'"
-    width="600px"
-    bottom="10px"
-    left="200px"
+    :width="600"
+    :anchor-elem="anchorElem"
   >
     <p>
       This <strong>slider</strong> lets you change the range of wavelengths that
@@ -39,6 +38,9 @@
 
 <script setup lang="ts">
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+import type { ComponentPublicInstance } from 'vue';
+
+defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
 const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
 </script>

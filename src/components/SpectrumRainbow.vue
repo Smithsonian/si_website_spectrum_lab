@@ -18,8 +18,14 @@
           >Transparency increases or decreases based on chart intensity, hiding
           or revealing the background</canvas
         >
+        <!-- This sets the tutorial popup arrow position -->
+        <div
+          ref="imageTutAnchor"
+          class="position-absolute"
+          style="bottom: 10px; left: 170px; width: 0; height: 0"
+        ></div>
       </div>
-      <TempTutPopupSpectrumImage />
+      <TempTutPopupSpectrumImage :anchor-elem="imageTutAnchor" />
     </div>
   </div>
 </template>
@@ -49,6 +55,8 @@ import {
   watchEffect,
 } from 'vue';
 import rainbowImageUrl from '/includes/AI_common/images/Visible_Spectrum_1.png';
+
+const imageTutAnchor = useTemplateRef('imageTutAnchor');
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));

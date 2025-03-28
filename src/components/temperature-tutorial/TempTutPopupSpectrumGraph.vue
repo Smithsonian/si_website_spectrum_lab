@@ -1,7 +1,8 @@
 <template>
   <TutorialPopup
     v-if="tutorialState === 'spectrumGraph'"
-    width="500px"
+    :width="500"
+    :anchor-elem="anchorElem"
     bottom="25px"
     left="200px"
   >
@@ -24,6 +25,8 @@
 
 <script setup lang="ts">
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+
+defineProps<{ anchorElem: HTMLElement | null }>();
 
 const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
 </script>

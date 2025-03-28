@@ -7,7 +7,13 @@
       class="d-block"
       >Spectrum intensity vs wavelength chart</canvas
     >
-    <TempTutPopupSpectrumGraph />
+    <!-- This sets the tutorial popup arrow position -->
+    <div
+      ref="graphTutAnchor"
+      class="position-absolute"
+      style="bottom: 10px; left: 200px; width: 0; height: 0"
+    ></div>
+    <TempTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
   </div>
 </template>
 
@@ -16,6 +22,8 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 import { showLinesKey, spectrumDataKey, zoomKey } from '@/injectionKeys';
 import { xLocFromMicrons, yLocFromIntensity } from '@/utils/chartUtils';
 import { useTemplateRef, onMounted, watch, computed, inject, ref } from 'vue';
+
+const graphTutAnchor = useTemplateRef('graphTutAnchor');
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));

@@ -1,9 +1,8 @@
 <template>
   <TutorialPopup
     v-if="tutorialState === 'spectrumImage'"
-    width="500px"
-    bottom="20px"
-    left="100px"
+    :width="500"
+    :anchor-elem="anchorElem"
   >
     <p>
       This bar represents the <strong>spectrum image</strong>—what you see
@@ -20,6 +19,8 @@
 
 <script setup lang="ts">
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+
+defineProps<{ anchorElem: HTMLElement | null }>();
 
 const { tutorialState, goToNext } = useTempTutorialStateMachine();
 </script>

@@ -28,6 +28,7 @@
       <div class="position-relative">
         <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
           <BFormInput
+            ref="zoomElem"
             id="zoom"
             v-model="zoomPercent"
             type="range"
@@ -36,7 +37,7 @@
             class="zoom-slider"
           />
         </BFormGroup>
-        <TempTutPopupSlider />
+        <TempTutPopupSlider :anchor-elem="zoomElem" />
       </div>
     </BCol>
   </BRow>
@@ -56,12 +57,21 @@ import {
   type NormalizeSetting,
 } from '@/injectionKeys';
 import { useCursorMicrons } from '@/utils/chartUtils';
-import { computed, provide, ref } from 'vue';
+import {
+  computed,
+  provide,
+  ref,
+  useTemplateRef,
+  type ComponentPublicInstance,
+} from 'vue';
 
 const { showNormalizePicker = false, showZoom = false } = defineProps<{
   showNormalizePicker?: boolean;
   showZoom?: boolean;
 }>();
+
+const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
+
 const zoomPercent = ref(100);
 const zoom = computed(() => zoomPercent.value / 100);
 provide(zoomKey, zoom);
