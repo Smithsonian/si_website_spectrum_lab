@@ -14,7 +14,13 @@
 </template>
 
 <script setup lang="ts">
-import { arrow, autoUpdate, offset, useFloating } from '@floating-ui/vue';
+import {
+  arrow,
+  autoUpdate,
+  offset,
+  shift,
+  useFloating,
+} from '@floating-ui/vue';
 import { computed, useTemplateRef, type ComponentPublicInstance } from 'vue';
 
 const props = defineProps<{
@@ -33,6 +39,7 @@ const { floatingStyles, middlewareData } = useFloating(anchorRef, popupRef, {
   placement: 'bottom',
   middleware: [
     offset({ crossAxis: crossOffset }),
+    shift({ padding: 10 }),
     arrow({ element: arrowRef }),
   ],
   whileElementsMounted: autoUpdate,
