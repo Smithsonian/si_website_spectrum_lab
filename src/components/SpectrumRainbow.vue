@@ -9,7 +9,9 @@
           class="d-block"
           >Full-intensity spectrum background</canvas
         >
+        <!-- Make overlay fully transparent to reveal the rainbow at this tutorial step -->
         <canvas
+          v-show="spectraTutorialState !== 'image'"
           ref="overlay"
           class="position-absolute"
           style="top: 0px; left: 0px"
@@ -18,14 +20,21 @@
           >Transparency increases or decreases based on chart intensity, hiding
           or revealing the background</canvas
         >
-        <!-- This sets the tutorial popup arrow position -->
+        <!-- This sets the temperature tutorial popup arrow position -->
         <div
-          ref="imageTutAnchor"
+          ref="tempImageTutAnchor"
           class="position-absolute"
           style="bottom: 10px; left: 170px; width: 0; height: 0"
         ></div>
+        <!-- And for the spectra tutorial -->
+        <div
+          ref="spectraImageTutAnchor"
+          class="position-absolute"
+          style="bottom: 10px; left: 300px; width: 0; height: 0"
+        ></div>
       </div>
-      <TempTutPopupSpectrumImage :anchor-elem="imageTutAnchor" />
+      <TempTutPopupSpectrumImage :anchor-elem="tempImageTutAnchor" />
+      <SpecTutPopupImage :anchor-elem="spectraImageTutAnchor" />
     </div>
   </div>
 </template>
@@ -55,8 +64,12 @@ import {
   watchEffect,
 } from 'vue';
 import rainbowImageUrl from '/includes/AI_common/images/Visible_Spectrum_1.png';
+import { useSpectraTutorialStateMachine } from '@/utils/tutorialUtils';
 
-const imageTutAnchor = useTemplateRef('imageTutAnchor');
+const tempImageTutAnchor = useTemplateRef('tempImageTutAnchor');
+const spectraImageTutAnchor = useTemplateRef('spectraImageTutAnchor');
+const { tutorialState: spectraTutorialState } =
+  useSpectraTutorialStateMachine();
 
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
