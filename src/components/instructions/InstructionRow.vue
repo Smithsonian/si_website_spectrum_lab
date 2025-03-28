@@ -42,7 +42,7 @@ const title = computed(() => {
 </script>
 
 <style>
-.instruction-row:not(:last-child) {
+.instruction-row {
   margin-bottom: 1rem;
 }
 </style>
