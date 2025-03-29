@@ -80,7 +80,7 @@ const SPECTRA_TUTORIAL_STATE_ORDER = [
   'image',
   'rainbow',
   'graph',
-  'reset',
+  'clear',
   'secondTool',
   'dropdown',
   'nextSection',

@@ -27,12 +27,18 @@
               v-model="selectedCategory"
               :options="allCategoryOptions"
             />
-            <BButton
+            <div
               v-if="spectrumDataSource === 'drawing'"
-              variant="light"
-              @click="clearDrawnSpectrumY"
-              >Clear drawing</BButton
+              class="position-relative"
             >
+              <BButton
+                ref="clearButtonElem"
+                variant="light"
+                @click="clearDrawnSpectrumY"
+                >Clear drawing</BButton
+              >
+              <SpecTutPopupClear :anchor-elem="clearButtonElem" />
+            </div>
             <BFormSelect
               v-else
               v-model="selectedSpectrum"
@@ -97,8 +103,20 @@ import {
   visibleOnly,
 } from '@/utils/importUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { computed, inject, provide, ref, watch, type Ref } from 'vue';
+import {
+  computed,
+  inject,
+  provide,
+  ref,
+  useTemplateRef,
+  watch,
+  type ComponentPublicInstance,
+  type Ref,
+} from 'vue';
 import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
+
+const clearButtonElem =
+  useTemplateRef<ComponentPublicInstance>('clearButtonElem');
 
 type ChartPosition = 'top' | 'bottom';
 interface MetadataByFilename {
