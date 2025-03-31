@@ -28,7 +28,7 @@
               Placeholder info: notebook will have multiple choice - 440 (blue)
               and 905 (IR)
             </p>
-            <div>
+            <div class="mb-3">
               <BFormRadioGroup
                 v-model="chosenFilter"
                 :options="FILTER_OPTION_LIST"
