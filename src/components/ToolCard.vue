@@ -131,6 +131,7 @@ const props = withDefaults(
     showFilePicker?: boolean;
     customMetadata?: readonly Readonly<SpectrumMetadata>[] | null;
     spectrumPickerPlaceholder?: string | null;
+    defaultSpectrum?: string | null;
     drawOnly?: boolean;
   }>(),
   {
@@ -235,14 +236,16 @@ const selectedSpectrum = ref('');
 watch(
   [spectrumOptions, selectedCategory],
   async ([newOptions]) => {
-    let defaultSpectrum = '';
-    if (newOptions.length > 0) {
-      defaultSpectrum = newOptions[0].value;
-    }
-    selectedSpectrum.value = defaultSpectrum;
     if (drawnSpectrumY.value.length) {
       clearDrawnSpectrumY();
     }
+    let defaultSpectrum = '';
+    if (props.defaultSpectrum != null) {
+      defaultSpectrum = props.defaultSpectrum;
+    } else if (newOptions.length > 0) {
+      defaultSpectrum = newOptions[0].value;
+    }
+    selectedSpectrum.value = defaultSpectrum;
   },
   { immediate: true },
 );
