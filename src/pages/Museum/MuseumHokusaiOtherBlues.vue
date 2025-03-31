@@ -33,8 +33,9 @@
                 v-model="chosenFilter"
                 :options="FILTER_OPTION_LIST"
                 name="chosen-filter"
+                class="chosen-filter-picker"
                 buttons
-                button-variant="secondary"
+                button-variant="primary"
               />
             </div>
             <p>
@@ -125,3 +126,11 @@ const hokusaiB2Metadata = customMetadata.filter(
   (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
 );
 </script>
+
+<style>
+.chosen-filter-picker .btn-primary {
+  --bs-btn-active-bg: hwb(188 70% 7%);
+  --bs-btn-border-color: var(--sl-dark-purple);
+  --bs-btn-active-border-color: var(--sl-dark-purple);
+}
+</style>
