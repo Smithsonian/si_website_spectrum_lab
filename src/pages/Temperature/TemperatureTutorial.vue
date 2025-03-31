@@ -37,6 +37,15 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton
+            v-if="tutorialState === 'nextSection'"
+            direction="prev"
+            @click="replay"
+          >
+            replay tutorial
+          </NextPrevButton>
+        </template>
         <template #right>
           <NextPrevButton
             v-if="tutorialState === 'nextSection'"
@@ -62,6 +71,6 @@ const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];
 
 // Initialize the tutorial state and start the first popup
-const { tutorialState, goToNext } = useTempTutorialStateMachine();
+const { tutorialState, goToNext, replay } = useTempTutorialStateMachine();
 goToNext();
 </script>

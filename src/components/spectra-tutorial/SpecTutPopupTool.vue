@@ -4,7 +4,7 @@
     :width="600"
     :anchor-elem="anchorElem"
     :extra-offset="15"
-    no-scroll
+    :no-scroll="!scrollToPopup"
   >
     <p>
       This is the <strong>Spectrum Tool</strong>. You will use the Spectrum Tool
@@ -25,5 +25,6 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, goToNext } = useSpectraTutorialStateMachine();
+const { tutorialState, scrollToPopup, goToNext } =
+  useSpectraTutorialStateMachine();
 </script>

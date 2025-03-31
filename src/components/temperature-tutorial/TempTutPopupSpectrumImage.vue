@@ -3,7 +3,7 @@
     v-if="tutorialState === 'spectrumImage'"
     :width="500"
     :anchor-elem="anchorElem"
-    no-scroll
+    :no-scroll="!scrollToPopup"
   >
     <p>
       This bar represents the <strong>spectrum image</strong>—what you see
@@ -23,5 +23,6 @@ import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
 
 defineProps<{ anchorElem: HTMLElement | null }>();
 
-const { tutorialState, goToNext } = useTempTutorialStateMachine();
+const { tutorialState, scrollToPopup, goToNext } =
+  useTempTutorialStateMachine();
 </script>

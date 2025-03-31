@@ -2,8 +2,10 @@ import { inject, provide, ref, type InjectionKey, type Ref } from 'vue';
 
 interface TutorialStateMachine<S> {
   tutorialState: Readonly<Ref<S>>;
+  scrollToPopup: Readonly<Ref<boolean>>;
   goToNext: () => void;
   goToPrev: () => void;
+  replay: () => void;
 }
 
 function createMachine<S>(stateOrder: readonly S[]): TutorialStateMachine<S> {
@@ -12,9 +14,16 @@ function createMachine<S>(stateOrder: readonly S[]): TutorialStateMachine<S> {
     throw new Error('Need at least one state');
   }
   const state = ref<S>(initialState) as Ref<S>;
+  const scrollToPopup = ref(false);
 
   const goToNext = () => {
     const index = stateOrder.indexOf(state.value);
+    if (index > 0) {
+      // If we're about to show the first popup, don't scroll to it, to not skip instructions.
+      // Scroll to every popup after.
+      // This does not reset until the whole machine resets (page nav).
+      scrollToPopup.value = true;
+    }
     if (index >= stateOrder.length) {
       // At the end, do nothing
       return;
@@ -33,10 +42,16 @@ function createMachine<S>(stateOrder: readonly S[]): TutorialStateMachine<S> {
     state.value = prevState;
   };
 
+  const replay = () => {
+    state.value = stateOrder[1];
+  };
+
   return {
     tutorialState: state,
+    scrollToPopup,
     goToNext,
     goToPrev,
+    replay,
   };
 }
 
