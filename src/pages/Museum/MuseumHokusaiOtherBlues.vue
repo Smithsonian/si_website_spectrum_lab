@@ -5,10 +5,7 @@
         <h2>Other Blue Regions</h2>
         <BRow>
           <BCol cols="12" lg="6">
-            <img
-              src="/src/assets/spectrum_data/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
-              class="mb-2 challenge-image"
-            />
+            <img :src="imageUrl" class="mb-2 challenge-image" />
           </BCol>
           <BCol cols="12" lg="6">
             <p>
@@ -31,6 +28,15 @@
               Placeholder info: notebook will have multiple choice - 440 (blue)
               and 905 (IR)
             </p>
+            <div>
+              <BFormRadioGroup
+                v-model="chosenFilter"
+                :options="FILTER_OPTION_LIST"
+                name="chosen-filter"
+                buttons
+                button-variant="secondary"
+              />
+            </div>
             <p>
               <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your
               answers in your <strong>Spectrum Notebook</strong>.
@@ -63,8 +69,33 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { imageUrlFromPath, useCustomMetadata } from '@/utils/metadataUtils';
+import filterNoneUrl from '@/assets/spectrum_data/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg';
+import filter440Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_440nm.jpg';
+import filter905Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_905nm.jpg';
+import { computed, ref } from 'vue';
 
 useSpecLabHead('Other blues', 'Museum');
+
+const FILTER_OPTION_LIST = [
+  { text: 'No filter', value: 'none' },
+  { text: '440 nm', value: '440' },
+  { text: '905 nm', value: '905' },
+] as const;
+
+type FilterValues = (typeof FILTER_OPTION_LIST)[number]['value'];
+const chosenFilter = ref<FilterValues>('none');
+const imageUrl = computed(() => {
+  switch (chosenFilter.value) {
+    case 'none':
+      return filterNoneUrl;
+    case '440':
+      return filter440Url;
+    case '905':
+      return filter905Url;
+    default:
+      return '';
+  }
+});
 
 const hokusaiB1 = useCustomMetadata(
   'Museum Conservation',
