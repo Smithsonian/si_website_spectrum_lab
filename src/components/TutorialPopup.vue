@@ -21,13 +21,19 @@ import {
   shift,
   useFloating,
 } from '@floating-ui/vue';
-import { computed, useTemplateRef, type ComponentPublicInstance } from 'vue';
+import {
+  computed,
+  useTemplateRef,
+  watch,
+  type ComponentPublicInstance,
+} from 'vue';
 
 const props = withDefaults(
   defineProps<{
     width: number;
     anchorElem: HTMLElement | ComponentPublicInstance | null;
     extraOffset?: number;
+    noScroll?: boolean;
   }>(),
   { extraOffset: 0 },
 );
@@ -39,15 +45,19 @@ const anchorRef = computed(() => props.anchorElem);
 // This moves the box so the arrow is a fixed distance from the left edge, as in the designs
 const crossOffset = props.width / 2 - 100;
 
-const { floatingStyles, middlewareData } = useFloating(anchorRef, popupRef, {
-  placement: 'bottom',
-  middleware: [
-    offset({ crossAxis: crossOffset, mainAxis: props.extraOffset }),
-    shift({ padding: 10 }),
-    arrow({ element: arrowRef }),
-  ],
-  whileElementsMounted: autoUpdate,
-});
+const { floatingStyles, middlewareData, isPositioned } = useFloating(
+  anchorRef,
+  popupRef,
+  {
+    placement: 'bottom',
+    middleware: [
+      offset({ crossAxis: crossOffset, mainAxis: props.extraOffset }),
+      shift({ padding: 10 }),
+      arrow({ element: arrowRef }),
+    ],
+    whileElementsMounted: autoUpdate,
+  },
+);
 
 const arrowStyles = computed(() => {
   let left = '';
@@ -55,6 +65,15 @@ const arrowStyles = computed(() => {
     left = `${middlewareData.value.arrow.x}px`;
   }
   return { left };
+});
+
+watch([isPositioned, () => props.noScroll], ([isPositioned, noScroll]) => {
+  if (noScroll) {
+    return;
+  }
+  if (isPositioned && popupRef.value) {
+    popupRef.value.scrollIntoView();
+  }
 });
 </script>
 

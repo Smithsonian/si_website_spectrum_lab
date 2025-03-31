@@ -3,6 +3,7 @@
     v-if="tutorialState === 'spectrumImage'"
     :width="500"
     :anchor-elem="anchorElem"
+    no-scroll
   >
     <p>
       This bar represents the <strong>spectrum image</strong>—what you see

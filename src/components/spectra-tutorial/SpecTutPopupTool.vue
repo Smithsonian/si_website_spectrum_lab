@@ -4,6 +4,7 @@
     :width="600"
     :anchor-elem="anchorElem"
     :extra-offset="15"
+    no-scroll
   >
     <p>
       This is the <strong>Spectrum Tool</strong>. You will use the Spectrum Tool
