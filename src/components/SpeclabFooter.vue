@@ -10,6 +10,9 @@
               gift to the National Air and Space Museum.
             </small>
           </p>
+          <p>
+            <RouterLink to="/color-palette">Color palette</RouterLink>
+          </p>
         </BCol>
         <BCol>
           <img src="/src/assets/CfALogo@2x.png" width="100%" />

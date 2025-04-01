@@ -41,12 +41,15 @@
 </template>
 
 <script setup lang="ts">
+import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 import {
   useSpectraTutorialStateMachine,
   type SpectraTutorialState,
 } from '@/utils/tutorialUtils';
 import { computed, useTemplateRef, type ComponentPublicInstance } from 'vue';
+
+useSpecLabHead('Tutorial', 'Spectra');
 
 const topToolRef = useTemplateRef<ComponentPublicInstance>('topToolRef');
 const bottomToolRef = useTemplateRef<ComponentPublicInstance>('bottomToolRef');

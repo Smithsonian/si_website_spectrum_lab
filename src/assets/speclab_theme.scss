@@ -42,6 +42,11 @@ $slr-dark-grey: #5c5c64;
 $slr-light-grey: #edecf2;
 $slr-med-grey: #ccccd4;
 
+// DIY planet search
+$diy-brown: #594a40;
+$diy-blue: #36679c;
+$diy-red: #c02325;
+
 // CSS variable versions
 :root {
   --gen-white: #{$gen-white};
@@ -64,6 +69,10 @@ $slr-med-grey: #ccccd4;
   --slr-dark-grey: #{$slr-dark-grey};
   --slr-light-grey: #{$slr-light-grey};
   --slr-med-grey: #{$slr-med-grey};
+
+  --diy-brown: #{$diy-brown};
+  --diy-blue: #{$diy-blue};
+  --diy-red: #{$diy-red};
 }
 
 // SASS Bootstrap overrides
@@ -74,6 +83,10 @@ $nav-pills-border-radius: 0;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
+
+.bg-gen-white {
+  background-color: var(--gen-white) !important;
+}
 
 .bg-sl-dark-purple {
   background-color: var(--sl-dark-purple) !important;

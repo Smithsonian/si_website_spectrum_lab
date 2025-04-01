@@ -38,6 +38,7 @@ import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandes
 import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
 import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 import LandingPage from './pages/LandingPage.vue';
+import ColorPalette from './pages/ColorPalette.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
@@ -125,6 +126,7 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   { path: '/playground', component: PlaygroundView },
+  { path: '/color-palette', component: ColorPalette },
   {
     path: '/:fileName([^.]+).html',
     redirect: (to) => {
