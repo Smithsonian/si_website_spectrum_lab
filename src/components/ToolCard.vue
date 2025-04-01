@@ -39,12 +39,15 @@
               >
               <SpecTutPopupClear :anchor-elem="clearButtonElem" />
             </div>
-            <BFormSelect
-              v-else
-              v-model="selectedSpectrum"
-              :options="spectrumOptions"
-              :class="spectrumOptions.length > 0 ? '' : 'invisible'"
-            />
+            <div v-else class="position-relative">
+              <BFormSelect
+                ref="spectrumPicker"
+                v-model="selectedSpectrum"
+                :options="spectrumOptions"
+                :class="spectrumOptions.length > 0 ? '' : 'invisible'"
+              />
+              <SpecTutPopupSpectrumPicker :anchor-elem="spectrumPicker" />
+            </div>
           </BCol>
         </BRow>
       </BCol>
@@ -117,6 +120,8 @@ import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resize
 
 const clearButtonElem =
   useTemplateRef<ComponentPublicInstance>('clearButtonElem');
+const spectrumPicker =
+  useTemplateRef<ComponentPublicInstance>('spectrumPicker');
 
 type ChartPosition = 'top' | 'bottom';
 interface MetadataByFilename {

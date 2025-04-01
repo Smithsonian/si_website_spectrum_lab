@@ -101,7 +101,8 @@ const SPECTRA_TUTORIAL_STATE_ORDER = [
   'nextSection',
 ] as const;
 
-type SpectraTutorialState = (typeof SPECTRA_TUTORIAL_STATE_ORDER)[number];
+export type SpectraTutorialState =
+  (typeof SPECTRA_TUTORIAL_STATE_ORDER)[number];
 
 const spectraTutorialKey = Symbol('spectraTutorial') as InjectionKey<
   TutorialStateMachine<SpectraTutorialState>
