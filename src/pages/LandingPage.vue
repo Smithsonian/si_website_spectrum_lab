@@ -80,6 +80,9 @@ import tempIcon from '@/assets/SVG/temperature_icon.svg?source&set-current-color
 import compIcon from '@/assets/SVG/composition_icon.svg?source&set-current-color';
 import finalIcon from '@/assets/SVG/final_projects_icon.svg?source&set-current-color';
 import playgroundIcon from '@/assets/SVG/playground_icon.svg?source&set-current-color';
+import { useSpecLabHead } from '@/utils/locationUtils';
+
+useSpecLabHead('Home Page');
 </script>
 
 <style>
