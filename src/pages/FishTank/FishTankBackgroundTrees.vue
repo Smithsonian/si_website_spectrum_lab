@@ -26,7 +26,10 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="/fishtank/background-2">
+          <NextPrevButton
+            direction="next"
+            to="/final-projects/fishtank/background-2"
+          >
             next section
           </NextPrevButton>
         </template>

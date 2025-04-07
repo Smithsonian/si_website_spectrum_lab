@@ -4,17 +4,16 @@
       <BNav>
         <BNavItem link-class="page-nav-link">1. Color</BNavItem>
         <BNavItem link-class="page-nav-link" to="/spectra">2. Spectra</BNavItem>
-        <BNavItem link-class="page-nav-link" to="/temperature"
-          >3. Temperature</BNavItem
-        >
+        <BNavItem link-class="page-nav-link" to="/temperature">
+          3. Temperature
+        </BNavItem>
         <BNavItem link-class="page-nav-link">4. Composition</BNavItem>
-        <BNavItem link-class="page-nav-link" to="/fishtank">Fishtank</BNavItem>
-        <BNavItem link-class="page-nav-link" to="/museum"
-          >Art Conservation</BNavItem
-        >
-        <BNavItem link-class="page-nav-link" to="/playground"
-          >Playground</BNavItem
-        >
+        <BNavItem link-class="page-nav-link" to="/final-projects">
+          Final Projects
+        </BNavItem>
+        <BNavItem link-class="page-nav-link" to="/playground">
+          Playground
+        </BNavItem>
       </BNav>
     </BContainer>
   </div>

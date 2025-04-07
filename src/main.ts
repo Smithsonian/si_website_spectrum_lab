@@ -40,6 +40,7 @@ import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
 import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
+import FinalProjects from './pages/FinalProjects.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
@@ -72,60 +73,67 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/fishtank',
-    redirect: '/fishtank/background-1',
+    path: '/final-projects',
+    redirect: '/final-projects/home',
     children: [
-      { path: 'background-1', component: FishTankBackgroundTrees },
+      { path: 'home', component: FinalProjects },
       {
-        path: 'background-2',
-        redirect: '/fishtank/background-2/page-1',
+        path: 'fishtank',
+        redirect: '/final-projects/fishtank/background-1',
         children: [
-          { path: 'page-1', component: FishTankBackgroundComparison },
-          { path: 'page-2', component: FishTankBackgroundReveal },
+          { path: 'background-1', component: FishTankBackgroundTrees },
+          {
+            path: 'background-2',
+            redirect: '/final-projects/fishtank/background-2/page-1',
+            children: [
+              { path: 'page-1', component: FishTankBackgroundComparison },
+              { path: 'page-2', component: FishTankBackgroundReveal },
+            ],
+          },
+          {
+            path: 'light-your-tank',
+            component: FishTankLightYourTank,
+          },
+          {
+            path: 'mood-lighting',
+            component: FishTankMoodLighting,
+          },
         ],
       },
       {
-        path: 'light-your-tank',
-        component: FishTankLightYourTank,
-      },
-      {
-        path: 'mood-lighting',
-        component: FishTankMoodLighting,
-      },
-    ],
-  },
-  {
-    path: '/museum',
-    redirect: '/museum/intro',
-    children: [
-      { path: 'intro', component: MuseumIntro },
-      {
-        path: 'paint-colors',
-        redirect: '/museum/paint-colors/chokha',
+        path: 'museum',
+        redirect: '/final-projects/museum/intro',
         children: [
-          { path: 'chokha', component: MuseumChokha },
-          { path: 'mystery', component: MuseumMysteryColors },
+          { path: 'intro', component: MuseumIntro },
+          {
+            path: 'paint-colors',
+            redirect: '/final-projects/museum/paint-colors/chokha',
+            children: [
+              { path: 'chokha', component: MuseumChokha },
+              { path: 'mystery', component: MuseumMysteryColors },
+            ],
+          },
+          {
+            path: 'two-blues',
+            component: MuseumHokusaiBlues,
+          },
+          {
+            path: 'identify-blues',
+            component: MuseumHokusaiIdentifyBlues,
+          },
+          {
+            path: 'other-blues',
+            component: MuseumHokusaiOtherBlues,
+          },
+          {
+            path: 'blue-filter',
+            component: MuseumHokusaiBlueFilter,
+          },
+          {
+            path: 'infrared-filter',
+            component: MuseumHokusaiInfraredFilter,
+          },
         ],
-      },
-      {
-        path: 'two-blues',
-        component: MuseumHokusaiBlues,
-      },
-      {
-        path: 'identify-blues',
-        component: MuseumHokusaiIdentifyBlues,
-      },
-      {
-        path: 'other-blues',
-        component: MuseumHokusaiOtherBlues,
-      },
-      {
-        path: 'blue-filter',
-        component: MuseumHokusaiBlueFilter,
-      },
-      {
-        path: 'infrared-filter',
-        component: MuseumHokusaiInfraredFilter,
       },
     ],
   },

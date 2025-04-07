@@ -4,25 +4,25 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/museum/intro">
+            <SectionNavItem to="/final-projects/museum/intro">
               Science of Art Conservation
             </SectionNavItem>
-            <SectionNavItem to="/museum/paint-colors">
+            <SectionNavItem to="/final-projects/museum/paint-colors">
               Paint Colors &amp; Spectra
             </SectionNavItem>
-            <SectionNavItem to="/museum/two-blues">
+            <SectionNavItem to="/final-projects/museum/two-blues">
               Two Blue Spectra
             </SectionNavItem>
-            <SectionNavItem to="/museum/identify-blues">
+            <SectionNavItem to="/final-projects/museum/identify-blues">
               Identify Pigments
             </SectionNavItem>
-            <SectionNavItem to="/museum/other-blues">
+            <SectionNavItem to="/final-projects/museum/other-blues">
               Other Blues
             </SectionNavItem>
-            <SectionNavItem to="/museum/blue-filter">
+            <SectionNavItem to="/final-projects/museum/blue-filter">
               Blue Filter
             </SectionNavItem>
-            <SectionNavItem to="/museum/infrared-filter">
+            <SectionNavItem to="/final-projects/museum/infrared-filter">
               Infrared Filter
             </SectionNavItem>
           </SectionNav>

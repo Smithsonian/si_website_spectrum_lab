@@ -4,16 +4,16 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/fishtank/background-1">
+            <SectionNavItem to="/final-projects/fishtank/background-1">
               Background Part I
             </SectionNavItem>
-            <SectionNavItem to="/fishtank/background-2">
+            <SectionNavItem to="/final-projects/fishtank/background-2">
               Background Part II
             </SectionNavItem>
-            <SectionNavItem to="/fishtank/light-your-tank">
+            <SectionNavItem to="/final-projects/fishtank/light-your-tank">
               Light Your Tank
             </SectionNavItem>
-            <SectionNavItem to="/fishtank/mood-lighting">
+            <SectionNavItem to="/final-projects/fishtank/mood-lighting">
               Bonus: Mood Lighting
             </SectionNavItem>
           </SectionNav>
