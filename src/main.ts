@@ -39,6 +39,7 @@ import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
 import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
+import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
@@ -47,7 +48,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/spectra',
     redirect: '/spectra/tutorial',
-    children: [{ path: 'tutorial', component: SpectraTutorial }],
+    children: [
+      { path: 'tutorial', component: SpectraTutorial },
+      { path: 'start-drawing', component: SpectraStartDrawing },
+    ],
   },
   {
     path: '/temperature',

@@ -31,7 +31,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" to="startdrawing" light>
+          <NextPrevButton direction="next" to="start-drawing" light>
             next section
           </NextPrevButton>
         </template>
