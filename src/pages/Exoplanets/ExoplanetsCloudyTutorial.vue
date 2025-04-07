@@ -46,7 +46,7 @@
         <template #top-tool>
           <ToolCard
             title="Spectrum 1"
-            :custom-metadata="exoplanetMetadataList"
+            :custom-metadata="clearMetadataList"
             :spectrum-picker-placeholder="null"
           >
             <div
@@ -55,13 +55,21 @@
               style="bottom: 30px; left: 300px"
             ></div>
             <ExoCloudyTutPopoverWidthDepth :anchor-elem="widthDepthAnchor" />
+            <ExoCloudyTutOverlayWidthDepthClear
+              v-if="tutorialState === 'widthDepth'"
+            />
           </ToolCard>
         </template>
         <template #bottom-tool>
           <ToolCard
             title="Spectrum 2"
-            :custom-metadata="atomsAndMoleculesList"
-          />
+            :custom-metadata="cloudyMetadataList"
+            :spectrum-picker-placeholder="null"
+          >
+            <ExoCloudyTutOverlayWidthDepthCloudy
+              v-if="tutorialState === 'widthDepth'"
+            />
+          </ToolCard>
         </template>
       </ToolControlGroup>
       <LeftRightGroup v-if="tutorialState === 'nextSection'" class="mt-5">
@@ -103,37 +111,19 @@ const replayResetZoom = () => {
   zoom.value = FEATURES_ZOOM;
 };
 
-const clearHotJupiterMetadata = useCustomMetadata(
+const clearMetadata = useCustomMetadata(
   'Exoplanet Models',
   'Clear_Hot_Jupiter_Model_Transmission',
   {},
 );
 
-const exoplanetMetadataList = clearHotJupiterMetadata
-  ? [clearHotJupiterMetadata]
-  : [];
+const clearMetadataList = clearMetadata ? [clearMetadata] : [];
 
-const sodiumAbsorption = useCustomMetadata(
-  'Atoms and Molecules',
-  'Sodium_Absorption',
-  {},
-);
-const potassiumAbsorption = useCustomMetadata(
-  'Atoms and Molecules',
-  'Potassium_Absorption',
-  {},
-);
-const waterVaporAbsorption = useCustomMetadata(
-  'Atoms and Molecules',
-  'Water_Vapor_Absorption',
+const cloudyMetadata = useCustomMetadata(
+  'Exoplanet Models',
+  'Cloudy_Hot_Jupiter_Model_Transmission',
   {},
 );
 
-const atomsAndMoleculesListMaybe = [
-  sodiumAbsorption,
-  potassiumAbsorption,
-  waterVaporAbsorption,
-];
-
-const atomsAndMoleculesList = atomsAndMoleculesListMaybe.filter((sm) => !!sm);
+const cloudyMetadataList = cloudyMetadata ? [cloudyMetadata] : [];
 </script>
