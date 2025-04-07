@@ -20,7 +20,7 @@
         <NextPrevButton direction="prev" @click="goToPrev" />
       </template>
       <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
+        <NextPrevButton direction="close" @click="goToNext" />
       </template>
     </LeftRightGroup>
   </TutorialPopup>

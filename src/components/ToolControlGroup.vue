@@ -76,7 +76,6 @@ import {
 const {
   showNormalizePicker = false,
   showZoom = false,
-  zoomDefault = 100,
   disabled = false,
 } = defineProps<{
   showNormalizePicker?: boolean;
@@ -87,7 +86,7 @@ const {
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 
-const zoomPercent = ref(zoomDefault);
+const zoomPercent = defineModel('zoom', { default: 100 });
 const zoom = computed(() => zoomPercent.value / 100);
 provide(zoomKey, zoom);
 
