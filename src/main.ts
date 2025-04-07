@@ -42,6 +42,7 @@ import ColorPalette from './pages/ColorPalette.vue';
 import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
 import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
+import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
@@ -104,7 +105,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'exoplanets',
         redirect: '/final-projects/exoplanets/clear-skies',
-        children: [{ path: 'clear-skies', component: ExoplanetsClearTutorial }],
+        children: [
+          { path: 'clear-skies', component: ExoplanetsClearTutorial },
+          { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
+        ],
       },
       {
         path: 'museum',

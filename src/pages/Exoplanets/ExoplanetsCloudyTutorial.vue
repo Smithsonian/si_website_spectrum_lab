@@ -1,33 +1,40 @@
 <template>
   <ExoplanetsLayout>
     <template #challenge-tab>
-      <ChallengeCard>
-        <InstructionHeader>
-          Tutorial: clear exoplanet atmospheres
-        </InstructionHeader>
-        <InstructionRow row-type="Tool">
-          Astronomers predict the theoretical spectrum they would expect to
-          observe under ideal conditions. Each predictive model is specific to a
-          particular set of astmospheric conditions. Let’s explore some of these
-          models, starting with the model for clear skies.
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          Once you’ve completed the tutorial, go to the
-          <em>Tutorial: Modeling Exoplanet Atmospheres</em> section and answer
-          the following questions:
-          <template #steps>
-            <InstructionStep>
-              Why do you think astronomers create computer-generated predictions
-              of exoplanet atmospheres?
-            </InstructionStep>
-            <InstructionStep>
-              What are the approximate center wavelengths of the Sodium (Na),
-              Potassium (K), and three Water Vapor (H<sub>2</sub>O) features in
-              the Comparison Atomic and Molecular spectra, and in the Clear Hot
-              Jupiter model?
-            </InstructionStep>
-          </template>
-        </InstructionRow>
+      <ChallengeCard remove-padding>
+        <div class="pt-3 px-3">
+          <InstructionHeader>
+            Tutorial: Clear, Cloudy, or Hazy?
+          </InstructionHeader>
+          <InstructionRow row-type="Tool">
+            How do the models predict that different atmospheric conditions
+            affect an exoplanet spectrum?
+          </InstructionRow>
+          <InstructionRow row-type="Notebook">
+            Once you’ve completed the tutorial, go to the
+            <em>Tutorial: Modeling Exoplanet Atmospheres</em> section and answer
+            the following questions:
+            <template #steps>
+              <InstructionStep>
+                Clear vs Cloudy: How would you compare the width and depth of
+                the absorption features in the Clear Hot Jupiter Model vs the
+                predicted model for a Cloudy Hot Jupiter? How might you explain
+                why clouds could cause this difference?
+              </InstructionStep>
+              <InstructionStep>
+                Hazy vs Clear: How would you compare the overall slope of the
+                spectrum (from shorter to longer wavelengths) in the Hazy Hot
+                Jupiter Model vs the predicted model for a Clear Hot Jupiter?
+              </InstructionStep>
+            </template>
+          </InstructionRow>
+        </div>
+        <div class="rounded-bottom-4 bg-gen-black">
+          <img
+            src="/src/assets/Clouds_Image_W500.png"
+            class="d-block mx-auto"
+          />
+        </div>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -43,21 +50,14 @@
             :spectrum-picker-placeholder="null"
           >
             <div
-              ref="modelAnchor"
+              ref="widthDepthAnchor"
               class="position-absolute"
-              style="bottom: 10px; left: 300px"
+              style="bottom: 30px; left: 300px"
             ></div>
-            <ExoClearTutPopoverModel :anchor-elem="modelAnchor" />
-            <div
-              ref="featuresAnchor"
-              class="position-absolute"
-              style="bottom: 10px; left: 200px"
-            ></div>
-            <ExoClearTutPopoverFeatures :anchor-elem="featuresAnchor" />
-            <ExoClearTutOverlayFeatures v-if="tutorialState === 'features'" />
+            <ExoCloudyTutPopoverWidthDepth :anchor-elem="widthDepthAnchor" />
           </ToolCard>
         </template>
-        <template v-if="tutorialState === 'nextSection'" #bottom-tool>
+        <template #bottom-tool>
           <ToolCard
             title="Spectrum 2"
             :custom-metadata="atomsAndMoleculesList"
@@ -71,7 +71,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" to="cloudy-skies" light>
+          <NextPrevButton direction="next" to="wasp-17b" light>
             next section
           </NextPrevButton>
         </template>
@@ -83,20 +83,19 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useExoplanetsClearTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useExoplanetsCloudyTutorialStateMachine } from '@/utils/tutorialUtils';
 import { ref, useTemplateRef } from 'vue';
 
-useSpecLabHead('Clear skies', 'Exoplanets');
+useSpecLabHead('Cloudy/Hazy skies', 'Exoplanets');
 
-const modelAnchor = useTemplateRef('modelAnchor');
-const featuresAnchor = useTemplateRef('featuresAnchor');
+const widthDepthAnchor = useTemplateRef('widthDepthAnchor');
 
 // This is where the feature labels are in the right spot.
 const FEATURES_ZOOM = 41;
 const zoom = ref(FEATURES_ZOOM);
 
 const { tutorialState, goToNext, replay } =
-  useExoplanetsClearTutorialStateMachine();
+  useExoplanetsCloudyTutorialStateMachine();
 goToNext();
 
 const replayResetZoom = () => {

@@ -121,7 +121,7 @@ const EXOPLANETS_CLEAR_TUTORIAL_STATE_ORDER = [
   'hide',
   'model',
   'features',
-  'nextPage',
+  'nextSection',
 ] as const;
 
 export type ExoplanetsClearTutorialState =
@@ -146,7 +146,7 @@ const EXOPLANETS_CLOUDY_TUTORIAL_STATE_ORDER = [
   'cloudShapeSlope',
   'hazeShapeSlope',
   'dampenedAbsorption',
-  'nextPage',
+  'nextSection',
 ] as const;
 
 export type ExoplanetsCloudyTutorialState =
