@@ -115,3 +115,51 @@ export const useSpectraTutorialStateMachine =
       SPECTRA_TUTORIAL_STATE_ORDER,
     );
   };
+
+// Exoplanets clear atmosphere tutorial state machine
+const EXOPLANETS_CLEAR_TUTORIAL_STATE_ORDER = [
+  'hide',
+  'model',
+  'features',
+  'nextPage',
+] as const;
+
+export type ExoplanetsClearTutorialState =
+  (typeof EXOPLANETS_CLEAR_TUTORIAL_STATE_ORDER)[number];
+
+const exoplanetsClearTutorialKey = Symbol(
+  'exoplanetsClearTutorial',
+) as InjectionKey<TutorialStateMachine<ExoplanetsClearTutorialState>>;
+
+export const useExoplanetsClearTutorialStateMachine =
+  (): TutorialStateMachine<ExoplanetsClearTutorialState> => {
+    return useTutorialStateMachine(
+      exoplanetsClearTutorialKey,
+      EXOPLANETS_CLEAR_TUTORIAL_STATE_ORDER,
+    );
+  };
+
+// Exoplanets cloudy/hazy atmosphere tutorial state machine
+const EXOPLANETS_CLOUDY_TUTORIAL_STATE_ORDER = [
+  'hide',
+  'widthDepth',
+  'cloudShapeSlope',
+  'hazeShapeSlope',
+  'dampenedAbsorption',
+  'nextPage',
+] as const;
+
+export type ExoplanetsCloudyTutorialState =
+  (typeof EXOPLANETS_CLOUDY_TUTORIAL_STATE_ORDER)[number];
+
+const exoplanetsCloudyTutorialKey = Symbol(
+  'exoplanetsCloudyTutorial',
+) as InjectionKey<TutorialStateMachine<ExoplanetsCloudyTutorialState>>;
+
+export const useExoplanetsCloudyTutorialStateMachine =
+  (): TutorialStateMachine<ExoplanetsCloudyTutorialState> => {
+    return useTutorialStateMachine(
+      exoplanetsCloudyTutorialKey,
+      EXOPLANETS_CLOUDY_TUTORIAL_STATE_ORDER,
+    );
+  };

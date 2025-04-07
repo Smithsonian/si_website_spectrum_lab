@@ -41,6 +41,7 @@ import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
 import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
 import FinalProjects from './pages/FinalProjects.vue';
+import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 
 library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
 
@@ -99,6 +100,11 @@ const routes: RouteRecordRaw[] = [
             component: FishTankMoodLighting,
           },
         ],
+      },
+      {
+        path: 'exoplanets',
+        redirect: '/final-projects/exoplanets/clear-skies',
+        children: [{ path: 'clear-skies', component: ExoplanetsClearTutorial }],
       },
       {
         path: 'museum',

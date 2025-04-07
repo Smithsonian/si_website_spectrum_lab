@@ -6,6 +6,7 @@ type ModuleTitle =
   | 'Temperature'
   | 'Composition'
   | 'Fishtank'
+  | 'Exoplanets'
   | 'Museum';
 
 export const useSpecLabHead = (
