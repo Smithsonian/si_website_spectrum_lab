@@ -11,8 +11,13 @@
         <SpectrumRainbow />
         <div class="d-flex">
           <LeftAxis />
-          <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
-          <SpectrumData v-else />
+          <!-- Wrap these to enable overlay -->
+          <div class="position-relative">
+            <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
+            <SpectrumData v-else />
+            <!-- Overlay items go in this slot. -->
+            <slot></slot>
+          </div>
         </div>
         <BottomAxis />
         <div class="text-center">Wavelength ({{ wavelengthUnit }})</div>

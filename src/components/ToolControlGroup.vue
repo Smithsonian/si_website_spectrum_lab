@@ -6,13 +6,19 @@
         <BFormSelect
           id="wavelength-unit"
           v-model="wavelengthUnit"
+          :disabled="disabled"
           :options="wavelengthUnitOptions"
         />
       </BFormGroup>
     </BCol>
     <BCol cols="3">
       <BFormGroup label="Plot type" label-for="plot-type">
-        <BFormSelect id="plot-type" v-model="plotType" :options="plotOptions" />
+        <BFormSelect
+          id="plot-type"
+          v-model="plotType"
+          :disabled="disabled"
+          :options="plotOptions"
+        />
       </BFormGroup>
     </BCol>
     <BCol v-if="showNormalizePicker" cols="2">
@@ -20,6 +26,7 @@
         <BFormRadioGroup
           id="normalize"
           v-model="normalize"
+          :disabled="disabled"
           :options="normalizeOptions"
         />
       </BFormGroup>
@@ -31,6 +38,7 @@
             ref="zoomElem"
             id="zoom"
             v-model="zoomPercent"
+            :disabled="disabled"
             type="range"
             min="2"
             max="200"
@@ -65,14 +73,21 @@ import {
   type ComponentPublicInstance,
 } from 'vue';
 
-const { showNormalizePicker = false, showZoom = false } = defineProps<{
+const {
+  showNormalizePicker = false,
+  showZoom = false,
+  zoomDefault = 100,
+  disabled = false,
+} = defineProps<{
   showNormalizePicker?: boolean;
   showZoom?: boolean;
+  zoomDefault?: number;
+  disabled?: boolean;
 }>();
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 
-const zoomPercent = ref(100);
+const zoomPercent = ref(zoomDefault);
 const zoom = computed(() => zoomPercent.value / 100);
 provide(zoomKey, zoom);
 

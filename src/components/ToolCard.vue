@@ -65,7 +65,10 @@
         >
           <img :src="previewPath" />
         </div>
-        <SpectrumChart />
+        <!-- SpectrumChart contents are expected to overlay the chart. -->
+        <SpectrumChart>
+          <slot></slot>
+        </SpectrumChart>
         <div
           v-if="previewPath && chartPosition === 'top'"
           class="spectrum-preview-holder rounded-4 mt-3"

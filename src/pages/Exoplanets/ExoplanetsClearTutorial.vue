@@ -14,23 +14,29 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup
+        show-zoom
+        :zoom-default="41"
+        :disabled="tutorialState !== 'nextPage'"
+      >
         <template #top-tool>
-          <ToolCard title="Draw a Spectrum" draw-only />
+          <ToolCard
+            title="Spectrum 1"
+            :custom-metadata="exoplanetMetadataList"
+            :spectrum-picker-placeholder="null"
+          >
+            <div
+              ref="modelAnchor"
+              class="position-absolute"
+              style="bottom: 10px; left: 300px"
+            ></div>
+            <ExoClearTutPopoverModel :anchor-elem="modelAnchor" />
+          </ToolCard>
         </template>
-        <template #bottom-tool>
-          <ToolCard title="Draw a Spectrum" draw-only />
+        <template v-if="tutorialState === 'nextPage'" #bottom-tool>
+          <ToolCard title="Spectrum 2" />
         </template>
       </ToolControlGroup>
-      <div v-if="tutorialState === 'nextPage'" class="position-relative mb-5">
-        <ToolCard
-          ref="bottomToolRef"
-          title="Second spectrum"
-          :custom-metadata="bulbMetadataList"
-          :spectrum-picker-placeholder="null"
-          default-spectrum="Fluorescent_Bulb"
-        />
-      </div>
       <LeftRightGroup v-if="tutorialState === 'nextPage'">
         <template #left>
           <NextPrevButton direction="prev" @click="replay" light>
@@ -49,16 +55,25 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { useAllMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useExoplanetsClearTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useTemplateRef } from 'vue';
 
 useSpecLabHead('Clear skies', 'Exoplanets');
+
+const modelAnchor = useTemplateRef('modelAnchor');
 
 const { tutorialState, goToNext, replay } =
   useExoplanetsClearTutorialStateMachine();
 goToNext();
 
-const allMetadata = useAllMetadata();
+const clearHotJupiterMetadata = useCustomMetadata(
+  'Exoplanet Models',
+  'Clear_Hot_Jupiter_Model_Transmission',
+  {},
+);
 
-const bulbMetadataList = allMetadata['Lamps'];
+const exoplanetMetadataList = clearHotJupiterMetadata
+  ? [clearHotJupiterMetadata]
+  : [];
 </script>
