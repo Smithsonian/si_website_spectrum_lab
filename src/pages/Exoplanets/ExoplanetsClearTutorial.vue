@@ -31,6 +31,13 @@
               style="bottom: 10px; left: 300px"
             ></div>
             <ExoClearTutPopoverModel :anchor-elem="modelAnchor" />
+            <div
+              ref="featuresAnchor"
+              class="position-absolute"
+              style="bottom: 10px; left: 200px"
+            ></div>
+            <ExoClearTutPopoverFeatures :anchor-elem="featuresAnchor" />
+            <ExoClearTutOverlayFeatures v-if="tutorialState === 'features'" />
           </ToolCard>
         </template>
         <template v-if="tutorialState === 'nextPage'" #bottom-tool>
@@ -62,6 +69,7 @@ import { useTemplateRef } from 'vue';
 useSpecLabHead('Clear skies', 'Exoplanets');
 
 const modelAnchor = useTemplateRef('modelAnchor');
+const featuresAnchor = useTemplateRef('featuresAnchor');
 
 const { tutorialState, goToNext, replay } =
   useExoplanetsClearTutorialStateMachine();

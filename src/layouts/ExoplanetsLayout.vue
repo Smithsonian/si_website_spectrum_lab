@@ -18,7 +18,7 @@
             >
               Comparing exoplanets
             </SectionNavItem>
-            <SectionNavItem to="/spectra/draw-spectrum">
+            <SectionNavItem to="/final-projects/exoplanets/proposal">
               Proposal to NASA
             </SectionNavItem>
           </SectionNav>
