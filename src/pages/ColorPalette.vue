@@ -38,24 +38,24 @@
         <ColorCircle
           color="#d8f354"
           display-name="Data Labs chartreuse"
-          variable-name="dl-yellow"
+          variable-name="dl-chartreuse"
         />
       </ColorPaletteRow>
       <ColorPaletteRow title="Speclab colors">
         <ColorCircle
           color="#3a678a"
           display-name="Speclab slate blue"
-          variable-name="sl-muted-blue"
+          variable-name="sl-slate-blue"
         />
         <ColorCircle
           color="#00456c"
           display-name="Speclab royal blue"
-          variable-name="sl-navy"
+          variable-name="sl-royal-blue"
         />
         <ColorCircle
           color="#153353"
           display-name="Speclab navy blue"
-          variable-name="sl-dark-purple"
+          variable-name="sl-navy"
         />
         <ColorCircle
           color="#3ad4ed"

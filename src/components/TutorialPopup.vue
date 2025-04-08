@@ -87,13 +87,13 @@ watch([isPositioned, () => props.noScroll], ([isPositioned, noScroll]) => {
   transform: rotate(45deg);
   /* Cut off the bottom half of the triangle, plus the overlapping portion */
   clip-path: polygon(-100% -100%, 195% -100%, -100% 195%);
-  border: 2px solid var(--sl-muted-blue);
-  box-shadow: 0px 0px 7px 2px var(--sl-muted-blue);
+  border: 2px solid var(--sl-slate-blue);
+  box-shadow: 0px 0px 7px 2px var(--sl-slate-blue);
 }
 .tutorial-contents {
   z-index: 100;
   background-color: var(--sl-lighter-blue);
-  border: 2px solid var(--sl-muted-blue);
-  box-shadow: 0px 0px 7px 2px var(--sl-muted-blue);
+  border: 2px solid var(--sl-slate-blue);
+  box-shadow: 0px 0px 7px 2px var(--sl-slate-blue);
 }
 </style>

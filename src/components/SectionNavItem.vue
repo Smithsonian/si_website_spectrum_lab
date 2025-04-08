@@ -12,16 +12,16 @@ defineProps<{ to: string }>();
 
 <style>
 .section-nav-link {
-  color: var(--sl-dark-purple);
+  color: var(--sl-navy);
 }
 
 .section-nav-item:not(:last-child) {
-  border-bottom: 1px solid var(--sl-muted-blue);
+  border-bottom: 1px solid var(--sl-slate-blue);
 }
 
 .nav-pills .section-nav-link.nav-link.router-link-active {
   color: var(--gen-white);
-  background-color: var(--sl-navy);
+  background-color: var(--sl-royal-blue);
 }
 
 .nav-pills .section-nav-link.nav-link.router-link-active:hover,

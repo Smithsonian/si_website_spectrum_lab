@@ -26,12 +26,12 @@ $gen-grey: #a8a8b4;
 // Data Labs colors
 $dl-bright-purple: #3a3b75;
 $dl-dark-purple: #291a56;
-$dl-yellow: #d8f354;
+$dl-chartreuse: #d8f354;
 
 // Speclab colors
-$sl-muted-blue: #3a678a;
-$sl-navy: #00456c;
-$sl-dark-purple: #153353;
+$sl-slate-blue: #3a678a;
+$sl-royal-blue: #00456c;
+$sl-navy: #153353;
 $sl-light-blue: #3ad4ed;
 $sl-lighter-blue: #8ce7ff;
 
@@ -56,11 +56,11 @@ $diy-red: #c02325;
 
   --dl-bright-purple: #{$dl-bright-purple};
   --dl-dark-purple: #{$dl-dark-purple};
-  --dl-yellow: #{$dl-yellow};
+  --dl-chartreuse: #{$dl-chartreuse};
 
-  --sl-muted-blue: #{$sl-muted-blue};
+  --sl-slate-blue: #{$sl-slate-blue};
+  --sl-royal-blue: #{$sl-royal-blue};
   --sl-navy: #{$sl-navy};
-  --sl-dark-purple: #{$sl-dark-purple};
   --sl-light-blue: #{$sl-light-blue};
   --sl-lighter-blue: #{$sl-lighter-blue};
 
@@ -77,7 +77,7 @@ $diy-red: #c02325;
 
 // SASS Bootstrap overrides
 $primary: $sl-light-blue;
-$secondary: $sl-muted-blue;
+$secondary: $sl-slate-blue;
 $dark: $gen-black;
 $nav-pills-border-radius: 0;
 
@@ -92,16 +92,16 @@ $nav-pills-border-radius: 0;
   background-color: var(--gen-black) !important;
 }
 
-.bg-sl-dark-purple {
-  background-color: var(--sl-dark-purple) !important;
-}
-
-.bg-sl-muted-blue {
-  background-color: var(--sl-muted-blue) !important;
-}
-
 .bg-sl-navy {
-  background-color: var(--sl-navy);
+  background-color: var(--sl-navy) !important;
+}
+
+.bg-sl-slate-blue {
+  background-color: var(--sl-slate-blue) !important;
+}
+
+.bg-sl-royal-blue {
+  background-color: var(--sl-royal-blue);
 }
 
 .bg-sl-lighter-blue {
@@ -116,8 +116,8 @@ $nav-pills-border-radius: 0;
   color: var(--sl-light-blue) !important;
 }
 
-.color-sl-dark-purple {
-  color: var(--sl-dark-purple) !important;
+.color-sl-navy {
+  color: var(--sl-navy) !important;
 }
 
 .challenge-image {

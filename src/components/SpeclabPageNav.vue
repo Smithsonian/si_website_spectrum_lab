@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-sl-navy">
+  <div class="bg-sl-royal-blue">
     <BContainer>
       <BNav>
         <BNavItem link-class="page-nav-link">1. Color</BNavItem>
@@ -25,7 +25,7 @@
 }
 
 .page-nav-link.nav-link.router-link-active {
-  color: var(--sl-navy);
+  color: var(--sl-royal-blue);
   background-color: var(--sl-lighter-blue);
 }
 .page-nav-link.nav-link.router-link-active:hover,

@@ -2,7 +2,7 @@
   <div class="drawn-chart-bg position-relative">
     <div
       v-if="showClickHere"
-      class="position-absolute color-sl-dark-purple drawing-click-here-layer"
+      class="position-absolute color-sl-navy drawing-click-here-layer"
     >
       <div>
         Click here to draw

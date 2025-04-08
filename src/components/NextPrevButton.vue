@@ -40,15 +40,15 @@ const directionDisplay = computed((): string => {
 
 <style>
 .btn.next-prev-button.button-light {
-  border: 2px solid var(--sl-muted-blue);
+  border: 2px solid var(--sl-slate-blue);
   background-color: var(--sl-lighter-blue);
-  color: var(--sl-dark-purple);
+  color: var(--sl-navy);
   font-weight: 600;
 }
 
 .btn.next-prev-button.button-light:hover {
-  border: 2px solid var(--sl-muted-blue);
-  background-color: var(--sl-dark-purple);
+  border: 2px solid var(--sl-slate-blue);
+  background-color: var(--sl-navy);
   /* This is the Bootstrap default light text incantation */
   color: rgba(var(--bs-light-rgb), 1);
   font-weight: 600;
@@ -56,14 +56,14 @@ const directionDisplay = computed((): string => {
 
 .btn.next-prev-button {
   border: 2px solid var(--sl-light-blue);
-  background-color: var(--sl-navy);
+  background-color: var(--sl-royal-blue);
   font-weight: 600;
 }
 
 .btn.next-prev-button:hover {
-  border: 2px solid var(--sl-muted-blue);
+  border: 2px solid var(--sl-slate-blue);
   background-color: var(--sl-light-blue);
-  color: var(--sl-dark-purple);
+  color: var(--sl-navy);
   font-weight: 600;
 }
 </style>

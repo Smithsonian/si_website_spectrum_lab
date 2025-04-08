@@ -130,7 +130,7 @@ const hokusaiB2Metadata = customMetadata.filter(
 <style>
 .chosen-filter-picker .btn-primary {
   --bs-btn-active-bg: hwb(188 70% 7%);
-  --bs-btn-border-color: var(--sl-dark-purple);
-  --bs-btn-active-border-color: var(--sl-dark-purple);
+  --bs-btn-border-color: var(--sl-navy);
+  --bs-btn-active-border-color: var(--sl-navy);
 }
 </style>

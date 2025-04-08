@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-card bg-sl-dark-purple text-white p-3 rounded-4">
+  <div class="tool-card bg-sl-navy text-white p-3 rounded-4">
     <!-- Chart bottom means file picker top, and vice versa -->
     <template v-if="showFilePicker && chartPosition === 'bottom'">
       <BRow class="mb-3">

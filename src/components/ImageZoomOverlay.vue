@@ -149,8 +149,8 @@ const handlePointerLeave = (e: PointerEvent): void => {
 <style>
 .zoom-container {
   overflow: clip;
-  outline: 5px solid var(--sl-navy);
-  background-color: var(--sl-navy);
+  outline: 5px solid var(--sl-royal-blue);
+  background-color: var(--sl-royal-blue);
 }
 
 .pointer-rectangle {

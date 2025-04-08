@@ -14,7 +14,7 @@
       </BRow>
     </BContainer>
   </div>
-  <div class="bg-sl-muted-blue py-4">
+  <div class="bg-sl-slate-blue py-4">
     <BContainer class="px-4" style="margin-bottom: 150px">
       <BRow class="gx-5 mb-4">
         <ModuleTile :icon-source="fishtankIcon" title="Fishtank" to="fishtank">

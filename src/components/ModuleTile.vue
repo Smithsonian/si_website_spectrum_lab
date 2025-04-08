@@ -50,11 +50,11 @@ path.cls-1 {
 }
 
 .module-tile-dark {
-  background-color: var(--sl-dark-purple);
+  background-color: var(--sl-navy);
 }
 
 .module-tile-lighter {
-  background-color: var(--sl-navy);
+  background-color: var(--sl-royal-blue);
 }
 
 .module-tile-dark:hover {
