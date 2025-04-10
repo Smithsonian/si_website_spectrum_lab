@@ -51,12 +51,12 @@
           </BCol>
         </BRow>
       </BCol>
-      <!-- Chart needs to be reordered before spectrum picker, when on top in smaller breakpoints -->
+      <!-- Chart needs to be reordered before spectrum picker, with spacing, when on top in smaller breakpoints -->
       <BCol
         :class="
           chartPosition === 'bottom'
-            ? 'mt-3'
-            : 'mt-2 mb-3 order-first order-xl-last'
+            ? 'mt-3 mt-xl-0'
+            : 'mb-3 order-first mb-xl-0 order-xl-last'
         "
       >
         <div
@@ -64,6 +64,10 @@
           class="spectrum-preview-holder rounded-4 mb-3"
         >
           <img :src="previewPath" />
+        </div>
+        <!-- Use an invisible placeholder to prevent layout jumping -->
+        <div class="tool-card-chart-title">
+          {{ chartTitle || '&nbsp;' }}
         </div>
         <!-- SpectrumChart contents are expected to overlay the chart. -->
         <SpectrumChart>
@@ -276,6 +280,17 @@ const iconPath = computed((): string => {
   return imageUrl;
 });
 
+// Chart title (as distinct from tool card title)
+const chartTitle = computed((): string => {
+  if (selectedMetadata.value) {
+    return `${selectedMetadata.value.category} — ${selectedMetadata.value.title}`;
+  }
+  if (pickedFile.value) {
+    return `Uploaded file — ${pickedFile.value.name}`;
+  }
+  return '';
+});
+
 // Preview
 const previewPath = computed((): string | null => {
   if (!selectedMetadata.value) {
@@ -394,5 +409,10 @@ provide(spectrumDataKey, spectrumData);
   width: 670px;
   overflow: hidden;
   outline: 2px solid black;
+}
+
+.tool-card-chart-title {
+  margin-left: 65px;
+  font-weight: 600;
 }
 </style>
