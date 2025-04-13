@@ -11,8 +11,10 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
   >
     <path
       d="
-        M 5 70
-        c 100 -80 500 -80 600 0
+        M 5 37
+        q 20 -25 100 -25
+        h 400
+        q 80 0 100 25
       "
     />
   </svg>

@@ -80,6 +80,9 @@
             <ExoCloudyTutOverlayWidthDepthCloudy
               v-if="tutorialState === 'widthDepth'"
             />
+            <ExoCloudyTutOverlayShapeSlopeCloudy
+              v-if="tutorialState === 'cloudShapeSlope'"
+            />
           </ToolCard>
         </template>
       </ToolControlGroup>
