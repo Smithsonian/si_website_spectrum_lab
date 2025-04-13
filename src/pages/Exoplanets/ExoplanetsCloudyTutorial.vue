@@ -58,6 +58,17 @@
             <ExoCloudyTutOverlayWidthDepthClear
               v-if="tutorialState === 'widthDepth'"
             />
+            <div
+              ref="cloudShapeSlopeAnchor"
+              class="position-absolute"
+              style="bottom: 70px; left: 200px"
+            ></div>
+            <ExoCloudyTutPopoverShapeSlopeCloudy
+              :anchor-elem="cloudShapeSlopeAnchor"
+            />
+            <ExoCloudyTutOverlayShapeSlopeClear
+              v-if="tutorialState === 'cloudShapeSlope'"
+            />
           </ToolCard>
         </template>
         <template #bottom-tool>
@@ -97,6 +108,7 @@ import { ref, useTemplateRef } from 'vue';
 useSpecLabHead('Cloudy/Hazy skies', 'Exoplanets');
 
 const widthDepthAnchor = useTemplateRef('widthDepthAnchor');
+const cloudShapeSlopeAnchor = useTemplateRef('cloudShapeSlopeAnchor');
 
 // This is where the feature labels are in the right spot.
 const FEATURES_ZOOM = 41;
