@@ -11,19 +11,9 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
   >
     <path
       d="
-        M 5 70
-        c 100 -80 500 -80 600 0
+        M 5 120
+        q 200 -95 600 -95
       "
     />
   </svg>
 </template>
-
-<style>
-.shape-slope-svg {
-  top: 0;
-  left: 0;
-  stroke: var(--gen-black);
-  stroke-width: 2;
-  fill: none;
-}
-</style>

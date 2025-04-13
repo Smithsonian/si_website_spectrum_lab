@@ -58,30 +58,44 @@
             <ExoCloudyTutOverlayWidthDepthClear
               v-if="tutorialState === 'widthDepth'"
             />
-            <div
-              ref="cloudShapeSlopeAnchor"
-              class="position-absolute"
-              style="bottom: 70px; left: 200px"
-            ></div>
-            <ExoCloudyTutPopoverShapeSlopeCloudy
-              :anchor-elem="cloudShapeSlopeAnchor"
-            />
             <ExoCloudyTutOverlayShapeSlopeClear
-              v-if="tutorialState === 'cloudShapeSlope'"
+              v-if="
+                tutorialState === 'cloudShapeSlope' ||
+                tutorialState === 'hazeShapeSlope'
+              "
             />
           </ToolCard>
         </template>
         <template #bottom-tool>
           <ToolCard
             title="Spectrum 2"
-            :custom-metadata="cloudyMetadataList"
+            :custom-metadata="bottomMetadataList"
             :spectrum-picker-placeholder="null"
           >
+            <div
+              ref="cloudShapeSlopeAnchor"
+              class="position-absolute"
+              style="bottom: 90px; left: 300px"
+            ></div>
+            <ExoCloudyTutPopoverShapeSlopeCloudy
+              :anchor-elem="cloudShapeSlopeAnchor"
+            />
             <ExoCloudyTutOverlayWidthDepthCloudy
               v-if="tutorialState === 'widthDepth'"
             />
             <ExoCloudyTutOverlayShapeSlopeCloudy
               v-if="tutorialState === 'cloudShapeSlope'"
+            />
+            <div
+              ref="hazeShapeSlopeAnchor"
+              class="position-absolute"
+              style="bottom: 90px; left: 400px"
+            ></div>
+            <ExoCloudyTutPopoverShapeSlopeHazy
+              :anchor-elem="hazeShapeSlopeAnchor"
+            />
+            <ExoCloudyTutOverlayShapeSlopeHazy
+              v-if="tutorialState === 'hazeShapeSlope'"
             />
           </ToolCard>
         </template>
@@ -104,14 +118,18 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { useCustomMetadata } from '@/utils/metadataUtils';
+import {
+  useCustomMetadata,
+  type SpectrumMetadata,
+} from '@/utils/metadataUtils';
 import { useExoplanetsCloudyTutorialStateMachine } from '@/utils/tutorialUtils';
-import { ref, useTemplateRef } from 'vue';
+import { computed, ref, useTemplateRef } from 'vue';
 
 useSpecLabHead('Cloudy/Hazy skies', 'Exoplanets');
 
 const widthDepthAnchor = useTemplateRef('widthDepthAnchor');
 const cloudShapeSlopeAnchor = useTemplateRef('cloudShapeSlopeAnchor');
+const hazeShapeSlopeAnchor = useTemplateRef('hazeShapeSlopeAnchor');
 
 // This is where the feature labels are in the right spot.
 const FEATURES_ZOOM = 41;
@@ -141,4 +159,22 @@ const cloudyMetadata = useCustomMetadata(
 );
 
 const cloudyMetadataList = cloudyMetadata ? [cloudyMetadata] : [];
+
+const hazyMetadata = useCustomMetadata(
+  'Exoplanet Models',
+  'Hazy_Hot_Jupiter_Model_Transmission',
+  {},
+);
+
+const hazyMetadataList = hazyMetadata ? [hazyMetadata] : [];
+
+const bottomMetadataList = computed((): SpectrumMetadata[] => {
+  if (
+    tutorialState.value === 'widthDepth' ||
+    tutorialState.value === 'cloudShapeSlope'
+  ) {
+    return cloudyMetadataList;
+  }
+  return hazyMetadataList;
+});
 </script>

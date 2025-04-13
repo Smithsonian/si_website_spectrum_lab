@@ -5,7 +5,7 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 
 <template>
   <svg
-    class="position-absolute shape-slope-clear-svg"
+    class="position-absolute shape-slope-svg"
     viewBox="0 0 610 150"
     :style="{ height: CHART_HEIGHT, width: CHART_WIDTH }"
   >
@@ -19,13 +19,3 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
     />
   </svg>
 </template>
-
-<style>
-.shape-slope-clear-svg {
-  top: 0;
-  left: 0;
-  stroke: var(--gen-black);
-  stroke-width: 2;
-  fill: none;
-}
-</style>
