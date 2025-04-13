@@ -56,7 +56,10 @@
             ></div>
             <ExoCloudyTutPopoverWidthDepth :anchor-elem="widthDepthAnchor" />
             <ExoCloudyTutOverlayWidthDepthClear
-              v-if="tutorialState === 'widthDepth'"
+              v-if="
+                tutorialState === 'widthDepth' ||
+                tutorialState === 'dampenedAbsorption'
+              "
             />
             <ExoCloudyTutOverlayShapeSlopeClear
               v-if="
@@ -89,13 +92,24 @@
             <div
               ref="hazeShapeSlopeAnchor"
               class="position-absolute"
-              style="bottom: 90px; left: 400px"
+              style="bottom: 90px; left: 350px"
             ></div>
             <ExoCloudyTutPopoverShapeSlopeHazy
               :anchor-elem="hazeShapeSlopeAnchor"
             />
             <ExoCloudyTutOverlayShapeSlopeHazy
               v-if="tutorialState === 'hazeShapeSlope'"
+            />
+            <div
+              ref="hazeWidthDepthAnchor"
+              class="position-absolute"
+              style="bottom: 70px; left: 400px"
+            ></div>
+            <ExoCloudyTutPopoverWidthDepthHazy
+              :anchor-elem="hazeWidthDepthAnchor"
+            />
+            <ExoCloudyTutOverlayWidthDepthHazy
+              v-if="tutorialState === 'dampenedAbsorption'"
             />
           </ToolCard>
         </template>
@@ -130,6 +144,7 @@ useSpecLabHead('Cloudy/Hazy skies', 'Exoplanets');
 const widthDepthAnchor = useTemplateRef('widthDepthAnchor');
 const cloudShapeSlopeAnchor = useTemplateRef('cloudShapeSlopeAnchor');
 const hazeShapeSlopeAnchor = useTemplateRef('hazeShapeSlopeAnchor');
+const hazeWidthDepthAnchor = useTemplateRef('hazeWidthDepthAnchor');
 
 // This is where the feature labels are in the right spot.
 const FEATURES_ZOOM = 41;

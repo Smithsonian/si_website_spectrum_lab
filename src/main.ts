@@ -7,6 +7,7 @@ import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faArrowUp,
+  faArrowDown,
   faChevronLeft,
   faChevronRight,
   faPencil,
@@ -44,7 +45,14 @@ import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 
-library.add(faArrowUp, faPencil, faChevronRight, faChevronLeft, faXmark);
+library.add(
+  faArrowUp,
+  faArrowDown,
+  faPencil,
+  faChevronRight,
+  faChevronLeft,
+  faXmark,
+);
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
