@@ -46,7 +46,8 @@
         <template #top-tool>
           <ToolCard
             title="Spectrum 1"
-            :custom-metadata="clearMetadataList"
+            :custom-metadata="topMetadataList"
+            default-spectrum="Clear_Hot_Jupiter_Model_Transmission"
             :spectrum-picker-placeholder="null"
           >
             <div
@@ -74,6 +75,11 @@
             title="Spectrum 2"
             :custom-metadata="bottomMetadataList"
             :spectrum-picker-placeholder="null"
+            :default-spectrum="
+              tutorialState === 'nextSection'
+                ? 'Hazy_Hot_Jupiter_Model_Transmission'
+                : null
+            "
           >
             <div
               ref="cloudShapeSlopeAnchor"
@@ -183,12 +189,28 @@ const hazyMetadata = useCustomMetadata(
 
 const hazyMetadataList = hazyMetadata ? [hazyMetadata] : [];
 
+const allAtmospheresList = [
+  ...clearMetadataList,
+  ...cloudyMetadataList,
+  ...hazyMetadataList,
+];
+
+const topMetadataList = computed((): SpectrumMetadata[] => {
+  if (tutorialState.value === 'nextSection') {
+    return allAtmospheresList;
+  }
+  return clearMetadataList;
+});
+
 const bottomMetadataList = computed((): SpectrumMetadata[] => {
   if (
     tutorialState.value === 'widthDepth' ||
     tutorialState.value === 'cloudShapeSlope'
   ) {
     return cloudyMetadataList;
+  }
+  if (tutorialState.value === 'nextSection') {
+    return allAtmospheresList;
   }
   return hazyMetadataList;
 });
