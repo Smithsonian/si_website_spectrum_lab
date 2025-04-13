@@ -52,7 +52,7 @@
           :icon-source="finalIcon"
           title="Final Projects"
           lighter
-          to="/fishtank"
+          to="/final-projects"
         >
           Apply what you know about light, color, and spectra to Design a Fish
           Tank lighting system; Explore Exoplanet Atmospheres; or Analyze
