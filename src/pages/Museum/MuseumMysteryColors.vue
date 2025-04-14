@@ -72,7 +72,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 useSpecLabHead('Mystery Paints', 'Museum');
 
 const chokhaR1 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
     title: 'Mystery Pigment 1',
@@ -81,7 +81,7 @@ const chokhaR1 = useCustomMetadata(
   },
 );
 const chokhaB2 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_Blue_2',
   {
     title: 'Mystery Pigment 2',
@@ -90,7 +90,7 @@ const chokhaB2 = useCustomMetadata(
   },
 );
 const chokhaY1 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
     title: 'Mystery Pigment 3',
@@ -99,7 +99,7 @@ const chokhaY1 = useCustomMetadata(
   },
 );
 const chokhaW1 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
     title: 'Mystery Pigment 4',
