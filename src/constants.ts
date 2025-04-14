@@ -17,3 +17,4 @@ export const BASE_URL = slashAtTheEnd.test(rawBaseUrl)
   : `${rawBaseUrl}/`;
 
 export type InstructionRowType = 'Tutorial' | 'Notebook' | 'Tool' | 'Art';
+export type PlotType = 'line' | 'scatter';

@@ -44,6 +44,7 @@ import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
 import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
+import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
 
 library.add(
   faArrowUp,
@@ -116,6 +117,7 @@ const routes: RouteRecordRaw[] = [
         children: [
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
+          { path: 'wasp-17b', component: ExoplanetsWASP17b },
         ],
       },
       {
