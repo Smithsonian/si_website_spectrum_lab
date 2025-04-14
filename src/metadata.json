@@ -7,9 +7,8 @@
     "realOrCalculated": "Captured from Source",
     "imagePath": "Lamps/Incandescent_Bulb.jpg",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
-    "sourceText": "Lamp Spectral Power Distribution Database",
-    "sourceUrl": "https://lspdd.com/database/2552",
-    "credit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International. Permissions beyond the scope of this license may be obtained by contacting us."
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2552)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
   },
   {
     "category": "Lamps",
@@ -19,9 +18,8 @@
     "realOrCalculated": "Captured from Source",
     "imagePath": "Lamps/Fluorescent_Bulb.jpg",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
-    "sourceText": "Lamp Spectral Power Distribution Database",
-    "sourceUrl": "https://lspdd.com/database/2504",
-    "credit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International. Permissions beyond the scope of this license may be obtained by contacting us."
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2504)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
   },
   {
     "category": "Lamps",
@@ -31,9 +29,8 @@
     "realOrCalculated": "Captured from Source",
     "imagePath": "Lamps/Metal_Halide_Bulb.jpg",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
-    "sourceText": "Lamp Spectral Power Distribution Database",
-    "sourceUrl": "https://lspdd.com/database/2481",
-    "credit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International. Permissions beyond the scope of this license may be obtained by contacting us."
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2481)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
   },
   {
     "category": "Lamps",
@@ -43,9 +40,8 @@
     "realOrCalculated": "Captured from Source",
     "imagePath": "Lamps/Sodium_Vapor_Lamp_Low_Pressure.jpg",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
-    "sourceText": "Lamp Spectral Power Distribution Database",
-    "sourceUrl": "https://lspdd.com/database/2769",
-    "credit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International. Permissions beyond the scope of this license may be obtained by contacting us."
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2769)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
   },
   {
     "category": "Lamps",
@@ -63,81 +59,61 @@
     "category": "Lamps",
     "filename": "LED_400nm",
     "title": "LED 400 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_455nm",
     "title": "LED 455 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_470nm",
     "title": "LED 470 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_505nm",
     "title": "LED 505 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_525nm",
     "title": "LED 525 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_570nm",
     "title": "LED 570 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_590nm",
     "title": "LED 590 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_604nm",
     "title": "LED 604 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_626nm",
     "title": "LED 626 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
     "filename": "LED_640nm",
     "title": "LED 640 nm",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Stars",
@@ -259,25 +235,19 @@
     "category": "Atoms and Molecules",
     "filename": "Hydrogen_Emission",
     "title": "Hydrogen Emission",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Helium_Emission",
     "title": "Helium Emission",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Neon_Emission",
     "title": "Neon Emission",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Atoms and Molecules",
@@ -289,9 +259,7 @@
     "category": "Atoms and Molecules",
     "filename": "Sodium_Low_Pressure_Emission",
     "title": "Sodium (low pressure) Emission",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Atoms and Molecules",
@@ -315,9 +283,7 @@
     "category": "Atoms and Molecules",
     "filename": "Mercury_Emission",
     "title": "Mercury Emission",
-    "spectrumType": "Emission",
-    "sourceText": "SI Data Labs Team",
-    "credit": "Frank Sienkiewicz"
+    "spectrumType": "Emission"
   },
   {
     "category": "Atoms and Molecules",
@@ -410,11 +376,8 @@
     "spectrumType": "Transmission",
     "realOrCalculated": "Captured from Source",
     "how": "A telescope-mounted spectrometer on Earth captured sunlight that passed (i.e. transmitted) through Earth\u2019s atmosphere and was reflected off the Moon\u2019s surface back to Earth.",
-    "sourceText": "doi:10.1038/nature08050",
-    "sourceUrl": "https://www.nature.com/articles/nature08050",
-    "source2Text": "https://arxiv.org/abs/0906.2958",
-    "source2Url": "https://arxiv.org/abs/0906.2958",
-    "credit": "Pall\u00e9, E., Osorio, M. R. Z., Barrena, R., Monta\u00f1\u00e9s-Rodr\u00edguez, P., & Mart\u00edn, E. L. (2009). Earth\u2019s transmission spectrum from lunar eclipse observations. Nature, 459(7248), 814-816.",
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature08050); [Free access version](https://arxiv.org/abs/0906.2958)",
+    "spectrumCredit": "Pall\u00e9, E., Osorio, M. R. Z., Barrena, R., Monta\u00f1\u00e9s-Rodr\u00edguez, P., & Mart\u00edn, E. L. (2009). Earth\u2019s transmission spectrum from lunar eclipse observations. *Nature, 459*(7248), 814-816.",
     "additionalInfo": "See \u201cSupplementary Information\u201d section of paper cited above for a diagram that shows how the spectrum was obtained."
   },
   {
@@ -433,15 +396,13 @@
     "category": "Planets",
     "filename": "Mars_Reflection",
     "title": "Mars Reflection",
-    "spectrumType": "Reflection",
-    "sourceText": "NASA/JPL/MSSS"
+    "spectrumType": "Reflection"
   },
   {
     "category": "Planets",
     "filename": "Mars_Emission",
     "title": "Mars Emission",
-    "spectrumType": "Emission",
-    "sourceText": "NASA/JPL/MSSS"
+    "spectrumType": "Emission"
   },
   {
     "category": "Planets",
@@ -549,11 +510,8 @@
     "realOrCalculated": "Calculated Model",
     "imagePath": "Exoplanet_Models/Clear_Hot_Jupiter_Model_Transmission.jpg",
     "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
-    "sourceText": "doi:10.1038/nature16068",
-    "sourceUrl": "https://www.nature.com/articles/nature16068",
-    "source2Text": "https://arxiv.org/pdf/1512.04341",
-    "source2Url": "https://arxiv.org/pdf/1512.04341",
-    "credit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. Nature, 529(7584), 59-62."
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
   },
   {
     "category": "Exoplanet Models",
@@ -563,11 +521,8 @@
     "realOrCalculated": "Calculated Model",
     "imagePath": "Exoplanet_Models/Cloudy_Hot_Jupiter_Model_Transmission.jpg",
     "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
-    "sourceText": "doi:10.1038/nature16068",
-    "sourceUrl": "https://www.nature.com/articles/nature16068",
-    "source2Text": "https://arxiv.org/pdf/1512.04341",
-    "source2Url": "https://arxiv.org/pdf/1512.04341",
-    "credit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. Nature, 529(7584), 59-62."
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
   },
   {
     "category": "Exoplanet Models",
@@ -577,11 +532,8 @@
     "realOrCalculated": "Calculated Model",
     "imagePath": "Exoplanet_Models/Hazy_Hot_Jupiter_Model_Transmission.jpg",
     "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
-    "sourceText": "doi:10.1038/nature16068",
-    "sourceUrl": "https://www.nature.com/articles/nature16068",
-    "source2Text": "https://arxiv.org/pdf/1512.04341",
-    "source2Url": "https://arxiv.org/pdf/1512.04341",
-    "credit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. Nature, 529(7584), 59-62."
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
   },
   {
     "category": "Thermal Spectra",
@@ -745,7 +697,7 @@
     "imagePath": "Fishtank_Lights/Teal_GreenHigh_BlueMedium.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_1",
     "title": "Chokha Painting, Region B1",
     "spectrumType": "Reflection",
@@ -753,7 +705,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_2",
     "title": "Chokha Painting, Region B2",
     "spectrumType": "Reflection",
@@ -761,7 +713,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Green_1",
     "title": "Chokha Painting, Region G1",
     "spectrumType": "Reflection",
@@ -769,7 +721,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Green_2",
     "title": "Chokha Painting, Region G2",
     "spectrumType": "Reflection",
@@ -777,7 +729,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Red_1",
     "title": "Chokha Painting, Region R1",
     "spectrumType": "Reflection",
@@ -785,7 +737,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Red_2",
     "title": "Chokha Painting, Region R2",
     "spectrumType": "Reflection",
@@ -793,7 +745,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_White_1",
     "title": "Chokha Painting, Region W1",
     "spectrumType": "Reflection",
@@ -801,7 +753,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Yellow_1",
     "title": "Chokha Painting, Region Y1",
     "spectrumType": "Reflection",
@@ -809,7 +761,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "Painting_1_ROI-1_ROI-2_ROI_1",
     "title": "Chokha Painting, Region of Interest 1",
     "spectrumType": "Reflection",
@@ -817,7 +769,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "Painting_1_ROI-1_ROI-2_ROI_2",
     "title": "Chokha Painting, Region of Interest 2",
     "spectrumType": "Reflection",
@@ -825,7 +777,7 @@
     "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Blue_1",
     "title": "Hokusai Painting, Region B1",
     "spectrumType": "Reflection",
@@ -833,7 +785,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Blue_2",
     "title": "Hokusai Painting, Region B2",
     "spectrumType": "Reflection",
@@ -841,7 +793,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Green_1",
     "title": "Hokusai Painting, Region G1",
     "spectrumType": "Reflection",
@@ -849,7 +801,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Green_2",
     "title": "Hokusai Painting, Region G2",
     "spectrumType": "Reflection",
@@ -857,7 +809,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Red_1",
     "title": "Hokusai Painting, Region R1",
     "spectrumType": "Reflection",
@@ -865,7 +817,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Red_2",
     "title": "Hokusai Painting, Region R2",
     "spectrumType": "Reflection",
@@ -873,7 +825,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_White_1",
     "title": "Hokusai Painting, Region W1",
     "spectrumType": "Reflection",
@@ -881,7 +833,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "F1904-134_VNIR-SWIR_colors_Yellow",
     "title": "Hokusai Painting, Region Y",
     "spectrumType": "Reflection",
@@ -889,7 +841,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "Painting_2_ROI-1_ROI-2_ROI_1",
     "title": "Hokusai Painting, Region of Interest 1",
     "spectrumType": "Reflection",
@@ -897,7 +849,7 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Painting Regions",
     "filename": "Painting_2_ROI-1_ROI-2_ROI_2",
     "title": "Hokusai Painting, Region of Interest 2",
     "spectrumType": "Reflection",
@@ -905,73 +857,73 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Azurite",
     "title": "Azurite",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Cobalt_Yellow",
     "title": "Cobalt Yellow",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Cochineal",
     "title": "Cochineal",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Egyptian_Blue",
     "title": "Egyptian Blue",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Indigo",
     "title": "Indigo",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Lead_White",
     "title": "Lead White",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Orpiment",
     "title": "Orpiment",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Prussian_Blue",
     "title": "Prussian Blue",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Red_Lead",
     "title": "Red Lead",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Shell_White",
     "title": "Shell White",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Vermilion",
     "title": "Vermilion",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Museum Conservation",
+    "category": "Paint Pigments",
     "filename": "Spectral-Analysis-of-Genuine-Indian-Yellow-single-spectrum_Genuine_Indian_Yellow",
     "title": "Genuine Indian Yellow",
     "spectrumType": "Reflection"

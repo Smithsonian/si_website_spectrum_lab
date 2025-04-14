@@ -22,11 +22,8 @@ with open(input_path, 'r') as i_file:
             "imagePath": "Image path",
             "bigImagePath": "Big image path",
             "how": "How",
-            "sourceText": "Source (text)",
-            "sourceUrl": "Source (hyperlink)",
-            "source2Text": "Source 2 (text)",
-            "source2Url": "Source 2 (hyperlink)",
-            "credit": "Credit",
+            "spectrumSource": "Spectrum Source (markdown)",
+            "spectrumCredit": "Spectrum Credit (markdown)",
             "additionalInfo": "Additional Info",
         }
         reader = csv.DictReader(i_file)
