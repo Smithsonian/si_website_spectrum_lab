@@ -1,9 +1,12 @@
-import { ViteSSG } from 'vite-ssg';
 import { createBootstrap } from 'bootstrap-vue-next';
 import './assets/speclab_theme.scss';
 import 'video.js/dist/video-js.css';
 import VueGtag from 'vue-gtag';
-import type { RouteRecordRaw } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  type RouteRecordRaw,
+} from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faArrowUp,
@@ -45,6 +48,7 @@ import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
+import { createApp } from 'vue';
 
 library.add(
   faArrowUp,
@@ -167,20 +171,22 @@ const routes: RouteRecordRaw[] = [
   },
 ];
 
-export const createApp = ViteSSG(
-  App,
-  { routes, base: BASE_URL },
-  ({ app, router }) => {
-    app.component('FontAwesomeIcon', FontAwesomeIcon);
-    app.use(createBootstrap());
-    app.use(
-      VueGtag,
-      {
-        config: {
-          id: 'G-N4BDY9ZWS8',
-        },
-      },
-      router,
-    );
+const router = createRouter({
+  history: createWebHistory(BASE_URL),
+  routes,
+});
+
+const app = createApp(App);
+app.use(router);
+app.component('FontAwesomeIcon', FontAwesomeIcon);
+app.use(createBootstrap());
+app.use(
+  VueGtag,
+  {
+    config: {
+      id: 'G-N4BDY9ZWS8',
+    },
   },
+  router,
 );
+app.mount('#app');
