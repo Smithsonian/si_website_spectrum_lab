@@ -16,4 +16,10 @@ export const BASE_URL = slashAtTheEnd.test(rawBaseUrl)
   ? rawBaseUrl
   : `${rawBaseUrl}/`;
 
-export type InstructionRowType = 'Tutorial' | 'Notebook' | 'Tool' | 'Art';
+export type InstructionRowType =
+  | 'Intro'
+  | 'Tutorial'
+  | 'Notebook'
+  | 'Tool'
+  | 'Video'
+  | 'Art';
