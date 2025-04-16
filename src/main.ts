@@ -58,7 +58,7 @@ library.add(
 const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
   {
-    path: '/spectra',
+    path: '/spectra/',
     redirect: '/spectra/tutorial',
     children: [
       { path: 'tutorial', component: SpectraTutorial },
@@ -66,13 +66,13 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/temperature',
+    path: '/temperature/',
     redirect: '/temperature/tutorial',
     children: [
       { path: 'tutorial', component: TemperatureTutorial },
       { path: 'predictions', component: TemperaturePredictions },
       {
-        path: 'stars',
+        path: 'stars/',
         redirect: '/temperature/stars/spectra',
         children: [
           { path: 'spectra', component: TemperatureStarsSpectra },
@@ -84,17 +84,17 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/final-projects',
+    path: '/final-projects/',
     redirect: '/final-projects/home',
     children: [
       { path: 'home', component: FinalProjects },
       {
-        path: 'fishtank',
+        path: 'fishtank/',
         redirect: '/final-projects/fishtank/background-1',
         children: [
           { path: 'background-1', component: FishTankBackgroundTrees },
           {
-            path: 'background-2',
+            path: 'background-2/',
             redirect: '/final-projects/fishtank/background-2/page-1',
             children: [
               { path: 'page-1', component: FishTankBackgroundComparison },
@@ -112,7 +112,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
-        path: 'exoplanets',
+        path: 'exoplanets/',
         redirect: '/final-projects/exoplanets/clear-skies',
         children: [
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
@@ -121,12 +121,12 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
-        path: 'museum',
+        path: 'museum/',
         redirect: '/final-projects/museum/intro',
         children: [
           { path: 'intro', component: MuseumIntro },
           {
-            path: 'paint-colors',
+            path: 'paint-colors/',
             redirect: '/final-projects/museum/paint-colors/chokha',
             children: [
               { path: 'chokha', component: MuseumChokha },
