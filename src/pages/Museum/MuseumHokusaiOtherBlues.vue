@@ -99,7 +99,7 @@ const imageUrl = computed(() => {
 });
 
 const hokusaiB1 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
@@ -108,7 +108,7 @@ const hokusaiB1 = useCustomMetadata(
 );
 
 const hokusaiB2 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),

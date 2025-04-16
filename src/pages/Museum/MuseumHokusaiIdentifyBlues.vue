@@ -57,7 +57,7 @@ import {
 useSpecLabHead('Identify pigments', 'Museum');
 
 const hokusaiB1 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
@@ -66,7 +66,7 @@ const hokusaiB1 = useCustomMetadata(
 );
 
 const hokusaiB2 = useCustomMetadata(
-  'Museum Conservation',
+  'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),
@@ -84,8 +84,8 @@ const hokusaiBluesMetadata = customMetadata.filter(
 );
 
 const allMetadata = useAllMetadata();
-const museumMetadata = allMetadata['Museum Conservation'];
-const bluesMetadata = museumMetadata.filter(
+const pigmentMetadata = allMetadata['Paint Pigments'];
+const bluesMetadata = pigmentMetadata.filter(
   (sm) =>
     sm.title === 'Prussian Blue' ||
     sm.title === 'Indigo' ||

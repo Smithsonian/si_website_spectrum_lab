@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import type { PlotType } from '@/constants';
 import {
   wavelengthUnitKey,
   normalizeKey,
@@ -80,18 +81,16 @@ const {
 } = defineProps<{
   showNormalizePicker?: boolean;
   showZoom?: boolean;
-  zoomDefault?: number;
   disabled?: boolean;
 }>();
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 
-const zoomPercent = defineModel('zoom', { default: 100 });
+const zoomPercent = defineModel<number>('zoom', { default: 100 });
 const zoom = computed(() => zoomPercent.value / 100);
 provide(zoomKey, zoom);
 
-type PlotType = 'line' | 'scatter';
-const plotType = ref<PlotType>('line');
+const plotType = defineModel<PlotType>('plotType', { default: 'line' });
 const plotOptions: { text: string; value: PlotType }[] = [
   { text: 'Line chart', value: 'line' },
   { text: 'Scatter plot', value: 'scatter' },

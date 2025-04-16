@@ -4,10 +4,13 @@
       <InstructionIcon :row-type="rowType" />
     </BCol>
     <BCol>
-      <p class="mb-2">
-        <strong>{{ title }}</strong>
-        <slot></slot>
-      </p>
+      <div class="instruction-row-paras">
+        <p>
+          <strong>{{ title }}</strong>
+          <slot></slot>
+        </p>
+        <slot name="extra-paras"></slot>
+      </div>
       <ol v-if="$slots.steps" class="fw-light">
         <slot name="steps"></slot>
       </ol>
@@ -48,5 +51,9 @@ const title = computed(() => {
 <style>
 .instruction-row {
   margin-bottom: 1rem;
+}
+
+.instruction-row-paras p {
+  margin-bottom: 0.5rem;
 }
 </style>

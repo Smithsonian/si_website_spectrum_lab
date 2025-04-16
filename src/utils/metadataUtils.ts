@@ -12,7 +12,8 @@ export const PRELOADED_CATEGORIES = [
   'Exoplanet Models',
   'Thermal Spectra',
   'Fish Tank',
-  'Museum Conservation',
+  'Painting Regions',
+  'Paint Pigments',
 ] as const;
 
 export const CATEGORY_DIRECTORIES = {
@@ -25,7 +26,8 @@ export const CATEGORY_DIRECTORIES = {
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
   'Fish Tank': 'Fishtank_Lights',
-  'Museum Conservation': 'Museum_Conservation',
+  'Painting Regions': 'Museum_Conservation',
+  'Paint Pigments': 'Museum_Conservation',
 } as const;
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
@@ -150,7 +152,8 @@ export const useAllMetadata = (): MetadataByCategory => {
       'Exoplanet Models': [],
       'Thermal Spectra': [],
       'Fish Tank': [],
-      'Museum Conservation': [],
+      'Painting Regions': [],
+      'Paint Pigments': [],
     } as MutableMetadataByCategory;
     for (const sm of metadataJson) {
       const validOrNullMetadata = validateMetadata(sm);

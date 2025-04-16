@@ -23,3 +23,4 @@ export type InstructionRowType =
   | 'Tool'
   | 'Video'
   | 'Art';
+export type PlotType = 'line' | 'scatter';
