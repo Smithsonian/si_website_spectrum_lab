@@ -1,6 +1,5 @@
 import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
 import { BootstrapVueNextResolver } from 'bootstrap-vue-next';
@@ -12,7 +11,8 @@ import { viteAwesomeSvgLoader } from 'vite-awesome-svg-loader';
 const outDir = process.env.ENV ? `dist-${process.env.ENV}` : 'dist';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+/** @type {import('vite').UserConfig} */
+export default {
   plugins: [
     vue(),
     vueDevTools(),
@@ -39,4 +39,5 @@ export default defineConfig({
   build: {
     outDir,
   },
-});
+  dirStyle: 'nested',
+};
