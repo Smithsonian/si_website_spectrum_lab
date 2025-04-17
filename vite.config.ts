@@ -39,5 +39,7 @@ export default {
   build: {
     outDir,
   },
-  dirStyle: 'nested',
+  ssgOptions: {
+    dirStyle: 'nested',
+  },
 };
