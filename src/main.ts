@@ -46,6 +46,8 @@ import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
 import NotFound from './pages/NotFound.vue';
+import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
+import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 
 library.add(
   faArrowUp,
@@ -119,6 +121,14 @@ const routes: RouteRecordRaw[] = [
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
           { path: 'wasp-17b', component: ExoplanetsWASP17b },
+          {
+            path: 'comparing',
+            redirect: '/final-projects/exoplanets/comparing/part-1',
+            children: [
+              { path: 'part-1', component: ExoplanetsComparing1 },
+              { path: 'part-2', component: ExoplanetsComparing2 },
+            ],
+          },
         ],
       },
       {

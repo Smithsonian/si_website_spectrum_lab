@@ -13,9 +13,7 @@
             <SectionNavItem to="/final-projects/exoplanets/wasp-17b">
               WASP-17b
             </SectionNavItem>
-            <SectionNavItem
-              to="/final-projects/exoplanets/comparing-exoplanets"
-            >
+            <SectionNavItem to="/final-projects/exoplanets/comparing">
               Comparing exoplanets
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/proposal">

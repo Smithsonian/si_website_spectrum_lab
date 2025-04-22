@@ -43,6 +43,12 @@
               the Comparison Atoms and Molecules and the Comparison Exoplanet
               Models.
             </InstructionStep>
+            <InstructionStep>
+              The chart in your notebook shows a potential analysis of the
+              WASP-17b spectrum. Explain why you would agree or disagree with
+              this analysis, using specific examples from the Atoms and
+              Molecules and Exoplanet Model spectra.
+            </InstructionStep>
           </template>
         </InstructionRow>
       </ChallengeCard>
@@ -70,7 +76,7 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="comparing-exoplanets" light>
+          <NextPrevButton direction="next" to="comparing" light>
             next section
           </NextPrevButton>
         </template>
