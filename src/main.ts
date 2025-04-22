@@ -45,6 +45,7 @@ import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
+import NotFound from './pages/NotFound.vue';
 
 library.add(
   faArrowUp,
@@ -165,6 +166,7 @@ const routes: RouteRecordRaw[] = [
       return { path: `/${to.params.fileName}` };
     },
   },
+  { path: '/:pathMatch(.*)*', component: NotFound },
 ];
 
 export const createApp = ViteSSG(
