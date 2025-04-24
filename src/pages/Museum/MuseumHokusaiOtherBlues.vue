@@ -4,10 +4,7 @@
       <ChallengeCard remove-padding>
         <div class="pt-3 px-3">
           <InstructionHeader>Other Blue Regions</InstructionHeader>
-          <InstructionRow rowType="Art">
-            <p class="needs-updating">
-              make a new category "investigate" use the microscope icon
-            </p>
+          <InstructionRow rowType="Investigate">
             <p>
               Now imagine you wanted to know the composition of other blue
               regions of interest in the painting, but you don't have time to

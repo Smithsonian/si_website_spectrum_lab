@@ -15,6 +15,7 @@ import tutorialIcon from '@/assets/SVG/tutorial_instruction.svg?source&set-curre
 import notebookIcon from '@/assets/SVG/notebook_instruction.svg?source&set-current-color';
 import toolIcon from '@/assets/SVG/chart-bell-curve-cumulative.svg?source&set-current-color';
 import videoIcon from '@/assets/SVG/video-solid.svg?source&set-current-color';
+import investigateIcon from '@/assets/SVG/microscope-solid.svg?source&set-current-color';
 import artIcon from '@/assets/SVG/palette-outline.svg?source&set-current-color';
 import type { InstructionRowType } from '@/constants';
 
@@ -31,6 +32,8 @@ const iconPath = computed(() => {
       return toolIcon;
     case 'Video':
       return videoIcon;
+    case 'Investigate':
+      return investigateIcon;
     case 'Art':
       return artIcon;
     default:

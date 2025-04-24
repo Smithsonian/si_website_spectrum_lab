@@ -40,6 +40,8 @@ const title = computed(() => {
       return 'Spectrum Tool.';
     case 'Video':
       return 'Video.';
+    case 'Investigate':
+      return 'Investigate.';
     case 'Art':
       return 'Artwork.';
     default:

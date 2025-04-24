@@ -22,5 +22,6 @@ export type InstructionRowType =
   | 'Notebook'
   | 'Tool'
   | 'Video'
+  | 'Investigate'
   | 'Art';
 export type PlotType = 'line' | 'scatter';
