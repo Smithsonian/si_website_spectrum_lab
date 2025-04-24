@@ -50,11 +50,7 @@
           <ToolCard title="Spectrum 1" :custom-metadata="exoplanetMetadata" />
         </template>
         <template #bottom-tool>
-          <ToolCard
-            title="Spectrum 2"
-            :custom-metadata="bottomMetadataList"
-            default-spectrum="Clear_Hot_Jupiter_Model_Transmission"
-          />
+          <ToolCard title="Spectrum 2" :custom-metadata="bottomMetadataList" />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
