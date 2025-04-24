@@ -19,12 +19,6 @@
             <SectionNavItem to="/final-projects/museum/other-blues">
               Other Blues
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/blue-filter">
-              Blue Filter
-            </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/infrared-filter">
-              Infrared Filter
-            </SectionNavItem>
           </SectionNav>
         </BCol>
         <BCol>

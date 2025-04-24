@@ -28,6 +28,7 @@ import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumChokha from './pages/Museum/MuseumChokha.vue';
 import MuseumMysteryColors from './pages/Museum/MuseumMysteryColors.vue';
+import MuseumHokusai from './pages/Museum/MuseumHokusai.vue';
 import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBlues.vue';
 import MuseumHokusaiIdentifyBlues from './pages/Museum/MuseumHokusaiIdentifyBlues.vue';
 import MuseumHokusaiOtherBlues from './pages/Museum/MuseumHokusaiOtherBlues.vue';
@@ -134,8 +135,12 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           {
-            path: 'two-blues',
-            component: MuseumHokusaiBlues,
+            path: 'two-blues/',
+            redirect: '/final-projects/museum/two-blues/hokusai',
+            children: [
+              { path: 'hokusai', component: MuseumHokusai },
+              { path: 'pigments', component: MuseumHokusaiBlues },
+            ],
           },
           {
             path: 'identify-blues',
