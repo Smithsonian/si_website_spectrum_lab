@@ -69,7 +69,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
 import { ref } from 'vue';
 
-useSpecLabHead('Comparing Exoplanets', 'Exoplanets');
+useSpecLabHead('Comparing Part 1', 'Exoplanets');
 
 const plotType = ref<PlotType>('scatter');
 const zoom = ref(41);

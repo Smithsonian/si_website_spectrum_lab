@@ -48,6 +48,7 @@ import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
 import NotFound from './pages/NotFound.vue';
 import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
 import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
+import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 
 library.add(
   faArrowUp,
@@ -129,6 +130,7 @@ const routes: RouteRecordRaw[] = [
               { path: 'part-2', component: ExoplanetsComparing2 },
             ],
           },
+          { path: 'proposal', component: ExoplanetsProposal },
         ],
       },
       {
