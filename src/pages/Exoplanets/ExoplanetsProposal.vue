@@ -74,7 +74,7 @@
 <script setup lang="ts">
 import type { PlotType } from '@/constants';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
+import { useAllMetadata } from '@/utils/metadataUtils';
 import { ref } from 'vue';
 
 useSpecLabHead('Proposal to NASA', 'Exoplanets');
@@ -85,27 +85,12 @@ const zoom = ref(41);
 const allMetadata = useAllMetadata();
 const exoplanetMetadata = allMetadata['Exoplanets'];
 const modelMetadata = allMetadata['Exoplanet Models'];
+const atomsMetadata = allMetadata['Atoms and Molecules'];
+const planetsMetadata = allMetadata['Planets'];
 
-const sodium = useCustomMetadata(
-  'Atoms and Molecules',
-  'Sodium_Absorption',
-  {},
-);
-const potassium = useCustomMetadata(
-  'Atoms and Molecules',
-  'Potassium_Absorption',
-  {},
-);
-const waterVapor = useCustomMetadata(
-  'Atoms and Molecules',
-  'Water_Vapor_Absorption',
-  {},
-);
-const bottomMetadataListMaybe = [
+const bottomMetadataList = [
   ...modelMetadata,
-  sodium,
-  potassium,
-  waterVapor,
+  ...atomsMetadata,
+  ...planetsMetadata,
 ];
-const bottomMetadataList = bottomMetadataListMaybe.filter((sm) => !!sm);
 </script>
