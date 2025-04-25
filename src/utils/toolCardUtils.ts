@@ -24,6 +24,44 @@ import {
 
 export type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
 
+export type CustomMetadata = readonly Readonly<SpectrumMetadata>[];
+
+export const useCategoryOptions = (
+  customMetadataGetter: () => CustomMetadata | null,
+): { categoryOptions: Readonly<Ref<readonly Option[] | null>> } => {
+  const categoryOptions = computed(() => {
+    const customMetadata = customMetadataGetter();
+    if (customMetadata) {
+      const includedCategories = new Set<PreloadedCategory>();
+      for (const cm of customMetadata) {
+        includedCategories.add(cm.category);
+      }
+      if (includedCategories.size <= 1) {
+        return null;
+      }
+      const includedOptions: Option[] = [
+        { value: '', text: 'Select category' },
+      ];
+      for (const cat of includedCategories) {
+        includedOptions.push({ value: cat, text: cat });
+      }
+      return includedOptions;
+    }
+    const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
+      value: cat,
+      text: cat,
+    }));
+    const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
+      { value: '', text: 'Select category' },
+      ...preloadedOptions,
+      { value: 'draw', text: 'Draw' },
+      { value: 'pickedFile', text: 'Uploaded file' },
+    ];
+    return allCategoryOptions;
+  });
+  return { categoryOptions };
+};
+
 export const useDataSource = (
   drawOnlyGetter: () => boolean,
 ): {
@@ -78,25 +116,58 @@ interface Option {
   text: string;
 }
 
+interface SparseMetadataByCategory {
+  [cat: string]: SpectrumMetadata[] | undefined;
+}
+
 export const useSpectrumOptions = (
   customMetadataGetter: () => readonly Readonly<SpectrumMetadata>[] | null,
   spectrumPickerPlaceholderGetter: () => string | null,
+  categoryOptions: Ref<readonly Option[] | null>,
   selectedCategory: Ref<SpectrumCategory>,
 ): {
   metadataByFilename: Readonly<Ref<MetadataByFilename>>;
   spectrumOptions: Readonly<Ref<Option[]>>;
 } => {
-  const allMetadata = useAllMetadata();
+  const allMetadataByCategory = useAllMetadata();
+  const customMetadataByCategory = computed(
+    (): SparseMetadataByCategory | null => {
+      const customMetadata = customMetadataGetter();
+      if (!customMetadata) {
+        return null;
+      }
+      if (!categoryOptions.value) {
+        return null;
+      }
+      const metadataByCategory: SparseMetadataByCategory = {};
+      for (const cm of customMetadata) {
+        const cat = cm.category;
+        if (!metadataByCategory[cat]) {
+          metadataByCategory[cat] = [cm];
+        } else {
+          metadataByCategory[cat].push(cm);
+        }
+      }
+      return metadataByCategory;
+    },
+  );
   const metadataByFilename = computed((): MetadataByFilename => {
     let metadataArray = [] as readonly Readonly<SpectrumMetadata>[];
     const customMetadata = customMetadataGetter();
-    if (customMetadata !== null) {
+    if (customMetadataByCategory.value) {
+      const metadataArrayMaybe =
+        customMetadataByCategory.value[selectedCategory.value];
+      if (!metadataArrayMaybe) {
+        return {};
+      }
+      metadataArray = metadataArrayMaybe;
+    } else if (customMetadata !== null) {
       metadataArray = customMetadata;
     } else {
       if (!isPreloadedCategory(selectedCategory.value)) {
         return {};
       }
-      metadataArray = allMetadata[selectedCategory.value];
+      metadataArray = allMetadataByCategory[selectedCategory.value];
     }
     const result: MetadataByFilename = {};
     for (const m of metadataArray) {

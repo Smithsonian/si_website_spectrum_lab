@@ -23,9 +23,9 @@
           </BCol>
           <BCol cols="6" lg="4" xl="12">
             <BFormSelect
-              v-if="!drawOnly && customMetadata === null"
+              v-if="!drawOnly && !!categoryOptions"
               v-model="selectedCategory"
-              :options="allCategoryOptions"
+              :options="categoryOptions"
             />
             <div
               v-if="spectrumDataSource === 'drawing'"
@@ -92,20 +92,17 @@
 
 <script setup lang="ts">
 import { type NormalizeSetting } from '@/injectionKeys';
-import {
-  PRELOADED_CATEGORIES,
-  type SpectrumMetadata,
-} from '@/utils/metadataUtils';
 import { BFormSelect } from 'bootstrap-vue-next';
 import { useTemplateRef, type ComponentPublicInstance } from 'vue';
 import {
+  useCategoryOptions,
   useDataSource,
   useDrawnSpectrumProvider,
   useSelectedMetadata,
   useSelectedSpectrum,
   useSpectrumDataProvider,
   useSpectrumOptions,
-  type SpectrumCategory,
+  type CustomMetadata,
 } from '@/utils/toolCardUtils';
 
 const clearButtonElem =
@@ -121,7 +118,7 @@ const props = withDefaults(
     normalizeOverride?: NormalizeSetting | null;
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
-    customMetadata?: readonly Readonly<SpectrumMetadata>[] | null;
+    customMetadata?: CustomMetadata | null;
     spectrumPickerPlaceholder?: string | null;
     defaultSpectrum?: string | null;
     drawOnly?: boolean;
@@ -135,18 +132,9 @@ const props = withDefaults(
   },
 );
 
-const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
-  value: cat,
-  text: cat,
-}));
-const allCategoryOptions: { value: SpectrumCategory; text: string }[] = [
-  { value: '', text: 'Select category' },
-  ...preloadedOptions,
-  { value: 'draw', text: 'Draw' },
-  { value: 'pickedFile', text: 'Uploaded file' },
-];
-
 // Refactored a lot of this setup function into composables, due to complexity
+const { categoryOptions } = useCategoryOptions(() => props.customMetadata);
+
 const { spectrumDataSource, selectedCategory, pickedFile } = useDataSource(
   () => props.drawOnly,
 );
@@ -154,6 +142,7 @@ const { spectrumDataSource, selectedCategory, pickedFile } = useDataSource(
 const { metadataByFilename, spectrumOptions } = useSpectrumOptions(
   () => props.customMetadata,
   () => props.spectrumPickerPlaceholder,
+  categoryOptions,
   selectedCategory,
 );
 
