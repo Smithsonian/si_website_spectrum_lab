@@ -48,7 +48,6 @@ export const useDataSource = (
     return 'file';
   });
   provide(spectrumDataSourceKey, spectrumDataSource);
-  useCurrentlyDrawing();
 
   const pickedFile = ref<File | null>(null);
   watch(selectedCategory, (newCategory) => {
@@ -163,6 +162,7 @@ export const useDrawnSpectrumProvider = (
 ): {
   clearDrawnSpectrumY: () => void;
 } => {
+  useCurrentlyDrawing();
   const { drawnSpectrumY, clearDrawnSpectrumY } = useDrawnSpectrumY();
   watch([spectrumOptions, selectedCategory], () => {
     if (drawnSpectrumY.value.length) {
