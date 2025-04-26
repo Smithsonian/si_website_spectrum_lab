@@ -98,6 +98,7 @@ import {
   useCategoryOptions,
   useDataSource,
   useDrawnSpectrumProvider,
+  useMetadataByFilename,
   useSelectedMetadata,
   useSelectedSpectrum,
   useSpectrumDataProvider,
@@ -139,11 +140,15 @@ const { spectrumDataSource, selectedCategory, pickedFile } = useDataSource(
   () => props.drawOnly,
 );
 
-const { metadataByFilename, spectrumOptions } = useSpectrumOptions(
+const { metadataByFilename } = useMetadataByFilename(
   () => props.customMetadata,
-  () => props.spectrumPickerPlaceholder,
   categoryOptions,
   selectedCategory,
+);
+
+const { spectrumOptions } = useSpectrumOptions(
+  () => props.spectrumPickerPlaceholder,
+  metadataByFilename,
 );
 
 const { selectedSpectrum } = useSelectedSpectrum(

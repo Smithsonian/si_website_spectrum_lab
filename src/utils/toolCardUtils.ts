@@ -120,14 +120,12 @@ interface SparseMetadataByCategory {
   [cat: string]: SpectrumMetadata[] | undefined;
 }
 
-export const useSpectrumOptions = (
+export const useMetadataByFilename = (
   customMetadataGetter: () => readonly Readonly<SpectrumMetadata>[] | null,
-  spectrumPickerPlaceholderGetter: () => string | null,
   categoryOptions: Ref<readonly Option[] | null>,
   selectedCategory: Ref<SpectrumCategory>,
 ): {
   metadataByFilename: Readonly<Ref<MetadataByFilename>>;
-  spectrumOptions: Readonly<Ref<Option[]>>;
 } => {
   const allMetadataByCategory = useAllMetadata();
   const customMetadataByCategory = computed(
@@ -175,6 +173,15 @@ export const useSpectrumOptions = (
     }
     return result;
   });
+  return { metadataByFilename };
+};
+
+export const useSpectrumOptions = (
+  spectrumPickerPlaceholderGetter: () => string | null,
+  metadataByFilename: Readonly<Ref<MetadataByFilename>>,
+): {
+  spectrumOptions: Readonly<Ref<Option[]>>;
+} => {
   const spectrumOptions = computed((): Option[] => {
     const entries = Object.entries(metadataByFilename.value);
     if (entries.length === 0) {
@@ -198,7 +205,7 @@ export const useSpectrumOptions = (
     ];
   });
 
-  return { metadataByFilename, spectrumOptions };
+  return { spectrumOptions };
 };
 
 export const useSelectedSpectrum = (
