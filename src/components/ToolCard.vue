@@ -169,7 +169,12 @@ const { clearDrawnSpectrumY } = useDrawnSpectrumProvider(
 );
 
 const { selectedMetadata, iconPath, chartTitle, previewPath } =
-  useSelectedMetadata(metadataByFilename, selectedSpectrum, pickedFile);
+  useSelectedMetadata(
+    metadataByFilename,
+    selectedSpectrum,
+    pickedFile,
+    () => props.customCategoryNames,
+  );
 
 // This does the fetching and stuff. Important to do here so it can be passed through to the SpectrumData and Rainbow
 useSpectrumDataProvider(

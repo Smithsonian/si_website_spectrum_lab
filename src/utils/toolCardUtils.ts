@@ -264,6 +264,7 @@ export const useSelectedMetadata = (
   metadataByFilename: Ref<MetadataByFilename>,
   selectedSpectrum: Ref<string>,
   pickedFile: Ref<File | null>,
+  customCategoryNamesGetter: () => CustomCategoryNames | null,
 ): {
   selectedMetadata: Readonly<Ref<SpectrumMetadata | null>>;
   iconPath: Readonly<Ref<string>>;
@@ -289,8 +290,14 @@ export const useSelectedMetadata = (
 
   // Chart title (as distinct from tool card title)
   const chartTitle = computed((): string => {
+    const customNameMap = customCategoryNamesGetter();
     if (selectedMetadata.value) {
-      return `${selectedMetadata.value.category} — ${selectedMetadata.value.title}`;
+      const category = selectedMetadata.value.category;
+      let displayName: string = category;
+      if (customNameMap && customNameMap[category]) {
+        displayName = customNameMap[category];
+      }
+      return `${displayName} — ${selectedMetadata.value.title}`;
     }
     if (pickedFile.value) {
       return `Uploaded file — ${pickedFile.value.name}`;
