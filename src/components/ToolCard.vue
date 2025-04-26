@@ -103,6 +103,7 @@ import {
   useSelectedSpectrum,
   useSpectrumDataProvider,
   useSpectrumOptions,
+  type CustomCategoryNames,
   type CustomMetadata,
 } from '@/utils/toolCardUtils';
 
@@ -120,6 +121,7 @@ const props = withDefaults(
     chartPosition?: ChartPosition;
     showFilePicker?: boolean;
     customMetadata?: CustomMetadata | null;
+    customCategoryNames?: CustomCategoryNames | null;
     spectrumPickerPlaceholder?: string | null;
     defaultSpectrum?: string | null;
     drawOnly?: boolean;
@@ -128,13 +130,17 @@ const props = withDefaults(
     normalizeOverride: null,
     chartPosition: 'bottom',
     customMetadata: null,
+    customCategoryNames: null,
     spectrumPickerPlaceholder: 'Select spectrum',
     defaultSpectrum: null,
   },
 );
 
 // Refactored a lot of this setup function into composables, due to complexity
-const { categoryOptions } = useCategoryOptions(() => props.customMetadata);
+const { categoryOptions } = useCategoryOptions(
+  () => props.customMetadata,
+  () => props.customCategoryNames,
+);
 
 const { spectrumDataSource, selectedCategory, pickedFile } = useDataSource(
   () => props.drawOnly,

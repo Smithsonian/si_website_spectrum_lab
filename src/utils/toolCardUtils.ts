@@ -26,11 +26,17 @@ export type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
 
 export type CustomMetadata = readonly Readonly<SpectrumMetadata>[];
 
+export type CustomCategoryNames = {
+  [cat in PreloadedCategory]?: string;
+};
+
 export const useCategoryOptions = (
   customMetadataGetter: () => CustomMetadata | null,
+  customCategoryNamesGetter: () => CustomCategoryNames | null,
 ): { categoryOptions: Readonly<Ref<readonly Option[] | null>> } => {
   const categoryOptions = computed(() => {
     const customMetadata = customMetadataGetter();
+    const customNames = customCategoryNamesGetter();
     if (customMetadata) {
       const includedCategories = new Set<PreloadedCategory>();
       for (const cm of customMetadata) {
@@ -43,7 +49,11 @@ export const useCategoryOptions = (
         { value: '', text: 'Select category' },
       ];
       for (const cat of includedCategories) {
-        includedOptions.push({ value: cat, text: cat });
+        let displayName: string = cat;
+        if (customNames && customNames[cat]) {
+          displayName = customNames[cat];
+        }
+        includedOptions.push({ value: cat, text: displayName });
       }
       return includedOptions;
     }

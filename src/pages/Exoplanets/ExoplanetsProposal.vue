@@ -64,7 +64,13 @@
           <ToolCard title="Spectrum 1" :custom-metadata="exoplanetMetadata" />
         </template>
         <template #bottom-tool>
-          <ToolCard title="Spectrum 2" :custom-metadata="bottomMetadataList" />
+          <ToolCard
+            title="Spectrum 2"
+            :custom-metadata="bottomMetadataList"
+            :custom-category-names="{
+              Planets: 'Solar System',
+            }"
+          />
         </template>
       </ToolControlGroup>
     </template>
