@@ -13,14 +13,10 @@
     <template #tool-col>
       <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
-          <ToolCard title="Spectrum 1" :show-file-picker="true" />
+          <ToolCard :show-file-picker="true" />
         </template>
         <template #bottom-tool>
-          <ToolCard
-            title="Spectrum 2"
-            chart-position="top"
-            :show-file-picker="true"
-          />
+          <ToolCard :show-file-picker="true" />
         </template>
       </ToolControlGroup>
     </template>

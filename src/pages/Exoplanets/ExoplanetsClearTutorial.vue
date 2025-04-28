@@ -38,7 +38,6 @@
       >
         <template #top-tool>
           <ToolCard
-            title="Spectrum 1"
             :custom-metadata="exoplanetMetadataList"
             :spectrum-picker-placeholder="null"
           >
@@ -58,10 +57,7 @@
           </ToolCard>
         </template>
         <template v-if="tutorialState === 'nextSection'" #bottom-tool>
-          <ToolCard
-            title="Spectrum 2"
-            :custom-metadata="atomsAndMoleculesList"
-          />
+          <ToolCard :custom-metadata="atomsAndMoleculesList" />
         </template>
       </ToolControlGroup>
       <LeftRightGroup v-if="tutorialState === 'nextSection'" class="mt-5">

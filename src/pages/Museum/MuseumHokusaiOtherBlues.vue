@@ -51,14 +51,12 @@
       <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
           <ToolCard
-            title="Blue Pigment 1"
             :custom-metadata="hokusaiB1Metadata"
             :spectrum-picker-placeholder="null"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="Blue Pigment 2"
             :custom-metadata="hokusaiB2Metadata"
             :spectrum-picker-placeholder="null"
           />

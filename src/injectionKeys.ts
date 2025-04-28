@@ -41,3 +41,10 @@ export type WavelengthUnit =
 export const wavelengthUnitKey = Symbol('wavelengthUnit') as InjectionKey<
   Ref<WavelengthUnit>
 >;
+
+// Are we the top tool (default) or bottom tool?
+// Changes things like title, file picker placement,
+// whether the chart or the image are at the top
+export const inBottomToolSlotKey = Symbol(
+  'inBottomToolSlot',
+) as InjectionKey<boolean>;

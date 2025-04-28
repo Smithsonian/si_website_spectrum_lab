@@ -30,7 +30,6 @@
       <ToolControlGroup show-zoom>
         <template #top-tool>
           <ToolCard
-            title="Spectrum 1:"
             :custom-metadata="marsMetadataList"
             :spectrum-picker-placeholder="null"
           />

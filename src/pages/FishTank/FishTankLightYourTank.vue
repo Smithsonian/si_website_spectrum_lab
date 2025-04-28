@@ -27,14 +27,13 @@
       <ToolControlGroup>
         <template #top-tool>
           <ToolCard
-            title="Tank Lighting Choices"
             :custom-metadata="fishtankMetadata"
             normalize-override="none"
             spectrum-picker-placeholder="Select lighting"
           />
         </template>
         <template #bottom-tool>
-          <ToolCard title="Draw a Spectrum" draw-only />
+          <ToolCard draw-only />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">

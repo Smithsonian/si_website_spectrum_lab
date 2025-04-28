@@ -31,12 +31,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard
-        ref="topToolRef"
-        title="Draw a Spectrum"
-        draw-only
-        class="mb-5"
-      />
+      <ToolCard ref="topToolRef" draw-only class="mb-5" />
       <LeftRightGroup>
         <template #right>
           <NextPrevButton direction="next" to="draw-a-spectrum" light>

@@ -18,7 +18,6 @@
       <ToolControlGroup>
         <template #top-tool>
           <ToolCard
-            title="Tree in Summer Reflection"
             :custom-metadata="treeMetadata"
             :spectrum-picker-placeholder="null"
           />

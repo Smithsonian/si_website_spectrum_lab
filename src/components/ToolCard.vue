@@ -1,18 +1,14 @@
 <template>
   <div class="tool-card bg-sl-navy text-white p-3 rounded-4">
     <!-- Chart bottom means file picker top, and vice versa -->
-    <template v-if="showFilePicker && chartPosition === 'bottom'">
+    <template v-if="showFilePicker && !inBottomToolSlot">
       <BRow class="mb-3">
         <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
       </BRow>
     </template>
     <!-- Chart sent to the bottom or top -->
-    <BRow
-      :class="
-        chartPosition === 'bottom' ? 'align-items-end' : 'align-items-start'
-      "
-    >
+    <BRow :class="inBottomToolSlot ? 'align-items-start' : 'align-items-end'">
       <BCol cols="12" xl="4" xxl="3">
         <div class="h3">{{ title }}</div>
         <BRow>
@@ -54,13 +50,13 @@
       <!-- Chart needs to be reordered before spectrum picker, with spacing, when on top in smaller breakpoints -->
       <BCol
         :class="
-          chartPosition === 'bottom'
-            ? 'mt-3 mt-xl-0'
-            : 'mb-3 order-first mb-xl-0 order-xl-last'
+          inBottomToolSlot
+            ? 'mb-3 order-first mb-xl-0 order-xl-last'
+            : 'mt-3 mt-xl-0'
         "
       >
         <div
-          v-if="previewPath && chartPosition === 'bottom'"
+          v-if="previewPath && !inBottomToolSlot"
           class="spectrum-preview-holder rounded-4 mb-3"
         >
           <img :src="previewPath" />
@@ -74,14 +70,14 @@
           <slot></slot>
         </SpectrumChart>
         <div
-          v-if="previewPath && chartPosition === 'top'"
+          v-if="previewPath && inBottomToolSlot"
           class="spectrum-preview-holder rounded-4 mt-3"
         >
           <img :src="previewPath" />
         </div>
       </BCol>
     </BRow>
-    <template v-if="showFilePicker && chartPosition === 'top'">
+    <template v-if="showFilePicker && inBottomToolSlot">
       <BRow class="mt-3">
         <SpectrumFilepicker v-model="pickedFile" />
         <BCol />
@@ -91,9 +87,14 @@
 </template>
 
 <script setup lang="ts">
-import { type NormalizeSetting } from '@/injectionKeys';
+import { inBottomToolSlotKey, type NormalizeSetting } from '@/injectionKeys';
 import { BFormSelect } from 'bootstrap-vue-next';
-import { useTemplateRef, type ComponentPublicInstance } from 'vue';
+import {
+  computed,
+  inject,
+  useTemplateRef,
+  type ComponentPublicInstance,
+} from 'vue';
 import {
   useCategoryOptions,
   useDataSource,
@@ -112,13 +113,10 @@ const clearButtonElem =
 const spectrumPicker =
   useTemplateRef<ComponentPublicInstance>('spectrumPicker');
 
-type ChartPosition = 'top' | 'bottom';
-
 const props = withDefaults(
   defineProps<{
-    title: string;
+    titleOverride?: string | null;
     normalizeOverride?: NormalizeSetting | null;
-    chartPosition?: ChartPosition;
     showFilePicker?: boolean;
     customMetadata?: CustomMetadata | null;
     customCategoryNames?: CustomCategoryNames | null;
@@ -127,14 +125,26 @@ const props = withDefaults(
     drawOnly?: boolean;
   }>(),
   {
+    titleOverride: null,
     normalizeOverride: null,
-    chartPosition: 'bottom',
     customMetadata: null,
     customCategoryNames: null,
     spectrumPickerPlaceholder: 'Select spectrum',
     defaultSpectrum: null,
   },
 );
+
+const inBottomToolSlot = inject(inBottomToolSlotKey, false);
+
+const title = computed(() => {
+  if (props.titleOverride) {
+    return props.titleOverride;
+  }
+  if (inBottomToolSlot) {
+    return 'Spectrum 2';
+  }
+  return 'Spectrum 1';
+});
 
 // Refactored a lot of this setup function into composables, due to complexity
 const { categoryOptions } = useCategoryOptions(

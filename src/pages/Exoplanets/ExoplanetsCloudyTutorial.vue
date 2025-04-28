@@ -45,7 +45,6 @@
       >
         <template #top-tool>
           <ToolCard
-            title="Spectrum 1"
             :custom-metadata="topMetadataList"
             default-spectrum="Clear_Hot_Jupiter_Model_Transmission"
             :spectrum-picker-placeholder="null"
@@ -72,7 +71,6 @@
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="Spectrum 2"
             :custom-metadata="bottomMetadataList"
             :spectrum-picker-placeholder="null"
             :default-spectrum="

@@ -25,14 +25,12 @@
       <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
         <template #top-tool>
           <ToolCard
-            title="Hokusai Blues"
             :custom-metadata="hokusaiBluesMetadata"
             spectrum-picker-placeholder="Select blue pigment"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="Blue Comparison Pigments"
             :custom-metadata="bluesMetadata"
             spectrum-picker-placeholder="Select comparison pigment"
           />

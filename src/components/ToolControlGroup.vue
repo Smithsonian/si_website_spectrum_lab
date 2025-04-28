@@ -51,7 +51,9 @@
   </BRow>
   <!-- Div needed to clear the row -->
   <div>
-    <slot name="bottom-tool"></slot>
+    <BottomToolContext>
+      <slot name="bottom-tool"></slot>
+    </BottomToolContext>
   </div>
 </template>
 

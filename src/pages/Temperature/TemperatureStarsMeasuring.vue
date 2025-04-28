@@ -32,14 +32,12 @@
       <ToolControlGroup show-zoom>
         <template #top-tool>
           <ToolCard
-            title="Spectrum 1:"
             :custom-metadata="starMetadataList"
             spectrum-picker-placeholder="select star"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            title="Spectrum 2:"
             :custom-metadata="blackbodyList"
             spectrum-picker-placeholder="select blackbody"
           />

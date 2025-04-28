@@ -41,7 +41,6 @@
       <ToolControlGroup :show-normalize-picker="true">
         <template #top-tool>
           <ToolCard
-            title="Paint Spectra"
             :custom-metadata="customMetadata"
             spectrum-picker-placeholder="Select mystery pigment"
           />

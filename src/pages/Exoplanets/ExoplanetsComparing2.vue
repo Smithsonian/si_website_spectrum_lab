@@ -47,10 +47,10 @@
         show-zoom
       >
         <template #top-tool>
-          <ToolCard title="Spectrum 1" :custom-metadata="exoplanetMetadata" />
+          <ToolCard :custom-metadata="exoplanetMetadata" />
         </template>
         <template #bottom-tool>
-          <ToolCard title="Spectrum 2" :custom-metadata="bottomMetadataList" />
+          <ToolCard :custom-metadata="bottomMetadataList" />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">

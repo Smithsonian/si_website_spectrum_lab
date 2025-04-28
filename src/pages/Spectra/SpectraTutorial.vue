@@ -10,18 +10,19 @@
     </template>
     <template #tool-col>
       <div class="position-relative">
-        <ToolCard ref="topToolRef" title="Draw a Spectrum" draw-only />
+        <ToolCard ref="topToolRef" draw-only />
         <SpecTutPopupTool :anchor-elem="topToolRef" />
       </div>
       <div class="my-5"></div>
       <div v-if="showSecondTool" class="position-relative mb-5">
-        <ToolCard
-          ref="bottomToolRef"
-          title="Second spectrum"
-          :custom-metadata="bulbMetadataList"
-          :spectrum-picker-placeholder="null"
-          default-spectrum="Fluorescent_Bulb"
-        />
+        <BottomToolContext>
+          <ToolCard
+            ref="bottomToolRef"
+            :custom-metadata="bulbMetadataList"
+            :spectrum-picker-placeholder="null"
+            default-spectrum="Fluorescent_Bulb"
+          />
+        </BottomToolContext>
         <SpecTutPopupSecondTool :anchor-elem="bottomToolRef" />
       </div>
       <LeftRightGroup v-if="tutorialState === 'nextSection'">
