@@ -332,6 +332,11 @@ export const useSpectrumDataProvider = (
     if (!metadata) {
       return [];
     }
+    if (import.meta.env.SSR) {
+      // These are file URLs in SSG and can't be fetched
+      // And the canvases aren't mounted so we couldn't use them anyway
+      return [];
+    }
     try {
       const response = await fetch(metadata.fileUrl);
       if (!response.ok) {

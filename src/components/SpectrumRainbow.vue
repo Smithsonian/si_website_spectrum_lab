@@ -84,8 +84,7 @@ const hideOverlay = computed(() => {
 const data = inject(spectrumDataKey, ref([]));
 const zoom = inject(zoomKey, ref(1));
 
-const rainbowImage = new Image();
-rainbowImage.src = rainbowImageUrl;
+const rainbowImage = ref<HTMLImageElement | null>(null);
 
 const background = useTemplateRef('background');
 const backgroundCtx = computed(() => {
@@ -104,7 +103,7 @@ const overlayCtx = computed(() => {
 
 const drawBackground = () => {
   const context = backgroundCtx.value;
-  if (!background.value || !context) {
+  if (!background.value || !context || !rainbowImage.value) {
     return;
   }
   context.fillStyle = '#dddddd';
@@ -113,7 +112,7 @@ const drawBackground = () => {
   const xRainbowEnd = xLocFromMicrons(0.7, zoom.value);
   const xRainbowWidth = xRainbowEnd - xRainbowStart;
   context.drawImage(
-    rainbowImage,
+    rainbowImage.value,
     xRainbowStart,
     0,
     xRainbowWidth,
@@ -130,10 +129,13 @@ const blackOutOverlay = () => {
   context.fillRect(0, 0, overlay.value.width, overlay.value.height);
 };
 
-onMounted(() => {
-  redrawOverlay();
-  // wait to load the image before drawing the background
-  rainbowImage.decode().then(drawBackground);
+onMounted(async () => {
+  // Node doesn't have Image so do this here, which isn't run under SSR
+  const imageElem = new Image();
+  imageElem.src = rainbowImageUrl;
+  await imageElem.decode();
+  // Don't do the ref assignment, which triggers watches, until the Image is loaded
+  rainbowImage.value = imageElem;
 });
 
 const spectrumDataSource = inject(

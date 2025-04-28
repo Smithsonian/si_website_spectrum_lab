@@ -102,14 +102,23 @@ const metadataByCategoryKey = Symbol(
   'metadataByCategory',
 ) as InjectionKey<MetadataByCategory>;
 
-const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
-  const directory = CATEGORY_DIRECTORIES[metadata.category];
-  const filename = `${metadata.filename}.txt`;
+const getDynamicUrl = (directory: string, filename: string): string => {
+  if (import.meta.env.SSR) {
+    // Vite's ability to wrangle URL constructors with asset handling, works for dev and
+    // prod client-side bundles, but not SSR.
+    return '';
+  }
   const url = new URL(
     `../assets/spectrum_data/${directory}/${filename}`,
     import.meta.url,
   );
-  const urlString = url.toString();
+  return url.toString();
+};
+
+const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
+  const directory = CATEGORY_DIRECTORIES[metadata.category];
+  const filename = `${metadata.filename}.txt`;
+  const urlString = getDynamicUrl(directory, filename);
   if (urlString.includes('undefined')) {
     throw new Error(
       `Spectrum data file '${filename}' not found in category directory '${directory}'. Please verify the metadata spreadsheet filename matches the actual location of the data file.`,
@@ -121,11 +130,7 @@ const fileUrlFromMetadata = (metadata: SpectrumMetadata): string => {
 export const imageUrlFromPath = (path: string): string => {
   // Vite is only able to handle these when each substitution is one path component.
   const [directory, filename] = path.split('/');
-  const url = new URL(
-    `../assets/spectrum_data/${directory}/${filename}`,
-    import.meta.url,
-  );
-  const urlString = url.toString();
+  const urlString = getDynamicUrl(directory, filename);
   if (urlString.includes('undefined')) {
     throw new Error(
       `Spectrum image '${path}' not found. Please verify the metadata spreadsheet image matches the actual location of the image.`,

@@ -35,7 +35,7 @@ interface ErrorLog {
 
 const isErrored = ref(false);
 const errors = ref<ErrorLog[]>([]);
-const devMode = import.meta.env.MODE === 'development';
+const devMode = import.meta.env.MODE || import.meta.env.SSR;
 
 onErrorCaptured((error, instance, info) => {
   isErrored.value = true;
