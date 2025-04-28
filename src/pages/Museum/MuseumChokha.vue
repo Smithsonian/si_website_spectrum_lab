@@ -49,8 +49,8 @@
 </template>
 
 <script setup lang="ts">
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_color_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_color_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/Chokha_color_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/Chokha_color_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
 useSpecLabHead('Chokha Painting', 'Museum');
