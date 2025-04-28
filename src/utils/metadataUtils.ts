@@ -172,6 +172,7 @@ export const useAllMetadata = (): MetadataByCategory => {
       mutable[valid.category].push(valid);
     }
     metadataByCategory = mutable;
+    provide(metadataByCategoryKey, metadataByCategory);
   }
   return metadataByCategory;
 };
