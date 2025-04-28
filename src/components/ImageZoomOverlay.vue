@@ -17,12 +17,12 @@
     <!-- Absolutely positioned zoomed view -->
     <div
       v-show="pointingOver"
-      class="position-absolute zoom-container"
+      class="position-absolute zoom-window"
       :style="{
-        height: `${Y_CONTAINER_HEIGHT}px`,
-        width: `${X_CONTAINER_WIDTH}px`,
+        height: `${Y_ZOOM_WINDOW_HEIGHT}px`,
+        width: `${X_ZOOM_WINDOW_WIDTH}px`,
         top: '50px',
-        left: `-${X_CONTAINER_WIDTH + 25}px`,
+        left: `-${X_ZOOM_WINDOW_WIDTH + 25}px`,
       }"
     >
       <img
@@ -52,9 +52,20 @@
 import { computed, ref } from 'vue';
 import { vResizeObserver } from '@vueuse/components';
 import type { ResizeObserverCallback } from '@vueuse/core';
-const X_CONTAINER_WIDTH = 250;
-const Y_CONTAINER_HEIGHT = 200;
 
+/*
+These are the height and width of the "zoomed in" window to the left.
+
+The real, 100% size of the `zoomSrc` image determines how "zoomed in" the window appears.
+
+Resize the zoomed image with imagemagick or similar to balance the amount of detail, vs the amount of context.
+
+The size of the `src` image doesn't matter beyond setting its image quality, avoiding browser-based resizing, etc.
+You can even use the exact same image, the only issue would be it's probably kinda big to download.
+Its size on the page is determined by its container height or width, probably the width of the instruction component.
+*/
+const X_ZOOM_WINDOW_WIDTH = 250;
+const Y_ZOOM_WINDOW_HEIGHT = 200;
 defineProps<{ src: string; zoomSrc: string }>();
 
 const pointingOver = ref(false);
@@ -92,10 +103,10 @@ const zoomAmount = computed(
 const yZoomedTop = computed((): number => {
   const yPointingZoomed = yPointer.value * zoomAmount.value;
 
-  let yMoveImageUp = yPointingZoomed - Y_CONTAINER_HEIGHT / 2;
+  let yMoveImageUp = yPointingZoomed - Y_ZOOM_WINDOW_HEIGHT / 2;
   const topBoundary = 0;
   yMoveImageUp = yMoveImageUp < topBoundary ? topBoundary : yMoveImageUp;
-  const bottomBoundary = yZoomedImageHeight.value - Y_CONTAINER_HEIGHT;
+  const bottomBoundary = yZoomedImageHeight.value - Y_ZOOM_WINDOW_HEIGHT;
   yMoveImageUp = yMoveImageUp > bottomBoundary ? bottomBoundary : yMoveImageUp;
 
   return -1 * yMoveImageUp;
@@ -104,22 +115,22 @@ const yZoomedTop = computed((): number => {
 const xZoomedLeft = computed((): number => {
   const xPointingZoomed = xPointer.value * zoomAmount.value;
 
-  let xMoveImageLeft = xPointingZoomed - X_CONTAINER_WIDTH / 2;
+  let xMoveImageLeft = xPointingZoomed - X_ZOOM_WINDOW_WIDTH / 2;
   const leftBoundary = 0;
   xMoveImageLeft =
     xMoveImageLeft < leftBoundary ? leftBoundary : xMoveImageLeft;
-  const rightBoundary = xZoomedImageWidth.value - X_CONTAINER_WIDTH;
+  const rightBoundary = xZoomedImageWidth.value - X_ZOOM_WINDOW_WIDTH;
   xMoveImageLeft =
     xMoveImageLeft > rightBoundary ? rightBoundary : xMoveImageLeft;
   return -1 * xMoveImageLeft;
 });
 
 const yPointerRectHeight = computed(
-  (): number => Y_CONTAINER_HEIGHT / zoomAmount.value,
+  (): number => Y_ZOOM_WINDOW_HEIGHT / zoomAmount.value,
 );
 
 const xPointerRectWidth = computed(
-  (): number => X_CONTAINER_WIDTH / zoomAmount.value,
+  (): number => X_ZOOM_WINDOW_WIDTH / zoomAmount.value,
 );
 
 const yPointerRectTop = computed(
@@ -147,7 +158,7 @@ const handlePointerLeave = (e: PointerEvent): void => {
 </script>
 
 <style>
-.zoom-container {
+.zoom-window {
   overflow: clip;
   outline: 5px solid var(--sl-royal-blue);
   background-color: var(--sl-royal-blue);
