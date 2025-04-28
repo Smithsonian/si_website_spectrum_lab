@@ -15,7 +15,19 @@
             </p>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Add a see-think-wonder thing
+            <span class="needs-updating">
+              Edit questions
+              <ol>
+                <li>
+                  Observe the composition, the colors, and the iconography.
+                  Describe what you see.
+                </li>
+                <li>
+                  (Reference SI Learning Labs content on close observation of
+                  artwork.)
+                </li>
+              </ol>
+            </span>
           </InstructionRow>
         </div>
         <div
@@ -37,8 +49,8 @@
 </template>
 
 <script setup lang="ts">
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/Chokha_color_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/Chokha_color_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
 useSpecLabHead('Chokha Painting', 'Museum');

@@ -1,13 +1,10 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard>
-        <h2>Other Blue Regions</h2>
-        <BRow>
-          <BCol cols="12" lg="6">
-            <img :src="imageUrl" class="mb-2 challenge-image" />
-          </BCol>
-          <BCol cols="12" lg="6">
+      <ChallengeCard remove-padding>
+        <div class="pt-3 px-3">
+          <InstructionHeader>Other Blue Regions</InstructionHeader>
+          <InstructionRow rowType="Investigate">
             <p>
               Now imagine you wanted to know the composition of other blue
               regions of interest in the painting, but you don't have time to
@@ -24,26 +21,30 @@
               distinguishing which of the two blue pigments were used in other
               parts of the painting?
             </p>
-            <p>
-              Placeholder info: notebook will have multiple choice - 440 (blue)
-              and 905 (IR)
-            </p>
-            <div class="mb-3">
-              <BFormRadioGroup
-                v-model="chosenFilter"
-                :options="FILTER_OPTION_LIST"
-                name="chosen-filter"
-                class="chosen-filter-picker"
-                buttons
-                button-variant="primary"
-              />
-            </div>
-            <p>
-              <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your
-              answers in your <strong>Spectrum Notebook</strong>.
-            </p>
-          </BCol>
-        </BRow>
+          </InstructionRow>
+          <InstructionRow rowType="Notebook">
+            <span class="needs-updating">
+              Write notebook questions - multiple choice - 440 (blue) and 905
+              (IR)
+            </span>
+          </InstructionRow>
+        </div>
+        <div class="mb-3">
+          <BFormRadioGroup
+            v-model="chosenFilter"
+            :options="FILTER_OPTION_LIST"
+            name="chosen-filter"
+            class="chosen-filter-picker"
+            buttons
+            button-variant="primary"
+          />
+        </div>
+        <div
+          class="rounded-bottom-4"
+          style="background-color: var(--gen-black)"
+        >
+          <img :src="imageUrl" class="mb-2 challenge-image" />
+        </div>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -70,9 +71,9 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { imageUrlFromPath, useCustomMetadata } from '@/utils/metadataUtils';
-import filterNoneUrl from '@/assets/spectrum_data/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg';
-import filter440Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_440nm.jpg';
-import filter905Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_905nm.jpg';
+import filterNoneUrl from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2B3_big.webp';
+import filter440Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_440_B1B2B3_big.webp';
+import filter905Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_905_B1B2B3_big.webp';
 import { computed, ref } from 'vue';
 
 useSpecLabHead('Other blues', 'Museum');
@@ -132,5 +133,6 @@ const hokusaiB2Metadata = customMetadata.filter(
   --bs-btn-active-bg: hwb(188 70% 7%);
   --bs-btn-border-color: var(--sl-navy);
   --bs-btn-active-border-color: var(--sl-navy);
+  margin-left: 15px;
 }
 </style>

@@ -1,28 +1,24 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard>
-        <h2>Identify the Pigments</h2>
-        <BRow>
-          <BCol cols="12" lg="6">
-            <img
-              src="/src/assets/spectrum_data/Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
-              class="mb-2 challenge-image"
-            />
-          </BCol>
-          <BCol cols="12" lg="6">
-            <p>
-              Now, compare the spectra from the two blue regions of interest
-              with a sample of blue paint pigments and see if you can identify
-              which pigments correspond to each blue region of interest in the
-              painting
-            </p>
-            <p>
-              <font-awesome-icon icon="pencil"></font-awesome-icon> Enter your
-              answers in your <strong>Spectrum Notebook</strong>.
-            </p>
-          </BCol>
-        </BRow>
+      <ChallengeCard remove-padding>
+        <div class="pt-3 px-3">
+          <InstructionHeader>Identify the Pigments</InstructionHeader>
+          <InstructionRow rowType="Tool">
+            Compare the spectra from the two blue regions of interest with a
+            sample of blue paint pigments and see if you can identify which
+            pigments correspond to each blue region of interest in the painting
+          </InstructionRow>
+          <InstructionRow rowType="Notebook">
+            <span class="needs-updating"> Write notebook questions </span>
+          </InstructionRow>
+        </div>
+        <div
+          class="rounded-bottom-4"
+          style="background-color: var(--gen-black)"
+        >
+          <ImageZoomOverlay :src="hokusaiChallenge" :zoom-src="hokusaiBig" />
+        </div>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -42,11 +38,25 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton to="two-blues" direction="prev" light>
+            previous
+          </NextPrevButton>
+        </template>
+        <template #right>
+          <NextPrevButton to="other-blues" direction="next" light>
+            next
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </MuseumLayout>
 </template>
 
 <script setup lang="ts">
+import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2_910.webp';
+import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import {
   useCustomMetadata,

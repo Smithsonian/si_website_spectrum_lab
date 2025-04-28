@@ -40,6 +40,13 @@
           </VideoJSPlayer>
         </div>
       </ChallengeCard>
+      <LeftRightGroup class="mt-5">
+        <template #right>
+          <NextPrevButton direction="next" to="paint-colors" dark>
+            next section
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </MuseumLayout>
 </template>
