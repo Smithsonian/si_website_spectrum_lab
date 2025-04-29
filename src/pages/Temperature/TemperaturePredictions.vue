@@ -4,7 +4,7 @@
       <ChallengeCard remove-padding>
         <div class="pt-3 px-3">
           <InstructionHeader>
-            Temperature and Colors from Spectra
+            Temperature and Colors from Spectra Predictions
           </InstructionHeader>
           <InstructionRow rowType="Notebook">
             In the <em>Temperature and Colors from Spectra</em>

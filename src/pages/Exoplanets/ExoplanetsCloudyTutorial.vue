@@ -4,7 +4,7 @@
       <ChallengeCard remove-padding>
         <div class="pt-3 px-3">
           <InstructionHeader>
-            Tutorial: Clear, Cloudy, or Hazy?
+            Tutorial: Cloudy/hazy atmospheres
           </InstructionHeader>
           <InstructionRow row-type="Tool">
             How do the models predict that different atmospheric conditions

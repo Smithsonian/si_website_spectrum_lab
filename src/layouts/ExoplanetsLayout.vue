@@ -5,10 +5,10 @@
         <BCol cols="3">
           <SectionNav>
             <SectionNavItem to="/final-projects/exoplanets/clear-skies">
-              Clear skies
+              Tutorial: Exoplanet atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/cloudy-skies">
-              Cloudy/hazy skies
+              Tutorial: Cloudy/hazy atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/wasp-17b">
               WASP-17b

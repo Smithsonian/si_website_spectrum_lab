@@ -2,9 +2,7 @@
   <ExoplanetsLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>
-          Tutorial: clear exoplanet atmospheres
-        </InstructionHeader>
+        <InstructionHeader>Tutorial: Exoplanet atmospheres</InstructionHeader>
         <InstructionRow row-type="Tool">
           Astronomers predict the theoretical spectrum they would expect to
           observe under ideal conditions. Each predictive model is specific to a
