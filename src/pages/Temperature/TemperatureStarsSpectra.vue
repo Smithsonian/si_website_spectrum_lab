@@ -2,7 +2,7 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Part 1: Spectra of Stars</InstructionHeader>
+        <InstructionHeader>Stars Part 1: Spectra</InstructionHeader>
         <InstructionRow rowType="Tool">
           Using the <em>Target Object</em> menu, compare the spectrum of each
           star: Sun, M star, and B star. Adjust the wavelength slider so you can

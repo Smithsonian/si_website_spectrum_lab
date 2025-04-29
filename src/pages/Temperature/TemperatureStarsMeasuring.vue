@@ -2,7 +2,9 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Part 2: Measuring Temperatures</InstructionHeader>
+        <InstructionHeader>
+          Stars Part 2: Measuring Temperatures
+        </InstructionHeader>
         <InstructionRow rowType="Tool">
           Using the <em>Target Object</em> menu, compare the spectrum of each
           star: Sun, M star, and B star. Using the

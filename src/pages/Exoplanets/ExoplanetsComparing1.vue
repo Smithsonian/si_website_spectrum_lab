@@ -3,8 +3,8 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Comparative Exoplanetology: How do atmospheric conditions vary among
-          exoplanets? First planet
+          Comparative Exoplanetology Part 1:<br />How do atmospheric conditions
+          vary among exoplanets?
         </InstructionHeader>
         <InstructionRow row-type="Tool">
           Now that you’ve examined WASP-17b, let’s look at some other

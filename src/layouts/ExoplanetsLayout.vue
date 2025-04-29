@@ -14,7 +14,7 @@
               WASP-17b
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/comparing">
-              Comparing exoplanets
+              Comparative Exoplanetology
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/proposal">
               Proposal to NASA

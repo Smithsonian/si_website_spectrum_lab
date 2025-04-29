@@ -3,8 +3,8 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Comparative Exoplanetology: How do atmospheric conditions vary among
-          exoplanets? Second planet
+          Comparative Exoplanetology Part 2:<br />How do atmospheric conditions
+          vary among exoplanets?
         </InstructionHeader>
         <InstructionRow row-type="Tool">
           Choose a second transmission spectrum of any of the other Exoplanet
