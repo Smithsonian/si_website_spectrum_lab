@@ -3,6 +3,7 @@
     v-if="tutorialState === showOnState"
     :width="600"
     :anchor-elem="anchorElem"
+    :close-handler="close"
     :extra-offset="15"
     :no-scroll="!scrollToPopup"
   >
@@ -37,6 +38,6 @@ const props = defineProps<{
   showOnState: State;
 }>();
 
-const { tutorialState, stateOrder, scrollToPopup, goToNext, goToPrev } =
+const { tutorialState, stateOrder, scrollToPopup, goToNext, goToPrev, close } =
   props.stateMachine;
 </script>

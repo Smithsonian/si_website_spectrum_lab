@@ -4,6 +4,17 @@
     class="tutorial-container text-dark p-3"
     :style="{ width: `${width}px`, ...floatingStyles }"
   >
+    <div class="float-end" style="height: 10px; width: 10px"></div>
+    <button
+      type="button"
+      class="btn-close position-absolute"
+      aria-label="Close tutorial"
+      :style="{
+        right: '3px',
+        top: '3px',
+      }"
+      @click="closeHandler"
+    ></button>
     <slot></slot>
     <div
       ref="arrowRef"
@@ -32,6 +43,7 @@ const props = withDefaults(
   defineProps<{
     width: number;
     anchorElem: HTMLElement | ComponentPublicInstance | null;
+    closeHandler: () => void;
     extraOffset?: number;
     noScroll?: boolean;
   }>(),

@@ -18,6 +18,7 @@ export interface TutorialStateMachine<O extends readonly string[]> {
   goToNext: () => void;
   goToPrev: () => void;
   replay: () => void;
+  close: () => void;
 }
 
 function createMachine<O extends readonly string[]>(
@@ -61,6 +62,10 @@ function createMachine<O extends readonly string[]>(
     state.value = stateOrder[1];
   };
 
+  const close = () => {
+    state.value = stateOrder[stateOrder.length - 1];
+  };
+
   return {
     tutorialState: state,
     stateOrder,
@@ -68,6 +73,7 @@ function createMachine<O extends readonly string[]>(
     goToNext,
     goToPrev,
     replay,
+    close,
   };
 }
 
