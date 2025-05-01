@@ -32,7 +32,14 @@
           <ToolCard
             :custom-metadata="marsMetadataList"
             :spectrum-picker-placeholder="null"
-          />
+          >
+            <div
+              ref="graphTutAnchor"
+              class="position-absolute"
+              style="bottom: 25px; left: 200px; width: 0; height: 0"
+            ></div>
+            <TempTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
+          </ToolCard>
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
@@ -63,8 +70,11 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useTemplateRef } from 'vue';
 
 useSpecLabHead('Tutorial', 'Temperature');
+
+const graphTutAnchor = useTemplateRef('graphTutAnchor');
 
 const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];

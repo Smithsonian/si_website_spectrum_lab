@@ -1,9 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'slider'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="10"
+    :state-machine="machine"
+    show-on-state="slider"
   >
     <p>
       This <strong>slider</strong> lets you change the range of wavelengths that
@@ -26,15 +25,7 @@
         alt="Electromagnetic spectrum diagram"
       />
     </div>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" light @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="close" light @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -43,5 +34,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
+const machine = useTempTutorialStateMachine();
 </script>

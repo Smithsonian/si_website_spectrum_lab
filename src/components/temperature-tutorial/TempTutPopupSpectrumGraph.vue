@@ -1,10 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'spectrumGraph'"
-    :width="500"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    bottom="25px"
-    left="200px"
+    :state-machine="machine"
+    show-on-state="spectrumGraph"
   >
     <p>
       This is the <strong>spectrum graph</strong>, which is a plot of the
@@ -12,15 +10,7 @@
       wavelength (or color, or energy). The spectrum is taken at one moment in
       time.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" light @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="next" light @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -28,5 +18,5 @@ import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
 
 defineProps<{ anchorElem: HTMLElement | null }>();
 
-const { tutorialState, goToNext, goToPrev } = useTempTutorialStateMachine();
+const machine = useTempTutorialStateMachine();
 </script>
