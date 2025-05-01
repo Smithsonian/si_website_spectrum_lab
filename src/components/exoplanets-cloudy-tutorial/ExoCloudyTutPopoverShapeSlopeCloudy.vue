@@ -1,10 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'cloudShapeSlope'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
-    :no-scroll="!scrollToPopup"
+    :state-machine="machine"
+    show-on-state="cloudShapeSlope"
   >
     <p>
       Different atmospheric conditions can also change the overall
@@ -16,15 +14,7 @@
       particles — block and scatter Visible and IR light equally, flattening out
       the spectrum.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +23,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, scrollToPopup, goToNext, goToPrev } =
-  useExoplanetsCloudyTutorialStateMachine();
+const machine = useExoplanetsCloudyTutorialStateMachine();
 </script>

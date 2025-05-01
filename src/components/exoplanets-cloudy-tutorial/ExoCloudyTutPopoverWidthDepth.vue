@@ -1,10 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'widthDepth'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
-    :no-scroll="!scrollToPopup"
+    :state-machine="machine"
+    show-on-state="widthDepth"
   >
     <p>
       Different atmospheric conditions — such as <strong>Clouds</strong> — can
@@ -12,12 +10,7 @@
       <strong>width</strong> and <strong>depth</strong> of specific absorption
       features.
     </p>
-    <LeftRightGroup>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -26,6 +19,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, scrollToPopup, goToNext } =
-  useExoplanetsCloudyTutorialStateMachine();
+const machine = useExoplanetsCloudyTutorialStateMachine();
 </script>

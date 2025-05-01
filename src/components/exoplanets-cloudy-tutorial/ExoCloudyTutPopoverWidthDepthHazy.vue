@@ -1,24 +1,14 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'dampenedAbsorption'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
-    :no-scroll="!scrollToPopup"
+    :state-machine="machine"
+    show-on-state="dampenedAbsorption"
   >
     <p>
       <strong>Hazes</strong> also significantly dampen and obscure the expected
       deep absorption features.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="close" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -27,6 +17,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, scrollToPopup, goToNext, goToPrev } =
-  useExoplanetsCloudyTutorialStateMachine();
+const machine = useExoplanetsCloudyTutorialStateMachine();
 </script>
