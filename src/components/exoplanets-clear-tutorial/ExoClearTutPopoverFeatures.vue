@@ -1,9 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'features'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
+    :state-machine="machine"
+    show-on-state="features"
   >
     <p>
       Sodium Vapor (Na), Potassium Vapor (K), and Water Vapor (H<sub>2</sub>O)
@@ -15,15 +14,7 @@
       important to the ultimate search for signs of life in smaller, more
       hospitable worlds.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="close" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -32,6 +23,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, goToNext, goToPrev } =
-  useExoplanetsClearTutorialStateMachine();
+const machine = useExoplanetsClearTutorialStateMachine();
 </script>

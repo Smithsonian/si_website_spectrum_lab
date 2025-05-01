@@ -1,10 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'model'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
-    :no-scroll="!scrollToPopup"
+    :state-machine="machine"
+    show-on-state="model"
   >
     <p>
       This is a high-resolution <strong>model</strong> of the predicted
@@ -15,12 +13,7 @@
       physics and chemistry of atoms and molecules at the temperatures and
       pressures found in these planets.
     </p>
-    <LeftRightGroup>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -29,6 +22,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, scrollToPopup, goToNext } =
-  useExoplanetsClearTutorialStateMachine();
+const machine = useExoplanetsClearTutorialStateMachine();
 </script>
