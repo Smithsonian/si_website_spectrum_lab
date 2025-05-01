@@ -1,23 +1,14 @@
 <template>
-  <TutorialPopup
-    v-if="tutorialState === 'clear'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
+    :state-machine="machine"
+    show-on-state="clear"
   >
     <p>
       This is the <strong>Clear Drawing</strong> button. You can reset your
       spectrum graph if you ever want to start over from a blank screen.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialPopup>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -25,6 +16,5 @@ import { useSpectraTutorialStateMachine } from '@/utils/tutorialUtils';
 import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
-
-const { tutorialState, goToNext, goToPrev } = useSpectraTutorialStateMachine();
+const machine = useSpectraTutorialStateMachine();
 </script>

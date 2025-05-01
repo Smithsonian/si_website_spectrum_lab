@@ -1,7 +1,7 @@
 <template>
   <div
-    ref="popupRef"
-    class="tutorial-contents text-dark p-3"
+    ref="floatingRef"
+    class="tutorial-container text-dark p-3"
     :style="{ width: `${width}px`, ...floatingStyles }"
   >
     <slot></slot>
@@ -38,7 +38,7 @@ const props = withDefaults(
   { extraOffset: 0 },
 );
 
-const popupRef = useTemplateRef('popupRef');
+const floatingRef = useTemplateRef('floatingRef');
 const arrowRef = useTemplateRef('arrowRef');
 const anchorRef = computed(() => props.anchorElem);
 
@@ -47,7 +47,7 @@ const crossOffset = props.width / 2 - 100;
 
 const { floatingStyles, middlewareData, isPositioned } = useFloating(
   anchorRef,
-  popupRef,
+  floatingRef,
   {
     placement: 'bottom',
     middleware: [
@@ -71,8 +71,8 @@ watch([isPositioned, () => props.noScroll], ([isPositioned, noScroll]) => {
   if (noScroll) {
     return;
   }
-  if (isPositioned && popupRef.value) {
-    popupRef.value.scrollIntoView();
+  if (isPositioned && floatingRef.value) {
+    floatingRef.value.scrollIntoView();
   }
 });
 </script>
@@ -90,7 +90,7 @@ watch([isPositioned, () => props.noScroll], ([isPositioned, noScroll]) => {
   border: 2px solid var(--sl-slate-blue);
   box-shadow: 0px 0px 7px 2px var(--sl-slate-blue);
 }
-.tutorial-contents {
+.tutorial-container {
   z-index: 100;
   background-color: var(--sl-lighter-blue);
   border: 2px solid var(--sl-slate-blue);

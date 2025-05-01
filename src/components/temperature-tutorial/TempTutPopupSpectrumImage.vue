@@ -1,5 +1,5 @@
 <template>
-  <TutorialPopup
+  <TutorialFloatingContainer
     v-if="tutorialState === 'spectrumImage'"
     :width="500"
     :anchor-elem="anchorElem"
@@ -15,7 +15,7 @@
         <NextPrevButton direction="next" light @click="goToNext" />
       </template>
     </LeftRightGroup>
-  </TutorialPopup>
+  </TutorialFloatingContainer>
 </template>
 
 <script setup lang="ts">

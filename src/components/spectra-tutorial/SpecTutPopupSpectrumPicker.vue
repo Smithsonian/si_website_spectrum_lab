@@ -1,5 +1,5 @@
 <template>
-  <TutorialPopup
+  <TutorialFloatingContainer
     v-if="tutorialState === 'dropdown'"
     :width="600"
     :anchor-elem="anchorElem"
@@ -16,7 +16,7 @@
         <NextPrevButton direction="close" @click="goToNext" />
       </template>
     </LeftRightGroup>
-  </TutorialPopup>
+  </TutorialFloatingContainer>
 </template>
 
 <script setup lang="ts">
