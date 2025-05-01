@@ -1,9 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'rainbow'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
+    :state-machine="machine"
+    show-on-state="rainbow"
   >
     <p>
       The rainbow in the middle of the spectrum shows
@@ -14,15 +13,7 @@
       the human eye.
     </p>
     <p>Beyond IR is microwave and radio. Beyond UV is X-ray and gamma ray.</p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -31,5 +22,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, goToNext, goToPrev } = useSpectraTutorialStateMachine();
+const machine = useSpectraTutorialStateMachine();
 </script>

@@ -1,9 +1,8 @@
 <template>
-  <TutorialFloatingContainer
-    v-if="tutorialState === 'image'"
-    :width="600"
+  <TutorialPopover
     :anchor-elem="anchorElem"
-    :extra-offset="15"
+    :state-machine="machine"
+    show-on-state="image"
   >
     <p>
       This is the <strong>Spectrum Image</strong>. This represents what you
@@ -14,15 +13,7 @@
       across all wavelengths. More typically, some wavelength sections will be
       brighter and others will be darker.
     </p>
-    <LeftRightGroup>
-      <template #left>
-        <NextPrevButton direction="prev" @click="goToPrev" />
-      </template>
-      <template #right>
-        <NextPrevButton direction="next" @click="goToNext" />
-      </template>
-    </LeftRightGroup>
-  </TutorialFloatingContainer>
+  </TutorialPopover>
 </template>
 
 <script setup lang="ts">
@@ -31,5 +22,5 @@ import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const { tutorialState, goToNext, goToPrev } = useSpectraTutorialStateMachine();
+const machine = useSpectraTutorialStateMachine();
 </script>

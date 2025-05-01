@@ -8,7 +8,7 @@
   >
     <slot></slot>
     <LeftRightGroup>
-      <template #left v-if="tutorialState !== stateOrder[0]">
+      <template #left v-if="tutorialState !== stateOrder[1]">
         <NextPrevButton direction="prev" @click="goToPrev" />
       </template>
       <template #right>
