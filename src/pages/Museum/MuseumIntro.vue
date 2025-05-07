@@ -30,12 +30,14 @@
         >
           <VideoJSPlayer>
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/Conservation_Science-Keats_Materials_Identification_20250131.webm"
-              type="video/webm"
-            />
-            <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/Conservation_Science-Keats_Materials_Identification_20250131.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science.mp4"
               type="video/mp4"
+            />
+            <track
+              label="Captions"
+              kind="captions"
+              srclang="en"
+              :src="captions"
             />
           </VideoJSPlayer>
         </div>
@@ -54,6 +56,7 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
+import captions from '@/assets/conservation_science.vtt';
 
 useSpecLabHead('Intro', 'Museum');
 </script>

@@ -1,0 +1,286 @@
+WEBVTT
+
+00:07.230 --> 00:10.220
+Having information about what pigments are in an object
+
+00:10.230 --> 00:15.220
+can help provide information about when and where that object might have been made.
+
+00:17.230 --> 00:20.040
+Materials respond differently to different wavelengths,
+
+00:20.040 --> 00:24.090
+if they reflect in the infrared, but absorb in the visible,
+
+00:24.090 --> 00:27.220
+those are going to give us information about what that pigment is.
+
+00:29.230 --> 00:33.230
+And so I&#039;m gonna use a filter that
+
+00:33.230 --> 00:38.070
+blocks visible light and passes infrared radiation.
+
+00:38.070 --> 00:40.220
+So we can&#039;t see through it because we can&#039;t see into the infrared.
+
+00:43.220 --> 00:48.210
+We&#039;re looking at a reflected infrared image of the pigment charts.
+
+00:48.220 --> 00:53.210
+We&#039;re going to see some different responses of those pigments.
+
+00:53.210 --> 00:57.090
+Let&#039;s take a look at some of those blues.
+
+00:57.090 --> 00:59.210
+So this is the infrared image, we&#039;re going to switch back to the visible
+
+01:01.220 --> 01:04.210
+We can see some differences in how
+
+01:04.220 --> 01:07.210
+the infrared wavelengths are being absorbed and reflected.
+
+01:07.220 --> 01:10.210
+So we see here, Prussian blue is absorbing
+
+01:10.220 --> 01:12.210
+that infrared radiation.
+
+01:12.210 --> 01:18.120
+This is Prussian blue, too, but we have azarite, which is not absorbing quite as much
+
+01:18.120 --> 01:22.210
+Indigo, it&#039;s reflecting quite a bit, so we are seeing those differences.
+
+01:22.220 --> 01:25.210
+And you can do some processing to really bring out those
+
+01:25.210 --> 01:29.190
+differences, and that&#039;s creating a combined image
+
+01:29.190 --> 01:33.210
+of the visible light and the infrared, and it&#039;s a false color infrared image.
+
+01:33.210 --> 01:36.210
+And that can give us some information about characterizing
+
+01:36.210 --> 01:38.200
+and differentiating those pigments.
+
+01:40.210 --> 01:45.200
+I&#039;m Matthew Clark, I&#039;m a conservation scientist at the National Museum of Asian Art.
+
+01:45.200 --> 01:48.170
+One of the tools that we use here is a
+
+01:48.170 --> 01:52.200
+hyper-spectral imaging camera that&#039;s going to split up light
+
+01:52.200 --> 01:56.190
+into the different wavelengths and measure that
+
+01:56.190 --> 01:58.220
+on the camera sensor.
+
+01:58.220 --> 02:03.090
+This particular camera is going to capture a line of light
+
+02:03.090 --> 02:08.200
+and it&#039;s going to spread that line of light across the chip of the camera.
+
+02:08.200 --> 02:12.180
+So we&#039;re going to have a spectrum from each section of that line.
+
+02:12.180 --> 02:18.130
+The camera then is going to move along the surface, and we&#039;ll keep collecting those
+
+02:18.130 --> 02:21.190
+lines that then can all be assembled into
+
+02:21.190 --> 02:25.190
+a cube of data later that we can examine and interpret,
+
+02:25.200 --> 02:29.190
+and use different specialized software to interpret the data.
+
+02:29.200 --> 02:32.200
+Right now, we&#039;re looking at a scene from the
+
+02:32.200 --> 02:35.190
+Japanese hand scrolls about Jizō Bosatsu
+
+02:36.200 --> 02:40.190
+And in this scene, we&#039;ve identified pigments
+
+02:40.200 --> 02:43.190
+that are present based off of the spectra that we see.
+
+02:43.200 --> 02:46.190
+And in this interior scene, we can see a
+
+02:46.190 --> 02:50.180
+number of ladies in waiting inside on
+
+02:50.190 --> 02:53.180
+these tatami mats, which appear as somewhat of green
+
+02:53.180 --> 02:59.180
+and we can see a number of areas of red and some other discoloration.
+
+02:59.190 --> 03:01.180
+This is a set of spectra.
+
+03:01.180 --> 03:05.180
+I&#039;m going to focus on this green spectrum, which is a copper green.
+
+03:06.190 --> 03:08.180
+And this purple spectrum that we
+
+03:09.190 --> 03:11.180
+can associate as indigo.
+
+03:11.190 --> 03:14.180
+So we&#039;re going to take these different spectra and
+
+03:15.190 --> 03:19.180
+process all the spectra within that data cube
+
+03:19.190 --> 03:22.180
+to look for when do we see these features.
+
+03:22.190 --> 03:25.180
+So if we were trying to, let&#039;s say, look for
+
+03:25.190 --> 03:28.180
+this copper green, if we know is
+
+03:28.180 --> 03:31.170
+present based on the appearance and based on other techniques where we know that there&#039;s copper
+
+03:31.170 --> 03:37.170
+present, we can---I have to open up another file to highlight this---
+
+03:37.170 --> 03:41.170
+So what we&#039;re seeing now is: Everywhere where it is bright,
+
+03:41.170 --> 03:43.090
+the whiter it is,
+
+03:43.090 --> 03:48.170
+the closer a match it is to that copper green spectrum.
+
+03:49.180 --> 03:53.170
+So in these areas where we can see these tatami mats, 
+
+03:53.170 --> 03:56.170
+we can see a really strong signal from that copper green,
+
+03:56.180 --> 03:59.000
+more so than we might expect
+
+03:59.010 --> 04:01.170
+based on looking at it visibly.
+
+04:01.180 --> 04:04.170
+The other case, the indigo that I mentioned, if I was
+
+04:04.180 --> 04:08.170
+glancing at this, I might not say, where is the indigo?
+
+04:08.180 --> 04:13.170
+So that, again, is this purple spectrum.
+
+04:13.170 --> 04:17.160
+It has this kind of particular inflection point around 7000 nanometers.
+
+04:18.170 --> 04:21.170
+And if I load that spectrum, where
+
+04:21.170 --> 04:25.040
+we see these bright white areas is where
+
+04:25.040 --> 04:28.160
+this indigo was present.
+
+04:28.170 --> 04:31.160
+So in that case, it&#039;s really found
+
+04:31.170 --> 04:35.160
+at the bottom of the scroll, giving sort of either a watery or
+
+04:35.160 --> 04:38.160
+foggy presence below this interior scene.
+
+04:39.170 --> 04:42.170
+And we&#039;ve actually found that in a lot of different areas of the scroll,
+
+04:42.170 --> 04:45.160
+with this indigo. Once we know it&#039;s there, you can kind of 
+
+04:45.170 --> 04:50.160
+just see its presence, but we can also see where it was lost between the fill.
+
+04:50.170 --> 04:56.010
+So this is going to be... The contrast is a bit boosted now to look at
+
+04:56.010 --> 04:59.160
+one of the things we&#039;d like to do is to confirm these
+
+04:59.160 --> 05:02.040
+areas where we think there is indigo, 
+
+05:02.040 --> 05:05.200
+based off of the statistical analysis.
+
+05:05.200 --> 05:08.100
+I want to actually confirm by looking at the spectrum there.
+
+05:08.100 --> 05:12.160
+So here, I can pull up the spectrum
+
+05:12.160 --> 05:15.150
+and see that kind of distinctive shape of the indigo.
+
+05:15.160 --> 05:17.150
+So that lets me know it&#039;s there.
+
+05:17.150 --> 05:19.150
+And in areas where, by my eye, it looks like a
+
+05:19.150 --> 05:24.150
+very similar faint blue in this area of damage.
+
+05:24.160 --> 05:28.070
+The software doesn&#039;t see the indigo, and I don&#039;t see it there in the spectrum either.
+
+05:28.070 --> 05:31.170
+So, we&#039;re able to pull out some of this information
+
+05:31.170 --> 05:34.150
+that we wouldn&#039;t otherwise note.
+
+05:34.150 --> 05:37.200
+And we can kind of essentially go
+
+05:37.200 --> 05:41.040
+and kind of explore around the scene.
+
+05:41.040 --> 05:45.150
+Here, we&#039;re looking at this deep red color, which is the vermilion,
+
+05:45.150 --> 05:48.140
+which is a mercury sulfide, and has a very sharp transition.
+
+05:48.150 --> 05:50.140
+It&#039;s very distinctive.
+
+05:50.150 --> 05:53.140
+The palette of this scroll compared to some of
+
+05:53.150 --> 05:58.140
+the other things that we look at is much more limited, and that it&#039;s supposed to simply be the style.
+
+05:59.150 --> 06:04.140
+Now, you too, can analyze historic artworks from our collection using advanced spectral imaging.
