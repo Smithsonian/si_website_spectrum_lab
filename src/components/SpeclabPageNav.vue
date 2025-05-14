@@ -2,7 +2,7 @@
   <div class="bg-sl-royal-blue">
     <BContainer>
       <BNav>
-        <BNavItem link-class="page-nav-link">1. Color</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/color">1. Color</BNavItem>
         <BNavItem link-class="page-nav-link" to="/spectra">2. Spectra</BNavItem>
         <BNavItem link-class="page-nav-link" to="/temperature">
           3. Temperature

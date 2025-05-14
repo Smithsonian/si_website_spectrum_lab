@@ -50,6 +50,7 @@ import NotFound from './pages/NotFound.vue';
 import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
 import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
+import ColorPredictions from './pages/Color/ColorPredictions.vue';
 
 library.add(
   faArrowUp,
@@ -62,6 +63,11 @@ library.add(
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
+  {
+    path: '/color/',
+    redirect: '/color/predictions',
+    children: [{ path: 'predictions', component: ColorPredictions }],
+  },
   {
     path: '/spectra/',
     redirect: '/spectra/tutorial',
