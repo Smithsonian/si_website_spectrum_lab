@@ -13,11 +13,12 @@
           </template>
         </InstructionRow>
       </div>
-      <div>
+      <div class="bg-gen-black">
         <img
-          width="100%"
           src="/src/assets/2x/RGB circles@2x.webp"
           alt="Intersecting red, green, and blue circles of light"
+          class="d-block mx-auto"
+          style="max-width: 575px"
         />
       </div>
       <div class="py-4 px-5">
