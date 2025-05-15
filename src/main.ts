@@ -52,6 +52,7 @@ import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 import ColorPredictions from './pages/Color/ColorPredictions.vue';
 import ColorPhotons from './pages/Color/ColorPhotons.vue';
+import AttributionsPage from './pages/AttributionsPage.vue';
 
 library.add(
   faArrowUp,
@@ -187,6 +188,7 @@ const routes: RouteRecordRaw[] = [
   },
   { path: '/playground', component: PlaygroundView },
   { path: '/color-palette', component: ColorPalette },
+  { path: '/attributions', component: AttributionsPage },
   {
     path: '/:fileName([^.]+).html',
     redirect: (to) => {

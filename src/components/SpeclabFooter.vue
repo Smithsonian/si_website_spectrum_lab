@@ -11,6 +11,14 @@
             </small>
           </p>
           <p>
+            <BLink href="https://www.si.edu/termsofuse">
+              Smithsonian Terms of Use
+            </BLink>
+          </p>
+          <p>
+            <RouterLink to="/attributions">Attributions</RouterLink>
+          </p>
+          <p>
             <RouterLink to="/color-palette">Color palette</RouterLink>
           </p>
         </BCol>
