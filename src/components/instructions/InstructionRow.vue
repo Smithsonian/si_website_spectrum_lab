@@ -44,6 +44,8 @@ const title = computed(() => {
       return 'Investigate.';
     case 'Art':
       return 'Artwork.';
+    case 'Simulation':
+      return 'Simulation.';
     default:
       return '';
   }

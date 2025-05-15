@@ -24,7 +24,9 @@
       <div class="py-4 px-5">
         <LeftRightGroup>
           <template #right>
-            <NextPrevButton direction="next">next section</NextPrevButton>
+            <NextPrevButton direction="next" light to="photons">
+              next section
+            </NextPrevButton>
           </template>
         </LeftRightGroup>
       </div>

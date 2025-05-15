@@ -2,8 +2,8 @@
   <SvgImage
     :src="iconPath"
     :style="{ height: '30px', 'padding-left': extraPadding }"
-    class="ms-lg-2 ms-xl-3 ms-xxl-4"
-    alt="{{ name }} icon"
+    class="ms-lg-2 ms-xl-3 ms-xxl-4 instruction-icon"
+    :alt="`${rowType} icon`"
   />
 </template>
 
@@ -14,9 +14,10 @@ import introIcon from '@/assets/SVG/lightbulb-regular.svg?source&set-current-col
 import tutorialIcon from '@/assets/SVG/tutorial_instruction.svg?source&set-current-color';
 import notebookIcon from '@/assets/SVG/notebook_instruction.svg?source&set-current-color';
 import toolIcon from '@/assets/SVG/chart-bell-curve-cumulative.svg?source&set-current-color';
-import videoIcon from '@/assets/SVG/video-solid.svg?source&set-current-color';
+import videoIcon from '@/assets/SVG/Video.svg?source&set-current-color';
 import investigateIcon from '@/assets/SVG/microscope-solid.svg?source&set-current-color';
 import artIcon from '@/assets/SVG/palette-outline.svg?source&set-current-color';
+import simulationIcon from '@/assets/SVG/Simulation.svg?source&set-current-color';
 import type { InstructionRowType } from '@/constants';
 
 const props = defineProps<{ rowType: InstructionRowType }>();
@@ -36,6 +37,8 @@ const iconPath = computed(() => {
       return investigateIcon;
     case 'Art':
       return artIcon;
+    case 'Simulation':
+      return simulationIcon;
     default:
       return '';
   }
@@ -48,3 +51,9 @@ const extraPadding = computed(() => {
   return '0';
 });
 </script>
+
+<style>
+.instruction-icon {
+  color: var(--sl-light-blue);
+}
+</style>
