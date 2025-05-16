@@ -21,6 +21,9 @@
           <p>
             <RouterLink to="/color-palette">Color palette</RouterLink>
           </p>
+          <p>
+            <RouterLink to="/icon-test">Icon test</RouterLink>
+          </p>
         </BCol>
         <BCol>
           <img src="/src/assets/CfALogo@2x.png" width="100%" />

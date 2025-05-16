@@ -1,8 +1,8 @@
 <template>
   <ExoplanetsLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>
             Tutorial: Cloudy/hazy atmospheres
           </InstructionHeader>
@@ -28,13 +28,15 @@
               </InstructionStep>
             </template>
           </InstructionRow>
-        </div>
-        <div class="rounded-bottom-4 bg-gen-black">
-          <img
-            src="/src/assets/Clouds_Image_W500.png"
-            class="d-block mx-auto"
-          />
-        </div>
+        </template>
+        <template #middle>
+          <div class="rounded-bottom-4 bg-gen-black">
+            <img
+              src="/src/assets/Clouds_Image_W500.png"
+              class="d-block mx-auto"
+            />
+          </div>
+        </template>
       </ChallengeCard>
     </template>
     <template #tool-col>

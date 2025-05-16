@@ -1,25 +1,22 @@
 <template>
-  <BRow class="instruction-row">
-    <BCol cols="1">
-      <InstructionIcon :row-type="rowType" />
-    </BCol>
-    <BCol>
-      <div class="instruction-row-paras">
-        <p>
-          <strong>{{ title }}</strong>
-          <slot></slot>
-        </p>
-        <slot name="extra-paras"></slot>
-      </div>
-      <ol v-if="$slots.steps" class="fw-light">
-        <slot name="steps"></slot>
-      </ol>
-      <p v-if="$slots.note" class="fw-light">
-        Note:
-        <slot name="note"></slot>
+  <div class="instruction-row">
+    <InstructionIcon :row-type="rowType" />
+    <div class="instruction-row-paras">
+      <p>
+        <strong>{{ title }}</strong>
+        <slot></slot>
       </p>
-    </BCol>
-  </BRow>
+      <slot name="before-steps"></slot>
+    </div>
+    <ol v-if="$slots.steps" class="fw-light">
+      <slot name="steps"></slot>
+    </ol>
+    <slot name="after-steps"></slot>
+    <p v-if="$slots.note" class="fw-light">
+      Note:
+      <slot name="note"></slot>
+    </p>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -55,6 +52,7 @@ const title = computed(() => {
 <style>
 .instruction-row {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .instruction-row-paras p {

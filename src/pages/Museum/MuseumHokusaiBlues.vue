@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>Part 2: Two Blue Spectra</InstructionHeader>
           <InstructionRow rowType="Art">
             Art conservators have taken reflection spectra of 2 blue regions of
@@ -16,13 +16,10 @@
           <InstructionRow rowType="Notebook">
             <span class="needs-updating"> Write notebook questions </span>
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
+        </template>
+        <template #middle>
           <ImageZoomOverlay :src="hokusaiChallenge" :zoom-src="hokusaiBig" />
-        </div>
+        </template>
       </ChallengeCard>
     </template>
     <template #tool-col>

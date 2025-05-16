@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>
             Part 2: Paint Colors and Spectra
           </InstructionHeader>
@@ -28,13 +28,10 @@
             In the <em>Paint Colors</em> section, draw a line from each spectrum
             to the corresponding region of interest on the painting.
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
+        </template>
+        <template #middle>
           <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
-        </div>
+        </template>
       </ChallengeCard>
     </template>
     <template #tool-col>

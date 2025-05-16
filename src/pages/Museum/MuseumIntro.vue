@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader> Science of Art Conservation </InstructionHeader>
           <InstructionRow rowType="Intro">
             Light, color, and spectra are important components of art
@@ -23,11 +23,8 @@
               </InstructionStep>
             </template>
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
+        </template>
+        <template #middle>
           <VideoJSPlayer>
             <source
               src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science.mp4"
@@ -40,15 +37,17 @@
               :src="captions"
             />
           </VideoJSPlayer>
-        </div>
-      </ChallengeCard>
-      <LeftRightGroup class="mt-5">
-        <template #right>
-          <NextPrevButton direction="next" to="paint-colors" dark>
-            next section
-          </NextPrevButton>
         </template>
-      </LeftRightGroup>
+        <template #bottom>
+          <LeftRightGroup>
+            <template #right>
+              <NextPrevButton direction="next" to="paint-colors" dark>
+                next section
+              </NextPrevButton>
+            </template>
+          </LeftRightGroup>
+        </template>
+      </ChallengeCard>
     </template>
   </MuseumLayout>
 </template>

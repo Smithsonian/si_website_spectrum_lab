@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>Identify the Pigments</InstructionHeader>
           <InstructionRow rowType="Tool">
             Compare the spectra from the two blue regions of interest with a
@@ -12,13 +12,10 @@
           <InstructionRow rowType="Notebook">
             <span class="needs-updating"> Write notebook questions </span>
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
+        </template>
+        <template #middle>
           <ImageZoomOverlay :src="hokusaiChallenge" :zoom-src="hokusaiBig" />
-        </div>
+        </template>
       </ChallengeCard>
     </template>
     <template #tool-col>

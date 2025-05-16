@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>Other Blue Regions</InstructionHeader>
           <InstructionRow rowType="Investigate">
             <p>
@@ -28,23 +28,20 @@
               (IR)
             </span>
           </InstructionRow>
-        </div>
-        <div class="mb-3">
-          <BFormRadioGroup
-            v-model="chosenFilter"
-            :options="FILTER_OPTION_LIST"
-            name="chosen-filter"
-            class="chosen-filter-picker"
-            buttons
-            button-variant="primary"
-          />
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
-          <img :src="imageUrl" class="mb-2 challenge-image" />
-        </div>
+          <div class="mb-3">
+            <BFormRadioGroup
+              v-model="chosenFilter"
+              :options="FILTER_OPTION_LIST"
+              name="chosen-filter"
+              class="chosen-filter-picker"
+              buttons
+              button-variant="primary"
+            />
+          </div>
+        </template>
+        <template #middle>
+          <img :src="imageUrl" class="d-block mb-2 challenge-image" />
+        </template>
       </ChallengeCard>
     </template>
     <template #tool-col>

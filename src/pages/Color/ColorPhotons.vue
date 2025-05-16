@@ -1,7 +1,7 @@
 <template>
   <ColorLayout>
-    <ChallengeCard remove-padding>
-      <div class="pt-3 ps-3 pe-5">
+    <ChallengeCard>
+      <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
         <InstructionRow row-type="Simulation">
           Select the “Single Bulb” to launch the Physics Education Technology
@@ -10,16 +10,20 @@
         <InstructionRow row-type="Notebook">
           Follow instructions in <em>Part A</em> of the
           <em>Photons and Color</em> section.
-          <p class="mt-2">Then, answer the questions in <em>Part B</em>.</p>
+          <template #before-steps>
+            <p>Then, answer the questions in <em>Part B</em>.</p>
+          </template>
         </InstructionRow>
-      </div>
-      <iframe
-        height="500px"
-        width="100%"
-        src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
-        allow="fullscreen"
-      ></iframe>
-      <div class="py-4 px-5">
+      </template>
+      <template #middle>
+        <iframe
+          height="500px"
+          width="100%"
+          src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
+          allow="fullscreen"
+        ></iframe>
+      </template>
+      <template #bottom>
         <LeftRightGroup>
           <template #right>
             <NextPrevButton direction="next" light to="mixing">
@@ -27,7 +31,7 @@
             </NextPrevButton>
           </template>
         </LeftRightGroup>
-      </div>
+      </template>
     </ChallengeCard>
   </ColorLayout>
 </template>

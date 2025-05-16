@@ -1,7 +1,7 @@
 <template>
   <ColorLayout>
-    <ChallengeCard remove-padding>
-      <div class="pt-3 ps-3 pe-5">
+    <ChallengeCard>
+      <template #top>
         <InstructionHeader>Make a Prediction</InstructionHeader>
         <InstructionRow row-type="Notebook">
           Without using any gels, examine the image below and write your
@@ -12,16 +12,18 @@
             </InstructionStep>
           </template>
         </InstructionRow>
-      </div>
-      <div class="bg-gen-black">
-        <img
-          src="/src/assets/2x/RGB circles@2x.webp"
-          alt="Intersecting red, green, and blue circles of light"
-          class="d-block mx-auto"
-          style="max-width: 575px"
-        />
-      </div>
-      <div class="py-4 px-5">
+      </template>
+      <template #middle>
+        <div class="bg-gen-black">
+          <img
+            src="/src/assets/2x/RGB circles@2x.webp"
+            alt="Intersecting red, green, and blue circles of light"
+            class="d-block mx-auto"
+            style="max-width: 575px"
+          />
+        </div>
+      </template>
+      <template #bottom>
         <LeftRightGroup>
           <template #right>
             <NextPrevButton direction="next" light to="photons">
@@ -29,7 +31,7 @@
             </NextPrevButton>
           </template>
         </LeftRightGroup>
-      </div>
+      </template>
     </ChallengeCard>
   </ColorLayout>
 </template>

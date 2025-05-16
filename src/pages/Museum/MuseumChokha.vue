@@ -1,8 +1,8 @@
 <template>
   <MuseumLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="py-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>Part 1: Chokha Painting </InstructionHeader>
           <InstructionRow rowType="Art">
             This painting by the artist Chokha is displayed at the Smithsonian's
@@ -29,21 +29,20 @@
               </ol>
             </span>
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
-          <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
-        </div>
-      </ChallengeCard>
-      <LeftRightGroup class="mt-5">
-        <template #right>
-          <NextPrevButton to="mystery" direction="next">
-            Part 2
-          </NextPrevButton>
         </template>
-      </LeftRightGroup>
+        <template #middle>
+          <ImageZoomOverlay :src="chokhaChallenge" :zoom-src="chokhaBig" />
+        </template>
+        <template #bottom>
+          <LeftRightGroup>
+            <template #right>
+              <NextPrevButton to="mystery" direction="next">
+                Part 2
+              </NextPrevButton>
+            </template>
+          </LeftRightGroup>
+        </template>
+      </ChallengeCard>
     </template>
   </MuseumLayout>
 </template>

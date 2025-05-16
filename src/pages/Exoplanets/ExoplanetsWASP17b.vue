@@ -11,7 +11,7 @@
           Hubble Space Telescope, of a Hot Jupiter named WASP-17b. The bottom
           panel shows the predicted model transmission spectrum for a Clear Hot
           Jupiter.
-          <template #extra-paras>
+          <template #before-steps>
             <p>
               How do these spectra compare? Use the comparison dropdown menu to
               view different exoplanet models and different atoms and molecules.

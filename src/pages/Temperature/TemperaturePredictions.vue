@@ -1,8 +1,8 @@
 <template>
   <TemperatureLayout>
     <template #challenge-tab>
-      <ChallengeCard remove-padding>
-        <div class="pt-3 px-3">
+      <ChallengeCard>
+        <template #top>
           <InstructionHeader>
             Temperature and Colors from Spectra Predictions
           </InstructionHeader>
@@ -20,17 +20,16 @@
               </InstructionStep>
             </template>
           </InstructionRow>
-        </div>
-        <div
-          class="rounded-bottom-4"
-          style="background-color: var(--gen-black)"
-        >
-          <img
-            src="/src/assets/Blue_and_Red_Stars.png"
-            height="544px"
-            class="d-block mx-auto"
-          />
-        </div>
+        </template>
+        <template #middle>
+          <div class="rounded-bottom-4 bg-gen-black">
+            <img
+              src="/src/assets/Blue_and_Red_Stars.png"
+              height="544px"
+              class="d-block mx-auto"
+            />
+          </div>
+        </template>
       </ChallengeCard>
       <LeftRightGroup class="mt-5">
         <template #right>

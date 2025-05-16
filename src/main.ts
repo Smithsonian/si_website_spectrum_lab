@@ -54,6 +54,7 @@ import ColorPredictions from './pages/Color/ColorPredictions.vue';
 import ColorPhotons from './pages/Color/ColorPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
 import ColorMixing from './pages/Color/ColorMixing.vue';
+import IconTest from './pages/IconTest.vue';
 
 library.add(
   faArrowUp,
@@ -191,6 +192,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/playground', component: PlaygroundView },
   { path: '/color-palette', component: ColorPalette },
   { path: '/attributions', component: AttributionsPage },
+  { path: '/icon-test', component: IconTest },
   {
     path: '/:fileName([^.]+).html',
     redirect: (to) => {
