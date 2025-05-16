@@ -19,7 +19,7 @@
   <div class="bg-sl-slate-blue py-4">
     <BContainer class="px-4" style="margin-bottom: 150px">
       <BRow class="gx-5 mb-4">
-        <ModuleTile :icon-source="colorIcon" title="1. Color" to="/">
+        <ModuleTile :icon-source="colorIcon" title="1. Color" to="/color">
           How does the interaction of light and matter affect the colors we see?
           Explore light emission, reflection, absorption, and transmission using
           hands-on materials and interactive simulations.
@@ -40,7 +40,11 @@
           Spectrum Data Tool to explore how an object’s thermal emission relates
           to color and temperature.
         </ModuleTile>
-        <ModuleTile :icon-source="compIcon" title="4. Composition" to="/">
+        <ModuleTile
+          :icon-source="compIcon"
+          title="4. Composition"
+          to="/composition"
+        >
           What can spectra tell us about an object’s composition? Explore how
           scientists identify chemical elements and compounds through their
           spectral signatures.
