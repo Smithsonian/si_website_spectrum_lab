@@ -53,6 +53,7 @@ import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 import ColorPredictions from './pages/Color/ColorPredictions.vue';
 import ColorPhotons from './pages/Color/ColorPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
+import ColorMixing from './pages/Color/ColorMixing.vue';
 
 library.add(
   faArrowUp,
@@ -71,6 +72,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'predictions', component: ColorPredictions },
       { path: 'photons', component: ColorPhotons },
+      { path: 'mixing', component: ColorMixing },
     ],
   },
   {
