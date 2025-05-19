@@ -18,6 +18,7 @@ import videoIcon from '@/assets/SVG/Video.svg?source&set-current-color';
 import investigateIcon from '@/assets/SVG/microscope-solid.svg?source&set-current-color';
 import artIcon from '@/assets/SVG/palette-outline.svg?source&set-current-color';
 import simulationIcon from '@/assets/SVG/Simulation.svg?source&set-current-color';
+import slideshowIcon from '@/assets/SVG/Slideshow.svg?source&set-current-color';
 import type { InstructionRowType } from '@/constants';
 
 interface IconStyle {
@@ -46,6 +47,8 @@ const iconPath = computed(() => {
       return artIcon;
     case 'Simulation':
       return simulationIcon;
+    case 'Slideshow':
+      return slideshowIcon;
     default:
       return '';
   }
@@ -81,7 +84,11 @@ const iconStyle = computed((): IconStyle => {
       return {
         ...defaultStyle,
         width: defaultStyle.width * 1.1,
-        left: defaultStyle.left + 1,
+      };
+    case 'Slideshow':
+      return {
+        ...defaultStyle,
+        width: defaultStyle.width * 1.1,
       };
     case 'Intro':
       return {

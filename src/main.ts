@@ -55,6 +55,7 @@ import ColorPhotons from './pages/Color/ColorPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
 import ColorMixing from './pages/Color/ColorMixing.vue';
 import IconTest from './pages/IconTest.vue';
+import ColorBehaviorsOfLight from './pages/Color/ColorBehaviorsOfLight.vue';
 
 library.add(
   faArrowUp,
@@ -74,6 +75,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'predictions', component: ColorPredictions },
       { path: 'photons', component: ColorPhotons },
       { path: 'mixing', component: ColorMixing },
+      { path: 'behaviors', component: ColorBehaviorsOfLight },
     ],
   },
   {

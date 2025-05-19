@@ -24,5 +24,6 @@ export type InstructionRowType =
   | 'Video'
   | 'Investigate'
   | 'Art'
-  | 'Simulation';
+  | 'Simulation'
+  | 'Slideshow';
 export type PlotType = 'line' | 'scatter';
