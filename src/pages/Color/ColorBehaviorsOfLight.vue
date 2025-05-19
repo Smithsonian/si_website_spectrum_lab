@@ -14,19 +14,19 @@
         </InstructionRow>
       </template>
       <template #middle>
-        <iframe
-          height="500px"
-          width="100%"
-          src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
-          allow="fullscreen"
-        ></iframe>
+        <img width="100%" :src="slideOrder[slideIndex]" />
       </template>
       <template #bottom>
         <LeftRightGroup>
-          <template #right>
-            <NextPrevButton direction="next" light to="behaviors">
-              next section
-            </NextPrevButton>
+          <template #left v-if="!atFirstSlide">
+            <NextPrevButton direction="prev" light @click="prevSlide"
+              >prev slide</NextPrevButton
+            >
+          </template>
+          <template #right v-if="!atLastSlide">
+            <NextPrevButton direction="next" light @click="nextSlide"
+              >next slide</NextPrevButton
+            >
           </template>
         </LeftRightGroup>
       </template>
@@ -36,6 +36,30 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
+import slide1 from '@/assets/behaviors_of_light/behaviors_of_light_slide1.png';
+import slide2 from '@/assets/behaviors_of_light/behaviors_of_light_slide2.png';
+import slide3 from '@/assets/behaviors_of_light/behaviors_of_light_slide3.png';
+import slide4 from '@/assets/behaviors_of_light/behaviors_of_light_slide4.png';
+import { computed, ref } from 'vue';
 
 useSpecLabHead('Behaviors of Light', 'Color');
+
+const slideOrder = [slide1, slide2, slide3, slide4];
+
+const slideIndex = ref(0);
+
+const atFirstSlide = computed(() => slideIndex.value <= 0);
+const atLastSlide = computed(() => slideIndex.value >= slideOrder.length - 1);
+
+const nextSlide = () => {
+  if (!atLastSlide.value) {
+    slideIndex.value++;
+  }
+};
+
+const prevSlide = () => {
+  if (!atFirstSlide.value) {
+    slideIndex.value--;
+  }
+};
 </script>
