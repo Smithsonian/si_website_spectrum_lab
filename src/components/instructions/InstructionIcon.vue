@@ -62,29 +62,30 @@ const iconStyle = computed((): IconStyle => {
     case 'Notebook':
       return {
         ...defaultStyle,
-        width: 27,
-        left: -36,
+        width: defaultStyle.width * 1.15,
+        left: defaultStyle.left + 2,
       };
     case 'Tool':
       return {
         ...defaultStyle,
-        height: 22,
+        height: defaultStyle.height * 1.1,
       };
     case 'Art':
       return {
         ...defaultStyle,
-        height: 24,
+        top: defaultStyle.top - 2,
+        height: defaultStyle.height * 1.2,
       };
     case 'Simulation':
       return {
         ...defaultStyle,
-        left: -37,
+        left: defaultStyle.left + 1,
       };
     case 'Intro':
       return {
         ...defaultStyle,
-        height: 22,
-        left: -37,
+        height: defaultStyle.height * 1.1,
+        left: defaultStyle.left + 0.5,
       };
     default:
       return defaultStyle;
