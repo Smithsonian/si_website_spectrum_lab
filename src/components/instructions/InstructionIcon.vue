@@ -74,11 +74,13 @@ const iconStyle = computed((): IconStyle => {
       return {
         ...defaultStyle,
         top: defaultStyle.top - 2,
-        height: defaultStyle.height * 1.2,
+        height: defaultStyle.height * 1.3,
+        width: defaultStyle.width * 1.1,
       };
     case 'Simulation':
       return {
         ...defaultStyle,
+        width: defaultStyle.width * 1.1,
         left: defaultStyle.left + 1,
       };
     case 'Intro':
