@@ -53,38 +53,38 @@ const iconPath = computed(() => {
 
 const iconStyle = computed((): IconStyle => {
   const defaultStyle = {
-    height: 18,
-    width: 22,
-    top: 3,
-    left: -35,
+    height: 20,
+    width: 24,
+    top: 2,
+    left: -38,
   };
   switch (props.rowType) {
     case 'Notebook':
       return {
         ...defaultStyle,
-        width: 25,
-        left: -33,
+        width: 27,
+        left: -36,
       };
     case 'Tool':
       return {
         ...defaultStyle,
-        height: 20,
+        height: 22,
       };
     case 'Art':
       return {
         ...defaultStyle,
-        height: 22,
+        height: 24,
       };
     case 'Simulation':
       return {
         ...defaultStyle,
-        left: -34,
+        left: -37,
       };
     case 'Intro':
       return {
         ...defaultStyle,
-        height: 20,
-        left: -36,
+        height: 22,
+        left: -37,
       };
     default:
       return defaultStyle;
