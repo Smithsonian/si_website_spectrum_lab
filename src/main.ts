@@ -57,6 +57,7 @@ import LightMixing from './pages/Light/LightMixing.vue';
 import IconTest from './pages/IconTest.vue';
 import LightBehaviors from './pages/Light/LightBehaviors.vue';
 import LightIntroduction from './pages/Light/LightIntroduction.vue';
+import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 
 library.add(
   faArrowUp,
@@ -86,6 +87,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'tutorial', component: SpectraTutorial },
       { path: 'start-drawing', component: SpectraStartDrawing },
+      { path: 'draw-a-spectrum', component: SpectraDrawASpectrum },
     ],
   },
   {

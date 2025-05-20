@@ -8,7 +8,7 @@
             <SectionNavItem to="/spectra/start-drawing">
               Start drawing
             </SectionNavItem>
-            <SectionNavItem to="/spectra/draw-spectrum">
+            <SectionNavItem to="/spectra/draw-a-spectrum">
               Draw a spectrum
             </SectionNavItem>
             <SectionNavItem to="/spectra/white-line">
