@@ -6,11 +6,9 @@
       <BRow>
         <BCol cols="6">
           <p>
-            The Spectrum Lab is an online data visualization tool and associated
-            set of investigations that supports students in learning about
-            light, color, and the electromagnetic spectrum by working with
-            hands-on materials, models and simulations, and authentic scientific
-            spectral data.
+            Learn about light, color, and the electromagnetic spectrum by
+            working with hands-on materials, models and simulations, and
+            authentic scientific spectral data.
           </p>
         </BCol>
       </BRow>
