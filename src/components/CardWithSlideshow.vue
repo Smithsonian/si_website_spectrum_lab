@@ -13,10 +13,23 @@
             >prev slide</NextPrevButton
           >
         </template>
-        <template #right v-if="!atLastSlide">
-          <NextPrevButton direction="next" light @click="nextSlide"
-            >next slide</NextPrevButton
+        <template #right>
+          <NextPrevButton
+            v-if="!atLastSlide"
+            direction="next"
+            light
+            @click="nextSlide"
           >
+            next slide
+          </NextPrevButton>
+          <NextPrevButton
+            v-else-if="nextSection"
+            direction="next"
+            light
+            :to="nextSection"
+          >
+            next section
+          </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
@@ -26,7 +39,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-const props = defineProps<{ slideOrder: string[] }>();
+const props = defineProps<{ slideOrder: string[]; nextSection?: string }>();
 
 const slideIndex = ref(0);
 

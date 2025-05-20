@@ -56,6 +56,7 @@ import AttributionsPage from './pages/AttributionsPage.vue';
 import LightMixing from './pages/Light/LightMixing.vue';
 import IconTest from './pages/IconTest.vue';
 import LightBehaviors from './pages/Light/LightBehaviors.vue';
+import LightIntroduction from './pages/Light/LightIntroduction.vue';
 
 library.add(
   faArrowUp,
@@ -70,8 +71,9 @@ const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
   {
     path: '/light/',
-    redirect: '/light/predictions',
+    redirect: '/light/introduction',
     children: [
+      { path: 'introduction', component: LightIntroduction },
       { path: 'predictions', component: LightPredictions },
       { path: 'photons', component: LightPhotons },
       { path: 'mixing', component: LightMixing },

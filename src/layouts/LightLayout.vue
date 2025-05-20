@@ -4,6 +4,9 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
+            <SectionNavItem to="/light/introduction">
+              Introduction
+            </SectionNavItem>
             <SectionNavItem to="/light/predictions">
               Make a Prediction
             </SectionNavItem>
