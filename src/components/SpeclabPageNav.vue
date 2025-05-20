@@ -2,12 +2,13 @@
   <div class="bg-sl-royal-blue">
     <BContainer>
       <BNav>
-        <BNavItem link-class="page-nav-link" to="/color">1. Color</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/light">1. Light</BNavItem>
         <BNavItem link-class="page-nav-link" to="/spectra">2. Spectra</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/color">3. Color</BNavItem>
         <BNavItem link-class="page-nav-link" to="/temperature">
-          3. Temperature
+          4. Temperature
         </BNavItem>
-        <BNavItem link-class="page-nav-link">4. Composition</BNavItem>
+        <BNavItem link-class="page-nav-link">5. Composition</BNavItem>
         <BNavItem link-class="page-nav-link" to="/final-projects">
           Final Projects
         </BNavItem>

@@ -4,14 +4,14 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/color/predictions">
+            <SectionNavItem to="/light/predictions">
               Make a Prediction
             </SectionNavItem>
-            <SectionNavItem to="/color/photons">
+            <SectionNavItem to="/light/photons">
               Photons and Color
             </SectionNavItem>
-            <SectionNavItem to="/color/mixing">Color Mixing</SectionNavItem>
-            <SectionNavItem to="/color/behaviors">
+            <SectionNavItem to="/light/mixing">Color Mixing</SectionNavItem>
+            <SectionNavItem to="/light/behaviors">
               Behaviors of Light
             </SectionNavItem>
           </SectionNav>

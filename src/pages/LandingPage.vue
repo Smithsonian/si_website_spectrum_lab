@@ -19,65 +19,92 @@
   <div class="bg-sl-slate-blue py-4">
     <BContainer class="px-4" style="margin-bottom: 150px">
       <BRow class="gx-5 mb-4">
-        <ModuleTile :icon-source="colorIcon" title="1. Color" to="/color">
-          How does the interaction of light and matter affect the colors we see?
-          Explore light emission, reflection, absorption, and transmission using
-          hands-on materials and interactive simulations.
-        </ModuleTile>
-        <ModuleTile :icon-source="spectraIcon" title="2. Spectra" to="/spectra">
-          How can a spectrum tell us more than our eyes can perceive? Build a
-          spectroscope to observe different sources of light, then use the
-          Spectrum Lab Data Tool to explore a spectrum graph.
-        </ModuleTile>
+        <BCol cols="12" md="6">
+          <ModuleTile :icon-source="lightIcon" title="1. Light" to="/light">
+            How does the interaction of light and matter affect the colors we
+            see? Explore light emission, reflection, absorption, and
+            transmission using hands-on materials and interactive simulations.
+          </ModuleTile>
+        </BCol>
+        <BCol cols="12" md="6">
+          <ModuleTile
+            :icon-source="spectraIcon"
+            title="2. Spectra"
+            to="/spectra"
+          >
+            How can a spectrum tell us more than our eyes can perceive? Build a
+            spectroscope to observe different sources of light, then use the
+            Spectrum Lab Data Tool to explore a spectrum graph.
+          </ModuleTile>
+        </BCol>
       </BRow>
       <BRow class="gx-5 mb-4">
-        <ModuleTile
-          :icon-source="tempIcon"
-          title="3. Temperature"
-          to="/temperature"
-        >
-          What can spectra tell us about an object’s temperature? Use the
-          Spectrum Data Tool to explore how an object’s thermal emission relates
-          to color and temperature.
-        </ModuleTile>
-        <ModuleTile
-          :icon-source="compIcon"
-          title="4. Composition"
-          to="/composition"
-        >
-          What can spectra tell us about an object’s composition? Explore how
-          scientists identify chemical elements and compounds through their
-          spectral signatures.
-        </ModuleTile>
+        <BCol>
+          <ModuleTile :icon-source="colorIcon" title="3. Color" to="/color">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            molestie diam eget sem finibus dictum. Praesent consequat ex eros,
+            ut elementum arcu blandit sed.
+          </ModuleTile>
+        </BCol>
+        <BCol cols="12" md="6">
+          <ModuleTile
+            :icon-source="tempIcon"
+            title="4. Temperature"
+            to="/temperature"
+          >
+            What can spectra tell us about an object’s temperature? Use the
+            Spectrum Data Tool to explore how an object’s thermal emission
+            relates to color and temperature.
+          </ModuleTile>
+        </BCol>
+      </BRow>
+      <BRow class="gx-5 mb-4">
+        <BCol cols="12" md="6" offset-md="3">
+          <ModuleTile
+            :icon-source="compIcon"
+            title="5. Composition"
+            to="/composition"
+          >
+            What can spectra tell us about an object’s composition? Explore how
+            scientists identify chemical elements and compounds through their
+            spectral signatures.
+          </ModuleTile>
+        </BCol>
       </BRow>
       <hr class="mb-4" />
       <BRow class="gx-5">
-        <ModuleTile
-          :icon-source="finalIcon"
-          title="Final Projects"
-          lighter
-          to="/final-projects"
-        >
-          Apply what you know about light, color, and spectra to Design a Fish
-          Tank lighting system; Explore Exoplanet Atmospheres; or Analyze
-          Artworks as a Museum Conservator.
-        </ModuleTile>
-        <ModuleTile
-          :icon-source="playgroundIcon"
-          title="Playground"
-          lighter
-          to="/playground"
-        >
-          Explore Spectral Data from over 100 different sources, from flowers
-          and fish to atoms and artworks. Or upload your own spectrum data file.
-          What can you discover about color, temperature, and composition?
-        </ModuleTile>
+        <BCol cols="12" md="6">
+          <ModuleTile
+            :icon-source="finalIcon"
+            title="Final Projects"
+            lighter
+            to="/final-projects"
+          >
+            Apply what you know about light, color, and spectra to Design a Fish
+            Tank lighting system; Explore Exoplanet Atmospheres; or Analyze
+            Artworks as a Museum Conservator.
+          </ModuleTile>
+        </BCol>
+        <BCol cols="12" md="6">
+          <ModuleTile
+            :icon-source="playgroundIcon"
+            title="Playground"
+            lighter
+            to="/playground"
+          >
+            Explore Spectral Data from over 100 different sources, from flowers
+            and fish to atoms and artworks. Or upload your own spectrum data
+            file. What can you discover about color, temperature, and
+            composition?
+          </ModuleTile>
+        </BCol>
       </BRow>
     </BContainer>
   </div>
 </template>
 
 <script setup lang="ts">
+import lightIcon from '@/assets/SVG/lightbulb-regular.svg?source&set-current-color';
 import colorIcon from '@/assets/SVG/color_icon.svg?source&set-current-color';
 import spectraIcon from '@/assets/SVG/spectra_icon.svg?source&set-current-color';
 import tempIcon from '@/assets/SVG/temperature_icon.svg?source&set-current-color';

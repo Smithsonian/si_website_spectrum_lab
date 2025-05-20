@@ -44,5 +44,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Color Mixing', 'Color');
+useSpecLabHead('Color Mixing', 'Light');
 </script>

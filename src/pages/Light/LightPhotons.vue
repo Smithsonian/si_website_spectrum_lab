@@ -39,5 +39,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Photons and Color', 'Color');
+useSpecLabHead('Photons and Color', 'Light');
 </script>

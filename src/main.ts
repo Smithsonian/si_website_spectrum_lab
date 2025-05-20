@@ -50,12 +50,12 @@ import NotFound from './pages/NotFound.vue';
 import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
 import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
-import ColorPredictions from './pages/Color/ColorPredictions.vue';
-import ColorPhotons from './pages/Color/ColorPhotons.vue';
+import LightPredictions from './pages/Light/LightPredictions.vue';
+import LightPhotons from './pages/Light/LightPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
-import ColorMixing from './pages/Color/ColorMixing.vue';
+import LightMixing from './pages/Light/LightMixing.vue';
 import IconTest from './pages/IconTest.vue';
-import ColorBehaviorsOfLight from './pages/Color/ColorBehaviorsOfLight.vue';
+import LightBehaviors from './pages/Light/LightBehaviors.vue';
 
 library.add(
   faArrowUp,
@@ -69,13 +69,13 @@ library.add(
 const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
   {
-    path: '/color/',
-    redirect: '/color/predictions',
+    path: '/light/',
+    redirect: '/light/predictions',
     children: [
-      { path: 'predictions', component: ColorPredictions },
-      { path: 'photons', component: ColorPhotons },
-      { path: 'mixing', component: ColorMixing },
-      { path: 'behaviors', component: ColorBehaviorsOfLight },
+      { path: 'predictions', component: LightPredictions },
+      { path: 'photons', component: LightPhotons },
+      { path: 'mixing', component: LightMixing },
+      { path: 'behaviors', component: LightBehaviors },
     ],
   },
   {

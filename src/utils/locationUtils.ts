@@ -1,8 +1,9 @@
 import { useHead } from '@unhead/vue';
 
 type ModuleTitle =
-  | 'Color'
+  | 'Light'
   | 'Spectra'
+  | 'Color'
   | 'Temperature'
   | 'Composition'
   | 'Fishtank'

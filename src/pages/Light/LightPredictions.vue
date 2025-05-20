@@ -39,5 +39,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Make a Prediction', 'Color');
+useSpecLabHead('Make a Prediction', 'Light');
 </script>

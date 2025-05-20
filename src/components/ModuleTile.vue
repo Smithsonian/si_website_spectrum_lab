@@ -1,31 +1,29 @@
 <template>
-  <BCol>
-    <RouterLink :to="to" class="text-decoration-none text-light">
-      <BRow
-        class="p-3 rounded-4 h-100 module-tile"
-        :class="{
-          'module-tile-dark': !lighter,
-          'module-tile-lighter': lighter,
-        }"
-      >
-        <BCol cols="2">
-          <SvgImage
-            v-if="iconSource"
-            :src="iconSource"
-            class="module-tile-icon"
-          />
-        </BCol>
-        <BCol>
-          <div class="text-uppercase fs-5 fw-bold color-sl-light-blue">
-            {{ title }}
-          </div>
-          <p>
-            <slot></slot>
-          </p>
-        </BCol>
-      </BRow>
-    </RouterLink>
-  </BCol>
+  <RouterLink :to="to" class="text-decoration-none text-light">
+    <BRow
+      class="p-3 rounded-4 h-100 module-tile"
+      :class="{
+        'module-tile-dark': !lighter,
+        'module-tile-lighter': lighter,
+      }"
+    >
+      <BCol cols="2">
+        <SvgImage
+          v-if="iconSource"
+          :src="iconSource"
+          class="module-tile-icon"
+        />
+      </BCol>
+      <BCol>
+        <div class="text-uppercase fs-5 fw-bold color-sl-light-blue">
+          {{ title }}
+        </div>
+        <p>
+          <slot></slot>
+        </p>
+      </BCol>
+    </BRow>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">
