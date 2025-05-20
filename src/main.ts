@@ -61,6 +61,7 @@ import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
+import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
 
 library.add(
   faArrowUp,
@@ -100,6 +101,7 @@ const routes: RouteRecordRaw[] = [
           { path: 'source-2', component: SpectraLightSource2 },
         ],
       },
+      { path: 'wavelengths-and-energy', component: SpectraWavelengths },
     ],
   },
   {
