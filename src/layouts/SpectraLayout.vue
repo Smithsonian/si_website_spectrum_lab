@@ -17,7 +17,7 @@
             <SectionNavItem to="/spectra/light-sources">
               Spectroscope: Light sources
             </SectionNavItem>
-            <SectionNavItem to="/spectra/wavelength-and-energy">
+            <SectionNavItem to="/spectra/wavelengths-and-energy">
               Wavelengths and energy
             </SectionNavItem>
           </SectionNav>
