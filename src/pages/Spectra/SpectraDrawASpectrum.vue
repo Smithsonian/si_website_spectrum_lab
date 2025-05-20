@@ -22,7 +22,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard ref="topToolRef" draw-only class="mb-5" />
+      <ToolCard draw-only class="mb-5" />
       <LeftRightGroup>
         <template #right>
           <NextPrevButton direction="next" to="white-line" light>

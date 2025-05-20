@@ -59,6 +59,7 @@ import LightBehaviors from './pages/Light/LightBehaviors.vue';
 import LightIntroduction from './pages/Light/LightIntroduction.vue';
 import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
+import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 
 library.add(
   faArrowUp,
@@ -90,6 +91,11 @@ const routes: RouteRecordRaw[] = [
       { path: 'start-drawing', component: SpectraStartDrawing },
       { path: 'draw-a-spectrum', component: SpectraDrawASpectrum },
       { path: 'white-line', component: SpectraWhiteLine },
+      {
+        path: 'light-sources',
+        redirect: '/spectra/light-sources/source-1',
+        children: [{ path: 'source-1', component: SpectraLightSource1 }],
+      },
     ],
   },
   {
