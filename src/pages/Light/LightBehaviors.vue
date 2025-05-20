@@ -1,5 +1,5 @@
 <template>
-  <ColorLayout>
+  <LightLayout>
     <CardWithSlideshow :slide-order="slideOrder">
       <InstructionHeader>Behaviors of Light</InstructionHeader>
       <InstructionRow row-type="Slideshow">
@@ -12,7 +12,7 @@
         <em>Part B</em>.
       </InstructionRow>
     </CardWithSlideshow>
-  </ColorLayout>
+  </LightLayout>
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <ColorLayout>
+  <LightLayout>
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Make a Prediction</InstructionHeader>
@@ -33,7 +33,7 @@
         </LeftRightGroup>
       </template>
     </ChallengeCard>
-  </ColorLayout>
+  </LightLayout>
 </template>
 
 <script setup lang="ts">

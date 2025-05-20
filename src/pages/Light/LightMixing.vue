@@ -1,5 +1,5 @@
 <template>
-  <ColorLayout>
+  <LightLayout>
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
@@ -38,7 +38,7 @@
         </LeftRightGroup>
       </template>
     </ChallengeCard>
-  </ColorLayout>
+  </LightLayout>
 </template>
 
 <script setup lang="ts">

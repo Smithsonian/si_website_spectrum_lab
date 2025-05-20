@@ -19,8 +19,8 @@
         <BCol>
           <ChallengeIntro
             heading="How does the interaction of light and matter affect the colors we see?"
-            :icon-path="colorIcon"
-            icon-alt="Color module icon"
+            :icon-path="lightIcon"
+            icon-alt="Light module icon"
           >
             Why does this even matter?
           </ChallengeIntro>
@@ -32,5 +32,5 @@
 </template>
 
 <script setup lang="ts">
-import colorIcon from '@/assets/SVG/color_icon.svg';
+import lightIcon from '@/assets/SVG/lightbulb-regular.svg';
 </script>
