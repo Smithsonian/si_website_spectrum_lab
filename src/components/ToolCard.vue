@@ -200,6 +200,14 @@ useSpectrumDataProvider(
   border: 1px solid var(--sl-light-blue);
 }
 
+.spectrum-icon {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .spectrum-icon-holder {
   height: 164px;
   width: 184px;
