@@ -8,7 +8,9 @@
         <BNavItem link-class="page-nav-link" to="/temperature">
           4. Temperature
         </BNavItem>
-        <BNavItem link-class="page-nav-link">5. Composition</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/composition">
+          5. Composition
+        </BNavItem>
         <BNavItem link-class="page-nav-link" to="/final-projects">
           Final Projects
         </BNavItem>
