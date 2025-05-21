@@ -8,7 +8,7 @@
             <SectionNavItem to="/spectra/start-drawing">
               Start drawing
             </SectionNavItem>
-            <SectionNavItem to="/spectra/draw-spectrum">
+            <SectionNavItem to="/spectra/draw-a-spectrum">
               Draw a spectrum
             </SectionNavItem>
             <SectionNavItem to="/spectra/white-line">
@@ -17,7 +17,7 @@
             <SectionNavItem to="/spectra/light-sources">
               Spectroscope: Light sources
             </SectionNavItem>
-            <SectionNavItem to="/spectra/wavelength-and-energy">
+            <SectionNavItem to="/spectra/wavelengths-and-energy">
               Wavelengths and energy
             </SectionNavItem>
           </SectionNav>

@@ -50,12 +50,19 @@ import NotFound from './pages/NotFound.vue';
 import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
 import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
-import ColorPredictions from './pages/Color/ColorPredictions.vue';
-import ColorPhotons from './pages/Color/ColorPhotons.vue';
+import LightPredictions from './pages/Light/LightPredictions.vue';
+import LightPhotons from './pages/Light/LightPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
-import ColorMixing from './pages/Color/ColorMixing.vue';
+import LightMixing from './pages/Light/LightMixing.vue';
 import IconTest from './pages/IconTest.vue';
-import ColorBehaviorsOfLight from './pages/Color/ColorBehaviorsOfLight.vue';
+import LightBehaviors from './pages/Light/LightBehaviors.vue';
+import LightIntroduction from './pages/Light/LightIntroduction.vue';
+import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
+import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
+import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
+import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
+import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
+import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
 
 library.add(
   faArrowUp,
@@ -69,13 +76,14 @@ library.add(
 const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
   {
-    path: '/color/',
-    redirect: '/color/predictions',
+    path: '/light/',
+    redirect: '/light/introduction',
     children: [
-      { path: 'predictions', component: ColorPredictions },
-      { path: 'photons', component: ColorPhotons },
-      { path: 'mixing', component: ColorMixing },
-      { path: 'behaviors', component: ColorBehaviorsOfLight },
+      { path: 'introduction', component: LightIntroduction },
+      { path: 'predictions', component: LightPredictions },
+      { path: 'photons', component: LightPhotons },
+      { path: 'mixing', component: LightMixing },
+      { path: 'behaviors', component: LightBehaviors },
     ],
   },
   {
@@ -84,6 +92,17 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'tutorial', component: SpectraTutorial },
       { path: 'start-drawing', component: SpectraStartDrawing },
+      { path: 'draw-a-spectrum', component: SpectraDrawASpectrum },
+      { path: 'white-line', component: SpectraWhiteLine },
+      {
+        path: 'light-sources',
+        redirect: '/spectra/light-sources/source-1',
+        children: [
+          { path: 'source-1', component: SpectraLightSource1 },
+          { path: 'source-2', component: SpectraLightSource2 },
+        ],
+      },
+      { path: 'wavelengths-and-energy', component: SpectraWavelengths },
     ],
   },
   {
@@ -102,6 +121,17 @@ const routes: RouteRecordRaw[] = [
       },
       { path: 'incandescentbulb', component: TemperatureIncandescentBulb },
       { path: 'earth', component: TemperatureEarth },
+    ],
+  },
+  {
+    path: '/composition',
+    redirect: '/composition/atomic-emission',
+    children: [
+      {
+        path: 'atomic-emission',
+        redirect: '/composition/atomic-emission/lamps',
+        children: [{ path: 'lamps', component: CompositionEmissionLamps }],
+      },
     ],
   },
   {

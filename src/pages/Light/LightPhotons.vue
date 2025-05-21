@@ -1,5 +1,5 @@
 <template>
-  <ColorLayout>
+  <LightLayout>
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
@@ -33,11 +33,11 @@
         </LeftRightGroup>
       </template>
     </ChallengeCard>
-  </ColorLayout>
+  </LightLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Photons and Color', 'Color');
+useSpecLabHead('Photons and Color', 'Light');
 </script>

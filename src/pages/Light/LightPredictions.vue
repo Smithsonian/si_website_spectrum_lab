@@ -1,5 +1,5 @@
 <template>
-  <ColorLayout>
+  <LightLayout>
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Make a Prediction</InstructionHeader>
@@ -33,11 +33,11 @@
         </LeftRightGroup>
       </template>
     </ChallengeCard>
-  </ColorLayout>
+  </LightLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Make a Prediction', 'Color');
+useSpecLabHead('Make a Prediction', 'Light');
 </script>
