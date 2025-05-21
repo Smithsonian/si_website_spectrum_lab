@@ -29,9 +29,12 @@
             what they are made of. Spectra make this possible! Let’s investigate
             how.
           </ChallengeIntro>
-          <slot></slot>
+          <slot name="challenge-tab"></slot>
         </BCol>
       </BRow>
+    </template>
+    <template v-if="$slots['tool-col']" #tool-col>
+      <slot name="tool-col"></slot>
     </template>
   </ChallengeToolLayout>
 </template>
