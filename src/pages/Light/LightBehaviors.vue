@@ -1,6 +1,6 @@
 <template>
   <LightLayout>
-    <CardWithSlideshow :slide-order="slideOrder">
+    <CardWithSlideshow :slide-order="slideOrder" prev-section="mixing">
       <InstructionHeader>Behaviors of Light</InstructionHeader>
       <InstructionRow row-type="Slideshow">
         Learn about the four key behaviors of light: emission, absorption,

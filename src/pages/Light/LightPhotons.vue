@@ -25,6 +25,11 @@
       </template>
       <template #bottom>
         <LeftRightGroup>
+          <template #left>
+            <NextPrevButton direction="prev" light to="predictions">
+              previous section
+            </NextPrevButton>
+          </template>
           <template #right>
             <NextPrevButton direction="next" light to="mixing">
               next section

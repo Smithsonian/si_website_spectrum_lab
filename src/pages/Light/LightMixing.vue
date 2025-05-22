@@ -30,6 +30,11 @@
       </template>
       <template #bottom>
         <LeftRightGroup>
+          <template #left>
+            <NextPrevButton direction="prev" light to="photons">
+              previous section
+            </NextPrevButton>
+          </template>
           <template #right>
             <NextPrevButton direction="next" light to="behaviors">
               next section
