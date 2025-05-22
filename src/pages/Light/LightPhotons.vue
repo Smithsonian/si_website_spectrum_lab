@@ -4,14 +4,18 @@
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
         <InstructionRow row-type="Simulation">
-          Select the “Single Bulb” to launch the Physics Education Technology
+          Click the “Single Bulb” to launch the Physics Education Technology
           (PhET) simulation.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Follow instructions in <em>Part A</em> of the
-          <em>Photons and Color</em> section.
-          <template #before-steps>
-            <p>Then, answer the questions in <em>Part B</em>.</p>
+          <template #steps>
+            <InstructionStep>
+              Follow instructions in <em>Part A</em> of the
+              <em>Photons and Color</em> section.
+            </InstructionStep>
+            <InstructionStep>
+              Answer the questions in <em>Part B</em>.
+            </InstructionStep>
           </template>
         </InstructionRow>
       </template>

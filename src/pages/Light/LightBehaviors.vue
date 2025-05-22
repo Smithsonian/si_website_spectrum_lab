@@ -7,9 +7,15 @@
         transmission, and reflection.
       </InstructionRow>
       <InstructionRow row-type="Notebook">
-        In <em>Part A</em> of the <em>Behaviors of Light</em> section, label the
-        diagram with the key behaviors of light. Then, answer the questions in
-        <em>Part B</em>.
+        <template #steps>
+          <InstructionStep>
+            In <em>Part A</em> of the <em>Behaviors of Light</em> section, label
+            the diagram with the key behaviors of light.
+          </InstructionStep>
+          <InstructionStep>
+            Answer the questions in <em>Part B</em>.
+          </InstructionStep>
+        </template>
       </InstructionRow>
     </CardWithSlideshow>
   </LightLayout>
