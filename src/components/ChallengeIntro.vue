@@ -6,16 +6,25 @@
     </BCol>
     <BCol cols="2">
       <div>
-        <img :src="iconPath" :alt="iconAlt" style="height: 80px" />
+        <SvgImage :src="iconPath" :alt="iconAlt" class="challenge-intro-icon" />
       </div>
     </BCol>
   </BRow>
 </template>
 
 <script setup lang="ts">
+import { SvgImage } from 'vite-awesome-svg-loader/vue-integration';
+
 const { heading, iconPath, iconAlt } = defineProps<{
   heading: string;
   iconPath: string;
   iconAlt: string;
 }>();
 </script>
+
+<style>
+.challenge-intro-icon {
+  height: 80px;
+  color: var(--slr-dark-grey);
+}
+</style>

@@ -42,5 +42,5 @@
 </template>
 
 <script setup lang="ts">
-import fishtankIconUrl from '@/assets/SVG/fish_tank_icon.svg';
+import fishtankIconUrl from '@/assets/SVG/fish_tank_icon.svg?source&set-current-color';
 </script>

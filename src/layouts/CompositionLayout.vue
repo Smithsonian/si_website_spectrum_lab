@@ -40,5 +40,5 @@
 </template>
 
 <script setup lang="ts">
-import compositionIcon from '@/assets/SVG/composition_icon.svg';
+import compositionIcon from '@/assets/SVG/composition_icon.svg?source&set-current-color';
 </script>

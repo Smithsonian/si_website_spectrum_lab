@@ -41,5 +41,5 @@
 </template>
 
 <script setup lang="ts">
-import museumIconUrl from '@/assets/SVG/museum_conservation_icon.svg';
+import museumIconUrl from '@/assets/SVG/museum_conservation_icon.svg?source&set-current-color';
 </script>

@@ -35,5 +35,5 @@
 </template>
 
 <script setup lang="ts">
-import lightIcon from '@/assets/SVG/lightbulb-regular.svg';
+import lightIcon from '@/assets/SVG/lightbulb-regular.svg?source&set-current-color';
 </script>
