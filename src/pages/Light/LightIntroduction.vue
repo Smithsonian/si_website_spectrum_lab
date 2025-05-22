@@ -3,8 +3,8 @@
     <CardWithSlideshow :slide-order="slideOrder" next-section="predictions">
       <InstructionHeader>Behaviors of Light</InstructionHeader>
       <InstructionRow row-type="Slideshow">
-        Watch this video to understand how spectra can be applicable to a
-        variety of careers.
+        First, let's get an overview of how different fields use light. Which of
+        these appeal to you?
       </InstructionRow>
     </CardWithSlideshow>
   </LightLayout>

@@ -21,11 +21,13 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="How does the interaction of light and matter affect the colors we see?"
+            heading="How does light interact with matter?"
             :icon-path="lightIcon"
             icon-alt="Light module icon"
           >
-            Why does this even matter?
+            Light provides energy to sustain life and makes it possible for us
+            to see the world around us. Explore the different ways light affects
+            us and our surroundings.
           </ChallengeIntro>
           <slot></slot>
         </BCol>
