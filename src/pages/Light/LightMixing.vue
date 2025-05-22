@@ -4,9 +4,7 @@
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
         <InstructionRow row-type="Simulation">
-          <span style="font-weight: 700; text-transform: uppercase">
-            Double-click</span
-          >
+          <span class="challenge-emphasis"> Double-click</span>
           the “RGB Bulbs” to launch the simulation.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
