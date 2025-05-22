@@ -4,7 +4,10 @@
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
         <InstructionRow row-type="Simulation">
-          Select the “RGB Bulbs” to launch the simulation.
+          <span style="font-weight: 700; text-transform: uppercase">
+            Double-click</span
+          >
+          the “RGB Bulbs” to launch the simulation.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
           Follow instructions in <em>Part A</em> of the
