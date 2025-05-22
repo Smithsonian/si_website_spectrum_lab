@@ -10,14 +10,19 @@
       <LeftRightGroup>
         <template #left>
           <NextPrevButton
-            v-if="atFirstSlide"
+            v-if="atFirstSlide && prevSection"
             direction="prev"
             light
             :to="prevSection"
           >
             previous section
           </NextPrevButton>
-          <NextPrevButton v-else direction="prev" light @click="prevSlide">
+          <NextPrevButton
+            v-if="!atFirstSlide"
+            direction="prev"
+            light
+            @click="prevSlide"
+          >
             previous slide
           </NextPrevButton>
         </template>
