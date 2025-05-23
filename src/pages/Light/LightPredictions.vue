@@ -7,7 +7,7 @@
           <span class="challenge-emphasis"> Without using any gels</span>,
           examine the image below and consider:
           <template #steps>
-            <InstructionStep singleton="true">
+            <InstructionStep>
               What do you expect this image to look like when viewed through the
               RED gel?
             </InstructionStep>

@@ -1,23 +1,15 @@
 <template>
-  <div v-if="!props.singleton">
-    <li class="mb-2">
-      <slot></slot>
-    </li>
-  </div>
-  <div v-else>
-    <div class="mb-2">
-      <slot></slot>
-    </div>
-  </div>
+  <li class="instruction-step">
+    <slot></slot>
+  </li>
 </template>
 
-<script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    singleton?: boolean;
-  }>(),
-  {
-    singleton: false,
-  },
-);
-</script>
+<style>
+.instruction-step {
+  margin-bottom: 0.5rem;
+}
+
+.instruction-step:only-child {
+  list-style-type: none;
+}
+</style>

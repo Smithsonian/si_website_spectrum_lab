@@ -9,7 +9,7 @@
       <InstructionRow row-type="Notebook">
         Answer these questions in your notebook:
         <template #steps>
-          <InstructionStep singleton="true">
+          <InstructionStep>
             Of the different fields featured in the slideshow, which are you
             most curious about? What questions do you have about how that field
             investigates and uses light?
