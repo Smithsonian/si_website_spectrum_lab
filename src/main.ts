@@ -69,6 +69,7 @@ import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
 import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
+import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 
 library.add(
   faArrowUp,
@@ -152,6 +153,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       { path: 'solar-system', component: CompositionSolarSystem },
+      { path: 'bonus-solar-system', component: CompositionBonusSolarSystem },
     ],
   },
   {
