@@ -67,6 +67,7 @@ import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.v
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
+import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
 
 library.add(
   faArrowUp,
@@ -144,7 +145,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'earth',
         redirect: '/composition/earth/diagram',
-        children: [{ path: 'diagram', component: CompositionEarthDiagram }],
+        children: [
+          { path: 'diagram', component: CompositionEarthDiagram },
+          { path: 'spectra', component: CompositionEarthSpectra },
+        ],
       },
     ],
   },
