@@ -12,10 +12,6 @@
         </InstructionRow>
         <InstructionRow row-type="Tool">
           Compare the spectra of the two light bulbs shown here.
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          In the <em>A different kind of emission</em> section, answer these
-          questions:
           <template #steps>
             <InstructionStep>
               Both these types of bulbs emit light in the visible part of the
@@ -29,6 +25,10 @@
               environment? Explain why.
             </InstructionStep>
           </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Write your answers in the
+          <em>A different kind of emission</em> section.
         </InstructionRow>
       </ChallengeCard>
     </template>
