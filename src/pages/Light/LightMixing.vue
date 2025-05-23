@@ -4,19 +4,22 @@
       <template #top>
         <InstructionHeader>Photons and Color Simulation</InstructionHeader>
         <InstructionRow row-type="Simulation">
-          Select the “RGB Bulbs” to launch the simulation.
+          <span class="challenge-emphasis"> Double-click</span>
+          the “RGB Bulbs” to launch the simulation.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Follow instructions in <em>Part A</em> of the
-          <em>Color Mixing</em> section.
           <template #steps>
+            <InstructionStep>
+              Follow instructions in <em>Part A</em> of the
+              <em>Color Mixing</em> section.
+            </InstructionStep>
             <InstructionStep>
               In the table, note what light combinations of RGB light make each
               color.
             </InstructionStep>
-          </template>
-          <template #after-steps>
-            <p>Then, answer the questions in <em>Part B</em>.</p>
+            <InstructionStep>
+              Answer the questions in <em>Part B</em>
+            </InstructionStep>
           </template>
         </InstructionRow>
       </template>
@@ -30,6 +33,11 @@
       </template>
       <template #bottom>
         <LeftRightGroup>
+          <template #left>
+            <NextPrevButton direction="prev" light to="photons">
+              previous section
+            </NextPrevButton>
+          </template>
           <template #right>
             <NextPrevButton direction="next" light to="behaviors">
               next section

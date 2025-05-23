@@ -3,14 +3,19 @@
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Make a Prediction</InstructionHeader>
-        <InstructionRow row-type="Notebook">
-          Without using any gels, examine the image below and write your
-          prediction to this question:
+        <InstructionRow row-type="Investigate">
+          <span class="challenge-emphasis"> Without using any gels</span>,
+          examine the image below and consider:
           <template #steps>
             <InstructionStep>
-              What will this image look like when viewed through the RED gel?
+              What do you expect this image to look like when viewed through the
+              RED gel?
             </InstructionStep>
           </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Write your prediction in the chart, noting the predicted color for
+          each section of the three circles.
         </InstructionRow>
       </template>
       <template #middle>
@@ -25,6 +30,11 @@
       </template>
       <template #bottom>
         <LeftRightGroup>
+          <template #left>
+            <NextPrevButton direction="prev" light to="introduction">
+              previous section
+            </NextPrevButton>
+          </template>
           <template #right>
             <NextPrevButton direction="next" light to="photons">
               next section

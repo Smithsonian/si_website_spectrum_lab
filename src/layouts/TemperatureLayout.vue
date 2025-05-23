@@ -38,5 +38,5 @@
 </template>
 
 <script setup lang="ts">
-import temperatureIcon from '@/assets/SVG/temperature_icon.svg';
+import temperatureIcon from '@/assets/SVG/temperature_icon.svg?source&set-current-color';
 </script>

@@ -43,5 +43,5 @@
 </template>
 
 <script setup lang="ts">
-import spectraIcon from '@/assets/SVG/spectra_icon.svg';
+import spectraIcon from '@/assets/SVG/spectra_icon.svg?source&set-current-color';
 </script>

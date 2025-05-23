@@ -1,10 +1,20 @@
 <template>
   <LightLayout>
     <CardWithSlideshow :slide-order="slideOrder" next-section="predictions">
-      <InstructionHeader>Behaviors of Light</InstructionHeader>
+      <InstructionHeader>Light in Different Fields</InstructionHeader>
       <InstructionRow row-type="Slideshow">
-        Watch this video to understand how spectra can be applicable to a
-        variety of careers.
+        Step through this slideshow for an overview of how different fields use
+        light.
+      </InstructionRow>
+      <InstructionRow row-type="Notebook">
+        Answer these questions in your notebook:
+        <template #steps>
+          <InstructionStep>
+            Of the different fields featured in the slideshow, which are you
+            most curious about? What questions do you have about how that field
+            investigates and uses light?
+          </InstructionStep>
+        </template>
       </InstructionRow>
     </CardWithSlideshow>
   </LightLayout>
