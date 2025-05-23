@@ -10,6 +10,7 @@
             <SectionNavItem to="/composition/atoms-and-spectra">
               Atoms and Spectra
             </SectionNavItem>
+            <SectionNavItem to="/composition/sun">Sun</SectionNavItem>
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>
             <SectionNavItem to="/composition/solar-system">
               Solar System

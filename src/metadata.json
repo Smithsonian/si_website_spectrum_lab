@@ -233,6 +233,12 @@
   },
   {
     "category": "Atoms and Molecules",
+    "filename": "Hydrogen_Absorption",
+    "title": "Hydrogen Absorption",
+    "spectrumType": "Absorption"
+  },
+  {
+    "category": "Atoms and Molecules",
     "filename": "Hydrogen_Emission",
     "title": "Hydrogen Emission",
     "spectrumType": "Emission"
@@ -695,6 +701,146 @@
     "title": "Teal Light (High Green + Medium Blue)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/Teal_GreenHigh_BlueMedium.jpg"
+  },
+  {
+    "category": "Fish",
+    "filename": "angelfish_dkbluecurve",
+    "title": "Angelfish Dark Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "angelfish_greycurve",
+    "title": "Angelfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "angelfish_ltbluecurve",
+    "title": "Angelfish Light Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "angelfish_orangecurve",
+    "title": "Angelfish Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "angelfish_yellowcurve",
+    "title": "Angelfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "anthias_lower_orange",
+    "title": "Anthias Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "anthias_upper_yellow",
+    "title": "Anthias Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "bannerfish_blackcurve",
+    "title": "Bannerfish Black",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "bannerfish_greycurve",
+    "title": "Bannerfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "bannerfish_yellowcurve",
+    "title": "Bannerfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "parrotfish_bluecurve",
+    "title": "Parrotfish Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "parrotfish_greencurve",
+    "title": "Parrotfish Green",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "parrotfish_purplecurve",
+    "title": "Parrotfish Purple",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_blackcurve",
+    "title": "Tuskfish Black",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_dkbluecurve",
+    "title": "Tuskfish Dark Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_greycurve",
+    "title": "Tuskfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_orangecurve",
+    "title": "Tuskfish Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_purplecurve",
+    "title": "Tuskfish Purple",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_redcurve",
+    "title": "Tuskfish Red",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish",
+    "filename": "tuskfish_yellowcurve",
+    "title": "Tuskfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
   },
   {
     "category": "Painting Regions",

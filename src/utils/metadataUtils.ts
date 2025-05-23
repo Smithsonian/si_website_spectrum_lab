@@ -12,6 +12,7 @@ export const PRELOADED_CATEGORIES = [
   'Exoplanet Models',
   'Thermal Spectra',
   'Fish Tank',
+  'Fish',
   'Painting Regions',
   'Paint Pigments',
 ] as const;
@@ -26,6 +27,7 @@ export const CATEGORY_DIRECTORIES = {
   'Exoplanet Models': 'Exoplanet_Models',
   'Thermal Spectra': 'Thermal_Spectra',
   'Fish Tank': 'Fishtank_Lights',
+  Fish: 'Fishtank_Fish',
   'Painting Regions': 'Museum_Conservation',
   'Paint Pigments': 'Museum_Conservation',
 } as const;
@@ -157,6 +159,7 @@ export const useAllMetadata = (): MetadataByCategory => {
       'Exoplanet Models': [],
       'Thermal Spectra': [],
       'Fish Tank': [],
+      Fish: [],
       'Painting Regions': [],
       'Paint Pigments': [],
     } as MutableMetadataByCategory;
