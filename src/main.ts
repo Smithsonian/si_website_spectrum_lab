@@ -65,6 +65,7 @@ import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
+import CompositionSun from './pages/Composition/CompositionSun.vue';
 
 library.add(
   faArrowUp,
@@ -138,6 +139,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       { path: 'atoms-and-spectra', component: CompositionAtomsAndSpectra },
+      { path: 'sun', component: CompositionSun },
     ],
   },
   {
