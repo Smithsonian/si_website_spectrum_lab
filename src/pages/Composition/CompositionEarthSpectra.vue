@@ -32,7 +32,7 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
         <template #right>
-          <NextPrevButton light direction="next" to="solar-system">
+          <NextPrevButton light direction="next" to="../solar-system">
             next section
           </NextPrevButton>
         </template>
