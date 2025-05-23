@@ -47,6 +47,13 @@
           />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-4">
+        <template #right>
+          <NextPrevButton light direction="next" to="gas"
+            >part 2</NextPrevButton
+          >
+        </template>
+      </LeftRightGroup>
     </template>
   </CompositionLayout>
 </template>

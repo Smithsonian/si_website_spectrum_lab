@@ -63,6 +63,7 @@ import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
 import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
+import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 
 library.add(
   faArrowUp,
@@ -130,7 +131,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'atomic-emission',
         redirect: '/composition/atomic-emission/lamps',
-        children: [{ path: 'lamps', component: CompositionEmissionLamps }],
+        children: [
+          { path: 'lamps', component: CompositionEmissionLamps },
+          { path: 'gas', component: CompositionEmissionGas },
+        ],
       },
     ],
   },
