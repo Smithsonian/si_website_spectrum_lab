@@ -179,7 +179,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'home', component: FinalProjects },
       {
         path: 'fishtank/',
-        redirect: '/final-projects/fishtank/background-1',
+        redirect: '/final-projects/fishtank/light-your-tank',
         children: [
           {
             path: 'light-your-tank',
