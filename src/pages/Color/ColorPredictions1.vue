@@ -67,5 +67,13 @@ const objectD = useCustomMetadata('Nature', 'Cactus_Reflection', {
   title: 'Object D',
   imageUrl: '',
 });
-const metadataList = [objectA, objectB, objectC, objectD].filter((sm) => !!sm);
+
+const objectE = useCustomMetadata('Lamps', 'tvRemote', {
+  hideCategory: true,
+  title: 'Object E',
+  imageUrl: '',
+});
+const metadataList = [objectA, objectB, objectC, objectD, objectE].filter(
+  (sm) => !!sm,
+);
 </script>
