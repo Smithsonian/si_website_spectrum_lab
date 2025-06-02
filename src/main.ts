@@ -72,6 +72,7 @@ import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
 import SpectraWavelengthsMicrons from './pages/Spectra/SpectraWavelengthsMicrons.vue';
 import SpectraWavelengthsNanometers from './pages/Spectra/SpectraWavelengthsNanometers.vue';
 import SpectraWavelengthsElectronVolts from './pages/Spectra/SpectraWavelengthsElectronVolts.vue';
+import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrightness.vue';
 
 library.add(
   faArrowUp,
@@ -118,6 +119,7 @@ const routes: RouteRecordRaw[] = [
           { path: 'part-1', component: SpectraWavelengthsMicrons },
           { path: 'part-2', component: SpectraWavelengthsNanometers },
           { path: 'part-3', component: SpectraWavelengthsElectronVolts },
+          { path: 'part-4', component: SpectraWavelengthsBrightness },
         ],
       },
     ],
