@@ -39,9 +39,11 @@
       <BRow class="gx-5 mb-4">
         <BCol>
           <ModuleTile :icon-source="colorIcon" title="3. Color" to="/color">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            molestie diam eget sem finibus dictum. Praesent consequat ex eros,
-            ut elementum arcu blandit sed.
+            <span class="needs-updating">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              molestie diam eget sem finibus dictum. Praesent consequat ex eros,
+              ut elementum arcu blandit sed.
+            </span>
           </ModuleTile>
         </BCol>
         <BCol cols="12" md="6">

@@ -1,5 +1,5 @@
 <template>
-  <TemperatureLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>Tutorial</InstructionHeader>
@@ -63,7 +63,7 @@
         </template>
       </LeftRightGroup>
     </template>
-  </TemperatureLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
@@ -72,7 +72,7 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
 import { useTemplateRef } from 'vue';
 
-useSpecLabHead('Tutorial', 'Temperature');
+useSpecLabHead('Tutorial', 'Color');
 
 const graphTutAnchor = useTemplateRef('graphTutAnchor');
 

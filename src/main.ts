@@ -18,7 +18,6 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
-import TemperatureTutorial from './pages/Temperature/TemperatureTutorial.vue';
 import { BASE_URL } from './constants';
 import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
 import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
@@ -70,6 +69,7 @@ import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram
 import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
+import ColorTutorial from './pages/Color/ColorTutorial.vue';
 
 library.add(
   faArrowUp,
@@ -113,10 +113,14 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/color',
+    redirect: '/color/tutorial',
+    children: [{ path: 'tutorial', component: ColorTutorial }],
+  },
+  {
     path: '/temperature/',
-    redirect: '/temperature/tutorial',
+    redirect: '/temperature/predictions',
     children: [
-      { path: 'tutorial', component: TemperatureTutorial },
       { path: 'predictions', component: TemperaturePredictions },
       {
         path: 'stars/',
