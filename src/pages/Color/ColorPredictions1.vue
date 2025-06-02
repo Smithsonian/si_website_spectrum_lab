@@ -44,10 +44,28 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 
 useSpecLabHead('Predictions part 1', 'Color');
 
+const objectA = useCustomMetadata('Nature', 'Jellyfish_Emission', {
+  hideCategory: true,
+  title: 'Object A',
+  imageUrl: '',
+});
+
+const objectB = useCustomMetadata('Nature', 'Aspen_in_Fall_Reflection', {
+  hideCategory: true,
+  title: 'Object B',
+  imageUrl: '',
+});
+
+const objectC = useCustomMetadata('Stars', 'A_Star', {
+  hideCategory: true,
+  title: 'Object C',
+  imageUrl: '',
+});
+
 const objectD = useCustomMetadata('Nature', 'Cactus_Reflection', {
   hideCategory: true,
   title: 'Object D',
   imageUrl: '',
 });
-const metadataList = [objectD].filter((sm) => !!sm);
+const metadataList = [objectA, objectB, objectC, objectD].filter((sm) => !!sm);
 </script>

@@ -22,12 +22,18 @@ import {
   visibleOnly,
 } from './importUtils';
 
-export type SpectrumCategory = PreloadedCategory | '' | 'draw' | 'pickedFile';
+type PreloadedOrHiddenCategory = PreloadedCategory | 'Hidden';
+
+export type SpectrumCategory =
+  | PreloadedOrHiddenCategory
+  | ''
+  | 'draw'
+  | 'pickedFile';
 
 export type CustomMetadata = readonly Readonly<SpectrumMetadata>[];
 
 export type CustomCategoryNames = {
-  [cat in PreloadedCategory]?: string;
+  [cat in PreloadedOrHiddenCategory]?: string;
 };
 
 export const useCategoryOptions = (
@@ -38,9 +44,14 @@ export const useCategoryOptions = (
     const customMetadata = customMetadataGetter();
     const customNames = customCategoryNamesGetter();
     if (customMetadata) {
-      const includedCategories = new Set<PreloadedCategory>();
+      // Determine how many categories we have. Separate metadata with hidden category.
+      const includedCategories = new Set<PreloadedOrHiddenCategory>();
       for (const cm of customMetadata) {
-        includedCategories.add(cm.category);
+        if (cm.hideCategory) {
+          includedCategories.add('Hidden');
+        } else {
+          includedCategories.add(cm.category);
+        }
       }
       if (includedCategories.size <= 1) {
         return null;
@@ -57,6 +68,7 @@ export const useCategoryOptions = (
       }
       return includedOptions;
     }
+    // Easy mode, for the playground. Just show everything.
     const preloadedOptions = PRELOADED_CATEGORIES.map((cat) => ({
       value: cat,
       text: cat,
@@ -149,7 +161,7 @@ export const useMetadataByFilename = (
       }
       const metadataByCategory: SparseMetadataByCategory = {};
       for (const cm of customMetadata) {
-        const cat = cm.category;
+        const cat = cm.hideCategory ? 'Hidden' : cm.category;
         if (!metadataByCategory[cat]) {
           metadataByCategory[cat] = [cm];
         } else {
