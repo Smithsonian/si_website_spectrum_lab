@@ -124,7 +124,7 @@ const routes: RouteRecordRaw[] = [
         redirect: '/color/predictions/part-1',
         children: [
           { path: 'part-1', component: ColorPredictions1 },
-          { path: 'page-2', component: ColorPredictions2 },
+          { path: 'part-2', component: ColorPredictions2 },
         ],
       },
     ],

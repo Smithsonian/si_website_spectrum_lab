@@ -29,6 +29,13 @@
           />
         </template>
       </ToolControlGroup>
+      <iframe
+        height="500px"
+        width="100%"
+        class="color-predictions-phet rounded-4"
+        src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
+        allow="fullscreen"
+      ></iframe>
       <LeftRightGroup class="mt-5">
         <template #right>
           <NextPrevButton direction="next" to="part-2">part 2</NextPrevButton>
@@ -77,3 +84,9 @@ const metadataList = [objectA, objectB, objectC, objectD, objectE].filter(
   (sm) => !!sm,
 );
 </script>
+
+<style>
+.color-predictions-phet {
+  border: 1px solid var(--sl-light-blue);
+}
+</style>
