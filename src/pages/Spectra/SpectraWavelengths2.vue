@@ -48,6 +48,15 @@
           <NextPrevButton direction="prev" light to="part-1">
             part 1
           </NextPrevButton>
+          <NextPrevButton
+            v-if="tutorialState === 'nextPage'"
+            class="ms-2"
+            direction="prev"
+            light
+            @click="replay"
+          >
+            replay tutorial
+          </NextPrevButton>
         </template>
         <template #right>
           <NextPrevButton direction="next" light to="part-3">
@@ -62,8 +71,12 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
+import { useWavelengthTutorialStateMachine } from '@/utils/tutorialUtils';
 
 useSpecLabHead('Wavelengths and energy part 2', 'Spectra');
+
+const { tutorialState, goToNext, replay } = useWavelengthTutorialStateMachine();
+goToNext();
 
 const fluorescent = useCustomMetadata('Lamps', 'Fluorescent_Bulb', {});
 const metadataList = fluorescent ? [fluorescent] : [];

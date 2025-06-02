@@ -2,18 +2,18 @@
   <slot name="top-tool"></slot>
   <BRow class="mt-1 mb-2 px-3">
     <BCol cols="3">
-      <BFormGroup
-        v-if="controlNames.includes('units')"
-        label="Wavelength units"
-        label-for="wavelength-unit"
-      >
-        <BFormSelect
-          id="wavelength-unit"
-          v-model="wavelengthUnit"
-          :disabled="disabled"
-          :options="wavelengthUnitOptions"
-        />
-      </BFormGroup>
+      <div v-if="controlNames.includes('units')" class="position-relative">
+        <BFormGroup label="Wavelength units" label-for="wavelength-unit">
+          <BFormSelect
+            ref="unitDropdown"
+            id="wavelength-unit"
+            v-model="wavelengthUnit"
+            :disabled="disabled"
+            :options="wavelengthUnitOptions"
+          />
+        </BFormGroup>
+        <WavelengthTutPopoverUnits :anchor-elem="unitDropdown" />
+      </div>
     </BCol>
     <BCol cols="3">
       <BFormGroup
@@ -95,6 +95,7 @@ withDefaults(
 );
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
+const unitDropdown = useTemplateRef<ComponentPublicInstance>('unitDropdown');
 
 const zoomPercent = defineModel<number>('zoom', { default: 100 });
 const zoom = computed(() => zoomPercent.value / 100);

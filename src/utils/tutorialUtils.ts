@@ -138,6 +138,29 @@ export const useSpectraTutorialStateMachine = (): TutorialStateMachine<
   );
 };
 
+// Spectra wavelength tutorial
+const WAVELENGTH_TUTORIAL_STATE_ORDER = [
+  'hide',
+  'unitDropdown',
+  'nextPage',
+] as const;
+
+export type WavelengthTutorialState =
+  (typeof WAVELENGTH_TUTORIAL_STATE_ORDER)[number];
+
+const wavelengthTutorialKey = Symbol('wavelengthTutorial') as InjectionKey<
+  TutorialStateMachine<typeof WAVELENGTH_TUTORIAL_STATE_ORDER>
+>;
+
+export const useWavelengthTutorialStateMachine = (): TutorialStateMachine<
+  typeof WAVELENGTH_TUTORIAL_STATE_ORDER
+> => {
+  return useTutorialStateMachine(
+    wavelengthTutorialKey,
+    WAVELENGTH_TUTORIAL_STATE_ORDER,
+  );
+};
+
 // Exoplanets clear atmosphere tutorial state machine
 const EXOPLANETS_CLEAR_TUTORIAL_STATE_ORDER = [
   'hide',
