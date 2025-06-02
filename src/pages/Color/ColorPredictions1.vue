@@ -37,7 +37,7 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="page-2">page 2</NextPrevButton>
+          <NextPrevButton direction="next" to="part-2">part 2</NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
@@ -48,7 +48,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Cactus & Pansy Part 1', 'Color');
+useSpecLabHead('Predictions part 1', 'Color');
 
 const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
   imageUrl: '',

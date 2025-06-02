@@ -70,6 +70,7 @@ import ColorTutorial from './pages/Color/ColorTutorial.vue';
 import ColorSeeing from './pages/Color/ColorSeeing.vue';
 import ColorCactusPansy1 from './pages/Color/ColorCactusPansy1.vue';
 import ColorCactusPansy2 from './pages/Color/ColorCactusPansy2.vue';
+import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
 
 library.add(
   faArrowUp,
@@ -119,7 +120,14 @@ const routes: RouteRecordRaw[] = [
       { path: 'tutorial', component: ColorTutorial },
 
       { path: 'seeing-color', component: ColorSeeing },
-      { path: 'predictions', component: ColorSeeing },
+      {
+        path: 'predictions',
+        redirect: '/color/predictions/part-1',
+        children: [
+          { path: 'part-1', component: ColorPredictions1 },
+          { path: 'page-2', component: ColorCactusPansy2 },
+        ],
+      },
       {
         path: 'cactus-pansy',
         redirect: '/color/cactus-pansy/page-1',

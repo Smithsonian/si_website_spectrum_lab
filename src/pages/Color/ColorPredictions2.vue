@@ -32,7 +32,7 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton direction="prev" to="page-1">page 1</NextPrevButton>
+          <NextPrevButton direction="prev" to="part-1">part 1</NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
@@ -43,7 +43,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Cactus & Pansy Part 2', 'Color');
+useSpecLabHead('Predictions part 2', 'Color');
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;
