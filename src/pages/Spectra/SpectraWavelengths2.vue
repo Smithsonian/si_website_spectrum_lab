@@ -23,7 +23,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup :control-names="['units']">
         <template #top-tool>
           <ToolCard
             :custom-metadata="metadataList"

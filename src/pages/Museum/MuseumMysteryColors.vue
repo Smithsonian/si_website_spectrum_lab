@@ -35,7 +35,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup :show-normalize-picker="true">
+      <ToolControlGroup :control-names="['units', 'plotType', 'normalize']">
         <template #top-tool>
           <ToolCard
             :custom-metadata="customMetadata"

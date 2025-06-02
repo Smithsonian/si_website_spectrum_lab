@@ -2,7 +2,11 @@
   <slot name="top-tool"></slot>
   <BRow class="mt-1 mb-2 px-3">
     <BCol cols="3">
-      <BFormGroup label="Wavelength units" label-for="wavelength-unit">
+      <BFormGroup
+        v-if="controlNames.includes('units')"
+        label="Wavelength units"
+        label-for="wavelength-unit"
+      >
         <BFormSelect
           id="wavelength-unit"
           v-model="wavelengthUnit"
@@ -12,7 +16,11 @@
       </BFormGroup>
     </BCol>
     <BCol cols="3">
-      <BFormGroup label="Plot type" label-for="plot-type">
+      <BFormGroup
+        v-if="controlNames.includes('plotType')"
+        label="Plot type"
+        label-for="plot-type"
+      >
         <BFormSelect
           id="plot-type"
           v-model="plotType"
@@ -21,7 +29,7 @@
         />
       </BFormGroup>
     </BCol>
-    <BCol v-if="showNormalizePicker" cols="2">
+    <BCol v-if="controlNames.includes('normalize')" cols="2">
       <BFormGroup label="Normalize?" label-for="normalize">
         <BFormRadioGroup
           id="normalize"
@@ -31,8 +39,8 @@
         />
       </BFormGroup>
     </BCol>
-    <BCol v-if="showZoom" cols="4">
-      <div class="position-relative">
+    <BCol cols="4">
+      <div v-if="controlNames.includes('zoom')" class="position-relative">
         <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
           <BFormInput
             ref="zoomElem"
@@ -76,15 +84,15 @@ import {
   type ComponentPublicInstance,
 } from 'vue';
 
-const {
-  showNormalizePicker = false,
-  showZoom = false,
-  disabled = false,
-} = defineProps<{
-  showNormalizePicker?: boolean;
-  showZoom?: boolean;
-  disabled?: boolean;
-}>();
+type ToolControlName = 'units' | 'plotType' | 'normalize' | 'zoom';
+
+withDefaults(
+  defineProps<{
+    controlNames?: ToolControlName[];
+    disabled?: boolean;
+  }>(),
+  { controlNames: () => ['units', 'plotType', 'zoom'], disabled: false },
+);
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 

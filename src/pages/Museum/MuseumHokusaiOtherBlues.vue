@@ -45,7 +45,9 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup :show-normalize-picker="true" :show-zoom="true">
+      <ToolControlGroup
+        :control-names="['units', 'plotType', 'normalize', 'zoom']"
+      >
         <template #top-tool>
           <ToolCard
             :custom-metadata="hokusaiB1Metadata"

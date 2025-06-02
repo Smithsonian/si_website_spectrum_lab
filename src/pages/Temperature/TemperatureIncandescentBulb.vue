@@ -32,7 +32,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup show-zoom>
+      <ToolControlGroup>
         <template #top-tool>
           <ToolCard
             :custom-metadata="bulbMetadataList"

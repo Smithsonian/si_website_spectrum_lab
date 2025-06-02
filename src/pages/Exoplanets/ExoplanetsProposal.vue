@@ -55,11 +55,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup
-        v-model:plot-type="plotType"
-        v-model:zoom="zoom"
-        show-zoom
-      >
+      <ToolControlGroup v-model:plot-type="plotType" v-model:zoom="zoom">
         <template #top-tool>
           <ToolCard :custom-metadata="exoplanetMetadata" />
         </template>
