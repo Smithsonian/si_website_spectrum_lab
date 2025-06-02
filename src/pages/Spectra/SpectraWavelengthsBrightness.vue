@@ -57,13 +57,8 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
         <template #left>
-          <NextPrevButton direction="prev" light to="part-2">
-            part 2
-          </NextPrevButton>
-        </template>
-        <template #right>
-          <NextPrevButton direction="next" light to="part-4">
-            part 4
+          <NextPrevButton direction="prev" light to="part-3">
+            part 3
           </NextPrevButton>
         </template>
       </LeftRightGroup>
