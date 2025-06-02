@@ -68,9 +68,8 @@ import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.v
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
 import ColorSeeing from './pages/Color/ColorSeeing.vue';
-import ColorCactusPansy1 from './pages/Color/ColorCactusPansy1.vue';
-import ColorCactusPansy2 from './pages/Color/ColorCactusPansy2.vue';
 import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
+import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
 
 library.add(
   faArrowUp,
@@ -125,15 +124,7 @@ const routes: RouteRecordRaw[] = [
         redirect: '/color/predictions/part-1',
         children: [
           { path: 'part-1', component: ColorPredictions1 },
-          { path: 'page-2', component: ColorCactusPansy2 },
-        ],
-      },
-      {
-        path: 'cactus-pansy',
-        redirect: '/color/cactus-pansy/page-1',
-        children: [
-          { path: 'page-1', component: ColorCactusPansy1 },
-          { path: 'page-2', component: ColorCactusPansy2 },
+          { path: 'page-2', component: ColorPredictions2 },
         ],
       },
     ],

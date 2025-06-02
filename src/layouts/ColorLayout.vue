@@ -11,9 +11,6 @@
             <SectionNavItem to="/color/predictions">
               Predictions
             </SectionNavItem>
-            <SectionNavItem to="/color/cactus-pansy">
-              Cactus & Pansy
-            </SectionNavItem>
           </SectionNav>
         </BCol>
         <BCol>
