@@ -71,6 +71,7 @@ import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
 import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
 import SpectraWavelengths1 from './pages/Spectra/SpectraWavelengths1.vue';
 import SpectraWavelengths2 from './pages/Spectra/SpectraWavelengths2.vue';
+import SpectraWavelengths3 from './pages/Spectra/SpectraWavelengths3.vue';
 
 library.add(
   faArrowUp,
@@ -116,6 +117,7 @@ const routes: RouteRecordRaw[] = [
         children: [
           { path: 'part-1', component: SpectraWavelengths1 },
           { path: 'part-2', component: SpectraWavelengths2 },
+          { path: 'part-3', component: SpectraWavelengths3 },
         ],
       },
     ],
