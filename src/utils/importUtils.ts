@@ -38,9 +38,15 @@ export function rangeNormalize(
 ): number[] {
   const min = Math.min(...data);
   const max = Math.max(...data);
-  const slope = (maxTo - minTo) / (max - min);
-  const intercept = minTo - slope * min;
-  return data.map((v) => slope * v + intercept);
+  const range = max - min;
+  const targetRange = maxTo - minTo;
+  // When normalizing visible only, range can be zero, and therefore impossible to normalize.
+  // In this case just make a flat line at the minimum value.
+  const scale = range === 0 ? 0 : targetRange / range;
+  // Offset all points so `min` appears at `minTo`. This plus the correct scale,
+  // gets us where we want to be.
+  const offset = minTo - scale * min;
+  return data.map((v) => scale * v + offset);
 }
 
 export function visibleOnly(data: SpectrumDatum[]): SpectrumDatum[] {

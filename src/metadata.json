@@ -116,6 +116,12 @@
     "spectrumType": "Emission"
   },
   {
+    "category": "Lamps",
+    "filename": "tvRemote",
+    "title": "IR LED from TV Remote",
+    "spectrumType": "Emission"
+  },
+  {
     "category": "Stars",
     "filename": "O_Star",
     "title": "O Star",
