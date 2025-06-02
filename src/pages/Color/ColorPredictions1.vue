@@ -38,7 +38,9 @@
       ></iframe>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="part-2">part 2</NextPrevButton>
+          <NextPrevButton direction="next" light to="part-2">
+            part 2
+          </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
