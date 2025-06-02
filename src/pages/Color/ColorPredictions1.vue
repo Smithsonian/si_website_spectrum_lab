@@ -24,13 +24,7 @@
       <ToolControlGroup>
         <template #top-tool>
           <ToolCard
-            :custom-metadata="cactusMetadataList"
-            :spectrum-picker-placeholder="null"
-          />
-        </template>
-        <template #bottom-tool>
-          <ToolCard
-            :custom-metadata="pansyMetadataList"
+            :custom-metadata="metadataList"
             :spectrum-picker-placeholder="null"
           />
         </template>
@@ -50,12 +44,10 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 
 useSpecLabHead('Predictions part 1', 'Color');
 
-const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
+const objectD = useCustomMetadata('Nature', 'Cactus_Reflection', {
+  hideCategory: true,
+  title: 'Object D',
   imageUrl: '',
 });
-const pansyMetadata = useCustomMetadata('Nature', 'Pansy_Reflection', {
-  imageUrl: '',
-});
-const cactusMetadataList = cactusMetadata ? [cactusMetadata] : [];
-const pansyMetadataList = pansyMetadata ? [pansyMetadata] : [];
+const metadataList = [objectD].filter((sm) => !!sm);
 </script>

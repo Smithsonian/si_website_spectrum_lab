@@ -292,6 +292,9 @@ export const useSelectedMetadata = (
   const chartTitle = computed((): string => {
     const customNameMap = customCategoryNamesGetter();
     if (selectedMetadata.value) {
+      if (selectedMetadata.value.hideCategory) {
+        return selectedMetadata.value.title;
+      }
       const category = selectedMetadata.value.category;
       let displayName: string = category;
       if (customNameMap && customNameMap[category]) {
