@@ -8,7 +8,7 @@
           review key concepts.
         </InstructionRow>
         <InstructionRow rowType="Notebook">
-          In the <em>Temperature, Tutorial</em> section, answer these questions:
+          In the <em>Color, Tutorial</em> section, answer these questions:
           <template #steps>
             <InstructionStep>
               What is the relationship between the wavelength and energy of
@@ -47,6 +47,7 @@
           <NextPrevButton
             v-if="tutorialState === 'nextSection'"
             direction="prev"
+            light
             @click="replay"
           >
             replay tutorial
@@ -56,7 +57,8 @@
           <NextPrevButton
             v-if="tutorialState === 'nextSection'"
             direction="next"
-            to="predictions"
+            light
+            to="seeing-color"
           >
             next section
           </NextPrevButton>
