@@ -4,9 +4,6 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/temperature/tutorial">
-              Tutorial
-            </SectionNavItem>
             <SectionNavItem to="/temperature/predictions">
               Temperature Predictions
             </SectionNavItem>
