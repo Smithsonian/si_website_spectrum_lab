@@ -57,7 +57,6 @@ import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
-import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
@@ -70,6 +69,8 @@ import ColorTutorial from './pages/Color/ColorTutorial.vue';
 import ColorSeeing from './pages/Color/ColorSeeing.vue';
 import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
 import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
+import SpectraWavelengths1 from './pages/Spectra/SpectraWavelengths1.vue';
+import SpectraWavelengths2 from './pages/Spectra/SpectraWavelengths2.vue';
 
 library.add(
   faArrowUp,
@@ -109,7 +110,14 @@ const routes: RouteRecordRaw[] = [
           { path: 'source-2', component: SpectraLightSource2 },
         ],
       },
-      { path: 'wavelengths-and-energy', component: SpectraWavelengths },
+      {
+        path: 'wavelengths-and-energy',
+        redirect: '/spectra/wavelengths-and-energy/part-1',
+        children: [
+          { path: 'part-1', component: SpectraWavelengths1 },
+          { path: 'part-2', component: SpectraWavelengths2 },
+        ],
+      },
     ],
   },
   {

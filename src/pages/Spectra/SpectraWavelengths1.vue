@@ -2,7 +2,9 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Measuring wavelengths and energy</InstructionHeader>
+        <InstructionHeader>
+          Measuring wavelengths and energy: microns
+        </InstructionHeader>
         <InstructionRow row-type="Tool">
           Move the measuring tool across the spectrum graph with your cursor to
           identify the wavelengths (in microns) of the three brightest features
@@ -15,9 +17,6 @@
             <InstructionStep>
               Write the wavelengths of the three brightest features, in
               <em>Part B</em>.
-            </InstructionStep>
-            <InstructionStep>
-              Answer the questions in <em>Part C</em> .
             </InstructionStep>
           </template>
           <template #note>
@@ -40,6 +39,18 @@
           <div class="position-absolute" style="top: 25px; left: 480px">3</div>
         </div>
       </ToolCard>
+      <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton direction="prev" light to="../light-sources">
+            previous section
+          </NextPrevButton>
+        </template>
+        <template #right>
+          <NextPrevButton direction="next" light to="part-2">
+            part 2
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </SpectraLayout>
 </template>
@@ -48,7 +59,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Wavelengths and energy', 'Spectra');
+useSpecLabHead('Wavelengths and energy part 1', 'Spectra');
 
 const fluorescent = useCustomMetadata('Lamps', 'Fluorescent_Bulb', {});
 const metadataList = fluorescent ? [fluorescent] : [];
