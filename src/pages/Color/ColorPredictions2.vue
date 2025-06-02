@@ -1,5 +1,5 @@
 <template>
-  <FishTankLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Interpreting reflection spectra</h2>
@@ -34,21 +34,16 @@
         <template #left>
           <NextPrevButton direction="prev" to="page-1">page 1</NextPrevButton>
         </template>
-        <template #right>
-          <NextPrevButton direction="next" to="../light-your-tank"
-            >next section</NextPrevButton
-          >
-        </template>
       </LeftRightGroup>
     </template>
-  </FishTankLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Background Part IIb', 'Fishtank');
+useSpecLabHead('Predictions Part 2', 'Color');
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;

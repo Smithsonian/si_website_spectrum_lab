@@ -19,9 +19,6 @@ import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
 import { BASE_URL } from './constants';
-import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
-import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
-import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
@@ -70,6 +67,9 @@ import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
+import ColorSeeing from './pages/Color/ColorSeeing.vue';
+import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
+import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
 
 library.add(
   faArrowUp,
@@ -115,7 +115,19 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/color',
     redirect: '/color/tutorial',
-    children: [{ path: 'tutorial', component: ColorTutorial }],
+    children: [
+      { path: 'tutorial', component: ColorTutorial },
+
+      { path: 'seeing-color', component: ColorSeeing },
+      {
+        path: 'predictions',
+        redirect: '/color/predictions/page-1',
+        children: [
+          { path: 'page-1', component: ColorPredictions1 },
+          { path: 'page-2', component: ColorPredictions2 },
+        ],
+      },
+    ],
   },
   {
     path: '/temperature/',
@@ -169,15 +181,6 @@ const routes: RouteRecordRaw[] = [
         path: 'fishtank/',
         redirect: '/final-projects/fishtank/background-1',
         children: [
-          { path: 'background-1', component: FishTankBackgroundTrees },
-          {
-            path: 'background-2/',
-            redirect: '/final-projects/fishtank/background-2/page-1',
-            children: [
-              { path: 'page-1', component: FishTankBackgroundComparison },
-              { path: 'page-2', component: FishTankBackgroundReveal },
-            ],
-          },
           {
             path: 'light-your-tank',
             component: FishTankLightYourTank,

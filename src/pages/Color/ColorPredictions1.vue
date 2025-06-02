@@ -1,5 +1,5 @@
 <template>
-  <FishTankLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Interpreting reflection spectra</h2>
@@ -41,14 +41,14 @@
         </template>
       </LeftRightGroup>
     </template>
-  </FishTankLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Background Part IIa', 'Fishtank');
+useSpecLabHead('Predictions Part 1', 'Color');
 
 const cactusMetadata = useCustomMetadata('Nature', 'Cactus_Reflection', {
   imageUrl: '',
