@@ -57,6 +57,7 @@ type MetadataStringKey = keyof typeof METADATA_DEFAULTS;
 
 export type SpectrumMetadata = {
   category: PreloadedCategory;
+  hideCategory?: boolean;
 } & {
   [key in MetadataStringKey]: string;
 };

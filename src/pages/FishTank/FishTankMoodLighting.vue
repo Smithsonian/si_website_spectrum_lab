@@ -23,7 +23,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup :control-names="['units', 'plotType']">
         <template #top-tool>
           <ToolCard
             :custom-metadata="fishtankMetadata"

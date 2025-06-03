@@ -1,5 +1,5 @@
 <template>
-  <TemperatureLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>Tutorial</InstructionHeader>
@@ -8,7 +8,7 @@
           review key concepts.
         </InstructionRow>
         <InstructionRow rowType="Notebook">
-          In the <em>Temperature, Tutorial</em> section, answer these questions:
+          In the <em>Color, Tutorial</em> section, answer these questions:
           <template #steps>
             <InstructionStep>
               What is the relationship between the wavelength and energy of
@@ -27,7 +27,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup show-zoom>
+      <ToolControlGroup>
         <template #top-tool>
           <ToolCard
             :custom-metadata="marsMetadataList"
@@ -47,6 +47,7 @@
           <NextPrevButton
             v-if="tutorialState === 'nextSection'"
             direction="prev"
+            light
             @click="replay"
           >
             replay tutorial
@@ -56,14 +57,15 @@
           <NextPrevButton
             v-if="tutorialState === 'nextSection'"
             direction="next"
-            to="predictions"
+            light
+            to="seeing-color"
           >
             next section
           </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
-  </TemperatureLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
@@ -72,7 +74,7 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
 import { useTemplateRef } from 'vue';
 
-useSpecLabHead('Tutorial', 'Temperature');
+useSpecLabHead('Tutorial', 'Color');
 
 const graphTutAnchor = useTemplateRef('graphTutAnchor');
 

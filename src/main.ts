@@ -18,11 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
-import TemperatureTutorial from './pages/Temperature/TemperatureTutorial.vue';
 import { BASE_URL } from './constants';
-import FishTankBackgroundTrees from './pages/FishTank/FishTankBackgroundTrees.vue';
-import FishTankBackgroundComparison from './pages/FishTank/FishTankBackgroundComparison.vue';
-import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.vue';
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
@@ -61,7 +57,6 @@ import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
-import SpectraWavelengths from './pages/Spectra/SpectraWavelengths.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
@@ -70,6 +65,14 @@ import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram
 import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
+import ColorTutorial from './pages/Color/ColorTutorial.vue';
+import ColorSeeing from './pages/Color/ColorSeeing.vue';
+import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
+import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
+import SpectraWavelengthsMicrons from './pages/Spectra/SpectraWavelengthsMicrons.vue';
+import SpectraWavelengthsNanometers from './pages/Spectra/SpectraWavelengthsNanometers.vue';
+import SpectraWavelengthsElectronVolts from './pages/Spectra/SpectraWavelengthsElectronVolts.vue';
+import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrightness.vue';
 
 library.add(
   faArrowUp,
@@ -109,14 +112,39 @@ const routes: RouteRecordRaw[] = [
           { path: 'source-2', component: SpectraLightSource2 },
         ],
       },
-      { path: 'wavelengths-and-energy', component: SpectraWavelengths },
+      {
+        path: 'wavelengths-and-energy',
+        redirect: '/spectra/wavelengths-and-energy/part-1',
+        children: [
+          { path: 'part-1', component: SpectraWavelengthsMicrons },
+          { path: 'part-2', component: SpectraWavelengthsNanometers },
+          { path: 'part-3', component: SpectraWavelengthsElectronVolts },
+          { path: 'part-4', component: SpectraWavelengthsBrightness },
+        ],
+      },
+    ],
+  },
+  {
+    path: '/color',
+    redirect: '/color/tutorial',
+    children: [
+      { path: 'tutorial', component: ColorTutorial },
+
+      { path: 'seeing-color', component: ColorSeeing },
+      {
+        path: 'predictions',
+        redirect: '/color/predictions/part-1',
+        children: [
+          { path: 'part-1', component: ColorPredictions1 },
+          { path: 'part-2', component: ColorPredictions2 },
+        ],
+      },
     ],
   },
   {
     path: '/temperature/',
-    redirect: '/temperature/tutorial',
+    redirect: '/temperature/predictions',
     children: [
-      { path: 'tutorial', component: TemperatureTutorial },
       { path: 'predictions', component: TemperaturePredictions },
       {
         path: 'stars/',
@@ -163,17 +191,8 @@ const routes: RouteRecordRaw[] = [
       { path: 'home', component: FinalProjects },
       {
         path: 'fishtank/',
-        redirect: '/final-projects/fishtank/background-1',
+        redirect: '/final-projects/fishtank/light-your-tank',
         children: [
-          { path: 'background-1', component: FishTankBackgroundTrees },
-          {
-            path: 'background-2/',
-            redirect: '/final-projects/fishtank/background-2/page-1',
-            children: [
-              { path: 'page-1', component: FishTankBackgroundComparison },
-              { path: 'page-2', component: FishTankBackgroundReveal },
-            ],
-          },
           {
             path: 'light-your-tank',
             component: FishTankLightYourTank,

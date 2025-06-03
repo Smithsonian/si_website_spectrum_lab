@@ -1,5 +1,5 @@
 <template>
-  <FishTankLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Why are trees green in summer?</h2>
@@ -25,23 +25,20 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton
-            direction="next"
-            to="/final-projects/fishtank/background-2"
-          >
+          <NextPrevButton direction="next" to="predictions">
             next section
           </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
-  </FishTankLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Background Part I', 'Fishtank');
+useSpecLabHead('Seeing color', 'Color');
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;

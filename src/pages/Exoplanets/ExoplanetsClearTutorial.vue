@@ -31,7 +31,6 @@
     <template #tool-col>
       <ToolControlGroup
         v-model:zoom="zoom"
-        show-zoom
         :disabled="tutorialState !== 'nextSection'"
       >
         <template #top-tool>

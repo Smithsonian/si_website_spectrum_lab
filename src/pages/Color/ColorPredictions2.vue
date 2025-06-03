@@ -1,5 +1,5 @@
 <template>
-  <FishTankLayout>
+  <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Interpreting reflection spectra</h2>
@@ -19,43 +19,53 @@
       <ToolControlGroup>
         <template #top-tool>
           <ToolCard
-            :custom-metadata="cactusMetadataList"
-            :spectrum-picker-placeholder="null"
-          />
-        </template>
-        <template #bottom-tool>
-          <ToolCard
-            :custom-metadata="pansyMetadataList"
+            :custom-metadata="metadataList"
             :spectrum-picker-placeholder="null"
           />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton direction="prev" to="page-1">page 1</NextPrevButton>
-        </template>
-        <template #right>
-          <NextPrevButton direction="next" to="../light-your-tank"
-            >next section</NextPrevButton
-          >
+          <NextPrevButton direction="prev" light to="part-1">
+            part 1
+          </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
-  </FishTankLayout>
+  </ColorLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { useAllMetadata } from '@/utils/metadataUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Background Part IIb', 'Fishtank');
+useSpecLabHead('Predictions part 2', 'Color');
 
-const allMetadata = useAllMetadata();
-const natureMetadata = allMetadata.Nature;
-const cactusMetadataList = natureMetadata.filter(
-  (sm) => sm.filename === 'Cactus_Reflection',
-);
-const pansyMetadataList = natureMetadata.filter(
-  (sm) => sm.filename === 'Pansy_Reflection',
+const objectA = useCustomMetadata('Nature', 'Jellyfish_Emission', {
+  hideCategory: true,
+  title: 'A: Jellyfish',
+});
+
+const objectB = useCustomMetadata('Nature', 'Aspen_in_Fall_Reflection', {
+  hideCategory: true,
+  title: 'B: Aspen',
+});
+
+const objectC = useCustomMetadata('Stars', 'A_Star', {
+  hideCategory: true,
+  title: 'C: Star (class A)',
+});
+
+const objectD = useCustomMetadata('Nature', 'Cactus_Reflection', {
+  hideCategory: true,
+  title: 'D: Cactus',
+});
+
+const objectE = useCustomMetadata('Lamps', 'tvRemote', {
+  hideCategory: true,
+  title: 'E: LED from TV remote',
+});
+const metadataList = [objectA, objectB, objectC, objectD, objectE].filter(
+  (sm) => !!sm,
 );
 </script>
