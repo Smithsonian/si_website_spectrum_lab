@@ -74,6 +74,7 @@ import SpectraWavelengthsNanometers from './pages/Spectra/SpectraWavelengthsNano
 import SpectraWavelengthsElectronVolts from './pages/Spectra/SpectraWavelengthsElectronVolts.vue';
 import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrightness.vue';
 import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
+import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 
 library.add(
   faArrowUp,
@@ -192,8 +193,12 @@ const routes: RouteRecordRaw[] = [
       { path: 'home', component: FinalProjects },
       {
         path: 'fishtank/',
-        redirect: '/final-projects/fishtank/light-your-tank',
+        redirect: '/final-projects/fishtank/explore-lighting-design',
         children: [
+          {
+            path: 'explore-lighting-design',
+            component: FishTankIntro,
+          },
           {
             path: 'light-your-tank',
             component: FishTankLightYourTank,
