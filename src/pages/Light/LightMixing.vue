@@ -24,12 +24,7 @@
         </InstructionRow>
       </template>
       <template #middle>
-        <iframe
-          height="500px"
-          width="100%"
-          src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
-          allow="fullscreen"
-        ></iframe>
+        <PhetIframe />
       </template>
       <template #bottom>
         <LeftRightGroup>

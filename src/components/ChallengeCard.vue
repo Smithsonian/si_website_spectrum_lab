@@ -10,7 +10,15 @@
         -->
       <slot name="top"></slot>
     </div>
-    <slot name="middle"></slot>
+    <div
+      v-if="$slots['middle']"
+      :class="{
+        'rounded-bottom-4': !$slots['bottom'],
+        'overflow-hidden': !$slots['bottom'],
+      }"
+    >
+      <slot name="middle"></slot>
+    </div>
     <div v-if="$slots['bottom']" class="challenge-card-bottom">
       <slot name="bottom"></slot>
     </div>

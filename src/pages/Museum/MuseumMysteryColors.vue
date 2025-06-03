@@ -67,13 +67,7 @@
           </NextPrevButton>
         </template>
       </LeftRightGroup>
-      <iframe
-        class="mt-5"
-        height="500px"
-        width="100%"
-        src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
-        allow="fullscreen"
-      ></iframe>
+      <PhetIframe class="mt-5" bordered />
     </template>
   </MuseumLayout>
 </template>
