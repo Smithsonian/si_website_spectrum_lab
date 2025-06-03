@@ -17,9 +17,15 @@
             Smithsonian Institution.
           </InstructionRow>
           <InstructionRow rowType="Notebook">
+            Answer these questions after watching the video:
             <template #steps>
-              <InstructionStep class="needs-updating">
-                Write a couple of questions to check that students watched video
+              <InstructionStep>
+                Describe 2 techniques that allow conservation scientists to
+                determine what pigments were used in a painting.
+              </InstructionStep>
+              <InstructionStep>
+                What can conservation scientists learn about a painting from
+                knowing what pigments were used in it?
               </InstructionStep>
             </template>
           </InstructionRow>

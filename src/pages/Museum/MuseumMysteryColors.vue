@@ -4,29 +4,41 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader>
-            Part 2: Paint Colors and Spectra
+            Chokha Painting Part 2: Paint Colors and Spectra
           </InstructionHeader>
+          <InstructionRow rowType="Art">
+            Art conservators have taken reflection spectra of different regions
+            of interest, marked by the white and black squares. The wavelengths
+            of light that are reflected by the paint in the visible part of the
+            spectrum determines what color our eyes see.
+          </InstructionRow>
           <InstructionRow rowType="Tool">
-            Your task is to identify which "mystery pigment" spectrum
-            corresponds to the labeled regions of interest.
+            View each "mystery pigment" spectrum and see if you can identify
+            what color and region of interest it corresponds to in the painting.
             <template #steps>
               <InstructionStep>
-                Under <em>Paint Spectra</em>, use the
-                <em>Select mystery pigment</em> menu to view each spectrum.
+                Use the
+                <span style="font-weight: 600">Select mystery pigment</span>
+                dropdown menu to view each spectrum.
               </InstructionStep>
               <InstructionStep>
                 Under <span style="font-weight: 600">Normalize?</span>, click
                 <span style="font-weight: 600">Visible</span>.
               </InstructionStep>
               <InstructionStep>
-                Use what you learned about how light colors mix (Module 2) to
-                identify what color corresponds to each spectrum.
+                Use what you learned about how light colors mix (Modules 1 & 3)
+                to identify what color corresponds to each spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            In the <em>Paint Colors</em> section, draw a line from each spectrum
-            to the corresponding region of interest on the painting.
+            Draw a line from each spectrum to the corresponding region of
+            interest on the painting.
+          </InstructionRow>
+          <InstructionRow rowType="Simulation">
+            If you'd like a refresher on how light colors mix, double-click the
+            "RGB Bulbs" to launch the
+            <span style="font-weight: 600">Color Mixing</span> simulation.
           </InstructionRow>
         </template>
         <template #middle>
@@ -55,6 +67,13 @@
           </NextPrevButton>
         </template>
       </LeftRightGroup>
+      <iframe
+        class="mt-5"
+        height="500px"
+        width="100%"
+        src="https://phet.colorado.edu/sims/html/color-vision/latest/color-vision_en.html"
+        allow="fullscreen"
+      ></iframe>
     </template>
   </MuseumLayout>
 </template>

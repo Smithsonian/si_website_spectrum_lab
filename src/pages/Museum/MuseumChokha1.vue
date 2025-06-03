@@ -3,31 +3,30 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader>Part 1: Chokha Painting </InstructionHeader>
+          <InstructionHeader
+            >Chokha Painting Part 1: Observe the Artwork</InstructionHeader
+          >
           <InstructionRow rowType="Art">
             This painting by the artist Chokha is displayed at the Smithsonian's
             National Museum of Asian Art.
             <p>
-              Art conservators have taken reflection spectra of different
-              regions of interest, marked by the white and black squares. The
-              wavelengths of light that are reflected by the paint in the
-              visible part of the spectrum determines what color our eyes see.
+              Observe the scene depicted, the colors used, and the style of the
+              painting.
             </p>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            <span class="needs-updating">
-              Edit questions
-              <ol>
-                <li>
-                  Observe the composition, the colors, and the iconography.
-                  Describe what you see.
-                </li>
-                <li>
-                  (Reference SI Learning Labs content on close observation of
-                  artwork.)
-                </li>
-              </ol>
-            </span>
+            Answer these questions:
+            <template #steps>
+              <InstructionStep>
+                Describe what you see. What do you notice or find yourselve
+                wondering about the painting?
+              </InstructionStep>
+              <InstructionStep>
+                What details in the painting do you think could be helpful to
+                you in trying to pinpoint the region and time period this
+                painting comes from?
+              </InstructionStep>
+            </template>
           </InstructionRow>
         </template>
         <template #middle>
@@ -36,7 +35,7 @@
         <template #bottom>
           <LeftRightGroup>
             <template #right>
-              <NextPrevButton to="mystery" direction="next">
+              <NextPrevButton to="colors-spectra" direction="next">
                 Part 2
               </NextPrevButton>
             </template>

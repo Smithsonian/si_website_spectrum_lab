@@ -26,8 +26,8 @@ import FishTankBackgroundReveal from './pages/FishTank/FishTankBackgroundReveal.
 import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
-import MuseumChokha from './pages/Museum/MuseumChokha.vue';
-import MuseumMysteryColors from './pages/Museum/MuseumMysteryColors.vue';
+import MuseumChokha1 from './pages/Museum/MuseumChokha1.vue';
+import MuseumChokha2 from './pages/Museum/MuseumMysteryColors.vue';
 import MuseumHokusai from './pages/Museum/MuseumHokusai.vue';
 import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBlues.vue';
 import MuseumHokusaiIdentifyBlues from './pages/Museum/MuseumHokusaiIdentifyBlues.vue';
@@ -211,8 +211,8 @@ const routes: RouteRecordRaw[] = [
             path: 'paint-colors/',
             redirect: '/final-projects/museum/paint-colors/chokha',
             children: [
-              { path: 'chokha', component: MuseumChokha },
-              { path: 'mystery', component: MuseumMysteryColors },
+              { path: 'chokha', component: MuseumChokha1 },
+              { path: 'colors-spectra', component: MuseumChokha2 },
             ],
           },
           {
