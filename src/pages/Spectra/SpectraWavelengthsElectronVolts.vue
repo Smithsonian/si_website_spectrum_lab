@@ -26,7 +26,7 @@
             <InstructionStep>
               Use the measuring tool to identify the energy
               <strong>in electron volts</strong> of the three brightest
-              features, in <em>Part B</em>.
+              features, in <em>Part II</em>.
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -39,29 +39,19 @@
             :custom-metadata="metadataList"
             :spectrum-picker-placeholder="null"
           >
-            <div class="text-dark fs-4 fw-bold">
-              <div class="position-absolute" style="top: 40px; left: 265px">
-                1
-              </div>
-              <div class="position-absolute" style="top: 0px; left: 317px">
-                2
-              </div>
-              <div class="position-absolute" style="top: 25px; left: 480px">
-                3
-              </div>
-            </div>
+            <WavelengthEnergyOverlay />
           </ToolCard>
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
         <template #left>
           <NextPrevButton direction="prev" light to="part-2">
-            part 2
+            go to nanometers
           </NextPrevButton>
         </template>
         <template #right>
           <NextPrevButton direction="next" light to="part-4">
-            part 4
+            go to brightness
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -73,7 +63,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Wavelengths and energy part 3', 'Spectra');
+useSpecLabHead('Wavelengths and energy: electron volts', 'Spectra');
 
 const fluorescent = useCustomMetadata('Lamps', 'Fluorescent_Bulb', {});
 const metadataList = fluorescent ? [fluorescent] : [];

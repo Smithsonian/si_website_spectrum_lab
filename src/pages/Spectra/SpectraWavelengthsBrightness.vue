@@ -20,11 +20,11 @@
           <template #steps>
             <InstructionStep>
               Use the measuring tool to estimate the brightness of the three
-              brightest features. Write your estimates in <em>Part B</em>.
+              brightest features. Write your estimates in <em>Part II</em>.
             </InstructionStep>
             <InstructionStep>
               Use your completed table to answer the questions in
-              <em>Part C</em>.
+              <em>Part III</em>.
             </InstructionStep>
           </template>
           <template #note>
@@ -41,24 +41,14 @@
             :custom-metadata="metadataList"
             :spectrum-picker-placeholder="null"
           >
-            <div class="text-dark fs-4 fw-bold">
-              <div class="position-absolute" style="top: 40px; left: 265px">
-                1
-              </div>
-              <div class="position-absolute" style="top: 0px; left: 317px">
-                2
-              </div>
-              <div class="position-absolute" style="top: 25px; left: 480px">
-                3
-              </div>
-            </div>
+            <WavelengthEnergyOverlay />
           </ToolCard>
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
         <template #left>
           <NextPrevButton direction="prev" light to="part-3">
-            part 3
+            go to electron volts
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -70,7 +60,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Wavelengths and energy part 3', 'Spectra');
+useSpecLabHead('Wavelengths and energy: brightness', 'Spectra');
 
 const fluorescent = useCustomMetadata('Lamps', 'Fluorescent_Bulb', {});
 const metadataList = fluorescent ? [fluorescent] : [];
