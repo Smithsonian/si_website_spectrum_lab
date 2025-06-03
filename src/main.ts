@@ -77,6 +77,7 @@ import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankReflectionSpectra from './pages/FishTank/FishTankReflectionSpectra.vue';
 import FishTankYourFishTank1 from './pages/FishTank/FishTankYourFishTank1.vue';
+import FishTankYourFishTank2 from './pages/FishTank/FishTankYourFishTank2.vue';
 
 library.add(
   faArrowUp,
@@ -208,7 +209,10 @@ const routes: RouteRecordRaw[] = [
           {
             path: 'your-fishtank',
             redirect: '/final-projects/fishtank/your-fishtank/part-1',
-            children: [{ path: 'part-1', component: FishTankYourFishTank1 }],
+            children: [
+              { path: 'part-1', component: FishTankYourFishTank1 },
+              { path: 'part-2', component: FishTankYourFishTank2 },
+            ],
           },
           {
             path: 'light-your-tank',
