@@ -55,7 +55,7 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import captions from '@/assets/conservation_science.vtt';
+import captions from '@/assets/captions/conservation_science.vtt';
 
 useSpecLabHead('Intro', 'Museum');
 </script>

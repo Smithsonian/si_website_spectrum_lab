@@ -4,6 +4,9 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
+            <SectionNavItem to="/final-projects/exoplanets/intro">
+              Intro
+            </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/clear-skies">
               Tutorial: Exoplanet atmospheres
             </SectionNavItem>
