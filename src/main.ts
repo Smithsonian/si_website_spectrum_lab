@@ -76,6 +76,7 @@ import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrig
 import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankReflectionSpectra from './pages/FishTank/FishTankReflectionSpectra.vue';
+import FishTankYourFishTank1 from './pages/FishTank/FishTankYourFishTank1.vue';
 
 library.add(
   faArrowUp,
@@ -203,6 +204,11 @@ const routes: RouteRecordRaw[] = [
           {
             path: 'reflection-spectra-colors',
             component: FishTankReflectionSpectra,
+          },
+          {
+            path: 'your-fishtank',
+            redirect: '/final-projects/fishtank/your-fishtank/part-1',
+            children: [{ path: 'part-1', component: FishTankYourFishTank1 }],
           },
           {
             path: 'light-your-tank',
