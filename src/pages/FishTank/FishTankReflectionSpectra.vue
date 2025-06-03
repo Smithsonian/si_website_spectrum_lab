@@ -43,7 +43,15 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolCard />
+      <ToolControlGroup :control-names="['units', 'plotType', 'normalize']">
+        <template #top-tool>
+          <ToolCard
+            spectrum-picker-placeholder="Select reflection spectrum"
+            :custom-metadata="metadataList"
+          />
+        </template>
+      </ToolControlGroup>
+      <PhetIframe bordered />
       <LeftRightGroup class="mt-4">
         <template #left>
           <NextPrevButton direction="prev" light to="explore-lighting-design">
@@ -62,6 +70,25 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
+import { useCustomMetadata } from '@/utils/metadataUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Reflection Spectra & Colors', 'Fishtank');
+
+const spectrumA = useCustomMetadata('Fish', 'angelfish_dkbluecurve', {
+  title: 'Mystery Spectrum A',
+  imageUrl: mystery,
+});
+
+const spectrumB = useCustomMetadata('Fish', 'angelfish_greycurve', {
+  title: 'Mystery Spectrum B',
+  imageUrl: mystery,
+});
+
+const spectrumC = useCustomMetadata('Fish', 'angelfish_yellowcurve', {
+  title: 'Mystery Spectrum C',
+  imageUrl: mystery,
+});
+
+const metadataList = [spectrumA, spectrumB, spectrumC].filter((sm) => !!sm);
 </script>
