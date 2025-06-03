@@ -1,5 +1,5 @@
 <template>
-  <div class="tool-card bg-sl-navy text-white p-3 rounded-4">
+  <div class="border border-sl-light-blue bg-sl-navy text-white p-3 rounded-4">
     <!-- Chart bottom means file picker top, and vice versa -->
     <template v-if="showFilePicker && !inBottomToolSlot">
       <BRow class="mb-3">
@@ -196,10 +196,6 @@ useSpectrumDataProvider(
 </script>
 
 <style>
-.tool-card {
-  border: 1px solid var(--sl-light-blue);
-}
-
 .spectrum-icon {
   display: block;
   max-height: 100%;

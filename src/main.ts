@@ -79,6 +79,7 @@ import FishTankYourFishTank1 from './pages/FishTank/FishTankYourFishTank1.vue';
 import FishTankYourFishTank2 from './pages/FishTank/FishTankYourFishTank2.vue';
 import FishTankLightYourTank1 from './pages/FishTank/FishTankLightYourTank1.vue';
 import FishTankLightYourTank2 from './pages/FishTank/FishTankLightYourTank2.vue';
+import FishTankInhabitantsUnderLights from './pages/FishTank/FishTankInhabitantsUnderLights.vue';
 
 library.add(
   faArrowUp,
@@ -222,6 +223,10 @@ const routes: RouteRecordRaw[] = [
               { path: 'part-1', component: FishTankLightYourTank1 },
               { path: 'part-2', component: FishTankLightYourTank2 },
             ],
+          },
+          {
+            path: 'inhabitants-under-lights',
+            component: FishTankInhabitantsUnderLights,
           },
           {
             path: 'mood-lighting',

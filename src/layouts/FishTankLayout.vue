@@ -23,7 +23,7 @@
             <SectionNavItem
               to="/final-projects/fishtank/inhabitants-under-lights"
             >
-              Inhabitants under your lights
+              Inhabitants Under Your Lights
             </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/put-it-together">
               Put it together
