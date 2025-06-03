@@ -2,25 +2,25 @@
   <FishTankLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Light Your Tank: Part 2</h2>
-        <p>
-          The top dropdown menu lets you choose different amounts (High, Medium,
-          or Low) of the colors Red, Green, and Blue. There are also 2 sample
-          mixed colors (orange and teal) that are shown in your
-          <strong>Spectrum Notebook</strong>. Notice the shape, location and
-          height (intensity) of these spectra.
-        </p>
-        <p>
-          With these reference graphs as guides, use the
-          <strong>drawing tool</strong> in the bottom panel to create a graph of
-          the overall color of your empty tank. Take a screenshot and paste it
-          in your notebook.
-        </p>
-        <p>
-          Note: The reference graphs in your Notebook for the fish and plant
-          reflection spectra are given in nanometers, so you can change your
-          measurement unit to nm for this activity.
-        </p>
+        <InstructionHeader>
+          Light Your Tank Part 2: Drawing the spectrum
+        </InstructionHeader>
+        <InstructionRow row-type="Tool">
+          The top tool has sample spectra showing various percentages of red,
+          green, and blue light, as well as a few mixes.
+          <template #steps>
+            <InstructionStep>
+              Look at each of the sample spectra.
+            </InstructionStep>
+            <InstructionStep>
+              In the bottom tool, draw the spectrum you’d expect to see from
+              your lighting design from <em>Part 1</em>.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Take a screenshot of your drawing and post it in <em>Part 2</em>.
+        </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>
