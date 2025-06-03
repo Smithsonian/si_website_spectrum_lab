@@ -37,10 +37,19 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton direction="prev" light to="part-1">
+            part 1
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton direction="next" to="mood-lighting"
-            >next section</NextPrevButton
+          <NextPrevButton
+            direction="next"
+            light
+            to="../inhabitants-under-lights"
           >
+            next section
+          </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
@@ -51,7 +60,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Light Your Tank', 'Fishtank');
+useSpecLabHead('Light Your Tank part 2', 'Fishtank');
 
 const allMetadata = useAllMetadata();
 const fishtankMetadata = allMetadata['Fish Tank'];

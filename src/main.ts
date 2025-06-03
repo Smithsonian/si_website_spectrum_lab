@@ -19,7 +19,6 @@ import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
 import { BASE_URL } from './constants';
-import FishTankLightYourTank from './pages/FishTank/FishTankLightYourTank.vue';
 import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumChokha1 from './pages/Museum/MuseumChokha1.vue';
@@ -78,6 +77,8 @@ import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankReflectionSpectra from './pages/FishTank/FishTankReflectionSpectra.vue';
 import FishTankYourFishTank1 from './pages/FishTank/FishTankYourFishTank1.vue';
 import FishTankYourFishTank2 from './pages/FishTank/FishTankYourFishTank2.vue';
+import FishTankLightYourTank1 from './pages/FishTank/FishTankLightYourTank1.vue';
+import FishTankLightYourTank2 from './pages/FishTank/FishTankLightYourTank2.vue';
 
 library.add(
   faArrowUp,
@@ -216,7 +217,11 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'light-your-tank',
-            component: FishTankLightYourTank,
+            redirect: '/final-projects/fishtank/light-your-tank/part-1',
+            children: [
+              { path: 'part-1', component: FishTankLightYourTank1 },
+              { path: 'part-2', component: FishTankLightYourTank2 },
+            ],
           },
           {
             path: 'mood-lighting',
