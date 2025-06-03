@@ -19,7 +19,6 @@ import App from './App.vue';
 import PlaygroundView from './pages/PlaygroundView.vue';
 import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.vue';
 import { BASE_URL } from './constants';
-import FishTankMoodLighting from './pages/FishTank/FishTankMoodLighting.vue';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumChokha1 from './pages/Museum/MuseumChokha1.vue';
 import MuseumChokha2 from './pages/Museum/MuseumMysteryColors.vue';
@@ -80,6 +79,7 @@ import FishTankYourFishTank2 from './pages/FishTank/FishTankYourFishTank2.vue';
 import FishTankLightYourTank1 from './pages/FishTank/FishTankLightYourTank1.vue';
 import FishTankLightYourTank2 from './pages/FishTank/FishTankLightYourTank2.vue';
 import FishTankInhabitantsUnderLights from './pages/FishTank/FishTankInhabitantsUnderLights.vue';
+import FishTankPutItTogether from './pages/FishTank/FishTankPutItTogether.vue';
 
 library.add(
   faArrowUp,
@@ -229,8 +229,8 @@ const routes: RouteRecordRaw[] = [
             component: FishTankInhabitantsUnderLights,
           },
           {
-            path: 'mood-lighting',
-            component: FishTankMoodLighting,
+            path: 'put-it-together',
+            component: FishTankPutItTogether,
           },
         ],
       },
