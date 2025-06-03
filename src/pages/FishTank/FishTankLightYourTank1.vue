@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Light Your Tank Part I: Choose your RGB light colors
+          Light Your Tank Part 1: Choose your RGB light colors
         </InstructionHeader>
         <InstructionRow row-type="Simulation">
           Double click RGB Bulbs to launch the Phet color mixing simulation. Mix

@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Your Fishtank Part I: Choose your inhabitants
+          Your Fishtank Part 1: Choose your inhabitants
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
           Use the data charts provided to learn about the available plants,

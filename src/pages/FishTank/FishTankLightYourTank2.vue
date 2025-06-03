@@ -2,7 +2,7 @@
   <FishTankLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Light your tank</h2>
+        <h2>Light Your Tank: Part 2</h2>
         <p>
           The top dropdown menu lets you choose different amounts (High, Medium,
           or Low) of the colors Red, Green, and Blue. There are also 2 sample

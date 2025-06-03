@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Your Fishtank Part II: Lighting needs for your inhabitants
+          Your Fishtank Part 2: Lighting needs for your inhabitants
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
           Identify the lighting needs of your tank inhabitants based on the data
