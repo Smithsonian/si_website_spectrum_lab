@@ -4,11 +4,29 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
+            <SectionNavItem
+              to="/final-projects/fishtank/explore-lighting-design"
+            >
+              Explore Lighting Design
+            </SectionNavItem>
+            <SectionNavItem
+              to="/final-projects/fishtank/reflection-spectra-colors"
+            >
+              Reflection Spectra &amp; Colors
+            </SectionNavItem>
+            <SectionNavItem to="/final-projects/fishtank/your-fishtank">
+              Your Fishtank
+            </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/light-your-tank">
               Light Your Tank
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/fishtank/mood-lighting">
-              Bonus: Mood Lighting
+            <SectionNavItem
+              to="/final-projects/fishtank/inhabitants-under-lights"
+            >
+              Inhabitants under your lights
+            </SectionNavItem>
+            <SectionNavItem to="/final-projects/fishtank/put-it-together">
+              Put it together
             </SectionNavItem>
           </SectionNav>
         </BCol>
@@ -18,12 +36,9 @@
             :icon-path="fishtankIconUrl"
             icon-alt="Fishtank module icon"
           >
-            For this project, you’ll first explore how land plants reflect
-            light. Then you’ll dive into the project by investigating a variety
-            of plants, fish and coral that live in saltwater aquaria. You’ll
-            choose a few to live in your tank. Based on what you’ve learned in
-            this unit, you’ll decide how to light the tank so all of its
-            inhabitants thrive.
+            Investigate a variety of plants, fish and coral that can live in
+            saltwater aquaria. Choose a few to live in your tank then decide how
+            to light the tank so all of its inhabitants thrive.
           </ChallengeIntro>
           <slot name="challenge-tab"></slot>
         </BCol>
