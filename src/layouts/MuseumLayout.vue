@@ -8,7 +8,7 @@
               Science of Art Conservation
             </SectionNavItem>
             <SectionNavItem to="/final-projects/museum/paint-colors">
-              Paint Colors &amp; Spectra
+              Chokha Painting
             </SectionNavItem>
             <SectionNavItem to="/final-projects/museum/two-blues">
               Two Blue Spectra
