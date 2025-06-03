@@ -1,5 +1,6 @@
 <template>
   <SvgImage
+    v-if="iconPath"
     :src="iconPath"
     :style="iconStyle"
     class="instruction-icon"
@@ -10,7 +11,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { SvgImage } from 'vite-awesome-svg-loader/vue-integration';
-import introIcon from '@/assets/SVG/lightbulb-regular.svg?source&set-current-color';
 import tutorialIcon from '@/assets/SVG/tutorial_instruction.svg?source&set-current-color';
 import notebookIcon from '@/assets/SVG/notebook_instruction.svg?source&set-current-color';
 import toolIcon from '@/assets/SVG/chart-bell-curve-cumulative.svg?source&set-current-color';
@@ -31,8 +31,6 @@ interface IconStyle {
 const props = defineProps<{ rowType: InstructionRowType }>();
 const iconPath = computed(() => {
   switch (props.rowType) {
-    case 'Intro':
-      return introIcon;
     case 'Tutorial':
       return tutorialIcon;
     case 'Notebook':
@@ -89,12 +87,6 @@ const iconStyle = computed((): IconStyle => {
       return {
         ...defaultStyle,
         width: defaultStyle.width * 1.1,
-      };
-    case 'Intro':
-      return {
-        ...defaultStyle,
-        height: defaultStyle.height * 1.1,
-        left: defaultStyle.left + 0.5,
       };
     default:
       return defaultStyle;
