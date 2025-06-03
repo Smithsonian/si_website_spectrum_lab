@@ -17,25 +17,35 @@
   <div class="bg-sl-slate-blue py-4">
     <BContainer class="px-4" style="margin-bottom: 150px">
       <BRow class="gx-5 mb-4">
-        <ModuleTile :icon-source="fishtankIcon" title="Fishtank" to="fishtank">
-          Create and light a saltwater reef aquarium that is healthy and looks
-          great too.
-        </ModuleTile>
-        <ModuleTile
-          :icon-source="exoplanetsIcon"
-          title="Exoplanets"
-          to="exoplanets"
-        >
-          Explore the atmosphere of planets outside our solar system.
-        </ModuleTile>
-        <ModuleTile
-          :icon-source="museumIcon"
-          title="Museum Conservation"
-          to="museum"
-        >
-          Set up a museum display that conveys how spectra are used in art
-          conservation.
-        </ModuleTile>
+        <BCol cols="12" md="4">
+          <ModuleTile
+            :icon-source="fishtankIcon"
+            title="Fishtank"
+            to="fishtank"
+          >
+            Create and light a saltwater reef aquarium that is healthy and looks
+            great too.
+          </ModuleTile>
+        </BCol>
+        <BCol cols="12" md="4">
+          <ModuleTile
+            :icon-source="exoplanetsIcon"
+            title="Exoplanets"
+            to="exoplanets"
+          >
+            Explore the atmosphere of planets outside our solar system.
+          </ModuleTile>
+        </BCol>
+        <BCol cols="12" md="4">
+          <ModuleTile
+            :icon-source="museumIcon"
+            title="Museum Conservation"
+            to="museum"
+          >
+            Set up a museum display that conveys how spectra are used in art
+            conservation.
+          </ModuleTile>
+        </BCol>
       </BRow>
     </BContainer>
   </div>
