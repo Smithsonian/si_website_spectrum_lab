@@ -73,6 +73,7 @@ import SpectraWavelengthsMicrons from './pages/Spectra/SpectraWavelengthsMicrons
 import SpectraWavelengthsNanometers from './pages/Spectra/SpectraWavelengthsNanometers.vue';
 import SpectraWavelengthsElectronVolts from './pages/Spectra/SpectraWavelengthsElectronVolts.vue';
 import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrightness.vue';
+import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
 
 library.add(
   faArrowUp,
@@ -205,8 +206,9 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'exoplanets/',
-        redirect: '/final-projects/exoplanets/clear-skies',
+        redirect: '/final-projects/exoplanets/intro',
         children: [
+          { path: 'intro', component: ExoplanetsIntro },
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
           { path: 'wasp-17b', component: ExoplanetsWASP17b },
