@@ -9,11 +9,11 @@
       <InstructionRow row-type="Notebook">
         <template #steps>
           <InstructionStep>
-            In <em>Part A</em> of the <em>Behaviors of Light</em> section, label
+            In <em>Part 1</em> of the <em>Behaviors of Light</em> section, label
             the diagram with the key behaviors of light.
           </InstructionStep>
           <InstructionStep>
-            Answer the questions in <em>Part B</em>.
+            Answer the questions in <em>Part 2</em>.
           </InstructionStep>
         </template>
       </InstructionRow>

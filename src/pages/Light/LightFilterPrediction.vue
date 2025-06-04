@@ -2,7 +2,7 @@
   <LightLayout>
     <ChallengeCard>
       <template #top>
-        <InstructionHeader>Make a Prediction</InstructionHeader>
+        <InstructionHeader>Color Filters Part 1: Predictions</InstructionHeader>
         <InstructionRow row-type="Investigate">
           <span class="challenge-emphasis"> Without using any gels</span>,
           examine the image below and consider:
@@ -14,7 +14,7 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Write your prediction in the chart, noting the predicted color for
+          Write your predictions in the chart, noting the predicted color for
           each section of the three circles.
         </InstructionRow>
       </template>
@@ -31,13 +31,17 @@
       <template #bottom>
         <LeftRightGroup>
           <template #left>
-            <NextPrevButton direction="prev" light to="introduction">
+            <NextPrevButton direction="prev" light to="/light/introduction">
               previous section
             </NextPrevButton>
           </template>
           <template #right>
-            <NextPrevButton direction="next" light to="photons">
-              next section
+            <NextPrevButton
+              direction="next"
+              light
+              to="/light/color-filters/investigation"
+            >
+              next part
             </NextPrevButton>
           </template>
         </LeftRightGroup>

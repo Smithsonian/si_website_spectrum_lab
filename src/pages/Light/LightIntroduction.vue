@@ -1,6 +1,6 @@
 <template>
   <LightLayout>
-    <CardWithSlideshow :slide-order="slideOrder" next-section="predictions">
+    <CardWithSlideshow :slide-order="slideOrder" next-section="color-filters">
       <InstructionHeader>Light in Different Fields</InstructionHeader>
       <InstructionRow row-type="Slideshow">
         Step through this slideshow for an overview of how different fields use
