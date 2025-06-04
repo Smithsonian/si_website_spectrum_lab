@@ -17,9 +17,14 @@
       </BNavText>
     </BNavbarNav>
     <BNavbarNav class="ms-auto">
-      <BNavItem variant="light" opacity-hover="75" class="text-uppercase"
-        >Teacher Resources</BNavItem
+      <BNavItem
+        href="https://smithsonian.github.io/si_website_speclab_teacher_resources/"
+        variant="light"
+        opacity-hover="75"
+        class="text-uppercase"
       >
+        Teacher Resources
+      </BNavItem>
     </BNavbarNav>
   </BNavbar>
 </template>
