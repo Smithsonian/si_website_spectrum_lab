@@ -40,7 +40,7 @@
         <LeftRightGroup>
           <template #left>
             <NextPrevButton direction="prev" light to="predictions">
-              previous part
+              part 1
             </NextPrevButton>
           </template>
           <template #right>
@@ -57,5 +57,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Make a Prediction', 'Light');
+useSpecLabHead('Color Filters part 2', 'Light');
 </script>

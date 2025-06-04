@@ -41,7 +41,7 @@
               light
               to="/light/color-filters/investigation"
             >
-              next part
+              part 2
             </NextPrevButton>
           </template>
         </LeftRightGroup>
@@ -53,5 +53,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Make a Prediction', 'Light');
+useSpecLabHead('Color Filters part 1', 'Light');
 </script>
