@@ -48,3 +48,9 @@ export const wavelengthUnitKey = Symbol('wavelengthUnit') as InjectionKey<
 export const inBottomToolSlotKey = Symbol(
   'inBottomToolSlot',
 ) as InjectionKey<boolean>;
+
+// Do we have a bottom tool or not?
+// This changes the tool title.
+export const isFirstOfTwoToolsKey = Symbol('isFirstOfTwoTools') as InjectionKey<
+  Ref<boolean>
+>;

@@ -9,22 +9,27 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <div class="position-relative">
-        <ToolCard ref="topToolRef" draw-only />
-        <SpecTutPopupTool :anchor-elem="topToolRef" />
-      </div>
-      <div class="my-5"></div>
-      <div v-if="showSecondTool" class="position-relative mb-5">
-        <BottomToolContext>
-          <ToolCard
-            ref="bottomToolRef"
-            :custom-metadata="bulbMetadataList"
-            :spectrum-picker-placeholder="null"
-            default-spectrum="Fluorescent_Bulb"
-          />
-        </BottomToolContext>
-        <SpecTutPopupSecondTool :anchor-elem="bottomToolRef" />
-      </div>
+      <ToolControlGroup :control-names="[]">
+        <template #top-tool>
+          <div class="position-relative">
+            <ToolCard ref="topToolRef" draw-only />
+            <SpecTutPopupTool :anchor-elem="topToolRef" />
+          </div>
+        </template>
+        <template v-if="showSecondTool" #bottom-tool>
+          <div class="position-relative my-5">
+            <BottomToolContext>
+              <ToolCard
+                ref="bottomToolRef"
+                :custom-metadata="bulbMetadataList"
+                :spectrum-picker-placeholder="null"
+                default-spectrum="Fluorescent_Bulb"
+              />
+            </BottomToolContext>
+            <SpecTutPopupSecondTool :anchor-elem="bottomToolRef" />
+          </div>
+        </template>
+      </ToolControlGroup>
       <LeftRightGroup v-if="tutorialState === 'nextSection'">
         <template #left>
           <NextPrevButton direction="prev" @click="replay" light>

@@ -1,5 +1,7 @@
 <template>
-  <slot name="top-tool"></slot>
+  <TopToolContext :has-bottom-tool="!!$slots['bottom-tool']">
+    <slot name="top-tool"></slot>
+  </TopToolContext>
   <BRow class="mt-1 mb-2 px-3">
     <BCol cols="3">
       <div v-if="controlNames.includes('units')" class="position-relative">

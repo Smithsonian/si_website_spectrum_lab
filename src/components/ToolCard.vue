@@ -87,11 +87,16 @@
 </template>
 
 <script setup lang="ts">
-import { inBottomToolSlotKey, type NormalizeSetting } from '@/injectionKeys';
+import {
+  inBottomToolSlotKey,
+  isFirstOfTwoToolsKey,
+  type NormalizeSetting,
+} from '@/injectionKeys';
 import { BFormSelect } from 'bootstrap-vue-next';
 import {
   computed,
   inject,
+  ref,
   useTemplateRef,
   type ComponentPublicInstance,
 } from 'vue';
@@ -134,6 +139,7 @@ const props = withDefaults(
   },
 );
 
+const isFirstOfTwoTools = inject(isFirstOfTwoToolsKey, ref(false));
 const inBottomToolSlot = inject(inBottomToolSlotKey, false);
 
 const title = computed(() => {
@@ -143,7 +149,10 @@ const title = computed(() => {
   if (inBottomToolSlot) {
     return 'Source 2';
   }
-  return 'Source 1';
+  if (isFirstOfTwoTools.value) {
+    return 'Source 1';
+  }
+  return 'Source';
 });
 
 // Refactored a lot of this setup function into composables, due to complexity
