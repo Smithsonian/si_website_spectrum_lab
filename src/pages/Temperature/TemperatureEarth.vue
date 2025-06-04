@@ -56,7 +56,7 @@ import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
 
 useSpecLabHead('Earth', 'Temperature');
 
-const earthMetadata = useCustomMetadata('Planets', 'Earth_Emission', {});
+const earthMetadata = useCustomMetadata('Solar System', 'Earth_Emission', {});
 const earthMetadataList = earthMetadata ? [earthMetadata] : [];
 
 const allMetadata = useAllMetadata();

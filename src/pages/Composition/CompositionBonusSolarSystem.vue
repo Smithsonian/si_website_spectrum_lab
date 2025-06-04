@@ -39,14 +39,18 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 
 useSpecLabHead('Bonus Solar System', 'Composition');
 
-const mars = useCustomMetadata('Planets', 'Mars_Reflection', {});
-const jupiter = useCustomMetadata('Planets', 'Jupiter_Reflection', {});
-const europa = useCustomMetadata('Planets', 'Europa_Reflection', {});
-const saturn = useCustomMetadata('Planets', 'Saturn_Reflection', {});
-const saturnRings = useCustomMetadata('Planets', 'Saturn_Rings_Reflection', {});
-const titan = useCustomMetadata('Planets', 'Titan_Reflection', {});
-const uranus = useCustomMetadata('Planets', 'Uranus_Reflection', {});
-const neptune = useCustomMetadata('Planets', 'Neptune_Reflection', {});
+const mars = useCustomMetadata('Solar System', 'Mars_Reflection', {});
+const jupiter = useCustomMetadata('Solar System', 'Jupiter_Reflection', {});
+const europa = useCustomMetadata('Solar System', 'Europa_Reflection', {});
+const saturn = useCustomMetadata('Solar System', 'Saturn_Reflection', {});
+const saturnRings = useCustomMetadata(
+  'Solar System',
+  'Saturn_Rings_Reflection',
+  {},
+);
+const titan = useCustomMetadata('Solar System', 'Titan_Reflection', {});
+const uranus = useCustomMetadata('Solar System', 'Uranus_Reflection', {});
+const neptune = useCustomMetadata('Solar System', 'Neptune_Reflection', {});
 const topMetadata = [
   mars,
   jupiter,

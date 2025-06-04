@@ -370,19 +370,19 @@
     "spectrumType": "Absorption"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Earth_Reflection",
     "title": "Earth Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Earth_Emission",
     "title": "Earth Emission",
     "spectrumType": "Emission"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Earth_Transmission",
     "title": "Earth Transmission",
     "spectrumType": "Transmission",
@@ -393,67 +393,67 @@
     "additionalInfo": "See \u201cSupplementary Information\u201d section of paper cited above for a diagram that shows how the spectrum was obtained."
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Venus_Reflection",
     "title": "Venus Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Venus_Emission",
     "title": "Venus Emission",
     "spectrumType": "Emission"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Mars_Reflection",
     "title": "Mars Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Mars_Emission",
     "title": "Mars Emission",
     "spectrumType": "Emission"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Jupiter_Reflection",
     "title": "Jupiter Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Europa_Reflection",
     "title": "Europa Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Saturn_Reflection",
     "title": "Saturn Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Saturn_Rings_Reflection",
     "title": "Saturn Rings Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Titan_Reflection",
     "title": "Titan Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Uranus_Reflection",
     "title": "Uranus Reflection",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Planets",
+    "category": "Solar System",
     "filename": "Neptune_Reflection",
     "title": "Neptune Reflection",
     "spectrumType": "Reflection"

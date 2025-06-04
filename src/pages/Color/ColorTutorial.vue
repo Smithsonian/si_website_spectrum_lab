@@ -78,7 +78,7 @@ useSpecLabHead('Tutorial', 'Color');
 
 const graphTutAnchor = useTemplateRef('graphTutAnchor');
 
-const marsMetadata = useCustomMetadata('Planets', 'Mars_Reflection', {});
+const marsMetadata = useCustomMetadata('Solar System', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];
 
 // Initialize the tutorial state and start the first popup

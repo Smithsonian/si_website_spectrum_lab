@@ -60,12 +60,7 @@
           <ToolCard :custom-metadata="exoplanetMetadata" />
         </template>
         <template #bottom-tool>
-          <ToolCard
-            :custom-metadata="bottomMetadataList"
-            :custom-category-names="{
-              Planets: 'Solar System',
-            }"
-          />
+          <ToolCard :custom-metadata="bottomMetadataList" />
         </template>
       </ToolControlGroup>
     </template>
@@ -87,7 +82,7 @@ const allMetadata = useAllMetadata();
 const exoplanetMetadata = allMetadata['Exoplanets'];
 const modelMetadata = allMetadata['Exoplanet Models'];
 const atomsMetadata = allMetadata['Atoms and Molecules'];
-const planetsMetadata = allMetadata['Planets'];
+const planetsMetadata = allMetadata['Solar System'];
 
 const bottomMetadataList = [
   ...modelMetadata,

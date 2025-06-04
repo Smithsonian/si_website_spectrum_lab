@@ -47,10 +47,14 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 
 useSpecLabHead('Earth part 2', 'Composition');
 
-const earthReflection = useCustomMetadata('Planets', 'Earth_Reflection', {});
-const earthEmission = useCustomMetadata('Planets', 'Earth_Emission', {});
+const earthReflection = useCustomMetadata(
+  'Solar System',
+  'Earth_Reflection',
+  {},
+);
+const earthEmission = useCustomMetadata('Solar System', 'Earth_Emission', {});
 const earthTransmission = useCustomMetadata(
-  'Planets',
+  'Solar System',
   'Earth_Transmission',
   {},
 );
