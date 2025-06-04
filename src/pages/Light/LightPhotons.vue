@@ -10,11 +10,11 @@
         <InstructionRow row-type="Notebook">
           <template #steps>
             <InstructionStep>
-              Follow instructions in <em>Part A</em> of the
+              Follow instructions in <em>Part 1</em> of the
               <em>Photons and Color</em> section.
             </InstructionStep>
             <InstructionStep>
-              Answer the questions in <em>Part B</em>.
+              Answer the questions in <em>Part 2</em>.
             </InstructionStep>
           </template>
         </InstructionRow>

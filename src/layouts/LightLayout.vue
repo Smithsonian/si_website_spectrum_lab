@@ -7,8 +7,8 @@
             <SectionNavItem to="/light/introduction">
               Introduction
             </SectionNavItem>
-            <SectionNavItem to="/light/predictions">
-              Make a Prediction
+            <SectionNavItem to="/light/color-filters">
+              Color Filters
             </SectionNavItem>
             <SectionNavItem to="/light/photons">
               Photons and Color
