@@ -141,9 +141,9 @@ const title = computed(() => {
     return props.titleOverride;
   }
   if (inBottomToolSlot) {
-    return 'Spectrum 2';
+    return 'Source 2';
   }
-  return 'Spectrum 1';
+  return 'Source 1';
 });
 
 // Refactored a lot of this setup function into composables, due to complexity
