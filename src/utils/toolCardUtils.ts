@@ -21,6 +21,7 @@ import {
   rangeNormalize,
   visibleOnly,
 } from './importUtils';
+import drawingIcon from '@/assets/SVG/drawing_icon.png';
 
 type PreloadedOrHiddenCategory = PreloadedCategory | 'Hidden';
 
@@ -273,6 +274,7 @@ export const useDrawnSpectrumProvider = (
 };
 
 export const useSelectedMetadata = (
+  selectedCategory: Ref<SpectrumCategory>,
   metadataByFilename: Ref<MetadataByFilename>,
   selectedSpectrum: Ref<string>,
   pickedFile: Ref<File | null>,
@@ -290,6 +292,9 @@ export const useSelectedMetadata = (
 
   // Icon
   const iconPath = computed((): string => {
+    if (selectedCategory.value === 'draw') {
+      return drawingIcon;
+    }
     if (!selectedMetadata.value) {
       return defaultIconUrl;
     }

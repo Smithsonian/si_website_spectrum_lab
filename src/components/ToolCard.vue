@@ -180,6 +180,7 @@ const { clearDrawnSpectrumY } = useDrawnSpectrumProvider(
 
 const { selectedMetadata, iconPath, chartTitle, previewPath } =
   useSelectedMetadata(
+    selectedCategory,
     metadataByFilename,
     selectedSpectrum,
     pickedFile,
