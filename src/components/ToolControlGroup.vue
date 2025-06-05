@@ -119,7 +119,9 @@ const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
 ];
 provide(normalizeKey, normalize);
 
-const wavelengthUnit = ref<WavelengthUnit>('Microns');
+const wavelengthUnit = defineModel<WavelengthUnit>('units', {
+  default: 'Microns',
+});
 const wavelengthUnitOptions: { text: string; value: WavelengthUnit }[] = [
   { text: 'Microns', value: 'Microns' },
   { text: 'Nanometers', value: 'Nanometers' },

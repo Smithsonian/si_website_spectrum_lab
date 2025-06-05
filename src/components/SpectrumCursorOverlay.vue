@@ -13,6 +13,7 @@
         :style="`top: 0px; left: ${xRenderLocation}px`"
       >
         <div
+          ref="cursorLine"
           class="cursor-line position-absolute"
           :style="`height: ${overlayHeight}px; width: 2px; left: -1px`"
         ></div>
@@ -29,12 +30,13 @@
       </div>
       <!-- Target for pointer events. Above the cursor, so we always get the hits here. -->
       <div
-        class="position-absolute pointer-event-capture"
+        class="position-absolute"
         :style="eventCaptureStyle"
         @pointerenter="handlePointerMove"
         @pointermove="handlePointerMove"
         @pointerleave="handlePointerLeave"
       ></div>
+      <ControlsTutPopupMeasuringTool :anchor-elem="cursorLine" />
     </template>
   </div>
 </template>
@@ -58,9 +60,24 @@ import {
   useCursorMicrons,
   xLocFromMicrons,
 } from '@/utils/chartUtils';
-import { computed, inject, ref } from 'vue';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
+import { computed, inject, ref, useTemplateRef, watch } from 'vue';
+
+const cursorLine = useTemplateRef('cursorLine');
+const { tutorialState } = useControlsTutorialStateMachine();
 
 const { cursorMicrons, setCursorMicrons } = useCursorMicrons();
+
+watch(tutorialState, (newTutorialState, previousTutorialState) => {
+  if (previousTutorialState === 'measuringTool') {
+    // Ignore unless we just got here
+    return;
+  }
+  if (newTutorialState === 'measuringTool') {
+    // Ensure measuring tool appears
+    setCursorMicrons(0.5);
+  }
+});
 
 const overlayHeight = CHART_HEIGHT + RAINBOW_HEIGHT;
 

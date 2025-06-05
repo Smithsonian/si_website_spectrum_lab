@@ -97,6 +97,7 @@ const CONTROLS_TUTORIAL_STATE_ORDER = [
   'spectrumGraph',
   'xAxis',
   'yAxis',
+  'measuringTool',
   'slider',
   'nextSection',
 ] as const;
