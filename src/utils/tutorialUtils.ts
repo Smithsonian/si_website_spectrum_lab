@@ -96,6 +96,7 @@ const CONTROLS_TUTORIAL_STATE_ORDER = [
   'spectrumImage',
   'spectrumGraph',
   'xAxis',
+  'yAxis',
   'slider',
   'nextSection',
 ] as const;

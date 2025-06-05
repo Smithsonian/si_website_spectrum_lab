@@ -10,7 +10,7 @@
       <SpectrumCursorOverlay>
         <SpectrumRainbow />
         <div class="d-flex">
-          <LeftAxis />
+          <LeftAxis ref="yAxis" />
           <!-- Wrap these to enable overlay -->
           <div class="position-relative">
             <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
@@ -25,6 +25,7 @@
         </div>
       </SpectrumCursorOverlay>
       <ControlsTutPopupXAxis :anchor-elem="xAxisLabel" />
+      <ControlsTutPopupYAxis :anchor-elem="yAxis" />
     </div>
   </div>
 </template>
@@ -39,6 +40,7 @@ import {
 import { inject, ref, useTemplateRef } from 'vue';
 
 const xAxisLabel = useTemplateRef('xAxisLabel');
+const yAxis = useTemplateRef('yAxis');
 
 const spectrumDataSource = inject(
   spectrumDataSourceKey,
