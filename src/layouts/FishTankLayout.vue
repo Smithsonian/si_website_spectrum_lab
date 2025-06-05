@@ -12,7 +12,12 @@
             <SectionNavItem
               to="/final-projects/fishtank/reflection-spectra-colors"
             >
-              Reflection Spectra &amp; Colors
+              Fish Reflection Spectra &amp; Colors
+            </SectionNavItem>
+            <SectionNavItem
+              to="/final-projects/fishtank/plant-reflection-spectra"
+            >
+              Plant Reflection Spectra
             </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/your-fishtank">
               Your Fishtank
