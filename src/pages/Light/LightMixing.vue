@@ -2,7 +2,7 @@
   <LightLayout>
     <ChallengeCard>
       <template #top>
-        <InstructionHeader>Photons and Color Simulation</InstructionHeader>
+        <InstructionHeader>Color Mixing</InstructionHeader>
         <InstructionRow row-type="Simulation">
           <span class="challenge-emphasis"> Double-click</span>
           the “RGB Bulbs” to launch the simulation.
@@ -18,7 +18,7 @@
               color.
             </InstructionStep>
             <InstructionStep>
-              Answer the questions in <em>Part 2</em>
+              Answer the reflection questions in <em>Part 2</em>
             </InstructionStep>
           </template>
         </InstructionRow>

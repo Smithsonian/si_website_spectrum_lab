@@ -18,6 +18,14 @@
             previous section
           </NextPrevButton>
           <NextPrevButton
+            v-if="atFirstSlide && prevPartPath"
+            direction="prev"
+            light
+            :to="prevPartPath"
+          >
+            {{ prevPartLabel }}
+          </NextPrevButton>
+          <NextPrevButton
             v-if="!atFirstSlide"
             direction="prev"
             light
@@ -36,7 +44,15 @@
             next slide
           </NextPrevButton>
           <NextPrevButton
-            v-else-if="nextSection"
+            v-if="atLastSlide && nextPartPath"
+            direction="next"
+            light
+            :to="nextPartPath"
+          >
+            {{ nextPartLabel }}
+          </NextPrevButton>
+          <NextPrevButton
+            v-if="atLastSlide && nextSection"
             direction="next"
             light
             :to="nextSection"
@@ -56,6 +72,10 @@ const props = defineProps<{
   slideOrder: string[];
   prevSection?: string;
   nextSection?: string;
+  prevPartPath?: string;
+  nextPartPath?: string;
+  prevPartLabel?: string;
+  nextPartLabel?: string;
 }>();
 
 const slideIndex = ref(0);
