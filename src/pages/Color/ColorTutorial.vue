@@ -94,6 +94,8 @@ goToNext();
 
 const controlsEnabled = computed(() => {
   const enabledStates: (typeof tutorialState.value)[] = [
+    'wavelengthUnits',
+    'plotType',
     'slider',
     'nextSection',
   ];
