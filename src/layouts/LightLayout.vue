@@ -4,8 +4,8 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/light/introduction">
-              Introduction
+            <SectionNavItem to="/light/professions">
+              Light in Different Professions
             </SectionNavItem>
             <SectionNavItem to="/light/color-filters">
               Color Filters

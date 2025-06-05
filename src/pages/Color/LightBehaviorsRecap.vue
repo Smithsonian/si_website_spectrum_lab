@@ -3,8 +3,8 @@
     <template #challenge-tab>
       <CardWithSlideshow
         :slide-order="slideOrder"
-        prev-section="tutorial"
-        next-section="predictions"
+        prev-path="tutorial"
+        next-path="predictions"
       >
         <InstructionHeader>Seeing Color</InstructionHeader>
         <InstructionRow row-type="Slideshow">
