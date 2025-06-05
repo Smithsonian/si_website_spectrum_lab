@@ -19,18 +19,18 @@
       </div>
     </BCol>
     <BCol cols="3">
-      <BFormGroup
-        v-if="controlNames.includes('plotType')"
-        label="Plot type"
-        label-for="plot-type"
-      >
-        <BFormSelect
-          id="plot-type"
-          v-model="plotType"
-          :disabled="disabled"
-          :options="plotOptions"
-        />
-      </BFormGroup>
+      <div v-if="controlNames.includes('plotType')" class="position-relative">
+        <BFormGroup label="Plot type" label-for="plot-type">
+          <BFormSelect
+            ref="plotTypeDropdown"
+            id="plot-type"
+            v-model="plotType"
+            :disabled="disabled"
+            :options="plotOptions"
+          />
+        </BFormGroup>
+        <ControlsTutPopupPlotType :anchor-elem="plotTypeDropdown" />
+      </div>
     </BCol>
     <BCol v-if="controlNames.includes('normalize')" cols="2">
       <BFormGroup label="Normalize?" label-for="normalize">
@@ -99,6 +99,8 @@ withDefaults(
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 const unitDropdown = useTemplateRef<ComponentPublicInstance>('unitDropdown');
+const plotTypeDropdown =
+  useTemplateRef<ComponentPublicInstance>('plotTypeDropdown');
 
 const zoomPercent = defineModel<number>('zoom', { default: 100 });
 const zoom = computed(() => zoomPercent.value / 100);
