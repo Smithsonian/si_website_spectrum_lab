@@ -55,7 +55,7 @@
             class="zoom-slider"
           />
         </BFormGroup>
-        <TempTutPopupSlider :anchor-elem="zoomElem" />
+        <ControlsTutPopupSlider :anchor-elem="zoomElem" />
       </div>
     </BCol>
   </BRow>

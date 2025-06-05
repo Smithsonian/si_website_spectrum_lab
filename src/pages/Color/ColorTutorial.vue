@@ -38,7 +38,7 @@
               class="position-absolute"
               style="bottom: 25px; left: 200px; width: 0; height: 0"
             ></div>
-            <TempTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
+            <ControlsTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
           </ToolCard>
         </template>
       </ToolControlGroup>
