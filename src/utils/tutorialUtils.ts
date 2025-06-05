@@ -98,6 +98,7 @@ const CONTROLS_TUTORIAL_STATE_ORDER = [
   'xAxis',
   'yAxis',
   'measuringTool',
+  'wavelengthUnits',
   'slider',
   'nextSection',
 ] as const;

@@ -15,6 +15,7 @@
           />
         </BFormGroup>
         <WavelengthTutPopoverUnits :anchor-elem="unitDropdown" />
+        <ControlsTutPopupWavelengthUnits :anchor-elem="unitDropdown" />
       </div>
     </BCol>
     <BCol cols="3">
