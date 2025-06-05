@@ -2,13 +2,13 @@
   <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Tutorial</InstructionHeader>
+        <InstructionHeader>Spectrum Tutorial</InstructionHeader>
         <InstructionRow rowType="Tutorial">
-          Follow the tutorial (below) to learn how to use the spectrum tool and
-          review key concepts.
+          The tutorial (below) recaps key features of the online Spectrum Tool
+          and introduces some new ones.
         </InstructionRow>
         <InstructionRow rowType="Notebook">
-          In the <em>Color, Tutorial</em> section, answer these questions:
+          As you step through the tutorial, answer these questions:
           <template #steps>
             <InstructionStep>
               What is the relationship between the wavelength and energy of

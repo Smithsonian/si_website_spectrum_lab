@@ -30,7 +30,7 @@ const title = computed(() => {
     case 'Intro':
       return 'Introduction.';
     case 'Tutorial':
-      return 'Spectrum Tool Introduction.';
+      return 'Spectrum Tool Guide.';
     case 'Notebook':
       return 'Spectrum Notebook.';
     case 'Tool':
