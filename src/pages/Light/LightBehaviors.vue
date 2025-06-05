@@ -2,9 +2,9 @@
   <LightLayout>
     <CardWithSlideshow
       :slide-order="slideOrder"
-      prev-section="../mixing"
-      next-part-path="filter-recap"
-      next-part-label="part 2"
+      prev-path="../mixing"
+      next-path="filter-recap"
+      next-label="part 2"
     >
       <InstructionHeader
         >Behaviors of Light Part 1: Slideshow</InstructionHeader

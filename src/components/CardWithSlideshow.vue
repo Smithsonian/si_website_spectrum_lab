@@ -10,20 +10,12 @@
       <LeftRightGroup>
         <template #left>
           <NextPrevButton
-            v-if="atFirstSlide && prevSection"
+            v-if="atFirstSlide && prevPath"
             direction="prev"
             light
-            :to="prevSection"
+            :to="prevPath"
           >
-            previous section
-          </NextPrevButton>
-          <NextPrevButton
-            v-if="atFirstSlide && prevPartPath"
-            direction="prev"
-            light
-            :to="prevPartPath"
-          >
-            {{ prevPartLabel }}
+            {{ prevLabel }}
           </NextPrevButton>
           <NextPrevButton
             v-if="!atFirstSlide"
@@ -44,20 +36,12 @@
             next slide
           </NextPrevButton>
           <NextPrevButton
-            v-if="atLastSlide && nextPartPath"
+            v-if="atLastSlide && nextPath"
             direction="next"
             light
-            :to="nextPartPath"
+            :to="nextPath"
           >
-            {{ nextPartLabel }}
-          </NextPrevButton>
-          <NextPrevButton
-            v-if="atLastSlide && nextSection"
-            direction="next"
-            light
-            :to="nextSection"
-          >
-            next section
+            {{ nextLabel }}
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -68,15 +52,19 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-const props = defineProps<{
-  slideOrder: string[];
-  prevSection?: string;
-  nextSection?: string;
-  prevPartPath?: string;
-  nextPartPath?: string;
-  prevPartLabel?: string;
-  nextPartLabel?: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    slideOrder: string[];
+    prevPath?: string;
+    nextPath?: string;
+    prevLabel?: string;
+    nextLabel?: string;
+  }>(),
+  {
+    prevLabel: 'previous section',
+    nextLabel: 'next section',
+  },
+);
 
 const slideIndex = ref(0);
 

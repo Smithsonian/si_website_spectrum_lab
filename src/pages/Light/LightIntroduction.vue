@@ -1,6 +1,6 @@
 <template>
   <LightLayout>
-    <CardWithSlideshow :slide-order="slideOrder" next-section="color-filters">
+    <CardWithSlideshow :slide-order="slideOrder" next-path="color-filters">
       <InstructionHeader>Light in Different Professions</InstructionHeader>
       <InstructionRow row-type="Slideshow">
         Step through this slideshow for an overview of how different professions
