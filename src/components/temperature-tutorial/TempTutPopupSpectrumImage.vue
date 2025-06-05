@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
 
 defineProps<{ anchorElem: HTMLElement | null }>();
 
-const machine = useTempTutorialStateMachine();
+const machine = useControlsTutorialStateMachine();
 </script>

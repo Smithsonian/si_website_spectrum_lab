@@ -90,8 +90,8 @@ function useTutorialStateMachine<O extends readonly string[]>(
   return newMachine;
 }
 
-// Temperature tutorial state machine
-const TEMP_TUTORIAL_STATE_ORDER = [
+// Tool group controls tutorial state machine
+const CONTROLS_TUTORIAL_STATE_ORDER = [
   'hide',
   'spectrumImage',
   'spectrumGraph',
@@ -99,14 +99,17 @@ const TEMP_TUTORIAL_STATE_ORDER = [
   'nextSection',
 ] as const;
 
-const tempTutorialKey = Symbol('tempTutorial') as InjectionKey<
-  TutorialStateMachine<typeof TEMP_TUTORIAL_STATE_ORDER>
+const controlsTutorialKey = Symbol('controlsTutorial') as InjectionKey<
+  TutorialStateMachine<typeof CONTROLS_TUTORIAL_STATE_ORDER>
 >;
 
-export const useTempTutorialStateMachine = (): TutorialStateMachine<
-  typeof TEMP_TUTORIAL_STATE_ORDER
+export const useControlsTutorialStateMachine = (): TutorialStateMachine<
+  typeof CONTROLS_TUTORIAL_STATE_ORDER
 > => {
-  return useTutorialStateMachine(tempTutorialKey, TEMP_TUTORIAL_STATE_ORDER);
+  return useTutorialStateMachine(
+    controlsTutorialKey,
+    CONTROLS_TUTORIAL_STATE_ORDER,
+  );
 };
 
 // Spectra tutorial state machine

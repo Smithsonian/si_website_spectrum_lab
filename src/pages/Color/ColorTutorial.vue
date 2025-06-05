@@ -71,7 +71,7 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
 import { useTemplateRef } from 'vue';
 
 useSpecLabHead('Tutorial', 'Color');
@@ -82,6 +82,6 @@ const marsMetadata = useCustomMetadata('Solar System', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];
 
 // Initialize the tutorial state and start the first popup
-const { tutorialState, goToNext, replay } = useTempTutorialStateMachine();
+const { tutorialState, goToNext, replay } = useControlsTutorialStateMachine();
 goToNext();
 </script>
