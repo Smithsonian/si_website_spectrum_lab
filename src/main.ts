@@ -65,7 +65,7 @@ import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
-import ColorSeeing from './pages/Color/ColorSeeing.vue';
+import ColorSeeing from './pages/Color/LightBehaviorsRecap.vue';
 import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
 import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
 import SpectraWavelengthsMicrons from './pages/Spectra/SpectraWavelengthsMicrons.vue';

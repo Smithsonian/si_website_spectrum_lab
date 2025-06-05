@@ -4,7 +4,9 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/color/tutorial"> Tutorial </SectionNavItem>
+            <SectionNavItem to="/color/tutorial">
+              Spectrum Tutorial
+            </SectionNavItem>
             <SectionNavItem to="/color/seeing-color">
               Seeing color
             </SectionNavItem>
@@ -15,12 +17,14 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="How can spectra tell us what color things are?"
+            heading="How are spectra and color related?"
             :icon-path="colorIcon"
             icon-alt="Color module icon"
           >
-            Spectra interacts with matter to produce the color we see. How does
-            it do this?
+            The mix of photon colors that reach our eyes determines what colors
+            we see. We'll learn how to follow a source of light along its path
+            to our eyes and consider how its spectrum relates to the color we
+            see.
           </ChallengeIntro>
           <slot name="challenge-tab"></slot>
         </BCol>
