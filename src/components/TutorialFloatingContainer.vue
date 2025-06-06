@@ -25,12 +25,15 @@
 </template>
 
 <script setup lang="ts">
+import { useCursorMicrons } from '@/utils/chartUtils';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
 import {
   arrow,
   autoUpdate,
   offset,
   shift,
   useFloating,
+  type UseFloatingOptions,
 } from '@floating-ui/vue';
 import {
   computed,
@@ -57,19 +60,37 @@ const anchorRef = computed(() => props.anchorElem);
 // This moves the box so the arrow is a fixed distance from the left edge, as in the designs
 const crossOffset = props.width / 2 - 100;
 
-const { floatingStyles, middlewareData, isPositioned } = useFloating(
+const options: UseFloatingOptions = {
+  placement: 'bottom',
+  middleware: [
+    offset({ crossAxis: crossOffset, mainAxis: props.extraOffset }),
+    shift({ padding: 10 }),
+    arrow({ element: arrowRef }),
+  ],
+};
+
+// Special handling for the measuring tool tutorial, which needs to update position
+// fast enough to need a watcher, rather than autoUpdate
+const { tutorialState } = useControlsTutorialStateMachine();
+if (tutorialState.value !== 'measuringTool') {
+  options.whileElementsMounted = autoUpdate;
+}
+
+const { floatingStyles, middlewareData, isPositioned, update } = useFloating(
   anchorRef,
   floatingRef,
-  {
-    placement: 'bottom',
-    middleware: [
-      offset({ crossAxis: crossOffset, mainAxis: props.extraOffset }),
-      shift({ padding: 10 }),
-      arrow({ element: arrowRef }),
-    ],
-    whileElementsMounted: autoUpdate,
-  },
+  options,
 );
+
+// The watcher for the measuring tool tutorial
+const { cursorMicrons } = useCursorMicrons();
+if (tutorialState.value === 'measuringTool') {
+  watch(cursorMicrons, () => {
+    if (cursorMicrons.value) {
+      update();
+    }
+  });
+}
 
 const arrowStyles = computed(() => {
   let left = '';

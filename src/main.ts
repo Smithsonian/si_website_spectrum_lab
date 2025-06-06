@@ -51,6 +51,7 @@ import AttributionsPage from './pages/AttributionsPage.vue';
 import LightMixing from './pages/Light/LightMixing.vue';
 import IconTest from './pages/IconTest.vue';
 import LightBehaviors from './pages/Light/LightBehaviors.vue';
+import LightFilterRecap from './pages/Light/LightFilterRecap.vue';
 import LightIntroduction from './pages/Light/LightIntroduction.vue';
 import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
@@ -96,9 +97,9 @@ const routes: RouteRecordRaw[] = [
   { path: '/', component: LandingPage },
   {
     path: '/light/',
-    redirect: '/light/introduction',
+    redirect: '/light/professions',
     children: [
-      { path: 'introduction', component: LightIntroduction },
+      { path: 'professions', component: LightIntroduction },
       {
         path: 'color-filters',
         redirect: '/light/color-filters/predictions',
@@ -109,6 +110,14 @@ const routes: RouteRecordRaw[] = [
       },
       { path: 'photons', component: LightPhotons },
       { path: 'mixing', component: LightMixing },
+      {
+        path: 'behaviors',
+        redirect: '/light/behaviors/slideshow',
+        children: [
+          { path: 'slideshow', component: LightBehaviors },
+          { path: 'filter-recap', component: LightFilterRecap },
+        ],
+      },
       { path: 'behaviors', component: LightBehaviors },
     ],
   },

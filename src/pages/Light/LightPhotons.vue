@@ -2,7 +2,7 @@
   <LightLayout>
     <ChallengeCard>
       <template #top>
-        <InstructionHeader>Photons and Color Simulation</InstructionHeader>
+        <InstructionHeader>Photons and Color</InstructionHeader>
         <InstructionRow row-type="Simulation">
           Click the “Single Bulb” to launch the Physics Education Technology
           (PhET) simulation.
@@ -14,7 +14,7 @@
               <em>Photons and Color</em> section.
             </InstructionStep>
             <InstructionStep>
-              Answer the questions in <em>Part 2</em>.
+              Answer the reflection questions in <em>Part 2</em>.
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -25,7 +25,7 @@
       <template #bottom>
         <LeftRightGroup>
           <template #left>
-            <NextPrevButton direction="prev" light to="predictions">
+            <NextPrevButton direction="prev" light to="color-filters">
               previous section
             </NextPrevButton>
           </template>

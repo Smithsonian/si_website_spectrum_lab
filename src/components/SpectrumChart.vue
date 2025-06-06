@@ -1,6 +1,6 @@
 <template>
   <div class="spectrum-canvas">
-    <div class="d-flex">
+    <div class="d-flex position-relative">
       <div class="left-axis-label">
         More Light
         <span class="mt-1">
@@ -10,7 +10,7 @@
       <SpectrumCursorOverlay>
         <SpectrumRainbow />
         <div class="d-flex">
-          <LeftAxis />
+          <LeftAxis ref="yAxis" />
           <!-- Wrap these to enable overlay -->
           <div class="position-relative">
             <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
@@ -20,8 +20,12 @@
           </div>
         </div>
         <BottomAxis />
-        <div class="text-center">Wavelength ({{ wavelengthUnit }})</div>
+        <div ref="xAxisLabel" class="text-center">
+          Wavelength ({{ wavelengthUnit }})
+        </div>
       </SpectrumCursorOverlay>
+      <ControlsTutPopupXAxis :anchor-elem="xAxisLabel" />
+      <ControlsTutPopupYAxis :anchor-elem="yAxis" />
     </div>
   </div>
 </template>
@@ -33,7 +37,10 @@ import {
   type WavelengthUnit,
   wavelengthUnitKey,
 } from '@/injectionKeys';
-import { inject, ref } from 'vue';
+import { inject, ref, useTemplateRef } from 'vue';
+
+const xAxisLabel = useTemplateRef('xAxisLabel');
+const yAxis = useTemplateRef('yAxis');
 
 const spectrumDataSource = inject(
   spectrumDataSourceKey,

@@ -29,10 +29,10 @@
 </template>
 
 <script setup lang="ts">
-import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
 import type { ComponentPublicInstance } from 'vue';
 
 defineProps<{ anchorElem: HTMLElement | ComponentPublicInstance | null }>();
 
-const machine = useTempTutorialStateMachine();
+const machine = useControlsTutorialStateMachine();
 </script>

@@ -1,7 +1,14 @@
 <template>
   <LightLayout>
-    <CardWithSlideshow :slide-order="slideOrder" prev-section="mixing">
-      <InstructionHeader>Behaviors of Light</InstructionHeader>
+    <CardWithSlideshow
+      :slide-order="slideOrder"
+      prev-path="../mixing"
+      next-path="filter-recap"
+      next-label="part 2"
+    >
+      <InstructionHeader
+        >Behaviors of Light Part 1: Slideshow</InstructionHeader
+      >
       <InstructionRow row-type="Slideshow">
         Learn about the four key behaviors of light: emission, absorption,
         transmission, and reflection.
@@ -9,11 +16,8 @@
       <InstructionRow row-type="Notebook">
         <template #steps>
           <InstructionStep>
-            In <em>Part 1</em> of the <em>Behaviors of Light</em> section, label
-            the diagram with the key behaviors of light.
-          </InstructionStep>
-          <InstructionStep>
-            Answer the questions in <em>Part 2</em>.
+            For the figure in your notebook, circle or highlight the letters of
+            the objects that are associated with the light phenomena listed.
           </InstructionStep>
         </template>
       </InstructionRow>

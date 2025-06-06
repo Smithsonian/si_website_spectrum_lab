@@ -27,7 +27,12 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup
+        :disabled="!controlsEnabled"
+        v-model:zoom="zoom"
+        v-model:plot-type="plotType"
+        v-model:units="units"
+      >
         <template #top-tool>
           <ToolCard
             :custom-metadata="marsMetadataList"
@@ -38,7 +43,7 @@
               class="position-absolute"
               style="bottom: 25px; left: 200px; width: 0; height: 0"
             ></div>
-            <TempTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
+            <ControlsTutPopupSpectrumGraph :anchor-elem="graphTutAnchor" />
           </ToolCard>
         </template>
       </ToolControlGroup>
@@ -48,7 +53,7 @@
             v-if="tutorialState === 'nextSection'"
             direction="prev"
             light
-            @click="replay"
+            @click="replayResetControls"
           >
             replay tutorial
           </NextPrevButton>
@@ -69,10 +74,12 @@
 </template>
 
 <script setup lang="ts">
+import type { PlotType } from '@/constants';
+import type { WavelengthUnit } from '@/injectionKeys';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import { useTempTutorialStateMachine } from '@/utils/tutorialUtils';
-import { useTemplateRef } from 'vue';
+import { useControlsTutorialStateMachine } from '@/utils/tutorialUtils';
+import { computed, ref, useTemplateRef } from 'vue';
 
 useSpecLabHead('Tutorial', 'Color');
 
@@ -82,6 +89,27 @@ const marsMetadata = useCustomMetadata('Solar System', 'Mars_Reflection', {});
 const marsMetadataList = marsMetadata ? [marsMetadata] : [];
 
 // Initialize the tutorial state and start the first popup
-const { tutorialState, goToNext, replay } = useTempTutorialStateMachine();
+const { tutorialState, goToNext, replay } = useControlsTutorialStateMachine();
 goToNext();
+
+const controlsEnabled = computed(() => {
+  const enabledStates: (typeof tutorialState.value)[] = [
+    'wavelengthUnits',
+    'plotType',
+    'slider',
+    'nextSection',
+  ];
+  return enabledStates.includes(tutorialState.value);
+});
+
+const zoom = ref(100);
+const plotType = ref<PlotType>('line');
+const units = ref<WavelengthUnit>('Microns');
+
+const replayResetControls = () => {
+  zoom.value = 100;
+  plotType.value = 'line';
+  units.value = 'Microns';
+  replay();
+};
 </script>

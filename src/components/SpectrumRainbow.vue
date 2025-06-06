@@ -33,7 +33,7 @@
           style="bottom: 10px; left: 300px; width: 0; height: 0"
         ></div>
       </div>
-      <TempTutPopupSpectrumImage :anchor-elem="tempImageTutAnchor" />
+      <ControlsTutPopupSpectrumImage :anchor-elem="tempImageTutAnchor" />
       <SpecTutPopupImage :anchor-elem="spectraImageTutAnchor" />
       <SpecTutPopupRainbow :anchor-elem="spectraImageTutAnchor" />
     </div>

@@ -63,5 +63,5 @@ import { useAllMetadata } from '@/utils/metadataUtils';
 useSpecLabHead('Light Your Tank part 2', 'Fishtank');
 
 const allMetadata = useAllMetadata();
-const fishtankMetadata = allMetadata['Fish Tank'];
+const fishtankMetadata = allMetadata['Fish Tank Lights'];
 </script>

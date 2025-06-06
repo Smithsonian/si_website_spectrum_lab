@@ -39,7 +39,7 @@
         <template #middle>
           <img
             width="100%"
-            src="/src/assets/spectrum_data/Fishtank_Fish/angelfish.jpg"
+            src="/src/assets/spectrum_data/Fishtank_Inhabitants/angelfish.jpg"
           />
         </template>
       </ChallengeCard>
@@ -77,20 +77,32 @@ import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Reflection Spectra & Colors', 'Fishtank');
 
-const spectrumA = useCustomMetadata('Fish', 'angelfish_dkbluecurve', {
-  title: 'Mystery Spectrum A',
-  imageUrl: mystery,
-});
+const spectrumA = useCustomMetadata(
+  'Fish Tank Inhabitants',
+  'angelfish_dkbluecurve',
+  {
+    title: 'Mystery Spectrum A',
+    imageUrl: mystery,
+  },
+);
 
-const spectrumB = useCustomMetadata('Fish', 'angelfish_greycurve', {
-  title: 'Mystery Spectrum B',
-  imageUrl: mystery,
-});
+const spectrumB = useCustomMetadata(
+  'Fish Tank Inhabitants',
+  'angelfish_greycurve',
+  {
+    title: 'Mystery Spectrum B',
+    imageUrl: mystery,
+  },
+);
 
-const spectrumC = useCustomMetadata('Fish', 'angelfish_yellowcurve', {
-  title: 'Mystery Spectrum C',
-  imageUrl: mystery,
-});
+const spectrumC = useCustomMetadata(
+  'Fish Tank Inhabitants',
+  'angelfish_yellowcurve',
+  {
+    title: 'Mystery Spectrum C',
+    imageUrl: mystery,
+  },
+);
 
 const metadataList = [spectrumA, spectrumB, spectrumC].filter((sm) => !!sm);
 </script>

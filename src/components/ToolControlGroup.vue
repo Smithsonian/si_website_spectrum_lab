@@ -15,21 +15,22 @@
           />
         </BFormGroup>
         <WavelengthTutPopoverUnits :anchor-elem="unitDropdown" />
+        <ControlsTutPopupWavelengthUnits :anchor-elem="unitDropdown" />
       </div>
     </BCol>
     <BCol cols="3">
-      <BFormGroup
-        v-if="controlNames.includes('plotType')"
-        label="Plot type"
-        label-for="plot-type"
-      >
-        <BFormSelect
-          id="plot-type"
-          v-model="plotType"
-          :disabled="disabled"
-          :options="plotOptions"
-        />
-      </BFormGroup>
+      <div v-if="controlNames.includes('plotType')" class="position-relative">
+        <BFormGroup label="Plot type" label-for="plot-type">
+          <BFormSelect
+            ref="plotTypeDropdown"
+            id="plot-type"
+            v-model="plotType"
+            :disabled="disabled"
+            :options="plotOptions"
+          />
+        </BFormGroup>
+        <ControlsTutPopupPlotType :anchor-elem="plotTypeDropdown" />
+      </div>
     </BCol>
     <BCol v-if="controlNames.includes('normalize')" cols="2">
       <BFormGroup label="Normalize?" label-for="normalize">
@@ -55,7 +56,7 @@
             class="zoom-slider"
           />
         </BFormGroup>
-        <TempTutPopupSlider :anchor-elem="zoomElem" />
+        <ControlsTutPopupSlider :anchor-elem="zoomElem" />
       </div>
     </BCol>
   </BRow>
@@ -98,6 +99,8 @@ withDefaults(
 
 const zoomElem = useTemplateRef<ComponentPublicInstance>('zoomElem');
 const unitDropdown = useTemplateRef<ComponentPublicInstance>('unitDropdown');
+const plotTypeDropdown =
+  useTemplateRef<ComponentPublicInstance>('plotTypeDropdown');
 
 const zoomPercent = defineModel<number>('zoom', { default: 100 });
 const zoom = computed(() => zoomPercent.value / 100);
@@ -119,7 +122,9 @@ const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
 ];
 provide(normalizeKey, normalize);
 
-const wavelengthUnit = ref<WavelengthUnit>('Microns');
+const wavelengthUnit = defineModel<WavelengthUnit>('units', {
+  default: 'Microns',
+});
 const wavelengthUnitOptions: { text: string; value: WavelengthUnit }[] = [
   { text: 'Microns', value: 'Microns' },
   { text: 'Nanometers', value: 'Nanometers' },

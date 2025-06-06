@@ -2,20 +2,20 @@
   <LightLayout>
     <ChallengeCard>
       <template #top>
-        <InstructionHeader>Color Filters Part 1: Predictions</InstructionHeader>
+        <InstructionHeader>Behaviors of Light Part 2: Recap</InstructionHeader>
         <InstructionRow row-type="Investigate">
-          <span class="challenge-emphasis"> Without using any gels</span>,
-          examine the image below and consider:
-          <template #steps>
-            <InstructionStep>
-              What do you expect this image to look like when viewed through the
-              RED gel?
-            </InstructionStep>
-          </template>
+          Let's return to these three circles. Use the behaviors of light you
+          learned (emission, reflection, transmission, and absorption) to
+          describe what is happening when you look at these circles through a
+          red gel.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Write your predictions in the chart, noting the predicted color for
-          each section of the three circles.
+          <template #steps>
+            <InstructionStep>
+              Discuss your ideas with your partner and write down your response
+              in your notebook.
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </template>
       <template #middle>
@@ -31,17 +31,8 @@
       <template #bottom>
         <LeftRightGroup>
           <template #left>
-            <NextPrevButton direction="prev" light to="../professions">
-              previous section
-            </NextPrevButton>
-          </template>
-          <template #right>
-            <NextPrevButton
-              direction="next"
-              light
-              to="/light/color-filters/investigation"
-            >
-              part 2
+            <NextPrevButton direction="prev" light to="slideshow">
+              part 1
             </NextPrevButton>
           </template>
         </LeftRightGroup>
@@ -53,5 +44,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Color Filters part 1', 'Light');
+useSpecLabHead('Color Filters Recap', 'Light');
 </script>
