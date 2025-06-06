@@ -849,6 +849,24 @@
     "realOrCalculated": "Captured from Source"
   },
   {
+    "category": "Tank Inhabitants",
+    "filename": "Chlorophyll_a",
+    "title": "Chlorophyll A",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Tank Inhabitants",
+    "filename": "Chlorophyll_b",
+    "title": "Chlorophyll B",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Tank Inhabitants",
+    "filename": "phycoerythrin_reflection",
+    "title": "Phycoerythrin",
+    "spectrumType": "Reflection"
+  },
+  {
     "category": "Painting Regions",
     "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_1",
     "title": "Chokha Painting, Region B1",
