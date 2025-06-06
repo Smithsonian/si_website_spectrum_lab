@@ -632,236 +632,236 @@
     "spectrumType": "Emission"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "BlueHigh",
     "title": "Blue Light (High)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/BlueHigh.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "BlueMedium",
     "title": "Blue Light (Medium)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/BlueMedium.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "BlueLow",
     "title": "Blue Light (Low)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/BlueLow.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "GreenHigh",
     "title": "Green Light (High)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/GreenHigh.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "GreenMedium",
     "title": "Green Light (Medium)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/GreenMedium.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "GreenLow",
     "title": "Green Light (Low)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/GreenLow.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "RedHigh",
     "title": "Red Light (High)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/RedHigh.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "RedMedium",
     "title": "Red Light (Medium)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/RedMedium.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "RedLow",
     "title": "Red Light (Low)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/RedLow.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "Orange_RedMediumGreenLow",
     "title": "Orange Light (Medium Red + Low Green)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/Orange_RedMediumGreenLow.jpg"
   },
   {
-    "category": "Fish Tank",
+    "category": "Fish Tank Lights",
     "filename": "Teal_GreenHigh_BlueMedium",
     "title": "Teal Light (High Green + Medium Blue)",
     "spectrumType": "Emission",
     "imagePath": "Fishtank_Lights/Teal_GreenHigh_BlueMedium.jpg"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "angelfish_dkbluecurve",
     "title": "Angelfish Dark Blue",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "angelfish_greycurve",
     "title": "Angelfish Grey",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "angelfish_ltbluecurve",
     "title": "Angelfish Light Blue",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "angelfish_orangecurve",
     "title": "Angelfish Orange",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "angelfish_yellowcurve",
     "title": "Angelfish Yellow",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "anthias_lower_orange",
     "title": "Anthias Orange",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "anthias_upper_yellow",
     "title": "Anthias Yellow",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "bannerfish_blackcurve",
     "title": "Bannerfish Black",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "bannerfish_greycurve",
     "title": "Bannerfish Grey",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "bannerfish_yellowcurve",
     "title": "Bannerfish Yellow",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "parrotfish_bluecurve",
     "title": "Parrotfish Blue",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "parrotfish_greencurve",
     "title": "Parrotfish Green",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "parrotfish_purplecurve",
     "title": "Parrotfish Purple",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_blackcurve",
     "title": "Tuskfish Black",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_dkbluecurve",
     "title": "Tuskfish Dark Blue",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_greycurve",
     "title": "Tuskfish Grey",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_orangecurve",
     "title": "Tuskfish Orange",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_purplecurve",
     "title": "Tuskfish Purple",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_redcurve",
     "title": "Tuskfish Red",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "tuskfish_yellowcurve",
     "title": "Tuskfish Yellow",
     "spectrumType": "Reflection",
     "realOrCalculated": "Captured from Source"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "Chlorophyll_a",
     "title": "Chlorophyll A",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "Chlorophyll_b",
     "title": "Chlorophyll B",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Tank Inhabitants",
+    "category": "Fish Tank Inhabitants",
     "filename": "phycoerythrin_reflection",
     "title": "Phycoerythrin",
     "spectrumType": "Reflection"
