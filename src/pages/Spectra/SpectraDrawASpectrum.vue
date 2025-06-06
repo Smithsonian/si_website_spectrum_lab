@@ -2,22 +2,23 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Draw a spectrum</InstructionHeader>
+        <InstructionHeader
+          >Draw a Spectrum Part 2: Draw and Reflect</InstructionHeader
+        >
         <InstructionRow row-type="Tool">
-          Follow the instructions in <em>Part A</em> of the
-          <em>Draw a spectrum</em> section.
+          Draw a spectrum that matches the graph shown in your Spectrum
+          Notebook.
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
           <template #steps>
-            <InstructionStep>
-              Copy that graph into the Spectrum Tool.
-            </InstructionStep>
             <InstructionStep>
               Optional: Paste a screenshot of your drawing into your Spectrum
               Notebook.
             </InstructionStep>
+            <InstructionStep>
+              Answer the questions in your Notebook about the spectrum you drew.
+            </InstructionStep>
           </template>
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          Answer the questions in <em>Part B</em>.
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -25,7 +26,7 @@
       <ToolCard draw-only class="mb-5" />
       <LeftRightGroup>
         <template #right>
-          <NextPrevButton direction="next" to="white-line" light>
+          <NextPrevButton direction="next" to="../white-line" light>
             next section
           </NextPrevButton>
         </template>

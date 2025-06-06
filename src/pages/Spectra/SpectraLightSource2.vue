@@ -2,20 +2,18 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Light source #2</InstructionHeader>
+        <InstructionHeader
+          >Investigate Light Sources: Source 2</InstructionHeader
+        >
+        <InstructionRow row-type="Investigate">
+          Use your spectroscope to view the spectrum of the second light source
+          you chose.
+        </InstructionRow>
         <InstructionRow row-type="Tool">
-          Use your spectroscope to view the spectrum of the
-          <strong>second</strong> light source you chose.
-
           <template #steps>
             <InstructionStep>
               In the top tool, <strong>sketch a graph</strong> that represents
-              this spectrum.
-            </InstructionStep>
-            <InstructionStep>
-              Optional: Paste a screenshot of your drawing into your Spectrum
-              Notebook in <em>Part A</em> of the
-              <em>Light source #2</em> section.
+              the spectrum you see.
             </InstructionStep>
             <InstructionStep>
               In the bottom panel, use the drop-down menu to select different
@@ -25,7 +23,15 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Answer the questions in <em>Part B</em>.
+          <template #steps>
+            <InstructionStep>
+              Optional: Paste a screenshot of your drawing into your Spectrum
+              Notebook.
+            </InstructionStep>
+            <InstructionStep>
+              Answer the questions in your Notebook.
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -37,7 +43,7 @@
       <LeftRightGroup>
         <template #left>
           <NextPrevButton direction="prev" to="source-1" light>
-            light source 1
+            part 2
           </NextPrevButton>
         </template>
         <template #right>

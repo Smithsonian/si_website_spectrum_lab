@@ -4,27 +4,29 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <SectionNavItem to="/spectra/tutorial">Tutorial</SectionNavItem>
-            <SectionNavItem to="/spectra/start-drawing">
-              Start drawing
-            </SectionNavItem>
-            <SectionNavItem to="/spectra/draw-a-spectrum">
-              Draw a spectrum
+            <SectionNavItem to="/spectra/tutorial"
+              >Guide to the Spectrum Tool</SectionNavItem
+            >
+            <SectionNavItem to="/spectra/draw-spectra">
+              Draw a Spectrum
             </SectionNavItem>
             <SectionNavItem to="/spectra/white-line">
-              Spectroscope: White line
+              Observe White Light Source
+            </SectionNavItem>
+            <SectionNavItem to="/spectra/understand-spectroscope">
+              Understand Your Spectroscope
             </SectionNavItem>
             <SectionNavItem to="/spectra/light-sources">
-              Spectroscope: Light sources
+              Investigate Light Sources
             </SectionNavItem>
             <SectionNavItem to="/spectra/wavelengths-and-energy">
-              Wavelengths and energy
+              Measure Wavelengths and Energy
             </SectionNavItem>
           </SectionNav>
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="Get to know the Spectrum Tool"
+            heading="Making Sense of Spectra"
             :icon-path="spectraIcon"
             icon-alt="Spectra module icon"
           >
