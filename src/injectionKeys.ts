@@ -36,7 +36,7 @@ export const normalizeKey = Symbol('normalize') as InjectionKey<
 export type WavelengthUnit =
   | 'Microns'
   | 'Nanometers'
-  | 'Angstrom'
+  | 'Ångstroms'
   | 'Electron volts';
 export const wavelengthUnitKey = Symbol('wavelengthUnit') as InjectionKey<
   Ref<WavelengthUnit>
