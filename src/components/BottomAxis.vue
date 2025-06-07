@@ -45,7 +45,7 @@ const labelFromWavelength = (wavelengthMicrons: number): string => {
       return numberFormat.format(wavelengthMicrons);
     case 'Nanometers':
       return numberFormat.format(wavelengthMicrons * 1000);
-    case 'Angstrom':
+    case 'Ångstroms':
       return numberFormat.format(wavelengthMicrons * 10000);
     case 'Electron volts':
       return numberFormat.format(

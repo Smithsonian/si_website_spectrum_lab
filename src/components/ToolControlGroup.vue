@@ -128,7 +128,7 @@ const wavelengthUnit = defineModel<WavelengthUnit>('units', {
 const wavelengthUnitOptions: { text: string; value: WavelengthUnit }[] = [
   { text: 'Microns', value: 'Microns' },
   { text: 'Nanometers', value: 'Nanometers' },
-  { text: 'Angstrom', value: 'Angstrom' },
+  { text: 'Ångstroms', value: 'Ångstroms' },
   { text: 'Electron volts', value: 'Electron volts' },
 ];
 provide(wavelengthUnitKey, wavelengthUnit);
