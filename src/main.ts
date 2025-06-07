@@ -69,8 +69,8 @@ import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.v
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
 import ColorSeeing from './pages/Color/LightBehaviorsRecap.vue';
-import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
-import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
+import ColorPredictions from './pages/Color/ColorPredictions.vue';
+import LightBehaviorsPredictions from './pages/Color/LightBehaviorForPredictions.vue';
 import SpectraWavelengthsEnergy from './pages/Spectra/SpectraWavelengthsEnergy.vue';
 import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
@@ -152,16 +152,9 @@ const routes: RouteRecordRaw[] = [
     redirect: '/color/tutorial',
     children: [
       { path: 'tutorial', component: ColorTutorial },
-
       { path: 'seeing-color', component: ColorSeeing },
-      {
-        path: 'predictions',
-        redirect: '/color/predictions/part-1',
-        children: [
-          { path: 'part-1', component: ColorPredictions1 },
-          { path: 'part-2', component: ColorPredictions2 },
-        ],
-      },
+      { path: 'predictions', component: ColorPredictions },
+      { path: 'light-behaviors', component: LightBehaviorsPredictions },
     ],
   },
   {

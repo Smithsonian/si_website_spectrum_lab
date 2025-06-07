@@ -11,7 +11,10 @@
               How We See
             </SectionNavItem>
             <SectionNavItem to="/color/predictions">
-              Predictions
+              Color Predictions from Spectra
+            </SectionNavItem>
+            <SectionNavItem to="/color/light-behaviors">
+              Light Behaviors
             </SectionNavItem>
           </SectionNav>
         </BCol>
