@@ -28,7 +28,7 @@ const props = defineProps<{ rowType: InstructionRowType }>();
 const title = computed(() => {
   switch (props.rowType) {
     case 'Intro':
-      return 'Introduction.';
+      return '';
     case 'Tutorial':
       return 'Spectrum Tool Guide.';
     case 'Notebook':
