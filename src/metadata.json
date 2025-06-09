@@ -551,85 +551,99 @@
     "category": "Thermal Spectra",
     "filename": "230K_blackbody",
     "title": "230 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/230K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "312K_blackbody",
     "title": "312 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/312K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "450K_blackbody",
     "title": "450 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/450K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "1200K_blackbody",
     "title": "1,200 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/1200K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "1500K_blackbody",
     "title": "1,500 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/1500K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "2500K_blackbody",
     "title": "2,500 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/2500K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "3000K_blackbody",
     "title": "3,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/3000K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "4000K_blackbody",
     "title": "4,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/4000K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "5800K_blackbody",
     "title": "5,800 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/5800K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "7000K_blackbody",
     "title": "7,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/7000K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "9000K_blackbody",
     "title": "9,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/9000K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "11400K_blackbody",
     "title": "11,400 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/11400K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "15000K_blackbody",
     "title": "15,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/15000K.png"
   },
   {
     "category": "Thermal Spectra",
     "filename": "30000K_blackbody",
     "title": "30,000 K Blackbody",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/30000K.png"
   },
   {
     "category": "Fish Tank Lights",
