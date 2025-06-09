@@ -4,6 +4,9 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
+            <SectionNavItem to="/spectra/build">
+              Build and Use a Spectroscope
+            </SectionNavItem>
             <SectionNavItem to="/spectra/tutorial"
               >Guide to the Spectrum Tool</SectionNavItem
             >

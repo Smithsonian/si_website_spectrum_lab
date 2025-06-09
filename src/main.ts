@@ -82,6 +82,7 @@ import FishTankLightYourTank1 from './pages/FishTank/FishTankLightYourTank1.vue'
 import FishTankLightYourTank2 from './pages/FishTank/FishTankLightYourTank2.vue';
 import FishTankInhabitantsUnderLights from './pages/FishTank/FishTankInhabitantsUnderLights.vue';
 import FishTankPutItTogether from './pages/FishTank/FishTankPutItTogether.vue';
+import SpectraBuildUseSpectroscope from './pages/Spectra/SpectraBuildUseSpectroscope.vue';
 
 library.add(
   faArrowUp,
@@ -122,8 +123,9 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/spectra/',
-    redirect: '/spectra/tutorial',
+    redirect: '/spectra/build',
     children: [
+      { path: 'build', component: SpectraBuildUseSpectroscope },
       { path: 'tutorial', component: SpectraTutorial },
       {
         path: 'draw-spectra',

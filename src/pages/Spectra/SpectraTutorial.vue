@@ -38,6 +38,9 @@
       </ToolControlGroup>
       <LeftRightGroup v-if="tutorialState === 'nextSection'">
         <template #left>
+          <NextPrevButton direction="prev" to="build" light>
+            previous section
+          </NextPrevButton>
           <NextPrevButton direction="prev" @click="replay" light>
             replay tutorial
           </NextPrevButton>
