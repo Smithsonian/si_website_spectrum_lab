@@ -71,37 +71,38 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Color Predictions', 'Color');
 
 const objectA = useCustomMetadata('Nature', 'Jellyfish_Emission', {
   hideCategory: true,
   title: 'Object A',
-  imageUrl: '',
+  imageUrl: mystery,
 });
 
 const objectB = useCustomMetadata('Nature', 'Aspen_in_Fall_Reflection', {
   hideCategory: true,
   title: 'Object B',
-  imageUrl: '',
+  imageUrl: mystery,
 });
 
 const objectC = useCustomMetadata('Stars', 'A_Star', {
   hideCategory: true,
   title: 'Object C',
-  imageUrl: '',
+  imageUrl: mystery,
 });
 
 const objectD = useCustomMetadata('Nature', 'Cactus_Reflection', {
   hideCategory: true,
   title: 'Object D',
-  imageUrl: '',
+  imageUrl: mystery,
 });
 
 const objectE = useCustomMetadata('Lamps', 'tvRemote', {
   hideCategory: true,
   title: 'Object E',
-  imageUrl: '',
+  imageUrl: mystery,
 });
 const metadataList = [objectA, objectB, objectC, objectD, objectE].filter(
   (sm) => !!sm,
