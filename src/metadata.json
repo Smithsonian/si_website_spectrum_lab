@@ -241,133 +241,155 @@
     "category": "Atoms and Molecules",
     "filename": "Hydrogen_Absorption",
     "title": "Hydrogen Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/H.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Hydrogen_Emission",
     "title": "Hydrogen Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/H.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Helium_Emission",
     "title": "Helium Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/He.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Neon_Emission",
     "title": "Neon Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Ne.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Sodium_Absorption",
     "title": "Sodium Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/Na.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Sodium_Low_Pressure_Emission",
     "title": "Sodium (low pressure) Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Na.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Potassium_Absorption",
     "title": "Potassium Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/K.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Calcium_Emission",
     "title": "Calcium Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Ca.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Iron_Emission",
     "title": "Iron Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Fe.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Mercury_Emission",
     "title": "Mercury Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Hg.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Ammonia_Absorption",
     "title": "Ammonia Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ammonia.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Carbon_Dioxide_Absorption_Near_to_Mid_IR",
     "title": "Carbon Dioxide Absorption (Near to Mid IR)",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Carbon_Dioxide_Absorption_Mid_to_Far_IR",
     "title": "Carbon Dioxide Absorption (Mid to Far IR)",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Dry_Ice_Reflection",
     "title": "Dry Ice Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Ice_Reflection",
     "title": "Ice (Water) Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/H2O.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Iron_Oxide_Rust_Reflection",
     "title": "Iron Oxide (Rust) Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/Fe.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Methane_Visible_Absorption",
     "title": "Methane Visible Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/methane.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Methane_Near_IR_Absorption",
     "title": "Methane Near IR Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/methane.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Oxygen_Molecules_Absorption",
     "title": "Oxygen (Molecular) Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/O.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Ozone_Absorption_in_UV",
     "title": "Ozone Absorption (UV)",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ozone.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Ozone_Absorption_in_IR",
     "title": "Ozone Absorption (IR)",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ozone.png"
   },
   {
     "category": "Atoms and Molecules",
     "filename": "Water_Vapor_Absorption",
     "title": "Water Vapor Absorption",
-    "spectrumType": "Absorption"
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/H2O.png"
   },
   {
     "category": "Solar System",
