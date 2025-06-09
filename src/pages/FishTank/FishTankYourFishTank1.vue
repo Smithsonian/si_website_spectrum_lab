@@ -28,7 +28,7 @@
             <NextPrevButton
               direction="prev"
               light
-              to="../reflection-spectra-colors"
+              to="../plant-reflection-spectra"
             >
               previous section
             </NextPrevButton>
