@@ -55,6 +55,7 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Atoms and Spectra', 'Composition');
 
@@ -67,7 +68,7 @@ const topMetadata = [hydrogenEmission].filter((sm) => !!sm);
 const hydrogenAbsorption = useCustomMetadata(
   'Atoms and Molecules',
   'Hydrogen_Absorption',
-  { title: 'Comparison Spectrum' },
+  { title: 'Comparison Spectrum', imageUrl: mystery },
 );
 const bottomMetadata = [hydrogenAbsorption].filter((sm) => !!sm);
 </script>
