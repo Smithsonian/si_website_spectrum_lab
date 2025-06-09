@@ -44,8 +44,6 @@
             previous section
           </NextPrevButton>
         </template>
-      </LeftRightGroup>
-      <LeftRightGroup>
         <template #right>
           <NextPrevButton direction="next" to="your-fishtank" light>
             next section
