@@ -77,6 +77,7 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_910.webp';
 import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Mystery Paints', 'Museum');
 
@@ -85,7 +86,7 @@ const chokhaR1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
     title: 'Mystery Pigment 1',
-    imageUrl: '',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
@@ -94,7 +95,7 @@ const chokhaB2 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Blue_2',
   {
     title: 'Mystery Pigment 2',
-    imageUrl: '',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
@@ -103,7 +104,7 @@ const chokhaY1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
     title: 'Mystery Pigment 3',
-    imageUrl: '',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
@@ -112,7 +113,7 @@ const chokhaW1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
     title: 'Mystery Pigment 4',
-    imageUrl: '',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
