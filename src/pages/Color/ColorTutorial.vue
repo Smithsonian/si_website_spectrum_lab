@@ -2,7 +2,7 @@
   <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Spectrum Tutorial</InstructionHeader>
+        <InstructionHeader>More about the Spectrum Tool</InstructionHeader>
         <InstructionRow rowType="Tutorial">
           The tutorial (below) recaps key features of the online Spectrum Tool
           and introduces some new ones.

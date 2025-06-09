@@ -2,17 +2,29 @@
   <ColorLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <h2>Interpreting reflection spectra</h2>
-        <p>
-          Here are images of the actual cactus and pansy. How did you do with
-          your color predictions?
-        </p>
-        <p>
-          Now that you’ve explored reflection in plants, you’re ready to think
-          about reflection of sea plants (algae) and animals (coral and fish).
-          Complete the activities in your <strong>Spectrum Notebook</strong> and
-          come back here when the notebook instructs you to use the online tool.
-        </p>
+        <InstructionHeader>Light Behaviors</InstructionHeader>
+        <InstructionRow row-type="Intro">
+          We now reveal the sources of light for the spectra you predicted the
+          colors of in the previous section.
+        </InstructionRow>
+        <InstructionRow row-type="Tool">
+          <template #steps>
+            <InstructionStep>
+              Use the dropdown menu to view the spectrum and image for each
+              object.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          <template #steps>
+            <InstructionStep>
+              For each object, describe the path of the light from the source to
+              your eyes (or the spectroscope) that allows you to see the color
+              you predicted. Consider the behaviors of light: emission,
+              absorption, transmission, and reflection.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -26,8 +38,8 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton direction="prev" light to="part-1">
-            part 1
+          <NextPrevButton direction="prev" light to="predictions">
+            previous section
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -39,7 +51,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Predictions part 2', 'Color');
+useSpecLabHead('Light Behaviors', 'Color');
 
 const objectA = useCustomMetadata('Nature', 'Jellyfish_Emission', {
   hideCategory: true,

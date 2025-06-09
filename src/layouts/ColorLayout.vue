@@ -5,13 +5,16 @@
         <BCol cols="3">
           <SectionNav>
             <SectionNavItem to="/color/tutorial">
-              Spectrum Tutorial
+              More about the Spectrum Tool
             </SectionNavItem>
             <SectionNavItem to="/color/seeing-color">
-              Seeing color
+              How We See
             </SectionNavItem>
             <SectionNavItem to="/color/predictions">
-              Predictions
+              Color Predictions from Spectra
+            </SectionNavItem>
+            <SectionNavItem to="/color/light-behaviors">
+              Light Behaviors
             </SectionNavItem>
           </SectionNav>
         </BCol>
