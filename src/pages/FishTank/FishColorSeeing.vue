@@ -1,9 +1,13 @@
 <template>
-  <ColorLayout>
+  <FishTankLayout>
     <template #challenge-tab>
       <ChallengeCard>
         <h2>Why are trees green in summer?</h2>
         <img src="/src/assets/session4_tree.png" class="mw-100 mb-2" />
+        <span class="needs-updating"
+          >Use chlorophyll a spectrum & shaving brush plant image for this
+          activity.</span
+        >
         <p>
           In this tree, some photons are reflected while others are absorbed.
         </p>
@@ -25,20 +29,20 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="predictions">
+          <NextPrevButton direction="next" to="your-fishtank">
             next section
           </NextPrevButton>
         </template>
       </LeftRightGroup>
     </template>
-  </ColorLayout>
+  </FishTankLayout>
 </template>
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Seeing color', 'Color');
+useSpecLabHead('Seeing color', 'Fishtank');
 
 const allMetadata = useAllMetadata();
 const natureMetadata = allMetadata.Nature;

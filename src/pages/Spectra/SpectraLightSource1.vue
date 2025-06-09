@@ -2,20 +2,18 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Light source #1</InstructionHeader>
-        <InstructionRow row-type="Tool">
+        <InstructionHeader
+          >Investigate Light Sources: Source 1</InstructionHeader
+        >
+        <InstructionRow row-type="Investigate">
           Use your spectroscope to view the spectrum of the first light source
           you chose.
-
+        </InstructionRow>
+        <InstructionRow row-type="Tool">
           <template #steps>
             <InstructionStep>
               In the top tool, <strong>sketch a graph</strong> that represents
-              this spectrum.
-            </InstructionStep>
-            <InstructionStep>
-              Optional: Paste a screenshot of your drawing into your Spectrum
-              Notebook in <em>Part A</em> of the
-              <em>Light source #1</em> section.
+              the spectrum you see.
             </InstructionStep>
             <InstructionStep>
               In the bottom panel, use the drop-down menu to select different
@@ -25,7 +23,15 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Answer the questions in <em>Part B</em>.
+          <template #steps>
+            <InstructionStep>
+              Optional: Paste a screenshot of your drawing into your Spectrum
+              Notebook.
+            </InstructionStep>
+            <InstructionStep>
+              Answer the questions in your Notebook.
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -35,9 +41,14 @@
         <ToolCard :custom-metadata="lightSourceMetadata" class="mb-5" />
       </BottomToolContext>
       <LeftRightGroup>
+        <template #left>
+          <NextPrevButton direction="prev" to="prepare" light>
+            part 1
+          </NextPrevButton>
+        </template>
         <template #right>
           <NextPrevButton direction="next" to="source-2" light>
-            light source 2
+            part 3
           </NextPrevButton>
         </template>
       </LeftRightGroup>

@@ -2,7 +2,7 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Start Drawing</InstructionHeader>
+        <InstructionHeader>Draw a Spectrum Part 1: Explore</InstructionHeader>
         <InstructionRow row-type="Tool">
           To make sense of how this tool works, let’s start by drawing different
           types of curves in the graph space. After each step, notice how the
@@ -33,9 +33,14 @@
     <template #tool-col>
       <ToolCard draw-only class="mb-5" />
       <LeftRightGroup>
+        <template #left>
+          <NextPrevButton direction="prev" to="../tutorial" light>
+            previous section
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton direction="next" to="draw-a-spectrum" light>
-            next section
+          <NextPrevButton direction="next" to="copy" light>
+            part 2
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -46,5 +51,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Start Drawing', 'Spectra');
+useSpecLabHead('Draw Spectra', 'Spectra');
 </script>

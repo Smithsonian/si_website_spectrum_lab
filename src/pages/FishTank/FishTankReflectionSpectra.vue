@@ -3,7 +3,9 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader>Reflection Spectra and Colors</InstructionHeader>
+          <InstructionHeader
+            >Fish Reflection Spectra and Colors</InstructionHeader
+          >
           <InstructionRow row-type="Intro">
             This is a colorful Regal Angelfish. We see different colors in the
             fish’s patterns because they reflect different amounts of visible
@@ -59,7 +61,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" light to="your-fishtank">
+          <NextPrevButton direction="next" light to="plant-reflection-spectra">
             next section
           </NextPrevButton>
         </template>

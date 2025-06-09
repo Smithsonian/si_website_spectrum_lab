@@ -35,7 +35,7 @@ import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
 import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
-import SpectraStartDrawing from './pages/Spectra/SpectraStartDrawing.vue';
+import SpectraDrawExplore from './pages/Spectra/SpectraStartDrawing.vue';
 import FinalProjects from './pages/FinalProjects.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
@@ -55,6 +55,8 @@ import LightFilterRecap from './pages/Light/LightFilterRecap.vue';
 import LightIntroduction from './pages/Light/LightIntroduction.vue';
 import SpectraDrawASpectrum from './pages/Spectra/SpectraDrawASpectrum.vue';
 import SpectraWhiteLine from './pages/Spectra/SpectraWhiteLine.vue';
+import UnderstandSpectroscope from './pages/Spectra/SpectraUnderstandSpectroscope.vue';
+import PrepareLights from './pages/Spectra/SpectraPrepareForLights.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
@@ -69,13 +71,11 @@ import ColorTutorial from './pages/Color/ColorTutorial.vue';
 import ColorSeeing from './pages/Color/LightBehaviorsRecap.vue';
 import ColorPredictions1 from './pages/Color/ColorPredictions1.vue';
 import ColorPredictions2 from './pages/Color/ColorPredictions2.vue';
-import SpectraWavelengthsMicrons from './pages/Spectra/SpectraWavelengthsMicrons.vue';
-import SpectraWavelengthsNanometers from './pages/Spectra/SpectraWavelengthsNanometers.vue';
-import SpectraWavelengthsElectronVolts from './pages/Spectra/SpectraWavelengthsElectronVolts.vue';
-import SpectraWavelengthsBrightness from './pages/Spectra/SpectraWavelengthsBrightness.vue';
+import SpectraWavelengthsEnergy from './pages/Spectra/SpectraWavelengthsEnergy.vue';
 import ExoplanetsIntro from './pages/Exoplanets/ExoplanetsIntro.vue';
 import FishTankIntro from './pages/FishTank/FishTankIntro.vue';
 import FishTankReflectionSpectra from './pages/FishTank/FishTankReflectionSpectra.vue';
+import FishTankPlantSpectra from './pages/FishTank/FishColorSeeing.vue';
 import FishTankYourFishTank1 from './pages/FishTank/FishTankYourFishTank1.vue';
 import FishTankYourFishTank2 from './pages/FishTank/FishTankYourFishTank2.vue';
 import FishTankLightYourTank1 from './pages/FishTank/FishTankLightYourTank1.vue';
@@ -125,27 +125,26 @@ const routes: RouteRecordRaw[] = [
     redirect: '/spectra/tutorial',
     children: [
       { path: 'tutorial', component: SpectraTutorial },
-      { path: 'start-drawing', component: SpectraStartDrawing },
-      { path: 'draw-a-spectrum', component: SpectraDrawASpectrum },
+      {
+        path: 'draw-spectra',
+        redirect: '/spectra/draw-spectra/explore',
+        children: [
+          { path: 'explore', component: SpectraDrawExplore },
+          { path: 'copy', component: SpectraDrawASpectrum },
+        ],
+      },
       { path: 'white-line', component: SpectraWhiteLine },
+      { path: 'understand-spectroscope', component: UnderstandSpectroscope },
       {
         path: 'light-sources',
-        redirect: '/spectra/light-sources/source-1',
+        redirect: '/spectra/light-sources/prepare',
         children: [
+          { path: 'prepare', component: PrepareLights },
           { path: 'source-1', component: SpectraLightSource1 },
           { path: 'source-2', component: SpectraLightSource2 },
         ],
       },
-      {
-        path: 'wavelengths-and-energy',
-        redirect: '/spectra/wavelengths-and-energy/part-1',
-        children: [
-          { path: 'part-1', component: SpectraWavelengthsMicrons },
-          { path: 'part-2', component: SpectraWavelengthsNanometers },
-          { path: 'part-3', component: SpectraWavelengthsElectronVolts },
-          { path: 'part-4', component: SpectraWavelengthsBrightness },
-        ],
-      },
+      { path: 'wavelengths-and-energy', component: SpectraWavelengthsEnergy },
     ],
   },
   {
@@ -224,6 +223,10 @@ const routes: RouteRecordRaw[] = [
           {
             path: 'reflection-spectra-colors',
             component: FishTankReflectionSpectra,
+          },
+          {
+            path: 'plant-reflection-spectra',
+            component: FishTankPlantSpectra,
           },
           {
             path: 'your-fishtank',

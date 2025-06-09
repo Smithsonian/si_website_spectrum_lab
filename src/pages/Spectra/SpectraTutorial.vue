@@ -2,9 +2,15 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Tutorial</InstructionHeader>
+        <InstructionHeader>Guide to the Spectrum Tool</InstructionHeader>
+        <InstructionRow row-type="Intro">
+          Now that you have viewed some different sources with your
+          spectroscope, we introduce the online Spectrum Tool, which is designed
+          to connect what you see in a spectroscope with graphs of spectra that
+          scientists use to represent light sources.
+        </InstructionRow>
         <InstructionRow row-type="Tutorial">
-          Follow the tutorial (below) to learn how to use the spectrum tool.
+          Follow the tutorial (below) for an introduction to the Spectrum Tool.
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -37,7 +43,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" to="start-drawing" light>
+          <NextPrevButton direction="next" to="draw-spectra" light>
             next section
           </NextPrevButton>
         </template>

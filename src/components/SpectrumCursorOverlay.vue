@@ -138,7 +138,7 @@ const wavelengthUnit = inject(
 );
 
 const numberFormat = new Intl.NumberFormat(undefined, {
-  maximumSignificantDigits: 4,
+  maximumSignificantDigits: 3,
 });
 
 // https://physics.nist.gov/cgi-bin/cuu/Value?minvev|search_for=electron+volt
@@ -156,7 +156,7 @@ const labelValue = computed((): string | null => {
       return numberFormat.format(cursorMicrons.value);
     case 'Nanometers':
       return numberFormat.format(Math.floor(cursorMicrons.value * 1000));
-    case 'Angstrom':
+    case 'Ångstroms':
       return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
     case 'Electron volts':
       return numberFormat.format(
@@ -171,7 +171,7 @@ const labelUnit = computed((): string => {
   const labelsFromUnit: { [Key in WavelengthUnit]: string } = {
     Microns: 'µm',
     Nanometers: 'nm',
-    Angstrom: 'Å',
+    Ångstroms: 'Å',
     'Electron volts': 'eV',
   };
   return labelsFromUnit[wavelengthUnit.value];
@@ -190,7 +190,7 @@ const labelUnit = computed((): string => {
 }
 .cursor-label {
   color: black;
-  background-color: rgb(211 211 211 / 0.85);
+  background-color: rgb(211 211 211 / 0.92);
   font-size: 14px;
 }
 </style>
