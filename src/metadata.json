@@ -406,13 +406,15 @@
     "category": "Solar System",
     "filename": "Earth_Reflection",
     "title": "Earth Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/earth-1.webp"
   },
   {
     "category": "Solar System",
     "filename": "Earth_Emission",
     "title": "Earth Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/earth-1.webp"
   },
   {
     "category": "Solar System",
@@ -420,6 +422,7 @@
     "title": "Earth Transmission",
     "spectrumType": "Transmission",
     "realOrCalculated": "Captured from Source",
+    "imagePath": "Solar_System/earth-1.webp",
     "how": "A telescope-mounted spectrometer on Earth captured sunlight that passed (i.e. transmitted) through Earth\u2019s atmosphere and was reflected off the Moon\u2019s surface back to Earth.",
     "spectrumSource": "[Published paper](https://www.nature.com/articles/nature08050); [Free access version](https://arxiv.org/abs/0906.2958)",
     "spectrumCredit": "Pall\u00e9, E., Osorio, M. R. Z., Barrena, R., Monta\u00f1\u00e9s-Rodr\u00edguez, P., & Mart\u00edn, E. L. (2009). Earth\u2019s transmission spectrum from lunar eclipse observations. *Nature, 459*(7248), 814-816.",
@@ -429,67 +432,78 @@
     "category": "Solar System",
     "filename": "Venus_Reflection",
     "title": "Venus Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/venus.webp"
   },
   {
     "category": "Solar System",
     "filename": "Venus_Emission",
     "title": "Venus Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/venus.webp"
   },
   {
     "category": "Solar System",
     "filename": "Mars_Reflection",
     "title": "Mars Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/mars_PIA02653.webp"
   },
   {
     "category": "Solar System",
     "filename": "Mars_Emission",
     "title": "Mars Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/mars_PIA02653.webp"
   },
   {
     "category": "Solar System",
     "filename": "Jupiter_Reflection",
     "title": "Jupiter Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/jupiter.webp"
   },
   {
     "category": "Solar System",
     "filename": "Europa_Reflection",
     "title": "Europa Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/europa.webp"
   },
   {
     "category": "Solar System",
     "filename": "Saturn_Reflection",
     "title": "Saturn Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/saturn.webp"
   },
   {
     "category": "Solar System",
     "filename": "Saturn_Rings_Reflection",
     "title": "Saturn Rings Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/saturn_rings.webp"
   },
   {
     "category": "Solar System",
     "filename": "Titan_Reflection",
     "title": "Titan Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/titan.webp"
   },
   {
     "category": "Solar System",
     "filename": "Uranus_Reflection",
     "title": "Uranus Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/uranus.webp"
   },
   {
     "category": "Solar System",
     "filename": "Neptune_Reflection",
     "title": "Neptune Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/neptune.webp"
   },
   {
     "category": "Exoplanets",
