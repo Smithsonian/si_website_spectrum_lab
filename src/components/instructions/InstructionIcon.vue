@@ -21,13 +21,6 @@ import simulationIcon from '@/assets/SVG/Simulation.svg?source&set-current-color
 import slideshowIcon from '@/assets/SVG/Slideshow.svg?source&set-current-color';
 import type { InstructionRowType } from '@/constants';
 
-interface IconStyle {
-  height: number;
-  width: number;
-  top: number;
-  left: number;
-}
-
 const props = defineProps<{ rowType: InstructionRowType }>();
 const iconPath = computed(() => {
   switch (props.rowType) {
@@ -52,7 +45,14 @@ const iconPath = computed(() => {
   }
 });
 
-const iconStyle = computed((): IconStyle => {
+interface IconStyleNumbers {
+  height: number;
+  width: number;
+  top: number;
+  left: number;
+}
+
+const getIconStyleNumbers = (): IconStyleNumbers => {
   const defaultStyle = {
     height: 20,
     width: 24,
@@ -91,6 +91,16 @@ const iconStyle = computed((): IconStyle => {
     default:
       return defaultStyle;
   }
+};
+
+const iconStyle = computed(() => {
+  const numbers = getIconStyleNumbers();
+  return {
+    height: `${numbers.height}px`,
+    width: `${numbers.width}px`,
+    top: `${numbers.top}px`,
+    left: `${numbers.left}px`,
+  };
 });
 </script>
 
