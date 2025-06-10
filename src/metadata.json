@@ -364,7 +364,7 @@
     "filename": "Iron_Oxide_Rust_Reflection",
     "title": "Iron Oxide (Rust) Reflection",
     "spectrumType": "Reflection",
-    "imagePath": "Atoms_and_Molecules/Fe.png"
+    "imagePath": "Atoms_and_Molecules/rust.png"
   },
   {
     "category": "Atoms and Molecules",
@@ -385,7 +385,7 @@
     "filename": "Oxygen_Molecules_Absorption",
     "title": "Oxygen (Molecular) Absorption",
     "spectrumType": "Absorption",
-    "imagePath": "Atoms_and_Molecules/O.png"
+    "imagePath": "Atoms_and_Molecules/oxygen.png"
   },
   {
     "category": "Atoms and Molecules",
