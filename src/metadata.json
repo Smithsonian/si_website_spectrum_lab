@@ -88,8 +88,7 @@
     "category": "Lamps",
     "filename": "LED_525nm",
     "title": "LED 525 nm",
-    "spectrumType": "Emission",
-    "imagePath": "Lamps/LED_525nm.webp"
+    "spectrumType": "Emission"
   },
   {
     "category": "Lamps",
@@ -136,43 +135,50 @@
     "category": "Stars",
     "filename": "O_Star",
     "title": "O Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/O_Star.png"
   },
   {
     "category": "Stars",
     "filename": "B_Star",
     "title": "B Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/B_Star.png"
   },
   {
     "category": "Stars",
     "filename": "A_Star",
     "title": "A Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/A_Star.png"
   },
   {
     "category": "Stars",
     "filename": "F_Star",
     "title": "F Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/F_Star.png"
   },
   {
     "category": "Stars",
     "filename": "G_Star",
     "title": "G Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/G_Star.png"
   },
   {
     "category": "Stars",
     "filename": "K_Star",
     "title": "K Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/K_Star.png"
   },
   {
     "category": "Stars",
     "filename": "M_Star",
     "title": "M Star",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/M_Star.png"
   },
   {
     "category": "Stars",
