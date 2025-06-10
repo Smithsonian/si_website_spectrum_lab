@@ -11,7 +11,7 @@
           </InstructionRow>
         </template>
         <template #middle>
-          <VideoJSPlayer>
+          <VideoJSPlayer :other-options="{ poster: titleCard }">
             <source
               src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/spectrumlab_exoplanet_spectroscopy.mp4"
               type="video/mp4"
@@ -40,7 +40,8 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import captions from '@/assets/captions/exoplanet_spectroscopy.vtt';
+import captions from '@/assets/video_metadata/exoplanet_spectroscopy.vtt';
+import titleCard from '@/assets/video_metadata/exoplanet_spectroscopy_title_card.png';
 
 useSpecLabHead('Intro', 'Exoplanets');
 </script>

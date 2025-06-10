@@ -31,7 +31,7 @@
           </InstructionRow>
         </template>
         <template #middle>
-          <VideoJSPlayer>
+          <VideoJSPlayer :other-options="{ poster: titleCard }">
             <source
               src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science.mp4"
               type="video/mp4"
@@ -61,7 +61,8 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import captions from '@/assets/captions/conservation_science.vtt';
+import captions from '@/assets/video_metadata/conservation_science.vtt';
+import titleCard from '@/assets/video_metadata/conservation_science_title_card.png';
 
 useSpecLabHead('Intro', 'Museum');
 </script>
