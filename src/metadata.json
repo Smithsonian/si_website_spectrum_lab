@@ -5,7 +5,7 @@
     "title": "Incandescent Bulb",
     "spectrumType": "Emission",
     "realOrCalculated": "Captured from Source",
-    "imagePath": "Lamps/Incandescent_Bulb.jpg",
+    "imagePath": "Lamps/Incandescent_Bulb.webp",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
     "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2552)",
     "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
@@ -16,7 +16,7 @@
     "title": "Fluorescent Bulb",
     "spectrumType": "Emission",
     "realOrCalculated": "Captured from Source",
-    "imagePath": "Lamps/Fluorescent_Bulb.jpg",
+    "imagePath": "Lamps/Fluorescent_Bulb.webp",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
     "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2504)",
     "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
@@ -38,7 +38,7 @@
     "title": "Sodium Vapor Lamp (Low Pressure)",
     "spectrumType": "Emission",
     "realOrCalculated": "Captured from Source",
-    "imagePath": "Lamps/Sodium_Vapor_Lamp_Low_Pressure.jpg",
+    "imagePath": "Lamps/Sodium_Vapor_Lamp_Low_Pressure.webp",
     "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
     "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2769)",
     "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
@@ -53,67 +53,78 @@
     "category": "Lamps",
     "filename": "Warm_White_LED",
     "title": "LED White (Warm)",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/Warm_White_LED.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_400nm",
     "title": "LED 400 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_400nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_455nm",
     "title": "LED 455 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_455nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_470nm",
     "title": "LED 470 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_470nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_505nm",
     "title": "LED 505 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_505nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_525nm",
     "title": "LED 525 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_525nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_570nm",
     "title": "LED 570 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_570nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_590nm",
     "title": "LED 590 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_590nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_604nm",
     "title": "LED 604 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_604nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_626nm",
     "title": "LED 626 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_626nm.webp"
   },
   {
     "category": "Lamps",
     "filename": "LED_640nm",
     "title": "LED 640 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_640nm.webp"
   },
   {
     "category": "Lamps",
