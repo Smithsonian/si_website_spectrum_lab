@@ -63,5 +63,8 @@ import { useAllMetadata } from '@/utils/metadataUtils';
 useSpecLabHead('Light source 2', 'Spectra');
 
 const allMetadata = useAllMetadata();
-const lightSourceMetadata = allMetadata['Lamps'];
+// Exclude the IR lamp we have in here
+const lightSourceMetadata = allMetadata['Lamps'].filter(
+  (sm) => sm.filename !== 'tvRemote',
+);
 </script>
