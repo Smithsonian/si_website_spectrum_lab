@@ -6,9 +6,9 @@
       <BRow>
         <BCol cols="6">
           <p>
-            Apply what you know about light, color, and spectra to Design a Fish
-            Tank lighting system; Explore Exoplanet Atmospheres; or Analyze
-            Artworks as a Museum Conservator.
+            Apply what you know about light, color, and spectra to design a fish
+            tank lighting system; explore exoplanet atmospheres; or analyze
+            artworks as a museum conservator.
           </p>
         </BCol>
       </BRow>
@@ -20,7 +20,7 @@
         <BCol cols="12" md="4">
           <ModuleTile
             :icon-source="fishtankIcon"
-            title="Fishtank"
+            title="Fish Tank"
             to="fishtank"
           >
             Create and light a saltwater reef aquarium that is healthy and looks

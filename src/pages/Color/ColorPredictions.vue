@@ -22,14 +22,14 @@
               light colors mix. (<strong>Double-click on the RGB Bulbs</strong>
               box to launch the simulation.)
             </InstructionStep>
-            <InstructionStep>
-              <strong>NOTE:</strong> The simulation is not a perfect proxy for
-              what you would see in real life, because it does not include all
-              colors that exist in the visible spectrum. You can still
-              approximate the colors you would see by adjusting the percentages
-              for R, G, and B to roughly match the brightness of the light
-              (shown on the y-axis) for each band of color in the spectrum.
-            </InstructionStep>
+          </template>
+          <template #note>
+            The simulation is not a perfect proxy for what you would see in real
+            life, because it does not include all colors that exist in the
+            visible spectrum. You can still approximate the colors you would see
+            by adjusting the percentages for R, G, and B to roughly match the
+            brightness of the light (shown on the y-axis) for each band of color
+            in the spectrum.
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
