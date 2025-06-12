@@ -29,14 +29,8 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster: titleCard }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/conservation_science.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/multiple_wavelength_imaging_conservation_science.mp4"
               type="video/mp4"
-            />
-            <track
-              label="Captions"
-              kind="captions"
-              srclang="en"
-              :src="captions"
             />
           </VideoJSPlayer>
         </template>
@@ -57,8 +51,7 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import captions from '@/assets/video_metadata/conservation_science.vtt';
-import titleCard from '@/assets/video_metadata/conservation_science_title_card.png';
+import titleCard from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science.png';
 
 useSpecLabHead('Intro', 'Museum');
 </script>
