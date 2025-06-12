@@ -32,9 +32,14 @@
         </template>
         <template #bottom>
           <LeftRightGroup>
+            <template #left>
+              <NextPrevButton to="../intro" direction="prev" light>
+                previous section
+              </NextPrevButton>
+            </template>
             <template #right>
-              <NextPrevButton to="id-colors" direction="next">
-                Part 2
+              <NextPrevButton to="id-colors" direction="next" light>
+                part 2
               </NextPrevButton>
             </template>
           </LeftRightGroup>

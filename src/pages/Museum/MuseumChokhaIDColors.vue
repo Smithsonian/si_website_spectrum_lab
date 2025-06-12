@@ -57,13 +57,13 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton to="chokha" direction="prev" light>
-            Part 1
+          <NextPrevButton to="observe" direction="prev" light>
+            part 1
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="../two-blues" direction="next" light>
-            next
+          <NextPrevButton to="../chokha-pigments" direction="next" light>
+            next section
           </NextPrevButton>
         </template>
       </LeftRightGroup>

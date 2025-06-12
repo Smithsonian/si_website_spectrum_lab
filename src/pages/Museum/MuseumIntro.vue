@@ -43,7 +43,7 @@
         <template #bottom>
           <LeftRightGroup>
             <template #right>
-              <NextPrevButton direction="next" to="paint-colors" dark>
+              <NextPrevButton direction="next" to="chokha-painting" light>
                 next section
               </NextPrevButton>
             </template>
