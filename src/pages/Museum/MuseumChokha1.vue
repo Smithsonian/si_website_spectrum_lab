@@ -10,23 +10,21 @@
             This painting by the artist Chokha is displayed at the Smithsonian's
             National Museum of Asian Art.
             <p>
+              For a richer experience, follow this
+              <a
+                href="https://iiif.si.edu/mirador/?manifest=https://ids.si.edu/ids/manifest/FS-RLS2018.3.17_001crop"
+                >link</a
+              >, where you will find a high-resolution image of the painting.
+              (The image will open in a new tab. Return to this tab when you are
+              finished observing the painting.)
+            </p>
+            <p>
               Observe the scene depicted, the colors used, and the style of the
               painting.
             </p>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Answer these questions:
-            <template #steps>
-              <InstructionStep>
-                Describe what you see. What do you notice or find yourselve
-                wondering about the painting?
-              </InstructionStep>
-              <InstructionStep>
-                What details in the painting do you think could be helpful to
-                you in trying to pinpoint the region and time period this
-                painting comes from?
-              </InstructionStep>
-            </template>
+            Answer the questions in your Notebook about the painting.
           </InstructionRow>
         </template>
         <template #middle>

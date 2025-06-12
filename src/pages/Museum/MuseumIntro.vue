@@ -12,17 +12,13 @@
             about how to best care for and restore the artwork.
           </InstructionRow>
           <InstructionRow rowType="Video">
-            Watch this video that shows how imaging scientist Keats Webb uses
-            light, color, and spectra to better understand paintings at the
-            Smithsonian Institution.
+            Watch this video that shows how imaging scientist Keats Webb and
+            conservation scientist Matthew Clarke use light, color, and spectra
+            to better understand paintings at the Smithsonian Institution.
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Answer these questions after watching the video:
+            Answer this question after watching the video:
             <template #steps>
-              <InstructionStep>
-                Describe 2 techniques that allow conservation scientists to
-                determine what pigments were used in a painting.
-              </InstructionStep>
               <InstructionStep>
                 What can conservation scientists learn about a painting from
                 knowing what pigments were used in it?
