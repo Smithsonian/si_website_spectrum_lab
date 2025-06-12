@@ -3,7 +3,9 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader>Identify the Pigments</InstructionHeader>
+          <InstructionHeader
+            >Hokusai Pigments Part 1: Spectra</InstructionHeader
+          >
           <InstructionRow rowType="Tool">
             Compare the spectra from the two blue regions of interest with a
             sample of blue paint pigments and see if you can identify which
@@ -37,13 +39,13 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton to="two-blues" direction="prev" light>
-            previous
+          <NextPrevButton to="../hokusai-painting" direction="prev" light>
+            previous section
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="other-blues" direction="next" light>
-            next
+          <NextPrevButton to="data-table" direction="next" light>
+            part 2
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -61,7 +63,7 @@ import {
   imageUrlFromPath,
 } from '@/utils/metadataUtils';
 
-useSpecLabHead('Identify pigments', 'Museum');
+useSpecLabHead('Hokusai Pigments Part 1: Spectra', 'Museum');
 
 const hokusaiB1 = useCustomMetadata(
   'Painting Regions',
@@ -94,9 +96,9 @@ const allMetadata = useAllMetadata();
 const pigmentMetadata = allMetadata['Paint Pigments'];
 const bluesMetadata = pigmentMetadata.filter(
   (sm) =>
-    sm.title === 'Prussian Blue' ||
-    sm.title === 'Indigo' ||
-    sm.title === 'Azurite' ||
-    sm.title === 'Egyptian Blue',
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Azurite' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Egyptian_Blue' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Indigo' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue',
 );
 </script>

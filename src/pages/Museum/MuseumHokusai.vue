@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader>Part 1: Hokusai Painting</InstructionHeader>
+          <InstructionHeader>Hokusai Painting</InstructionHeader>
           <InstructionRow rowType="Art">
             This painting by the artist Hokusai is also displayed at the
             Smithsonian's National Museum of Asian Art.
@@ -17,9 +17,14 @@
         </template>
         <template #bottom>
           <LeftRightGroup>
+            <template #left>
+              <NextPrevButton direction="prev" to="chokha-pigments" light>
+                previous section
+              </NextPrevButton>
+            </template>
             <template #right>
-              <NextPrevButton direction="next" to="pigments" dark>
-                Part 2
+              <NextPrevButton direction="next" to="hokusai-pigments" light>
+                next section
               </NextPrevButton>
             </template>
           </LeftRightGroup>

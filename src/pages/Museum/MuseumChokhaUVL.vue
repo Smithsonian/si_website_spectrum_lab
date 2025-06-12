@@ -3,9 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader
-            >Whole-image Techniques Part 2: IR Imaging</InstructionHeader
-          >
+          <InstructionHeader>Chokha Pigments Part 3: UVL</InstructionHeader>
           <InstructionRow rowType="Investigate">
             <p>
               Now imagine you wanted to know the composition of other blue
@@ -47,31 +45,29 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup
-        :control-names="['units', 'plotType', 'normalize', 'zoom']"
-      >
+      <ToolControlGroup :control-names="['units', 'plotType', 'normalize']">
         <template #top-tool>
           <ToolCard
-            :custom-metadata="hokusaiB1Metadata"
-            :spectrum-picker-placeholder="null"
+            :custom-metadata="customMetadata"
+            spectrum-picker-placeholder="Select Chokha ROI"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            :custom-metadata="hokusaiB2Metadata"
-            :spectrum-picker-placeholder="null"
+            :custom-metadata="pigments"
+            spectrum-picker-placeholder="Select pigment"
           />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton direction="prev" to="ir-intro" light>
-            part 1
+          <NextPrevButton to="uvl-intro" direction="prev" light>
+            part 2
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" to="../design-museum-display" light>
-            next section
+          <NextPrevButton to="data-table" direction="next" light>
+            part 4
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -81,18 +77,17 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { imageUrlFromPath, useCustomMetadata } from '@/utils/metadataUtils';
-import filterNoneUrl from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2B3_big.webp';
-import filter440Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_440_B1B2B3_big.webp';
-import filter905Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_905_B1B2B3_big.webp';
+import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
 import { computed, ref } from 'vue';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_910.webp';
+import chokhaUVL from '@/assets/spectrum_data/Museum_Conservation/chokha_uvl_2000.webp';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
-useSpecLabHead('Whole-image Techniques Part 2: IR imaging', 'Museum');
+useSpecLabHead('Chokha Pigments Part 3: UVL', 'Museum');
 
 const FILTER_OPTION_LIST = [
   { text: 'No filter', value: 'none' },
-  { text: '440 nm', value: '440' },
-  { text: '905 nm', value: '905' },
+  { text: 'UVL', value: 'UVL' },
 ] as const;
 
 type FilterValues = (typeof FILTER_OPTION_LIST)[number]['value'];
@@ -100,43 +95,54 @@ const chosenFilter = ref<FilterValues>('none');
 const imageUrl = computed(() => {
   switch (chosenFilter.value) {
     case 'none':
-      return filterNoneUrl;
-    case '440':
-      return filter440Url;
-    case '905':
-      return filter905Url;
+      return chokhaChallenge;
+    case 'UVL':
+      return chokhaUVL;
     default:
       return '';
   }
 });
 
-const hokusaiB1 = useCustomMetadata(
+const chokhaR1 = useCustomMetadata(
   'Painting Regions',
-  'F1904-134_VNIR-SWIR_colors_Blue_1',
+  'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
-    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
+    title: 'Mystery Pigment 1',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
-
-const hokusaiB2 = useCustomMetadata(
+const chokhaB2 = useCustomMetadata(
   'Painting Regions',
-  'F1904-134_VNIR-SWIR_colors_Blue_2',
+  'S2018-1-76_VNIR-SWIR_colors_Blue_2',
   {
-    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),
+    title: 'Mystery Pigment 2',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
-
-const customMetadataMaybe = [hokusaiB1, hokusaiB2];
+const chokhaY1 = useCustomMetadata(
+  'Painting Regions',
+  'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
+  {
+    title: 'Mystery Pigment 3',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+const chokhaW1 = useCustomMetadata(
+  'Painting Regions',
+  'S2018-1-76_VNIR-SWIR_colors_White_1',
+  {
+    title: 'Mystery Pigment 4',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+const customMetadataMaybe = [chokhaR1, chokhaB2, chokhaY1, chokhaW1];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
-
-const hokusaiB1Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1',
-);
-const hokusaiB2Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
-);
+const allMetadata = useAllMetadata();
+const pigments = allMetadata['Paint Pigments'];
 </script>
 
 <style>

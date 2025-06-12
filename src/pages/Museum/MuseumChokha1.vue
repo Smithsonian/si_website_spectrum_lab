@@ -33,7 +33,7 @@
         <template #bottom>
           <LeftRightGroup>
             <template #right>
-              <NextPrevButton to="colors-spectra" direction="next">
+              <NextPrevButton to="id-colors" direction="next">
                 Part 2
               </NextPrevButton>
             </template>

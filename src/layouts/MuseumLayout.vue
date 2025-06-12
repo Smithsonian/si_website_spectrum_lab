@@ -7,17 +7,24 @@
             <SectionNavItem to="/final-projects/museum/intro">
               Science of Art Conservation
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/paint-colors">
+            <SectionNavItem to="/final-projects/museum/chokha-painting">
               Chokha Painting
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/two-blues">
-              Two Blue Spectra
+            <SectionNavItem to="/final-projects/museum/chokha-pigments">
+              <!-- 3 parts -->
+              Chokha Pigments
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/identify-blues">
-              Identify Pigments
+            <SectionNavItem to="/final-projects/museum/hokusai-painting">
+              Hokusai Painting
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/other-blues">
-              Other Blues
+            <SectionNavItem to="/final-projects/museum/hokusai-pigments">
+              Hokusai Pigments
+            </SectionNavItem>
+            <SectionNavItem to="/final-projects/museum/whole-image-techniques">
+              Bonus: Whole-image Techniques
+            </SectionNavItem>
+            <SectionNavItem to="/final-projects/museum/design-museum-display">
+              Design Museum Display
             </SectionNavItem>
           </SectionNav>
         </BCol>

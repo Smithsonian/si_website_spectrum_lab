@@ -1095,74 +1095,74 @@
   },
   {
     "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Azurite",
-    "title": "Azurite",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Cobalt_Yellow",
-    "title": "Cobalt Yellow",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Cochineal",
-    "title": "Cochineal",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Egyptian_Blue",
-    "title": "Egyptian Blue",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Indigo",
-    "title": "Indigo",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Lead_White",
-    "title": "Lead White",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Orpiment",
-    "title": "Orpiment",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Prussian_Blue",
-    "title": "Prussian Blue",
+    "title": "Red: Cochineal",
     "spectrumType": "Reflection"
   },
   {
     "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Red_Lead",
-    "title": "Red Lead",
-    "spectrumType": "Reflection"
-  },
-  {
-    "category": "Paint Pigments",
-    "filename": "Pigments_for_TWT_2024-09-17_Shell_White",
-    "title": "Shell White",
+    "title": "Red: Red Lead",
     "spectrumType": "Reflection"
   },
   {
     "category": "Paint Pigments",
     "filename": "Pigments_for_TWT_2024-09-17_Vermilion",
-    "title": "Vermilion",
+    "title": "Red: Vermilion",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Cobalt_Yellow",
+    "title": "Yellow: Cobalt Yellow",
     "spectrumType": "Reflection"
   },
   {
     "category": "Paint Pigments",
     "filename": "Spectral-Analysis-of-Genuine-Indian-Yellow-single-spectrum_Genuine_Indian_Yellow",
-    "title": "Genuine Indian Yellow",
+    "title": "Yellow: Genuine Indian Yellow",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Orpiment",
+    "title": "Yellow: Orpiment",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Azurite",
+    "title": "Blue: Azurite",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Egyptian_Blue",
+    "title": "Blue: Egyptian Blue",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Indigo",
+    "title": "Blue: Indigo",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Prussian_Blue",
+    "title": "Blue: Prussian Blue",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Lead_White",
+    "title": "White: Lead White",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments",
+    "filename": "Pigments_for_TWT_2024-09-17_Shell_White",
+    "title": "White: Shell White",
     "spectrumType": "Reflection"
   }
 ]
