@@ -1,28 +1,26 @@
 <template>
   <RouterLink :to="to" class="text-decoration-none text-light">
-    <BRow
-      class="p-3 rounded-4 h-100 module-tile"
+    <div
+      class="p-3 rounded-4 h-100 d-flex module-tile"
       :class="{
         'module-tile-dark': !lighter,
         'module-tile-lighter': lighter,
       }"
     >
-      <BCol cols="2">
+      <div class="module-tile-icon-container">
         <SvgImage
           v-if="iconSource"
           :src="iconSource"
           class="module-tile-icon"
         />
-      </BCol>
-      <BCol>
+      </div>
+      <div>
         <div class="text-uppercase fs-5 fw-bold color-sl-light-blue">
           {{ title }}
         </div>
-        <p>
-          <slot></slot>
-        </p>
-      </BCol>
-    </BRow>
+        <slot></slot>
+      </div>
+    </div>
   </RouterLink>
 </template>
 
@@ -38,8 +36,13 @@ defineProps<{
 </script>
 
 <style>
+.module-tile-icon-container {
+  padding-right: 1rem;
+}
+
 .module-tile-icon {
-  height: 80px;
+  height: 60px;
+  width: 80px;
   color: var(--gen-grey);
 }
 

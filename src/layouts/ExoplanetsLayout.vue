@@ -44,5 +44,5 @@
 </template>
 
 <script setup lang="ts">
-import exoplanetIcon from '@/assets/SVG/exoplanets_icon.svg?source&set-current-color';
+import exoplanetIcon from '@/assets/SVG/modelTransit1_dark.svg?source&set-current-color';
 </script>

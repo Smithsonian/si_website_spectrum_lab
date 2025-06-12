@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 import fishtankIcon from '@/assets/SVG/fish_tank_icon.svg?source&set-current-color';
-import exoplanetsIcon from '@/assets/SVG/exoplanets_icon.svg?source&set-current-color';
+import exoplanetsIcon from '@/assets/SVG/modelTransit1.svg?source&set-current-color';
 import museumIcon from '@/assets/SVG/museum_conservation_icon.svg?source&set-current-color';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
