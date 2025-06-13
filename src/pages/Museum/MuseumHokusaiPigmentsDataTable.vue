@@ -6,22 +6,22 @@
           Hokusai Pigments Part 2: Data Table
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
-          Use the data charts provided to learn about the available plants,
-          coral, and fish and decide which you would like in your fishtank.
+          Use the data chart provided to learn about the properties of some
+          paint pigments, and where and when they have been used.
           <template #before-steps>
             <p>
               <BLink
-                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Fish%20Tank%20Project%20Data%20Charts.pdf"
+                href="https://docs.google.com/document/d/12tWtxQ2-CibGcFYxlEbWjwgogqQr0MFKGtHnW1s0N7Y/edit?usp=sharing"
                 target="_blank"
                 rel="noopener"
               >
-                Fish Tank Project Data Charts
+                Pigment Data Table
               </BLink>
             </p>
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Complete the table with your selections.
+          Complete the table with your information.
         </InstructionRow>
         <LeftRightGroup class="mt-5">
           <template #left>
@@ -30,11 +30,7 @@
             </NextPrevButton>
           </template>
           <template #right>
-            <NextPrevButton
-              direction="next"
-              light
-              to="../whole-image-techniques"
-            >
+            <NextPrevButton direction="next" light to="../hokusai-ir-imaging">
               next section
             </NextPrevButton>
           </template>

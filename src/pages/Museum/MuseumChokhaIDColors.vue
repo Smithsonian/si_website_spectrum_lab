@@ -11,6 +11,13 @@
             of interest, marked by the white and black squares. The wavelengths
             of light that are reflected by the paint in the visible part of the
             spectrum determines what color our eyes see.
+            <p>
+              Hover your mouse over the painting to see an enlarged view of that
+              region.
+              <span class="needs-updating"
+                >Hover functionality needs fixing</span
+              >
+            </p>
           </InstructionRow>
           <InstructionRow rowType="Tool">
             View each "mystery pigment" spectrum and see if you can identify
