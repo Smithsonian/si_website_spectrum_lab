@@ -60,8 +60,8 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton direction="prev" to="ir-intro" light>
-            part 1
+          <NextPrevButton direction="prev" to="blue-spectra" light>
+            part 2
           </NextPrevButton>
         </template>
         <template #right>

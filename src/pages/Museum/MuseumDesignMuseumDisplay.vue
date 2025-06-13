@@ -5,12 +5,14 @@
         <InstructionHeader>Putting it together</InstructionHeader>
         <InstructionRow row-type="Notebook">
           <template #before-steps>
-            Using all the data you’ve collected, design a display for a museum
-            exhibit highlighting the use of light, color, and spectra in
-            analyzing artworks. Choose one of the works of art featured in this
-            project to display in an exhibit. Develop a display that tells the
-            story of the hidden details a visitor might not see from looking at
-            the piece. Your display should include:
+            <p>
+              Using all the data you’ve collected, design a display for a museum
+              exhibit highlighting the use of light, color, and spectra in
+              analyzing artworks. Choose one of the works of art featured in
+              this project to display in an exhibit. Develop a display that
+              tells the story of the hidden details a visitor might not see from
+              looking at the piece. Your display should include:
+            </p>
             <ul>
               <li>
                 At least two regions of interest within your chosen painting.
@@ -26,7 +28,6 @@
               </li>
             </ul>
           </template>
-          <template #steps> </template>
         </InstructionRow>
         <LeftRightGroup class="mt-4">
           <template #left>

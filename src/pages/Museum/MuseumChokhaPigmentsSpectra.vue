@@ -30,7 +30,7 @@
               <InstructionStep>
                 Some pigments may be easier to identify from their spectra than
                 others. Use the last column to note the ROIs where you have
-                confidence in your pigment identification
+                confidence in your pigment identification.
               </InstructionStep>
             </template>
           </InstructionRow>

@@ -45,21 +45,23 @@
           </div>
         </template>
         <template #middle>
-          <img :src="imageUrl" class="d-block mb-2 challenge-image" />
+          <img :src="imageUrl" class="d-block challenge-image" />
+        </template>
+        <template #bottom>
+          <LeftRightGroup>
+            <template #left>
+              <NextPrevButton to="uvl-intro" direction="prev" light>
+                part 2
+              </NextPrevButton>
+            </template>
+            <template #right>
+              <NextPrevButton to="data-table" direction="next" light>
+                part 4
+              </NextPrevButton>
+            </template>
+          </LeftRightGroup>
         </template>
       </ChallengeCard>
-      <LeftRightGroup class="mt-5">
-        <template #left>
-          <NextPrevButton to="uvl-intro" direction="prev" dark>
-            part 2
-          </NextPrevButton>
-        </template>
-        <template #right>
-          <NextPrevButton to="data-table" direction="next" dark>
-            part 4
-          </NextPrevButton>
-        </template>
-      </LeftRightGroup>
     </template>
   </MuseumLayout>
 </template>
