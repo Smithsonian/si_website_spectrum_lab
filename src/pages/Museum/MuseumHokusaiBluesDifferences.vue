@@ -15,13 +15,13 @@
               <InstructionStep>
                 Under <span style="font-weight: 600">Normalize?</span>, select
                 <span style="font-weight: 600">Visible</span> to view the
-                spectra only in the visible range. Idenfity 1-2 similarities and
+                spectra only in the visible range. Identify 1-2 similarities and
                 1-2 differences between the spectra in the visible range.
               </InstructionStep>
               <InstructionStep>
                 Under <span style="font-weight: 600">Normalize?</span>, select
                 <span style="font-weight: 600">All</span> to view the spectra in
-                visible and IR. Idenfity 1-2 similarities and 1-2 differences
+                visible and IR. Identify 1-2 similarities and 1-2 differences
                 between the spectra in the IR range.
               </InstructionStep>
             </template>

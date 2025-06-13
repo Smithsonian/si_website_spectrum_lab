@@ -135,11 +135,4 @@ const hokusaiROIsMetadata = customMetadata.filter(
 
 const allMetadata = useAllMetadata();
 const pigmentMetadata = allMetadata['Paint Pigments'];
-// const bluesMetadata = pigmentMetadata.filter(
-//   (sm) =>
-//     sm.filename === 'Pigments_for_TWT_2024-09-17_Azurite' ||
-//     sm.filename === 'Pigments_for_TWT_2024-09-17_Egyptian_Blue' ||
-//     sm.filename === 'Pigments_for_TWT_2024-09-17_Indigo' ||
-//     sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue',
-// );
 </script>
