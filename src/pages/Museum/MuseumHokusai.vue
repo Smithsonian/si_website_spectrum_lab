@@ -7,9 +7,24 @@
           <InstructionRow rowType="Art">
             This painting by the artist Hokusai is also displayed at the
             Smithsonian's National Museum of Asian Art.
+            <p>
+              For a richer experience, follow this
+              <BLink
+                href="https://iiif.si.edu/mirador/?manifest=https://ids.si.edu/ids/manifest/FS-5617_11"
+                target="_blank"
+                rel="noopener"
+                >link</BLink
+              >, where you will find a high-resolution image of the painting.
+              (The image will open in a new tab. Return to this tab when you
+              have finished observing the painting.)
+            </p>
+            <p>
+              Observe the scene depicted, the colors used, and the style of the
+              painting.
+            </p>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            <span class="needs-updating"> Observe & reflect on artwork </span>
+            Answer the questions in your Notebook about the painting.
           </InstructionRow>
         </template>
         <template #middle>

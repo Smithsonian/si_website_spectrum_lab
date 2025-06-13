@@ -6,39 +6,33 @@
           <InstructionHeader>
             Chokha Pigments Part 1: Spectra
           </InstructionHeader>
-          <InstructionRow rowType="Art">
-            Art conservators have taken reflection spectra of different regions
-            of interest, marked by the white and black squares. The wavelengths
-            of light that are reflected by the paint in the visible part of the
-            spectrum determines what color our eyes see.
-          </InstructionRow>
           <InstructionRow rowType="Tool">
-            View each "mystery pigment" spectrum and see if you can identify
-            what color and region of interest it corresponds to in the painting.
+            Compare the spectra of some of the regions of interest (ROI) with
+            comparison pigments to see if you can identify them.
             <template #steps>
               <InstructionStep>
-                Use the
-                <span style="font-weight: 600">Select mystery pigment</span>
-                dropdown menu to view each spectrum.
+                Under <span style="font-weight: 600">Source 1</span>, use the
+                <span style="font-weight: 600">Select Chokha ROI</span>
+                dropdown menu to view a spectrum for each region of interest.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Normalize?</span>, click
-                <span style="font-weight: 600">Visible</span>.
-              </InstructionStep>
-              <InstructionStep>
-                Use what you learned about how light colors mix (Modules 1 & 3)
-                to identify what color corresponds to each spectrum.
+                Under <span style="font-weight: 600">Source 2</span>, use the
+                <span style="font-weight: 600">Select pigment</span> dropdown
+                menu to view a spectrum for different pigments of each color.
               </InstructionStep>
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Draw a line from each spectrum to the corresponding region of
-            interest on the painting.
-          </InstructionRow>
-          <InstructionRow rowType="Simulation">
-            If you'd like a refresher on how light colors mix, double-click the
-            "RGB Bulbs" to launch the
-            <span style="font-weight: 600">Color Mixing</span> simulation.
+            <template #steps>
+              <InstructionStep>
+                For each ROI, write the pigment names in your notebook table.
+              </InstructionStep>
+              <InstructionStep>
+                Some pigments may be easier to identify from their spectra than
+                others. Use the last column to note the ROIs where you have
+                confidence in your pigment identification.
+              </InstructionStep>
+            </template>
           </InstructionRow>
         </template>
         <template #middle>
@@ -47,7 +41,9 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup :control-names="['units', 'plotType', 'normalize']">
+      <ToolControlGroup
+        :control-names="['units', 'plotType', 'normalize', 'zoom']"
+      >
         <template #top-tool>
           <ToolCard
             :custom-metadata="customMetadata"
@@ -79,27 +75,18 @@
 
 <script setup lang="ts">
 import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_mystery_labels_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Chokha Pigments Part 1: Spectra', 'Museum');
 
-const chokhaR1 = useCustomMetadata(
+const chokhaB1 = useCustomMetadata(
   'Painting Regions',
-  'S2018-1-76_VNIR-SWIR_colors_Red_1',
+  'S2018-1-76_VNIR-SWIR_colors_Blue_1',
   {
-    title: 'Mystery Pigment 1',
-    imageUrl: mystery,
-    bigImageUrl: '',
-  },
-);
-const chokhaB2 = useCustomMetadata(
-  'Painting Regions',
-  'S2018-1-76_VNIR-SWIR_colors_Blue_2',
-  {
-    title: 'Mystery Pigment 2',
+    title: 'ROI B1',
     imageUrl: mystery,
     bigImageUrl: '',
   },
@@ -108,7 +95,7 @@ const chokhaY1 = useCustomMetadata(
   'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
-    title: 'Mystery Pigment 3',
+    title: 'ROI Y1',
     imageUrl: mystery,
     bigImageUrl: '',
   },
@@ -117,12 +104,12 @@ const chokhaW1 = useCustomMetadata(
   'Painting Regions',
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
-    title: 'Mystery Pigment 4',
+    title: 'ROI W1',
     imageUrl: mystery,
     bigImageUrl: '',
   },
 );
-const customMetadataMaybe = [chokhaR1, chokhaB2, chokhaY1, chokhaW1];
+const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 const allMetadata = useAllMetadata();
 const pigments = allMetadata['Paint Pigments'];

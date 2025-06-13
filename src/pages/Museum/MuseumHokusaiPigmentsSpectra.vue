@@ -7,12 +7,32 @@
             >Hokusai Pigments Part 1: Spectra</InstructionHeader
           >
           <InstructionRow rowType="Tool">
-            Compare the spectra from the two blue regions of interest with a
-            sample of blue paint pigments and see if you can identify which
-            pigments correspond to each blue region of interest in the painting
+            Compare the spectra of some of the regions of interest (ROI) with
+            comparison pigments to see if you can identify them.
+            <template #steps>
+              <InstructionStep>
+                Under <span style="font-weight: 600">Source 1</span>, use the
+                <span style="font-weight: 600">Select Hokusai ROI</span>
+                dropdown menu to view a spectrum for each region of interest.
+              </InstructionStep>
+              <InstructionStep>
+                Under <span style="font-weight: 600">Source 2</span>, use the
+                <span style="font-weight: 600">Select pigment</span> dropdown
+                menu to view a spectrum for different pigments of each color.
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            <span class="needs-updating"> Write notebook questions </span>
+            <template #steps>
+              <InstructionStep>
+                For each ROI, write the pigment names in your notebook table.
+              </InstructionStep>
+              <InstructionStep>
+                Some pigments may be easier to identify from their spectra than
+                others. Use the last column to note the ROIs where you have
+                confidence in your pigment identification
+              </InstructionStep>
+            </template>
           </InstructionRow>
         </template>
         <template #middle>
@@ -26,14 +46,14 @@
       >
         <template #top-tool>
           <ToolCard
-            :custom-metadata="hokusaiBluesMetadata"
-            spectrum-picker-placeholder="Select blue pigment"
+            :custom-metadata="hokusaiROIsMetadata"
+            spectrum-picker-placeholder="Select Hokusai ROI"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            :custom-metadata="bluesMetadata"
-            spectrum-picker-placeholder="Select comparison pigment"
+            :custom-metadata="pigmentMetadata"
+            spectrum-picker-placeholder="Select pigment"
           />
         </template>
       </ToolControlGroup>
@@ -54,14 +74,11 @@
 </template>
 
 <script setup lang="ts">
-import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2_910.webp';
-import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2_big.webp';
+import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_910.webp';
+import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import {
-  useCustomMetadata,
-  useAllMetadata,
-  imageUrlFromPath,
-} from '@/utils/metadataUtils';
+import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Hokusai Pigments Part 1: Spectra', 'Museum');
 
@@ -69,7 +86,8 @@ const hokusaiB1 = useCustomMetadata(
   'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
-    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
+    title: 'ROI B1',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
@@ -78,27 +96,43 @@ const hokusaiB2 = useCustomMetadata(
   'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
-    imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),
+    title: 'ROI B2',
+    imageUrl: mystery,
     bigImageUrl: '',
   },
 );
 
-const customMetadataMaybe = [hokusaiB1, hokusaiB2];
+const hokusaiW1 = useCustomMetadata(
+  'Painting Regions',
+  'F1904-134_VNIR-SWIR_colors_White_1',
+  {
+    title: 'ROI W1',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+
+const hokusaiY = useCustomMetadata(
+  'Painting Regions',
+  'F1904-134_VNIR-SWIR_colors_Yellow',
+  {
+    title: 'ROI Y1',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+
+const customMetadataMaybe = [hokusaiB1, hokusaiB2, hokusaiW1, hokusaiY];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 
-const hokusaiBluesMetadata = customMetadata.filter(
+const hokusaiROIsMetadata = customMetadata.filter(
   (sm) =>
     sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1' ||
-    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2' ||
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_White_1' ||
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Yellow',
 );
 
 const allMetadata = useAllMetadata();
 const pigmentMetadata = allMetadata['Paint Pigments'];
-const bluesMetadata = pigmentMetadata.filter(
-  (sm) =>
-    sm.filename === 'Pigments_for_TWT_2024-09-17_Azurite' ||
-    sm.filename === 'Pigments_for_TWT_2024-09-17_Egyptian_Blue' ||
-    sm.filename === 'Pigments_for_TWT_2024-09-17_Indigo' ||
-    sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue',
-);
 </script>

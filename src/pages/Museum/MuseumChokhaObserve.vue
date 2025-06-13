@@ -11,12 +11,14 @@
             National Museum of Asian Art.
             <p>
               For a richer experience, follow this
-              <a
+              <BLink
                 href="https://iiif.si.edu/mirador/?manifest=https://ids.si.edu/ids/manifest/FS-RLS2018.3.17_001crop"
-                >link</a
+                target="_blank"
+                rel="noopener"
+                >link</BLink
               >, where you will find a high-resolution image of the painting.
-              (The image will open in a new tab. Return to this tab when you are
-              finished observing the painting.)
+              (The image will open in a new tab. Return to this tab when you
+              have finished observing the painting.)
             </p>
             <p>
               Observe the scene depicted, the colors used, and the style of the

@@ -81,12 +81,13 @@ import MuseumDesignMuseumDisplay from './pages/Museum/MuseumDesignMuseumDisplay.
 import MuseumChokhaObserve from './pages/Museum/MuseumChokhaObserve.vue';
 import MuseumChokhaIDColors from './pages/Museum/MuseumChokhaIDColors.vue';
 import MuseumChokhaPigmentsSpectra from './pages/Museum/MuseumChokhaPigmentsSpectra.vue';
-import MuseumChokhaPigmentsUVLIntro from './pages/Museum/MuseumChokhaPigmentsUVLIntro.vue';
+import MuseumChokhaPigmentsUVIntro from './pages/Museum/MuseumChokhaPigmentsUVIntro.vue';
 import MuseumChokhaPigmentsUVL from './pages/Museum/MuseumChokhaPigmentsUVL.vue';
 import MuseumChokhaPigmentsDataTable from './pages/Museum/MuseumChokhaPigmentsDataTable.vue';
 import MuseumHokusaiPigmentsSpectra from './pages/Museum/MuseumHokusaiPigmentsSpectra.vue';
 import MuseumHokusaiPigmentsDataTable from './pages/Museum/MuseumHokusaiPigmentsDataTable.vue';
 import MuseumHokusaiIRImaging from './pages/Museum/MuseumHokusaiIRImaging.vue';
+import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBluesDifferences.vue';
 
 library.add(
   faArrowUp,
@@ -290,7 +291,7 @@ const routes: RouteRecordRaw[] = [
             redirect: '/final-projects/museum/chokha-pigments/spectra',
             children: [
               { path: 'spectra', component: MuseumChokhaPigmentsSpectra },
-              { path: 'uvl-intro', component: MuseumChokhaPigmentsUVLIntro },
+              { path: 'uvl-intro', component: MuseumChokhaPigmentsUVIntro },
               { path: 'uvl', component: MuseumChokhaPigmentsUVL },
               { path: 'data-table', component: MuseumChokhaPigmentsDataTable },
             ],
@@ -308,10 +309,11 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           {
-            path: 'whole-image-techniques/',
-            redirect: '/final-projects/museum/whole-image-techniques/ir-intro',
+            path: 'hokusai-ir-imaging/',
+            redirect: '/final-projects/museum/hokusai-ir-imaging/ir-intro',
             children: [
               { path: 'ir-intro', component: MuseumIRIntro },
+              { path: 'blue-spectra', component: MuseumHokusaiBlues },
               { path: 'ir-imaging', component: MuseumHokusaiIRImaging },
             ],
           },

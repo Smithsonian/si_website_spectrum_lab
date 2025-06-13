@@ -4,28 +4,23 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader
-            >Whole-image Techniques Part 1: IR Intro</InstructionHeader
+            >Hokusai IR Imaging Part 1: IR Intro</InstructionHeader
           >
-          <InstructionRow rowType="Intro">
-            Light, color, and spectra are important components of art
-            conservation work done at museums. By investigating how paint
-            pigments reflect light at different wavelengths, art conservators
-            can learn what materials are used in a painting and make decisions
-            about how to best care for and restore the artwork.
-          </InstructionRow>
           <InstructionRow rowType="Video">
-            Watch this video that shows how imaging scientist Keats Webb and
-            conservation scientist Matthew Clarke use light, color, and spectra
-            to better understand paintings at the Smithsonian Institution.
+            See Dr. Webb demonstrate how an infrared light and filter can
+            capture how pigments absorb and reflect IR light, and how combined
+            false-color images can provide additional information about
+            pigments.
           </InstructionRow>
-          <InstructionRow rowType="Notebook">
-            Answer this question after watching the video:
-            <template #steps>
-              <InstructionStep>
-                What can conservation scientists learn about a painting from
-                knowing what pigments were used in it?
-              </InstructionStep>
-            </template>
+          <InstructionRow rowType="Intro">
+            More information on different conservation techniques can be found
+            at this
+            <BLink
+              href="https://drive.google.com/file/d/1glxaK8Rq7QUYG0l5UlcYezOxpmYehu-j/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              >Reference Sheet</BLink
+            >.
           </InstructionRow>
         </template>
         <template #middle>
@@ -44,7 +39,7 @@
               </NextPrevButton>
             </template>
             <template #right>
-              <NextPrevButton direction="next" to="ir-imaging" light>
+              <NextPrevButton direction="next" to="blue-spectra" light>
                 part 2
               </NextPrevButton>
             </template>

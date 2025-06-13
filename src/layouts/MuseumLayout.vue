@@ -20,8 +20,8 @@
             <SectionNavItem to="/final-projects/museum/hokusai-pigments">
               Hokusai Pigments
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/whole-image-techniques">
-              Bonus: Whole-image Techniques
+            <SectionNavItem to="/final-projects/museum/hokusai-ir-imaging">
+              Bonus: Hokusai IR Imaging
             </SectionNavItem>
             <SectionNavItem to="/final-projects/museum/design-museum-display">
               Design Museum Display
