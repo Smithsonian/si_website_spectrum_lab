@@ -18,6 +18,16 @@
             pigments cause UV-induced fluorescence (UVL), where pigments absorb
             UV light and then emit visible light.
           </InstructionRow>
+          <InstructionRow rowType="Intro">
+            More information on different conservation techniques can be found
+            at this
+            <BLink
+              href="https://drive.google.com/file/d/1glxaK8Rq7QUYG0l5UlcYezOxpmYehu-j/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              >Reference Sheet</BLink
+            >.
+          </InstructionRow>
         </template>
         <template #middle>
           <VideoJSPlayer>

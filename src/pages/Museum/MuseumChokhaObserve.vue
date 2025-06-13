@@ -17,8 +17,8 @@
                 rel="noopener"
                 >link</BLink
               >, where you will find a high-resolution image of the painting.
-              (The image will open in a new tab. Return to this tab when you are
-              finished observing the painting.)
+              (The image will open in a new tab. Return to this tab when you
+              have finished observing the painting.)
             </p>
             <p>
               Observe the scene depicted, the colors used, and the style of the

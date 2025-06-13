@@ -4,31 +4,26 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader
-            >Whole-image Techniques Part 2: IR Imaging</InstructionHeader
+            >Hokusai IR Imaging Part 3: Identify Blue</InstructionHeader
           >
           <InstructionRow rowType="Investigate">
-            <p>
-              Now imagine you wanted to know the composition of other blue
-              regions of interest in the painting, but you don't have time to
-              take spectra everywhere.
-            </p>
-            <p>
-              Conservators have the option of photographing the entire image
-              using different filters, for example, red, green, or blue, or even
-              infrared filters.
-            </p>
-            <p>
-              Based on the differences in the spectra of the two blue pigments
-              you observed, which filter would be most helpful for
-              distinguishing which of the two blue pigments were used in other
-              parts of the painting?
-            </p>
+            <template #steps>
+              <InstructionStep>
+                Use the
+                <span style="font-weight: 600"
+                  >No filter / 440 nm / 905 nm</span
+                >
+                buttons to toggle between the visible light image and an image
+                showing UV-induced luminescence (UVL) from pigments in the
+                painting.
+              </InstructionStep>
+              <InstructionStep>
+                Based on the filtered images, identify the likely pigment in B3.
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            <span class="needs-updating">
-              Write notebook questions - multiple choice - 440 (blue) and 905
-              (IR)
-            </span>
+            Answer the questions in your notebook.
           </InstructionRow>
           <div class="mb-3">
             <BFormRadioGroup
@@ -52,14 +47,14 @@
       >
         <template #top-tool>
           <ToolCard
-            :custom-metadata="hokusaiB1Metadata"
-            :spectrum-picker-placeholder="null"
+            :custom-metadata="hokusaiBluesMetadata"
+            spectrum-picker-placeholder="Select Blue ROI"
           />
         </template>
         <template #bottom-tool>
           <ToolCard
-            :custom-metadata="hokusaiB2Metadata"
-            :spectrum-picker-placeholder="null"
+            :custom-metadata="bluesMetadata"
+            spectrum-picker-placeholder="Select pigment"
           />
         </template>
       </ToolControlGroup>
@@ -81,7 +76,11 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import { imageUrlFromPath, useCustomMetadata } from '@/utils/metadataUtils';
+import {
+  imageUrlFromPath,
+  useCustomMetadata,
+  useAllMetadata,
+} from '@/utils/metadataUtils';
 import filterNoneUrl from '@/assets/spectrum_data/Museum_Conservation/Hokusai_color_B1B2B3_big.webp';
 import filter440Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_440_B1B2B3_big.webp';
 import filter905Url from '@/assets/spectrum_data/Museum_Conservation/Hokusai_905_B1B2B3_big.webp';
@@ -128,14 +127,24 @@ const hokusaiB2 = useCustomMetadata(
   },
 );
 
-const customMetadataMaybe = [hokusaiB1, hokusaiB2];
-const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
+const customMetadataBlues = [hokusaiB1, hokusaiB2];
+const customMetadata = customMetadataBlues.filter((sm) => !!sm);
 
-const hokusaiB1Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1',
+const hokusaiBluesMetadata = customMetadata.filter(
+  (sm) =>
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_1' ||
+    sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
 );
-const hokusaiB2Metadata = customMetadata.filter(
-  (sm) => sm.filename === 'F1904-134_VNIR-SWIR_colors_Blue_2',
+
+const allMetadata = useAllMetadata();
+const pigmentMetadata = allMetadata['Paint Pigments'];
+
+const bluesMetadata = pigmentMetadata.filter(
+  (sm) =>
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Azurite' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Egyptian_Blue' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Indigo' ||
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue',
 );
 </script>
 

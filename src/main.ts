@@ -87,6 +87,7 @@ import MuseumChokhaPigmentsDataTable from './pages/Museum/MuseumChokhaPigmentsDa
 import MuseumHokusaiPigmentsSpectra from './pages/Museum/MuseumHokusaiPigmentsSpectra.vue';
 import MuseumHokusaiPigmentsDataTable from './pages/Museum/MuseumHokusaiPigmentsDataTable.vue';
 import MuseumHokusaiIRImaging from './pages/Museum/MuseumHokusaiIRImaging.vue';
+import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBluesDifferences.vue';
 
 library.add(
   faArrowUp,
@@ -308,10 +309,11 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           {
-            path: 'whole-image-techniques/',
-            redirect: '/final-projects/museum/whole-image-techniques/ir-intro',
+            path: 'hokusai-ir-imaging/',
+            redirect: '/final-projects/museum/hokusai-ir-imaging/ir-intro',
             children: [
               { path: 'ir-intro', component: MuseumIRIntro },
+              { path: 'blue-spectra', component: MuseumHokusaiBlues },
               { path: 'ir-imaging', component: MuseumHokusaiIRImaging },
             ],
           },
