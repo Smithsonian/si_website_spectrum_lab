@@ -4,28 +4,19 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader
-            >Chokha Pigments Part 2: UVL Intro</InstructionHeader
+            >Chokha Pigments Part 2: UV Imaging</InstructionHeader
           >
           <InstructionRow rowType="Intro">
-            Light, color, and spectra are important components of art
-            conservation work done at museums. By investigating how paint
-            pigments reflect light at different wavelengths, art conservators
-            can learn what materials are used in a painting and make decisions
-            about how to best care for and restore the artwork.
+            Sometimes a spectrum alone does not allow scientists to identify a
+            pigment with absolute certainty. Other techniques can be used to
+            provide additional information, such as imaging techniques that use
+            ultraviolet (UV) light.
           </InstructionRow>
           <InstructionRow rowType="Video">
-            Watch this video that shows how imaging scientist Keats Webb and
-            conservation scientist Matthew Clarke use light, color, and spectra
-            to better understand paintings at the Smithsonian Institution.
-          </InstructionRow>
-          <InstructionRow rowType="Notebook">
-            Answer this question after watching the video:
-            <template #steps>
-              <InstructionStep>
-                What can conservation scientists learn about a painting from
-                knowing what pigments were used in it?
-              </InstructionStep>
-            </template>
+            See Dr. Webb demonstrate how an ultraviolet light and filter can
+            capture how pigments absorb and reflect UV light, and how some
+            pigments cause UV-induced fluorescence (UVL), where pigments absorb
+            UV light and then emit visible light.
           </InstructionRow>
         </template>
         <template #middle>

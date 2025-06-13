@@ -81,7 +81,7 @@ import MuseumDesignMuseumDisplay from './pages/Museum/MuseumDesignMuseumDisplay.
 import MuseumChokhaObserve from './pages/Museum/MuseumChokhaObserve.vue';
 import MuseumChokhaIDColors from './pages/Museum/MuseumChokhaIDColors.vue';
 import MuseumChokhaPigmentsSpectra from './pages/Museum/MuseumChokhaPigmentsSpectra.vue';
-import MuseumChokhaPigmentsUVLIntro from './pages/Museum/MuseumChokhaPigmentsUVLIntro.vue';
+import MuseumChokhaPigmentsUVIntro from './pages/Museum/MuseumChokhaPigmentsUVIntro.vue';
 import MuseumChokhaPigmentsUVL from './pages/Museum/MuseumChokhaPigmentsUVL.vue';
 import MuseumChokhaPigmentsDataTable from './pages/Museum/MuseumChokhaPigmentsDataTable.vue';
 import MuseumHokusaiPigmentsSpectra from './pages/Museum/MuseumHokusaiPigmentsSpectra.vue';
@@ -290,7 +290,7 @@ const routes: RouteRecordRaw[] = [
             redirect: '/final-projects/museum/chokha-pigments/spectra',
             children: [
               { path: 'spectra', component: MuseumChokhaPigmentsSpectra },
-              { path: 'uvl-intro', component: MuseumChokhaPigmentsUVLIntro },
+              { path: 'uvl-intro', component: MuseumChokhaPigmentsUVIntro },
               { path: 'uvl', component: MuseumChokhaPigmentsUVL },
               { path: 'data-table', component: MuseumChokhaPigmentsDataTable },
             ],
