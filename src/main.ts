@@ -12,6 +12,7 @@ import {
   faChevronRight,
   faPencil,
   faXmark,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -96,6 +97,7 @@ library.add(
   faChevronRight,
   faChevronLeft,
   faXmark,
+  faCircle,
 );
 
 const routes: RouteRecordRaw[] = [

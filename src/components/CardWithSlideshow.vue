@@ -26,6 +26,22 @@
             previous slide
           </NextPrevButton>
         </template>
+        <template #middle>
+          <div class="d-flex align-items-center h-100 color-sl-lighter-blue">
+            <div
+              v-for="i in slideOrder.length"
+              :key="i - 1"
+              class="card-with-slideshow-slide-button"
+              :class="{ active: slideIndex === i - 1 }"
+              @click="navigateToSlide(i - 1)"
+            >
+              <FontAwesomeIcon
+                :icon="['fas', 'circle']"
+                class="position-relative"
+              />
+            </div>
+          </div>
+        </template>
         <template #right>
           <NextPrevButton
             v-if="!atLastSlide"
@@ -84,4 +100,43 @@ const prevSlide = () => {
     slideIndex.value--;
   }
 };
+
+const navigateToSlide = (index: number) => {
+  slideIndex.value = index;
+};
 </script>
+
+<style>
+/* Borrowed from Vuetify round icon buttons used in Hubble Cosmic DS */
+.card-with-slideshow-slide-button {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.card-with-slideshow-slide-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+.card-with-slideshow-slide-button:hover:before {
+  opacity: 0.15;
+}
+.card-with-slideshow-slide-button.active:before {
+  opacity: 0.25;
+}
+.card-with-slideshow-slide-button.active:hover:before {
+  opacity: 0.15;
+}
+</style>
