@@ -6,7 +6,6 @@
           <InstructionHeader
             >Hokusai Pigments Part 1: Spectra</InstructionHeader
           >
-          <span class="needs-updating">Image zoom in needs fixing</span>
           <InstructionRow rowType="Tool">
             Compare the spectra of some of the regions of interest (ROI) with
             comparison pigments to see if you can identify them.

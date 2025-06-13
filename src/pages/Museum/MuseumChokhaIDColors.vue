@@ -14,9 +14,6 @@
             <p>
               Hover your mouse over the painting to see an enlarged view of that
               region.
-              <span class="needs-updating"
-                >Hover functionality needs fixing</span
-              >
             </p>
           </InstructionRow>
           <InstructionRow rowType="Tool">
