@@ -5,7 +5,7 @@
         <BCol cols="3">
           <SectionNav>
             <SectionNavItem to="/final-projects/exoplanets/intro">
-              Intro
+              Researching Exoplanets
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/clear-skies">
               Tutorial: Exoplanet atmospheres
@@ -26,12 +26,13 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="Exploring Exoplanets"
+            heading="Exploring exoplanet atmospheres"
             :icon-path="exoplanetIcon"
             icon-alt="Exoplanets module icon"
           >
-            For this project, you’ll explore the atmosphere of planets outside
-            our solar system.
+            Investigate the atmospheres of planets outside our solar system,
+            then make a pitch for what exoplanet spectra you’d like to capture
+            with the James Webb Space Telescope.
           </ChallengeIntro>
           <slot name="challenge-tab"></slot>
         </BCol>
