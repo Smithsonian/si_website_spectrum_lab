@@ -8,58 +8,52 @@
       </BRow>
     </template>
     <BRow>
-      <BCol cols="12" xl="4" xxl="3">
+      <BCol cols="12" xl="3">
         <div class="tool-card-title mb-2">{{ title }}</div>
-        <BRow>
-          <BCol cols="6" md="4" xl="12">
-            <div class="spectrum-icon-holder mb-2 border border-sl-light-blue">
-              <img v-if="iconPath" class="spectrum-icon" :src="iconPath" />
-              <div
-                v-else
-                class="h-100 d-flex justify-content-center align-items-center"
-              >
-                <FontAwesomeIcon
-                  :icon="['fas', 'image']"
-                  size="2xl"
-                  transform="grow-20"
-                />
-              </div>
-            </div>
-          </BCol>
-          <BCol cols="6" lg="4" xl="12">
-            <div style="width: 190px">
-              <BFormSelect
-                v-if="!drawOnly && !!categoryOptions"
-                v-model="selectedCategory"
-                size="sm"
-                :options="categoryOptions"
-                class="mb-1"
-              />
-              <div
-                v-if="spectrumDataSource === 'drawing'"
-                class="position-relative"
-              >
-                <BButton
-                  ref="clearButtonElem"
-                  size="sm"
-                  @click="clearDrawnSpectrumY"
-                  >Clear drawing</BButton
-                >
-                <SpecTutPopupClear :anchor-elem="clearButtonElem" />
-              </div>
-              <div v-else class="position-relative">
-                <BFormSelect
-                  ref="spectrumPicker"
-                  v-model="selectedSpectrum"
-                  size="sm"
-                  :options="spectrumOptions"
-                  :class="spectrumOptions.length > 0 ? '' : 'invisible'"
-                />
-                <SpecTutPopupSpectrumPicker :anchor-elem="spectrumPicker" />
-              </div>
-            </div>
-          </BCol>
-        </BRow>
+        <div class="spectrum-icon-holder mb-2 border border-sl-light-blue">
+          <img v-if="iconPath" class="spectrum-icon" :src="iconPath" />
+          <div
+            v-else
+            class="h-100 d-flex justify-content-center align-items-center"
+          >
+            <FontAwesomeIcon
+              :icon="['fas', 'image']"
+              size="2xl"
+              transform="grow-20"
+            />
+          </div>
+        </div>
+        <div style="width: 190px">
+          <BFormSelect
+            v-if="!drawOnly && !!categoryOptions"
+            v-model="selectedCategory"
+            size="sm"
+            :options="categoryOptions"
+            class="mb-1"
+          />
+          <div
+            v-if="spectrumDataSource === 'drawing'"
+            class="position-relative"
+          >
+            <BButton
+              ref="clearButtonElem"
+              size="sm"
+              @click="clearDrawnSpectrumY"
+              >Clear drawing</BButton
+            >
+            <SpecTutPopupClear :anchor-elem="clearButtonElem" />
+          </div>
+          <div v-else class="position-relative">
+            <BFormSelect
+              ref="spectrumPicker"
+              v-model="selectedSpectrum"
+              size="sm"
+              :options="spectrumOptions"
+              :class="spectrumOptions.length > 0 ? '' : 'invisible'"
+            />
+            <SpecTutPopupSpectrumPicker :anchor-elem="spectrumPicker" />
+          </div>
+        </div>
       </BCol>
       <!-- Chart needs to be reordered before spectrum picker, with spacing, when on top in smaller breakpoints -->
       <BCol
