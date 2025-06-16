@@ -13,7 +13,7 @@
         <div class="h3">{{ title }}</div>
         <BRow>
           <BCol cols="6" md="4" xl="12">
-            <div class="spectrum-icon-holder rounded-4 mb-1">
+            <div class="spectrum-icon-holder mb-1 border border-sl-light-blue">
               <img class="spectrum-icon" :src="iconPath" />
             </div>
           </BCol>
