@@ -1,15 +1,13 @@
 <template>
-  <div class="clear-tut-overlay-features" style="top: 15px; left: 115px">
-    Na
-  </div>
-  <div class="clear-tut-overlay-features" style="top: 15px; left: 185px">K</div>
-  <div class="clear-tut-overlay-features" style="top: 50px; left: 240px">
+  <div class="clear-tut-overlay-features" style="top: 15px; left: 19%">Na</div>
+  <div class="clear-tut-overlay-features" style="top: 15px; left: 30%">K</div>
+  <div class="clear-tut-overlay-features" style="top: 50px; left: 40%">
     H<sub>2</sub>0
   </div>
-  <div class="clear-tut-overlay-features" style="top: 60px; left: 300px">
+  <div class="clear-tut-overlay-features" style="top: 60px; left: 50%">
     H<sub>2</sub>0
   </div>
-  <div class="clear-tut-overlay-features" style="top: 90px; left: 390px">
+  <div class="clear-tut-overlay-features" style="top: 90px; left: 64%">
     H<sub>2</sub>0
   </div>
 </template>
