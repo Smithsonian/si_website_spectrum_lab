@@ -36,12 +36,3 @@ import playgroundIcon from '@/assets/SVG/playground_icon.svg?source&set-current-
 
 useSpecLabHead('Playground');
 </script>
-
-<style>
-.zoom-slider::-webkit-slider-runnable-track {
-  background-color: var(--bs-gray-400);
-}
-.zoom-slider::-moz-range-track {
-  background-color: var(--bs-gray-400);
-}
-</style>

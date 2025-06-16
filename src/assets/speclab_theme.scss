@@ -88,6 +88,7 @@ $input-color: $slr-light-grey;
 $input-bg: $sl-navy;
 $input-border-color: $sl-light-blue;
 $form-select-indicator-color: $slr-light-grey;
+$input-disabled-bg: $sl-slate-blue;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
@@ -136,6 +137,12 @@ $form-select-indicator-color: $slr-light-grey;
 
 .border-sl-light-blue {
   border-color: var(--sl-light-blue) !important;
+}
+
+// Bootstrap overrides or additions
+
+.form-select:disabled {
+  cursor: not-allowed;
 }
 
 // App-wide styling unrelated to Bootstrap or color scheme

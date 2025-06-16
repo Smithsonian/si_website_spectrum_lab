@@ -135,3 +135,30 @@ provide(wavelengthUnitKey, wavelengthUnit);
 // Instantiate this at this level so both charts can share it
 useCursorMicrons();
 </script>
+
+<style>
+input.zoom-slider:disabled {
+  /* Bootstrap makes this none, which makes sense, except that messes up
+  cursor: not-allowed from taking effect. */
+  pointer-events: auto;
+}
+
+input.zoom-slider::-webkit-slider-runnable-track {
+  background-color: var(--bs-gray-400);
+}
+input.zoom-slider[disabled]::-webkit-slider-runnable-track {
+  cursor: not-allowed;
+}
+input.zoom-slider::-moz-range-track {
+  background-color: var(--bs-gray-400);
+}
+input.zoom-slider[disabled]::-moz-range-track {
+  cursor: not-allowed;
+}
+input.zoom-slider[disabled]::-moz-range-progress {
+  cursor: not-allowed;
+}
+input.zoom-slider[disabled]::-moz-range-thumb {
+  cursor: not-allowed;
+}
+</style>
