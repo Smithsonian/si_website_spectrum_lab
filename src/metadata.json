@@ -47,7 +47,8 @@
     "category": "Lamps",
     "filename": "Cool_White_LED",
     "title": "LED White (Cool)",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_5000K_bulb.webp"
   },
   {
     "category": "Lamps",
@@ -88,7 +89,8 @@
     "category": "Lamps",
     "filename": "LED_525nm",
     "title": "LED 525 nm",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_525nm.webp"
   },
   {
     "category": "Lamps",
@@ -184,7 +186,8 @@
     "category": "Stars",
     "filename": "sun_ref_colina96",
     "title": "Sun",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Stars/sun_latest_1024_0171.webp"
   },
   {
     "category": "Nature",
