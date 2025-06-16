@@ -251,7 +251,8 @@
     "category": "Nature",
     "filename": "Jellyfish_Emission",
     "title": "Jellyfish Emission",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Nature/jellyfish.webp"
   },
   {
     "category": "Nature",

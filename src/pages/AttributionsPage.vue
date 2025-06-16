@@ -16,6 +16,27 @@
           >).
         </dd>
       </dl>
+      <h2>Spectrum source images</h2>
+      <h3>Nature</h3>
+      <dl>
+        <dt>
+          <BLink
+            variant="secondary"
+            href="/src/assets/spectrum_data/Nature/jellyfish.webp"
+            >Jellyfish</BLink
+          >
+        </dt>
+        <dd>
+          The copyright holder of this file, Sierra Blakely, allows anyone to
+          use it for any purpose, provided that the copyright holder is properly
+          attributed. Redistribution, derivative work, commercial use, and all
+          other use is permitted. Attribution: Sierra Blakely. (<BLink
+            variant="secondary"
+            href="https://commons.wikimedia.org/wiki/File:Aequorea4.jpg"
+            >https://commons.wikimedia.org/wiki/File:Aequorea4.jpg</BLink
+          >)
+        </dd>
+      </dl>
     </template>
   </ChallengeToolLayout>
 </template>
