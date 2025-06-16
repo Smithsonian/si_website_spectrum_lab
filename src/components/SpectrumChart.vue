@@ -12,7 +12,9 @@
         <div class="d-flex">
           <LeftAxis ref="yAxis" />
           <!-- Wrap these to enable overlay -->
-          <div class="position-relative">
+          <div
+            class="position-relative border-start border-end border-bottom border-sl-light-blue"
+          >
             <SpectrumDrawing v-if="spectrumDataSource === 'drawing'" />
             <SpectrumData v-else />
             <!-- Overlay items go in this slot. -->

@@ -1,38 +1,39 @@
 <template>
-  <div class="rainbow-offset">
+  <div
+    class="rainbow-offset border-top border-start border-end border-sl-light-blue"
+  >
+    <!-- position-relative has to be inside, to not include the border -->
     <div class="position-relative">
-      <div class="rainbow-div position-relative overflow-hidden rounded-top-4">
-        <canvas
-          ref="background"
-          :width="CHART_WIDTH"
-          :height="RAINBOW_HEIGHT"
-          class="d-block"
-          >Full-intensity spectrum background</canvas
-        >
-        <!-- Make overlay fully transparent to reveal the rainbow at this tutorial step -->
-        <canvas
-          v-show="!hideOverlay"
-          ref="overlay"
-          class="position-absolute"
-          style="top: 0px; left: 0px"
-          :width="CHART_WIDTH"
-          :height="RAINBOW_HEIGHT"
-          >Transparency increases or decreases based on chart intensity, hiding
-          or revealing the background</canvas
-        >
-        <!-- This sets the temperature tutorial popup arrow position -->
-        <div
-          ref="tempImageTutAnchor"
-          class="position-absolute"
-          style="bottom: 10px; left: 170px; width: 0; height: 0"
-        ></div>
-        <!-- And for the spectra tutorial -->
-        <div
-          ref="spectraImageTutAnchor"
-          class="position-absolute"
-          style="bottom: 10px; left: 300px; width: 0; height: 0"
-        ></div>
-      </div>
+      <canvas
+        ref="background"
+        :width="CHART_WIDTH"
+        :height="RAINBOW_HEIGHT"
+        class="d-block"
+        >Full-intensity spectrum background</canvas
+      >
+      <!-- Make overlay fully transparent to reveal the rainbow at this tutorial step -->
+      <canvas
+        v-show="!hideOverlay"
+        ref="overlay"
+        class="position-absolute"
+        :width="CHART_WIDTH"
+        :height="RAINBOW_HEIGHT"
+        style="top: 0px; left: 0px"
+        >Transparency increases or decreases based on chart intensity, hiding or
+        revealing the background</canvas
+      >
+      <!-- This sets the temperature tutorial popup arrow position -->
+      <div
+        ref="tempImageTutAnchor"
+        class="position-absolute"
+        style="bottom: 10px; left: 170px; width: 0; height: 0"
+      ></div>
+      <!-- And for the spectra tutorial -->
+      <div
+        ref="spectraImageTutAnchor"
+        class="position-absolute"
+        style="bottom: 10px; left: 300px; width: 0; height: 0"
+      ></div>
       <ControlsTutPopupSpectrumImage :anchor-elem="tempImageTutAnchor" />
       <SpecTutPopupImage :anchor-elem="spectraImageTutAnchor" />
       <SpecTutPopupRainbow :anchor-elem="spectraImageTutAnchor" />
