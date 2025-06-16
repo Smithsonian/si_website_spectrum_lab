@@ -84,6 +84,10 @@ $btn-close-bg: url('/src/assets/SVG/close_button.svg');
 $btn-close-focus-shadow: rgba(88, 126, 156, 0.5) 0px 0px 0px 4px;
 $btn-close-opacity: 0.6;
 $btn-close-hover-opacity: 0.8;
+$input-color: $slr-light-grey;
+$input-bg: $sl-navy;
+$input-border-color: $sl-light-blue;
+$form-select-indicator-color: $slr-light-grey;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
