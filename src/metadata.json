@@ -200,7 +200,8 @@
     "category": "Nature",
     "filename": "Aspen_in_Fall_Reflection",
     "title": "Aspen in Fall Reflection",
-    "spectrumType": "Reflection"
+    "spectrumType": "Reflection",
+    "imagePath": "Nature/aspen.webp"
   },
   {
     "category": "Nature",
