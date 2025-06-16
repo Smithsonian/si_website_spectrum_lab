@@ -7,10 +7,9 @@
         <BCol />
       </BRow>
     </template>
-    <!-- Chart sent to the bottom or top -->
-    <BRow :class="inBottomToolSlot ? 'align-items-start' : 'align-items-end'">
+    <BRow>
       <BCol cols="12" xl="4" xxl="3">
-        <div class="h3">{{ title }}</div>
+        <div class="tool-card-title mb-2">{{ title }}</div>
         <BRow>
           <BCol cols="6" md="4" xl="12">
             <div class="spectrum-icon-holder mb-1 border border-sl-light-blue">
@@ -62,7 +61,7 @@
           <img :src="previewPath" />
         </div>
         <!-- Use an invisible placeholder to prevent layout jumping -->
-        <div class="tool-card-chart-title">
+        <div class="tool-card-chart-title mb-2">
           {{ chartTitle || '&nbsp;' }}
         </div>
         <!-- SpectrumChart contents are expected to overlay the chart. -->
@@ -147,12 +146,12 @@ const title = computed(() => {
     return props.titleOverride;
   }
   if (inBottomToolSlot) {
-    return 'Source 2';
+    return 'Source 2:';
   }
   if (isFirstOfTwoTools.value) {
-    return 'Source 1';
+    return 'Source 1:';
   }
-  return 'Source';
+  return 'Source:';
 });
 
 // Refactored a lot of this setup function into composables, due to complexity
@@ -228,8 +227,16 @@ useSpectrumDataProvider(
   outline: 2px solid black;
 }
 
-.tool-card-chart-title {
-  margin-left: 65px;
+.tool-card-title {
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.tool-card-chart-title {
+  margin-left: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 </style>
