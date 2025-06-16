@@ -131,7 +131,8 @@
     "category": "Lamps",
     "filename": "tvRemote",
     "title": "IR LED from TV Remote",
-    "spectrumType": "Emission"
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/tv_remote.webp"
   },
   {
     "category": "Stars",
