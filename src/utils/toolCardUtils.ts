@@ -14,7 +14,6 @@ import {
 } from './metadataUtils';
 import { computed, inject, provide, ref, watch, type Ref } from 'vue';
 import { useCurrentlyDrawing, useDrawnSpectrumY } from './drawingUtils';
-import defaultIconUrl from '/includes/AI_common/images/Harry_sun_spectrum_resized.png';
 import {
   dataFromCSV,
   dataFromText,
@@ -281,7 +280,7 @@ export const useSelectedMetadata = (
   customCategoryNamesGetter: () => CustomCategoryNames | null,
 ): {
   selectedMetadata: Readonly<Ref<SpectrumMetadata | null>>;
-  iconPath: Readonly<Ref<string>>;
+  iconPath: Readonly<Ref<string | null>>;
   chartTitle: Readonly<Ref<string>>;
   previewPath: Readonly<Ref<string | null>>;
 } => {
@@ -291,16 +290,16 @@ export const useSelectedMetadata = (
   );
 
   // Icon
-  const iconPath = computed((): string => {
+  const iconPath = computed((): string | null => {
     if (selectedCategory.value === 'draw') {
       return drawingIcon;
     }
     if (!selectedMetadata.value) {
-      return defaultIconUrl;
+      return null;
     }
     const imageUrl = selectedMetadata.value.imageUrl;
     if (!imageUrl) {
-      return defaultIconUrl;
+      return null;
     }
     return imageUrl;
   });

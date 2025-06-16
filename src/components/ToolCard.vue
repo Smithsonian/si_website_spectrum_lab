@@ -13,7 +13,17 @@
         <BRow>
           <BCol cols="6" md="4" xl="12">
             <div class="spectrum-icon-holder mb-2 border border-sl-light-blue">
-              <img class="spectrum-icon" :src="iconPath" />
+              <img v-if="iconPath" class="spectrum-icon" :src="iconPath" />
+              <div
+                v-else
+                class="h-100 d-flex justify-content-center align-items-center"
+              >
+                <FontAwesomeIcon
+                  :icon="['fas', 'image']"
+                  size="2xl"
+                  transform="grow-20"
+                />
+              </div>
             </div>
           </BCol>
           <BCol cols="6" lg="4" xl="12">
@@ -116,6 +126,7 @@ import {
   type CustomCategoryNames,
   type CustomMetadata,
 } from '@/utils/toolCardUtils';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const clearButtonElem =
   useTemplateRef<ComponentPublicInstance>('clearButtonElem');
