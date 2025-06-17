@@ -31,7 +31,12 @@
       <!-- Target for pointer events. Above the cursor, so we always get the hits here. -->
       <div
         class="position-absolute"
-        :style="eventCaptureStyle"
+        :style="{
+          top: '0px',
+          left: `${LEFT_AXIS_WIDTH}px`,
+          height: `${overlayHeight}px`,
+          width: `${CHART_WIDTH}px`,
+        }"
         @pointerenter="handlePointerMove"
         @pointermove="handlePointerMove"
         @pointerleave="handlePointerLeave"
@@ -79,13 +84,8 @@ watch(tutorialState, (newTutorialState, previousTutorialState) => {
   }
 });
 
-const overlayHeight = CHART_HEIGHT + RAINBOW_HEIGHT;
-
-const eventCaptureStyle =
-  'top: 0px; ' +
-  `left: ${LEFT_AXIS_WIDTH}px; ` +
-  `height: ${overlayHeight}px; ` +
-  `width: ${CHART_WIDTH}px`;
+// Don't forget border height; this looks better when it goes all the way to the ticks
+const overlayHeight = CHART_HEIGHT + RAINBOW_HEIGHT + 2;
 
 const spectrumDataSource = inject(
   spectrumDataSourceKey,
