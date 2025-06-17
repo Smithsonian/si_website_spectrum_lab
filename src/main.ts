@@ -352,7 +352,7 @@ export const createApp = ViteSSG(
       VueGtag,
       {
         config: {
-          id: 'G-N4BDY9ZWS8',
+          id: 'G-CQCJ1860S7',
         },
       },
       router,
