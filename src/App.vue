@@ -13,6 +13,12 @@
   <SpeclabFooter />
 </template>
 
+<script setup lang="ts">
+import { configure } from 'vue-gtag';
+
+configure({ tagId: 'G-CQCJ1860S7' });
+</script>
+
 <style>
 .top-banner {
   text-align: center;

@@ -2,7 +2,6 @@ import { ViteSSG } from 'vite-ssg';
 import { createBootstrap } from 'bootstrap-vue-next';
 import './assets/speclab_theme.scss';
 import 'video.js/dist/video-js.css';
-import VueGtag from 'vue-gtag';
 import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -342,20 +341,7 @@ const routes: RouteRecordRaw[] = [
   { path: '/:pathMatch(.*)*', component: NotFound },
 ];
 
-export const createApp = ViteSSG(
-  App,
-  { routes, base: BASE_URL },
-  ({ app, router }) => {
-    app.component('FontAwesomeIcon', FontAwesomeIcon);
-    app.use(createBootstrap());
-    app.use(
-      VueGtag,
-      {
-        config: {
-          id: 'G-CQCJ1860S7',
-        },
-      },
-      router,
-    );
-  },
-);
+export const createApp = ViteSSG(App, { routes, base: BASE_URL }, ({ app }) => {
+  app.component('FontAwesomeIcon', FontAwesomeIcon);
+  app.use(createBootstrap());
+});
