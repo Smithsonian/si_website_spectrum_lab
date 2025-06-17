@@ -1,6 +1,10 @@
 <template>
-  <div class="ms-2" style="height: 30px">
-    <canvas ref="canvas" :width="xCanvasWidth" height="30"
+  <div class="position-relative ms-2" style="height: 30px">
+    <canvas
+      ref="canvas"
+      :width="xLabelsEnd"
+      height="30"
+      class="position-absolute"
       >Bottom axis ticks</canvas
     >
   </div>
@@ -13,12 +17,14 @@ import {
   zoomKey,
   type WavelengthUnit,
 } from '@/injectionKeys';
-import { pixelZoomFromZoom } from '@/utils/chartUtils';
+import { canvasFontFromSize, pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
 // Extra canvas space under the left axis
 const xLeftSideRoom = 20;
-const xCanvasWidth = CHART_WIDTH + xLeftSideRoom;
+const xTicksEnd = CHART_WIDTH + xLeftSideRoom;
+// Extra room for labels off the edge
+const xLabelsEnd = xTicksEnd + 20;
 
 const zoomRef = inject(zoomKey, ref(1));
 const canvas = useTemplateRef('canvas');
@@ -73,7 +79,7 @@ const drawAxis = () => {
     return;
   }
   // Clear
-  ctx.clearRect(0, 0, xCanvasWidth, 30);
+  ctx.clearRect(0, 0, xLabelsEnd, 30);
   // 1/10 micron ticks
   renderSmallTicks();
   // 1 micron ticks
@@ -107,7 +113,7 @@ function renderSmallTicks() {
         xLeftSideRoom + (i - smallStart) * xTickDistance * pixelZoom;
       // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
       const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
-      if (xTickPosSharp > xCanvasWidth) {
+      if (xTickPosSharp > xTicksEnd) {
         break;
       }
       ctx.beginPath();
@@ -159,7 +165,7 @@ function renderMediumTicks() {
       (xPreviousTicksOffset + (i - mediumStart) * xTickDistance) * pixelZoom;
     // Canvas lines 2 pixels thick are only sharp when on the whole pixel grid
     const xTickPosSharp = Math.floor(xTickPosition);
-    if (xTickPosSharp > xCanvasWidth) {
+    if (xTickPosSharp > xTicksEnd) {
       break;
     }
     ctx.beginPath();
@@ -191,7 +197,7 @@ function renderLargeTicks() {
       (xPreviousTicksOffset + (i - largeStart) * xTickDistance) * pixelZoom;
     // Canvas lines 3 pixels thick are only sharp when 0.5 off the whole pixel grid
     const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
-    if (xTickPosSharp > xCanvasWidth) {
+    if (xTickPosSharp > xTicksEnd) {
       break;
     }
     ctx.beginPath();
@@ -215,7 +221,7 @@ onMounted(() => {
   if (!ctx) {
     return;
   }
-  ctx.font = '11px Arial';
+  ctx.font = canvasFontFromSize('11px');
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
   drawAxis();

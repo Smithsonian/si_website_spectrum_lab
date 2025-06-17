@@ -73,3 +73,23 @@ export const useCursorMicrons = (): CursorMicronsWithUpdater => {
   }
   return cursorMicronsWithUpdater;
 };
+
+// Bootstrap font stack + Open Sans
+export const canvasFontFromSize = (size: string): string => {
+  const fontFamily = `'Open Sans',
+system-ui,
+-apple-system,
+'Segoe UI',
+Roboto,
+'Helvetica Neue',
+'Noto Sans',
+'Liberation Sans',
+Arial,
+sans-serif,
+'Apple Color Emoji',
+'Segoe UI Emoji',
+'Segoe UI Symbol',
+'Noto Color Emoji'`;
+  const fontWeight = 600;
+  return `${fontWeight} ${size} ${fontFamily}`;
+};

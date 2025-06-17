@@ -1,5 +1,6 @@
 // Speclab customizations before loading Bootstrap
 // Open Sans at the front with Bootstrap fallbacks behind
+// Also set this in chartUtils, for use in canvas ctx.font
 $font-family-base:
   'Open Sans',
   system-ui,

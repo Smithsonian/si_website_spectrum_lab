@@ -8,6 +8,7 @@
 
 <script setup lang="ts">
 import { CHART_HEIGHT, Y_1_FROM_TOP, Y_TICK_DISTANCE } from '@/constants';
+import { canvasFontFromSize } from '@/utils/chartUtils';
 import { onMounted, useTemplateRef } from 'vue';
 
 const canvas = useTemplateRef('canvas');
@@ -20,7 +21,7 @@ onMounted(() => {
   if (!ctx) {
     return;
   }
-  ctx.font = '9px Myriad Pro';
+  ctx.font = canvasFontFromSize('9px');
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
   for (let tick = 0; tick <= 10; tick++) {
