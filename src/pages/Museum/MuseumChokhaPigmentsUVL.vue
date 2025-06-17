@@ -71,7 +71,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 
 import { computed, ref } from 'vue';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_910.webp';
-import chokhaUVL from '@/assets/spectrum_data/Museum_Conservation/chokha_uvl_2000.webp';
+import chokhaUVL from '@/assets/spectrum_data/Museum_Conservation/chokha_uvl.webp';
 
 useSpecLabHead('Chokha Pigments Part 3: UVL', 'Museum');
 
