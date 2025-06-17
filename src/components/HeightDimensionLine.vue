@@ -3,7 +3,7 @@
     class="position-absolute d-flex flex-fill"
     :style="{
       top: `${y1}px`,
-      left: `${x1}px`,
+      left: `${x}%`,
       height: `${height}px`,
     }"
   >
@@ -26,7 +26,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const props = defineProps<{ y1: number; x1: number; y2: number }>();
+// y1 and y2: pixels
+// x: percent. To deal with width design changes
+const props = defineProps<{ y1: number; x: number; y2: number }>();
 
 const height = computed(() => {
   return props.y2 - props.y1;

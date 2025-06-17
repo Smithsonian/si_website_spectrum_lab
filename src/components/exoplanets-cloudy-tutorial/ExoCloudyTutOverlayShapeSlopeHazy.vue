@@ -6,13 +6,13 @@ import { CHART_HEIGHT, CHART_WIDTH } from '@/constants';
 <template>
   <svg
     class="position-absolute shape-slope-svg"
-    viewBox="0 0 610 150"
+    viewBox="0 0 700 150"
     :style="{ height: CHART_HEIGHT, width: CHART_WIDTH }"
   >
     <path
       d="
         M 5 120
-        q 200 -95 600 -95
+        q 225 -98 690 -95
       "
     />
   </svg>
