@@ -18,8 +18,15 @@
       <ToolControlGroup :control-names="[]">
         <template #top-tool>
           <div class="position-relative">
-            <ToolCard ref="topToolRef" draw-only />
+            <ToolCard ref="topToolRef" draw-only>
+              <div
+                ref="spectraImageTutAnchor"
+                class="position-absolute"
+                style="bottom: 20px; left: 300px; width: 0; height: 0"
+              ></div>
+            </ToolCard>
             <SpecTutPopupTool :anchor-elem="topToolRef" />
+            <SpecTutPopupGraph :anchor-elem="spectraImageTutAnchor" />
           </div>
         </template>
         <template v-if="showSecondTool" #bottom-tool>
@@ -68,6 +75,7 @@ useSpecLabHead('Tutorial', 'Spectra');
 
 const topToolRef = useTemplateRef<ComponentPublicInstance>('topToolRef');
 const bottomToolRef = useTemplateRef<ComponentPublicInstance>('bottomToolRef');
+const spectraImageTutAnchor = useTemplateRef('spectraImageTutAnchor');
 
 // Initialize here for children
 const { tutorialState, goToNext, replay } = useSpectraTutorialStateMachine();

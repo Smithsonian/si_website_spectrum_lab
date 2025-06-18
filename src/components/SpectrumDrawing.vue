@@ -19,12 +19,6 @@
       @pointerleave="handlePointerLeave"
       >Spectrum intensity vs wavelength chart, drawn by the user</canvas
     >
-    <div
-      ref="spectraImageTutAnchor"
-      class="position-absolute"
-      style="bottom: 20px; left: 300px; width: 0; height: 0"
-    ></div>
-    <SpecTutPopupGraph :anchor-elem="spectraImageTutAnchor" />
   </div>
 </template>
 
@@ -40,7 +34,6 @@ import {
 } from '@/utils/drawingUtils';
 import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
-const spectraImageTutAnchor = useTemplateRef('spectraImageTutAnchor');
 const canvas = useTemplateRef('canvas');
 const context = computed(() => {
   if (!canvas.value) {
