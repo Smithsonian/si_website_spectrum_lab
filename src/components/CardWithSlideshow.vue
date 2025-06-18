@@ -4,14 +4,7 @@
       <slot></slot>
     </template>
     <template #middle>
-      <!-- Add key to make image loading more obvious -->
-      <div
-        class="card-with-slideshow-image-container"
-        :style="{ minHeight: `${slideContainerMinHeight}px` }"
-        v-resize-observer="onResizeSlideWidth"
-      >
-        <img width="100%" :src="slideOrder[slideIndex]" :key="slideIndex" />
-      </div>
+      <img width="100%" :src="slideOrder[slideIndex]" />
     </template>
     <template #bottom>
       <LeftRightGroup>
@@ -74,8 +67,6 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { vResizeObserver } from '@vueuse/components';
-import type { ResizeObserverCallback } from '@vueuse/core';
 
 const props = withDefaults(
   defineProps<{
@@ -112,18 +103,6 @@ const prevSlide = () => {
 
 const navigateToSlide = (index: number) => {
   slideIndex.value = index;
-};
-
-// Handle slide height when loading images
-const slideContainerMinHeight = ref(300);
-const ASPECT_RATIO = 16 / 9;
-const onResizeSlideWidth: ResizeObserverCallback = (entries) => {
-  const [container] = entries;
-  const { width } = container.contentRect;
-  const newHeight = width / ASPECT_RATIO;
-  if (slideContainerMinHeight.value !== newHeight) {
-    slideContainerMinHeight.value = newHeight;
-  }
 };
 </script>
 
