@@ -110,8 +110,21 @@ import compIcon from '@/assets/SVG/composition_icon.svg?source&set-current-color
 import finalIcon from '@/assets/SVG/final_projects_icon.svg?source&set-current-color';
 import playgroundIcon from '@/assets/SVG/playground_icon.svg?source&set-current-color';
 import { useSpecLabHead } from '@/utils/locationUtils';
+import { useHead } from '@unhead/vue';
+import headerImage from '@/assets/2x/glass_filters@2x.webp';
 
 useSpecLabHead('Home Page');
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      fetchpriority: 'high',
+      as: 'image',
+      href: headerImage,
+      type: 'image/webp',
+    },
+  ],
+});
 </script>
 
 <style>
