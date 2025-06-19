@@ -1,5 +1,11 @@
 <template>
-  <BNavbar v-b-color-mode="'dark'" variant="dark" container="xl" tag="header">
+  <BNavbar
+    v-b-color-mode="'dark'"
+    variant="dark"
+    container="xl"
+    tag="header"
+    role="banner"
+  >
     <BNavbarBrand
       href="https://smithsonian.github.io/si_website_datalabs/"
       aria-label="Data Labs home page"
