@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark text-light pt-3">
+  <footer class="bg-dark text-light pt-3">
     <BContainer>
       <BRow>
         <BCol cols="8">
@@ -26,9 +26,13 @@
           </p>
         </BCol>
         <BCol>
-          <img src="/src/assets/CfALogo@2x.png" width="100%" />
+          <img
+            src="/src/assets/CfALogo@2x.png"
+            width="100%"
+            alt="Center for Astrophysics: Harvard & Smithsonian logo"
+          />
         </BCol>
       </BRow>
     </BContainer>
-  </div>
+  </footer>
 </template>

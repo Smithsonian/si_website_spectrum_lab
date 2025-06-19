@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-sl-royal-blue">
+  <nav class="bg-sl-royal-blue">
     <BContainer>
       <BNav>
         <BNavItem link-class="page-nav-link" to="/light">1. Light</BNavItem>
@@ -19,7 +19,7 @@
         </BNavItem>
       </BNav>
     </BContainer>
-  </div>
+  </nav>
 </template>
 
 <style>
