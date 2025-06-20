@@ -1,11 +1,12 @@
 <template>
   <div class="spectrum-canvas">
     <div class="d-flex position-relative">
-      <div class="left-axis-label">
-        More Light
-        <span class="mt-1">
-          <FontAwesomeIcon :icon="['fas', 'arrow-up']" transform="rotate-180"
-        /></span>
+      <div class="spectrum-chart-left-axis-label text-uppercase">
+        <img
+          src="/src/assets/SVG/brightness.svg"
+          class="spectrum-chart-brightness-icon"
+        />
+        Brightness
       </div>
       <SpectrumCursorOverlay>
         <SpectrumRainbow />
@@ -56,13 +57,22 @@ const wavelengthUnit = inject(
 </script>
 
 <style>
-.left-axis-label {
+.spectrum-chart-left-axis-label {
+  display: flex;
+  justify-content: center;
   margin: 60px 0 0 0;
   writing-mode: vertical-rl;
-  text-align: center;
   transform: rotate(180deg);
   height: 150px;
+  font-size: 12px;
 }
+
+.spectrum-chart-brightness-icon {
+  height: 17px;
+  transform: rotate(180deg);
+  margin: 0 0 0.5rem 0;
+}
+
 .spectrum-canvas {
   width: 670px;
 }

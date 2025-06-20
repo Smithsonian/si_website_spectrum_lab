@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.58 13.06">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #edecf2;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="datalabs">
+    <g>
+      <circle class="cls-1" cx="2.34" cy="5.69" r="1.59"/>
+      <circle class="cls-1" cx="8.73" cy="10.73" r="1.59"/>
+      <circle class="cls-1" cx="15.24" cy="2.34" r="1.59"/>
+      <line class="cls-1" x1="3.99" y1="6.96" x2="7.14" y2="9.28"/>
+      <line class="cls-1" x1="9.72" y1="9.48" x2="14.31" y2="3.86"/>
+    </g>
+  </g>
+</svg>
