@@ -1,7 +1,9 @@
 <template>
   <div class="spectrum-canvas">
     <div class="d-flex position-relative">
-      <div class="spectrum-chart-left-axis-label text-uppercase">
+      <div
+        class="spectrum-chart-left-axis-label text-uppercase color-slr-light-grey"
+      >
         <img
           src="/src/assets/SVG/brightness.svg"
           class="spectrum-chart-brightness-icon"
@@ -23,8 +25,26 @@
           </div>
         </div>
         <BottomAxis />
-        <div ref="xAxisLabel" class="text-center">
-          Wavelength ({{ wavelengthUnit }})
+        <div
+          ref="xAxisLabel"
+          class="ms-4 color-slr-light-grey"
+          style="font-size: 12px"
+        >
+          <span class="me-2">
+            <FontAwesomeIcon
+              v-if="wavelengthUnit === 'Electron volts'"
+              :icon="['fas', 'bolt']"
+            />
+            <img
+              v-else
+              src="/src/assets/SVG/waveform.svg"
+              style="height: 12px"
+            />
+          </span>
+          <span class="text-uppercase">
+            {{ wavelengthUnit === 'Electron volts' ? 'Energy' : 'Wavelength' }}
+          </span>
+          ({{ wavelengthUnit }})
         </div>
       </SpectrumCursorOverlay>
       <ControlsTutPopupXAxis :anchor-elem="xAxisLabel" />
@@ -40,6 +60,7 @@ import {
   type WavelengthUnit,
   wavelengthUnitKey,
 } from '@/injectionKeys';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { inject, ref, useTemplateRef } from 'vue';
 
 const xAxisLabel = useTemplateRef('xAxisLabel');

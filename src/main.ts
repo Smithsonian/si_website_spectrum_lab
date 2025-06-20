@@ -13,6 +13,7 @@ import {
   faXmark,
   faCircle,
   faImage,
+  faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -99,6 +100,7 @@ library.add(
   faXmark,
   faCircle,
   faImage,
+  faBolt,
 );
 
 const routes: RouteRecordRaw[] = [
