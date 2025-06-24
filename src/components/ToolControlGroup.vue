@@ -2,49 +2,43 @@
   <TopToolContext :has-bottom-tool="!!$slots['bottom-tool']">
     <slot name="top-tool"></slot>
   </TopToolContext>
-  <BRow class="mt-1 mb-2 px-3">
-    <BCol cols="3">
-      <div v-if="controlNames.includes('units')" class="position-relative">
-        <BFormGroup label="Wavelength units" label-for="wavelength-unit">
-          <BFormSelect
-            ref="unitDropdown"
-            id="wavelength-unit"
-            v-model="wavelengthUnit"
-            :disabled="disabled"
-            :options="wavelengthUnitOptions"
-          />
-        </BFormGroup>
-        <WavelengthTutPopoverUnits :anchor-elem="unitDropdown" />
-        <ControlsTutPopupWavelengthUnits :anchor-elem="unitDropdown" />
-      </div>
-    </BCol>
-    <BCol cols="3">
-      <div v-if="controlNames.includes('plotType')" class="position-relative">
-        <BFormGroup label="Plot type" label-for="plot-type">
+  <BRow class="mt-1 mb-2 gy-2">
+    <BCol v-if="controlNames.includes('plotType')" cols="6" xl="2">
+      <div class="position-relative">
+        <BFormGroup
+          label-for="plot-type"
+          label-class="tool-control-group-label"
+        >
+          <template #label>
+            <img
+              src="/src/assets/SVG/plot_type.svg"
+              class="tool-control-group-label-icon"
+            />
+            <span class="ms-2">Plot type</span>
+          </template>
           <BFormSelect
             ref="plotTypeDropdown"
             id="plot-type"
+            size="sm"
             v-model="plotType"
             :disabled="disabled"
             :options="plotOptions"
+            class="text-lowercase"
           />
         </BFormGroup>
         <ControlsTutPopupPlotType :anchor-elem="plotTypeDropdown" />
       </div>
     </BCol>
-    <BCol v-if="controlNames.includes('normalize')" cols="2">
-      <BFormGroup label="Normalize?" label-for="normalize">
-        <BFormRadioGroup
-          id="normalize"
-          v-model="normalize"
-          :disabled="disabled"
-          :options="normalizeOptions"
-        />
-      </BFormGroup>
-    </BCol>
-    <BCol cols="4">
-      <div v-if="controlNames.includes('zoom')" class="position-relative">
-        <BFormGroup :label="`Zoom: ${zoomPercent}%`" label-for="zoom">
+    <BCol v-if="controlNames.includes('zoom')" cols="6" xl="4">
+      <div class="position-relative">
+        <BFormGroup label-for="zoom" label-class="tool-control-group-label">
+          <template #label>
+            <img
+              src="/src/assets/SVG/width.svg"
+              class="tool-control-group-label-icon"
+            />
+            <span class="ms-2">Plot width: {{ zoomPercent }}%</span>
+          </template>
           <BFormInput
             ref="zoomElem"
             id="zoom"
@@ -58,6 +52,54 @@
         </BFormGroup>
         <ControlsTutPopupSlider :anchor-elem="zoomElem" />
       </div>
+    </BCol>
+    <BCol cols="6" xl="3">
+      <div v-if="controlNames.includes('units')" class="position-relative">
+        <BFormGroup
+          label="Wavelength units"
+          label-for="wavelength-unit"
+          label-class="tool-control-group-label"
+        >
+          <template #label>
+            <img
+              src="/src/assets/SVG/waveform.svg"
+              class="tool-control-group-label-icon"
+            />
+            <FontAwesomeIcon :icon="['fas', 'bolt']" />
+            <span class="ms-2">Units</span>
+          </template>
+          <BFormSelect
+            ref="unitDropdown"
+            id="wavelength-unit"
+            size="sm"
+            v-model="wavelengthUnit"
+            :disabled="disabled"
+            :options="wavelengthUnitOptions"
+            class="text-lowercase"
+          />
+        </BFormGroup>
+        <WavelengthTutPopoverUnits :anchor-elem="unitDropdown" />
+        <ControlsTutPopupWavelengthUnits :anchor-elem="unitDropdown" />
+      </div>
+    </BCol>
+    <BCol v-if="controlNames.includes('normalize')" cols="6" xl="3">
+      <BFormGroup label-for="normalize" class="tool-control-group-label">
+        <template #label>
+          <img
+            src="/src/assets/SVG/normalize.svg"
+            class="tool-control-group-label-icon"
+          />
+          <span class="ms-2">Normalize data</span>
+        </template>
+        <BFormRadioGroup
+          id="normalize"
+          class="text-lowercase"
+          size="sm"
+          v-model="normalize"
+          :disabled="disabled"
+          :options="normalizeOptions"
+        />
+      </BFormGroup>
     </BCol>
   </BRow>
   <!-- Div needed to clear the row -->
@@ -137,6 +179,27 @@ useCursorMicrons();
 </script>
 
 <style>
+.tool-control-group-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--slr-light-grey);
+}
+
+.tool-control-group-label-icon {
+  height: 12px;
+}
+
+/* Larger select but in the same vertical space as the others */
+.tool-control-group-label .form-check {
+  padding-left: 1.8em;
+}
+.tool-control-group-label .form-check-input {
+  height: 18px;
+  width: 18px;
+  margin-top: 2px;
+  margin-left: -1.8em;
+}
+
 input.zoom-slider:disabled {
   /* Bootstrap makes this none, which makes sense, except that messes up
   cursor: not-allowed from taking effect. */
