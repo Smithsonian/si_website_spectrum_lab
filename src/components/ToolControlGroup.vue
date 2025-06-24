@@ -58,12 +58,12 @@
         <BFormGroup
           label="Wavelength units"
           label-for="wavelength-unit"
-          label-class="tool-control-group-label"
+          label-class="tool-control-group-label d-flex align-items-center"
         >
           <template #label>
             <img
               src="/src/assets/SVG/waveform.svg"
-              class="tool-control-group-label-icon"
+              class="tool-control-group-label-icon me-1"
             />
             <FontAwesomeIcon :icon="['fas', 'bolt']" />
             <span class="ms-2">Units</span>
