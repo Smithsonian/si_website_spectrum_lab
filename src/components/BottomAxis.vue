@@ -1,17 +1,22 @@
 <template>
-  <div class="position-relative ms-2" style="height: 30px">
+  <div
+    class="position-relative"
+    style="height: 30px"
+    :style="{ marginLeft: `${LEFT_AXIS_WIDTH}px` }"
+  >
     <canvas
       ref="canvas"
       :width="xLabelsEnd"
       height="30"
       class="position-absolute"
+      :style="{ left: `-${xTicksStart}px` }"
       >Bottom axis ticks</canvas
     >
   </div>
 </template>
 
 <script setup lang="ts">
-import { CHART_WIDTH } from '@/constants';
+import { CHART_WIDTH, LEFT_AXIS_WIDTH } from '@/constants';
 import {
   wavelengthUnitKey,
   zoomKey,
@@ -20,10 +25,10 @@ import {
 import { canvasFontFromSize, pixelZoomFromZoom } from '@/utils/chartUtils';
 import { inject, onMounted, ref, useTemplateRef, watch } from 'vue';
 
-// Extra canvas space under the left axis
-const xLeftSideRoom = 20;
-const xTicksEnd = CHART_WIDTH + xLeftSideRoom;
-// Extra room for labels off the edge
+// Extra room for labels off the left edge
+const xTicksStart = 16;
+const xTicksEnd = CHART_WIDTH + xTicksStart;
+// Extra room for labels off the right edge
 const xLabelsEnd = xTicksEnd + 20;
 
 const zoomRef = inject(zoomKey, ref(1));
@@ -110,7 +115,7 @@ function renderSmallTicks() {
 
     for (let i = smallStart; i < 100; i++) {
       const xTickPosition =
-        xLeftSideRoom + (i - smallStart) * xTickDistance * pixelZoom;
+        xTicksStart + (i - smallStart) * xTickDistance * pixelZoom;
       // Canvas lines 1 pixel thick are only sharp when 0.5 offset from the grid
       const xTickPosSharp = Math.floor(xTickPosition) + 0.5;
       if (xTickPosSharp > xTicksEnd) {
@@ -129,7 +134,7 @@ function renderSmallTicks() {
     }
   } else {
     // Draw zero-ish tick
-    const xTickPosSharp = xLeftSideRoom + 0.5;
+    const xTickPosSharp = xTicksStart + 0.5;
     ctx.beginPath();
     ctx.moveTo(xTickPosSharp, 0);
     ctx.lineTo(xTickPosSharp, 4);
@@ -161,7 +166,7 @@ function renderMediumTicks() {
   for (let i = 1; i <= 60; i++) {
     // Since the tenths start at 0.2, we need to start at 800 not 1000
     const xTickPosition =
-      xLeftSideRoom +
+      xTicksStart +
       (xPreviousTicksOffset + (i - mediumStart) * xTickDistance) * pixelZoom;
     // Canvas lines 2 pixels thick are only sharp when on the whole pixel grid
     const xTickPosSharp = Math.floor(xTickPosition);
@@ -193,7 +198,7 @@ function renderLargeTicks() {
     // Since the tenths start at 0.2, we need to start at 9800 not 10000
     const xPreviousTicksOffset = 9800;
     const xTickPosition =
-      xLeftSideRoom +
+      xTicksStart +
       (xPreviousTicksOffset + (i - largeStart) * xTickDistance) * pixelZoom;
     // Canvas lines 3 pixels thick are only sharp when 0.5 off the whole pixel grid
     const xTickPosSharp = Math.floor(xTickPosition) + 0.5;

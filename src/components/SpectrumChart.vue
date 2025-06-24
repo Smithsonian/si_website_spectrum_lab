@@ -81,7 +81,7 @@ const wavelengthUnit = inject(
 .spectrum-chart-left-axis-label {
   display: flex;
   justify-content: center;
-  margin: 60px 0 0 0;
+  margin: 60px 7px 0 0;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   height: 150px;
@@ -92,9 +92,5 @@ const wavelengthUnit = inject(
   height: 17px;
   transform: rotate(180deg);
   margin: 0 0 0.5rem 0;
-}
-
-.spectrum-canvas {
-  width: 670px;
 }
 </style>

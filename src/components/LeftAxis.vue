@@ -1,13 +1,18 @@
 <template>
-  <div class="ms-2" :style="`height: ${CHART_HEIGHT}px`">
-    <canvas ref="canvas" width="20" :height="CHART_HEIGHT"
+  <div :style="`height: ${CHART_HEIGHT}px`">
+    <canvas ref="canvas" :width="`${LEFT_AXIS_WIDTH}px`" :height="CHART_HEIGHT"
       >Left axis ticks</canvas
     >
   </div>
 </template>
 
 <script setup lang="ts">
-import { CHART_HEIGHT, Y_1_FROM_TOP, Y_TICK_DISTANCE } from '@/constants';
+import {
+  CHART_HEIGHT,
+  LEFT_AXIS_WIDTH,
+  Y_1_FROM_TOP,
+  Y_TICK_DISTANCE,
+} from '@/constants';
 import { canvasFontFromSize } from '@/utils/chartUtils';
 import { onMounted, useTemplateRef } from 'vue';
 
@@ -21,7 +26,7 @@ onMounted(() => {
   if (!ctx) {
     return;
   }
-  ctx.font = canvasFontFromSize('9px');
+  ctx.font = canvasFontFromSize('11px');
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
   for (let tick = 0; tick <= 10; tick++) {
@@ -29,18 +34,19 @@ onMounted(() => {
     const yTick = tick * Y_TICK_DISTANCE + Y_1_FROM_TOP;
     // Start at 1 counting down by one tenth
     const tickValue = (10 - tick) / 10;
-    const tickLabel = `${tickValue}`;
+    const tickLabel = tick % 2 ? '' : `${tickValue}`;
     // Scootch short labels to the right
-    let leftSpace = 0;
+    let xLeftSpace = 0;
     if (tickLabel.length === 1) {
-      leftSpace = 7;
+      xLeftSpace = 9;
     }
     // Draw label
-    ctx.fillText(`${tickValue}`, leftSpace, yTick + 2);
+    ctx.fillText(tickLabel, xLeftSpace, yTick + 3);
     // Draw tick
+    const xTickLength = 7;
     ctx.beginPath();
-    ctx.moveTo(15, yTick);
-    ctx.lineTo(25, yTick);
+    ctx.moveTo(LEFT_AXIS_WIDTH - xTickLength, yTick);
+    ctx.lineTo(LEFT_AXIS_WIDTH, yTick);
     ctx.stroke();
   }
 });

@@ -1,6 +1,6 @@
 export const CHART_WIDTH = 700;
 export const RAINBOW_HEIGHT = 45;
-export const LEFT_AXIS_WIDTH = 28;
+export const LEFT_AXIS_WIDTH = 26;
 export const MIN_WAVELENGTH = 0.2;
 export const NUM_OF_DRAWING_BUCKETS = 100;
 export const X_BUCKET_WIDTH = CHART_WIDTH / NUM_OF_DRAWING_BUCKETS;

@@ -1,6 +1,7 @@
 <template>
   <div
-    class="rainbow-offset border-top border-start border-end border-sl-light-blue"
+    class="border-top border-start border-end border-sl-light-blue"
+    :style="{ marginLeft: `${LEFT_AXIS_WIDTH}px` }"
   >
     <!-- position-relative has to be inside, to not include the border -->
     <div class="position-relative">
@@ -42,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import { CHART_WIDTH, RAINBOW_HEIGHT } from '@/constants';
+import { CHART_WIDTH, LEFT_AXIS_WIDTH, RAINBOW_HEIGHT } from '@/constants';
 import {
   spectrumDataKey,
   spectrumDataSourceKey,
