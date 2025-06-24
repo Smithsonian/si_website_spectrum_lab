@@ -90,6 +90,16 @@ $input-bg: $sl-navy;
 $input-border-color: $sl-light-blue;
 $form-select-indicator-color: $slr-light-grey;
 $input-disabled-bg: $sl-slate-blue;
+$form-range-track-border-radius: 0;
+$form-range-thumb-border: 1px solid black;
+$form-range-thumb-border-radius: 0;
+$form-range-thumb-width: 0.6rem;
+$form-range-thumb-height: 1.5rem;
+$form-check-input-width: 1.5em;
+$form-check-input-border: 1px solid $sl-light-blue;
+$form-check-input-checked-color: $sl-light-blue;
+$form-check-input-checked-bg-color: $sl-navy;
+$form-check-input-checked-border-color: $sl-light-blue;
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';

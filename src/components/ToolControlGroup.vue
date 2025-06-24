@@ -189,17 +189,6 @@ useCursorMicrons();
   height: 12px;
 }
 
-/* Larger select but in the same vertical space as the others */
-.tool-control-group-label .form-check {
-  padding-left: 1.8em;
-}
-.tool-control-group-label .form-check-input {
-  height: 18px;
-  width: 18px;
-  margin-top: 2px;
-  margin-left: -1.8em;
-}
-
 input.zoom-slider:disabled {
   /* Bootstrap makes this none, which makes sense, except that messes up
   cursor: not-allowed from taking effect. */
@@ -207,13 +196,13 @@ input.zoom-slider:disabled {
 }
 
 input.zoom-slider::-webkit-slider-runnable-track {
-  background-color: var(--bs-gray-400);
+  background-color: var(--slr-med-grey);
 }
 input.zoom-slider[disabled]::-webkit-slider-runnable-track {
   cursor: not-allowed;
 }
 input.zoom-slider::-moz-range-track {
-  background-color: var(--bs-gray-400);
+  background-color: var(--slr-med-grey);
 }
 input.zoom-slider[disabled]::-moz-range-track {
   cursor: not-allowed;
