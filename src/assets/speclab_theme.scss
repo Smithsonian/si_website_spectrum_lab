@@ -1,4 +1,6 @@
 // Speclab customizations before loading Bootstrap
+@use 'sass:color';
+
 // Open Sans at the front with Bootstrap fallbacks behind
 // Also set this in chartUtils, for use in canvas ctx.font
 $font-family-base:
@@ -100,6 +102,8 @@ $form-check-input-border: 1px solid $sl-light-blue;
 $form-check-input-checked-color: $sl-light-blue;
 $form-check-input-checked-bg-color: $sl-navy;
 $form-check-input-checked-border-color: $sl-light-blue;
+$focus-ring-opacity: 0.5;
+$focus-ring-color: color.change($sl-light-blue, $alpha: $focus-ring-opacity);
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
@@ -171,4 +175,8 @@ $form-check-input-checked-border-color: $sl-light-blue;
 .needs-updating {
   color: red !important;
   font-weight: bold;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
 }

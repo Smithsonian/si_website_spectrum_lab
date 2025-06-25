@@ -380,7 +380,7 @@ export const useSpectrumDataProvider = (
   );
   const spectrumDataFromPickedFile: Ref<SpectrumDatum[]> = ref([]);
   watch(pickedFile, async (newFile) => {
-    if (newFile === null) {
+    if (!newFile) {
       spectrumDataFromPickedFile.value = [];
       return;
     }
