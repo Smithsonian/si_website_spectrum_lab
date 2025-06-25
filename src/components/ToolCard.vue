@@ -37,6 +37,7 @@
           >
             <BButton
               ref="clearButtonElem"
+              class="tool-card-clear-drawing"
               size="sm"
               @click="clearDrawnSpectrumY"
               >Clear drawing</BButton
@@ -250,5 +251,17 @@ useSpectrumDataProvider(
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: var(--slr-light-grey);
+}
+
+.btn.tool-card-clear-drawing {
+  border: 1px solid var(--sl-slate-blue);
+  background-color: var(--sl-lighter-blue);
+  color: var(--sl-navy);
+  width: 100%;
+}
+.btn.tool-card-clear-drawing:hover {
+  background-color: var(--sl-navy);
+  /* This is the Bootstrap default light text incantation */
+  color: rgba(var(--bs-light-rgb), 1);
 }
 </style>
