@@ -32,7 +32,7 @@
             class="mb-1"
           />
           <div
-            v-if="spectrumDataSource === 'drawing'"
+            v-if="spectrumDataSource === 'drawing' && showClearButton"
             class="position-relative"
           >
             <BButton
@@ -191,7 +191,7 @@ const { selectedSpectrum } = useSelectedSpectrum(
   () => props.defaultSpectrum,
 );
 
-const { clearDrawnSpectrumY } = useDrawnSpectrumProvider(
+const { showClearButton, clearDrawnSpectrumY } = useDrawnSpectrumProvider(
   spectrumOptions,
   selectedCategory,
 );

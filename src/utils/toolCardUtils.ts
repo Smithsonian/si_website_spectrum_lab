@@ -20,6 +20,7 @@ import {
   rangeNormalize,
   visibleOnly,
 } from './importUtils';
+import { useSpectraTutorialStateMachine } from './tutorialUtils';
 
 type PreloadedOrHiddenCategory = PreloadedCategory | 'Hidden';
 
@@ -259,6 +260,7 @@ export const useDrawnSpectrumProvider = (
   spectrumOptions: Ref<Option[]>,
   selectedCategory: Ref<SpectrumCategory>,
 ): {
+  showClearButton: Readonly<Ref<boolean>>;
   clearDrawnSpectrumY: () => void;
 } => {
   useCurrentlyDrawing();
@@ -268,7 +270,14 @@ export const useDrawnSpectrumProvider = (
       clearDrawnSpectrumY();
     }
   });
-  return { clearDrawnSpectrumY };
+  const { tutorialState } = useSpectraTutorialStateMachine();
+  const showClearButton = computed(() => {
+    if (tutorialState.value === 'clear') {
+      return true;
+    }
+    return !!drawnSpectrumY.value.length;
+  });
+  return { showClearButton, clearDrawnSpectrumY };
 };
 
 export const useSelectedMetadata = (
