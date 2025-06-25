@@ -4,7 +4,7 @@
       v-if="showClickHere"
       class="position-absolute color-sl-navy drawing-click-here-layer"
     >
-      <div>
+      <div class="h4">
         Click here to draw
         <FontAwesomeIcon :icon="['fas', 'pencil']"></FontAwesomeIcon>
       </div>
