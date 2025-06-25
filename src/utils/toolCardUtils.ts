@@ -20,7 +20,6 @@ import {
   rangeNormalize,
   visibleOnly,
 } from './importUtils';
-import drawingIcon from '@/assets/SVG/drawing_icon.png';
 
 type PreloadedOrHiddenCategory = PreloadedCategory | 'Hidden';
 
@@ -280,7 +279,8 @@ export const useSelectedMetadata = (
   customCategoryNamesGetter: () => CustomCategoryNames | null,
 ): {
   selectedMetadata: Readonly<Ref<SpectrumMetadata | null>>;
-  iconPath: Readonly<Ref<string | null>>;
+  sourceImage: Readonly<Ref<string | null>>;
+  iconName: Readonly<Ref<string>>;
   chartTitle: Readonly<Ref<string>>;
   previewPath: Readonly<Ref<string | null>>;
 } => {
@@ -289,11 +289,8 @@ export const useSelectedMetadata = (
       metadataByFilename.value[selectedSpectrum.value] || null,
   );
 
-  // Icon
-  const iconPath = computed((): string | null => {
-    if (selectedCategory.value === 'draw') {
-      return drawingIcon;
-    }
+  // Source image
+  const sourceImage = computed((): string | null => {
     if (!selectedMetadata.value) {
       return null;
     }
@@ -302,6 +299,17 @@ export const useSelectedMetadata = (
       return null;
     }
     return imageUrl;
+  });
+
+  // FontAwesome icon name to display if no source image
+  const iconName = computed((): string => {
+    if (selectedCategory.value === 'draw') {
+      return 'pencil';
+    }
+    if (pickedFile.value) {
+      return 'file';
+    }
+    return 'image';
   });
 
   // Chart title (as distinct from tool card title)
@@ -336,7 +344,7 @@ export const useSelectedMetadata = (
     return bigImageUrl;
   });
 
-  return { selectedMetadata, iconPath, chartTitle, previewPath };
+  return { selectedMetadata, sourceImage, iconName, chartTitle, previewPath };
 };
 
 export const useSpectrumDataProvider = (

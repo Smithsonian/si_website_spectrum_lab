@@ -11,13 +11,13 @@
       <BCol cols="12" xl="3">
         <div class="tool-card-title mb-2">{{ title }}</div>
         <div class="spectrum-icon-holder mb-2 border border-sl-light-blue">
-          <img v-if="iconPath" class="spectrum-icon" :src="iconPath" />
+          <img v-if="sourceImage" class="spectrum-icon" :src="sourceImage" />
           <div
             v-else
             class="h-100 d-flex justify-content-center align-items-center"
           >
             <FontAwesomeIcon
-              :icon="['fas', 'image']"
+              :icon="['fas', iconName]"
               size="2xl"
               transform="grow-20"
             />
@@ -196,7 +196,7 @@ const { clearDrawnSpectrumY } = useDrawnSpectrumProvider(
   selectedCategory,
 );
 
-const { selectedMetadata, iconPath, chartTitle, previewPath } =
+const { selectedMetadata, sourceImage, iconName, chartTitle, previewPath } =
   useSelectedMetadata(
     selectedCategory,
     metadataByFilename,
