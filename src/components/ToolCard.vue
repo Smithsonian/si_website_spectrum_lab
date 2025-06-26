@@ -32,10 +32,11 @@
             class="mb-1"
           />
           <div
-            v-if="spectrumDataSource === 'drawing' && showClearButton"
+            v-if="spectrumDataSource === 'drawing'"
             class="position-relative"
           >
             <BButton
+              v-if="showClearButton"
               ref="clearButtonElem"
               class="tool-card-clear-drawing"
               size="sm"
