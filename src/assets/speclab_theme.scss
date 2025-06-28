@@ -1,6 +1,4 @@
 // Speclab customizations before loading Bootstrap
-@use 'sass:color';
-
 // Open Sans at the front with Bootstrap fallbacks behind
 // Also set this in chartUtils, for use in canvas ctx.font
 $font-family-base:
@@ -36,6 +34,7 @@ $sl-slate-blue: #3a678a;
 $sl-royal-blue: #00456c;
 $sl-navy: #153353;
 $sl-light-blue: #3ad4ed;
+$sl-med-blue: #63d4ed;
 $sl-lighter-blue: #8ce7ff;
 
 // Speclab resources
@@ -65,6 +64,7 @@ $diy-red: #c02325;
   --sl-royal-blue: #{$sl-royal-blue};
   --sl-navy: #{$sl-navy};
   --sl-light-blue: #{$sl-light-blue};
+  --sl-med-blue: #{$sl-med-blue};
   --sl-lighter-blue: #{$sl-lighter-blue};
 
   --slr-light-brown: #{$slr-light-brown};
@@ -103,7 +103,6 @@ $form-check-input-checked-color: $sl-light-blue;
 $form-check-input-checked-bg-color: $sl-navy;
 $form-check-input-checked-border-color: $sl-light-blue;
 $focus-ring-opacity: 0.5;
-$focus-ring-color: color.change($sl-light-blue, $alpha: $focus-ring-opacity);
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-vue-next/src/styles/styles.scss';
@@ -128,6 +127,14 @@ $focus-ring-color: color.change($sl-light-blue, $alpha: $focus-ring-opacity);
 
 .bg-sl-royal-blue {
   background-color: var(--sl-royal-blue);
+}
+
+.bg-sl-med-blue {
+  background-color: var(--sl-med-blue);
+}
+
+.bg-sl-light-blue {
+  background-color: var(--sl-light-blue);
 }
 
 .bg-sl-lighter-blue {

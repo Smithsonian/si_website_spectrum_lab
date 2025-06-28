@@ -63,6 +63,11 @@
           variable-name="sl-light-blue"
         />
         <ColorCircle
+          color="#63d4ed"
+          display-name="Speclab medium blue"
+          variable-name="sl-med-blue"
+        />
+        <ColorCircle
           color="#8ce7ff"
           display-name="Speclab lighter blue"
           variable-name="sl-lighter-blue"
