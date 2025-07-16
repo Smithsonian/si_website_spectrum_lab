@@ -4,7 +4,8 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader
-            >Chokha Pigments Part 3: UV-induced Luminescence</InstructionHeader
+            >Chokha Pigments Part 3: UV-induced Visible
+            Luminescence</InstructionHeader
           >
           <InstructionRow rowType="Investigate">
             <template #steps>
@@ -12,11 +13,12 @@
                 Use the
                 <span style="font-weight: 600">No filter / UVL</span> buttons to
                 toggle between the visible light image and an image showing
-                UV-induced luminescence (UVL) from pigments in the painting.
+                UV-induced visible luminescence (UVL) from pigments in the
+                painting.
               </InstructionStep>
               <InstructionStep>
-                Identify a region of interest from Table 1 that is glowing in
-                the UVL image.
+                Identify the color (if any) you observe in the UVL image for
+                each region of interest.
               </InstructionStep>
               <InstructionStep>
                 Use this
@@ -26,7 +28,9 @@
                   rel="noopener"
                   >data table</BLink
                 >
-                to identify a pigment of this color that creates UVL.
+                to identify which pigment(s) exhibit the UVL behavior you
+                observed. Note whether this behavior is consistent with the
+                pigment you identified from the spectra in Part 1.
               </InstructionStep>
             </template>
           </InstructionRow>

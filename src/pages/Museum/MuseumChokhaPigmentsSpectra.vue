@@ -7,8 +7,8 @@
             Chokha Pigments Part 1: Spectra
           </InstructionHeader>
           <InstructionRow rowType="Tool">
-            Compare the spectra of some of the regions of interest (ROI) with
-            comparison pigments to see if you can identify them.
+            Compare the spectra of the regions of interest (ROI) with comparison
+            pigments to see if you can identify them.
             <template #steps>
               <InstructionStep>
                 Under <span style="font-weight: 600">Source 1</span>, use the
@@ -25,12 +25,13 @@
           <InstructionRow rowType="Notebook">
             <template #steps>
               <InstructionStep>
-                For each ROI, write the pigment names in your notebook table.
+                For each ROI, write the predicted pigment names in your notebook
+                table.
               </InstructionStep>
               <InstructionStep>
                 Some pigments may be easier to identify from their spectra than
-                others. Use the last column to note the ROIs where you have
-                confidence in your pigment identification.
+                others. Use the last column to note how much confidence you have
+                in your prediction of the pigments for each ROI.
               </InstructionStep>
             </template>
           </InstructionRow>

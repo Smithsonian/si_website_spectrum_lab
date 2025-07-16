@@ -15,8 +15,8 @@
           <InstructionRow rowType="Video">
             See Dr. Webb demonstrate how an ultraviolet light and filter can
             capture how pigments absorb and reflect UV light, and how some
-            pigments cause UV-induced fluorescence (UVL), where pigments absorb
-            UV light and then emit visible light.
+            pigments cause UV-induced visible luminescence (UVL), where pigments
+            absorb UV light and then emit visible light.
           </InstructionRow>
           <InstructionRow rowType="Intro">
             More information on different conservation techniques can be found

@@ -53,8 +53,8 @@
             to="museum"
           >
             <BCardText>
-              Set up a museum display that conveys how spectra are used in art
-              conservation.
+              Design a museum display that conveys how light, color, and spectra
+              are used in art conservation.
             </BCardText>
             <BCardText>
               In this project, you’ll learn how art conservators use spectrum to
