@@ -7,6 +7,8 @@
             >Hokusai IR Imaging Part 3: Identify Blue</InstructionHeader
           >
           <InstructionRow rowType="Investigate">
+            Compare how the painting appears in natural light (No filter), with
+            a blue filter (440 nm), and with an IR filter (905 nm).
             <template #steps>
               <InstructionStep>
                 Use the

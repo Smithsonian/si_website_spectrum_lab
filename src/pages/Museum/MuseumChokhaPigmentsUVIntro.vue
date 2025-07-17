@@ -13,16 +13,16 @@
             ultraviolet (UV) light.
           </InstructionRow>
           <InstructionRow rowType="Video">
-            See Dr. Webb demonstrate how an ultraviolet light and filter can
-            capture how pigments absorb and reflect UV light, and how some
-            pigments cause UV-induced visible luminescence (UVL), where pigments
-            absorb UV light and then emit visible light.
+            Watch Dr. Webb demonstrate the use of an ultraviolet light and
+            filter to capture how pigments absorb and reflect UV light, and how
+            some pigments cause UV-induced visible luminescence (UVL), where
+            pigments absorb UV light and then emit visible light.
           </InstructionRow>
           <InstructionRow rowType="Intro">
             More information on different conservation techniques can be found
             at this
             <BLink
-              href="https://drive.google.com/file/d/1glxaK8Rq7QUYG0l5UlcYezOxpmYehu-j/view?usp=sharing"
+              href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Technique%20Description.pdf"
               target="_blank"
               rel="noopener"
               >Reference Sheet</BLink

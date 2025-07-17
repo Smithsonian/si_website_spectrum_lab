@@ -8,16 +8,17 @@
             Luminescence</InstructionHeader
           >
           <InstructionRow rowType="Investigate">
+            Compare how the painting appears in natural light (No filter) and
+            under a UV light, where some pigments exhibit UV-induced visible
+            luminescence (UVL).
             <template #steps>
               <InstructionStep>
                 Use the
                 <span style="font-weight: 600">No filter / UVL</span> buttons to
-                toggle between the visible light image and an image showing
-                UV-induced visible luminescence (UVL) from pigments in the
-                painting.
+                toggle between the visible light image and the UVL image.
               </InstructionStep>
               <InstructionStep>
-                Identify the color (if any) you observe in the UVL image for
+                Identify the colors (if any) you observe in the UVL image for
                 each region of interest.
               </InstructionStep>
               <InstructionStep>
@@ -35,7 +36,16 @@
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Use the information to complete the table in your notebook.
+            <template #steps>
+              <InstructionStep>
+                Use the information to complete the table in your notebook.
+              </InstructionStep>
+              <InstructionStep>
+                For each ROI where adding UVL data changed your pigment
+                identification and/or improved your confidence in your
+                identification, describe how the UVL data helped.
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <div class="mb-3">
             <BFormRadioGroup

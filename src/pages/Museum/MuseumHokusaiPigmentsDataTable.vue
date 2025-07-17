@@ -3,15 +3,17 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Hokusai Pigments Part 2: Data Table
+          Hokusai Pigments Part 2: Time Period and Region
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
-          Use the data chart provided to learn about the properties of some
-          paint pigments, and where and when they have been used.
+          For the Regions of Interest in the painting where you feel confident
+          of your pigment identifications, use the Pigment Data Table to
+          determine the time period and geographic region where those pigments
+          were commonly used.
           <template #before-steps>
             <p>
               <BLink
-                href="https://docs.google.com/document/d/12tWtxQ2-CibGcFYxlEbWjwgogqQr0MFKGtHnW1s0N7Y/edit?usp=sharing"
+                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Pigments%20Data%20Table.pdf"
                 target="_blank"
                 rel="noopener"
               >
@@ -21,7 +23,18 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Complete the table with your information.
+          <template #steps>
+            <InstructionStep>
+              Complete the table with your information.
+            </InstructionStep>
+            <InstructionStep>
+              Based on the time periods and geographic regions where your
+              identified pigments were commonly used, what constraints can you
+              place regarding when and where this painting was created? (Assume
+              that all the pigments are original to the artist, and were not
+              added at a later date).
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <LeftRightGroup class="mt-5">
           <template #left>
