@@ -34,8 +34,8 @@
             :icon-path="museumIconUrl"
             icon-alt="Museum module icon"
           >
-            For this project, you'll set up a museum display that conveys how
-            spectra are used in art conservation.
+            For this project, you'll design a museum display that conveys how
+            light, color, and spectra are used in art conservation.
           </ChallengeIntro>
           <slot name="challenge-tab"></slot>
         </BCol>

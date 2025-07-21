@@ -2,29 +2,37 @@
   <MuseumLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Putting it together</InstructionHeader>
-        <InstructionRow row-type="Notebook">
+        <InstructionHeader>Design Museum Display</InstructionHeader>
+        <InstructionRow row-type="Investigate">
           <template #before-steps>
             <p>
-              Using all the data you’ve collected, design a display for a museum
-              exhibit highlighting the use of light, color, and spectra in
-              analyzing artworks. Choose one of the works of art featured in
-              this project to display in an exhibit. Develop a display that
-              tells the story of the hidden details a visitor might not see from
-              looking at the piece. Your display should include:
+              Imagine you are helping a museum curator prepare an exhibit that
+              highlights the use of light, color, and spectra in analyzing
+              artworks. Choose one of the paintings featured in this project for
+              your exhibit. Using the spectra and/or image data you have
+              explored for your painting, design a display that tells the story
+              of the hidden details a visitor might not see from looking at the
+              piece with their eyes.
             </p>
+            <p>Your display should include:</p>
             <ul>
               <li>
-                At least two regions of interest within your chosen painting.
+                At least two regions of interest within your chosen painting
               </li>
               <li>
                 At least one spectrum or comparison image taken with the
                 techniques described in this activity. (You may take screenshots
-                from the online tool and paste them into your notebook.)
+                from the online tool and print them or paste them into your
+                notebook or slideshow.)
               </li>
               <li>
-                A caption with a description describing how art conservationists
-                might use the data presented.
+                A caption that describes:
+                <ul class="mt-1">
+                  <li>the techniques used to analyze the pigments, and</li>
+                  <li>
+                    how art conservationists might use the data presented.
+                  </li>
+                </ul>
               </li>
             </ul>
           </template>

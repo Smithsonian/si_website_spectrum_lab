@@ -8,13 +8,15 @@
           </InstructionHeader>
           <InstructionRow rowType="Art">
             Art conservators have taken reflection spectra of different regions
-            of interest, marked by the white and black squares. The wavelengths
-            of light that are reflected by the paint in the visible part of the
-            spectrum determines what color our eyes see.
-            <p>
-              Hover your mouse over the painting to see an enlarged view of that
-              region.
-            </p>
+            of interest (ROI), marked by labeled squares on the painting below.
+            The wavelengths of light that are reflected by the paint in the
+            visible part of the spectrum determines what color our eyes see.
+            <template #steps>
+              <InstructionStep>
+                Hover your mouse over the painting to see an enlarged view of
+                that region.
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <InstructionRow rowType="Tool">
             View each "mystery pigment" spectrum and see if you can identify
@@ -36,13 +38,14 @@
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Draw a line from each spectrum to the corresponding region of
-            interest on the painting.
+            Complete the table in your notebook, identifying the color of the
+            region of interest you think corresponds to each Mystery Pigment
+            spectrum.
           </InstructionRow>
           <InstructionRow rowType="Simulation">
             If you'd like a refresher on how light colors mix, double-click the
             "RGB Bulbs" to launch the
-            <span style="font-weight: 600">Color Mixing</span> simulation.
+            <span style="font-weight: 600">PhET Color Mixing</span> simulation.
           </InstructionRow>
         </template>
         <template #middle>

@@ -27,6 +27,25 @@
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
+            <template #steps>
+              <InstructionStep>
+                Write the similarities and differences between the two spectra
+                in your table.
+              </InstructionStep>
+              <InstructionStep>
+                At what wavelength range do you observe the greatest difference
+                in brightness between the B1 and B2 regions of the painting?
+              </InstructionStep>
+              <InstructionStep>
+                Imagine you wanted to know the composition of other blue regions
+                in the painting, and you don't have access to a spectrometer to
+                measure spectra for the other regions, but you can photograph
+                the entire image using different colored (or IR) filters. Based
+                on the differences in the spectra, which filter would be most
+                helpful for distinguishing which of the two blue pigments were
+                used in other parts of the painting?
+              </InstructionStep>
+            </template>
             Complete the table and answer the questions in your notebook.
           </InstructionRow>
         </template>

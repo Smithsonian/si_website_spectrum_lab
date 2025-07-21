@@ -7,15 +7,17 @@
             >Hokusai IR Imaging Part 3: Identify Blue</InstructionHeader
           >
           <InstructionRow rowType="Investigate">
+            Compare how the painting appears in natural light (No filter), with
+            a blue filter (440 nm), and with an IR filter (905 nm).
             <template #steps>
               <InstructionStep>
                 Use the
                 <span style="font-weight: 600"
                   >No filter / 440 nm / 905 nm</span
                 >
-                buttons to toggle between the visible light image and an image
-                showing UV-induced luminescence (UVL) from pigments in the
-                painting.
+                buttons to toggle between the visible light image, and
+                false-color images taken with a 440 nm (blue) filter and 905 nm
+                (infrared) filter.
               </InstructionStep>
               <InstructionStep>
                 Based on the filtered images, identify the likely pigment in B3.

@@ -25,12 +25,13 @@
           <InstructionRow rowType="Notebook">
             <template #steps>
               <InstructionStep>
-                For each ROI, write the pigment names in your notebook table.
+                For each ROI, write the pigment names you identified in your
+                notebook table.
               </InstructionStep>
               <InstructionStep>
                 Some pigments may be easier to identify from their spectra than
-                others. Use the last column to note the ROIs where you have
-                confidence in your pigment identification
+                others. Use the last column to note how much confidence you have
+                in your identification of the pigments for each ROI.
               </InstructionStep>
             </template>
           </InstructionRow>

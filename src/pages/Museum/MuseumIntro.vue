@@ -7,8 +7,9 @@
           <InstructionRow rowType="Intro">
             Light, color, and spectra are important components of art
             conservation work done at museums. By investigating how paint
-            pigments reflect light at different wavelengths, art conservators
-            can learn what materials are used in a painting and make decisions
+            pigments reflect light at different wavelengths—including infrared,
+            ultraviolet, and x-rays—art conservators can understand the nature
+            and origin of the materials employed, helping them make decisions
             about how to best care for and restore the artwork.
           </InstructionRow>
           <InstructionRow rowType="Video">
@@ -20,8 +21,8 @@
             Answer these questions after watching the video:
             <template #steps>
               <InstructionStep>
-                Describe 2 techniques that allow conservation scientists to
-                determine what pigments were used in a painting.
+                Describe 2 different techniques that allow conservation
+                scientists to determine what pigments were used in a painting.
               </InstructionStep>
               <InstructionStep>
                 What can conservation scientists learn about a painting from

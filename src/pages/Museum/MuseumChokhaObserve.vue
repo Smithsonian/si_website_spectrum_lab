@@ -26,7 +26,18 @@
             </p>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
-            Answer the questions in your Notebook about the painting.
+            Answer these questions in your Notebook about the painting.
+            <template #steps>
+              <InstructionStep>
+                Describe what you see in the painting. What do you notice or
+                find yourself wondering about the painting?
+              </InstructionStep>
+              <InstructionStep>
+                What details in the painting do you think could be helpful to
+                you in trying to pinpoint the region and time period this
+                painting comes from?
+              </InstructionStep>
+            </template>
           </InstructionRow>
         </template>
         <template #middle>
