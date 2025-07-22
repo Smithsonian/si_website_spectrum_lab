@@ -111,7 +111,16 @@ const chokhaW1 = useCustomMetadata(
     bigImageUrl: '',
   },
 );
-const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1];
+const chokhaR1 = useCustomMetadata(
+  'Painting Regions',
+  'S2018-1-76_VNIR-SWIR_colors_Red_1',
+  {
+    title: 'ROI R1',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1, chokhaR1];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 const allMetadata = useAllMetadata();
 const pigments = allMetadata['Paint Pigments'];
