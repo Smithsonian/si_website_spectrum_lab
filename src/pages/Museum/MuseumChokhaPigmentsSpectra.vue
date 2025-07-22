@@ -21,6 +21,10 @@
                 <span style="font-weight: 600">Select pigment</span> dropdown
                 menu to view a spectrum for different pigments of each color.
               </InstructionStep>
+              <InstructionStep>
+                Adjust the WAVELENGTH STRETCH as needed to view the complete
+                spectrum.
+              </InstructionStep>
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">
@@ -77,8 +81,8 @@
 
 <script setup lang="ts">
 import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
