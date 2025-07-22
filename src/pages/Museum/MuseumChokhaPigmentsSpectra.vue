@@ -128,5 +128,5 @@ const chokhaR1 = useCustomMetadata(
 const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1, chokhaR1];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 const allMetadata = useAllMetadata();
-const pigments = allMetadata['Paint Pigments'];
+const pigments = allMetadata['Paint Pigments & Supplies'];
 </script>

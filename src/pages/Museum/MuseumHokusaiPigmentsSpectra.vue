@@ -140,5 +140,5 @@ const hokusaiROIsMetadata = customMetadata.filter(
 );
 
 const allMetadata = useAllMetadata();
-const pigmentMetadata = allMetadata['Paint Pigments'];
+const pigmentMetadata = allMetadata['Paint Pigments & Supplies'];
 </script>

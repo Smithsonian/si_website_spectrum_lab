@@ -1100,75 +1100,81 @@
     "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Cochineal",
     "title": "Red: Cochineal",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Red_Lead",
     "title": "Red: Red Lead",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Vermilion",
     "title": "Red: Vermilion",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Cobalt_Yellow",
     "title": "Yellow: Cobalt Yellow",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Spectral-Analysis-of-Genuine-Indian-Yellow-single-spectrum_Genuine_Indian_Yellow",
     "title": "Yellow: Genuine Indian Yellow",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Orpiment",
     "title": "Yellow: Orpiment",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Azurite",
     "title": "Blue: Azurite",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Egyptian_Blue",
     "title": "Blue: Egyptian Blue",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Indigo",
     "title": "Blue: Indigo",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Prussian_Blue",
     "title": "Blue: Prussian Blue",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Lead_White",
     "title": "White: Lead White",
     "spectrumType": "Reflection"
   },
   {
-    "category": "Paint Pigments",
+    "category": "Paint Pigments & Supplies",
     "filename": "Pigments_for_TWT_2024-09-17_Shell_White",
     "title": "White: Shell White",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Spectra_Paper_FORS_NMAA_CHSOS",
+    "title": "Paper: Cellulose",
     "spectrumType": "Reflection"
   }
 ]
