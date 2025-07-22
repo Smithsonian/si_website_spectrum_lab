@@ -20,6 +20,10 @@
                 <span style="font-weight: 600">Select pigment</span> dropdown
                 menu to view a spectrum for different pigments of each color.
               </InstructionStep>
+              <InstructionStep>
+                Adjust the WAVELENGTH STRETCH as needed to view the complete
+                spectrum.
+              </InstructionStep>
             </template>
           </InstructionRow>
           <InstructionRow rowType="Notebook">

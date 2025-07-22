@@ -13,6 +13,10 @@
             visible light and in the infrared.
             <template #steps>
               <InstructionStep>
+                Adjust the wavelength units to nanometers using the UNITS
+                dropdown menu.
+              </InstructionStep>
+              <InstructionStep>
                 Under <span style="font-weight: 600">Normalize?</span>, select
                 <span style="font-weight: 600">Visible</span> to view the
                 spectra only in the visible range. Identify 1-2 similarities and
@@ -23,6 +27,10 @@
                 <span style="font-weight: 600">All</span> to view the spectra in
                 visible and IR. Identify 1-2 similarities and 1-2 differences
                 between the spectra in the IR range.
+              </InstructionStep>
+              <InstructionStep>
+                Adjust the WAVELENGTH STRETCH as needed to view the complete
+                spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>
