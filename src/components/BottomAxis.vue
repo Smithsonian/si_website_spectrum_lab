@@ -37,7 +37,7 @@ let ctx: CanvasRenderingContext2D | null = null;
 
 const wavelengthUnit = inject(
   wavelengthUnitKey,
-  ref<WavelengthUnit>('Microns'),
+  ref<WavelengthUnit>('microns'),
 );
 
 // https://physics.nist.gov/cgi-bin/cuu/Value?minvev|search_for=electron+volt
@@ -52,13 +52,13 @@ const numberFormat = new Intl.NumberFormat(undefined, {
 
 const labelFromWavelength = (wavelengthMicrons: number): string => {
   switch (wavelengthUnit.value) {
-    case 'Microns':
+    case 'microns':
       return numberFormat.format(wavelengthMicrons);
-    case 'Nanometers':
+    case 'nanometers':
       return numberFormat.format(wavelengthMicrons * 1000);
-    case 'Ångstroms':
+    case 'angstroms':
       return numberFormat.format(wavelengthMicrons * 10000);
-    case 'Electron volts':
+    case 'electron volts':
       return numberFormat.format(
         electronVoltsFromWavelengthMicrons(wavelengthMicrons),
       );

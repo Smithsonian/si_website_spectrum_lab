@@ -134,7 +134,7 @@ const xRenderLocation = computed((): number | null => {
 
 const wavelengthUnit = inject(
   wavelengthUnitKey,
-  ref<WavelengthUnit>('Microns'),
+  ref<WavelengthUnit>('microns'),
 );
 
 const numberFormat = new Intl.NumberFormat(undefined, {
@@ -152,13 +152,13 @@ const labelValue = computed((): string | null => {
     return null;
   }
   switch (wavelengthUnit.value) {
-    case 'Microns':
+    case 'microns':
       return numberFormat.format(cursorMicrons.value);
-    case 'Nanometers':
+    case 'nanometers':
       return numberFormat.format(Math.floor(cursorMicrons.value * 1000));
-    case 'Ångstroms':
+    case 'angstroms':
       return numberFormat.format(Math.floor(cursorMicrons.value * 10000));
-    case 'Electron volts':
+    case 'electron volts':
       return numberFormat.format(
         electronVoltsFromWavelengthMicrons(cursorMicrons.value),
       );
@@ -169,10 +169,10 @@ const labelValue = computed((): string | null => {
 
 const labelUnit = computed((): string => {
   const labelsFromUnit: { [Key in WavelengthUnit]: string } = {
-    Microns: 'µm',
-    Nanometers: 'nm',
-    Ångstroms: 'Å',
-    'Electron volts': 'eV',
+    microns: 'µm',
+    nanometers: 'nm',
+    angstroms: 'Å',
+    'electron volts': 'eV',
   };
   return labelsFromUnit[wavelengthUnit.value];
 });

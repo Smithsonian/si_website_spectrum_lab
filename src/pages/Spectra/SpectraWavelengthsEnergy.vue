@@ -13,7 +13,7 @@
             <InstructionStep>
               Use the <strong>unit dropdown menu</strong> to change the unit of
               the measuring tool to nanometers and remeasure the wavelengths.
-              Repeat for Ångstroms and electron volts (a unit of energy).
+              Repeat for angstroms and electron volts (a unit of energy).
             </InstructionStep>
             <InstructionStep>
               Use the measuring tool to estimate the brightness of the three
