@@ -26,6 +26,17 @@
           </InstructionRow>
           <InstructionRow rowType="Notebook">
             Answer the questions in your notebook.
+            <template #steps>
+              <InstructionStep>
+                What pigment do you think is used at ROI B3? (If necessary, use
+                the data in the Spectrum Tool below to remind yourself what
+                pigments make up ROI B1 and ROI B2.)
+              </InstructionStep>
+              <InstructionStep>
+                What clues did you use from the filtered images to identify the
+                pigment at ROI B3?
+              </InstructionStep>
+            </template>
           </InstructionRow>
           <div class="mb-3">
             <BFormRadioGroup
@@ -56,7 +67,7 @@
         <template #bottom-tool>
           <ToolCard
             :custom-metadata="bluesMetadata"
-            spectrum-picker-placeholder="Select pigment"
+            spectrum-picker-placeholder="Select material"
           />
         </template>
       </ToolControlGroup>
@@ -139,14 +150,15 @@ const hokusaiBluesMetadata = customMetadata.filter(
 );
 
 const allMetadata = useAllMetadata();
-const pigmentMetadata = allMetadata['Paint Pigments'];
+const pigmentMetadata = allMetadata['Paint Pigments & Supplies'];
 
 const bluesMetadata = pigmentMetadata.filter(
   (sm) =>
     sm.filename === 'Pigments_for_TWT_2024-09-17_Azurite' ||
     sm.filename === 'Pigments_for_TWT_2024-09-17_Egyptian_Blue' ||
     sm.filename === 'Pigments_for_TWT_2024-09-17_Indigo' ||
-    sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue',
+    sm.filename === 'Pigments_for_TWT_2024-09-17_Prussian_Blue' ||
+    sm.filename === 'Spectra_Paper_FORS_NMAA_CHSOS',
 );
 </script>
 

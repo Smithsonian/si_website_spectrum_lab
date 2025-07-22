@@ -10,6 +10,13 @@
             Compare the spectra of the regions of interest (ROI) with reference
             pigments of different colors to see if you can identify the ROI
             pigments.
+            <p class="mt-2">
+              NOTE: Some common IR absorption features appear in multiple
+              comparison pigment spectra. These are contributed by cellulose
+              from the background material that was painted on. A reference
+              spectrum for cellulose is included, so you can account for its
+              features in the spectra.
+            </p>
             <template #steps>
               <InstructionStep>
                 Under <span style="font-weight: 600">SOURCE 1</span>, use the
@@ -18,8 +25,9 @@
               </InstructionStep>
               <InstructionStep>
                 Under <span style="font-weight: 600">SOURCE 2</span>, use the
-                <span style="font-weight: 600">Select pigment</span> dropdown
-                menu to view a spectrum for different pigments of each color.
+                <span style="font-weight: 600">Select material</span> dropdown
+                menu to view a spectrum for different pigments of each color or
+                the cellulose background.
               </InstructionStep>
               <InstructionStep>
                 Adjust the
@@ -60,7 +68,7 @@
         <template #bottom-tool>
           <ToolCard
             :custom-metadata="pigments"
-            spectrum-picker-placeholder="Select pigment"
+            spectrum-picker-placeholder="Select material"
           />
         </template>
       </ToolControlGroup>
