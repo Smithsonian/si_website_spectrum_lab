@@ -88,8 +88,8 @@
 </template>
 
 <script setup lang="ts">
-import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_910.webp';
-import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_big.webp';
+import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai_visible_b1b2w1y1_910.webp';
+import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_visible_b1b2w1y1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
