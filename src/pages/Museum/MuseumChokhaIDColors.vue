@@ -28,8 +28,8 @@
                 dropdown menu to view each spectrum.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Normalize?</span>, click
-                <span style="font-weight: 600">Visible</span>.
+                Under <span style="font-weight: 400">NORMALIZE DATA</span>,
+                click <span style="font-weight: 600">visible</span>.
               </InstructionStep>
               <InstructionStep>
                 Use what you learned about how light colors mix (Modules 1 & 3)

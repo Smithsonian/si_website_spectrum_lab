@@ -12,18 +12,19 @@
             pigments.
             <template #steps>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 1</span>, use the
+                Under <span style="font-weight: 600">SOURCE 1</span>, use the
                 <span style="font-weight: 600">Select Chokha ROI</span>
                 dropdown menu to view a spectrum for each region of interest.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 2</span>, use the
+                Under <span style="font-weight: 600">SOURCE 2</span>, use the
                 <span style="font-weight: 600">Select pigment</span> dropdown
                 menu to view a spectrum for different pigments of each color.
               </InstructionStep>
               <InstructionStep>
-                Adjust the WAVELENGTH STRETCH as needed to view the complete
-                spectrum.
+                Adjust the
+                <span style="font-weight: 400">WAVELENGTH STRETCH</span> as
+                needed to view the complete spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>
