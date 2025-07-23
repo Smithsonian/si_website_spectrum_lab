@@ -104,12 +104,12 @@ const controlsEnabled = computed(() => {
 
 const zoom = ref(100);
 const plotType = ref<PlotType>('line');
-const units = ref<WavelengthUnit>('Microns');
+const units = ref<WavelengthUnit>('microns');
 
 const replayResetControls = () => {
   zoom.value = 100;
   plotType.value = 'line';
-  units.value = 'Microns';
+  units.value = 'microns';
   replay();
 };
 </script>

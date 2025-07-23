@@ -13,16 +13,25 @@
             visible light and in the infrared.
             <template #steps>
               <InstructionStep>
-                Under <span style="font-weight: 600">Normalize?</span>, select
-                <span style="font-weight: 600">Visible</span> to view the
+                Under the <span style="font-weight: 400">UNITS</span> dropdown
+                menu, select <span style="font-weight: 600">nanometers</span>.
+              </InstructionStep>
+              <InstructionStep>
+                Under <span style="font-weight: 400">NORMALIZE DATA</span>,
+                select <span style="font-weight: 600">visible</span> to view the
                 spectra only in the visible range. Identify 1-2 similarities and
                 1-2 differences between the spectra in the visible range.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Normalize?</span>, select
-                <span style="font-weight: 600">All</span> to view the spectra in
-                visible and IR. Identify 1-2 similarities and 1-2 differences
-                between the spectra in the IR range.
+                Under <span style="font-weight: 400">NORMALIZE DATA</span>,
+                select <span style="font-weight: 600">all</span> to view the
+                spectra in visible and IR. Identify 1-2 similarities and 1-2
+                differences between the spectra in the IR range.
+              </InstructionStep>
+              <InstructionStep>
+                Adjust the
+                <span style="font-weight: 400">WAVELENGTH STRETCH</span> as
+                needed to view the complete spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>

@@ -34,10 +34,10 @@ export const normalizeKey = Symbol('normalize') as InjectionKey<
 
 // X axis unit
 export type WavelengthUnit =
-  | 'Microns'
-  | 'Nanometers'
-  | 'Ångstroms'
-  | 'Electron volts';
+  | 'microns'
+  | 'nanometers'
+  | 'angstroms'
+  | 'electron volts';
 export const wavelengthUnitKey = Symbol('wavelengthUnit') as InjectionKey<
   Ref<WavelengthUnit>
 >;

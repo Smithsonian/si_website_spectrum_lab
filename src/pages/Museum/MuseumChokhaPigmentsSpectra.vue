@@ -10,16 +10,31 @@
             Compare the spectra of the regions of interest (ROI) with reference
             pigments of different colors to see if you can identify the ROI
             pigments.
+            <p class="mt-2">
+              NOTE: Many of the ROI and pigment spectra for different colors
+              display absorption features at a common set of wavelengths:
+              1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
+              contributed by cellulose in the paper that the pigments were
+              applied to. The Chokha painting itself is also done on paper. A
+              reference spectrum for cellulose is included, so you can account
+              for its features in the spectra.
+            </p>
             <template #steps>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 1</span>, use the
+                Under <span style="font-weight: 600">SOURCE 1</span>, use the
                 <span style="font-weight: 600">Select Chokha ROI</span>
                 dropdown menu to view a spectrum for each region of interest.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 2</span>, use the
-                <span style="font-weight: 600">Select pigment</span> dropdown
-                menu to view a spectrum for different pigments of each color.
+                Under <span style="font-weight: 600">SOURCE 2</span>, use the
+                <span style="font-weight: 600">Select material</span> dropdown
+                menu to view a spectrum for different pigments of each color or
+                the cellulose background.
+              </InstructionStep>
+              <InstructionStep>
+                Adjust the
+                <span style="font-weight: 400">WAVELENGTH STRETCH</span> as
+                needed to view the complete spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>
@@ -55,7 +70,7 @@
         <template #bottom-tool>
           <ToolCard
             :custom-metadata="pigments"
-            spectrum-picker-placeholder="Select pigment"
+            spectrum-picker-placeholder="Select material"
           />
         </template>
       </ToolControlGroup>
@@ -77,8 +92,8 @@
 
 <script setup lang="ts">
 import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
-import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_910.webp';
-import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_painting_labels_big.webp';
+import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_910.webp';
+import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
@@ -111,8 +126,17 @@ const chokhaW1 = useCustomMetadata(
     bigImageUrl: '',
   },
 );
-const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1];
+const chokhaR1 = useCustomMetadata(
+  'Painting Regions',
+  'S2018-1-76_VNIR-SWIR_colors_Red_1',
+  {
+    title: 'ROI R1',
+    imageUrl: mystery,
+    bigImageUrl: '',
+  },
+);
+const customMetadataMaybe = [chokhaW1, chokhaB1, chokhaY1, chokhaR1];
 const customMetadata = customMetadataMaybe.filter((sm) => !!sm);
 const allMetadata = useAllMetadata();
-const pigments = allMetadata['Paint Pigments'];
+const pigments = allMetadata['Paint Pigments & Supplies'];
 </script>

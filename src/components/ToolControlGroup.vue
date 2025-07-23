@@ -37,7 +37,7 @@
               src="/src/assets/SVG/width.svg"
               class="tool-control-group-label-icon"
             />
-            <span class="ms-2">Plot width: {{ zoomPercent }}%</span>
+            <span class="ms-2">Wavelength Stretch</span>
           </template>
           <BFormInput
             ref="zoomElem"
@@ -165,13 +165,13 @@ const normalizeOptions: { text: string; value: NormalizeSetting }[] = [
 provide(normalizeKey, normalize);
 
 const wavelengthUnit = defineModel<WavelengthUnit>('units', {
-  default: 'Microns',
+  default: 'microns',
 });
 const wavelengthUnitOptions: { text: string; value: WavelengthUnit }[] = [
-  { text: 'Microns', value: 'Microns' },
-  { text: 'Nanometers', value: 'Nanometers' },
-  { text: 'Ångstroms', value: 'Ångstroms' },
-  { text: 'Electron volts', value: 'Electron volts' },
+  { text: 'microns', value: 'microns' },
+  { text: 'nanometers', value: 'nanometers' },
+  { text: 'angstroms', value: 'angstroms' },
+  { text: 'electron volts', value: 'electron volts' },
 ];
 provide(wavelengthUnitKey, wavelengthUnit);
 // Instantiate this at this level so both charts can share it

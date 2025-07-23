@@ -1877,7 +1877,7 @@ function updateLine(e, WIC_ctx) {
   readout_eV = String(readout_eV.toFixed(3)) + '   ' + 'eV';
   readout_nanometers =
     String(readout_nanometers.toFixed(0)) + '   ' + 'nanometers';
-  readout_angstrom = String(readout_angstrom.toFixed(0)) + '   ' + 'Angstrom';
+  readout_angstrom = String(readout_angstrom.toFixed(0)) + '   ' + 'angstrom';
 
   ///////////////////////////////////////////////
   var WL_Nanometers = document.getElementById('WL_Nanometers').selected; //Added by Aladdin

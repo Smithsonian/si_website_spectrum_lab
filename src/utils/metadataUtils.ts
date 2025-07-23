@@ -14,7 +14,7 @@ export const PRELOADED_CATEGORIES = [
   'Fish Tank Lights',
   'Fish Tank Inhabitants',
   'Painting Regions',
-  'Paint Pigments',
+  'Paint Pigments & Supplies',
 ] as const;
 
 export const CATEGORY_DIRECTORIES = {
@@ -29,7 +29,7 @@ export const CATEGORY_DIRECTORIES = {
   'Fish Tank Lights': 'Fishtank_Lights',
   'Fish Tank Inhabitants': 'Fishtank_Inhabitants',
   'Painting Regions': 'Museum_Conservation',
-  'Paint Pigments': 'Museum_Conservation',
+  'Paint Pigments & Supplies': 'Museum_Conservation',
 } as const;
 
 export type PreloadedCategory = (typeof PRELOADED_CATEGORIES)[number];
@@ -162,7 +162,7 @@ export const useAllMetadata = (): MetadataByCategory => {
       'Fish Tank Lights': [],
       'Fish Tank Inhabitants': [],
       'Painting Regions': [],
-      'Paint Pigments': [],
+      'Paint Pigments & Supplies': [],
     } as MutableMetadataByCategory;
     for (const sm of metadataJson) {
       const validOrNullMetadata = validateMetadata(sm);

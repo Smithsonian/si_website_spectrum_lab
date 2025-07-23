@@ -28,8 +28,8 @@
                 dropdown menu to view each spectrum.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Normalize?</span>, click
-                <span style="font-weight: 600">Visible</span>.
+                Under <span style="font-weight: 400">NORMALIZE DATA</span>,
+                click <span style="font-weight: 600">visible</span>.
               </InstructionStep>
               <InstructionStep>
                 Use what you learned about how light colors mix (Modules 1 & 3)
@@ -54,7 +54,9 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup :control-names="['units', 'plotType', 'normalize']">
+      <ToolControlGroup
+        :control-names="['units', 'plotType', 'normalize', 'zoom']"
+      >
         <template #top-tool>
           <ToolCard
             :custom-metadata="customMetadata"
@@ -99,7 +101,7 @@ const chokhaR1 = useCustomMetadata(
 );
 const chokhaB2 = useCustomMetadata(
   'Painting Regions',
-  'S2018-1-76_VNIR-SWIR_colors_Blue_2',
+  'S2018-1-76_VNIR-SWIR_colors_Blue_1',
   {
     title: 'Mystery Pigment 2',
     imageUrl: mystery,

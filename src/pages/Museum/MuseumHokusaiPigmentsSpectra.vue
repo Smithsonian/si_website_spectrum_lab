@@ -7,18 +7,33 @@
             >Hokusai Pigments Part 1: Spectra</InstructionHeader
           >
           <InstructionRow rowType="Tool">
-            Compare the spectra of some of the regions of interest (ROI) with
-            comparison pigments to see if you can identify them.
+            Compare the spectra of the regions of interest (ROI) with comparison
+            pigments to see if you can identify the ROI pigments.
+            <p class="mt-2">
+              NOTE: Many of the reference pigment spectra for different colors
+              display absorption features at a common set of wavelengths:
+              1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
+              contributed by cellulose in the paper that the pigments were
+              applied to. The Hokusai painting itself is done on silk. Reference
+              spectra for cellulose and silk are included, so you can account
+              for their features in the spectra.
+            </p>
             <template #steps>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 1</span>, use the
+                Under <span style="font-weight: 600">SOURCE 1</span>, use the
                 <span style="font-weight: 600">Select Hokusai ROI</span>
                 dropdown menu to view a spectrum for each region of interest.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">Source 2</span>, use the
-                <span style="font-weight: 600">Select pigment</span> dropdown
-                menu to view a spectrum for different pigments of each color.
+                Under <span style="font-weight: 600">SOURCE 2</span>, use the
+                <span style="font-weight: 600">Select material</span> dropdown
+                menu to view a spectrum for different pigments of each color or
+                the cellulose or silk backgrounds.
+              </InstructionStep>
+              <InstructionStep>
+                Adjust the
+                <span style="font-weight: 400">WAVELENGTH STRETCH</span> as
+                needed to view the complete spectrum.
               </InstructionStep>
             </template>
           </InstructionRow>
@@ -54,7 +69,7 @@
         <template #bottom-tool>
           <ToolCard
             :custom-metadata="pigmentMetadata"
-            spectrum-picker-placeholder="Select pigment"
+            spectrum-picker-placeholder="Select material"
           />
         </template>
       </ToolControlGroup>
@@ -75,8 +90,8 @@
 </template>
 
 <script setup lang="ts">
-import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_910.webp';
-import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_painting_labels_big.webp';
+import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai_visible_b1b2w1y1_910.webp';
+import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_visible_b1b2w1y1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
@@ -135,5 +150,5 @@ const hokusaiROIsMetadata = customMetadata.filter(
 );
 
 const allMetadata = useAllMetadata();
-const pigmentMetadata = allMetadata['Paint Pigments'];
+const pigmentMetadata = allMetadata['Paint Pigments & Supplies'];
 </script>

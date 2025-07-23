@@ -32,7 +32,7 @@
         >
           <span class="me-2">
             <FontAwesomeIcon
-              v-if="wavelengthUnit === 'Electron volts'"
+              v-if="wavelengthUnit === 'electron volts'"
               :icon="['fas', 'bolt']"
             />
             <img
@@ -42,7 +42,7 @@
             />
           </span>
           <span class="text-uppercase">
-            {{ wavelengthUnit === 'Electron volts' ? 'Energy' : 'Wavelength' }}
+            {{ wavelengthUnit === 'electron volts' ? 'Energy' : 'Wavelength' }}
           </span>
           ({{ wavelengthUnit }})
         </div>
@@ -73,7 +73,7 @@ const spectrumDataSource = inject(
 
 const wavelengthUnit = inject(
   wavelengthUnitKey,
-  ref<WavelengthUnit>('Microns'),
+  ref<WavelengthUnit>('microns'),
 );
 </script>
 
