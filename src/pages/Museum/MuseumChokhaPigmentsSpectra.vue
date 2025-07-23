@@ -11,11 +11,13 @@
             pigments of different colors to see if you can identify the ROI
             pigments.
             <p class="mt-2">
-              NOTE: Some common IR absorption features appear in multiple
-              comparison pigment spectra. These are contributed by cellulose
-              from the background material that was painted on. A reference
-              spectrum for cellulose is included, so you can account for its
-              features in the spectra.
+              NOTE: Many of the ROI and pigment spectra for different colors
+              display absorption features at a common set of wavelengths:
+              1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
+              contributed by cellulose in the paper that the pigments were
+              applied to. The Chokha painting itself is also done on paper. A
+              reference spectrum for cellulose is included, so you can account
+              for its features in the spectra.
             </p>
             <template #steps>
               <InstructionStep>

@@ -10,11 +10,13 @@
             Compare the spectra of the regions of interest (ROI) with comparison
             pigments to see if you can identify the ROI pigments.
             <p class="mt-2">
-              NOTE: Some common IR absorption features appear in multiple
-              comparison pigment spectra. These are contributed by cellulose
-              from the background material that was painted on. A reference
-              spectrum for cellulose is included, so you can account for its
-              features in the spectra.
+              NOTE: Many of the reference pigment spectra for different colors
+              display absorption features at a common set of wavelengths:
+              1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
+              contributed by cellulose in the paper that the pigments were
+              applied to. The Hokusai painting itself is done on silk. Reference
+              spectra for cellulose and silk are included, so you can account
+              for their features in the spectra.
             </p>
             <template #steps>
               <InstructionStep>
@@ -26,7 +28,7 @@
                 Under <span style="font-weight: 600">SOURCE 2</span>, use the
                 <span style="font-weight: 600">Select material</span> dropdown
                 menu to view a spectrum for different pigments of each color or
-                the cellulose background.
+                the cellulose or silk backgrounds.
               </InstructionStep>
               <InstructionStep>
                 Adjust the
