@@ -37,7 +37,12 @@
               src="/src/assets/SVG/width.svg"
               class="tool-control-group-label-icon"
             />
-            <span class="ms-2">Wavelength Stretch</span>
+            <span class="ms-2"
+              >{{
+                wavelengthUnit === 'electron volts' ? 'Energy' : 'Wavelength'
+              }}
+              Stretch</span
+            >
           </template>
           <BFormInput
             ref="zoomElem"
