@@ -17,9 +17,9 @@
           </InstructionRow>
         </template>
         <template #middle>
-          <VideoJSPlayer :other-options="{ poster: titleCard }">
+          <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_lighting_design.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_lighting_design-20250712.mp4"
               type="video/mp4"
             />
             <track
@@ -51,7 +51,7 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/museum_lighting_design.vtt';
-import titleCard from '@/assets/video_metadata/museum_lighting_design_title_card.png';
+import poster from '@/assets/video_metadata/museum_lighting_design_poster.webp';
 
 useSpecLabHead('Explore Lighting Design', 'Fishtank');
 </script>

@@ -32,10 +32,16 @@
           </InstructionRow>
         </template>
         <template #middle>
-          <VideoJSPlayer :other-options="{ poster: titleCard }">
+          <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/multiple_wavelength_imaging_conservation_science.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/multiple_wavelength_imaging_conservation_science-20250711.mp4"
               type="video/mp4"
+            />
+            <track
+              label="Captions"
+              kind="captions"
+              srclang="en"
+              :src="captions"
             />
           </VideoJSPlayer>
         </template>
@@ -56,7 +62,8 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import titleCard from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science.png';
+import captions from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science.vtt';
+import poster from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science_poster.webp';
 
 useSpecLabHead('Intro', 'Museum');
 </script>

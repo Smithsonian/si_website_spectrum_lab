@@ -30,10 +30,16 @@
           </InstructionRow>
         </template>
         <template #middle>
-          <VideoJSPlayer>
+          <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_uvl.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_uvl-20250712.mp4"
               type="video/mp4"
+            />
+            <track
+              label="Captions"
+              kind="captions"
+              srclang="en"
+              :src="captions"
             />
           </VideoJSPlayer>
         </template>
@@ -59,6 +65,8 @@
 <script setup lang="ts">
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
+import captions from '@/assets/video_metadata/museum_uvl.vtt';
+import poster from '@/assets/video_metadata/museum_uvl_poster.webp';
 
 useSpecLabHead('Chokha Pigments Part 2: UVL Intro', 'Museum');
 </script>
