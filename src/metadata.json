@@ -1176,5 +1176,11 @@
     "filename": "Spectra_Paper_FORS_NMAA_CHSOS",
     "title": "Paper: Cellulose",
     "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Spectra_Silk_FORS_NMAA_JWIRTarget",
+    "title": "Silk",
+    "spectrumType": "Reflection"
   }
 ]
