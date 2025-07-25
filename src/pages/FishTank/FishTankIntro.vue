@@ -19,7 +19,7 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_lighting_design-20250712.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_lighting_design-20250724.mp4"
               type="video/mp4"
             />
             <track

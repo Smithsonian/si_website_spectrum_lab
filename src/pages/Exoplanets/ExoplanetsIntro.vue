@@ -21,7 +21,7 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/spectrumlab_exoplanet_spectroscopy-20250724_3.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/spectrumlab_exoplanet_spectroscopy-20250725.mp4"
               type="video/mp4"
             />
             <track
