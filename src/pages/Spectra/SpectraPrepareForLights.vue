@@ -8,7 +8,8 @@
         next-label="Part 2"
       >
         <InstructionHeader
-          >Investigate Light Sources: Prepare</InstructionHeader
+          >Investigate Light Sources Part 1: Prepare
+          Materials</InstructionHeader
         >
         <InstructionRow row-type="Slideshow">
           Follow the instructions in this slideshow to prepare for this

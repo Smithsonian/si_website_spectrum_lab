@@ -8,8 +8,9 @@
       >
         <InstructionHeader>Understand Your Spectroscope</InstructionHeader>
         <InstructionRow row-type="Slideshow">
-          This brief slideshow gives on overview of how spectroscopes work. They
-          separate light into a rainbow, similar to how prisms work.
+          This brief slideshow provides an overview of how spectroscopes work.
+          They separate light into the colors of the rainbow, similar to how
+          prisms work.
         </InstructionRow>
       </CardWithSlideshow>
     </template>

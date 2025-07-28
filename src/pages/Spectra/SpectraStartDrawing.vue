@@ -2,7 +2,9 @@
   <SpectraLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Draw a Spectrum Part 1: Explore</InstructionHeader>
+        <InstructionHeader
+          >Draw a Spectrum Part 1: Exploration</InstructionHeader
+        >
         <InstructionRow row-type="Tool">
           To make sense of how this tool works, let’s start by drawing different
           types of curves in the graph space. After each step, notice how the

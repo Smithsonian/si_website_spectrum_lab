@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader
-          >Investigate Light Sources: Source 1</InstructionHeader
+          >Investigate Light Sources Part 2: Observe Source 1</InstructionHeader
         >
         <InstructionRow row-type="Investigate">
           Use your spectroscope to view the spectrum of the first light source
@@ -12,8 +12,9 @@
         <InstructionRow row-type="Tool">
           <template #steps>
             <InstructionStep>
-              In the top tool, <strong>sketch a graph</strong> that represents
-              the spectrum you see.
+              In the top tool,
+              <span style="font-weight: 600">sketch a graph</span> that
+              represents the spectrum you see.
             </InstructionStep>
             <InstructionStep>
               In the bottom panel, use the drop-down menu to select different
@@ -23,13 +24,16 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
+          Answer the questions in your Notebook.
           <template #steps>
             <InstructionStep>
-              Optional: Paste a screenshot of your drawing into your Spectrum
-              Notebook.
+              What type of bulb has a spectrum that most closely resembles your
+              Light Source #1?
             </InstructionStep>
             <InstructionStep>
-              Answer the questions in your Notebook.
+              Describe the spectrum of your Light Source #1, for example,
+              whether you see all colors equally, or whether it is bright at
+              only specific wavelengths.
             </InstructionStep>
           </template>
         </InstructionRow>
