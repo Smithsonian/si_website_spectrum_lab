@@ -8,12 +8,14 @@
             <InstructionStep>
               Move the measuring tool across the spectrum graph with your cursor
               to identify the wavelengths (in microns) of the three brightest
-              features (labeled A, B, and C) in this spectrum.
+              features (labeled A, B, and C) in this spectrum. Write the values
+              in the table in your Notebook.
             </InstructionStep>
             <InstructionStep>
-              Use the <strong>unit dropdown menu</strong> to change the unit of
-              the measuring tool to nanometers and remeasure the wavelengths.
-              Repeat for angstroms and electron volts (a unit of energy).
+              Use the <span class="challenge-emphasis">units</span> dropdown
+              menu to change the unit of the measuring tool to nanometers and
+              remeasure the wavelengths. Repeat for angstroms and electron volts
+              (a unit of energy).
             </InstructionStep>
             <InstructionStep>
               Use the measuring tool to estimate the brightness of the three
@@ -23,13 +25,36 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
+          Complete these steps and answer the questions in your Notebook.
           <template #steps>
             <InstructionStep>
               As you measure the features in the tool, write the values in your
               table, one column at a time.
             </InstructionStep>
             <InstructionStep>
-              Use your completed table to answer the questions.
+              Order Features A, B, and C from shortest wavelength to longest
+              wavelength photons.
+            </InstructionStep>
+            <InstructionStep>
+              Order Features A, B, and C from least energetic to most energetic
+              photons.
+            </InstructionStep>
+            <InstructionStep>
+              Order Features A, B, and C from dimmest to brightest.
+            </InstructionStep>
+            <InstructionStep>
+              What, if any, relationship do you observe between wavelength and
+              energy of the photons?
+            </InstructionStep>
+            <InstructionStep>
+              What, if any, relationship do you observe between the energy of
+              the photons and how much light is emitted at a particular
+              wavelength/energy?
+            </InstructionStep>
+            <InstructionStep>
+              Bonus: Do you think one could calculate the energy of a photon in
+              electron volts if you knew the wavelength of that photon in
+              microns?
             </InstructionStep>
           </template>
         </InstructionRow>

@@ -10,7 +10,7 @@
           scientists use to represent light sources.
         </InstructionRow>
         <InstructionRow row-type="Tutorial">
-          Follow the tutorial (below) for an introduction to the Spectrum Tool.
+          Follow the tutorial below for an introduction to the Spectrum Tool.
         </InstructionRow>
       </ChallengeCard>
     </template>
