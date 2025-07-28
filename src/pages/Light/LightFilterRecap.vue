@@ -4,18 +4,15 @@
       <template #top>
         <InstructionHeader>Behaviors of Light Part 2: Recap</InstructionHeader>
         <InstructionRow row-type="Investigate">
-          Let's return to these three circles. Use the behaviors of light you
-          learned (emission, reflection, transmission, and absorption) to
-          describe what is happening when you look at these circles through a
-          red gel.
+          Return to these three overlapping colored circles you viewed at the
+          beginning of the module.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          <template #steps>
-            <InstructionStep>
-              Discuss your ideas with your partner and write down your response
-              in your notebook.
-            </InstructionStep>
-          </template>
+          Use all four light behaviors (emission, reflection, transmission,
+          absorption) to describe what is happening when you look at them
+          through the RED gel. You can discuss your ideas with a partner, as a
+          class, or in small groups, as directed by your teacher.
+          <p class="mt-2">Write down your response in your Notebook.</p>
         </InstructionRow>
       </template>
       <template #middle>

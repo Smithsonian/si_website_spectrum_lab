@@ -41,7 +41,8 @@ import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
 import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 import ColorFilterPrediction from './pages/Light/LightFilterPrediction.vue';
-import ColorFilterInvestigation from './pages/Light/LightFilterInvestigation.vue';
+import ColorFilterInvestigateRed from './pages/Light/LightFilterInvestigateRed.vue';
+import ColorFilterInvestigateGreenBlue from './pages/Light/LightFilterInvestigateGreenBlue.vue';
 import LightPhotons from './pages/Light/LightPhotons.vue';
 import AttributionsPage from './pages/AttributionsPage.vue';
 import LightMixing from './pages/Light/LightMixing.vue';
@@ -117,7 +118,11 @@ const routes: RouteRecordRaw[] = [
         redirect: '/light/color-filters/predictions',
         children: [
           { path: 'predictions', component: ColorFilterPrediction },
-          { path: 'investigation', component: ColorFilterInvestigation },
+          { path: 'investigate-red', component: ColorFilterInvestigateRed },
+          {
+            path: 'investigate-green-blue',
+            component: ColorFilterInvestigateGreenBlue,
+          },
         ],
       },
       { path: 'photons', component: LightPhotons },

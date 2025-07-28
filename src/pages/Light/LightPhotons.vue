@@ -6,15 +6,25 @@
         <InstructionRow row-type="Simulation">
           Click the “Single Bulb” to launch the Physics Education Technology
           (PhET) simulation.
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
           <template #steps>
             <InstructionStep>
-              Follow instructions in <em>Part 1</em> of the
-              <em>Photons and Color</em> section.
+              Follow the Exploration Guide in your Notebook. The accompanying
+              figure in your Notebook shows what all the controls do.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Answer the Reflection Questions in your Notebook
+          <template #steps>
+            <InstructionStep>
+              Describe what makes up WHITE light.
             </InstructionStep>
             <InstructionStep>
-              Answer the reflection questions in <em>Part 2</em>.
+              Describe what a RED filter does.
+            </InstructionStep>
+            <InstructionStep>
+              Describe what happens if you put a RED filter in front of a GREEN
+              light source
             </InstructionStep>
           </template>
         </InstructionRow>

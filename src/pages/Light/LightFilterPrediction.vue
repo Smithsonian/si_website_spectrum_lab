@@ -3,19 +3,27 @@
     <ChallengeCard>
       <template #top>
         <InstructionHeader>Color Filters Part 1: Predictions</InstructionHeader>
+        <InstructionRow row-type="Intro">
+          Do <strong>NOT</strong> look through any of the colored gels yet!
+        </InstructionRow>
         <InstructionRow row-type="Investigate">
-          <span class="challenge-emphasis"> Without using any gels</span>,
-          examine the image below and consider:
-          <template #steps>
-            <InstructionStep>
-              What do you expect this image to look like when viewed through the
-              RED gel?
-            </InstructionStep>
-          </template>
+          <span class="challenge-emphasis"> PREDICT</span> what you will see
+          when you look through the
+          <span class="challenge-emphasis">RED</span>-colored gel at the 3
+          intersecting colored circles below.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Write your predictions in the chart, noting the predicted color for
-          each section of the three circles.
+          <template #steps>
+            <InstructionStep>
+              In the diagram in your notebook, color in each of the 7 sections
+              to represent how you think the onscreen image will look through
+              the RED gel, or write the predicted color names in the table.
+            </InstructionStep>
+            <InstructionStep>
+              Explain your reasoning for your predictions of what colors the
+              different sections of the circles will appear through the RED gel.
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </template>
       <template #middle>
@@ -39,7 +47,7 @@
             <NextPrevButton
               direction="next"
               light
-              to="/light/color-filters/investigation"
+              to="/light/color-filters/investigate-red"
             >
               part 2
             </NextPrevButton>

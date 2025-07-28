@@ -3,25 +3,24 @@
     <ChallengeCard>
       <template #top>
         <InstructionHeader
-          >Color Filters Part 2: Investigation</InstructionHeader
+          >Color Filters Part 3: Use Green and Blue Gels</InstructionHeader
         >
         <InstructionRow row-type="Investigate">
-          <span class="challenge-emphasis"> NOW </span> look through the gels,
-          and note how what you see compares with your predictions.
+          <template #steps>
+            <InstructionStep>
+              Having seen the circles through the RED gel, what do you expect
+              the circles to look like through the GREEN or the BLUE gel? Look
+              through the GREEN gel, then look through the BLUE gel.
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
           <template #steps>
             <InstructionStep>
-              What did you actually see when you looked through the red gel? How
-              did it compare with your prediction?
-            </InstructionStep>
-            <InstructionStep>
-              Describe what you think is happening, given the colors you saw
-              through the red gel.
-            </InstructionStep>
-            <InstructionStep>
-              Discuss your ideas with your partner. What ideas did your partner
-              add that seemed helpful?
+              When looking through the GREEN or BLUE gels, does what you see
+              match what you would expect based on your observations with the
+              RED gel? Does anything you see surprise you? Describe your
+              reasoning.
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -39,8 +38,8 @@
       <template #bottom>
         <LeftRightGroup>
           <template #left>
-            <NextPrevButton direction="prev" light to="predictions">
-              part 1
+            <NextPrevButton direction="prev" light to="investigate-red">
+              part 2
             </NextPrevButton>
           </template>
           <template #right>
