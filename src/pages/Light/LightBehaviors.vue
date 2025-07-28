@@ -7,7 +7,7 @@
       next-label="part 2"
     >
       <InstructionHeader
-        >Behaviors of Light Part 1: Slideshow</InstructionHeader
+        >Behaviors of Light Part 1: Introduction</InstructionHeader
       >
       <InstructionRow row-type="Slideshow">
         Learn about the four key behaviors of light: emission, absorption,
@@ -16,8 +16,10 @@
       <InstructionRow row-type="Notebook">
         <template #steps>
           <InstructionStep>
-            For the figure in your notebook, circle or highlight the letters of
-            the objects that are associated with the light phenomena listed.
+            Apply what you learned in the Slideshow to the diagram in your
+            Notebook. Circle or highlight the letters of the objects that are
+            associated with the light phenomena listed. (Some may have more than
+            one answer.)
           </InstructionStep>
         </template>
       </InstructionRow>

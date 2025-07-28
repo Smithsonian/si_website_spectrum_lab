@@ -6,19 +6,35 @@
         <InstructionRow row-type="Simulation">
           <span class="challenge-emphasis"> Double-click</span>
           the “RGB Bulbs” to launch the simulation.
+          <template #steps>
+            <InstructionStep>
+              Experiment with the RGB (red, green, and blue) lights in different
+              amounts to create different colors. Try turning on two at a time,
+              or three at a time but at different levels.
+            </InstructionStep>
+            <InstructionStep>
+              Try to create the colors specified in the table in your Notebook.
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
           <template #steps>
             <InstructionStep>
-              Follow instructions in <em>Part 1</em> of the
-              <em>Color Mixing</em> section.
+              Note in the table what combinations of RGB light mix to create
+              each color. Specify whether the R, G, and B bulb was OFF (<span
+                class="challenge-emphasis"
+                >O</span
+              >), or on at low (<span class="challenge-emphasis">L</span>),
+              medium (<span class="challenge-emphasis">M</span>), or high (<span
+                class="challenge-emphasis"
+                >H</span
+              >) power. You do not have to be very precise.
             </InstructionStep>
             <InstructionStep>
-              In the table, note what light combinations of RGB light make each
-              color.
-            </InstructionStep>
-            <InstructionStep>
-              Answer the reflection questions in <em>Part 2</em>
+              Imagine you are looking at a source that is emitting yellow light.
+              There are at least two possible combinations of one or more photon
+              colors that would cause your eye to observe the source as yellow
+              in color. Write the two combinations in your Notebook.
             </InstructionStep>
           </template>
         </InstructionRow>
