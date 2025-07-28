@@ -26,6 +26,19 @@ If you need several Node versions to coexist on your machine, this project has a
 
 The app is now running at http://localhost:5173/ by default. Code changes will take effect immediately.
 
+### Updating the metadata
+
+1. Make changes to the metadata Google Sheet from the Smithsonian DataLabs Google Drive. It's called "Metadata Entry".
+2. Download it as a CSV. File -> Download -> Comma Separated Values (.csv)
+3. Put it next to `src/metadata.json` and name it `metadata.csv`.
+4. Run this, from the repository root.
+
+```bash
+tools/import_metadata
+```
+
+That will import the metadata, then run Prettier to format the JSON nicely.
+
 ## Deploying to GitHub
 
 1. `npm run format` to apply code style. This is not necessary if your IDE formats with Prettier on save.
