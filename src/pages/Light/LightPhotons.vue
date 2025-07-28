@@ -24,7 +24,7 @@
             </InstructionStep>
             <InstructionStep>
               Describe what happens if you put a RED filter in front of a GREEN
-              light source
+              light source.
             </InstructionStep>
           </template>
         </InstructionRow>
