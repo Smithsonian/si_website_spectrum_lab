@@ -4,8 +4,26 @@
       <CardWithSlideshow :slide-order="slideOrder" next-path="tutorial">
         <InstructionHeader>Build and Use a Spectroscope</InstructionHeader>
         <InstructionRow row-type="Slideshow">
-          Follow this slideshow to build your own spectroscope, then try it on
-          different colors.
+          <template #steps>
+            <InstructionStep>
+              Follow the instructions in this Slideshow to build your own
+              spectroscope.
+            </InstructionStep>
+            <InstructionStep>
+              Use the spectroscope to view spectra for lines of different colors
+              within the Slideshow.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Answer these questions in your notebook:
+          <template #steps>
+            <InstructionStep>
+              Describe what you observed when you looked through the
+              spectroscope. How did your observed spectra change as the color of
+              the line changed?
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </CardWithSlideshow>
     </template>
