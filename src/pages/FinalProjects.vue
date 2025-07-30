@@ -2,7 +2,19 @@
   <ChallengeToolLayout>
     <template #challenge-col>
       <BRow>
-        <BCol cols="3"> <SectionNav></SectionNav> </BCol>
+        <BCol cols="3">
+          <SectionNav>
+            <FinalProjectsOuterNavItem to="fishtank">
+              Fish tank
+            </FinalProjectsOuterNavItem>
+            <FinalProjectsOuterNavItem to="exoplanets">
+              Exoplanets
+            </FinalProjectsOuterNavItem>
+            <FinalProjectsOuterNavItem to="museum">
+              Museum conservation
+            </FinalProjectsOuterNavItem>
+          </SectionNav>
+        </BCol>
         <BCol>
           <ChallengeIntro
             heading="Test your expertise with these final projects"
