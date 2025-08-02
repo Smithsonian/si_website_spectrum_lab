@@ -40,8 +40,19 @@ import yellow from '@/assets/spectroscope/spectroscope_line_yellow.png';
 import orange from '@/assets/spectroscope/spectroscope_line_orange.png';
 import cyan from '@/assets/spectroscope/spectroscope_line_cyan.png';
 import magenta from '@/assets/spectroscope/spectroscope_line_magenta.png';
+import answerQuestions from '@/assets/ending_slides/answer_questions.png';
 
 useSpecLabHead('Build and Use a Spectroscope', 'Spectra');
 
-const slideOrder = [build1, use1, use2, white, yellow, orange, cyan, magenta];
+const slideOrder = [
+  build1,
+  use1,
+  use2,
+  white,
+  yellow,
+  orange,
+  cyan,
+  magenta,
+  answerQuestions,
+];
 </script>

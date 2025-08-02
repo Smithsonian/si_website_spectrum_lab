@@ -28,8 +28,17 @@ import slide3 from '@/assets/light_intro/light_intro_slide3.png';
 import slide4 from '@/assets/light_intro/light_intro_slide4.png';
 import slide5 from '@/assets/light_intro/light_intro_slide5.png';
 import slide6 from '@/assets/light_intro/light_intro_slide6.png';
+import answerQuestionsSlide from '@/assets/ending_slides/answer_questions.png';
 
 useSpecLabHead('Professions', 'Light');
 
-const slideOrder = [slide1, slide2, slide3, slide4, slide5, slide6];
+const slideOrder = [
+  slide1,
+  slide2,
+  slide3,
+  slide4,
+  slide5,
+  slide6,
+  answerQuestionsSlide,
+];
 </script>
