@@ -24,8 +24,16 @@ defineProps<{ to: string }>();
   background-color: var(--sl-royal-blue);
 }
 
+.nav-pills .section-nav-link.nav-link:hover,
+.nav-pills .section-nav-link.nav-link:focus {
+  color: var(--sl-navy);
+  outline: 1px solid var(--sl-slate-blue);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
 .nav-pills .section-nav-link.nav-link.router-link-active:hover,
-.section-nav-link.nav-link.router-link-active:focus {
-  color: var(--gen-grey);
+.nav-pills .section-nav-link.nav-link.router-link-active:focus {
+  color: var(--gen-white);
 }
 </style>

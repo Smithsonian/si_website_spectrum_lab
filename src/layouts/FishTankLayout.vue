@@ -4,6 +4,9 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
+            <FinalProjectsOuterNavItem to="/final-projects/fishtank">
+              Fish tank
+            </FinalProjectsOuterNavItem>
             <SectionNavItem
               to="/final-projects/fishtank/explore-lighting-design"
             >
@@ -33,6 +36,12 @@
             <SectionNavItem to="/final-projects/fishtank/put-it-together">
               Put it together
             </SectionNavItem>
+            <FinalProjectsOuterNavItem to="/final-projects/exoplanets">
+              Exoplanets
+            </FinalProjectsOuterNavItem>
+            <FinalProjectsOuterNavItem to="/final-projects/museum">
+              Museum conservation
+            </FinalProjectsOuterNavItem>
           </SectionNav>
         </BCol>
         <BCol>

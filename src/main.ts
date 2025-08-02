@@ -15,6 +15,8 @@ import {
   faImage,
   faBolt,
   faFile,
+  faChevronDown,
+  faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -99,6 +101,8 @@ library.add(
   faPencil,
   faChevronRight,
   faChevronLeft,
+  faChevronDown,
+  faChevronUp,
   faXmark,
   faCircle,
   faImage,

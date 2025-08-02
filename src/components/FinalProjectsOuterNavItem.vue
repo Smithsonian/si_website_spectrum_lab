@@ -1,31 +1,67 @@
 <template>
-  <li class="nav-item section-nav-item">
-    <RouterLink class="section-nav-link nav-link" :to="to">
-      <slot></slot>
+  <li class="nav-item final-projects-nav-item">
+    <RouterLink class="final-projects-nav-link nav-link" :to="to">
+      <div class="d-flex justify-content-between">
+        <div>
+          <slot></slot>
+        </div>
+        <div>
+          <FontAwesomeIcon
+            class="final-projects-nav-link-closed"
+            :icon="['fas', 'chevron-down']"
+          />
+          <FontAwesomeIcon
+            class="final-projects-nav-link-open"
+            :icon="['fas', 'chevron-up']"
+          />
+        </div>
+      </div>
     </RouterLink>
   </li>
 </template>
 
 <script setup lang="ts">
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 defineProps<{ to: string }>();
 </script>
 
 <style>
-.section-nav-link {
+.final-projects-nav-link {
   color: var(--sl-navy);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.section-nav-item:not(:last-child) {
+.final-projects-nav-item {
+  background-color: var(--sl-med-blue);
+}
+
+.final-projects-nav-item:not(:last-child) {
   border-bottom: 1px solid var(--sl-slate-blue);
 }
 
-.nav-pills .section-nav-link.nav-link.router-link-active {
-  color: var(--gen-white);
-  background-color: var(--sl-royal-blue);
+.final-projects-nav-link-open {
+  display: none;
 }
 
-.nav-pills .section-nav-link.nav-link.router-link-active:hover,
-.section-nav-link.nav-link.router-link-active:focus {
-  color: var(--gen-grey);
+.nav-pills .final-projects-nav-link.nav-link.router-link-active {
+  color: var(--sl-navy);
+}
+
+.nav-pills .final-projects-nav-link.nav-link:hover,
+.nav-pills .final-projects-nav-link.nav-link:focus {
+  color: var(--sl-navy);
+  outline: 1px solid var(--sl-slate-blue);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.router-link-active .final-projects-nav-link-open {
+  display: inline;
+}
+
+.router-link-active .final-projects-nav-link-closed {
+  display: none;
 }
 </style>
