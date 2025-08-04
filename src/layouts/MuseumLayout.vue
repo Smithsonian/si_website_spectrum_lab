@@ -4,12 +4,6 @@
       <BRow>
         <BCol cols="3">
           <SectionNav>
-            <FinalProjectsOuterNavItem to="/final-projects/fishtank">
-              Fish tank
-            </FinalProjectsOuterNavItem>
-            <FinalProjectsOuterNavItem to="/final-projects/exoplanets">
-              Exoplanets
-            </FinalProjectsOuterNavItem>
             <FinalProjectsOuterNavItem to="/final-projects/museum">
               Museum conservation
             </FinalProjectsOuterNavItem>
@@ -35,6 +29,15 @@
             <SectionNavItem to="/final-projects/museum/design-museum-display">
               Design Museum Display
             </SectionNavItem>
+          </SectionNav>
+          <FinalProjectsOtherProjects />
+          <SectionNav>
+            <FinalProjectsOuterNavItem to="/final-projects/fishtank">
+              Fish tank
+            </FinalProjectsOuterNavItem>
+            <FinalProjectsOuterNavItem to="/final-projects/exoplanets">
+              Exoplanets
+            </FinalProjectsOuterNavItem>
           </SectionNav>
         </BCol>
         <BCol>

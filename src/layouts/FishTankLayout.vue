@@ -36,6 +36,9 @@
             <SectionNavItem to="/final-projects/fishtank/put-it-together">
               Put it together
             </SectionNavItem>
+          </SectionNav>
+          <FinalProjectsOtherProjects />
+          <SectionNav>
             <FinalProjectsOuterNavItem to="/final-projects/exoplanets">
               Exoplanets
             </FinalProjectsOuterNavItem>
