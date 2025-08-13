@@ -334,7 +334,7 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           {
-            path: 'design-museum-display',
+            path: 'put-it-together',
             component: MuseumDesignMuseumDisplay,
           },
         ],
