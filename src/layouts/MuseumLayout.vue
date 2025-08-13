@@ -23,8 +23,8 @@
             <SectionNavItem to="/final-projects/museum/hokusai-ir-imaging">
               Bonus: Hokusai IR Imaging
             </SectionNavItem>
-            <SectionNavItem to="/final-projects/museum/design-museum-display">
-              Design Museum Display
+            <SectionNavItem to="/final-projects/museum/put-it-together">
+              Put it all Together
             </SectionNavItem>
           </SectionNav>
         </BCol>

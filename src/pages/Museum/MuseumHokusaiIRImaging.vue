@@ -78,7 +78,7 @@
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton direction="next" to="../design-museum-display" light>
+          <NextPrevButton direction="next" to="../put-it-together" light>
             next section
           </NextPrevButton>
         </template>

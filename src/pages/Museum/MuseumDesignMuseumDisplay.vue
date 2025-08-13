@@ -2,7 +2,7 @@
   <MuseumLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Design Museum Display</InstructionHeader>
+        <InstructionHeader>Put it all Together</InstructionHeader>
         <InstructionRow row-type="Investigate">
           <template #before-steps>
             <p>
@@ -52,5 +52,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Design Museum Display', 'Museum');
+useSpecLabHead('Put it Together', 'Museum');
 </script>
