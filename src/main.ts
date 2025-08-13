@@ -118,7 +118,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: 'professions', component: LightIntroduction },
       {
-        path: 'color-filters',
+        path: 'color-filters/',
         redirect: '/light/color-filters/predictions',
         children: [
           { path: 'predictions', component: ColorFilterPrediction },
@@ -132,7 +132,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'photons', component: LightPhotons },
       { path: 'mixing', component: LightMixing },
       {
-        path: 'behaviors',
+        path: 'behaviors/',
         redirect: '/light/behaviors/slideshow',
         children: [
           { path: 'slideshow', component: LightBehaviors },
@@ -149,7 +149,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'build', component: SpectraBuildUseSpectroscope },
       { path: 'tutorial', component: SpectraTutorial },
       {
-        path: 'draw-spectra',
+        path: 'draw-spectra/',
         redirect: '/spectra/draw-spectra/explore',
         children: [
           { path: 'explore', component: SpectraDrawExplore },
@@ -159,7 +159,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'white-line', component: SpectraWhiteLine },
       { path: 'understand-spectroscope', component: UnderstandSpectroscope },
       {
-        path: 'light-sources',
+        path: 'light-sources/',
         redirect: '/spectra/light-sources/prepare',
         children: [
           { path: 'prepare', component: PrepareLights },
@@ -171,7 +171,7 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/color',
+    path: '/color/',
     redirect: '/color/tutorial',
     children: [
       { path: 'tutorial', component: ColorTutorial },
@@ -198,11 +198,11 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/composition',
+    path: '/composition/',
     redirect: '/composition/atomic-emission',
     children: [
       {
-        path: 'atomic-emission',
+        path: 'atomic-emission/',
         redirect: '/composition/atomic-emission/lamps',
         children: [
           { path: 'lamps', component: CompositionEmissionLamps },
@@ -212,7 +212,7 @@ const routes: RouteRecordRaw[] = [
       { path: 'atoms-and-spectra', component: CompositionAtomsAndSpectra },
       { path: 'sun', component: CompositionSun },
       {
-        path: 'earth',
+        path: 'earth/',
         redirect: '/composition/earth/diagram',
         children: [
           { path: 'diagram', component: CompositionEarthDiagram },
@@ -245,7 +245,7 @@ const routes: RouteRecordRaw[] = [
             component: FishTankPlantSpectra,
           },
           {
-            path: 'your-fishtank',
+            path: 'your-fishtank/',
             redirect: '/final-projects/fishtank/your-fishtank/part-1',
             children: [
               { path: 'part-1', component: FishTankYourFishTank1 },
@@ -253,7 +253,7 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           {
-            path: 'light-your-tank',
+            path: 'light-your-tank/',
             redirect: '/final-projects/fishtank/light-your-tank/part-1',
             children: [
               { path: 'part-1', component: FishTankLightYourTank1 },
@@ -279,7 +279,7 @@ const routes: RouteRecordRaw[] = [
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
           { path: 'wasp-17b', component: ExoplanetsWASP17b },
           {
-            path: 'comparing',
+            path: 'comparing/',
             redirect: '/final-projects/exoplanets/comparing/part-1',
             children: [
               { path: 'part-1', component: ExoplanetsComparing1 },
