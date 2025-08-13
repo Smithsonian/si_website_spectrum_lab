@@ -7,7 +7,7 @@
     role="banner"
   >
     <BNavbarBrand
-      href="https://smithsonian.github.io/si_website_datalabs/"
+      href="https://datalabs.cfa.harvard.edu/"
       aria-label="Data Labs home page"
     >
       <img
@@ -33,7 +33,7 @@
     </BNavbarNav>
     <BNavbarNav class="ms-auto">
       <BNavItem
-        href="https://smithsonian.github.io/si_website_speclab_teacher_resources/"
+        href="https://datalabs.cfa.harvard.edu/spectrumlab-resources/"
         variant="light"
         opacity-hover="75"
         class="text-uppercase"
