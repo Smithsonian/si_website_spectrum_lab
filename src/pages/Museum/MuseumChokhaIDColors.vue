@@ -21,10 +21,15 @@
           <InstructionRow rowType="Tool">
             View each "mystery pigment" spectrum and see if you can identify
             what color and region of interest it corresponds to in the painting.
+            <template #before-steps>
+              <div class="mb-2">
+                (Find the Spectrum Tool by scrolling down below the painting.)
+              </div>
+            </template>
             <template #steps>
               <InstructionStep>
                 Use the
-                <span style="font-weight: 600">Select mystery pigment</span>
+                <span style="font-weight: 600">Select pigment</span>
                 dropdown menu to view each spectrum.
               </InstructionStep>
               <InstructionStep>
@@ -46,6 +51,9 @@
             If you'd like a refresher on how light colors mix, double-click the
             "RGB Bulbs" to launch the
             <span style="font-weight: 600">PhET Color Mixing</span> simulation.
+            <div class="mt-2">
+              (Find the Simulation by scrolling down below the Spectrum Tool.)
+            </div>
           </InstructionRow>
         </template>
         <template #middle>
@@ -60,7 +68,7 @@
         <template #top-tool>
           <ToolCard
             :custom-metadata="customMetadata"
-            spectrum-picker-placeholder="Select mystery pigment"
+            spectrum-picker-placeholder="Select pigment"
           />
         </template>
       </ToolControlGroup>

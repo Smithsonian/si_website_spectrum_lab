@@ -11,6 +11,15 @@
             Compare how the painting appears in natural light (No filter) and
             under a UV light, where some pigments exhibit UV-induced visible
             luminescence (UVL).
+            <template #after-steps>
+              More information on UVL can be found at this
+              <BLink
+                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Technique%20Description.pdf"
+                target="_blank"
+                rel="noopener"
+                >Reference Sheet</BLink
+              >.
+            </template>
             <template #steps>
               <InstructionStep>
                 Use the
@@ -27,7 +36,8 @@
                   href="https://docs.google.com/document/d/12tWtxQ2-CibGcFYxlEbWjwgogqQr0MFKGtHnW1s0N7Y/edit?usp=sharing"
                   target="_blank"
                   rel="noopener"
-                  >data table</BLink
+                  style="font-weight: 400"
+                  >Data Table</BLink
                 >
                 to identify which pigment(s) exhibit the UVL behavior you
                 observed. Note whether this behavior is consistent with the
