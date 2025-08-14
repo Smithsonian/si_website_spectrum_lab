@@ -33,7 +33,7 @@
               <InstructionStep>
                 Use this
                 <BLink
-                  href="https://docs.google.com/document/d/12tWtxQ2-CibGcFYxlEbWjwgogqQr0MFKGtHnW1s0N7Y/edit?usp=sharing"
+                  href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Pigments%20Data%20Table.pdf"
                   target="_blank"
                   rel="noopener"
                   style="font-weight: 400"
