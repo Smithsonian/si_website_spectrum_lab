@@ -11,6 +11,9 @@
     <ol v-if="$slots.steps" class="fw-light">
       <slot name="steps"></slot>
     </ol>
+    <ul v-if="$slots.bullets" class="fw-light">
+      <slot name="bullets"></slot>
+    </ul>
     <slot name="after-steps"></slot>
     <p v-if="$slots.note" class="fw-light">
       Note:
