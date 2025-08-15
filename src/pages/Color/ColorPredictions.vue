@@ -18,9 +18,9 @@
         <InstructionRow row-type="Simulation">
           <template #steps>
             <InstructionStep>
-              Use the PhET Color Vision "RGB Bulbs" tool to recall how different
-              light colors mix. (<strong>Double-click on the RGB Bulbs</strong>
-              box to launch the simulation.)
+              If you would like a refresher,
+              <strong>double-click on the RGB Bulbs</strong> to launch the PhET
+              Color Vision simulation to explore how different light colors mix.
             </InstructionStep>
           </template>
           <template #note>
@@ -35,8 +35,8 @@
         <InstructionRow row-type="Notebook">
           <template #steps>
             <InstructionStep>
-              Write your predictions in the table in your
-              <strong>Spectrum Notebook</strong>.
+              In the Table in your Notebook, write your predicted colors for
+              each object based on its spectrum.
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -47,7 +47,7 @@
         <template #top-tool>
           <ToolCard
             :custom-metadata="metadataList"
-            :spectrum-picker-placeholder="null"
+            spectrum-picker-placeholder="Select object"
           />
         </template>
       </ToolControlGroup>

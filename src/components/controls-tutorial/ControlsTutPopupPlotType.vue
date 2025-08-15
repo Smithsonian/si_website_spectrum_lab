@@ -14,8 +14,8 @@
       Some spectra have high wavelength resolution and show many data points
       within a wavelength range. Others have low wavelength resolution and show
       few data points within a wavelength range. Using the scatter plot option
-      can make it easier to see differences between data sets in spectral
-      resolution.
+      can make it easier to see differences in spectral resolution between data
+      sets.
     </p>
   </TutorialPopover>
 </template>

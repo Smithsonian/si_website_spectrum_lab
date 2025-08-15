@@ -4,8 +4,8 @@
       <ChallengeCard>
         <InstructionHeader>More about the Spectrum Tool</InstructionHeader>
         <InstructionRow rowType="Tutorial">
-          The tutorial (below) recaps key features of the online Spectrum Tool
-          and introduces some new ones.
+          The tutorial below recaps key features of the online Spectrum Tool and
+          introduces some new ones.
         </InstructionRow>
         <InstructionRow rowType="Notebook">
           As you step through the tutorial, answer these questions:
@@ -19,9 +19,13 @@
               plot instead of a line chart?
             </InstructionStep>
             <InstructionStep>
-              What parts of the electromagnetic spectrum are not displayed on
+              What parts of the electromagnetic spectrum are NOT displayed on
               the Spectrum Tool?
             </InstructionStep>
+          </template>
+          <template #after-steps>
+            Click <span style="font-weight: 600">replay tutorial</span> on the
+            bottom left if you need to review any content.
           </template>
         </InstructionRow>
       </ChallengeCard>
