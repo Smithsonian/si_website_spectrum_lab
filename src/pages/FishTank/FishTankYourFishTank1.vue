@@ -21,7 +21,14 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Complete the table with your selections.
+          <template #steps>
+            <InstructionStep>
+              Complete the table with your selections.
+            </InstructionStep>
+            <InstructionStep>
+              Explain why you chose these plants and animals.
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <LeftRightGroup class="mt-5">
           <template #left>

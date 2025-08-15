@@ -49,7 +49,7 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="Create and light a saltwater reef aquarium that is healthy and looks great too."
+            heading="Create and Light a Saltwater Aquarium"
             :icon-path="fishtankIconUrl"
             icon-alt="Fishtank module icon"
           >
