@@ -14,6 +14,11 @@
             colors that go with each one.
           </InstructionRow>
           <InstructionRow row-type="Tool">
+            <template #after-steps>
+              <div class="mb-2">
+                (Find the Spectrum Tool by scrolling down below the picture.)
+              </div>
+            </template>
             <template #steps>
               <InstructionStep>
                 Under Fish Spectra, use the dropdown menu to view each mystery
@@ -32,8 +37,12 @@
             </template>
           </InstructionRow>
           <InstructionRow row-type="Simulation">
-            Use the RGB Bulbs Phet Simulation at the bottom if you need a
-            refresher on how light colors mix.
+            If you'd like a refresher on how light colors mix, double-click the
+            "RGB Bulbs" to launch the
+            <span style="font-weight: 600">PhET Color Mixing</span> simulation.
+            <div class="mt-2">
+              (Find the Simulation by scrolling down below the Spectrum Tool.)
+            </div>
           </InstructionRow>
         </template>
         <template #middle>
