@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Light Your Tank Part 1: Choose your RGB light colors
+          Light Your Tank Part 1: Choose Your RGB Light Colors
         </InstructionHeader>
         <InstructionRow row-type="Simulation">
           Double click RGB Bulbs to launch the Phet color mixing simulation. Mix
@@ -51,5 +51,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Light Your Tank part 1', 'Fishtank');
+useSpecLabHead('Light Your Tank Part 1', 'Fish Tank');
 </script>

@@ -23,7 +23,7 @@
               Plant Reflection Spectra
             </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/your-fishtank">
-              Your Fishtank
+              Your Fish Tank
             </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/light-your-tank">
               Light Your Tank
@@ -34,7 +34,7 @@
               Inhabitants Under Your Lights
             </SectionNavItem>
             <SectionNavItem to="/final-projects/fishtank/put-it-together">
-              Put it together
+              Put it Together
             </SectionNavItem>
           </SectionNav>
           <FinalProjectsOtherProjects />

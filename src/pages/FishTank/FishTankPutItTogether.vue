@@ -2,7 +2,7 @@
   <FishTankLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Putting it together</InstructionHeader>
+        <InstructionHeader>Put it Together</InstructionHeader>
         <InstructionRow row-type="Notebook">
           Using all the data you’ve collected, write a paragraph that describes
           the set-up of your tank including what creatures you’ve chosen to live
@@ -28,5 +28,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Putting it together', 'Fishtank');
+useSpecLabHead('Put it Together', 'Fish Tank');
 </script>

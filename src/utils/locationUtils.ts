@@ -6,7 +6,7 @@ type ModuleTitle =
   | 'Color'
   | 'Temperature'
   | 'Composition'
-  | 'Fishtank'
+  | 'Fish Tank'
   | 'Exoplanets'
   | 'Museum';
 

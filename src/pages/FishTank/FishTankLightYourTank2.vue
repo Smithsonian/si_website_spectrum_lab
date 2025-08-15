@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Light Your Tank Part 2: Drawing the spectrum
+          Light Your Tank Part 2: Draw the Spectrum
         </InstructionHeader>
         <InstructionRow row-type="Tool">
           The top tool has sample spectra showing various percentages of red,
@@ -60,7 +60,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Light Your Tank part 2', 'Fishtank');
+useSpecLabHead('Light Your Tank Part 2', 'Fish Tank');
 
 const allMetadata = useAllMetadata();
 const fishtankMetadata = allMetadata['Fish Tank Lights'];

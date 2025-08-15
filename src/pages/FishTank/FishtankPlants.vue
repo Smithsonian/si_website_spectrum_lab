@@ -58,7 +58,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Plant Reflection', 'Fishtank');
+useSpecLabHead('Plant Reflection', 'Fish Tank');
 
 const allMetadata = useAllMetadata();
 const fishtankMetadata = allMetadata['Fish Tank Inhabitants'];

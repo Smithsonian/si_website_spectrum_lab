@@ -75,7 +75,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
-useSpecLabHead('Reflection Spectra & Colors', 'Fishtank');
+useSpecLabHead('Reflection Spectra & Colors', 'Fish Tank');
 
 const spectrumA = useCustomMetadata(
   'Fish Tank Inhabitants',

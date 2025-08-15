@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Your Fishtank Part 2: Lighting needs for your inhabitants
+          Your Fish Tank Part 2: Lighting Needs for Your Inhabitants
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
           Identify the lighting needs of your tank inhabitants based on the data
@@ -43,5 +43,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Your Fishtank part 2', 'Fishtank');
+useSpecLabHead('Your Fish Tank Part 2', 'Fish Tank');
 </script>
