@@ -29,7 +29,7 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="Making Sense of Spectra"
+            heading="How can a spectrum tell us more than our eyes can perceive?"
             :icon-path="spectraIcon"
             icon-alt="Spectra module icon"
           >
