@@ -12,27 +12,27 @@
           or on your own, as instructed by your teacher.
           <template #bullets>
             <InstructionStep>
-              <span style="font-weight: 500">Slides 1-3:</span> Review the four
-              key behaviors of light:
-              <span style="font-weight: 500"
+              <span class="challenge-less-bold">Slides 1-3:</span> Review the
+              four key behaviors of light:
+              <span class="challenge-less-bold"
                 >emission, absorption, transmission,</span
               >
-              and <span style="font-weight: 500">reflection</span>.
+              and <span class="challenge-less-bold">reflection</span>.
             </InstructionStep>
             <InstructionStep>
-              <span style="font-weight: 500">Slide 4:</span> Discuss as a class
-              or group, or consider what is happening that allows the person to
-              see the tree depicted. What is emitting the light in the image?
-              How does the light emitted interact with the tree before coming to
-              the person's eye?
+              <span class="challenge-less-bold">Slide 4:</span> Discuss as a
+              class or group, or consider what is happening that allows the
+              person to see the tree depicted. What is emitting the light in the
+              image? How does the light emitted interact with the tree before
+              coming to the person's eye?
             </InstructionStep>
             <InstructionStep>
-              <span style="font-weight: 500">Slide 5:</span> Discuss as a class
-              or group, or consider how the blue car will appear if we shine
-              only a yellow light on it on a moonless night.
+              <span class="challenge-less-bold">Slide 5:</span> Discuss as a
+              class or group, or consider how the blue car will appear if we
+              shine only a yellow light on it on a moonless night.
             </InstructionStep>
             <InstructionStep>
-              <span style="font-weight: 500">Slide 6:</span> Review the steps
+              <span class="challenge-less-bold">Slide 6:</span> Review the steps
               for following the path of light that determines what we see. For
               any given scenario, you will want to ask yourself the questions
               listed in order to trace the entire path of light.

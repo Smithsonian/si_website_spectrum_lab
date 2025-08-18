@@ -4,7 +4,8 @@
       <template #top>
         <InstructionHeader>Color Filters Part 1: Predictions</InstructionHeader>
         <InstructionRow row-type="Intro">
-          Do <strong>NOT</strong> look through any of the colored gels yet!
+          Do <span class="challenge-bold">NOT</span> look through any of the
+          colored gels yet!
         </InstructionRow>
         <InstructionRow row-type="Investigate">
           <span class="challenge-emphasis"> PREDICT</span> what you will see

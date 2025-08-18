@@ -12,7 +12,7 @@
               in the table in your Notebook.
             </InstructionStep>
             <InstructionStep>
-              Use the <span class="challenge-emphasis">units</span> dropdown
+              Use the <span class="challenge-tool-label">units</span> dropdown
               menu to change the unit of the measuring tool to nanometers and
               remeasure the wavelengths. Repeat for angstroms and electron volts
               (a unit of energy).

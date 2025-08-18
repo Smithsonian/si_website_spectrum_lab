@@ -4,9 +4,9 @@
       <ChallengeCard>
         <InstructionHeader>Stars Part 1: Spectra</InstructionHeader>
         <InstructionRow rowType="Tool">
-          Using the <em>Target Object</em> menu, compare the spectrum of each
-          star: Sun, M star, and B star. Adjust the wavelength slider so you can
-          see their whole spectrum.
+          Using the <span class="challenge-bold">select star</span> dropdown
+          menu, view the spectrum of each star: Sun, M star, and B star. Adjust
+          the wavelength slider so you can see their whole spectrum.
         </InstructionRow>
         <InstructionRow rowType="Notebook">
           Answer the following questions in the

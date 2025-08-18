@@ -20,13 +20,13 @@
             </InstructionStep>
             <InstructionStep>
               Draw a spiky-looking graph: let it be mostly a straight line
-              across the <strong>bottom</strong> that jumps to the top of the
-              graph at a few points.
+              across the <span class="challenge-less-bold">bottom</span> that
+              jumps to the top of the graph at a few points.
             </InstructionStep>
             <InstructionStep>
               Draw a spiky-looking graph: let it be mostly a straight line
-              across the <strong>top</strong> that jumps to the bottom of the
-              graph at a few points.
+              across the <span class="challenge-less-bold">top</span> that jumps
+              to the bottom of the graph at a few points.
             </InstructionStep>
           </template>
         </InstructionRow>

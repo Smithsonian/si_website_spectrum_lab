@@ -14,7 +14,7 @@
             <template #steps>
               <InstructionStep>
                 Use the
-                <span style="font-weight: 600">No filter / UVL</span> buttons to
+                <span class="challenge-bold">No filter / UVL</span> buttons to
                 toggle between the visible light image and the UVL image.
               </InstructionStep>
               <InstructionStep>

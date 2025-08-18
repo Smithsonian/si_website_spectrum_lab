@@ -13,11 +13,11 @@
           <template #steps>
             <InstructionStep>
               In the top tool,
-              <span style="font-weight: 600">sketch a graph</span> that
-              represents the spectrum you see.
+              <span class="challenge-bold">sketch a graph</span> that represents
+              the spectrum you see.
             </InstructionStep>
             <InstructionStep>
-              In the bottom panel, use the drop-down menu to select different
+              In the bottom panel, use the dropdown menu to select different
               types of light sources and compare their spectra to what you
               observed. Which light source most closely matches yours?
             </InstructionStep>
