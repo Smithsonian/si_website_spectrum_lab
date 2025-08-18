@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Stars Part 2: Measuring Temperatures
+          Stars Part 2: Measure Temperatures
         </InstructionHeader>
         <InstructionRow rowType="Tool">
           Estimate a surface temperature for each star by comparing its spectrum
