@@ -94,6 +94,8 @@ import MuseumHokusaiPigmentsSpectra from './pages/Museum/MuseumHokusaiPigmentsSp
 import MuseumHokusaiPigmentsDataTable from './pages/Museum/MuseumHokusaiPigmentsDataTable.vue';
 import MuseumHokusaiIRImaging from './pages/Museum/MuseumHokusaiIRImaging.vue';
 import MuseumHokusaiBlues from './pages/Museum/MuseumHokusaiBluesDifferences.vue';
+import MuseumArtworkCreditsChokha from './pages/Museum/MuseumArtworkCreditsChokha.vue';
+import MuseumArtworkCreditsHokusai from './pages/Museum/MuseumArtworkCreditsHokusai.vue';
 
 library.add(
   faArrowUp,
@@ -336,6 +338,14 @@ const routes: RouteRecordRaw[] = [
           {
             path: 'put-it-together',
             component: MuseumDesignMuseumDisplay,
+          },
+          {
+            path: 'artwork-credits/',
+            redirect: '/final-projects/museum/artwork-credits/chokha',
+            children: [
+              { path: 'chokha', component: MuseumArtworkCreditsChokha },
+              { path: 'hokusai', component: MuseumArtworkCreditsHokusai },
+            ],
           },
         ],
       },

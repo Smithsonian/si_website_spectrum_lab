@@ -29,6 +29,9 @@
             <SectionNavItem to="/final-projects/museum/put-it-together">
               Put it all Together
             </SectionNavItem>
+            <SectionNavItem to="/final-projects/museum/artwork-credits">
+              Artwork Credits
+            </SectionNavItem>
           </SectionNav>
           <FinalProjectsOtherProjects />
           <SectionNav>

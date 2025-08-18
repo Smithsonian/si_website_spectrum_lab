@@ -43,6 +43,11 @@
               previous section
             </NextPrevButton>
           </template>
+          <template #right>
+            <NextPrevButton to="artwork-credits" direction="next" light>
+              artwork credits
+            </NextPrevButton>
+          </template>
         </LeftRightGroup>
       </ChallengeCard>
     </template>
