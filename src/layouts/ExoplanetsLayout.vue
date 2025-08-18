@@ -38,7 +38,7 @@
         </BCol>
         <BCol>
           <ChallengeIntro
-            heading="Exploring exoplanet atmospheres"
+            heading="Explore Exoplanet Atmospheres"
             :icon-path="exoplanetIcon"
             icon-alt="Exoplanets module icon"
           >
