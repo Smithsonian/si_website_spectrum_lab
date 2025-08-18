@@ -7,6 +7,9 @@
             <SectionNavItem to="/temperature/predictions">
               Temperature Predictions
             </SectionNavItem>
+            <SectionNavItem to="/temperature/thermal-emission">
+              Thermal Emission
+            </SectionNavItem>
             <SectionNavItem to="/temperature/stars">Stars</SectionNavItem>
             <SectionNavItem to="/temperature/incandescentbulb">
               Incandescent Bulb
