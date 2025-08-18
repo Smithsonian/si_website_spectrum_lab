@@ -14,7 +14,21 @@
             pigments that make up the plant.
           </InstructionRow>
           <InstructionRow row-type="Notebook">
-            Answer the questions in your notebook.
+            Answer these questions in your notebook.
+            <template #steps>
+              <InstructionStep>
+                Within the visible part of the spectrum, at what wavelength does
+                the plant reflect the most amount of light? Is this in line with
+                your expectation? Why or why not?
+              </InstructionStep>
+              <InstructionStep>
+                Chlorophyll is the most important pigment in most green plants,
+                and it absorbs sunlight to make food for the plant through
+                photosynthesis. Based on the shaving brush plant’s reflection
+                spectrum, what color photons do you think are the ones that the
+                plant needs to perform photosynthesis to keep it healthy?
+              </InstructionStep>
+            </template>
           </InstructionRow>
         </template>
         <template #middle>
@@ -58,7 +72,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useAllMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Plant Reflection', 'Fishtank');
+useSpecLabHead('Plant Reflection', 'Fish Tank');
 
 const allMetadata = useAllMetadata();
 const fishtankMetadata = allMetadata['Fish Tank Inhabitants'];

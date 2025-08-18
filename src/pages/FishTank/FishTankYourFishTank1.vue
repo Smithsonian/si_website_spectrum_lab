@@ -3,11 +3,11 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          Your Fishtank Part 1: Choose your inhabitants
+          Your Fish Tank Part 1: Choose Your Inhabitants
         </InstructionHeader>
         <InstructionRow row-type="Investigate">
           Use the data charts provided to learn about the available plants,
-          coral, and fish and decide which you would like in your fishtank.
+          coral, and fish and decide which you would like in your fish tank.
           <template #before-steps>
             <p>
               <BLink
@@ -21,7 +21,14 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Complete the table with your selections.
+          <template #steps>
+            <InstructionStep>
+              Complete the table with your selections.
+            </InstructionStep>
+            <InstructionStep>
+              Explain why you chose these plants and animals.
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <LeftRightGroup class="mt-5">
           <template #left>
@@ -47,5 +54,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Your Fishtank part 1', 'Fishtank');
+useSpecLabHead('Your Fish Tank Part 1', 'Fish Tank');
 </script>
