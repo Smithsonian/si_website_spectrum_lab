@@ -24,12 +24,12 @@
             <template #steps>
               <InstructionStep>
                 Use the
-                <span style="font-weight: 600">Select mystery pigment</span>
+                <span class="challenge-bold">Select mystery pigment</span>
                 dropdown menu to view each spectrum.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 400">NORMALIZE DATA</span>,
-                click <span style="font-weight: 600">visible</span>.
+                Under <span class="challenge-tool-label">NORMALIZE DATA</span>,
+                click <span class="challenge-bold">visible</span>.
               </InstructionStep>
               <InstructionStep>
                 Use what you learned about how light colors mix (Modules 1 & 3)
@@ -45,7 +45,7 @@
           <InstructionRow rowType="Simulation">
             If you'd like a refresher on how light colors mix, double-click the
             "RGB Bulbs" to launch the
-            <span style="font-weight: 600">PhET Color Mixing</span> simulation.
+            <span class="challenge-bold">PhET Color Mixing</span> simulation.
           </InstructionRow>
         </template>
         <template #middle>
@@ -76,7 +76,7 @@
           </NextPrevButton>
         </template>
       </LeftRightGroup>
-      <PhetIframe class="mt-5" bordered />
+      <PhetColorVisionIframe class="mt-5" bordered />
     </template>
   </MuseumLayout>
 </template>
