@@ -35,8 +35,8 @@
           Answer the questions in your Notebook.
           <template #steps>
             <InstructionStep>
-              Which model thermal spectrum best matches Earth’s emission
-              spectrum?
+              What temperature thermal spectrum best matches the spectrum for
+              Earth's emission?
             </InstructionStep>
             <InstructionStep>
               Convert the temperature you identified in Question 1 from Kelvins
