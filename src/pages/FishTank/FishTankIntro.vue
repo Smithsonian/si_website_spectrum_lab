@@ -11,9 +11,8 @@
           </InstructionRow>
           <InstructionRow row-type="Video">
             Watch this video that shows how lighting designer Scott Rosenfeld
-            uses light, color, and spectra to enhance art on display look as
-            good as it can at the Smithsonian American Art Museum & Renwick
-            Gallery.
+            uses light, color, and spectra to enhance the appearance of art on
+            display at the Smithsonian American Art Museum & Renwick Gallery.
           </InstructionRow>
         </template>
         <template #middle>
@@ -53,5 +52,5 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/museum_lighting_design.vtt';
 import poster from '@/assets/video_metadata/museum_lighting_design_poster.webp';
 
-useSpecLabHead('Explore Lighting Design', 'Fishtank');
+useSpecLabHead('Explore Lighting Design', 'Fish Tank');
 </script>

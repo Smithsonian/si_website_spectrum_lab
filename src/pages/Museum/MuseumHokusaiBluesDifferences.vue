@@ -27,7 +27,8 @@
                 Under <span class="challenge-tool-label">NORMALIZE DATA</span>,
                 select <span class="challenge-bold">all</span> to view the
                 spectra in visible and IR. Identify 1-2 similarities and 1-2
-                differences between the spectra in the IR range.
+                differences between the spectra in the IR range (at wavelengths
+                longer than ~700 nm).
               </InstructionStep>
               <InstructionStep>
                 Adjust the
@@ -43,17 +44,19 @@
                 in your table.
               </InstructionStep>
               <InstructionStep>
-                At what wavelength range do you observe the greatest difference
-                in brightness between the B1 and B2 regions of the painting?
+                At what wavelength range <strong>(in nm)</strong> do you observe
+                the greatest difference in brightness between the B1 and B2
+                regions of the painting?
               </InstructionStep>
               <InstructionStep>
                 Imagine you wanted to know the composition of other blue regions
                 in the painting, and you don't have access to a spectrometer to
                 measure spectra for the other regions, but you can photograph
                 the entire image using different colored (or IR) filters. Based
-                on the differences in the spectra, which filter would be most
-                helpful for distinguishing which of the two blue pigments were
-                used in other parts of the painting?
+                on the differences in the spectra, which filter
+                <strong>(in nm)</strong> would be most helpful for
+                distinguishing which of the two blue pigments were used in other
+                parts of the painting?
               </InstructionStep>
             </template>
             Complete the table and answer the questions in your notebook.
@@ -109,6 +112,7 @@ const hokusaiB1 = useCustomMetadata(
   'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
+    title: 'Hokusai ROI B1',
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B1_zoom.png'),
     bigImageUrl: '',
   },
@@ -118,6 +122,7 @@ const hokusaiB2 = useCustomMetadata(
   'Painting Regions',
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
+    title: 'Hokusai ROI B2',
     imageUrl: imageUrlFromPath('Museum_Conservation/Hokusai_B2_zoom.png'),
     bigImageUrl: '',
   },

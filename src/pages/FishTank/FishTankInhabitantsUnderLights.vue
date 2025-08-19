@@ -66,5 +66,5 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 
-useSpecLabHead('Inhabitants Under Your Lights', 'Fishtank');
+useSpecLabHead('Inhabitants Under Your Lights', 'Fish Tank');
 </script>

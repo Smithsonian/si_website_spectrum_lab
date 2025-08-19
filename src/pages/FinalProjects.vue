@@ -69,9 +69,9 @@
               are used in art conservation.
             </BCardText>
             <BCardText>
-              In this project, you’ll learn how art conservators use spectrum to
-              guide the process of accurately selecting pigments to restore
-              works of art.
+              In this project, you’ll learn how art conservators use light,
+              color, and spectra to help them make decisions about how to best
+              care for and restore works of art.
             </BCardText>
           </FinalProjectCard>
         </BCol>

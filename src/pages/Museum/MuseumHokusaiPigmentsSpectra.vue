@@ -9,15 +9,22 @@
           <InstructionRow rowType="Tool">
             Compare the spectra of the regions of interest (ROI) with comparison
             pigments to see if you can identify the ROI pigments.
-            <p class="mt-2">
-              NOTE: Many of the reference pigment spectra for different colors
-              display absorption features at a common set of wavelengths:
-              1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
-              contributed by cellulose in the paper that the pigments were
-              applied to. The Hokusai painting itself is done on silk. Reference
-              spectra for cellulose and silk are included, so you can account
-              for their features in the spectra.
-            </p>
+            <template #before-steps>
+              <div class="mb-2">
+                (Find the Spectrum Tool by scrolling down below the painting.)
+              </div>
+            </template>
+            <template #after-steps>
+              <div class="mb-2">
+                NOTE: Many of the reference pigment spectra for different colors
+                display absorption features at a common set of wavelengths:
+                1.39–1.67, 1.94, 2.11, 2.28, and 2.34 microns. These are
+                contributed by cellulose in the paper that the pigments were
+                applied to. The Hokusai painting itself is done on silk.
+                Reference spectra for cellulose and silk are included, so you
+                can account for their features in the spectra.
+              </div>
+            </template>
             <template #steps>
               <InstructionStep>
                 Under <span class="challenge-bold">SOURCE 1</span>, use the
