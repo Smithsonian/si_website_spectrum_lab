@@ -2,9 +2,7 @@
   <TemperatureLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>
-          Stars Part 2: Measure Temperatures
-        </InstructionHeader>
+        <InstructionHeader> Stars Part 2: Temperatures </InstructionHeader>
         <InstructionRow rowType="Tool">
           Estimate a surface temperature for each star by comparing its spectrum
           with model thermal spectra for "blackbody" objects of different
@@ -83,7 +81,7 @@ const bStarMetadata = useCustomMetadata('Stars', 'B_Star', {});
 const starMetadataListMaybe = [sunMetadata, mStarMetadata, bStarMetadata];
 const starMetadataList = starMetadataListMaybe.filter((md) => !!md);
 
-const thermal450k = useCustomMetadata('Thermal Spectra', '450K_blackbody', {});
+const thermal230k = useCustomMetadata('Thermal Spectra', '230K_blackbody', {});
 const thermal2500k = useCustomMetadata(
   'Thermal Spectra',
   '2500K_blackbody',
@@ -116,7 +114,7 @@ const thermal30000k = useCustomMetadata(
 );
 
 const filteredBlackbodiesMaybe = [
-  thermal450k,
+  thermal230k,
   thermal2500k,
   thermal4000k,
   thermal5800k,

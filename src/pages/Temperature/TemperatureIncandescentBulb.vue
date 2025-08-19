@@ -86,7 +86,7 @@ useSpecLabHead('Incandescent Bulb', 'Temperature');
 const bulbMetadata = useCustomMetadata('Lamps', 'Incandescent_Bulb', {});
 const bulbMetadataList = bulbMetadata ? [bulbMetadata] : [];
 
-const thermal450k = useCustomMetadata('Thermal Spectra', '450K_blackbody', {});
+const thermal230k = useCustomMetadata('Thermal Spectra', '230K_blackbody', {});
 
 const thermal2500k = useCustomMetadata(
   'Thermal Spectra',
@@ -120,7 +120,7 @@ const thermal30000k = useCustomMetadata(
 );
 
 const filteredBlackbodiesMaybe = [
-  thermal450k,
+  thermal230k,
   thermal2500k,
   thermal4000k,
   thermal5800k,

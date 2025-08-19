@@ -20,25 +20,28 @@
           <template #steps>
             <InstructionStep>
               At what wavelength does the star emit the most light?
-              <br />
-              <span class="challenge-bold">Hint 1:</span> Where is the y-value
-              roughly the highest?
-              <br />
-              <span class="challenge-bold">Hint 2:</span> Adjust the
-              <span class="challenge-tool-label">wavelength stretch</span> as
-              needed, so you can see all the available data. Under
-              <span class="challenge-tool-label">normalize data</span>, select
-              <span class="challenge-bold">all</span> or
-              <span class="challenge-bold">none</span>
+              <p class="my-2">
+                <span class="challenge-bold">Hint 1:</span> Where is the y-value
+                roughly the highest?
+              </p>
+              <p class="mt-0">
+                <span class="challenge-bold">Hint 2:</span> Adjust the
+                <span class="challenge-tool-label">wavelength stretch</span> as
+                needed, so you can see all the available data. Under
+                <span class="challenge-tool-label">normalize data</span>, select
+                <span class="challenge-bold">all</span> or
+                <span class="challenge-bold">none</span>
+              </p>
             </InstructionStep>
             <InstructionStep>
               What is the energy associated with the wavelength that emits the
               most light?
-              <br />
-              <span class="challenge-bold">Hint:</span> Use the
-              <span class="challenge-tool-label">units</span> dropdown to select
-              <span class="challenge-bold">electron volts</span>, then use the
-              vertical measuring tool to determine the energy.
+              <p class="mt-2">
+                <span class="challenge-bold">Hint:</span> Use the
+                <span class="challenge-tool-label">units</span> dropdown to
+                select <span class="challenge-bold">electron volts</span>, then
+                use the vertical measuring tool to determine the energy.
+              </p>
             </InstructionStep>
             <InstructionStep>
               Based on the brightness of light across the visible part of the
