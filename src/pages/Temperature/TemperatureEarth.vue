@@ -100,7 +100,7 @@ import { useCustomMetadata } from '@/utils/metadataUtils';
 useSpecLabHead('Earth', 'Temperature');
 
 const earthMetadata = useCustomMetadata('Solar System', 'Earth_Emission', {
-  imageUrl: null,
+  imageUrl: '',
 });
 const earthMetadataList = earthMetadata ? [earthMetadata] : [];
 
