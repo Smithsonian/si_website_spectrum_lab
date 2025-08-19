@@ -11,7 +11,7 @@
               Thermal Emission
             </SectionNavItem>
             <SectionNavItem to="/temperature/stars">Stars</SectionNavItem>
-            <SectionNavItem to="/temperature/incandescentbulb">
+            <SectionNavItem to="/temperature/incandescent-bulb">
               Incandescent Bulb
             </SectionNavItem>
             <SectionNavItem to="/temperature/earth"> Earth </SectionNavItem>

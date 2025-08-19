@@ -195,7 +195,7 @@ const routes: RouteRecordRaw[] = [
           { path: 'measuring', component: TemperatureStarsMeasuring },
         ],
       },
-      { path: 'incandescentbulb', component: TemperatureIncandescentBulb },
+      { path: 'incandescent-bulb', component: TemperatureIncandescentBulb },
       { path: 'earth', component: TemperatureEarth },
     ],
   },

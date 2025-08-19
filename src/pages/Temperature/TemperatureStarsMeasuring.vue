@@ -41,7 +41,9 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup
+        :control-names="['units', 'plotType', 'normalize', 'zoom']"
+      >
         <template #top-tool>
           <ToolCard
             :custom-metadata="starMetadataList"
@@ -60,7 +62,7 @@
           <NextPrevButton to="spectra" direction="prev">part 1</NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="../incandescentbulb" direction="next"
+          <NextPrevButton to="../incandescent-bulb" direction="next"
             >next section</NextPrevButton
           >
         </template>
