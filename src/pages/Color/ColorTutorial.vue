@@ -24,8 +24,8 @@
             </InstructionStep>
           </template>
           <template #after-steps>
-            Click <span style="font-weight: 600">replay tutorial</span> on the
-            bottom left if you need to review any content.
+            Click <span class="challenge-button-text">replay tutorial</span> on
+            the bottom left if you need to review any content.
           </template>
         </InstructionRow>
       </ChallengeCard>

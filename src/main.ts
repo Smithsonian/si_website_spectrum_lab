@@ -26,6 +26,7 @@ import TemperaturePredictions from './pages/Temperature/TemperaturePredictions.v
 import { BASE_URL } from './constants';
 import MuseumIntro from './pages/Museum/MuseumIntro.vue';
 import MuseumHokusai from './pages/Museum/MuseumHokusai.vue';
+import TemperatureThermalEmission from './pages/Temperature/TemperatureThermalEmission.vue';
 import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra.vue';
 import TemperatureStarsMeasuring from './pages/Temperature/TemperatureStarsMeasuring.vue';
 import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandescentBulb.vue';
@@ -187,6 +188,7 @@ const routes: RouteRecordRaw[] = [
     redirect: '/temperature/predictions',
     children: [
       { path: 'predictions', component: TemperaturePredictions },
+      { path: 'thermal-emission', component: TemperatureThermalEmission },
       {
         path: 'stars/',
         redirect: '/temperature/stars/spectra',
@@ -195,7 +197,7 @@ const routes: RouteRecordRaw[] = [
           { path: 'measuring', component: TemperatureStarsMeasuring },
         ],
       },
-      { path: 'incandescentbulb', component: TemperatureIncandescentBulb },
+      { path: 'incandescent-bulb', component: TemperatureIncandescentBulb },
       { path: 'earth', component: TemperatureEarth },
     ],
   },

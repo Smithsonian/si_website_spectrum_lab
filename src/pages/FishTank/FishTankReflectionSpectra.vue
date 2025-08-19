@@ -62,7 +62,7 @@
           />
         </template>
       </ToolControlGroup>
-      <PhetIframe bordered />
+      <PhetColorVisionIframe bordered />
       <LeftRightGroup class="mt-4">
         <template #left>
           <NextPrevButton direction="prev" light to="explore-lighting-design">

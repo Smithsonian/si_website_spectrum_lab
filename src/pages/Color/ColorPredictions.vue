@@ -19,8 +19,9 @@
           <template #steps>
             <InstructionStep>
               If you would like a refresher,
-              <strong>double-click on the RGB Bulbs</strong> to launch the PhET
-              Color Vision simulation to explore how different light colors mix.
+              <span class="challenge-bold">double-click on the RGB Bulbs</span>
+              to launch the PhET Color Vision simulation to explore how
+              different light colors mix.
             </InstructionStep>
           </template>
           <template #note>
@@ -51,7 +52,7 @@
           />
         </template>
       </ToolControlGroup>
-      <PhetIframe bordered />
+      <PhetColorVisionIframe bordered />
       <LeftRightGroup class="mt-5">
         <template #left>
           <NextPrevButton direction="prev" light to="seeing-color">

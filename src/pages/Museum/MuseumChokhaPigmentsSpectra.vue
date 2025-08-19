@@ -23,19 +23,19 @@
             </template>
             <template #steps>
               <InstructionStep>
-                Under <span style="font-weight: 600">SOURCE 1</span>, use the
-                <span style="font-weight: 600">Select Chokha ROI</span>
+                Under <span class="challenge-bold">SOURCE 1</span>, use the
+                <span class="challenge-bold">Select Chokha ROI</span>
                 dropdown menu to view a spectrum for each region of interest.
               </InstructionStep>
               <InstructionStep>
-                Under <span style="font-weight: 600">SOURCE 2</span>, use the
-                <span style="font-weight: 600">Select material</span> dropdown
+                Under <span class="challenge-bold">SOURCE 2</span>, use the
+                <span class="challenge-bold">Select material</span> dropdown
                 menu to view a spectrum for different pigments of each color or
                 the cellulose background.
               </InstructionStep>
               <InstructionStep>
                 Adjust the
-                <span style="font-weight: 400">WAVELENGTH STRETCH</span> as
+                <span class="challenge-tool-label">WAVELENGTH STRETCH</span> as
                 needed to view the complete spectrum.
               </InstructionStep>
             </template>

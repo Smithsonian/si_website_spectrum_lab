@@ -40,7 +40,7 @@
         </InstructionRow>
       </template>
       <template #middle>
-        <PhetIframe />
+        <PhetColorVisionIframe />
       </template>
       <template #bottom>
         <LeftRightGroup>

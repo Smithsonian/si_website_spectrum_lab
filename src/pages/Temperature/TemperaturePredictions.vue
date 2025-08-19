@@ -3,20 +3,17 @@
     <template #challenge-tab>
       <ChallengeCard>
         <template #top>
-          <InstructionHeader>
-            Temperature and Colors from Spectra Predictions
-          </InstructionHeader>
+          <InstructionHeader> Temperature Predictions </InstructionHeader>
           <InstructionRow rowType="Notebook">
-            In the <em>Temperature and Colors from Spectra</em>
-            section, answer these questions:
+            Answer these questions in your Notebook:
             <template #steps>
               <InstructionStep>
                 You see a red star and a blue star in the sky. Which do you
                 think has the higher temperature?
               </InstructionStep>
               <InstructionStep>
-                Explain why you chose the answer you did. It’s okay if you have
-                no idea! We will explain the answer in the next section.
+                Explain why you chose the answer you did. (It is okay if you
+                guessed. We will explain the answer in the next section.)
               </InstructionStep>
             </template>
           </InstructionRow>
@@ -33,7 +30,7 @@
       </ChallengeCard>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="stars" light>
+          <NextPrevButton direction="next" to="thermal-emission" light>
             next section
           </NextPrevButton>
         </template>

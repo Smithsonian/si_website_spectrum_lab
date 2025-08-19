@@ -183,6 +183,24 @@ $focus-ring-opacity: 0.5;
   text-transform: uppercase;
 }
 
+.challenge-button-text {
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.challenge-tool-label {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.challenge-bold {
+  font-weight: 600;
+}
+
+.challenge-less-bold {
+  font-weight: 500;
+}
+
 .needs-updating {
   color: red !important;
   font-weight: bold;

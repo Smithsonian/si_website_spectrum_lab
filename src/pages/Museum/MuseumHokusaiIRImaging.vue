@@ -12,9 +12,7 @@
             <template #steps>
               <InstructionStep>
                 Use the
-                <span style="font-weight: 600"
-                  >No filter / 440 nm / 905 nm</span
-                >
+                <span class="challenge-bold">No filter / 440 nm / 905 nm</span>
                 buttons to toggle between the visible light image, and
                 false-color images taken with a 440 nm (blue) filter and 905 nm
                 (infrared) filter.

@@ -32,7 +32,7 @@
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <PhetIframe bordered />
+      <PhetColorVisionIframe bordered />
       <LeftRightGroup class="mt-5">
         <template #left>
           <NextPrevButton direction="prev" light to="../your-fishtank">
