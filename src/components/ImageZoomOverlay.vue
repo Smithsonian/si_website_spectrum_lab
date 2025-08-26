@@ -21,7 +21,7 @@
       :style="{
         height: `${Y_ZOOM_WINDOW_HEIGHT}px`,
         width: `${X_ZOOM_WINDOW_WIDTH}px`,
-        top: '50px',
+        top: '300px',
         left: `-${X_ZOOM_WINDOW_WIDTH + 25}px`,
       }"
     >
