@@ -2,16 +2,23 @@
   <CompositionLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Atomic emission: Part 1</InstructionHeader>
+        <InstructionHeader
+          >Atomic Emission Part 1: Incandescent vs. Fluorescent
+          Bulbs</InstructionHeader
+        >
         <InstructionRow row-type="Intro">
-          In Session 3, we explored thermal emission—light given off by all
+          In Module 4, we explored thermal emission—light given off by all
           objects due to their temperature.
           <template #before-steps>
-            Now let’s consider a different kind of light emission.
+            Now let’s consider a different kind of light emission by looking at
+            the spectra of two types of light bulbs.
           </template>
         </InstructionRow>
         <InstructionRow row-type="Tool">
-          Compare the spectra of the two light bulbs shown here.
+          Compare the spectra of the two light bulbs shown.
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          Answer these questions in your Notebook.
           <template #steps>
             <InstructionStep>
               Both these types of bulbs emit light in the visible part of the
@@ -25,10 +32,6 @@
               environment? Explain why.
             </InstructionStep>
           </template>
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          Write your answers in the
-          <em>A different kind of emission</em> section.
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -49,7 +52,7 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
         <template #right>
-          <NextPrevButton light direction="next" to="gas"
+          <NextPrevButton light direction="next" to="slideshow"
             >part 2</NextPrevButton
           >
         </template>

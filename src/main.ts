@@ -60,6 +60,7 @@ import PrepareLights from './pages/Spectra/SpectraPrepareForLights.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
+import CompositionAtomicEmissionSlideshow from './pages/Composition/CompositionAtomicEmissionSlideshow.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
@@ -210,6 +211,7 @@ const routes: RouteRecordRaw[] = [
         redirect: '/composition/atomic-emission/lamps',
         children: [
           { path: 'lamps', component: CompositionEmissionLamps },
+          { path: 'slideshow', component: CompositionAtomicEmissionSlideshow },
           { path: 'gas', component: CompositionEmissionGas },
         ],
       },
