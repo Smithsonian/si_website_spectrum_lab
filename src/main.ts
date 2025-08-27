@@ -36,6 +36,8 @@ import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
 import SpectraDrawExplore from './pages/Spectra/SpectraStartDrawing.vue';
 import FinalProjects from './pages/FinalProjects.vue';
+import ExoplanetsLightBehaviors from './pages/Exoplanets/ExoplanetsLightBehaviors.vue';
+import ExoplanetsTelescopePOV from './pages/Exoplanets/ExoplanetsTelescopePOV.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
@@ -279,6 +281,18 @@ const routes: RouteRecordRaw[] = [
         redirect: '/final-projects/exoplanets/intro',
         children: [
           { path: 'intro', component: ExoplanetsIntro },
+          {
+            path: 'capturing-spectra/',
+            redirect:
+              '/final-projects/exoplanets/capturing-spectra/exoplanet-light-interactions',
+            children: [
+              {
+                path: 'exoplanet-light-interactions',
+                component: ExoplanetsLightBehaviors,
+              },
+              { path: 'telescope-pov', component: ExoplanetsTelescopePOV },
+            ],
+          },
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
           { path: 'wasp-17b', component: ExoplanetsWASP17b },

@@ -53,9 +53,9 @@
               Explore the atmosphere of planets outside our solar system.
             </BCardText>
             <BCardText>
-              In this project, you’ll explore planets outside our solar system,
-              learning how their spectra transmissions help predict their
-              atmosphere.
+              In this project, you’ll investigate the atmospheres of planets
+              outside our solar system, then make a pitch for what exoplanet
+              spectra you’d like to capture with the James Webb Space Telescope.
             </BCardText>
           </FinalProjectCard>
           <FinalProjectCard
