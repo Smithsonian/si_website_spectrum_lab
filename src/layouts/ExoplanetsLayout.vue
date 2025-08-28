@@ -17,7 +17,7 @@
               Modeling Clear Atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/cloudy-skies">
-              Modeling Cloudy & Hazy Atmospheres
+              Modeling Cloudy &amp; Hazy Atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/wasp-17b">
               WASP-17b

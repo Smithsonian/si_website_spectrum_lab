@@ -4,7 +4,7 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader>
-            Modeling Cloudy & Hazy Atmospheres
+            Modeling Cloudy &amp; Hazy Atmospheres
           </InstructionHeader>
           <InstructionRow row-type="Tool">
             How do the models predict that different atmospheric conditions
