@@ -17,6 +17,20 @@
             own to figure out what these planets are like, including looking for
             molecules that might be “biosignatures,” or evidence for life.
           </InstructionRow>
+          <InstructionRow row-type="Notebook">
+            Answer these questions in your Notebook.
+            <template #steps>
+              <InstructionStep>
+                What are some of
+                <em><span class="challenge-bold">your</span></em> questions
+                about other worlds in the universe?
+              </InstructionStep>
+              <InstructionStep>
+                What are some questions that spectra from exoplanets might help
+                astronomers answer?
+              </InstructionStep>
+            </template>
+          </InstructionRow>
         </template>
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
@@ -35,7 +49,7 @@
         <template #bottom
           ><LeftRightGroup>
             <template #right>
-              <NextPrevButton direction="next" light to="clear-skies">
+              <NextPrevButton direction="next" light to="capturing-spectra">
                 next section
               </NextPrevButton>
             </template>

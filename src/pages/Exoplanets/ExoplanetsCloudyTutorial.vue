@@ -4,7 +4,7 @@
       <ChallengeCard>
         <template #top>
           <InstructionHeader>
-            Tutorial: Cloudy/hazy atmospheres
+            Modeling Cloudy &amp; Hazy Atmospheres
           </InstructionHeader>
           <InstructionRow row-type="Tool">
             How do the models predict that different atmospheric conditions
@@ -22,9 +22,9 @@
                 why clouds could cause this difference?
               </InstructionStep>
               <InstructionStep>
-                Hazy vs Clear: How would you compare the overall slope of the
-                spectrum (from shorter to longer wavelengths) in the Hazy Hot
-                Jupiter Model vs the predicted model for a Clear Hot Jupiter?
+                Clear vs Hazy: How would you compare the overall slope of the
+                spectrum (from shorter to longer wavelengths) in the Clear Hot
+                Jupiter Model vs the predicted model for Hazy Hot Jupiter?
               </InstructionStep>
             </template>
           </InstructionRow>

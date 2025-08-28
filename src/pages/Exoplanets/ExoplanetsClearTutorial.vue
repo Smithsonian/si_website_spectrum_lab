@@ -2,12 +2,15 @@
   <ExoplanetsLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Tutorial: Exoplanet atmospheres</InstructionHeader>
+        <InstructionHeader>Modeling Clear Atmospheres</InstructionHeader>
+        <InstructionRow row-type="Intro">
+          Astronomers predict the theoretical exoplanet spectrum they would
+          expect to observe under ideal conditions. Each predictive model is
+          specific to a particular set of astmospheric conditions.
+        </InstructionRow>
         <InstructionRow row-type="Tool">
-          Astronomers predict the theoretical spectrum they would expect to
-          observe under ideal conditions. Each predictive model is specific to a
-          particular set of astmospheric conditions. Let’s explore some of these
-          models, starting with the model for clear skies.
+          Let’s explore some of these models, starting with the model for clear
+          skies.
         </InstructionRow>
         <InstructionRow row-type="Notebook">
           Once you’ve completed the tutorial, go to the

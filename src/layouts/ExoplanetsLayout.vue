@@ -10,11 +10,14 @@
             <SectionNavItem to="/final-projects/exoplanets/intro">
               Researching Exoplanets
             </SectionNavItem>
+            <SectionNavItem to="/final-projects/exoplanets/capturing-spectra/">
+              Capturing Spectra
+            </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/clear-skies">
-              Tutorial: Exoplanet atmospheres
+              Modeling Clear Atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/cloudy-skies">
-              Tutorial: Cloudy/hazy atmospheres
+              Modeling Cloudy &amp; Hazy Atmospheres
             </SectionNavItem>
             <SectionNavItem to="/final-projects/exoplanets/wasp-17b">
               WASP-17b
