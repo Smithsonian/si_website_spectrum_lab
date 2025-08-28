@@ -63,6 +63,7 @@ import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLam
 import CompositionAtomicEmissionSlideshow from './pages/Composition/CompositionAtomicEmissionSlideshow.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
+import CompositionAtomicAbsorptionSlideshow from './pages/Composition/CompositionAtomicAbsorptionSlideshow.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
 import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
@@ -215,7 +216,17 @@ const routes: RouteRecordRaw[] = [
           { path: 'gas', component: CompositionEmissionGas },
         ],
       },
-      { path: 'atoms-and-spectra', component: CompositionAtomsAndSpectra },
+      {
+        path: 'atomic-absorption/',
+        redirect: '/composition/atomic-absorption/hydrogen',
+        children: [
+          { path: 'hydrogen', component: CompositionAtomsAndSpectra },
+          {
+            path: 'slideshow',
+            component: CompositionAtomicAbsorptionSlideshow,
+          },
+        ],
+      },
       { path: 'sun', component: CompositionSun },
       {
         path: 'earth/',

@@ -7,8 +7,8 @@
             <SectionNavItem to="/composition/atomic-emission">
               Atomic Emission
             </SectionNavItem>
-            <SectionNavItem to="/composition/atoms-and-spectra">
-              Atoms and Spectra
+            <SectionNavItem to="/composition/atomic-absorption">
+              Atomic Absorption
             </SectionNavItem>
             <SectionNavItem to="/composition/sun">Sun</SectionNavItem>
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>

@@ -2,27 +2,36 @@
   <CompositionLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Atoms and Spectra</InstructionHeader>
-        <InstructionRow row-type="Intro">
-          Atoms can interact with light in different ways. So far, we have
-          explored how atoms emit light at specific wavelengths, as with
-          hydrogen in the top panel.
-          <template #before-steps>
-            The spectrum in the bottom panel results from a different type of
-            interaction between atoms and light.
+        <InstructionHeader
+          >Atomic Absorption Part 1: Hydrogen</InstructionHeader
+        >
+        <InstructionRow row-type="Tool">
+          <p class="mt-1">
+            Atoms can interact with light in different ways. So far, we have
+            explored how atoms emit light at specific wavelengths, as with
+            hydrogen under
+            <span class="challenge-tool-label">Source 1</span> below.
+          </p>
+          <p>
+            The spectrum shown in
+            <span class="challenge-tool-label">Source 2</span> results from a
+            different type of interaction between atoms and light.
+          </p>
+          <template #steps>
+            <InstructionStep>
+              Examine the two spectra shown. Note their similarities and
+              differences.
+            </InstructionStep>
           </template>
         </InstructionRow>
-        <InstructionRow row-type="Tool">
-          Examine these two spectra.
+        <InstructionRow row-type="Notebook">
+          Answer these questions in your Notebook.
           <template #steps>
             <InstructionStep>
               What do the hydrogen emission spectrum and the comparison spectrum
               have in common? In what ways are they different?
             </InstructionStep>
           </template>
-        </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          Write your answers in the <em>Atoms and Spectra</em> section.
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -42,9 +51,14 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton light direction="prev" to="../atomic-emission">
+            previous section
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton light direction="next" to="sun">
-            next section
+          <NextPrevButton light direction="next" to="slideshow">
+            part 2
           </NextPrevButton>
         </template>
       </LeftRightGroup>
