@@ -64,6 +64,7 @@ import CompositionAtomicEmissionSlideshow from './pages/Composition/CompositionA
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
 import CompositionAtomicAbsorptionSlideshow from './pages/Composition/CompositionAtomicAbsorptionSlideshow.vue';
+import CompositionAtomicLineMatchingSlideshow from './pages/Composition/CompositionAtomicLineMatchingSlideshow.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
 import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
@@ -226,6 +227,10 @@ const routes: RouteRecordRaw[] = [
             component: CompositionAtomicAbsorptionSlideshow,
           },
         ],
+      },
+      {
+        path: 'line-matching',
+        component: CompositionAtomicLineMatchingSlideshow,
       },
       { path: 'sun', component: CompositionSun },
       {

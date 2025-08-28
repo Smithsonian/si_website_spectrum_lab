@@ -10,6 +10,9 @@
             <SectionNavItem to="/composition/atomic-absorption">
               Atomic Absorption
             </SectionNavItem>
+            <SectionNavItem to="/composition/line-matching">
+              What Counts as a Match?
+            </SectionNavItem>
             <SectionNavItem to="/composition/sun">Sun</SectionNavItem>
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>
             <SectionNavItem to="/composition/solar-system">
