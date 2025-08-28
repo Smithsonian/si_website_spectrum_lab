@@ -29,7 +29,11 @@
           <template #steps>
             <InstructionStep>
               What do the hydrogen emission spectrum and the comparison spectrum
-              have in common? In what ways are they different?
+              have in common?
+            </InstructionStep>
+            <InstructionStep>
+              In what ways are the hydrogen emission spectrum and the comparison
+              spectrum different from each other?
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -71,7 +75,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
-useSpecLabHead('Atoms and Spectra', 'Composition');
+useSpecLabHead('Atomic absorption part 1', 'Composition');
 
 const hydrogenEmission = useCustomMetadata(
   'Atoms and Molecules',

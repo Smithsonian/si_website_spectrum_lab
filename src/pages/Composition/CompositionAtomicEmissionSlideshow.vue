@@ -30,7 +30,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import slide1 from '@/assets/atomic_emission/atomic_emission_1.png';
 import slide2 from '@/assets/atomic_emission/atomic_emission_2.png';
 
-useSpecLabHead('Behaviors of Light', 'Color');
+useSpecLabHead('Atomic emission part 2', 'Composition');
 
 const slideOrder = [slide1, slide2];
 </script>

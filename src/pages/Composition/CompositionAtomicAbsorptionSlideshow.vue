@@ -5,7 +5,7 @@
         :slide-order="slideOrder"
         prev-path="hydrogen"
         prev-label="part 1"
-        next-path="../sun"
+        next-path="../line-matching"
       >
         <InstructionHeader
           >Atomic Absorption Part 2: Slideshow</InstructionHeader
@@ -43,7 +43,7 @@ import slide1 from '@/assets/atomic_absorption/atomic_absorption_1.png';
 import slide2 from '@/assets/atomic_absorption/atomic_absorption_2.png';
 import slide3 from '@/assets/atomic_absorption/atomic_absorption_3.png';
 
-useSpecLabHead('Behaviors of Light', 'Color');
+useSpecLabHead('Atomic absorption part 2', 'Composition');
 
 const slideOrder = [slide1, slide2, slide3];
 </script>
