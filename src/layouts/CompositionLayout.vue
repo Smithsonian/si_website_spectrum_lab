@@ -13,7 +13,9 @@
             <SectionNavItem to="/composition/line-matching">
               What Counts as a Match?
             </SectionNavItem>
-            <SectionNavItem to="/composition/sun">Sun</SectionNavItem>
+            <SectionNavItem to="/composition/sun"
+              >The Sun's Composition</SectionNavItem
+            >
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>
             <SectionNavItem to="/composition/solar-system">
               Solar System
