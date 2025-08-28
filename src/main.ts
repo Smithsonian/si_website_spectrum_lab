@@ -67,7 +67,9 @@ import CompositionAtomicAbsorptionSlideshow from './pages/Composition/Compositio
 import CompositionAtomicLineMatchingSlideshow from './pages/Composition/CompositionAtomicLineMatchingSlideshow.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
-import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
+import CompositionEarthReflectionSpectrum from './pages/Composition/CompositionEarthReflectionSpectrum.vue';
+import CompositionEarthEmissionSpectrum from './pages/Composition/CompositionEarthEmissionSpectrum.vue';
+import CompositionEarthTransmissionSpectrum from './pages/Composition/CompositionEarthTransmissionSpectrum.vue';
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
@@ -238,7 +240,12 @@ const routes: RouteRecordRaw[] = [
         redirect: '/composition/earth/diagram',
         children: [
           { path: 'diagram', component: CompositionEarthDiagram },
-          { path: 'spectra', component: CompositionEarthSpectra },
+          { path: 'reflection', component: CompositionEarthReflectionSpectrum },
+          { path: 'emission', component: CompositionEarthEmissionSpectrum },
+          {
+            path: 'transmission',
+            component: CompositionEarthTransmissionSpectrum,
+          },
         ],
       },
       { path: 'solar-system', component: CompositionSolarSystem },
