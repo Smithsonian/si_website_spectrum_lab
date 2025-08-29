@@ -77,7 +77,7 @@
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 
-useSpecLabHead('Atomic emission part 2', 'Composition');
+useSpecLabHead('Atomic emission part 3', 'Composition');
 
 const metalHalide = useCustomMetadata('Lamps', 'Metal_Halide_Bulb', {});
 const vapor = useCustomMetadata('Lamps', 'Sodium_Vapor_Lamp_Low_Pressure', {
