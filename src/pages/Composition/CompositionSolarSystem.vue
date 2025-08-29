@@ -2,25 +2,55 @@
   <CompositionLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>
-          What can we know about other solar system objects from their
-          reflection spectra?
-        </InstructionHeader>
+        <InstructionHeader> Solar System Composition </InstructionHeader>
         <InstructionRow row-type="Tool">
-          Choose one reflection spectrum of a non-Earth solar system object.
+          Investigate the reflection spectrum of a non-Earth Solar System object
+          of your choice.
+          <template #steps>
+            <InstructionStep>
+              Under <span class="challenge-tool-label">Source 1</span>, select
+              one of the reflection spectra. Adjust the
+              <span class="challenge-tool-label">wavelength stretch</span> as
+              needed to bring the spectrum into view.
+            </InstructionStep>
+            <InstructionStep>
+              Under <span class="challenge-tool-label">normalize data</span>,
+              choose <span class="challenge-bold">visible</span> while
+              investigating the object's color. (Switch the normalization back
+              to <span class="challenge-bold">all</span> before moving on.)
+            </InstructionStep>
+            <InstructionStep>
+              Compare spectral features between your chosen object's reflection
+              spectrum and the reference spectra to identify at least one
+              material in your object's composition.
+            </InstructionStep>
+          </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Answer the questions in the
-          <em>
-            What can we know about other solar system objects from their
-            reflection spectra?
-          </em>
-          section.
+          Answer these questions in your Notebook.
+          <template #steps>
+            <InstructionStep>
+              Which object’s reflection spectrum did you choose?
+            </InstructionStep>
+            <InstructionStep>
+              What color do you expect this object to appear based on its
+              spectrum?
+            </InstructionStep>
+            <InstructionStep>
+              Identify 2 characteristics of the object that you can know based
+              on its spectrum and explain how you know. (One of the
+              characteristics can be its color if you describe the evidence
+              clearly. Another characteristic might be what atoms or molecules
+              are present.)
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>
-      <ToolControlGroup>
+      <ToolControlGroup
+        :control-names="['units', 'plotType', 'normalize', 'zoom']"
+      >
         <template #top-tool>
           <ToolCard :custom-metadata="topMetadata" />
         </template>
@@ -29,9 +59,14 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton light direction="prev" to="../earth">
+            prev section
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton light direction="next" to="bonus-solar-system">
-            next section
+          <NextPrevButton light direction="next" to="bonus">
+            bonus
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -42,21 +77,36 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
+import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Solar System', 'Composition');
 
-const mars = useCustomMetadata('Solar System', 'Mars_Reflection', {});
-const jupiter = useCustomMetadata('Solar System', 'Jupiter_Reflection', {});
-const europa = useCustomMetadata('Solar System', 'Europa_Reflection', {});
-const saturn = useCustomMetadata('Solar System', 'Saturn_Reflection', {});
+const mars = useCustomMetadata('Solar System', 'Mars_Reflection', {
+  imageUrl: mystery,
+});
+const jupiter = useCustomMetadata('Solar System', 'Jupiter_Reflection', {
+  imageUrl: mystery,
+});
+const europa = useCustomMetadata('Solar System', 'Europa_Reflection', {
+  imageUrl: mystery,
+});
+const saturn = useCustomMetadata('Solar System', 'Saturn_Reflection', {
+  imageUrl: mystery,
+});
 const saturnRings = useCustomMetadata(
   'Solar System',
   'Saturn_Rings_Reflection',
-  {},
+  { imageUrl: mystery },
 );
-const titan = useCustomMetadata('Solar System', 'Titan_Reflection', {});
-const uranus = useCustomMetadata('Solar System', 'Uranus_Reflection', {});
-const neptune = useCustomMetadata('Solar System', 'Neptune_Reflection', {});
+const titan = useCustomMetadata('Solar System', 'Titan_Reflection', {
+  imageUrl: mystery,
+});
+const uranus = useCustomMetadata('Solar System', 'Uranus_Reflection', {
+  imageUrl: mystery,
+});
+const neptune = useCustomMetadata('Solar System', 'Neptune_Reflection', {
+  imageUrl: mystery,
+});
 const topMetadata = [
   mars,
   jupiter,

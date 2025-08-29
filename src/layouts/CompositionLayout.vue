@@ -18,10 +18,7 @@
             >
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>
             <SectionNavItem to="/composition/solar-system">
-              Solar System
-            </SectionNavItem>
-            <SectionNavItem to="/composition/bonus-solar-system">
-              Bonus: Solar System
+              Solar System Composition
             </SectionNavItem>
           </SectionNav>
         </BCol>

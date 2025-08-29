@@ -248,8 +248,14 @@ const routes: RouteRecordRaw[] = [
           },
         ],
       },
-      { path: 'solar-system', component: CompositionSolarSystem },
-      { path: 'bonus-solar-system', component: CompositionBonusSolarSystem },
+      {
+        path: 'solar-system/',
+        redirect: '/composition/solar-system/main',
+        children: [
+          { path: 'main', component: CompositionSolarSystem },
+          { path: 'bonus', component: CompositionBonusSolarSystem },
+        ],
+      },
     ],
   },
   {
