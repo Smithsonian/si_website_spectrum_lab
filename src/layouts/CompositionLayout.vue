@@ -7,16 +7,18 @@
             <SectionNavItem to="/composition/atomic-emission">
               Atomic Emission
             </SectionNavItem>
-            <SectionNavItem to="/composition/atoms-and-spectra">
-              Atoms and Spectra
+            <SectionNavItem to="/composition/atomic-absorption">
+              Atomic Absorption
             </SectionNavItem>
-            <SectionNavItem to="/composition/sun">Sun</SectionNavItem>
+            <SectionNavItem to="/composition/line-matching">
+              What Counts as a Match?
+            </SectionNavItem>
+            <SectionNavItem to="/composition/sun"
+              >The Sun's Composition</SectionNavItem
+            >
             <SectionNavItem to="/composition/earth">Earth</SectionNavItem>
             <SectionNavItem to="/composition/solar-system">
-              Solar System
-            </SectionNavItem>
-            <SectionNavItem to="/composition/bonus-solar-system">
-              Bonus: Solar System
+              Solar System Composition
             </SectionNavItem>
           </SectionNav>
         </BCol>

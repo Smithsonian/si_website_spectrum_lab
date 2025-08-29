@@ -2,27 +2,40 @@
   <CompositionLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>Atoms and Spectra</InstructionHeader>
-        <InstructionRow row-type="Intro">
-          Atoms can interact with light in different ways. So far, we have
-          explored how atoms emit light at specific wavelengths, as with
-          hydrogen in the top panel.
-          <template #before-steps>
-            The spectrum in the bottom panel results from a different type of
-            interaction between atoms and light.
-          </template>
-        </InstructionRow>
+        <InstructionHeader
+          >Atomic Absorption Part 1: Hydrogen</InstructionHeader
+        >
         <InstructionRow row-type="Tool">
-          Examine these two spectra.
+          <p class="mt-1">
+            Atoms can interact with light in different ways. So far, we have
+            explored how atoms emit light at specific wavelengths, as with
+            hydrogen under
+            <span class="challenge-tool-label">Source 1</span> below.
+          </p>
+          <p>
+            The spectrum shown in
+            <span class="challenge-tool-label">Source 2</span> results from a
+            different type of interaction between atoms and light.
+          </p>
           <template #steps>
             <InstructionStep>
-              What do the hydrogen emission spectrum and the comparison spectrum
-              have in common? In what ways are they different?
+              Examine the two spectra shown. Note their similarities and
+              differences.
             </InstructionStep>
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Write your answers in the <em>Atoms and Spectra</em> section.
+          Answer these questions in your Notebook.
+          <template #steps>
+            <InstructionStep>
+              What do the hydrogen emission spectrum and the comparison spectrum
+              have in common?
+            </InstructionStep>
+            <InstructionStep>
+              In what ways are the hydrogen emission spectrum and the comparison
+              spectrum different from each other?
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -42,9 +55,14 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton light direction="prev" to="../atomic-emission">
+            previous section
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton light direction="next" to="sun">
-            next section
+          <NextPrevButton light direction="next" to="slideshow">
+            part 2
           </NextPrevButton>
         </template>
       </LeftRightGroup>
@@ -57,7 +75,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
 import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
-useSpecLabHead('Atoms and Spectra', 'Composition');
+useSpecLabHead('Atomic absorption part 1', 'Composition');
 
 const hydrogenEmission = useCustomMetadata(
   'Atoms and Molecules',

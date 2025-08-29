@@ -2,30 +2,31 @@
   <CompositionLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>What is the Sun made of?</InstructionHeader>
+        <InstructionHeader>The Sun's Composition</InstructionHeader>
         <InstructionRow row-type="Intro">
           The Sun’s absorption lines tell us what elements are present in its
-          gas.
-          <template #before-steps>
-            For example, we know that hydrogen is the most common element in a
-            star.
-          </template>
+          gas. For example, we know that hydrogen is the most common element in
+          a star.
         </InstructionRow>
         <InstructionRow row-type="Tool">
           Compare the spectra to identify what the Sun is made of.
           <template #steps>
             <InstructionStep>
-              Use the dropdown menu to select the hydrogen (emission) spectrum.
+              Under <span class="challenge-tool-label">Source 2</span>, use the
+              dropdown menu to select the Hydrogen Emission spectrum.
             </InstructionStep>
             <InstructionStep>
               Identify three distinct wavelengths where absorption lines appear
-              in both the Sun’s spectrum (top) and emission lines appear in the
-              hydrogen spectrum (bottom).
+              in the Sun’s spectrum and emission lines appear in the hydrogen
+              spectrum. Use information about these lines to complete the Table
+              in Question 1 in your Notebook.
             </InstructionStep>
             <InstructionStep>
-              Use the dropdown menu to compare other atomic spectra with the
-              Sun. Identify one other element that is present in the Sun based
-              on the absorption and emission spectra.
+              Under <span class="challenge-tool-label">Source 2</span>, use the
+              dropdown menu to compare other atomic spectra with the Sun's
+              spectrum. Identify one other element that is present in the Sun
+              based on the comparison spectra. Use the information to answer
+              Question 2 in your Notebook.
             </InstructionStep>
           </template>
           <template #note>
@@ -35,8 +36,19 @@
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Write your answers in the
-          <em>What can we know about Sun from its spectra?</em> section.
+          Answer these questions in your Notebook.
+          <template #steps>
+            <InstructionStep>
+              Complete the Hydrogen in the Sun table. For each of the lines that
+              had a match between the Sun's spectrum and the hydrogen spectrum:
+              write the wavelength of the line, describe how it appears in the
+              Sun's spectrum, and how it appears in the hydrogen spectrum.
+            </InstructionStep>
+            <InstructionStep>
+              Identify one other element that is present in the Sun based on the
+              absorption and emission spectra.
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -53,6 +65,11 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton light direction="prev" to="line-matching">
+            prev section
+          </NextPrevButton>
+        </template>
         <template #right>
           <NextPrevButton light direction="next" to="earth">
             next section

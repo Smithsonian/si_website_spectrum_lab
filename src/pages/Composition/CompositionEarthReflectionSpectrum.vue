@@ -3,21 +3,41 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          What can we know about Earth from its spectra? Part 2
+          Earth Part 2: Reflection Spectrum
         </InstructionHeader>
         <InstructionRow row-type="Tool">
-          Compare each type of spectra from Earth with spectra from different
-          atoms and molecules. There are 3 spectra types in the top tool to
-          investigate:
+          Compare Earth's reflection spectrum with comparison spectra of
+          different molecules.
           <template #steps>
-            <InstructionStep>Reflection</InstructionStep>
-            <InstructionStep>Emission</InstructionStep>
-            <InstructionStep>Transmission</InstructionStep>
+            <InstructionStep>
+              Under <span class="challenge-tool-label">Source 1</span>, select
+              "Earth Reflection." Adjust the
+              <span class="challenge-tool-label">wavelength stretch</span> as
+              needed to bring the spectrum into view.
+            </InstructionStep>
+            <InstructionStep>
+              Under <span class="challenge-tool-label">Source 2</span>, select
+              the spectra for different comparison molecules.
+            </InstructionStep>
+            <InstructionStep>
+              Compare absorption line features between Earth's reflection
+              spectrum and the molecules to identify at least two matches.
+            </InstructionStep>
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Answer the questions in parts <em>II, III,</em> and <em>IV</em> in the
-          <em>What can we know about Earth from its spectra?</em> section.
+          Answer these questions in your Notebook.
+          <template #steps>
+            <InstructionStep>
+              Explain how it is possible for Earth’s reflection spectrum to have
+              absorption features. What aspect of the Sun-Earth system (shown in
+              the diagram from Part 1) is causing the absorption?
+            </InstructionStep>
+            <InstructionStep>
+              Identify at least two molecules in the absorption features of
+              Earth’s reflection spectrum
+            </InstructionStep>
+          </template>
         </InstructionRow>
       </ChallengeCard>
     </template>
@@ -31,9 +51,14 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-4">
+        <template #left>
+          <NextPrevButton light direction="prev" to="diagram">
+            part 1
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton light direction="next" to="../solar-system">
-            next section
+          <NextPrevButton light direction="next" to="emission">
+            part 3
           </NextPrevButton>
         </template>
       </LeftRightGroup>

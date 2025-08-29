@@ -62,11 +62,16 @@ import PrepareLights from './pages/Spectra/SpectraPrepareForLights.vue';
 import SpectraLightSource1 from './pages/Spectra/SpectraLightSource1.vue';
 import SpectraLightSource2 from './pages/Spectra/SpectraLightSource2.vue';
 import CompositionEmissionLamps from './pages/Composition/CompositionEmissionLamps.vue';
+import CompositionAtomicEmissionSlideshow from './pages/Composition/CompositionAtomicEmissionSlideshow.vue';
 import CompositionEmissionGas from './pages/Composition/CompositionEmissionGas.vue';
 import CompositionAtomsAndSpectra from './pages/Composition/CompositionAtomsAndSpectra.vue';
+import CompositionAtomicAbsorptionSlideshow from './pages/Composition/CompositionAtomicAbsorptionSlideshow.vue';
+import CompositionAtomicLineMatchingSlideshow from './pages/Composition/CompositionAtomicLineMatchingSlideshow.vue';
 import CompositionSun from './pages/Composition/CompositionSun.vue';
 import CompositionEarthDiagram from './pages/Composition/CompositionEarthDiagram.vue';
-import CompositionEarthSpectra from './pages/Composition/CompositionEarthSpectra.vue';
+import CompositionEarthReflectionSpectrum from './pages/Composition/CompositionEarthReflectionSpectrum.vue';
+import CompositionEarthEmissionSpectrum from './pages/Composition/CompositionEarthEmissionSpectrum.vue';
+import CompositionEarthTransmissionSpectrum from './pages/Composition/CompositionEarthTransmissionSpectrum.vue';
 import CompositionSolarSystem from './pages/Composition/CompositionSolarSystem.vue';
 import CompositionBonusSolarSystem from './pages/Composition/CompositionBonusSolarSystem.vue';
 import ColorTutorial from './pages/Color/ColorTutorial.vue';
@@ -212,21 +217,47 @@ const routes: RouteRecordRaw[] = [
         redirect: '/composition/atomic-emission/lamps',
         children: [
           { path: 'lamps', component: CompositionEmissionLamps },
+          { path: 'slideshow', component: CompositionAtomicEmissionSlideshow },
           { path: 'gas', component: CompositionEmissionGas },
         ],
       },
-      { path: 'atoms-and-spectra', component: CompositionAtomsAndSpectra },
+      {
+        path: 'atomic-absorption/',
+        redirect: '/composition/atomic-absorption/hydrogen',
+        children: [
+          { path: 'hydrogen', component: CompositionAtomsAndSpectra },
+          {
+            path: 'slideshow',
+            component: CompositionAtomicAbsorptionSlideshow,
+          },
+        ],
+      },
+      {
+        path: 'line-matching',
+        component: CompositionAtomicLineMatchingSlideshow,
+      },
       { path: 'sun', component: CompositionSun },
       {
         path: 'earth/',
         redirect: '/composition/earth/diagram',
         children: [
           { path: 'diagram', component: CompositionEarthDiagram },
-          { path: 'spectra', component: CompositionEarthSpectra },
+          { path: 'reflection', component: CompositionEarthReflectionSpectrum },
+          { path: 'emission', component: CompositionEarthEmissionSpectrum },
+          {
+            path: 'transmission',
+            component: CompositionEarthTransmissionSpectrum,
+          },
         ],
       },
-      { path: 'solar-system', component: CompositionSolarSystem },
-      { path: 'bonus-solar-system', component: CompositionBonusSolarSystem },
+      {
+        path: 'solar-system/',
+        redirect: '/composition/solar-system/main',
+        children: [
+          { path: 'main', component: CompositionSolarSystem },
+          { path: 'bonus', component: CompositionBonusSolarSystem },
+        ],
+      },
     ],
   },
   {
