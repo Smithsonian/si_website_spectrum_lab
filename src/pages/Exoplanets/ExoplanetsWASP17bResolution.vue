@@ -77,6 +77,7 @@ const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {});
 const clearMetadata = useCustomMetadata(
   'Exoplanet Models',
   'Clear_Hot_Jupiter_Model_Transmission',
+  {},
 );
 
 const topMetadataList = wasp17bMetadata ? [wasp17bMetadata] : [];
