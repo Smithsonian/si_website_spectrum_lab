@@ -3,7 +3,7 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader
-          >Atomic Emission Part 1: Incandescent vs. Fluorescent
+          >Atomic Emission Part 1: Incandescent vs. Metal Halide
           Bulbs</InstructionHeader
         >
         <InstructionRow row-type="Intro">

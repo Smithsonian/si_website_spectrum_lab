@@ -96,18 +96,17 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Stars Part 1', 'Temperature');
 
 const sunMetadata = useCustomMetadata('Stars', 'sun_ref_colina96', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const mStarMetadata = useCustomMetadata('Stars', 'M_Star', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const bStarMetadata = useCustomMetadata('Stars', 'B_Star', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const starMetadataListMaybe = [sunMetadata, mStarMetadata, bStarMetadata];
 const starMetadataList = starMetadataListMaybe.filter((md) => !!md);
