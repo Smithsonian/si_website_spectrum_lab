@@ -2,53 +2,171 @@
   <ExoplanetsLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader>
-          You’re the Exoplanet Researcher! What exoplanet should NASA’s James
-          Webb Space Telescope study?
-        </InstructionHeader>
-        <InstructionRow row-type="Tool">
-          Use this workspace to make decisions for your proposal, and to capture
-          screenshots to describe the spectrum features for which you hope to
-          get better data.
+        <InstructionHeader> Proposal to NASA </InstructionHeader>
+        <InstructionRow row-type="Intro">
+          Imagine you are an Exoplanet Researcher! Create a hypothetical
+          proposal to NASA to observe a planet of your choice using the
+          <BLink
+            href="https://science.nasa.gov/mission/webb/"
+            target="_blank"
+            rel="noopener"
+            >James Webb Space Telescope (JWST)</BLink
+          >.
         </InstructionRow>
-        <InstructionRow row-type="Notebook">
-          Go to <em>Final Challenge 4. You’re the Researcher</em> in your
-          notebook. Read the instructions for how to write your proposal.
+        <InstructionRow row-type="Investigate">
+          JWST, which launched in late 2021, can collect higher resolution
+          spectra at infrared wavelengths from 0.6 to 28 microns, making it
+          well-suited for exoplanet research. (These wavelengths are where many
+          interesting molecules have absorption features, and where planets give
+          off thermal emission.)
           <template #steps>
             <InstructionStep>
-              What target will you propose for? (Choose a planet for which you
-              had more than one “Maybe” in your Exoplanet Features Chart)
+              Decide which exoplanet target you would ask NASA to observe next
+              with JWST. Perhaps choose a planet for which you had more than one
+              “Maybe” in your Comparative Exoplanetology chart.
             </InstructionStep>
             <InstructionStep>
-              Identify 2 regions of the spectrum for which you would like higher
-              resolution data from JWST, and explain what that data will help
-              you discover or confirm about your planet (remember, JWST has
-              capabilities from .6 microns to 28 microns)
+              <span class="challenge-bold">Optional:</span> Select your planet
+              below to go to an interactive NASA visualization of your planet
+              and its star system. (Click
+              <span class="challenge-tool-label">Compare</span> on the bottom
+              right of the visualization to compare your planet to Earth or
+              Jupiter).
+              <p class="mt-1">
+                If you like, take a screenshot of the visualization of your
+                planet to paste into your Notebook.
+              </p>
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/5371/wasp-17-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                WASP-17b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/5673/wasp-39-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                WASP-39b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/3281/wasp-121-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                WASP-121b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/6902/hd-209458-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                HD 209458 b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/5120/wasp-12-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                WASP-12b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/6876/hd-189733-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                HD 189733 b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/1226/hat-p-12-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                HAT-P-12 b
+              </BLink>
+              <br />
+              <BLink
+                href="https://exoplanets.nasa.gov/exoplanet-catalog/4847/k2-18-b/"
+                target="_blank"
+                rel="noopener"
+              >
+                K2-18 b
+              </BLink>
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Tool">
+          Use the Spectrum Tool to make decisions for your proposal, and to
+          capture screenshots to describe the spectrum features for which you
+          hope to get better data.
+          <template #steps>
+            <InstructionStep>
+              Select the spectrum for your target planet under
+              <span class="challenge-tool-label">Source 1</span>.
             </InstructionStep>
             <InstructionStep>
-              Paste two screenshots of the existing spectral data for your
-              exoplanet target, compared with the closest model atmosphere or
-              with a particular molecule, or with a solar system planet, to
-              illustrate the information you’ve described in Question 2. Provide
-              a caption for each screenshot. (If you’re able to annotate the
-              screenshot to point out features, that will be helpful to the
-              proposal reviewers ;)
+              Under <span class="challenge-tool-label">Source 2</span>,
+              investigate comparison spectra for Atoms and Molecules, Exoplanet
+              Models, or objects in our Solar System.
+            </InstructionStep>
+            <InstructionStep>
+              Identify 2 wavelength ranges in the exoplanet spectrum for which
+              you would like higher resolution data from JWST, and answer
+              Question 3 in your Notebook.
+            </InstructionStep>
+            <InstructionStep>
+              For each wavelength range proposed, take a screenshot of the
+              existing spectral data for your exoplanet target, compared with a
+              particular atom or molecule, exoplanet model atmosphere, or Solar
+              System object, to illustrate the information you presented in
+              Question 3.
             </InstructionStep>
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Putting it all together.
+          Answer these questions in your Notebook.
           <template #steps>
+            <InstructionStep> Which exoplanet did you select? </InstructionStep>
             <InstructionStep>
-              Write a paragraph that describes:
-              <ol type="a">
+              <span class="challenge-bold">Optional:</span> Paste a screenshot
+              of the NASA visualization of your planet in your Notebook.
+            </InstructionStep>
+            <InstructionStep>
+              In the table, identify 2 wavelength ranges in the exoplanet
+              spectrum for which you would like higher resolution data from
+              JWST, and explain what that data could help you discover or
+              confirm about your planet.
+            </InstructionStep>
+            <InstructionStep>
+              Paste two screenshots of the existing spectrum for your exoplanet
+              target, compared with a particular atom or molecule, exoplanet
+              model atmosphere, or Solar System object, to illustrate the
+              information you’ve described in Question 3. Provide a caption for
+              each screenshot.
+              <p class="mt-1">
+                <span class="challenge-bold">Optional:</span> Annotate the
+                screenshots to point out relevant features and make your
+                proposal even stronger.
+              </p>
+            </InstructionStep>
+            <InstructionStep>
+              <span class="challenge-bold">Put it all together.</span> Write a
+              paragraph that describes:
+              <ul>
                 <li>The target planet you are proposing to observe,</li>
                 <li>
                   How JWST spectra will help you make discoveries about the
                   exoplanet,
                 </li>
-                <li>Why this science research is important</li>
-              </ol>
+                <li>Why this science research is important.</li>
+              </ul>
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -85,8 +203,8 @@ const atomsMetadata = allMetadata['Atoms and Molecules'];
 const planetsMetadata = allMetadata['Solar System'];
 
 const bottomMetadataList = [
-  ...modelMetadata,
   ...atomsMetadata,
+  ...modelMetadata,
   ...planetsMetadata,
 ];
 </script>
