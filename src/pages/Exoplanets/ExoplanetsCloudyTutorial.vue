@@ -2,41 +2,49 @@
   <ExoplanetsLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <template #top>
-          <InstructionHeader>
-            Modeling Cloudy &amp; Hazy Atmospheres
-          </InstructionHeader>
-          <InstructionRow row-type="Tool">
-            How do the models predict that different atmospheric conditions
-            affect an exoplanet spectrum?
-          </InstructionRow>
-          <InstructionRow row-type="Notebook">
-            Once you’ve completed the tutorial, go to the
-            <em>Tutorial: Modeling Exoplanet Atmospheres</em> section and answer
-            the following questions:
-            <template #steps>
-              <InstructionStep>
-                Clear vs Cloudy: How would you compare the width and depth of
-                the absorption features in the Clear Hot Jupiter Model vs the
-                predicted model for a Cloudy Hot Jupiter? How might you explain
-                why clouds could cause this difference?
-              </InstructionStep>
-              <InstructionStep>
-                Clear vs Hazy: How would you compare the overall slope of the
-                spectrum (from shorter to longer wavelengths) in the Clear Hot
-                Jupiter Model vs the predicted model for Hazy Hot Jupiter?
-              </InstructionStep>
-            </template>
-          </InstructionRow>
-        </template>
-        <template #middle>
-          <div class="rounded-bottom-4 bg-gen-black">
-            <img
-              src="/src/assets/Clouds_Image_W500.png"
-              class="d-block mx-auto"
-            />
-          </div>
-        </template>
+        <InstructionHeader>
+          Modeling Cloudy &amp; Hazy Atmospheres
+        </InstructionHeader>
+        <InstructionRow row-type="Tool">
+          <template #steps>
+            <InstructionStep>
+              View the tutorial below, which describes 2 different models for a
+              Hot Jupiter exoplanet. The first model has a
+              <span class="challenge-bold">cloudy</span> atmosphere. The second
+              has a <span class="challenge-bold">hazy</span> atmosphere. They
+              both differ from the model for a
+              <span class="challenge-bold">clear</span> atmosphere in two
+              distinct ways.
+            </InstructionStep>
+            <InstructionStep>
+              After the tutorial is complete, you can compare the spectra for
+              these three models by using the dropdown menus under
+              <span class="challenge-tool-label">Source 1</span> and
+              <span class="challenge-tool-label">Source 2</span>.
+            </InstructionStep>
+          </template>
+        </InstructionRow>
+        <InstructionRow row-type="Notebook">
+          As you view the tutorial, answer these questions in your Notebook.
+          <template #steps>
+            <InstructionStep>
+              <u><span class="challenge-bold">Clear vs Cloudy</span>:</u> How
+              would you compare the
+              <span class="challenge-bold">width</span> and
+              <span class="challenge-bold">depth</span> of the absorption
+              features in the Clear Hot Jupiter Model vs the predicted model for
+              a Cloudy Hot Jupiter? How might you explain why clouds could cause
+              this difference?
+            </InstructionStep>
+            <InstructionStep>
+              <u><span class="challenge-bold">Clear vs Hazy</span>:</u> How
+              would you compare the
+              <span class="challenge-bold">overall slope of the spectrum</span>
+              (from shorter to longer wavelengths) in the Clear Hot Jupiter
+              Model vs the predicted model for Hazy Hot Jupiter?
+            </InstructionStep>
+          </template>
+        </InstructionRow>
       </ChallengeCard>
     </template>
     <template #tool-col>
@@ -50,12 +58,6 @@
             default-spectrum="Clear_Hot_Jupiter_Model_Transmission"
             :spectrum-picker-placeholder="null"
           >
-            <div
-              ref="widthDepthAnchor"
-              class="position-absolute"
-              style="bottom: 30px; left: 300px"
-            ></div>
-            <ExoCloudyTutPopoverWidthDepth :anchor-elem="widthDepthAnchor" />
             <ExoCloudyTutOverlayWidthDepthClear
               v-if="
                 tutorialState === 'widthDepth' ||
@@ -80,6 +82,12 @@
                 : null
             "
           >
+            <div
+              ref="widthDepthAnchor"
+              class="position-absolute"
+              style="bottom: 30px; left: 300px"
+            ></div>
+            <ExoCloudyTutPopoverWidthDepth :anchor-elem="widthDepthAnchor" />
             <div
               ref="cloudShapeSlopeAnchor"
               class="position-absolute"
@@ -121,6 +129,9 @@
       </ToolControlGroup>
       <LeftRightGroup v-if="tutorialState === 'nextSection'" class="mt-5">
         <template #left>
+          <NextPrevButton direction="prev" to="clear-skies" light>
+            previous section
+          </NextPrevButton>
           <NextPrevButton direction="prev" @click="replayResetZoom" light>
             replay tutorial
           </NextPrevButton>
