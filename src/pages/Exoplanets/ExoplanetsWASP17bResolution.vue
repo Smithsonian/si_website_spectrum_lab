@@ -7,9 +7,9 @@
         </InstructionHeader>
         <InstructionRow row-type="Tool">
           The top panel shows the transmission spectrum, captured by NASA’s
-          Hubble Space Telescope, of a Hot Jupiter named WASP-17b. The bottom
-          panel shows the predicted model transmission spectrum for a Clear Hot
-          Jupiter.
+          Hubble Space Telescope (HST), of a Hot Jupiter named WASP-17b. The
+          bottom panel shows the predicted model transmission spectrum for a
+          Clear Hot Jupiter.
           <template #before-steps>
             <p>
               Compare the two spectra. Note that both spectra are set to
@@ -73,9 +73,7 @@ useSpecLabHead('WASP-17b Resolution', 'Exoplanets');
 const plotType = ref<PlotType>('scatter');
 const zoom = ref(41);
 
-const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {
-  title: 'WASP-17b (Hubble Space Telescope)',
-});
+const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {});
 const clearMetadata = useCustomMetadata(
   'Exoplanet Models',
   'Clear_Hot_Jupiter_Model_Transmission',

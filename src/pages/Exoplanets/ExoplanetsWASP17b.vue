@@ -89,9 +89,7 @@ useSpecLabHead('WASP-17b', 'Exoplanets');
 const plotType = ref<PlotType>('scatter');
 const zoom = ref(41);
 
-const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {
-  title: 'WASP-17b (Hubble Space Telescope)',
-});
+const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {});
 const topMetadataList = wasp17bMetadata ? [wasp17bMetadata] : [];
 
 const allMetadata = useAllMetadata();
