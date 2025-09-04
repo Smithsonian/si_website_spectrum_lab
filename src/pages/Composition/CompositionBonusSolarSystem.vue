@@ -76,35 +76,34 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata } from '@/utils/metadataUtils';
-import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Bonus Solar System', 'Composition');
 
 const mars = useCustomMetadata('Solar System', 'Mars_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const jupiter = useCustomMetadata('Solar System', 'Jupiter_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const europa = useCustomMetadata('Solar System', 'Europa_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const saturn = useCustomMetadata('Solar System', 'Saturn_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const saturnRings = useCustomMetadata(
   'Solar System',
   'Saturn_Rings_Reflection',
-  { imageUrl: mystery },
+  { imageUrl: '' },
 );
 const titan = useCustomMetadata('Solar System', 'Titan_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const uranus = useCustomMetadata('Solar System', 'Uranus_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const neptune = useCustomMetadata('Solar System', 'Neptune_Reflection', {
-  imageUrl: mystery,
+  imageUrl: '',
 });
 const topMetadata = [
   mars,

@@ -101,7 +101,6 @@ import hokusaiChallenge from '@/assets/spectrum_data/Museum_Conservation/hokusai
 import hokusaiBig from '@/assets/spectrum_data/Museum_Conservation/hokusai_visible_b1b2w1y1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import { useCustomMetadata, useAllMetadata } from '@/utils/metadataUtils';
-import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Hokusai Pigments Part 1: Spectra', 'Museum');
 
@@ -110,7 +109,7 @@ const hokusaiB1 = useCustomMetadata(
   'F1904-134_VNIR-SWIR_colors_Blue_1',
   {
     title: 'ROI B1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -120,7 +119,7 @@ const hokusaiB2 = useCustomMetadata(
   'F1904-134_VNIR-SWIR_colors_Blue_2',
   {
     title: 'ROI B2',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -130,7 +129,7 @@ const hokusaiW1 = useCustomMetadata(
   'F1904-134_VNIR-SWIR_colors_White_1',
   {
     title: 'ROI W1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -140,7 +139,7 @@ const hokusaiY = useCustomMetadata(
   'F1904-134_VNIR-SWIR_colors_Yellow',
   {
     title: 'ROI Y1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );

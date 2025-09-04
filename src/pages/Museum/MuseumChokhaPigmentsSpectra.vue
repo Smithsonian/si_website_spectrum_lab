@@ -97,7 +97,6 @@ import { useAllMetadata, useCustomMetadata } from '@/utils/metadataUtils';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_910.webp';
 import chokhaBig from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_big.webp';
 import { useSpecLabHead } from '@/utils/locationUtils';
-import mystery from '@/assets/spectrum_data/mystery@2x.png';
 
 useSpecLabHead('Chokha Pigments Part 1: Spectra', 'Museum');
 
@@ -106,7 +105,7 @@ const chokhaB1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Blue_1',
   {
     title: 'ROI B1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -115,7 +114,7 @@ const chokhaY1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Yellow_1',
   {
     title: 'ROI Y1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -124,7 +123,7 @@ const chokhaW1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_White_1',
   {
     title: 'ROI W1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
@@ -133,7 +132,7 @@ const chokhaR1 = useCustomMetadata(
   'S2018-1-76_VNIR-SWIR_colors_Red_1',
   {
     title: 'ROI R1',
-    imageUrl: mystery,
+    imageUrl: '',
     bigImageUrl: '',
   },
 );
