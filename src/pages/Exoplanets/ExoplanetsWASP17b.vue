@@ -3,51 +3,45 @@
     <template #challenge-tab>
       <ChallengeCard>
         <InstructionHeader>
-          WASP-17b Case Study: How does real exoplanet spectral data compare to
-          predicted models?
+          WASP-17b Case Study Part 2: Hot, Hazy, Humid, Salty!
         </InstructionHeader>
         <InstructionRow row-type="Tool">
-          The top panel shows the transmission spectrum, captured by NASA’s
-          Hubble Space Telescope, of a Hot Jupiter named WASP-17b. The bottom
-          panel shows the predicted model transmission spectrum for a Clear Hot
-          Jupiter.
-          <template #before-steps>
-            <p>
-              How do these spectra compare? Use the comparison dropdown menu to
-              view different exoplanet models and different atoms and molecules.
-              Can you draw any conclusions about what’s in the atmosphere of
-              WASP-17b?
-            </p>
+          <template #steps>
+            <InstructionStep>
+              Under <span class="challenge-tool-label">plot type</span>, select
+              "line chart."
+            </InstructionStep>
+            <InstructionStep>
+              Under the
+              <span class="challenge-tool-label">Source 2</span> dropdown menu,
+              select category
+              <span class="challenge-bold">Atoms and Molecules</span> and choose
+              different comparison spectra to identify what might be present in
+              the atmosphere of WASP-17b. Use this information to answer
+              questions about the
+              <span class="challenge-bold">Atmospheric Chemistry</span> columns
+              in your Notebook table.
+            </InstructionStep>
+            <InstructionStep>
+              Under the <span class="challenge-tool-label">Source 2</span> top
+              dropdown menu, select category
+              <span class="challenge-bold">Exoplanet Models</span> and choose
+              different model spectra for Hot Jupiter planets to identify what
+              conditions might be present in the atmosphere of WASP-17b. Use
+              this information to answer questions about the
+              <span class="challenge-bold">"Weather"</span> columns in your
+              Notebook table.
+            </InstructionStep>
           </template>
         </InstructionRow>
         <InstructionRow row-type="Notebook">
-          Go to the <em>Challenge 1. WASP-17b Case Study</em> section and answer
-          the following questions:
+          Answer this question in your Notebook.
           <template #steps>
             <InstructionStep>
-              Note that both spectra are set to “Scatter Plot” mode with the
-              data points unconnected by lines. How would you compare the
-              <strong>resolution</strong> (number of data points per wavelength
-              interval) of the real data compared to the model? Explain how this
-              might affect your ability to interpret and draw conclusions from
-              the data.
-            </InstructionStep>
-            <InstructionStep>
-              Turn the “Line Chart” option on and use the dropdown menu in the
-              bottom chart to identify any atomic or molecular absorption
-              features (the “Atmospheric Chemistry” of WASP-17b); and the
-              Exoplanet Model (the “Weather” prediction) that provides the best
-              fit to the WASP-17b data. The chart in your Notebook shows a
-              potential analysis of the WASP-17b spectrum. Explain why you would
-              agree or disagree with this analysis, using specific examples from
-              the Comparison Atoms and Molecules and the Comparison Exoplanet
-              Models.
-            </InstructionStep>
-            <InstructionStep>
-              The chart in your notebook shows a potential analysis of the
-              WASP-17b spectrum. Explain why you would agree or disagree with
-              this analysis, using specific examples from the Atoms and
-              Molecules and Exoplanet Model spectra.
+              The Table in your Notebook shows a potential analysis of the
+              WASP-17b spectrum. Based on your exploration of the Atmospheric
+              Chemistry and Weather, explain why you would agree or disagree
+              with this analysis.
             </InstructionStep>
           </template>
         </InstructionRow>
@@ -64,13 +58,18 @@
         <template #bottom-tool>
           <ToolCard
             :custom-metadata="bottomMetadataList"
-            default-spectrum="Clear_Hot_Jupiter_Model_Transmission"
+            spectrum-picker-placeholder="Choose a spectrum"
           />
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton direction="prev" to="resolution" light>
+            part 1
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton direction="next" to="comparing" light>
+          <NextPrevButton direction="next" to="../comparing" light>
             next section
           </NextPrevButton>
         </template>
@@ -90,7 +89,9 @@ useSpecLabHead('WASP-17b', 'Exoplanets');
 const plotType = ref<PlotType>('scatter');
 const zoom = ref(41);
 
-const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {});
+const wasp17bMetadata = useCustomMetadata('Exoplanets', 'WASP_17b', {
+  title: 'WASP-17b (Hubble Space Telescope)',
+});
 const topMetadataList = wasp17bMetadata ? [wasp17bMetadata] : [];
 
 const allMetadata = useAllMetadata();
@@ -112,10 +113,10 @@ const waterVapor = useCustomMetadata(
   {},
 );
 const bottomMetadataListMaybe = [
-  ...modelMetadata,
   sodium,
   potassium,
   waterVapor,
+  ...modelMetadata,
 ];
 const bottomMetadataList = bottomMetadataListMaybe.filter((sm) => !!sm);
 </script>
