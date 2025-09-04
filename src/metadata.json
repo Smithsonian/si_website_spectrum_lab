@@ -574,6 +574,13 @@
     "imagePath": "Exoplanets/K2_18b.jpg"
   },
   {
+    "category": "Exoplanets",
+    "filename": "JWST_WASP-39-b-Rustamkulov-et-al.-2023_MDinvert",
+    "title": "WASP-39b (JWST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_39b.jpg"
+  },
+  {
     "category": "Exoplanet Models",
     "filename": "Clear_Hot_Jupiter_Model_Transmission",
     "title": "Clear Hot Jupiter Model Transmission",
