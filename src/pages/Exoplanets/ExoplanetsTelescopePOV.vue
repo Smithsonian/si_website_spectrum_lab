@@ -28,9 +28,9 @@
               <span class="challenge-emphasis">B-1</span>, the telescope detects
               both thermal <span style="font-weight: 700">emission</span> and
               <span style="font-weight: 700">reflected</span> starlight from the
-              planets–PLUS the light of the star. Astronomers subtract the
-              starlight-only from when the planets go behind the star to get
-              just the light of the planets.
+              planets—PLUS the light of the star. When the planets go behind the
+              star, astronomers can capture ONLY the light of the star, which
+              they can subtract to get just the light of the planets.
             </p>
           </InstructionRow>
           <InstructionRow row-type="Notebook">

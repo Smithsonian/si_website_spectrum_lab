@@ -520,58 +520,65 @@
   {
     "category": "Exoplanets",
     "filename": "WASP_17b",
-    "title": "WASP-17b",
+    "title": "WASP-17b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_17b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_39b",
-    "title": "WASP-39b",
+    "title": "WASP-39b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_39b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HD189733b",
-    "title": "HD 189733b",
+    "title": "HD 189733b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HD189733b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HAT_P_12b",
-    "title": "HAT-P-12b",
+    "title": "HAT-P-12b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HAT_P_12b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_121b",
-    "title": "WASP-121b",
+    "title": "WASP-121b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_121b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HD209458b",
-    "title": "HD 209458b",
+    "title": "HD 209458b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HD209458b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_12b",
-    "title": "WASP-12b",
+    "title": "WASP-12b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_12b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "K2_18b",
-    "title": "K2-18b",
+    "title": "K2-18b (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/K2_18b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "JWST_WASP-39-b-Rustamkulov-et-al.-2023_MDinvert",
+    "title": "WASP-39b (JWST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_39b.jpg"
   },
   {
     "category": "Exoplanet Models",

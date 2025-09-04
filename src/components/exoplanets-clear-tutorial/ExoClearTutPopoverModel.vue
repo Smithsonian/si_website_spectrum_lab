@@ -5,13 +5,17 @@
     show-on-state="model"
   >
     <p>
-      This is a high-resolution <strong>model</strong> of the predicted
+      This is a computer-generated <strong>model</strong> of the predicted
       transmission spectrum from a cloud-free “Hot Jupiter” exoplanet.
     </p>
     <p>
       It is based on what astronomers know about planetary atmospheres and the
       physics and chemistry of atoms and molecules at the temperatures and
       pressures found in these planets.
+    </p>
+    <p>
+      The model spectrum has much higher resolution than the real exoplanet
+      spectra from NASA telescopes.
     </p>
   </TutorialPopover>
 </template>

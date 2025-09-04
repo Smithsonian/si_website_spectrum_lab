@@ -40,10 +40,10 @@ import ExoplanetsLightBehaviors from './pages/Exoplanets/ExoplanetsLightBehavior
 import ExoplanetsTelescopePOV from './pages/Exoplanets/ExoplanetsTelescopePOV.vue';
 import ExoplanetsClearTutorial from './pages/Exoplanets/ExoplanetsClearTutorial.vue';
 import ExoplanetsCloudyTutorial from './pages/Exoplanets/ExoplanetsCloudyTutorial.vue';
+import ExoplanetsWASP17bResolution from './pages/Exoplanets/ExoplanetsWASP17bResolution.vue';
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
 import NotFound from './pages/NotFound.vue';
-import ExoplanetsComparing1 from './pages/Exoplanets/ExoplanetsComparing1.vue';
-import ExoplanetsComparing2 from './pages/Exoplanets/ExoplanetsComparing2.vue';
+import ExoplanetsComparing from './pages/Exoplanets/ExoplanetsComparing.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 import ColorFilterPrediction from './pages/Light/LightFilterPrediction.vue';
 import ColorFilterInvestigateRed from './pages/Light/LightFilterInvestigateRed.vue';
@@ -326,15 +326,18 @@ const routes: RouteRecordRaw[] = [
           },
           { path: 'clear-skies', component: ExoplanetsClearTutorial },
           { path: 'cloudy-skies', component: ExoplanetsCloudyTutorial },
-          { path: 'wasp-17b', component: ExoplanetsWASP17b },
           {
-            path: 'comparing/',
-            redirect: '/final-projects/exoplanets/comparing/part-1',
+            path: 'wasp-17b/',
+            redirect: '/final-projects/exoplanets/wasp-17b/resolution',
             children: [
-              { path: 'part-1', component: ExoplanetsComparing1 },
-              { path: 'part-2', component: ExoplanetsComparing2 },
+              {
+                path: 'resolution',
+                component: ExoplanetsWASP17bResolution,
+              },
+              { path: 'comparisons', component: ExoplanetsWASP17b },
             ],
           },
+          { path: 'comparing', component: ExoplanetsComparing },
           { path: 'proposal', component: ExoplanetsProposal },
         ],
       },
