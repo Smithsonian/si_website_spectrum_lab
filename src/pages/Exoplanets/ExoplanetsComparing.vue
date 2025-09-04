@@ -86,7 +86,7 @@ import { ref } from 'vue';
 
 useSpecLabHead('Comparing Part 1', 'Exoplanets');
 
-const plotType = ref<PlotType>('scatter');
+const plotType = ref<PlotType>('line');
 const zoom = ref(41);
 
 const allMetadata = useAllMetadata();
