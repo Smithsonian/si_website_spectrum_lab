@@ -2,23 +2,10 @@
   <ExoplanetsLayout>
     <template #challenge-tab>
       <ChallengeCard>
-        <InstructionHeader> Proposal to NASA </InstructionHeader>
-        <InstructionRow row-type="Intro">
-          Imagine you are an Exoplanet Researcher! Create a hypothetical
-          proposal to NASA to observe a planet of your choice using the
-          <BLink
-            href="https://science.nasa.gov/mission/webb/"
-            target="_blank"
-            rel="noopener"
-            >James Webb Space Telescope (JWST)</BLink
-          >.
-        </InstructionRow>
+        <InstructionHeader
+          >Proposal to NASA Part 2: Make Your Pitch
+        </InstructionHeader>
         <InstructionRow row-type="Investigate">
-          JWST, which launched in late 2021, can collect higher resolution
-          spectra at infrared wavelengths from 0.6 to 28 microns, making it
-          well-suited for exoplanet research. (These wavelengths are where many
-          interesting molecules have absorption features, and where planets give
-          off thermal emission.)
           <template #steps>
             <InstructionStep>
               Decide which exoplanet target you would ask NASA to observe next
@@ -181,6 +168,13 @@
           <ToolCard :custom-metadata="bottomMetadataList" />
         </template>
       </ToolControlGroup>
+      <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton direction="prev" to="jwst" light>
+            part 1
+          </NextPrevButton>
+        </template>
+      </LeftRightGroup>
     </template>
   </ExoplanetsLayout>
 </template>
@@ -193,7 +187,7 @@ import { ref } from 'vue';
 
 useSpecLabHead('Proposal to NASA', 'Exoplanets');
 
-const plotType = ref<PlotType>('scatter');
+const plotType = ref<PlotType>('line');
 const zoom = ref(41);
 
 const allMetadata = useAllMetadata();
