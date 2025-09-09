@@ -44,6 +44,7 @@ import ExoplanetsWASP17bResolution from './pages/Exoplanets/ExoplanetsWASP17bRes
 import ExoplanetsWASP17b from './pages/Exoplanets/ExoplanetsWASP17b.vue';
 import NotFound from './pages/NotFound.vue';
 import ExoplanetsComparing from './pages/Exoplanets/ExoplanetsComparing.vue';
+import ExoplanetsJWST from './pages/Exoplanets/ExoplanetsJWST.vue';
 import ExoplanetsProposal from './pages/Exoplanets/ExoplanetsProposal.vue';
 import ColorFilterPrediction from './pages/Light/LightFilterPrediction.vue';
 import ColorFilterInvestigateRed from './pages/Light/LightFilterInvestigateRed.vue';
@@ -338,7 +339,17 @@ const routes: RouteRecordRaw[] = [
             ],
           },
           { path: 'comparing', component: ExoplanetsComparing },
-          { path: 'proposal', component: ExoplanetsProposal },
+          {
+            path: 'proposal/',
+            redirect: '/final-projects/exoplanets/proposal/jwst',
+            children: [
+              {
+                path: 'jwst',
+                component: ExoplanetsJWST,
+              },
+              { path: 'your-proposal', component: ExoplanetsProposal },
+            ],
+          },
         ],
       },
       {

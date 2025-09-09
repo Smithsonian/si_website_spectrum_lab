@@ -520,65 +520,72 @@
   {
     "category": "Exoplanets",
     "filename": "WASP_17b",
-    "title": "WASP-17b (HST)",
+    "title": "WASP-17b, Hot Jupiter (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_17b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_39b",
-    "title": "WASP-39b (HST)",
+    "title": "WASP-39b, Hot Jupiter (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_39b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HD189733b",
-    "title": "HD 189733b (HST)",
+    "title": "HD 189733b, Hot Jupiter (HST + Spitzer)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HD189733b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HAT_P_12b",
-    "title": "HAT-P-12b (HST)",
+    "title": "HAT-P-12b, Hot Jupiter (HST + Spitzer)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HAT_P_12b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_121b",
-    "title": "WASP-121b (HST)",
+    "title": "WASP-121b, Hot Jupiter (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_121b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "HD209458b",
-    "title": "HD 209458b (HST)",
+    "title": "HD 209458b, Hot Jupiter (HST + Spitzer)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/HD209458b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "WASP_12b",
-    "title": "WASP-12b (HST)",
+    "title": "WASP-12b, Hot Jupiter (HST + Spitzer)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_12b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "K2_18b",
-    "title": "K2-18b (HST)",
+    "title": "K2-18b, Super Earth (HST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/K2_18b.jpg"
   },
   {
     "category": "Exoplanets",
     "filename": "JWST_WASP-39-b-Rustamkulov-et-al.-2023_MDinvert",
-    "title": "WASP-39b (JWST)",
+    "title": "WASP-39b, Hot Jupiter (JWST)",
     "spectrumType": "Transmission",
     "imagePath": "Exoplanets/WASP_39b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "table_HD-189733-b-Fu-et-al.-2024_2columnMDinvert",
+    "title": "HD 189733b, Hot Jupiter (JWST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/HD189733b.jpg"
   },
   {
     "category": "Exoplanet Models",

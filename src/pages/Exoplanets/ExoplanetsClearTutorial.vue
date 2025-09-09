@@ -9,6 +9,11 @@
           Astronomers predict the theoretical exoplanet spectrum they would
           expect to observe under ideal conditions. Each predictive model is
           specific to a particular set of atmospheric conditions.
+          <p class="mt-2">
+            For Hot Jupiters, the "atmosphere" refers to the outermost layer of
+            the planet where light from the host star can pass through. (Below
+            this atmospheric layer, the gas is fully opaque to starlight.)
+          </p>
         </InstructionRow>
         <InstructionRow row-type="Tool">
           <template #steps>
