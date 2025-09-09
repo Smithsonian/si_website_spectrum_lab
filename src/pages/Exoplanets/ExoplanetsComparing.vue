@@ -5,13 +5,24 @@
         <InstructionHeader> Comparative Exoplanetology </InstructionHeader>
         <InstructionRow row-type="Intro">
           Now that you’ve examined WASP-17b, let’s look at some other exoplanets
-          to see how atmospheric conditions vary among them.
+          to see how atmospheric conditions vary among them. All these
+          exoplanets were observed with the Hubble Space Telescope (HST) in
+          visible and near-IR wavelengths. A few of the exoplanets also have
+          low-resolution, mid-IR data from the Spitzer Space Telescope.
+          <p class="mt-2">
+            Consistent with what you learned earlier, almost all the exoplanet
+            spectra featured here are for Hot Jupiters. One planet available
+            here, K2-18b, is a "Super Earth."
+          </p>
         </InstructionRow>
         <InstructionRow row-type="Tool">
           <template #steps>
             <InstructionStep>
               Under <span class="challenge-tool-label">Source 1</span>, choose a
               transmission spectrum of any of the other exoplanet targets.
+              Adjust the
+              <span class="challenge-tool-label">wavelength stretch</span> as
+              needed to view the entire spectrum.
             </InstructionStep>
             <InstructionStep>
               As with WASP-17b, explore comparison spectra for
@@ -56,7 +67,7 @@
     <template #tool-col>
       <ToolControlGroup v-model:plot-type="plotType" v-model:zoom="zoom">
         <template #top-tool>
-          <ToolCard :custom-metadata="exoplanetMetadata" />
+          <ToolCard :custom-metadata="exoplanetFiltered" />
         </template>
         <template #bottom-tool>
           <ToolCard :custom-metadata="bottomMetadataList" />
@@ -92,6 +103,13 @@ const zoom = ref(41);
 const allMetadata = useAllMetadata();
 const exoplanetMetadata = allMetadata['Exoplanets'];
 const modelMetadata = allMetadata['Exoplanet Models'];
+
+const exoplanetFiltered = exoplanetMetadata.filter((spectrum) => {
+  return (
+    spectrum.filename !== 'JWST_WASP-39-b-Rustamkulov-et-al.-2023_MDinvert' &&
+    spectrum.filename !== 'table_HD-189733-b-Fu-et-al.-2024_2columnMDinvert'
+  );
+});
 
 const sodium = useCustomMetadata(
   'Atoms and Molecules',
