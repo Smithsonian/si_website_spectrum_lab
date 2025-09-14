@@ -82,8 +82,13 @@
         </template>
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
+        <template #left>
+          <NextPrevButton to="../thermal-emission" direction="prev" light>
+            previous section
+          </NextPrevButton>
+        </template>
         <template #right>
-          <NextPrevButton to="measuring" direction="next">
+          <NextPrevButton to="measuring" direction="next" light>
             part 2
           </NextPrevButton>
         </template>

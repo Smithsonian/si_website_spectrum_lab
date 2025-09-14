@@ -63,12 +63,12 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton to="stars" direction="prev">
+          <NextPrevButton to="stars" direction="prev" light>
             previous section
           </NextPrevButton>
         </template>
         <template #right>
-          <NextPrevButton to="earth" direction="next"
+          <NextPrevButton to="earth" direction="next" light
             >next section</NextPrevButton
           >
         </template>

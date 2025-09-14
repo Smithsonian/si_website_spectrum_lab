@@ -31,6 +31,7 @@ import TemperatureStarsSpectra from './pages/Temperature/TemperatureStarsSpectra
 import TemperatureStarsMeasuring from './pages/Temperature/TemperatureStarsMeasuring.vue';
 import TemperatureIncandescentBulb from './pages/Temperature/TemperatureIncandescentBulb.vue';
 import TemperatureEarth from './pages/Temperature/TemperatureEarth.vue';
+import TemperatureRecap from './pages/Temperature/TemperatureRecap.vue';
 import SpectraTutorial from './pages/Spectra/SpectraTutorial.vue';
 import LandingPage from './pages/LandingPage.vue';
 import ColorPalette from './pages/ColorPalette.vue';
@@ -207,6 +208,7 @@ const routes: RouteRecordRaw[] = [
       },
       { path: 'incandescent-bulb', component: TemperatureIncandescentBulb },
       { path: 'earth', component: TemperatureEarth },
+      { path: 'recap', component: TemperatureRecap },
     ],
   },
   {
