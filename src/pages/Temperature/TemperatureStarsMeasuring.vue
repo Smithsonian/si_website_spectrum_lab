@@ -57,10 +57,12 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton to="spectra" direction="prev">part 1</NextPrevButton>
+          <NextPrevButton to="spectra" direction="prev" light
+            >part 1</NextPrevButton
+          >
         </template>
         <template #right>
-          <NextPrevButton to="../incandescent-bulb" direction="next"
+          <NextPrevButton to="../incandescent-bulb" direction="next" light
             >next section</NextPrevButton
           >
         </template>

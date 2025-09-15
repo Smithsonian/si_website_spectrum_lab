@@ -84,8 +84,13 @@
       </ToolControlGroup>
       <LeftRightGroup class="mt-5">
         <template #left>
-          <NextPrevButton to="incandescent-bulb" direction="prev">
+          <NextPrevButton to="incandescent-bulb" direction="prev" light>
             previous section
+          </NextPrevButton>
+        </template>
+        <template #right>
+          <NextPrevButton to="recap" direction="next" light>
+            next section
           </NextPrevButton>
         </template>
       </LeftRightGroup>

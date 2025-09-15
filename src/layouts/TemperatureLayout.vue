@@ -15,6 +15,7 @@
               Incandescent Bulb
             </SectionNavItem>
             <SectionNavItem to="/temperature/earth"> Earth </SectionNavItem>
+            <SectionNavItem to="/temperature/recap"> Recap </SectionNavItem>
           </SectionNav>
         </BCol>
         <BCol>

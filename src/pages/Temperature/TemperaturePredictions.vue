@@ -30,7 +30,7 @@
       </ChallengeCard>
       <LeftRightGroup class="mt-5">
         <template #right>
-          <NextPrevButton direction="next" to="thermal-emission" light>
+          <NextPrevButton direction="next" to="thermal-emission">
             next section
           </NextPrevButton>
         </template>
