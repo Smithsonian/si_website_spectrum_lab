@@ -49,7 +49,7 @@
           </div>
           <LeftRightGroup>
             <template #left>
-              <NextPrevButton to="put-it-together" direction="prev" light>
+              <NextPrevButton to="../put-it-together" direction="prev" light>
                 previous section
               </NextPrevButton>
             </template>
