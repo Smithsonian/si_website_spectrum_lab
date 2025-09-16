@@ -11,7 +11,7 @@
           <template #before-steps>
             <p>
               <BLink
-                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Fish%20Tank%20Project%20Data%20Charts.pdf"
+                href="https://datalabs.cfa.harvard.edu/large_files/Speclab/FishTank_DataSheetpdf.pdf"
                 target="_blank"
                 rel="noopener"
               >

@@ -33,7 +33,7 @@
               <InstructionStep>
                 Use this
                 <BLink
-                  href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Pigments%20Data%20Table.pdf"
+                  href="https://datalabs.cfa.harvard.edu/large_files/Speclab/MuseumConservationPigmentsDataTable.pdf"
                   target="_blank"
                   rel="noopener"
                   style="font-weight: 400"
