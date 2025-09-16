@@ -15,6 +15,7 @@ const slashAtTheEnd = /\/$/;
 export const BASE_URL = slashAtTheEnd.test(rawBaseUrl)
   ? rawBaseUrl
   : `${rawBaseUrl}/`;
+export const MODE = import.meta.env.MODE;
 
 export type InstructionRowType =
   | 'Intro'

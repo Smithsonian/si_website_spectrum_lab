@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { MODE } from '@/constants';
+</script>
+
 <template>
   <footer class="bg-dark text-light pt-3">
     <BContainer>
@@ -20,19 +24,23 @@
           <p>
             <RouterLink to="/attributions">Attributions</RouterLink>
           </p>
-          <p>
-            <RouterLink to="/color-palette">Color palette</RouterLink>
-          </p>
-          <p>
-            <RouterLink to="/icon-test">Icon test</RouterLink>
-          </p>
+          <template v-if="MODE === 'development'">
+            <p>
+              <RouterLink to="/color-palette">Color palette</RouterLink>
+            </p>
+            <p>
+              <RouterLink to="/icon-test">Icon test</RouterLink>
+            </p>
+          </template>
         </BCol>
         <BCol>
-          <img
-            src="/src/assets/CfALogo@2x.png"
-            width="100%"
-            alt="Center for Astrophysics: Harvard & Smithsonian logo"
-          />
+          <a href="https://www.cfa.harvard.edu/">
+            <img
+              src="/src/assets/CfALogo@2x.png"
+              width="100%"
+              alt="Center for Astrophysics: Harvard & Smithsonian logo"
+            />
+          </a>
         </BCol>
       </BRow>
     </BContainer>
