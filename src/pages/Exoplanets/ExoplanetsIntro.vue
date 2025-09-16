@@ -63,7 +63,7 @@
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy-short.vtt';
-import poster from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy_poster.webp';
+import poster from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy_poster.jpg';
 
 useSpecLabHead('Researching Exoplanets', 'Exoplanets');
 </script>

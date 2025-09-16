@@ -63,7 +63,7 @@
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science.vtt';
-import poster from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science_poster.webp';
+import poster from '@/assets/video_metadata/multiple_wavelength_imaging_conservation_science_poster.jpg';
 
 useSpecLabHead('Intro', 'Museum');
 </script>

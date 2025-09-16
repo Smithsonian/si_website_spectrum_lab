@@ -60,7 +60,7 @@
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/museum_ir_imaging.vtt';
-import poster from '@/assets/video_metadata/museum_ir_imaging_poster.webp';
+import poster from '@/assets/video_metadata/museum_ir_imaging_poster.jpg';
 
 useSpecLabHead('Whole-image Techniques Part 1: IR Intro', 'Museum');
 </script>

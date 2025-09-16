@@ -66,7 +66,7 @@
 import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/museum_uvl.vtt';
-import poster from '@/assets/video_metadata/museum_uvl_poster.webp';
+import poster from '@/assets/video_metadata/museum_uvl_poster.jpg';
 
 useSpecLabHead('Chokha Pigments Part 2: UVL Intro', 'Museum');
 </script>
