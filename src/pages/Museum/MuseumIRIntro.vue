@@ -26,7 +26,7 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_ir_imaging-20250712.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/museum_ir_imaging-20250910.mp4"
               type="video/mp4"
             />
             <track

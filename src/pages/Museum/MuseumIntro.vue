@@ -34,7 +34,7 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/multiple_wavelength_imaging_conservation_science-20250711.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/multiple_wavelength_imaging_conservation_science-20250910.mp4"
               type="video/mp4"
             />
             <track

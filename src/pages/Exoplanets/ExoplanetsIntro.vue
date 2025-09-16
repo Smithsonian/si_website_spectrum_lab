@@ -35,7 +35,7 @@
         <template #middle>
           <VideoJSPlayer :other-options="{ poster }">
             <source
-              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/spectrumlab_exoplanet_spectroscopy-20250725.mp4"
+              src="https://lweb.cfa.harvard.edu/smgdvl/datalabs/spectrumlab_exoplanet_spectroscopy-20250910.mp4"
               type="video/mp4"
             />
             <track
@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { useSpecLabHead } from '@/utils/locationUtils';
-import captions from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy-short.vtt';
+import captions from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy.vtt';
 import poster from '@/assets/video_metadata/spectrumlab_exoplanet_spectroscopy_poster.jpg';
 
 useSpecLabHead('Researching Exoplanets', 'Exoplanets');
