@@ -1,0 +1,1200 @@
+[
+  {
+    "category": "Lamps",
+    "filename": "Incandescent_Bulb",
+    "title": "Incandescent Bulb",
+    "spectrumType": "Emission",
+    "realOrCalculated": "Captured from Source",
+    "imagePath": "Lamps/Incandescent_Bulb.webp",
+    "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2552)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
+  },
+  {
+    "category": "Lamps",
+    "filename": "Fluorescent_Bulb",
+    "title": "Fluorescent Bulb",
+    "spectrumType": "Emission",
+    "realOrCalculated": "Captured from Source",
+    "imagePath": "Lamps/Fluorescent_Bulb.webp",
+    "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2504)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
+  },
+  {
+    "category": "Lamps",
+    "filename": "Metal_Halide_Bulb",
+    "title": "Metal Halide Bulb",
+    "spectrumType": "Emission",
+    "realOrCalculated": "Captured from Source",
+    "imagePath": "Lamps/Metal_Halide_Bulb.jpg",
+    "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2481)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
+  },
+  {
+    "category": "Lamps",
+    "filename": "Sodium_Vapor_Lamp_Low_Pressure",
+    "title": "Sodium Vapor Lamp (Low Pressure)",
+    "spectrumType": "Emission",
+    "realOrCalculated": "Captured from Source",
+    "imagePath": "Lamps/Sodium_Vapor_Lamp_Low_Pressure.webp",
+    "how": "Lamp Spectrum captured by a UV-VIS-IR spectrometer",
+    "spectrumSource": "[Lamp Spectral Power Distribution Database](https://lspdd.com/database/2769)",
+    "spectrumCredit": "The LSPDD by Johanne Roby, Ph.D. and Martin Aub\u00e9, Ph.D. is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). Permissions beyond the scope of this license may be obtained by contacting us."
+  },
+  {
+    "category": "Lamps",
+    "filename": "Cool_White_LED",
+    "title": "LED White (Cool)",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_5000K_bulb.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "Warm_White_LED",
+    "title": "LED White (Warm)",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/Warm_White_LED.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_400nm",
+    "title": "LED 400 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_400nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_455nm",
+    "title": "LED 455 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_455nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_470nm",
+    "title": "LED 470 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_470nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_505nm",
+    "title": "LED 505 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_505nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_525nm",
+    "title": "LED 525 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_525nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_570nm",
+    "title": "LED 570 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_570nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_590nm",
+    "title": "LED 590 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_590nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_604nm",
+    "title": "LED 604 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_604nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_626nm",
+    "title": "LED 626 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_626nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "LED_640nm",
+    "title": "LED 640 nm",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/LED_640nm.webp"
+  },
+  {
+    "category": "Lamps",
+    "filename": "tvRemote",
+    "title": "IR LED from TV Remote",
+    "spectrumType": "Emission",
+    "imagePath": "Lamps/tv_remote.webp"
+  },
+  {
+    "category": "Stars",
+    "filename": "O_Star",
+    "title": "O Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/O_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "B_Star",
+    "title": "B Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/B_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "A_Star",
+    "title": "A Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/A_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "F_Star",
+    "title": "F Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/F_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "G_Star",
+    "title": "G Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/G_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "K_Star",
+    "title": "K Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/K_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "M_Star",
+    "title": "M Star",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/M_Star.png"
+  },
+  {
+    "category": "Stars",
+    "filename": "sun_ref_colina96",
+    "title": "Sun",
+    "spectrumType": "Emission",
+    "imagePath": "Stars/sun_latest_1024_0171.webp"
+  },
+  {
+    "category": "Nature",
+    "filename": "Tree_in_Summer_Reflection",
+    "title": "Tree in Summer Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Aspen_in_Fall_Reflection",
+    "title": "Aspen in Fall Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Nature/aspen.webp"
+  },
+  {
+    "category": "Nature",
+    "filename": "Red_Flower_Reflection",
+    "title": "Red Flower Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Pansy_Reflection",
+    "title": "Pansy Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Nature/Pansy_Reflection.jpg"
+  },
+  {
+    "category": "Nature",
+    "filename": "Cactus_Reflection",
+    "title": "Cactus Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Nature/Cactus_Reflection.jpg"
+  },
+  {
+    "category": "Nature",
+    "filename": "Lawn_Grass_Reflection",
+    "title": "Lawn Grass Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Moss_Reflection",
+    "title": "Moss Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Lichen_Reflection",
+    "title": "Lichen Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Red_Brick_Reflection",
+    "title": "Red Brick Reflection",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Nature",
+    "filename": "Jellyfish_Emission",
+    "title": "Jellyfish Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Nature/jellyfish.webp"
+  },
+  {
+    "category": "Nature",
+    "filename": "Volcano_Emission",
+    "title": "Volcano Emission",
+    "spectrumType": "Emission"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Hydrogen_Absorption",
+    "title": "Hydrogen Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/H.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Hydrogen_Emission",
+    "title": "Hydrogen Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/H.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Helium_Emission",
+    "title": "Helium Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/He.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Neon_Emission",
+    "title": "Neon Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Ne.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Sodium_Absorption",
+    "title": "Sodium Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/Na.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Sodium_Low_Pressure_Emission",
+    "title": "Sodium (low pressure) Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Na.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Potassium_Absorption",
+    "title": "Potassium Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/K.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Calcium_Emission",
+    "title": "Calcium Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Ca.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Iron_Emission",
+    "title": "Iron Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Fe.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Mercury_Emission",
+    "title": "Mercury Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Atoms_and_Molecules/Hg.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Ammonia_Absorption",
+    "title": "Ammonia Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ammonia.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Carbon_Dioxide_Absorption_Near_to_Mid_IR",
+    "title": "Carbon Dioxide Absorption (Near to Mid IR)",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Carbon_Dioxide_Absorption_Mid_to_Far_IR",
+    "title": "Carbon Dioxide Absorption (Mid to Far IR)",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Dry_Ice_Reflection",
+    "title": "Dry Ice Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/CO2.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Ice_Reflection",
+    "title": "Ice (Water) Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/H2O.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Iron_Oxide_Rust_Reflection",
+    "title": "Iron Oxide (Rust) Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Atoms_and_Molecules/rust.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Methane_Visible_Absorption",
+    "title": "Methane Visible Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/methane.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Methane_Near_IR_Absorption",
+    "title": "Methane Near IR Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/methane.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Oxygen_Molecules_Absorption",
+    "title": "Oxygen (Molecular) Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/oxygen.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Ozone_Absorption_in_UV",
+    "title": "Ozone Absorption (UV)",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ozone.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Ozone_Absorption_in_IR",
+    "title": "Ozone Absorption (IR)",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/ozone.png"
+  },
+  {
+    "category": "Atoms and Molecules",
+    "filename": "Water_Vapor_Absorption",
+    "title": "Water Vapor Absorption",
+    "spectrumType": "Absorption",
+    "imagePath": "Atoms_and_Molecules/H2O.png"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Earth_Reflection",
+    "title": "Earth Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/earth-1.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Earth_Emission",
+    "title": "Earth Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/earth-1.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Earth_Transmission",
+    "title": "Earth Transmission",
+    "spectrumType": "Transmission",
+    "realOrCalculated": "Captured from Source",
+    "imagePath": "Solar_System/earth-1.webp",
+    "how": "A telescope-mounted spectrometer on Earth captured sunlight that passed (i.e. transmitted) through Earth\u2019s atmosphere and was reflected off the Moon\u2019s surface back to Earth.",
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature08050); [Free access version](https://arxiv.org/abs/0906.2958)",
+    "spectrumCredit": "Pall\u00e9, E., Osorio, M. R. Z., Barrena, R., Monta\u00f1\u00e9s-Rodr\u00edguez, P., & Mart\u00edn, E. L. (2009). Earth\u2019s transmission spectrum from lunar eclipse observations. *Nature, 459*(7248), 814-816.",
+    "additionalInfo": "See \u201cSupplementary Information\u201d section of paper cited above for a diagram that shows how the spectrum was obtained."
+  },
+  {
+    "category": "Solar System",
+    "filename": "Venus_Reflection",
+    "title": "Venus Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/venus.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Venus_Emission",
+    "title": "Venus Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/venus.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Mars_Reflection",
+    "title": "Mars Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/mars_PIA02653.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Mars_Emission",
+    "title": "Mars Emission",
+    "spectrumType": "Emission",
+    "imagePath": "Solar_System/mars_PIA02653.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Jupiter_Reflection",
+    "title": "Jupiter Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/jupiter.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Europa_Reflection",
+    "title": "Europa Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/europa.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Saturn_Reflection",
+    "title": "Saturn Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/saturn.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Saturn_Rings_Reflection",
+    "title": "Saturn Rings Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/saturn_rings.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Titan_Reflection",
+    "title": "Titan Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/titan.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Uranus_Reflection",
+    "title": "Uranus Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/uranus.webp"
+  },
+  {
+    "category": "Solar System",
+    "filename": "Neptune_Reflection",
+    "title": "Neptune Reflection",
+    "spectrumType": "Reflection",
+    "imagePath": "Solar_System/neptune.webp"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "WASP_17b",
+    "title": "WASP-17b, Hot Jupiter (HST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_17b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "WASP_39b",
+    "title": "WASP-39b, Hot Jupiter (HST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_39b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "HD189733b",
+    "title": "HD 189733b, Hot Jupiter (HST + Spitzer)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/HD189733b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "HAT_P_12b",
+    "title": "HAT-P-12b, Hot Jupiter (HST + Spitzer)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/HAT_P_12b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "WASP_121b",
+    "title": "WASP-121b, Hot Jupiter (HST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_121b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "HD209458b",
+    "title": "HD 209458b, Hot Jupiter (HST + Spitzer)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/HD209458b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "WASP_12b",
+    "title": "WASP-12b, Hot Jupiter (HST + Spitzer)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_12b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "K2_18b",
+    "title": "K2-18b, Super Earth (HST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/K2_18b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "JWST_WASP-39-b-Rustamkulov-et-al.-2023_MDinvert",
+    "title": "WASP-39b, Hot Jupiter (JWST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/WASP_39b.jpg"
+  },
+  {
+    "category": "Exoplanets",
+    "filename": "table_HD-189733-b-Fu-et-al.-2024_2columnMDinvert",
+    "title": "HD 189733b, Hot Jupiter (JWST)",
+    "spectrumType": "Transmission",
+    "imagePath": "Exoplanets/HD189733b.jpg"
+  },
+  {
+    "category": "Exoplanet Models",
+    "filename": "Clear_Hot_Jupiter_Model_Transmission",
+    "title": "Clear Hot Jupiter Model Transmission",
+    "spectrumType": "Transmission",
+    "realOrCalculated": "Calculated Model",
+    "imagePath": "Exoplanet_Models/Clear_Hot_Jupiter_Model_Transmission.jpg",
+    "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
+  },
+  {
+    "category": "Exoplanet Models",
+    "filename": "Cloudy_Hot_Jupiter_Model_Transmission",
+    "title": "Cloudy Hot Jupiter Model Transmission",
+    "spectrumType": "Transmission",
+    "realOrCalculated": "Calculated Model",
+    "imagePath": "Exoplanet_Models/Cloudy_Hot_Jupiter_Model_Transmission.jpg",
+    "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
+  },
+  {
+    "category": "Exoplanet Models",
+    "filename": "Hazy_Hot_Jupiter_Model_Transmission",
+    "title": "Hazy Hot Jupiter Model Transmission",
+    "spectrumType": "Transmission",
+    "realOrCalculated": "Calculated Model",
+    "imagePath": "Exoplanet_Models/Hazy_Hot_Jupiter_Model_Transmission.jpg",
+    "how": "Computer generated based on scientific assumptions about composition of this type of planetary atmosphere",
+    "spectrumSource": "[Published paper](https://www.nature.com/articles/nature16068); [Free access version](https://arxiv.org/pdf/1512.04341)",
+    "spectrumCredit": "Sing, D. K., Fortney, J. J., Nikolov, N., Wakeford, H. R., Kataria, T., Evans, T. M., ... & Wilson, P. A. (2016). A continuum from clear to cloudy hot-Jupiter exoplanets without primordial water depletion. *Nature, 529*(7584), 59-62."
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "230K_blackbody",
+    "title": "230 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/230K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "312K_blackbody",
+    "title": "312 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/312K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "450K_blackbody",
+    "title": "450 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/450K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "1200K_blackbody",
+    "title": "1,200 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/1200K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "1500K_blackbody",
+    "title": "1,500 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/1500K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "2500K_blackbody",
+    "title": "2,500 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/2500K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "3000K_blackbody",
+    "title": "3,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/3000K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "4000K_blackbody",
+    "title": "4,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/4000K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "5800K_blackbody",
+    "title": "5,800 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/5800K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "7000K_blackbody",
+    "title": "7,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/7000K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "9000K_blackbody",
+    "title": "9,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/9000K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "11400K_blackbody",
+    "title": "11,400 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/11400K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "15000K_blackbody",
+    "title": "15,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/15000K.png"
+  },
+  {
+    "category": "Thermal Spectra",
+    "filename": "30000K_blackbody",
+    "title": "30,000 K Blackbody",
+    "spectrumType": "Emission",
+    "imagePath": "Thermal_Spectra/30000K.png"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "BlueHigh",
+    "title": "Blue Light (High)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/BlueHigh.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "BlueMedium",
+    "title": "Blue Light (Medium)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/BlueMedium.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "BlueLow",
+    "title": "Blue Light (Low)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/BlueLow.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "GreenHigh",
+    "title": "Green Light (High)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/GreenHigh.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "GreenMedium",
+    "title": "Green Light (Medium)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/GreenMedium.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "GreenLow",
+    "title": "Green Light (Low)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/GreenLow.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "RedHigh",
+    "title": "Red Light (High)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/RedHigh.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "RedMedium",
+    "title": "Red Light (Medium)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/RedMedium.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "RedLow",
+    "title": "Red Light (Low)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/RedLow.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "Orange_RedMediumGreenLow",
+    "title": "Orange Light (Medium Red + Low Green)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/Orange_RedMediumGreenLow.jpg"
+  },
+  {
+    "category": "Fish Tank Lights",
+    "filename": "Teal_GreenHigh_BlueMedium",
+    "title": "Teal Light (High Green + Medium Blue)",
+    "spectrumType": "Emission",
+    "imagePath": "Fishtank_Lights/Teal_GreenHigh_BlueMedium.jpg"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "angelfish_dkbluecurve",
+    "title": "Angelfish Dark Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "angelfish_greycurve",
+    "title": "Angelfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "angelfish_ltbluecurve",
+    "title": "Angelfish Light Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "angelfish_orangecurve",
+    "title": "Angelfish Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "angelfish_yellowcurve",
+    "title": "Angelfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "anthias_lower_orange",
+    "title": "Anthias Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "anthias_upper_yellow",
+    "title": "Anthias Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "bannerfish_blackcurve",
+    "title": "Bannerfish Black",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "bannerfish_greycurve",
+    "title": "Bannerfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "bannerfish_yellowcurve",
+    "title": "Bannerfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "parrotfish_bluecurve",
+    "title": "Parrotfish Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "parrotfish_greencurve",
+    "title": "Parrotfish Green",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "parrotfish_purplecurve",
+    "title": "Parrotfish Purple",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_blackcurve",
+    "title": "Tuskfish Black",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_dkbluecurve",
+    "title": "Tuskfish Dark Blue",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_greycurve",
+    "title": "Tuskfish Grey",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_orangecurve",
+    "title": "Tuskfish Orange",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_purplecurve",
+    "title": "Tuskfish Purple",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_redcurve",
+    "title": "Tuskfish Red",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "tuskfish_yellowcurve",
+    "title": "Tuskfish Yellow",
+    "spectrumType": "Reflection",
+    "realOrCalculated": "Captured from Source"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "Chlorophyll_a",
+    "title": "Chlorophyll A",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "Chlorophyll_b",
+    "title": "Chlorophyll B",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Fish Tank Inhabitants",
+    "filename": "phycoerythrin_reflection",
+    "title": "Phycoerythrin",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_1",
+    "title": "Chokha Painting, Region B1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Blue_2",
+    "title": "Chokha Painting, Region B2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Green_1",
+    "title": "Chokha Painting, Region G1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Green_2",
+    "title": "Chokha Painting, Region G2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Red_1",
+    "title": "Chokha Painting, Region R1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Red_2",
+    "title": "Chokha Painting, Region R2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_White_1",
+    "title": "Chokha Painting, Region W1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "S2018-1-76_VNIR-SWIR_colors_Yellow_1",
+    "title": "Chokha Painting, Region Y1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "Painting_1_ROI-1_ROI-2_ROI_1",
+    "title": "Chokha Painting, Region of Interest 1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "Painting_1_ROI-1_ROI-2_ROI_2",
+    "title": "Chokha Painting, Region of Interest 2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Chokha_painting_ROI1_ROI2_ROI3_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Blue_1",
+    "title": "Hokusai Painting, Region B1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Blue_2",
+    "title": "Hokusai Painting, Region B2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Green_1",
+    "title": "Hokusai Painting, Region G1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Green_2",
+    "title": "Hokusai Painting, Region G2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Red_1",
+    "title": "Hokusai Painting, Region R1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Red_2",
+    "title": "Hokusai Painting, Region R2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_White_1",
+    "title": "Hokusai Painting, Region W1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "F1904-134_VNIR-SWIR_colors_Yellow",
+    "title": "Hokusai Painting, Region Y",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_colors_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "Painting_2_ROI-1_ROI-2_ROI_1",
+    "title": "Hokusai Painting, Region of Interest 1",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Painting Regions",
+    "filename": "Painting_2_ROI-1_ROI-2_ROI_2",
+    "title": "Hokusai Painting, Region of Interest 2",
+    "spectrumType": "Reflection",
+    "imagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_180px_unsharp.jpg",
+    "bigImagePath": "Museum_Conservation/Hokusai_painting_ROI1_ROI2_labeled_670px_unsharp.jpg"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Cochineal",
+    "title": "Red: Cochineal",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Red_Lead",
+    "title": "Red: Red Lead",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Vermilion",
+    "title": "Red: Vermilion",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Cobalt_Yellow",
+    "title": "Yellow: Cobalt Yellow",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Spectral-Analysis-of-Genuine-Indian-Yellow-single-spectrum_Genuine_Indian_Yellow",
+    "title": "Yellow: Genuine Indian Yellow",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Orpiment",
+    "title": "Yellow: Orpiment",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Azurite",
+    "title": "Blue: Azurite",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Egyptian_Blue",
+    "title": "Blue: Egyptian Blue",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Indigo",
+    "title": "Blue: Indigo",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Prussian_Blue",
+    "title": "Blue: Prussian Blue",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Lead_White",
+    "title": "White: Lead White",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Pigments_for_TWT_2024-09-17_Shell_White",
+    "title": "White: Shell White",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Spectra_Paper_FORS_NMAA_CHSOS",
+    "title": "Paper: Cellulose",
+    "spectrumType": "Reflection"
+  },
+  {
+    "category": "Paint Pigments & Supplies",
+    "filename": "Spectra_Silk_FORS_NMAA_JWIRTarget",
+    "title": "Silk",
+    "spectrumType": "Reflection"
+  }
+]

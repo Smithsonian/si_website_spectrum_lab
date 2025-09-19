@@ -1,0 +1,38 @@
+<template>
+  <nav class="bg-sl-royal-blue">
+    <BContainer>
+      <BNav>
+        <BNavItem link-class="page-nav-link" to="/light">1. Light</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/spectra">2. Spectra</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/color">3. Color</BNavItem>
+        <BNavItem link-class="page-nav-link" to="/temperature">
+          4. Temperature
+        </BNavItem>
+        <BNavItem link-class="page-nav-link" to="/composition">
+          5. Composition
+        </BNavItem>
+        <BNavItem link-class="page-nav-link" to="/final-projects">
+          Final Projects
+        </BNavItem>
+        <BNavItem link-class="page-nav-link" to="/playground">
+          Playground
+        </BNavItem>
+      </BNav>
+    </BContainer>
+  </nav>
+</template>
+
+<style>
+.page-nav-link {
+  color: var(--slr-light-grey);
+}
+
+.page-nav-link.nav-link.router-link-active {
+  color: var(--sl-royal-blue);
+  background-color: var(--sl-lighter-blue);
+}
+.page-nav-link.nav-link.router-link-active:hover,
+.page-nav-link.nav-link.router-link-active:focus {
+  color: var(--gen-black);
+}
+</style>

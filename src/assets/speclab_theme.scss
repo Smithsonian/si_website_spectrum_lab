@@ -1,0 +1,211 @@
+// Speclab customizations before loading Bootstrap
+// Open Sans at the front with Bootstrap fallbacks behind
+// Also set this in chartUtils, for use in canvas ctx.font
+$font-family-base:
+  'Open Sans',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+
+// SASS custom variables
+// Laura "general" colors
+$gen-white: #ffffff; // ffffff is also Smithsonian white
+$gen-black: #000000;
+$gen-gold: #ffcd00; // ffcd00 is also Smithsonian gold
+$gen-grey: #a8a8b4;
+
+// Data Labs colors
+$dl-bright-purple: #3a3b75;
+$dl-dark-purple: #291a56;
+$dl-chartreuse: #d8f354;
+
+// Speclab colors
+$sl-slate-blue: #3a678a;
+$sl-royal-blue: #00456c;
+$sl-navy: #153353;
+$sl-light-blue: #3ad4ed;
+$sl-med-blue: #63d4ed;
+$sl-lighter-blue: #8ce7ff;
+
+// Speclab resources
+$slr-light-brown: #774e2b;
+$slr-dark-brown: #422a16;
+$slr-dark-grey: #5c5c64;
+$slr-light-grey: #edecf2;
+$slr-med-grey: #ccccd4;
+
+// DIY planet search
+$diy-brown: #594a40;
+$diy-blue: #36679c;
+$diy-red: #c02325;
+
+// CSS variable versions
+:root {
+  --gen-white: #{$gen-white};
+  --gen-black: #{$gen-black};
+  --gen-gold: #{$gen-gold};
+  --gen-grey: #{$gen-grey};
+
+  --dl-bright-purple: #{$dl-bright-purple};
+  --dl-dark-purple: #{$dl-dark-purple};
+  --dl-chartreuse: #{$dl-chartreuse};
+
+  --sl-slate-blue: #{$sl-slate-blue};
+  --sl-royal-blue: #{$sl-royal-blue};
+  --sl-navy: #{$sl-navy};
+  --sl-light-blue: #{$sl-light-blue};
+  --sl-med-blue: #{$sl-med-blue};
+  --sl-lighter-blue: #{$sl-lighter-blue};
+
+  --slr-light-brown: #{$slr-light-brown};
+  --slr-dark-brown: #{$slr-dark-brown};
+  --slr-dark-grey: #{$slr-dark-grey};
+  --slr-light-grey: #{$slr-light-grey};
+  --slr-med-grey: #{$slr-med-grey};
+
+  --diy-brown: #{$diy-brown};
+  --diy-blue: #{$diy-blue};
+  --diy-red: #{$diy-red};
+}
+
+// SASS Bootstrap overrides
+$primary: $sl-light-blue;
+$secondary: $sl-slate-blue;
+$dark: $gen-black;
+$nav-pills-border-radius: 0;
+$btn-close-bg: url('/src/assets/SVG/close_button.svg');
+$btn-close-focus-shadow: rgba(88, 126, 156, 0.5) 0px 0px 0px 4px;
+$btn-close-opacity: 0.6;
+$btn-close-hover-opacity: 0.8;
+$input-color: $slr-light-grey;
+$input-bg: $sl-navy;
+$input-border-color: $sl-light-blue;
+$form-select-indicator-color: $slr-light-grey;
+$input-disabled-bg: $sl-slate-blue;
+$form-range-track-border-radius: 0;
+$form-range-thumb-border: 1px solid black;
+$form-range-thumb-border-radius: 0;
+$form-range-thumb-width: 0.6rem;
+$form-range-thumb-height: 1.5rem;
+$form-check-input-width: 1.5em;
+$form-check-input-border: 1px solid $sl-light-blue;
+$form-check-input-checked-color: $sl-light-blue;
+$form-check-input-checked-bg-color: $sl-navy;
+$form-check-input-checked-border-color: $sl-light-blue;
+$focus-ring-opacity: 0.5;
+
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-vue-next/src/styles/styles.scss';
+
+// Color classes
+
+.bg-gen-white {
+  background-color: var(--gen-white) !important;
+}
+
+.bg-gen-black {
+  background-color: var(--gen-black) !important;
+}
+
+.bg-sl-navy {
+  background-color: var(--sl-navy) !important;
+}
+
+.bg-sl-slate-blue {
+  background-color: var(--sl-slate-blue) !important;
+}
+
+.bg-sl-royal-blue {
+  background-color: var(--sl-royal-blue);
+}
+
+.bg-sl-med-blue {
+  background-color: var(--sl-med-blue);
+}
+
+.bg-sl-light-blue {
+  background-color: var(--sl-light-blue);
+}
+
+.bg-sl-lighter-blue {
+  background-color: var(--sl-lighter-blue);
+}
+
+.color-slr-light-grey {
+  color: var(--slr-light-grey) !important;
+}
+
+.color-sl-light-blue {
+  color: var(--sl-light-blue) !important;
+}
+
+.color-sl-lighter-blue {
+  color: var(--sl-lighter-blue) !important;
+}
+
+.color-sl-navy {
+  color: var(--sl-navy) !important;
+}
+
+.color-slr-med-grey {
+  color: var(--slr-med-grey) !important;
+}
+
+.border-sl-light-blue {
+  border-color: var(--sl-light-blue) !important;
+}
+
+// Bootstrap overrides or additions
+
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+// App-wide styling unrelated to Bootstrap or color scheme
+
+.challenge-image {
+  width: 100%;
+  height: auto;
+}
+
+.challenge-emphasis {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.challenge-button-text {
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.challenge-tool-label {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.challenge-bold {
+  font-weight: 600;
+}
+
+.challenge-less-bold {
+  font-weight: 500;
+}
+
+.needs-updating {
+  color: red !important;
+  font-weight: bold;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
+}

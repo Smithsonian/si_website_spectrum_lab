@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.18 18.18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #3ad4ed;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="datalabs">
+    <g>
+      <path class="cls-1" d="M6.34,1h-2.52c-1.56,0-2.82,1.26-2.82,2.82v10.54c0,1.56,1.26,2.82,2.82,2.82h10.54c1.56,0,2.82-1.26,2.82-2.82v-2.9"/>
+      <polyline class="cls-1" points="11.15 1 17.18 1 6.44 11.73"/>
+      <line class="cls-1" x1="17.18" y1="6.95" x2="17.18" y2="1"/>
+    </g>
+  </g>
+</svg>

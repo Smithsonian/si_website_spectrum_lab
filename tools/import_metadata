@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+python3 tools/metadata_csv_to_json.py src/metadata.csv && npm run format
