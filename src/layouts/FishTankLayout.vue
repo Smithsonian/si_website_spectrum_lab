@@ -51,7 +51,7 @@
           <ChallengeIntro
             heading="Create and Light a Saltwater Aquarium"
             :icon-path="fishtankIconUrl"
-            icon-alt="Fishtank module icon"
+            icon-alt="Fish tank module icon"
           >
             Investigate a variety of plants, fish and coral that can live in
             saltwater aquaria. Choose a few to live in your tank then decide how
