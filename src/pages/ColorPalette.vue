@@ -100,6 +100,23 @@
           variable-name="slr-med-grey"
         />
       </ColorPaletteRow>
+      <ColorPaletteRow title="Speclab extras">
+        <ColorCircle
+          color="#6d6daa"
+          display-name="Speclab Extras blue-grey"
+          variable-name="sle-blue-grey"
+        />
+        <ColorCircle
+          color="#291a56"
+          display-name="Data Labs dark purple"
+          variable-name="dl-dark-purple"
+        />
+        <ColorCircle
+          color="#c9c8ff"
+          display-name="Speclab Extras lavender"
+          variable-name="sle-lavender"
+        />
+      </ColorPaletteRow>
       <ColorPaletteRow title="DIY planet search colors">
         <ColorCircle
           color="#594a40"
