@@ -33,6 +33,15 @@
     </BNavbarNav>
     <BNavbarNav class="ms-auto">
       <BNavItem
+        href="https://datalabs.cfa.harvard.edu/spectrumlab-extras/"
+        variant="light"
+        opacity-hover="75"
+        class="text-uppercase"
+      >
+        Student Extras
+      </BNavItem>
+      <BNavText class="text-gen-grey">|</BNavText>
+      <BNavItem
         href="https://datalabs.cfa.harvard.edu/spectrumlab-resources/"
         variant="light"
         opacity-hover="75"
