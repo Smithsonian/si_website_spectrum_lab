@@ -22,7 +22,7 @@
             More information on different conservation techniques can be found
             at this
             <BLink
-              href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Technique%20Description.pdf"
+              :href="CONSERVATION_TECHNIQUES_URL"
               target="_blank"
               rel="noopener"
               >Reference Sheet</BLink
@@ -67,6 +67,7 @@ import VideoJSPlayer from '@/components/VideoJSPlayer.vue';
 import { useSpecLabHead } from '@/utils/locationUtils';
 import captions from '@/assets/video_metadata/museum_uvl.vtt';
 import poster from '@/assets/video_metadata/museum_uvl_poster.jpg';
+import { CONSERVATION_TECHNIQUES_URL } from '@/constants';
 
 useSpecLabHead('Chokha Pigments Part 2: UVL Intro', 'Museum');
 </script>

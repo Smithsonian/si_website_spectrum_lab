@@ -28,3 +28,6 @@ export type InstructionRowType =
   | 'Simulation'
   | 'Slideshow';
 export type PlotType = 'line' | 'scatter';
+
+export const CONSERVATION_TECHNIQUES_URL =
+  'https://datalabs.cfa.harvard.edu/large_files/Speclab/Museum%20Technique%20Descriptions.pdf';

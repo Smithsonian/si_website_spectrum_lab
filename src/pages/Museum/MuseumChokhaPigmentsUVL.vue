@@ -14,7 +14,7 @@
             <template #after-steps>
               More information on UVL can be found at this
               <BLink
-                href="https://waps.cfa.harvard.edu/microobservatory/spectrum/large_files/Museum%20Conservation%20Technique%20Description.pdf"
+                :href="CONSERVATION_TECHNIQUES_URL"
                 target="_blank"
                 rel="noopener"
                 >Reference Sheet</BLink
@@ -96,6 +96,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { computed, ref } from 'vue';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_910.webp';
 import chokhaUVL from '@/assets/spectrum_data/Museum_Conservation/chokha_uvl_r1b1y1w1_910.webp';
+import { CONSERVATION_TECHNIQUES_URL } from '@/constants';
 
 useSpecLabHead('Chokha Pigments Part 3: UVL', 'Museum');
 
