@@ -33,7 +33,7 @@
               <InstructionStep>
                 Use this
                 <BLink
-                  href="https://datalabs.cfa.harvard.edu/large_files/Speclab/MuseumConservationPigmentsDataTable.pdf"
+                  :href="`${LARGE_FILES_BASE}/Speclab/MuseumConservationPigmentsDataTable.pdf`"
                   target="_blank"
                   rel="noopener"
                   style="font-weight: 400"
@@ -96,7 +96,7 @@ import { useSpecLabHead } from '@/utils/locationUtils';
 import { computed, ref } from 'vue';
 import chokhaChallenge from '@/assets/spectrum_data/Museum_Conservation/chokha_visible_r1b1y1w1_910.webp';
 import chokhaUVL from '@/assets/spectrum_data/Museum_Conservation/chokha_uvl_r1b1y1w1_910.webp';
-import { CONSERVATION_TECHNIQUES_URL } from '@/constants';
+import { CONSERVATION_TECHNIQUES_URL, LARGE_FILES_BASE } from '@/constants';
 
 useSpecLabHead('Chokha Pigments Part 3: UVL', 'Museum');
 

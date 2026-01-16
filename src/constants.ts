@@ -29,5 +29,18 @@ export type InstructionRowType =
   | 'Slideshow';
 export type PlotType = 'line' | 'scatter';
 
-export const CONSERVATION_TECHNIQUES_URL =
-  'https://datalabs.cfa.harvard.edu/large_files/Speclab/Museum%20Technique%20Descriptions.pdf';
+// This checks DEV because the URLs won't make any sense on dev,
+// they only make sense on deployment
+export const DATA_LABS_BASE = import.meta.env.DEV
+  ? 'https://datalabs.cfa.harvard.edu'
+  : `${import.meta.env.BASE_URL}/..`;
+
+// Large files location. This does not use BASE_URL since these files are not
+// version controlled, we just want to put them all in the same place. However,
+// we still want them using their own host and not have datalabs vs datalabs8
+// issues.
+export const LARGE_FILES_BASE = import.meta.env.DEV
+  ? 'https://datalabs.cfa.harvard.edu/large_files'
+  : '/large_files';
+
+export const CONSERVATION_TECHNIQUES_URL = `${LARGE_FILES_BASE}/Speclab/Museum%20Technique%20Descriptions.pdf`;

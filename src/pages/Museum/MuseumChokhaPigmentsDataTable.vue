@@ -13,7 +13,7 @@
           <template #before-steps>
             <p>
               <BLink
-                href="https://datalabs.cfa.harvard.edu/large_files/Speclab/MuseumConservationPigmentsDataTable.pdf"
+                :href="`${LARGE_FILES_BASE}/Speclab/MuseumConservationPigmentsDataTable.pdf`"
                 target="_blank"
                 rel="noopener"
               >
@@ -54,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import { LARGE_FILES_BASE } from '@/constants';
 import { useSpecLabHead } from '@/utils/locationUtils';
 
 useSpecLabHead('Chokha Pigments Part 4: Data Table', 'Museum');
