@@ -6,10 +6,7 @@
     tag="header"
     role="banner"
   >
-    <BNavbarBrand
-      href="https://datalabs.cfa.harvard.edu/"
-      aria-label="Data Labs home page"
-    >
+    <BNavbarBrand :href="DATA_LABS_BASE" aria-label="Data Labs home page">
       <img
         src="/src/assets/DataLabsLogo@2x.png"
         height="44"
@@ -33,7 +30,7 @@
     </BNavbarNav>
     <BNavbarNav class="ms-auto">
       <BNavItem
-        href="https://datalabs.cfa.harvard.edu/spectrumlab-extras/"
+        :href="`${DATA_LABS_BASE}/spectrumlab-extras/`"
         variant="light"
         opacity-hover="75"
         class="text-uppercase"
@@ -42,7 +39,7 @@
       </BNavItem>
       <BNavText class="text-gen-grey">|</BNavText>
       <BNavItem
-        href="https://datalabs.cfa.harvard.edu/spectrumlab-resources/"
+        :href="`${DATA_LABS_BASE}/spectrumlab-resources/`"
         variant="light"
         opacity-hover="75"
         class="text-uppercase"
@@ -52,3 +49,7 @@
     </BNavbarNav>
   </BNavbar>
 </template>
+
+<script setup lang="ts">
+import { DATA_LABS_BASE } from '@/constants';
+</script>
