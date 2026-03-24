@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        font-family: OpenSans-Italic, 'Open Sans';
+        font-family: OpenSans-Italic, 'Open Sans', 'Open Sans Variable';
         font-style: italic;
       }
 
@@ -13,7 +13,7 @@
 
       .cls-2, .cls-3 {
         fill: #00456c;
-        font-family: OpenSans-Regular, 'Open Sans';
+        font-family: OpenSans-Regular, 'Open Sans', 'Open Sans Variable';
       }
 
       .cls-3 {
