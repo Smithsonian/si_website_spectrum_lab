@@ -76,7 +76,7 @@ export const useCursorMicrons = (): CursorMicronsWithUpdater => {
 
 // Bootstrap font stack + Open Sans
 export const canvasFontFromSize = (size: string): string => {
-  const fontFamily = `'Open Sans',
+  const fontFamily = `'Open Sans Variable',
 system-ui,
 -apple-system,
 'Segoe UI',

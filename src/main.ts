@@ -1,6 +1,8 @@
 import { ViteSSG } from 'vite-ssg';
 import { createBootstrap } from 'bootstrap-vue-next';
 import './assets/speclab_theme.scss';
+import '@fontsource-variable/open-sans';
+import '@fontsource-variable/open-sans/wght-italic.css';
 import 'video.js/dist/video-js.css';
 import type { RouteRecordRaw } from 'vue-router';
 import { library } from '@fortawesome/fontawesome-svg-core';
