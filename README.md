@@ -1,6 +1,6 @@
 # si_website_spectrum_lab
 
-CfA Spectrum Lab at https://waps.cfa.harvard.edu/microobservatory/spectrum/
+CfA Spectrum Lab at https://datalabs.cfa.harvard.edu/spectrumlab/ .
 
 The development preview deployment is at https://smithsonian.github.io/si_website_spectrum_lab .
 
